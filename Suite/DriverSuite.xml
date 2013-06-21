@@ -1,0 +1,11 @@
+<suite name="DriverSuite">
+	<listeners>
+    	<listener class-name="processor.ExecuteProcedure" />
+    	<listener class-name="processor.ReportGenerator" />
+   	</listeners >
+        <test name="SmokeTest"> 
+  		    <packages >
+     			 <package name="procedures_NewFramework.*" />
+   			</packages>
+    	</test> 
+</suite>

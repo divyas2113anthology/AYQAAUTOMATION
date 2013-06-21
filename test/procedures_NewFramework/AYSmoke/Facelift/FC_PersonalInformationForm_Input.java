@@ -1,0 +1,130 @@
+package procedures_NewFramework.AYSmoke.Facelift;
+
+import java.util.Calendar;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.MoveToOffsetAction;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import or.OR;
+import processor.CommonSeleniumActions;
+
+public class FC_PersonalInformationForm_Input extends CommonSeleniumActions implements OR {
+	
+
+	@Test(description="This Procedure is to perform some Operation in 'Personal Information' page")	
+	public void FC_PersonalInformationForm_Input () throws Exception{
+		try {
+			writeDetails();
+//			headerStatement("PersonalInformationForm_Input");
+//			startExecutionOrder(j);
+//			writeParametersTable();
+			Reporter.log("Proceed to retrieve Input Test Data for 'Personal Information' page");
+			String[]  personalinfoidatarepo = datacontainer;
+			String pisuffix = personalinfoidatarepo[0];
+			String pifirstgivenname = personalinfoidatarepo[1];
+			String pilastname = personalinfoidatarepo[2];
+			String pifulltimestudent = personalinfoidatarepo[3];
+			String piethnicity = personalinfoidatarepo[4];
+			String pissn = personalinfoidatarepo[5];
+			String piDateofBirth = personalinfoidatarepo[6];
+			String pisportsinterest = personalinfoidatarepo[7];
+			String piluckyno = personalinfoidatarepo[8];
+			String button_to_click = personalinfoidatarepo[9];
+			String pisubmitappbtn = personalinfoidatarepo[10];
+			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
+			if (!pisuffix.equals("")) {
+				Reporter.log("Step 1 - Select Suffix as ("+pisuffix+")");
+				String SufID = getElementIDbyLabel("Suffix",PII_Suffix);				
+				select(SufID, pisuffix);
+			}
+			if (!pifirstgivenname.equals("")) {
+				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");
+				String fNameID = getElementIDbyLabel("First Name",PII_FirstName);				
+				type(fNameID, pifirstgivenname+Calendar.getInstance().getTimeInMillis());
+			}
+			if (!pilastname.equals("")) {
+				Reporter.log("Step 3 - Enter Last Name as ("+pilastname+")");
+				String LNameID = getElementIDbyLabel("Last Name",PII_LastName);				
+				type(LNameID, pilastname);
+			}
+			if (!pifulltimestudent.equals("")) {
+				Reporter.log("Step 4 - Check Full Time Student as ("+pifulltimestudent+")");
+				if (pifulltimestudent.equalsIgnoreCase("Yes")){
+					driver.findElement(By.xpath(PII_FullTimeStudent_Yes)).sendKeys(" ");
+					clickWebdriver(attributeName_xpath, PII_FullTimeStudent_Yes);		
+				}else if  (pifulltimestudent.equalsIgnoreCase("No")){
+					driver.findElement(By.xpath(PII_FullTimeStudent_No)).sendKeys(" ");
+					clickWebdriver(attributeName_xpath, PII_FullTimeStudent_No);
+				}			
+			}
+			if (!piethnicity.equals("")) {
+				Reporter.log("Step 5 - Check Ethnicity as ("+piethnicity+")");
+				String ethiID = getElementIDbyLabel(piethnicity,PII_EthniValue);
+				check(ethiID);
+			}
+			if (!pissn.equals("")) {
+				Reporter.log("Step 6 - Enter Social Security Number as ("+pissn+")");
+				String ssnID = getElementIDbyLabel("Social Security Number", PII_SSN);
+				type(ssnID, pissn);
+			}
+			if (!piDateofBirth.equals("")) {
+				Reporter.log("Step 7 - Enter Date of Birth as ("+piDateofBirth+")");
+				String dobID = getElementIDbyLabel("Date of Birth", PII_DOB);
+				type(dobID, piDateofBirth);
+			}
+			if (!pisportsinterest.equals("")) {
+				Reporter.log("Step 8 - Enter Favourite Sports as ("+pisportsinterest+")");
+				String sportID = getElementIDbyLabel("Favourite Sports", PII_Sports);
+				select(sportID,pisportsinterest);			
+			}
+			if (!piluckyno.equals("")) {
+				Reporter.log("Step 9 - Check Lucky Number as ("+piluckyno+")");
+				String LuckyID = getElementIDbyLabel(piluckyno,PII_Luckyno);
+				check(LuckyID);
+			}
+			if (!button_to_click.equals("")) {
+				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
+				if (button_to_click.equalsIgnoreCase("Address Lookup")) {
+//					sendKeyStroke(attributeName_xpath, PII_AddressLookupBtn, Keys.ENTER);
+					clickWebdriverWithCoordinates(attributeName_xpath, PII_AddressLookupBtn);
+//					driver.findElement(By.xpath(PII_AddressLookupBtn)).sendKeys(" ");
+//					clickWebdriver(attributeName_xpath, PII_AddressLookupBtn);
+//					actionsClickWebdriver(attributeName_xpath, PII_AddressLookupBtn);
+					recentPopupSelectWebdriver("Address Lookup");
+//				    String popupID =selenium.getEval("{var windowId; for(var x in selenium.browserbot.openedWindows ) {windowId=x;} }"); //javascript to get last opened window
+//				    selenium.waitForPopUp(popupID, "90000");
+//				    selenium.selectWindow(popupID);
+//				    selenium.windowFocus();
+					//click(PII_AddressLookupBtn);
+//					click("//input[@value='Address Lookup']");
+//					recentPopupSelect("");
+					//Thread.sleep(30000);
+					//waitForUniqueNameWindow();
+//					selenium.waitForPopUp("AddressWithAVS", "9000");
+//					selenium.selectWindow("AddressWithAVS");
+				//	selenium.selectPopUp("AddressWithAVS");
+//					recentPopupSelect("Address Lookup");
+				} else if(button_to_click.equalsIgnoreCase("Save")){
+					click(PII_SaveBottom);
+					waitForPageToLoad();
+				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
+					click(PII_SaveContinue);
+				}else if (button_to_click.equalsIgnoreCase("Reset")) {
+					click(PII_Reset);
+				}
+			}
+			if (!pisubmitappbtn.equals("")) {
+				Reporter.log("Step 11 - Click on ("+pisubmitappbtn+")Button");
+				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
+					click(AW_SubAppBtn);
+				}
+			}
+		} catch (Exception e) {
+			writeFailure(e.getLocalizedMessage());
+		}
+	}
+
+}

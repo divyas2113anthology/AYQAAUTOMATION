@@ -21,14 +21,18 @@ public class WC_Question_AddEdit_Verify extends CommonSeleniumActions implements
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			Reporter.log("Verify Test Data was retrieved for 'Question Add/Edit' page");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!message.equals("")) {
-//				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				
+				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PageName, pagename, "Page Name for Question Add/Edit");
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_PageName, pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PageName, pagename, pagename);
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

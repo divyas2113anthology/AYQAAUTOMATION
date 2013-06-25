@@ -21,6 +21,7 @@ public class WC_Package_AddEdit_Verify extends CommonSeleniumActions implements 
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			Reporter.log("Verify Test Data was retrieved for 'Package page");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForText(message, "Not Present");
@@ -30,6 +31,7 @@ public class WC_Package_AddEdit_Verify extends CommonSeleniumActions implements 
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Package");
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

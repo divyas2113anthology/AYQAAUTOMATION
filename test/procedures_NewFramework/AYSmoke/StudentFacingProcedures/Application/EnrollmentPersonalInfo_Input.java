@@ -35,9 +35,9 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 				String choice = accprofileidatarepo[5];
 				String submissionreset = accprofileidatarepo[6];
 				Reporter.log("Input Test Data was retrieved for 'Enrollment Personal Info' page");
-				
 				if (!attend.equals("")) {
 					Reporter.log("Step 1 - Select the attened as ("+attend+")");
+					waitForElementPresentWebdriver(attributeName_xpath, EPI_AttendYes, attend);
 					if (attend.equalsIgnoreCase("Yes")) {
 						clickWebdriver(attributeName_xpath, EPI_AttendYes);
 					}else if (attend.equalsIgnoreCase("No")) {

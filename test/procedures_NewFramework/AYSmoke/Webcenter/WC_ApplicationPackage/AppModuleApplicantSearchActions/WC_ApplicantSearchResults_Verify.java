@@ -23,8 +23,11 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Search Results' page");
 			if (!successmessage.equals("")) {
-//				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				
+				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
+//				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
+//				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
+				waitForText(successmessage, "Success Message");
+				verifyTextPresent(successmessage);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

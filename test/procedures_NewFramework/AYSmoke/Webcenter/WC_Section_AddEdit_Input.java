@@ -22,6 +22,7 @@ public class WC_Section_AddEdit_Input extends CommonSeleniumActions implements O
 			String savecanceleditdelete = testdata[5];
 			Reporter.log("Input Test Data was retrieved for 'Section Add/Edit Input' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!sectionname.equals("")) {
 				Reporter.log("Step 1 - Enter the name as ["+sectionname+"]");
 				sendKeys(attributeName_xpath, SAE_Name, sectionname);
@@ -48,16 +49,21 @@ public class WC_Section_AddEdit_Input extends CommonSeleniumActions implements O
 			}
 			if (!savecanceleditdelete.equals("")) {
 				Reporter.log("Step 6 - Click the Button as ["+savecanceleditdelete+"]");
-				if (savecanceleditdelete.equals("Save")) {
+				if (savecanceleditdelete.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, SAE_SaveButton);
-				}else if (savecanceleditdelete.equals("Delete")) {
+					waitForPageToLoad();
+				}else if (savecanceleditdelete.equalsIgnoreCase("Delete")) {
 					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
-				}else if (savecanceleditdelete.equals("Edit")) {
+					waitForPageToLoad();
+				}else if (savecanceleditdelete.equalsIgnoreCase("Edit")) {
 					clickWebdriver(attributeName_xpath, SAE_EditButton);
-				}else if (savecanceleditdelete.equals("Cancel")) {
+					waitForPageToLoad();
+				}else if (savecanceleditdelete.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, SAE_CancelButton);
+					waitForPageToLoad();
 				}
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

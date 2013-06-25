@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.internal.seleniumemulation.WindowMaximize;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -35,13 +36,14 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-//			waitForElementPresentWebdriver(attributeName_xpath, AS_InprocessStatus, "In Process Status");
+			driver.manage().window().maximize();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
 				clickWebdriver(attributeName_linktext, subscribed);
 			}	
 			if (!inprocessstatus.equals("")) {
 				Reporter.log("Step 2 - Select the Inprocess status as ["+inprocessstatus+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, AS_InprocessStatus, "In Process Status");
 				selectByValueWebdriver(attributeName_xpath, AS_InprocessStatus, inprocessstatus);
 			}
 			if (!inprocessstatuspublishdate.equals("")) {

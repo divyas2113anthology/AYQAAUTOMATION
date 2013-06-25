@@ -33,7 +33,7 @@ public class FC_ResetPassword_Input extends CommonSeleniumActions implements OR 
 				if (submit.equalsIgnoreCase("submit")) {
 //					click(RPI_submit);
 					clickWebdriver(attributeName_id, "ay-externalSubmit");
-					waitForElementPresentWebdriver(attributeName_xpath, "//div/h2", "Reset Password Page");
+//					waitForElementPresentWebdriver(attributeName_xpath, "//div/h2", "Reset Password Page");
 				}else if (submit.equalsIgnoreCase("close window")) {
 					recentPopupClose();
 				}else if (submit.equalsIgnoreCase("here")) {

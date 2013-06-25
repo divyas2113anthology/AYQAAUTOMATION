@@ -30,30 +30,32 @@ public class EventSearchAll_Input extends CommonSeleniumActions implements	OR {
 				selectByVisibleTextWebdriver(attributeName_xpath, ESA_LocationOfEvent, locationoftheevent);
 			}
 			if (!fromdate.equals("")) {
-				Reporter.log("Step 1 - Enter the from date ("+fromdate+") 'Search All Event' page");
+				Reporter.log("Step 2 - Enter the from date ("+fromdate+") 'Search All Event' page");
 				type(ESA_FromDate, fromdate);
 			}
 			if (!todate.equals("")) {
-				Reporter.log("Step 1 - Enter the to date ("+todate+")'Search All Event' page");
+				Reporter.log("Step 3 - Enter the to date ("+todate+")'Search All Event' page");
 				type(ESA_ToDate, fromdate);
 			}
 			if (!eventtype.equals("")) {
-				Reporter.log("Step 1 - Select the event type ("+eventtype+")'Search All Event' page");
+				Reporter.log("Step 4 - Select the event type ("+eventtype+")'Search All Event' page");
 				selectByVisibleTextWebdriver(attributeName_xpath, ESA_EventType, locationoftheevent);
 			}
 			if (!eventstatus.equals("")) {
-				Reporter.log("Step 1 - Click the event status ("+eventstatus+")'Search All Event' page");
-				if (!eventstatus.equalsIgnoreCase("All events (past and future)")) {
+				Reporter.log("Step 5 - Click the event status ("+eventstatus+")'Search All Event' page");
+				waitForElementPresentWebdriver(attributeName_xpath, ESA_PastAndFuture, eventstatus);
+				if (eventstatus.equalsIgnoreCase("All events")) {
 					clickWebdriver(attributeName_xpath, ESA_PastAndFuture);
-				} else if (!eventstatus.equalsIgnoreCase("All events in the future")) {
+				} else if (eventstatus.equalsIgnoreCase("All events in the future")) {
 					clickWebdriver(attributeName_xpath, ESA_Future);
-				} else if (!eventstatus.equalsIgnoreCase("All events in the future with space available")) {
+				} else if (eventstatus.equalsIgnoreCase("All events in the future with space available")) {
 					clickWebdriver(attributeName_xpath, ESA_FutureWithSpace);
 				}
 			}
 			if (!search.equals("")) {
-				Reporter.log("Step 1 - Click the search button in the 'Search All Event' page");
+				Reporter.log("Step 6 - Click the search button in the 'Search All Event' page");
 				clickWebdriver(attributeName_xpath, ESA_SearchByEvent);
+				waitForPageToLoad();
 			}
 			
 		} catch (Exception e) {

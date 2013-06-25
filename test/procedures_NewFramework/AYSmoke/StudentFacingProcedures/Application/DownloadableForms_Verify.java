@@ -27,7 +27,9 @@ public class DownloadableForms_Verify extends CommonSeleniumActions implements	O
 			}
 			if (!filepath.equals("")) {
 				Reporter.log("Step 2 - Verify downloaded file contains ("+downloadableformcontains+") in the location of ("+filepath+")");
-				VerifyDownloadedtxtFileExist(filepath);
+				waitForFile(filepath); // this will hold the script to complete the File Download
+				verifyFile(filepath);
+//				VerifyDownloadedtxtFileExist(filepath);
 			}
 			
 		} catch (Exception e) {

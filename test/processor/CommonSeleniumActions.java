@@ -32,6 +32,8 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
+import or.OR;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -50,7 +52,7 @@ import org.testng.Reporter;
 import org.openqa.selenium.internal.Locatable;
 
 
-public class CommonSeleniumActions extends Processor {	
+public class CommonSeleniumActions extends Processor implements OR {	
 	public static String mainwindow;
 	public static int timeOutInSeconds = 60;
 	
@@ -2727,7 +2729,6 @@ public class CommonSeleniumActions extends Processor {
 					writeConsole("Webdriver Alert accept");
 					Alert alert = driver.switchTo().alert();		
 					alert.accept();
-
 				}
 						
 				public void alertDismiss(){		
@@ -4246,20 +4247,20 @@ public class CommonSeleniumActions extends Processor {
 					String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
 					writeConsole("Plus OuterHTML Value "+nodePlus);
 					if (nodePlus.contains("Click to expand")) {
-						driver.findElement(By.xpath("//a[contains(@onclick,'toggle("+secnode+")')]"));
+						clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
 //						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 					}
 				}
 				public void ClosePackageSelection() throws Exception {
 					Reporter.log("Proceed to Click on Minus Buton to Close package");
 					//selenium.selectFrame("relative=up");
-					selenium.selectFrame("//frame[@name='frmTreeMenu']");
+//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 //					SelectTreeFrame();
 					selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
 					int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
 					writeConsole("Minus Count "+minusCount);
 					for (int i = minusCount; i > 0; i--) {
-						driver.findElement(By.xpath("xpath=(//img[contains(@src,'minus')])["+i+"]"));
+						clickWebdriver(attributeName_xpath, "xpath=(//img[contains(@src,'minus')])["+i+"]");
 //						selenium.click("xpath=(//img[contains(@src,'minus')])["+i+"]");			
 					}
 				}

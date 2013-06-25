@@ -23,9 +23,9 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved to verify PDF is Open successfully");
 			writeConsole("Verify Test Data was retrieved to verify PDF is Open successfully");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			if (!pdfname.equals("") && !wait.equals("")) {
+			if (!pdfname.equals("")) {
 				writeConsole("Step 1 - Verify PDF is Open Successfully");
-				int waitforpdfint = Integer.parseInt(wait)*1000;
+//				int waitforpdfint = Integer.parseInt(wait)*1000;
 				String exceptionMsg = null;
 				String[] Pdfwindows = new String[0];								
 					Pdfwindows = selenium.getAllWindowNames();
@@ -48,6 +48,9 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 ////									writeConsole("PDF File :"+splitpdftext[i]);
 //								}
 							}
+						}
+						if (wait.equals("")) {
+							
 						}
 					} catch (Exception e) {			
 //						exceptionMsg = e.getMessage();

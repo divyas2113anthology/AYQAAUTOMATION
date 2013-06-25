@@ -34,11 +34,17 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!updatetechsupport.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+updatetechsupport+") Button");
 				if (updatetechsupport.equalsIgnoreCase("Home")) {
-					click(Updatetech+updatetechsupport+"']");
+//					click(Updatetech+updatetechsupport+"']");
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'goHome')]", updatetechsupport);
+					clickWebdriver(attributeName_xpath, "//a[contains(@href,'goHome')]");
 					waitForPageToLoad();
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
-					click(Updatetech+updatetechsupport+"']");
-					recentPopupSelect("Technical Support");
+//					click(Updatetech+updatetechsupport+"']");
+//					recentPopupSelect("Technical Support");
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'techSupportWindow')]", updatetechsupport);
+					clickWebdriver(attributeName_xpath, "//a[contains(@href,'techSupportWindow')]");
+					recentPopupSelectWebdriver("Technical Support");
+					alertAccept();
 				}else if (updatetechsupport.equalsIgnoreCase("Update your Profile")) {
 //					sendKeyStroke(attributeName_xpath, UpdateProfileBtn, Keys.SPACE);
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
@@ -50,7 +56,7 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'doApplicationSubmit')]");
 //					click(Updatetech+updatetechsupport+"']");
 					waitForPageToLoad();
-				}			
+				}
 			}
 			if (!applicantsection.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Applicant Section ("+applicantsection+") Link");
@@ -59,8 +65,9 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
-				click(helphint+helpfulhints+"']");
-				recentPopupSelect(helpfulhints);
+//				click(helphint+helpfulhints+"']");
+				clickWebdriver(attributeName_linktext, helpfulhints);
+				recentPopupSelectWebdriver(helpfulhints);
 			}
 			if (!print.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+print+") Button");

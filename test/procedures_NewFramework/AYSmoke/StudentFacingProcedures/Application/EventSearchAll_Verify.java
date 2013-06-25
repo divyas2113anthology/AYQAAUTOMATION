@@ -23,9 +23,9 @@ public class EventSearchAll_Verify extends CommonSeleniumActions implements	OR {
 			Reporter.log("Verify Test Data was Present in the  'Search All Event' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message present ("+message+") in the 'Search All Event' page");
-				if (!message.equalsIgnoreCase("There are no events to display.")) {
+				if (message.equalsIgnoreCase("There are no events to display.")) {
 					verifyElementContainsTextWebdriver(attributeName_xpath, ESA_NoEventsMessage, message, "No Search Result Present Message");
-				}else if (!message.equalsIgnoreCase("The following events meet the criteria of your search")) {
+				}else if (message.equalsIgnoreCase("The following events meet the criteria of your search")) {
 					verifyElementContainsTextWebdriver(attributeName_xpath, ESA_Message, message, "Search Result Message");
 				}
 			}

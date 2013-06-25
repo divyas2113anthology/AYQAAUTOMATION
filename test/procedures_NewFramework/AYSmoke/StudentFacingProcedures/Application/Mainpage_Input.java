@@ -31,15 +31,19 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!eventpackagename.equals("")) {
 				Reporter.log("Click on ("+eventpackagename+") Event Package");
+				
 				if (eventpackagename.equalsIgnoreCase("Search")) {
-					click(eventpackage+eventpackagename+"']");
+					clickWebdriver(attributeName_linktext, eventpackagename);
+//					click(eventpackage+eventpackagename+"']");
 					waitForPageToLoad();
 				}else if (eventpackagename.equalsIgnoreCase("List All")) {
-					click(eventpackage+eventpackagename+"']");
+					clickWebdriver(attributeName_linktext, eventpackagename);
+//					click(eventpackage+eventpackagename+"']");
 					waitForPageToLoad();
 				}else if (eventpackagename.equalsIgnoreCase("View mine")) {
-					click(eventpackage+eventpackagename+"']");
-					recentPopupSelect("View mine");				
+					clickWebdriver(attributeName_linktext, eventpackagename);
+//					click(eventpackage+eventpackagename+"']");
+					recentPopupSelectWebdriver("View mine");				
 				}
 			}
 			if (!enrollment.equals("")) {

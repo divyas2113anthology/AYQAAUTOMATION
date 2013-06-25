@@ -18,8 +18,18 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 			String closewindow = fpvdatarepo[1];
 			Reporter.log("Close the Popup Window and navigate to main window");
 			if (!contents.equals("")) {
-				waitForElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
-				verifyElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
+				if (contents.equalsIgnoreCase("Support Center")) {
+					waitForElementPresentWebdriver(attributeName_linktext, contents, contents);
+					verifyElementPresentWebdriver(attributeName_linktext, contents, contents);
+				}else if (contents.equalsIgnoreCase("Navigation Overview") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
+					waitForText(contents, "Text not present");
+					verifyTextPresent(contents);
+				}else if (contents.equalsIgnoreCase("My Events/Interviews") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
+					waitForText(contents, "Text not present");
+					verifyTextPresent(contents);
+				}
+//				waitForElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
+//				verifyElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
 //				verifyElementVisibleContainsText(attributeName_xpath, MoreDetails, contents);
 			}
 			if (!closewindow.equals("")) {

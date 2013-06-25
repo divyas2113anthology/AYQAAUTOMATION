@@ -23,7 +23,7 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 		if (!pac.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PAC from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin;
-			if (pac.equalsIgnoreCase("Reset Personal Access Code")) {
+			if (pac.equalsIgnoreCase("Recommender Personal Access Code")) {
 				generatepin = Runtimedataread(pac);				
 			} else {
 				generatepin = pac;					

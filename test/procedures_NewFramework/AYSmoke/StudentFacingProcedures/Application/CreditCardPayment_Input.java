@@ -24,14 +24,17 @@ public class CreditCardPayment_Input extends CommonSeleniumActions implements	OR
 			Reporter.log("Input Test Data was retrieved for 'Credit Card Payment' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify the page name as ("+pagename+")");
+				waitForText(pagename, "Creditcard Page");
 				verifyTextPresent(pagename);
 			}		
 			if (!cancel.equals("")) {
 				Reporter.log("Step 2 - Proceed to click on ("+cancel+") Button");
+				waitForElementPresentWebdriver(attributeName_xpath, NP_Cancel, cancel);
 				clickWebdriver(attributeName_xpath, NP_Cancel);
 			}		
 			if (!status.equals("")) {
 				Reporter.log("Step 3 - Verify the status as ("+status+")");
+				waitForText(status, "Sucessfully Submitted");
 				verifyTextPresent(status);
 			}
 		

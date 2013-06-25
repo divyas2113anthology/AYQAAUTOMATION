@@ -20,22 +20,31 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Configure Data Dictionary' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 //			selenium.selectFrame("relative=up");
-			selenium.selectFrame("frmTreeMenu");
+//			selenium.selectFrame("frmTreeMenu");
 //			driver.switchTo().frame("relative=up");
-//			driver.switchTo().frame("frmTreeMenu");
+//			driver.switchTo().frame("frmTreeMenu");\
+//			switchToFrameNameIdWebdriver("relative=up");
+			switchToFrameNameIdWebdriver("frmTreeMenu");
 			if (!logoutmain.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to click the link as ["+logoutmain+"]");
 				clickWebdriver(attributeName_linktext, logoutmain);
 			}
 			if (!treepackage.equals("")) {
-				Reporter.log("Step 1 - Perform the operation to click the Package as ["+treepackage+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
+				Reporter.log("Step 2 - Perform the operation to click the Package as ["+treepackage+"]");
+//				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
 				String [] SplitPackage = treepackage.split(";");
 				for (int i = 0; i < SplitPackage.length; i++) {
-					PackageSelection(SplitPackage[i], "");
+					writeConsole("Tree Package : "+SplitPackage[i]);
+					if (i== SplitPackage.length-1) {
+						clickWebdriver(attributeName_linktext, SplitPackage[i]);
+						waitForPageToLoad();
+					}else{
+						PackageSelection(SplitPackage[i], "1");
+					}
 				}
 				ClosePackageSelection();
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

@@ -33,10 +33,11 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 			if (!fpsearch.equals("")) {
 				Reporter.log("Step 3 - Click on ("+fpsearch+") Button");
 				if (fpsearch.equalsIgnoreCase("search")) {
-					click(FRP_Search);
+					waitForElementPresentWebdriver(attributeName_xpath,FRP_Search, "Submit Button Present");
+					clickWebdriver(attributeName_xpath,FRP_Search);
 					waitForPageToLoad();
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
-					click(upaclosebtn);
+					clickWebdriver(attributeName_xpath,upaclosebtn);
 //					selectMainWindow();
 					selectMainWindowWebdriver();
 				}else if (fpsearch.equalsIgnoreCase("Continue")) {

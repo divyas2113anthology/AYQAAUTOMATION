@@ -174,7 +174,7 @@ public static final String EL_hslink = "//a[contains(text(),'";
 
 //# Application Status Page - AS
 //#**********************************************************#
-public static final String AS_PreviewApp = "//font[text()='Preview Application in PDF Format']";
+public static final String AS_PreviewApp = "//font[text()='Preview Application Alternate Name in PDF Format']";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
 public static final String AS_Continue = "//img[@alt='continue']";
 //#**********************************************************#
@@ -781,9 +781,9 @@ public static final String ESA_LocationOfEvent = "//select[@id='evWhere']";
 public static final String ESA_FromDate = "//input[@id='evWhenFrom']";
 public static final String ESA_ToDate = "//input[@id='evWhenTo']";
 public static final String ESA_EventType = "//select[@id='evCategory']";
-public static final String ESA_PastAndFuture = "//input[@id='rbevStatus1']";
-public static final String ESA_Future = "//input[@id='rbevStatus2']";
-public static final String ESA_FutureWithSpace = "//input[@id='rbevStatus3']";
+public static final String ESA_PastAndFuture = "//input[@value='All']";
+public static final String ESA_Future = "//input[@value='Future']";
+public static final String ESA_FutureWithSpace = "//input[@id='FutureOpen']";
 public static final String ESA_SearchByEvent = "//a[contains(@href,'ValidateAndSubmitEventInfo')]";
 public static final String ESA_Message = "//td[@class='BaseTableFont']";
 public static final String ESA_NoEventsMessage = "//td[@class='BaseTableFont']/b";
@@ -812,9 +812,10 @@ public static final String PA_PdfFile = "//select[@name='PDFFile']";
 public static final String PA_ExecutePDFRules = "//input[@name='ExecutePDFRules']";
 public static final String PA_UncheckExclude = "//input[@name='PrintEssays']";
 public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs']";
-public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
+//public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//tr[@class='FormText']/td/font";
+public static final String PA_PrintBtn = "//img[@alt='print']";
 //#**********************************************************#
 //# Webcenter Applicant Summary - AS
 //#**********************************************************#
@@ -837,10 +838,12 @@ public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_wi
 //#**********************************************************#
 public static final String BP_PageName = "//div[@id='AYInstructions']/following-sibling::font";
 public static final String BP_BackBtn = "//img[contains(@src,'admin_back_small')]";
-public static final String BP_ApplicationBatchs = "//img[contains(@src,'application_batches')]";
+//public static final String BP_ApplicationBatchs = "//img[contains(@src,'application_batches')]";
 public static final String BP_ConformationMsg = "//td[@class='FormHeading']/b";
 public static final String CloseWindow = "//img[@alt='close window']";
 public static final String ApplicantCloseWindow = "//img[contains(@src,'admin_close_window_large')]";
+public static final String BP_ApplicationBatchs = "//img[@alt='Application Batches']";
+public static final String BP_RefreshBtn = "//img[@alt='Refresh Search']";
 //#**********************************************************#
 //# Webcenter Question Add/Edit Page - QAE
 //#**********************************************************#
@@ -871,6 +874,7 @@ public static final String QAE_FieldLength = "//input[@name='txtResponseLength']
 public static final String QAE_FieldFormat = "//select[@name='txtFormat']";
 public static final String QAE_QuestionBefor = "//select[@name='selorderquestion']";
 public static final String QAE_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+public static final String QAE_Message = "//div[@id='divAyConfirmation']/font";
 //#**********************************************************#
 //# Webcenter Section Add/Edit Page - SAE
 //#**********************************************************#
@@ -1104,7 +1108,7 @@ public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 //#**********************************************************#
 public static final String AIT_CRLF = "//input[@value='crLf']";
 public static final String AIT_LF = "//input[@value='Lf']";
-
+public static final String FS_SubmitApp = "//a[contains(@href,'ApplicationSubmit')]";
 
 }
 

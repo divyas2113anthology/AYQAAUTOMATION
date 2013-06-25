@@ -22,18 +22,23 @@ public class WC_HTMLEditor_Verify extends CommonSeleniumActions implements OR {
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'HTML Edit' page");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, "Not Present");
-				verifyTextPresent(message);
+//				waitForText(message, "Not Present");
+//				verifyTextPresent(message);
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Search For Applicant");
+				waitForElementPresentWebdriver(attributeName_xpath, PA_PageName, pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, pagename);
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

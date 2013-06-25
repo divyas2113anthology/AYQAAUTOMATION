@@ -26,11 +26,13 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			if (!checkagainstname.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checkagainstname+"]");
 				if (checkagainstname.contains("check")) {
-					String[] SplitFirstLastName = checkagainstname.split(",");
-					checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
+					String CheckFrstLstName = checkagainstname.replace(";", ",");
+					String[] SplitFirstLastName = CheckFrstLstName.split(",");
+					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}else if (checkagainstname.contains("uncheck")) {
-					String[] SplitFirstLastName = checkagainstname.split(",");
-					uncheckWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
+					String CheckFrstLstName = checkagainstname.replace(";", ",");
+					String[] SplitFirstLastName = CheckFrstLstName.split(",");
+					uncheckWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}else if (checkagainstname.equalsIgnoreCase("All")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]", checkagainstname);
 					clickWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]");
@@ -38,7 +40,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			}			
 			if (!clickname.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clickname+"]");
-				String[] SplitFirstLastName = clickname.split(",");
+				String ClickFrstLstName = clickname.replace(";", ",");
+				String[] SplitFirstLastName = ClickFrstLstName.split(",");
 				int SizeOfSplitFirstLastName = SplitFirstLastName.length;
 				writeConsole("Size: "+SizeOfSplitFirstLastName);
 				if (SizeOfSplitFirstLastName == 1) {
@@ -50,8 +53,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						recentPopupSelectWebdriver("Application Summary");
-					}
-					else{
+					}else{
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
 					recentPopupSelectWebdriver("Application Summary");
 					}
@@ -62,7 +64,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			}
 			if (!clickpdf.equals("")) {
 				Reporter.log("Step 3 - Click the name of the pdf as ["+clickpdf+"]");
-				String[] SplitFirstLastName = clickpdf.split(",");
+				String ClickPDF = clickpdf.replace(";", ",");
+				String[] SplitFirstLastName = ClickPDF.split(",");
 				clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
 				recentPopupSelectWebdriver("Application Summary");
 			}
@@ -90,6 +93,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 				}else if (click.equalsIgnoreCase("Go")) {
 					clickWebdriver(attributeName_xpath, ASR_GoBtn);
+					waitForPageToLoad();
 				}
 			}			
 		} catch (Exception e) {

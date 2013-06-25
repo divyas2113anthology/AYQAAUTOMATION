@@ -208,8 +208,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window");
 					String getLinkHref = getAttribute(HC_LinkContians+getinternallink+"')]", "href");
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
-					openAndWait(getLinkHref);
-					
+					openAndWait(getLinkHref);					
 				}
 				if (!openemailclose.equals("")) {
 					Reporter.log("Step 17 - Closing All Opened Pop Ups");

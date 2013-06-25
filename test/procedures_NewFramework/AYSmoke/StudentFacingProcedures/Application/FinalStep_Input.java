@@ -1,4 +1,4 @@
-package procedures_NewFramework.AYSmoke.Facelift;
+package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
-public class FC_FinalStep_Input extends CommonSeleniumActions implements OR {
+public class FinalStep_Input extends CommonSeleniumActions implements OR {
 	
-	@Test(description="This Procedure is to perform some Operation in 'Applicant Welcome' page")
-	public void FC_FinalStep_Input () throws Exception{
+	@Test(description="This Procedure is to perform some Operation in 'Final Step: Signature Page' page")
+	public void FinalStep_Input () throws Exception{
 		try {
 			writeDetails();
 //			headerStatement("ApplicantWelcome_Input");
@@ -33,12 +33,20 @@ public class FC_FinalStep_Input extends CommonSeleniumActions implements OR {
 
 			if (!button.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+button+") Button");
-				click(AW_SubmitAppBtn);
-				waitForPageToLoad();
+				if (button.equalsIgnoreCase("Continue")) {
+					clickWebdriver(attributeName_xpath, SP_Submit);
+					waitForPageToLoad();
+				}else if (button.equalsIgnoreCase("Submit")) {
+					clickWebdriver(attributeName_xpath, FS_SubmitApp);
+					waitForPageToLoad();
+				}
 			}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
 	}
+
 }
+
+

@@ -26,6 +26,7 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			String savedeletecancel = testdata[9];
 			Reporter.log("Input Test Data was retrieved for 'Question Add/Edit Input' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!name.equals("")) {
 				Reporter.log("Step 1 - Enter the name as ["+name+"]");
 				sendKeys(attributeName_xpath, QAE_Name, name);
@@ -64,12 +65,15 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			}
 			if (!savedeletecancel.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+savedeletecancel+"]");
-				if (savedeletecancel.equals("Save")) {
+				if (savedeletecancel.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
-				} else if (savedeletecancel.equals("Cancel")) {
+					waitForPageToLoad();
+				} else if (savedeletecancel.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
+					waitForPageToLoad();
 				}
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

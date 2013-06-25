@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage;
 
+import org.openqa.selenium.remote.server.handler.AcceptAlert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -19,6 +20,7 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 			String publishproddev = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Edit HTML' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!propertiessaveprive.equals("")) {
 				Reporter.log("Step 1 - Click the Button as ["+propertiessaveprive+"]");
 				if (propertiessaveprive.equalsIgnoreCase("Properties")) {
@@ -45,11 +47,15 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Click the Button as ["+publishproddev+"]");
 				if (publishproddev.equalsIgnoreCase("Publish To Prod")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToProd);
-				
+//					switchToDefaultContentWebdriver();
+					alertAccept();
+					waitForPageToLoad();
 				} else if (publishproddev.equalsIgnoreCase("Publish To Dev")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
+					waitForPageToLoad();
 				}
-			}			
+			}		
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

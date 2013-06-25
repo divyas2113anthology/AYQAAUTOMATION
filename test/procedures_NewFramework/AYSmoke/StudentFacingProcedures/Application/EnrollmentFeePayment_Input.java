@@ -36,7 +36,7 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 					if (returnpaycontinue.equalsIgnoreCase("return to enrollment form")) {
 						clickWebdriver(attributeName_xpath, EFP_ReturnEnrollBtn);
 						waitForPageToLoad();	
-					}else if (returnpaycontinue.equalsIgnoreCase("pay and continue")) {
+					}else if (returnpaycontinue.equalsIgnoreCase("pay & continue")) {
 						clickWebdriver(attributeName_xpath, EFP_PayAndContinue);
 						alertAccept();
 						waitForPageToLoad();

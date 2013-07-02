@@ -118,7 +118,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 					recentPopupSelectWebdriver("Print Pdf");
 //					waitForUniqueNameWindow();
 				}
-				else if (button_to_click.equalsIgnoreCase("Preview Application Alternate Name in PDF Format")) {
+				else if (button_to_click.equalsIgnoreCase("Preview Application")) {
 					waitForElementPresent(AW_PrintPreviewPdfBtn, "Pdf Button");
 					clickWebdriver(attributeName_xpath,AW_PrintPreviewPdfBtn);
 //					SelectPrintWindow("PrintApplication");

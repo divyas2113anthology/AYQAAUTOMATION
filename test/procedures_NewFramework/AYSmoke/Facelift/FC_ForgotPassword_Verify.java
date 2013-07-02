@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -37,8 +39,16 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 				}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 4 - Verify Success Message:("+successmessage+") was displayed correctly");
-				waitForElementPresent(FPV_SuccessMsg, successmessage);
-				verifyElementText(FPV_SuccessMsg, successmessage, "Forgot Password Reset Message");
+				String messagecontains = null;
+				environment = Runtimedataread("Instance");
+				if (successmessage.contains("email")) {
+					if (environment.equalsIgnoreCase("USPR")) {
+						messagecontains = successmessage.replace("email", "e-mail");
+					}
+				}
+				messagecontains = successmessage;
+				waitForElementPresent(FPV_SuccessMsg, messagecontains);
+				verifyElementText(FPV_SuccessMsg, messagecontains, "Forgot Password Reset Message");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

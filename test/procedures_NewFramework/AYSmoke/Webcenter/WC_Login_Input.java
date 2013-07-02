@@ -27,12 +27,11 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 			if (!userid.equals("")) {
 				Reporter.log("Step 2 - Enter User ID as ["+userid+"]");
 				type(WCL_UserID, userid);
-
 			}			
 			if (!password.equals("")) {
-				Reporter.log("Step 3 - Enter Password as ["+password+"]");
-				type(WCL_Password, password);
-
+				String Password = Runtimedataread(password);
+				Reporter.log("Step 3 - Enter Password as ["+Password+"]");
+				type(WCL_Password, Password);
 			}			
 			if (!needpasswordgo.equals("")) {
 				Reporter.log("Step 4 - Click on ["+needpasswordgo+"] button or Link");

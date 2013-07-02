@@ -19,14 +19,17 @@ public class FC_ResetPassword_Input extends CommonSeleniumActions implements OR 
 			String confirmpassword = fpdatarepo[1];
 			String submit = fpdatarepo[2];
 			Reporter.log("Enter Data in PIN if it is not empty");
+			String Password;
 			if (!password.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+password+")");
-				waitForElementPresentWebdriver(attributeName_name,"Password",password);
-				sendKeysType(attributeName_name,"Password",password);
+				Password = Runtimedataread(password);
+				waitForElementPresentWebdriver(attributeName_name,"Password",Password);
+				sendKeysType(attributeName_name,"Password",Password);
 			}
 			if (!confirmpassword.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+confirmpassword+")");
-				sendKeys(attributeName_name,"ConPassword",confirmpassword);
+				Password = Runtimedataread(confirmpassword);
+				sendKeys(attributeName_name,"ConPassword",Password);
 			}
 			if (!submit.equals("")) {
 				Reporter.log("Step 3 - Click on ("+submit+") Button");

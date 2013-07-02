@@ -26,7 +26,8 @@ public class MC_Login_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 2 - Enter password as ["+password+"]");
-				type(MCL_Password, password);				
+				String Password = Runtimedataread(password);
+				type(MCL_Password, Password);				
 			}
 			if (!btnlogin.equals("")) {
 				Reporter.log("Step 3 - Click the Login Button");

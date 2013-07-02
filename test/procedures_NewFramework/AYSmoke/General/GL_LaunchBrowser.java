@@ -7,7 +7,7 @@ import or.OR;
 import processor.CommonSeleniumActions;
 
 public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
-	
+	public static String environment;
 	@Test(description="This procedure is to Navigate URL")
 	public void GL_LaunchBrowser() throws Exception{
 		try {
@@ -17,17 +17,17 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			String url = instancedatarepo[0];
 			Reporter.log("Test Data was retrieved for URL");
 			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/Selenium/InputTestdata.xls)");
-			String environment = Runtimedataread("Instance");
+			environment = Runtimedataread("Instance");
 			String envirurl = null;
 			if ((url.contains("app")) && (url.contains("facelift"))) {			
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					envirurl = "https:/uatapp.applyyourself.co.uk/?id=ayauto&facelift=true";
+					envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://app.applyyourself.com/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
-					envirurl = "https:/uatapp.applyyourself.co.uk/?id=ayauto&facelift=true";
+					envirurl = "https://app.hobsons.co.uk/?id=ayauto&facelift=true";
 				}
 //			}else if ((url.contains("app")) && (!url.contains("facelift"))) {	
 			}else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {	
@@ -44,11 +44,11 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://uatwebcenter.applyyourself.com/";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					envirurl = "https://uatwebcenter.hobsons.co.uk/";
+					envirurl = "https://uatwebcenter.hobsons.co.uk";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://webcenter.applyyourself.com/";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
-					envirurl = "https://webcenter.hobsons.co.uk/";
+					envirurl = "https://webcenter.hobsons.co.uk";
 				}
 			}else if (url.contains("manage")) {
 				if (environment.equalsIgnoreCase("USQA")) {

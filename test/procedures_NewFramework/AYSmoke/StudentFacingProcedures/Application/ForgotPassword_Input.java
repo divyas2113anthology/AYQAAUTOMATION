@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -41,7 +43,14 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 //					selectMainWindow();
 					selectMainWindowWebdriver();
 				}else if (fpsearch.equalsIgnoreCase("Continue")) {
-					clickWebdriver(attributeName_xpath,countinuebtn);
+//					environment = Runtimedataread("Instance");
+//					if (environment.equals("USQA")) {
+						clickWebdriver(attributeName_xpath,countinuebtn);
+//						waitForElementPresentWebdriver(attributeName_xpath, Login, "Login Page");
+//					}else if (environment.equals("USPR")) {
+//						clickWebdriver(attributeName_xpath,countinuebtn);
+//						selectMainWindowWebdriver();
+//					}	
 					waitForElementPresentWebdriver(attributeName_xpath, Login, "Login Page");
 //					waitForPageToLoad();
 //					selectMainWindow();

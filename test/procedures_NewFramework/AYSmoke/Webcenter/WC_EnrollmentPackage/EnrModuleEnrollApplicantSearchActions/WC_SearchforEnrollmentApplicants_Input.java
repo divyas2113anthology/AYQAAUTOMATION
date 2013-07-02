@@ -40,8 +40,8 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				selectByValueWebdriver(attributeName_xpath, SAI_CreationDate, createddate);
 			}
 			if (!firstname.equals("")) {
-				Reporter.log("Step 3 - Enter the First Name as ["+firstname+"]");
 				String FirstName = Runtimedataread(firstname);
+				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
 				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
 			}
 			if (!lastname.equals("")) {

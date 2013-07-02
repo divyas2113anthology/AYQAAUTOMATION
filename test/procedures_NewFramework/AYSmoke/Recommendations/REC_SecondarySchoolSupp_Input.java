@@ -43,6 +43,7 @@ public class REC_SecondarySchoolSupp_Input extends CommonSeleniumActions impleme
 			}else if (gobacksavenext.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_xpath, CI_SaveBtn);
 			}else if (gobacksavenext.equalsIgnoreCase("Next")) {
+				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, gobacksavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
 				waitForPageToLoad();
 			}

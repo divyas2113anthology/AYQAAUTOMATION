@@ -36,7 +36,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			driver.manage().window().maximize();
+//			driver.manage().window().maximize();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
 				clickWebdriver(attributeName_linktext, subscribed);

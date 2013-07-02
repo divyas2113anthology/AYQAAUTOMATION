@@ -21,6 +21,12 @@ public static final String attributeName_partiallinktext = "partiallinktext";
 public static final String attributeName_tagname = "tagname";
 public static final String attributeName_xpath = "xpath";
 //	==================================================================================================
+//====================================Browser Name ==============================================================
+public static final String Browser_IE= "internetexplorer";
+public static final String Browser_FF = "firefox";
+public static final String Browser_Chrome = "googlechrome";
+public static final String Browser_Safari = "safari";
+//==================================================================================================
 //#**********************************************************#
 //#Login Page
 //#**********************************************************#	
@@ -174,7 +180,7 @@ public static final String EL_hslink = "//a[contains(text(),'";
 
 //# Application Status Page - AS
 //#**********************************************************#
-public static final String AS_PreviewApp = "//font[text()='Preview Application Alternate Name in PDF Format']";
+public static final String AS_PreviewApp = "//font[contains(text(),'Preview Application')]";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
 public static final String AS_Continue = "//img[@alt='continue']";
 //#**********************************************************#
@@ -460,7 +466,7 @@ public static final String FS_FullName = "css=#eSignName";
 public static final String FS_Date = "css=#esignDate";
 public static final String AW_SubmitAppBtn = "css=#ay-recSubmit";
 public static final String AW_PrintPreviewBtn = "//a[contains(text(),'Preview Application in PDF Format')]";
-public static final String AW_PrintPreviewPdfBtn = "//a[contains(text(),'Preview Application Alternate Name in PDF Format')]";
+public static final String AW_PrintPreviewPdfBtn = "//a[contains(text(),'Preview Application')]";
 //#**********************************************************#
 //# Facelift Personal Data Input
 //#**********************************************************#
@@ -705,7 +711,8 @@ public static final String AW_SportsLnk = "//span[@class='menuImage']//font[text
 public static final String SRI_PageTitle = "//td/font[text()='Virginia']";
 public static final String SRI_Fa1rfaxLnk = "//a/font[text()='Fa1rfax']";
 public static final String SRI_SportsLnk = "//a/font[text()='Sports']";
-public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//td[@class='BasePageFont']";
+//public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//td[@class='BasePageFont']";
+public static final String PD_ErrorMsg = "//td[@class='BasePageFont']";
 public static final String ALI_FirstLnk = "//div[@id='pnlPickList']/ul/li[1]";
 public static final String DF_FormName = "//font[@class='BasePageFont' ]/a[contains(text(),'";
 //#**********************************************************#
@@ -997,7 +1004,7 @@ public static final String RL_PerAccessCode = "//input[@id='Pin']";
 public static final String RL_Password = "//input[@id='Password']";
 public static final String RL_ConfirmPass = "//input[@id='ConPassword']";
 public static final String RL_LoginBtn = "//input[@alt='Login']";
-public static final String RL_SubmitBtn = "//input[@alt='submit']";
+public static final String RL_SubmitBtn = "//input[@alt='submit' or @alt='Login']";
 public static final String TOU_CheckUncheck = "//input[@id='chkAcceptEULA']";
 public static final String TOU_Continue = "//img[@alt='Continue']";
 public static final String GS_NextBtn = "//img[@alt='next']";

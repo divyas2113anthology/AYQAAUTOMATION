@@ -37,7 +37,9 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 		if (!password.equals("")) {
 			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword;
-			if (password.equalsIgnoreCase("Recommender Password")) {
+			if (password.equalsIgnoreCase("ApplicationPassword")) {
+				generatepassword = Runtimedataread(password);				
+			}else if (password.equalsIgnoreCase("ApplicationChangePassword")) {
 				generatepassword = Runtimedataread(password);				
 			} else {
 				generatepassword = password;					

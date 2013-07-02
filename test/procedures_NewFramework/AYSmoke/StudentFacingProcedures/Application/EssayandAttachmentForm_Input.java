@@ -101,15 +101,15 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 			}
 			if (!save.equals("")) {
 				if (save.equalsIgnoreCase("Save")) {
-					click(EA_Save);
+					clickWebdriver(attributeName_xpath, EA_Save);
 					waitForPageToLoad();
 				} else if (save.equalsIgnoreCase("Save & Continue")) {
-					click(EA_SaveandContinue);
+					clickWebdriver(attributeName_xpath, EA_SaveandContinue);
 					waitForPageToLoad();
 				}else if (save.equalsIgnoreCase("Reset")) {
-					click(EA_Reset);
+					clickWebdriver(attributeName_xpath, EA_Reset);
 				}else if (save.equalsIgnoreCase("close window")) {
-					click(EA_CloseButton);
+					clickWebdriver(attributeName_xpath, EA_CloseButton);
 //					selectMainWindow();	
 					selectMainWindowWebdriver();
 				}else if (save.equalsIgnoreCase("closewindow")) {

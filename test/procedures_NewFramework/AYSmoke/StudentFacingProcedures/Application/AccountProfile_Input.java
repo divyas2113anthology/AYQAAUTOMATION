@@ -40,6 +40,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				String confirmpassword = accprofileidatarepo[9];
 				String confirmyes = accprofileidatarepo[10];
 				String createaccount = accprofileidatarepo[11];
+				String AppPassword;
 				Reporter.log("Input Test Data was retrieved for 'Account Profile' page");
 				Date date = new Date();  
 				DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -86,11 +87,13 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				
 				if (!password.equals("")) {			
 					Reporter.log("Step 8 - Enter 'Password' as ("+password+")");	
-					type(Password, password);
+					AppPassword = Runtimedataread(password);
+					type(Password, AppPassword);
 				}		
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 9 - Enter 'Confirm Password' as ("+confirmpassword+")");	
-					type(ConfirmPassword, confirmpassword);			
+					AppPassword = Runtimedataread(confirmpassword);
+					type(ConfirmPassword, AppPassword);			
 					if (!confirmyes.equalsIgnoreCase("")) {
 						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(confirmpassword,confirmyes);			

@@ -39,7 +39,7 @@ Thumbs.db
 
 # Unnecessary framework files #
 ###############################
-*.csv
+/csv/
 /Results
 /bin
 .classpath

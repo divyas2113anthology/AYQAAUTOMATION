@@ -1,5 +1,10 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -22,10 +27,14 @@ public class WC_AddImportTemplate_Verify extends CommonSeleniumActions implement
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Add Import' page");
+			Date date = new Date();  
+			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			if (!message.equals("")) {
+//				String[] Message = message.split(" ");
+				String SplitMessage = message+Calendar.getInstance().getTimeInMillis();
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, "Not Present");
-				verifyTextPresent(message);
+				waitForText(SplitMessage+"was successfully Added. Please proceed to add the Field Definitions", "Not Present");
+				verifyTextPresent(SplitMessage+"was successfully Added. Please proceed to add the Field Definitions");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

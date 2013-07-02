@@ -30,13 +30,14 @@ public class REC_MiddleSchoolSupp_Input extends CommonSeleniumActions implements
 			sendKeys(attributeName_xpath, RecStudent, recommomandthestudent);
 		}
 		if (!backsavenext.equals("")) {
-			Reporter.log("Step 1 -Click the button as '"+backsavenext+"'");
+			Reporter.log("Step 3 -Click the button as '"+backsavenext+"'");
 			if (backsavenext.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
 				waitForPageToLoad();
 			}else if (backsavenext.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_xpath, CI_SaveBtn);
 			}else if (backsavenext.equalsIgnoreCase("Next")) {
+				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, backsavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
 				waitForPageToLoad();
 			}

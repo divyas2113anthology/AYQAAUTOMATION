@@ -24,7 +24,9 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 		if (!currentpassword.equals("")) {
 			Reporter.log("Step 1 - Enter the Current Password as '"+currentpassword+"'");
 			String generatechangepass;
-			if (currentpassword.equalsIgnoreCase("Recommender Password")) {
+			if (currentpassword.equalsIgnoreCase("ApplicationPassword")) {
+				generatechangepass = Runtimedataread(currentpassword);				
+			}else if (currentpassword.equalsIgnoreCase("ApplicationChangePassword")) {
 				generatechangepass = Runtimedataread(currentpassword);				
 			} else {
 				generatechangepass = currentpassword;					
@@ -36,22 +38,25 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 		}
 		if (!newpassword.equals("")) {
 			Reporter.log("Step 2 - Enter the Current Password as '"+newpassword+"'");
-			sendKeys(attributeName_xpath, CP_NewPass, newpassword);
+			String NewPassword = Runtimedataread(newpassword);
+			sendKeys(attributeName_xpath, CP_NewPass, NewPassword);
 		}
 		if (!confirmpassword.equals("")) {
 			Reporter.log("Step 3 - Enter the Current Password as '"+newpassword+"'");
-			sendKeys(attributeName_xpath, CP_ConfirmPass, confirmpassword);
-			if (!conpasswordlabel.equalsIgnoreCase("")) {
-				Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
-				if (!isElementPresent("//td[@class='BasePageFont']/font")) {
-					Runtimedatawrite(confirmpassword,conpasswordlabel);			
-				}
-			}
+			String ConfirmPassword = Runtimedataread(confirmpassword);
+			sendKeys(attributeName_xpath, CP_ConfirmPass, ConfirmPassword);
+//			if (!conpasswordlabel.equalsIgnoreCase("")) {
+//				Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+//				if (!isElementPresent("//td[@class='BasePageFont']/font")) {
+//					Runtimedatawrite(confirmpassword,conpasswordlabel);			
+//				}
+//			}
 		}
 		if (!update_goback.equals("")) {
 			Reporter.log("Step 4 - Click the Button as '"+update_goback+"' ");
 			if (update_goback.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CP_Goback);
+				waitForPageToLoad();
 			}else if (update_goback.equalsIgnoreCase("Update")) {
 				clickWebdriver(attributeName_xpath, CP_Update);
 			}

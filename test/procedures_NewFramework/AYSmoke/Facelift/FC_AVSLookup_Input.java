@@ -38,7 +38,6 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 //			selenium.getBodyText();
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Line1, addrline1);
 			type(AL_Line1,addrline1);
-			
 		}
 		if (!addrline2.equals("")) {
 			Reporter.log("Step 2 - Enter Line 2 as ("+addrline2+")");

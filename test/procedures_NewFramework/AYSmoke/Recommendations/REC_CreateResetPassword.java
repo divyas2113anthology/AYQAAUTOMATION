@@ -59,7 +59,8 @@ public class REC_CreateResetPassword extends CommonSeleniumActions implements OR
 		}
 		if (!password.equals("")) {
 			Reporter.log("Step 5 - Enter the Password as ["+password+"]");
-			sendKeys(attributeName_xpath, RL_Password, password);
+			String Password1 = Runtimedataread(password);
+			sendKeys(attributeName_xpath, RL_Password, Password1);
 			if (!passwordlabel.equals("")) {
 				Reporter.log("Step 6 - Proceed to Write Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 				String Password = getValueWebdriver(attributeName_xpath, RL_Password);
@@ -68,7 +69,8 @@ public class REC_CreateResetPassword extends CommonSeleniumActions implements OR
 		}
 		if (!confirmpassword.equals("")) {
 			Reporter.log("Step 7 - Enter the Confirm Password as ["+confirmpassword+"]");
-			sendKeys(attributeName_xpath, RL_ConfirmPass, confirmpassword);
+			String ConfirmPassword = Runtimedataread(confirmpassword);
+			sendKeys(attributeName_xpath, RL_ConfirmPass, ConfirmPassword);
 		}
 		if (!submit.equals("")) {
 			Reporter.log("Step 8 - Click the Submit Button");

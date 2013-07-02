@@ -34,6 +34,8 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
+				String errormessage1 = errormessage.replace(";", "\n");
+				verifyElementPresentWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage1);
 /*				if (errormessage.contains(";")) {
 //				String errormessage1 = errormessage.replace(";", "\n");
 				errormessage = errormessage.replace(";", "\n");
@@ -56,11 +58,11 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
                 // 'Multi-line' error message by splitting the 'Expected Error Message' by ';'
                 // It will also check whether the number of lines of the error message is same in both the expected and the
                 // actual                               
-                String elementLocator = PD_ErrorMsg;
-                String elementName = "System Message: Error Message";
-                String expectedText = errormessage;
-                String LineSeparator = "\n\n"; //multiple lines would be separated by two lines
-					verifyMultiLineMessage(elementLocator, elementName, expectedText, LineSeparator);
+//                String elementLocator = PD_ErrorMsg;
+//                String elementName = "System Message: Error Message";
+//                String expectedText = errormessage;
+//                String LineSeparator = "\n\n"; //multiple lines would be separated by two lines
+//					verifyMultiLineMessage(elementLocator, elementName, expectedText, LineSeparator);
 				}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

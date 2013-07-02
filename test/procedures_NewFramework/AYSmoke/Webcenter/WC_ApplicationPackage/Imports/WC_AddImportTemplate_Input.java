@@ -1,5 +1,10 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -25,14 +30,17 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			String lock = testdata[8];
 			String click = testdata[9];
 			Reporter.log("Input Test Data was retrieved for 'Add Import Template' Page");
-//			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
+			Date date = new Date();  
+			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+			String ImportName = importname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!importname.equals("")) {
-				Reporter.log("Step 1 - Enter the Import as ["+importname+"]");
-				sendKeys(attributeName_name, "txtName", importname);
+				Reporter.log("Step 1 - Enter the Import as ["+ImportName+"]");
+				sendKeys(attributeName_name, "txtName", ImportName);
 			}
+			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();
 			if (!description.equals("")) {
-				Reporter.log("Step 2 - Enter the Description as ["+description+"]");
-				sendKeys(attributeName_name, "txtDescription", description);
+				Reporter.log("Step 2 - Enter the Description as ["+Description+"]");
+				sendKeys(attributeName_name, "txtDescription", Description);
 			}
 			if (!folder.equals("")) {
 				Reporter.log("Step 3 - Select the Folder Type as ["+folder+"]");

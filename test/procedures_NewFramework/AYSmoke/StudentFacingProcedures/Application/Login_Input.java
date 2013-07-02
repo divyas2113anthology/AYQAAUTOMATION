@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -50,10 +52,16 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!forgotpin.equals("")) {
 			Reporter.log("Step 4 - Click on 'Forgot your PIN or Password?' Button");
-			if (forgotpin.equalsIgnoreCase("Forgot your PIN or Password?")) {
-				clickWebdriver(attributeName_xpath,ForgotPINPassword);
-//				recentPopupSelectWebdriver("Forgot/Reset Password");
-			}			
+//			environment = Runtimedataread("Instance");
+//			if (forgotpin.equalsIgnoreCase("Forgot your PIN or Password?")) {
+//				if (environment.equals("USQA")) {
+					clickWebdriver(attributeName_xpath,ForgotPINPassword);
+					waitForPageToLoad();
+//				}else if (environment.equals("USPR")) {
+//					clickWebdriver(attributeName_xpath,ForgotPINPassword);
+//					recentPopupSelectWebdriver("Forgot/Reset Password");
+//				}
+//			}			
 		}
 		if (!createaccount.equals("")) {
 			Reporter.log("Step 5 - Click on 'Create Account' button");

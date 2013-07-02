@@ -76,6 +76,7 @@ public class Processor {
 	    public static String[] ordercontainer;
 	    public static String[] statuscontainer;
 	    public static ArrayList<String> Summarydetails = new ArrayList<String>();
+	    public static String browser;
 
 		
 ////		@Parameters({"csvfile"})
@@ -197,9 +198,9 @@ public class Processor {
 			try {
 				
 			
-			String browser = Runtimedataread("Browser");
+			browser = Runtimedataread("Browser").toLowerCase().trim();
 //			String browsername = null;
-			switch(browser.toLowerCase().trim()){
+			switch(browser){
 			case "internetexplorer":
 				File file = new File("C:/Selenium/IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
@@ -214,9 +215,12 @@ public class Processor {
 				driver = new InternetExplorerDriver();
 				break;
 			case "firefox":		
-				File profileDir = new File("C:\\Profile");
-				FirefoxProfile profile = new FirefoxProfile(profileDir);
-				driver = new FirefoxDriver(profile);
+//				File file = new File("C:\\FF");
+//				FirefoxProfile profile = new FirefoxProfile(file);
+//				driver= new FirefoxDriver(profile);
+//				File profileDir = new File("C:\\FF");
+//				FirefoxProfile profile = new FirefoxProfile(profileDir);
+				driver = new FirefoxDriver();
 				break;
 			case "googlechrome":
 				driver = new ChromeDriver();

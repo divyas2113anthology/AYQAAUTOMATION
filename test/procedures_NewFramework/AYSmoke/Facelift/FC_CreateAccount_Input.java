@@ -77,20 +77,22 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				}
 				
 				if (!password.equals("")) {			
-					Reporter.log("Step 8 - Enter 'Password' as ("+password+")");	
-					type(CA_Password, password);
+					Reporter.log("Step 7 - Enter 'Password' as ("+password+")");	
+					String Password = Runtimedataread(password);
+					type(CA_Password, Password);
 				}		
 				
 				if (!confirmpassword.equals("")) {
-					Reporter.log("Step 9 - Enter 'Confirm Password' as ("+confirmpassword+")");	
-					type(CA_ConfirmPassword, confirmpassword);			
-					if (!confirmyes.equalsIgnoreCase("")) {
-						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
-						Runtimedatawrite(confirmpassword,confirmyes);			
-					}
+					Reporter.log("Step 8 - Enter 'Confirm Password' as ("+confirmpassword+")");	
+					String ConfirmPassword = Runtimedataread(confirmpassword);
+					type(CA_ConfirmPassword, ConfirmPassword);			
+//					if (!confirmyes.equalsIgnoreCase("")) {
+//						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+//						Runtimedatawrite(confirmpassword,confirmyes);			
+//					}
 				}	
 				if (!pin.equals("")) {
-					Reporter.log("Step 10  - Proceed to Get 'PIN' number");
+					Reporter.log("Step 9  - Proceed to Get 'PIN' number");
 					waitForElementPresentWebdriver(attributeName_xpath, CA_LoginBtn, "Login");
 					String Pin = getText(FC_PinNumber);
 					System.out.println("Pin : "+Pin);
@@ -110,12 +112,12 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				
 				if (!button_to_click.equals("")) {
 					if (button_to_click.equalsIgnoreCase("create account")) {
-						Reporter.log("Step 11 - Click on 'Create Account' button");
+						Reporter.log("Step 10 - Click on 'Create Account' button");
 						click(CA_CreateAccountBtn);	
 						waitForElementPresent(CA_LoginBtn, "Login button");
 //						waitForPageToLoad();	
 					} else if (button_to_click.equalsIgnoreCase("Login")) {
-						Reporter.log("Step 11 - Click on 'Login' button if found");
+						Reporter.log("Step 10 - Click on 'Login' button if found");
 						waitForElementPresent(CA_LoginBtn, "Login button");
 						click(CA_LoginBtn);
 						waitForElementPresent(TOU_pageTitle, "Terms Of Use");			

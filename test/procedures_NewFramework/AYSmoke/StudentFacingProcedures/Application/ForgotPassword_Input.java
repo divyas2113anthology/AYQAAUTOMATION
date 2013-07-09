@@ -46,12 +46,12 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 //					environment = Runtimedataread("Instance");
 //					if (environment.equals("USQA")) {
 						clickWebdriver(attributeName_xpath,countinuebtn);
-//						waitForElementPresentWebdriver(attributeName_xpath, Login, "Login Page");
+						waitForElementPresentWebdriver(attributeName_linktext, "Logout", "Login Page");
 //					}else if (environment.equals("USPR")) {
 //						clickWebdriver(attributeName_xpath,countinuebtn);
 //						selectMainWindowWebdriver();
 //					}	
-					waitForElementPresentWebdriver(attributeName_xpath, Login, "Login Page");
+//					waitForElementPresentWebdriver(attributeName_xpath, Login, "Login Page");
 //					waitForPageToLoad();
 //					selectMainWindow();
 //					selectMainWindowWebdriver();

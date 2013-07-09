@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -48,13 +50,25 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			}
 			if (!inprocessstatuspublishdate.equals("")) {
 				Reporter.log("Step 3 - Select the Inprocess status Publish Date as ["+inprocessstatuspublishdate+"]");
+				environment = Runtimedataread("Instance");
+				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+					String publishdate = requiredDateAndFormat("dd/MM/yyyy", inprocessstatuspublishdate);
+					sendKeys(attributeName_xpath, AS_InprocessStatusDate, publishdate);
+				}else{
 				String publishdate = requiredDateAndFormat("MM/dd/yyyy", inprocessstatuspublishdate);
 				sendKeys(attributeName_xpath, AS_InprocessStatusDate, publishdate);
+				}
 			}
 			if (!statuspublishdate.equals("")) {
 				Reporter.log("Step 4 - Select the Inprocess status as ["+statuspublishdate+"]");
+				environment = Runtimedataread("Instance");
+				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+					String StatusPublishdate = requiredDateAndFormat("dd/MM/yyyy", statuspublishdate);
+					sendKeys(attributeName_xpath, AS_StatusPublishDate, StatusPublishdate);
+				}else{
 				String StatusPublishdate = requiredDateAndFormat("MM/dd/yyyy", statuspublishdate);
 				sendKeys(attributeName_xpath, AS_StatusPublishDate, StatusPublishdate);
+				}
 			}
 			if (!decision.equals("")) {
 				Reporter.log("Step 5 - Select the Decision as ["+decision+"]");
@@ -67,18 +81,36 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			}
 			if (!decisiondate.equals("")) {
 				Reporter.log("Step 7 - Enter the Decision Date as ["+decisiondate+"]");
+				environment = Runtimedataread("Instance");
+				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+					String DecisionDate = requiredDateAndFormat("dd/MM/yyyy", decisiondate);
+					sendKeys(attributeName_xpath, AS_DecisionDate, DecisionDate);
+				}else{
 				String DecisionDate = requiredDateAndFormat("MM/dd/yyyy", decisiondate);
 				sendKeys(attributeName_xpath, AS_DecisionDate, DecisionDate);
+				}
 			}
 			if (!decisionpublishdate.equals("")) {
 				Reporter.log("Step 8 - Enter the Decision Publish Date as ["+decisionpublishdate+"]");
-				String DecisionPublishDate = requiredDateAndFormat("MM/dd/yyyy", decisionpublishdate);
-				sendKeys(attributeName_xpath, AS_DecisionPublishDate, DecisionPublishDate);
+				environment = Runtimedataread("Instance");
+				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+					String DecisionPublishDate = requiredDateAndFormat("dd/MM/yyyy", decisionpublishdate);
+					sendKeys(attributeName_xpath, AS_DecisionPublishDate, DecisionPublishDate);
+				}else{
+					String DecisionPublishDate = requiredDateAndFormat("MM/dd/yyyy", decisionpublishdate);
+					sendKeys(attributeName_xpath, AS_DecisionPublishDate, DecisionPublishDate);
+				}
 			}
 			if (!enrollmentdeadlinedate.equals("")) {
 				Reporter.log("Step 9 - Enter the Enrollment Dead Line Date as ["+enrollmentdeadlinedate+"]");
-				String EnrollmentDeadlineDate = requiredDateAndFormat("MM/dd/yyyy", enrollmentdeadlinedate);
-				sendKeys(attributeName_xpath, AS_EnrolmentDeadLineDate, EnrollmentDeadlineDate);
+				environment = Runtimedataread("Instance");
+				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+					String EnrollmentDeadlineDate = requiredDateAndFormat("dd/MM/yyyy", enrollmentdeadlinedate);
+					sendKeys(attributeName_xpath, AS_EnrolmentDeadLineDate, EnrollmentDeadlineDate);
+				}else{
+					String EnrollmentDeadlineDate = requiredDateAndFormat("MM/dd/yyyy", enrollmentdeadlinedate);
+					sendKeys(attributeName_xpath, AS_EnrolmentDeadLineDate, EnrollmentDeadlineDate);
+				}
 			}
 			if (!viewfullapplication.equals("")) {
 				Reporter.log("Step 10 - Click the View Full Application as ["+viewfullapplication+"]");

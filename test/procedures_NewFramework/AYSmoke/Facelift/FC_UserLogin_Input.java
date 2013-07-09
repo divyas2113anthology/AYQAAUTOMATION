@@ -48,7 +48,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			if (forgotpin.equalsIgnoreCase("Forgot your PIN or Password?")) {
 				waitForElementPresentWebdriver(attributeName_xpath, UL_ForgotPINPassword, forgotpin);
 				clickWebdriver(attributeName_xpath,UL_ForgotPINPassword);
-				waitForElementPresentWebdriver(attributeName_xpath, FPI_Search, "Forgot Password Search Button");
+//				waitForElementPresentWebdriver(attributeName_xpath, FPI_Search, "Forgot Password Search Button");
 //				recentPopupSelect("Forgot/Reset Password");
 			}			
 		}

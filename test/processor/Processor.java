@@ -218,9 +218,9 @@ public class Processor {
 //				File file = new File("C:\\FF");
 //				FirefoxProfile profile = new FirefoxProfile(file);
 //				driver= new FirefoxDriver(profile);
-//				File profileDir = new File("C:\\FF");
-//				FirefoxProfile profile = new FirefoxProfile(profileDir);
-				driver = new FirefoxDriver();
+				File profileDir = new File("C:\\FF");
+				FirefoxProfile profile = new FirefoxProfile(profileDir);
+				driver = new FirefoxDriver(profile);
 				break;
 			case "googlechrome":
 				driver = new ChromeDriver();
@@ -605,9 +605,5 @@ public class Processor {
 				} catch (Exception e) {
 					System.out.println("Writing CSV Write Exeception :"+ e.getMessage());
 				}
-  		
-
 	    }
- 
-    
 }

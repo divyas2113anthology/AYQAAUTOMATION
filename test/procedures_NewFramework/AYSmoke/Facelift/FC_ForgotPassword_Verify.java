@@ -25,7 +25,6 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 			if (!ui.equals("")) {
 
 			}
-
 			if (!page_title.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+page_title+") page");
 				waitForElementPresent(FPV_PageName, page_title);

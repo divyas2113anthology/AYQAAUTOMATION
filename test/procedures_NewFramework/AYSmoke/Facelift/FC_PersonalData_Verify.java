@@ -28,11 +28,13 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementText(PSD_PageName, pagename, "Page Name");
+//				verifyElementText(PSD_PageName, pagename, "Page Name");
+				waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath, PSD_PageName, pagename, "Page Name");
 			}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+successmessage+") was displayed correctly");
-				verifyElementText(PSD_SuccessMsg, successmessage, "Sucesses Message");
+//				verifyElementText(PSD_SuccessMsg, successmessage, "Sucesses Message");
+				waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath,PSD_SuccessMsg, successmessage, "Sucesses Message");
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");

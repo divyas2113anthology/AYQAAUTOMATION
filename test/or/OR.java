@@ -466,7 +466,7 @@ public static final String FS_FullName = "css=#eSignName";
 public static final String FS_Date = "css=#esignDate";
 public static final String AW_SubmitAppBtn = "css=#ay-recSubmit";
 public static final String AW_PrintPreviewBtn = "//a[contains(text(),'Preview Application in PDF Format')]";
-public static final String AW_PrintPreviewPdfBtn = "//a[contains(text(),'Preview Application')]";
+public static final String AW_PrintPreviewPdfBtn = "//*[contains(@href,'windowOpen()')]";
 //#**********************************************************#
 //# Facelift Personal Data Input
 //#**********************************************************#

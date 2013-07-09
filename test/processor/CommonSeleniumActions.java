@@ -632,11 +632,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
 		if (isElementPresent(element)) {
 			String actualtext = getText(element);
-//			System.out.println("Actual Text: "+actualtext);
-//			System.out.println("Actual Text: "+expectedtext);
+			System.out.println("Actual Text: "+actualtext);
+			System.out.println("Expected Text: "+expectedtext);
 			if (expectedtext.equals(actualtext.trim())) {
 //				if (expectedtext.equals(actualtext)) {
 				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
+				writeConsole("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
 			} else {
 				writeFailure("Element["+elementname+"] with Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
 			}

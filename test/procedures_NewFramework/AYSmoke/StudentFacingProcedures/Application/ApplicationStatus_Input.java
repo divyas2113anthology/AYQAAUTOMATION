@@ -25,8 +25,8 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 			if (!stapriviewappl.equals("")) {
 				Reporter.log("Step 1 - Click on ("+stapriviewappl+") Link");
 //				click(AS_PreviewApp);
-				waitForElementPresentWebdriver(attributeName_xpath, AS_PreviewApp, "Print Preview Button");
-				clickWebdriver(attributeName_xpath,AS_PreviewApp);
+				waitForElementPresentWebdriver(attributeName_xpath, AW_PrintPreviewPdfBtn, "Print Preview Button");
+				clickWebdriver(attributeName_xpath, AW_PrintPreviewPdfBtn);
 //				SelectPrintWindow("PrintApplication");
 				recentPopupSelectWebdriver("Print Pdf");
 			}		

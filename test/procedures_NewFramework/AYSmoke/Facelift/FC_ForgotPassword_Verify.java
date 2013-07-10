@@ -27,14 +27,15 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 			}
 			if (!page_title.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+page_title+") page");
-				waitForElementPresent(FPV_PageName, page_title);
+				waitForElementPresentWebdriver(attributeName_xpath, FPV_PageName, page_title);
 //				verifyText(FPV_PageName, "Forgot UserName/Password.", "Popup Title");
-				verifyElementText(FPV_PageName, page_title, "Popup Title");
+				verifyElementTextWebdriver(attributeName_xpath, FPV_PageName, page_title, "Popup Title");
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
 				errormessage = errormessage.replace(";", "\n");
-				verifyElementText(FPV_ErrorMsg, errormessage, "System Message:");
+				waitForElementPresentWebdriver(attributeName_xpath, FPV_ErrorMsg, errormessage);
+				verifyElementTextWebdriver(attributeName_xpath, FPV_ErrorMsg, errormessage, "System Message:");
 				}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 4 - Verify Success Message:("+successmessage+") was displayed correctly");
@@ -46,8 +47,8 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 					}
 				}
 				messagecontains = successmessage;
-				waitForElementPresent(FPV_SuccessMsg, messagecontains);
-				verifyElementText(FPV_SuccessMsg, messagecontains, "Forgot Password Reset Message");
+				waitForElementPresentWebdriver(attributeName_xpath, FPV_SuccessMsg, messagecontains);
+				verifyElementTextWebdriver(attributeName_xpath, FPV_SuccessMsg, messagecontains, "Forgot Password Reset Message");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

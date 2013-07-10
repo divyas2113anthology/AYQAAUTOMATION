@@ -28,6 +28,8 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 				generatechangepass = Runtimedataread(currentpassword);				
 			}else if (currentpassword.equalsIgnoreCase("ApplicationChangePassword")) {
 				generatechangepass = Runtimedataread(currentpassword);				
+			} else if (currentpassword.equalsIgnoreCase("Recommender Password")) {
+				generatechangepass = Runtimedataread(currentpassword);				
 			} else {
 				generatechangepass = currentpassword;					
 			}

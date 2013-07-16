@@ -1116,6 +1116,13 @@ public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 public static final String AIT_CRLF = "//input[@value='crLf']";
 public static final String AIT_LF = "//input[@value='Lf']";
 public static final String FS_SubmitApp = "//a[contains(@href,'ApplicationSubmit')]";
+//#**********************************************************#
+//#	 Webcenter - Invite Event - Page
+//#**********************************************************#
+public static final String IE_EventLookup = "//input[@value='Event Lookup']";
+public static final String IE_TemplateSelect = "TemplateList";
+public static final String IE_InviteBtn = "//img[contains(@src,'admin_invite_small')]";
+public static final String IE_BackBtn = "//img[contains(@src,'admin_back_small')]";
 
 }
 

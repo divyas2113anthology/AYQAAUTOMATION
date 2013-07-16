@@ -19,6 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.SimpleFormatter;
 import java.lang.IllegalArgumentException;
 
@@ -55,6 +56,7 @@ import org.openqa.selenium.internal.Locatable;
 public class CommonSeleniumActions extends Processor implements OR {	
 	public static String mainwindow;
 	public static int timeOutInSeconds = 60;
+	
 	
 	public void open(String url){
 		writeConsole("Open ["+url+"]");
@@ -4293,6 +4295,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 					} else {
 						writeFailure("Page With Actual Title - ["+actualpagetile+"] did not Match Expected Title - ["+expectedpagetitle+"]");
 					}
+				}
+				public void waitForPageToLoadWebdriver() {
+				     writeConsole("Webdriver pageLoadTimeout 30 Second");
+				     driver.manage().timeouts().pageLoadTimeout(STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER, TimeUnit.SECONDS);
 				}
 				
 //				******************************End of Selenium Webdriver*******************************************************

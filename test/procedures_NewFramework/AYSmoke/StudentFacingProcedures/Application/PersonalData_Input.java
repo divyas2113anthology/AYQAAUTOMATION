@@ -112,12 +112,12 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdcountry.equals("")) {
 			Reporter.log("Step 13 - Select Country as ("+pdcountry+")");
 			String Countrypd = getElementIDbyLabel("Country",PD_Country);				
-			environment = Runtimedataread("Instance");
-			if (pdcountry.contains("United States")) {
-				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
-					pdcountry = pdcountry.replace("United States", "USA");
-				}
-			}
+//			environment = Runtimedataread("Instance");
+//			if (pdcountry.contains("United States")) {
+//				if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+//					pdcountry = pdcountry.replace("United States", "USA");
+//				}
+//			}
 			select(Countrypd,pdcountry);
 		}
 		if (!pdstate.equals("")) {

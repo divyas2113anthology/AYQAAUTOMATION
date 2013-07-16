@@ -251,34 +251,36 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				if (GetURL.contains("Submit your letter of Recommendation System at:")) {
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'rec')]");
 					recentPopupSelectWebdriver("Create/Reset Password");
-				}else if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
-					String[] SplitGetURL1 = GetURL.split("https://");
-					System.out.println("Get Url 1: "+SplitGetURL1[0]);
-					System.out.println("Get Url 2: "+SplitGetURL1[1]);
-					String[] SplitGetURL2 = SplitGetURL1[1].split("Your Personal Access Code");
-					String GetOpenURL = SplitGetURL2[0].trim();
-					System.out.println("Get Url 3: "+GetOpenURL);
-					String OpenURL = "https://"+GetOpenURL;
-					System.out.println("Get Url 4: "+OpenURL);
-					if (OpenURL.contains("uat")) {
-						if (environment.equalsIgnoreCase("USPR")) {
-							String[] spliturl =OpenURL.split("uat");
-							urlmodify = spliturl[0]+spliturl[1];
-							System.out.println("Get Url 5: "+urlmodify);
-						}
-					}else if (!OpenURL.contains("uat")) {
-						if (environment.equals("USQA")) {
-//							String[] spliturl =OpenURL.split("https://");
-							urlmodify = "https://uat"+OpenURL.substring(8, OpenURL.length()-1);
-							System.out.println("Get Url 6: "+urlmodify);
-						}
-					}
-					urlmodify= OpenURL;
-					System.out.println("Get Url 7: "+urlmodify);
-					selenium.openWindow(urlmodify, "Recommendation Page");
-//					clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+urlcontainslink+"')]");
-					recentPopupSelectWebdriver("Create/Reset Password");
-				}else{
+				}
+//				else if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+//					String[] SplitGetURL1 = GetURL.split("https://");
+//					System.out.println("Get Url 1: "+SplitGetURL1[0]);
+//					System.out.println("Get Url 2: "+SplitGetURL1[1]);
+//					String[] SplitGetURL2 = SplitGetURL1[1].split("Your Personal Access Code");
+//					String GetOpenURL = SplitGetURL2[0].trim();
+//					System.out.println("Get Url 3: "+GetOpenURL);
+//					String OpenURL = "https://"+GetOpenURL;
+//					System.out.println("Get Url 4: "+OpenURL);
+//					if (OpenURL.contains("uat")) {
+//						if (environment.equalsIgnoreCase("USPR")) {
+//							String[] spliturl =OpenURL.split("uat");
+//							urlmodify = spliturl[0]+spliturl[1];
+//							System.out.println("Get Url 5: "+urlmodify);
+//						}
+//					}else if (!OpenURL.contains("uat")) {
+//						if (environment.equals("USQA")) {
+////							String[] spliturl =OpenURL.split("https://");
+//							urlmodify = "https://uat"+OpenURL.substring(8, OpenURL.length()-1);
+//							System.out.println("Get Url 6: "+urlmodify);
+//						}
+//					}
+//					urlmodify= OpenURL;
+//					System.out.println("Get Url 7: "+urlmodify);
+//					selenium.openWindow(urlmodify, "Recommendation Page");
+////					clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+urlcontainslink+"')]");
+//					recentPopupSelectWebdriver("Create/Reset Password");
+//				}
+				else{
 				String[] SplitGetURL1 = GetURL.split("https://");
 				System.out.println("Get Url 1: "+SplitGetURL1[0]);
 				System.out.println("Get Url 2: "+SplitGetURL1[1]);

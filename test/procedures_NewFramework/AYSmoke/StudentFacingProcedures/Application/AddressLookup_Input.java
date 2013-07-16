@@ -29,37 +29,38 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 		Reporter.log("Input Test Data was retrieved for 'Address Lookup' page");
 		if (!addrline1.equals("")) {
 			Reporter.log("Step 1 - Enter Line 1 as ("+addrline1+")");
-			type(AL_Line1,addrline1);
+			waitForElementPresentWebdriver(attributeName_xpath, AL_Line1,addrline1);
+			sendKeys(attributeName_xpath, AL_Line1,addrline1);
 		}
 		if (!addrline2.equals("")) {
 			Reporter.log("Step 2 - Enter Line 2 as ("+addrline2+")");
-			type(AL_Line2,addrline2);
+			sendKeys(attributeName_xpath, AL_Line2,addrline2);
 		}
 		if (!addrline3.equals("")) {
 			Reporter.log("Step 3 - Enter Line 3 as ("+addrline3+")");
-			type(AL_Line3,addrline3);
+			sendKeys(attributeName_xpath, AL_Line3,addrline3);
 		}
 		if (!addrcitytown.equals("")) {
 			Reporter.log("Step 4 - Enter City/Town as ("+addrcitytown+")");
-			type(AL_Town, addrcitytown);			
+			sendKeys(attributeName_xpath, AL_Town, addrcitytown);			
 		}
 		if (!addrstateprovince.equals("")) {
 			Reporter.log("Step 5 - Select State/Province as ("+addrstateprovince+")");
-			select(AL_Province, addrstateprovince);
+			selectByVisibleTextWebdriver(attributeName_xpath, AL_Province, addrstateprovince);
 		}
 		if (!addrpostalcodezip.equals("")) {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");
-			type(AL_PostalCode, addrpostalcodezip);
+			sendKeys(attributeName_xpath, AL_PostalCode, addrpostalcodezip);
 		}
 		if (!addrcountry.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
-			select(AL_Country, addrcountry);
+			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);
 		}
 		if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
 //			if (addrsubmit.equalsIgnoreCase("Submit")) {
 				clickWebdriver(attributeName_xpath,AL_Submit);
-				waitForElementNotVisibleWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
+//				waitForElementNotVisibleWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
 //				waitForPageToLoad();
 //				click("//ul[@id='lstPickListItems']/li[1]/a[1]");
 //				Thread.sleep(2000);

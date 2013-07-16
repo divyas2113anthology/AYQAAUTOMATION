@@ -38,8 +38,9 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
-//				String errormessage1 = errormessage.replace(";", "\n");
-//				verifyElementText(PSD_ErrorMsg, errormessage1, "System Message:");
+				String errormessage1 = errormessage.replace(";", "\n");
+				waitForElementPresentWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1);
+				verifyElementTextWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1, "System Message:");
 				// The application would display more than one error message in mutlitple lines separated by two lines between them
                 // Below is an example of a 'multi-line error message':
                
@@ -56,21 +57,21 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
                 // 'Multi-line' error message by splitting the 'Expected Error Message' by ';'
                 // It will also check whether the number of lines of the error message is same in both the expected and the
                 // actual                               
-                String elementLocator = PSD_ErrorMsg;
-                String elementName = "System Message: Error Message";
-                String expectedText = errormessage;
-                String LineSeparator = "\n"; //multiple lines would be separated by two lines
-					//verifyMultiLineMessage(elementLocator, elementName, expectedText, LineSeparator);
-                String actualText = selenium.getText(elementLocator).replaceAll("\\n\\r","");
-                Reporter.log("Actual text found:");
-                Reporter.log(actualText);
-                Reporter.log("Expected text:");
-                Reporter.log(expectedText);
-                if (actualText.equals(expectedText)){
-                	Reporter.log("Expected text matches actual text");
-                } else {
-                	Reporter.log("Expected text does not match actual text");
-                }
+//                String elementLocator = PSD_ErrorMsg;
+//                String elementName = "System Message: Error Message";
+//                String expectedText = errormessage;
+//                String LineSeparator = "\n"; //multiple lines would be separated by two lines
+//					//verifyMultiLineMessage(elementLocator, elementName, expectedText, LineSeparator);
+//                String actualText = selenium.getText(elementLocator).replaceAll("\\n\\r","");
+//                Reporter.log("Actual text found:");
+//                Reporter.log(actualText);
+//                Reporter.log("Expected text:");
+//                Reporter.log(expectedText);
+//                if (actualText.equals(expectedText)){
+//                	Reporter.log("Expected text matches actual text");
+//                } else {
+//                	Reporter.log("Expected text does not match actual text");
+//                }
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

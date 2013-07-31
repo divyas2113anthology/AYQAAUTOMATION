@@ -38,9 +38,13 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
-				String errormessage1 = errormessage.replace(";", "\n");
-				waitForElementPresentWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1);
-				verifyElementTextWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1, "System Message:");
+//				String errormessage1 = errormessage.replace(";", "\n");
+				String[] errormessage1 = errormessage.split(";");
+				waitForElementPresentWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage);
+//				verifyElementTextWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1, "System Message:");
+				for (int i = 0; i < errormessage1.length; i++) {
+					verifyElementContainsTextWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1[i], "System Message:");
+				}
 				// The application would display more than one error message in mutlitple lines separated by two lines between them
                 // Below is an example of a 'multi-line error message':
                

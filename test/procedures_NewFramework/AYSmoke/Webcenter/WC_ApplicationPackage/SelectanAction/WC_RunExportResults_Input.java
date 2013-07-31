@@ -26,6 +26,7 @@ public class WC_RunExportResults_Input extends CommonSeleniumActions implements 
 			}
 			if (!linktoclick.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click the Export File Link");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]", "Export File Link");
 				clickWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]");
 			}
 		} catch (Exception e) {

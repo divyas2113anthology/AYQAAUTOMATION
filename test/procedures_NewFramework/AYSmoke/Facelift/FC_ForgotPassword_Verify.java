@@ -39,16 +39,16 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 				}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 4 - Verify Success Message:("+successmessage+") was displayed correctly");
-				String messagecontains = null;
-				environment = Runtimedataread("Instance");
-				if (successmessage.contains("email")) {
-					if (environment.equalsIgnoreCase("USPR")) {
-						messagecontains = successmessage.replace("email", "e-mail");
-					}
-				}
-				messagecontains = successmessage;
-				waitForElementPresentWebdriver(attributeName_xpath, FPV_SuccessMsg, messagecontains);
-				verifyElementTextWebdriver(attributeName_xpath, FPV_SuccessMsg, messagecontains, "Forgot Password Reset Message");
+//				String messagecontains = null;
+//				environment = Runtimedataread("Instance");
+//				if (successmessage.contains("email")) {
+//					if (environment.equalsIgnoreCase("USPR")) {
+//						messagecontains = successmessage.replace("email", "e-mail");
+//					}
+//				}
+//				messagecontains = successmessage;
+				waitForElementPresentWebdriver(attributeName_xpath, FPV_SuccessMsg, successmessage);
+				verifyElementTextWebdriver(attributeName_xpath, FPV_SuccessMsg, successmessage, "Forgot Password Reset Message");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

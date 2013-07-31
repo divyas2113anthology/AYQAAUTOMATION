@@ -34,8 +34,13 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
-				String errormessage1 = errormessage.replace(";", "\n");
-				verifyElementPresentWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage1);
+				String[] errormessage1 = errormessage.split(";");
+				waitForElementPresentWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage);
+				for (int i = 0; i < errormessage1.length; i++) {
+					verifyElementContainsTextWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage1[i], "System Message:");
+				}
+//				String errormessage1 = errormessage.replace(";", "\n");
+//				verifyElementPresentWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage1);
 /*				if (errormessage.contains(";")) {
 //				String errormessage1 = errormessage.replace(";", "\n");
 				errormessage = errormessage.replace(";", "\n");

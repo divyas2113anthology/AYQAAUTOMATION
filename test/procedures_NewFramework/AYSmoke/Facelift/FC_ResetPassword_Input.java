@@ -42,7 +42,8 @@ public class FC_ResetPassword_Input extends CommonSeleniumActions implements OR 
 				}else if (submit.equalsIgnoreCase("here")) {
 					waitForElementPresentWebdriver(attributeName_partiallinktext, submit, "Submit Button");
 					clickWebdriver(attributeName_partiallinktext, submit);
-					waitForElementPresentWebdriver(attributeName_linktext, "Log Out", "Logout Link");	
+					waitForPageToLoadWebdriver();
+//					waitForElementPresentWebdriver(attributeName_linktext, "Log Out", "Logout Link");	
 				}
 			}
 			

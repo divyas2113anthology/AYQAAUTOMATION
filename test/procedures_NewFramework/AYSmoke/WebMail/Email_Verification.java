@@ -195,9 +195,13 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				
 				if (!linkcontains.equals("")) {
 					Reporter.log("Step 14 - Click on Link Contains");
+					if (linkcontains.equalsIgnoreCase("Click here")) {
+						clickWebdriver(attributeName_partiallinktext, linkcontains);
+						recentPopupSelectWebdriver("Register Event");
+					}else{
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+linkcontains+"')]");
 					recentPopupSelectWebdriver("Create/Reset Password");
-					
+					}
 				}
 				if (!getlinkopen.equals("")) {
 					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");

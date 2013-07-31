@@ -972,9 +972,10 @@ public static final String AEE_NonRespondEmail = "//select[@name='selNonResponda
 public static final String AEE_ThankYouEmail = "//select[@name='selThankYouEmail']";
 public static final String AEE_DidNotAttenEmail = "//select[@name='selNotAttendEmail']";
 public static final String AEE_Group = "//select[@name='selGroup']";
-public static final String AEE_Save = "//img[contains(@src,'admin_save_small')]";
+public static final String AEE_Save = "//input[contains(@src,'admin_save_small')]";
 public static final String AEE_PubToProd = "//img[contains(@src,'publish_prod_large')]";
 public static final String AEE_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
+public static final String AEE_Classfication = "//input[@value='";
 //#**********************************************************#
 //# Webcenter Event Summary Page - ES
 //#**********************************************************#
@@ -1123,6 +1124,41 @@ public static final String IE_EventLookup = "//input[@value='Event Lookup']";
 public static final String IE_TemplateSelect = "TemplateList";
 public static final String IE_InviteBtn = "//img[contains(@src,'admin_invite_small')]";
 public static final String IE_BackBtn = "//img[contains(@src,'admin_back_small')]";
+public static final String IE_FilterLookup = "//input[@value='Filter Lookup']";
+public static final String IE_SelectTemplate = "//select[@name='TemplateList']";
+public static final String IE_Subject = "EmailSubject";
+//#**********************************************************#
+//#	 Webcenter - Event Lookup - Page
+//#**********************************************************#
+public static final String EL_InternalName = "InternalName";
+public static final String EL_Title = "Title";
+public static final String EL_Where = "Where";
+public static final String EL_When = "When";
+public static final String EL_EventCatagory = "EventCategory";
+public static final String EL_Host = "EventHost";
+public static final String EL_EventType = "EventType";
+public static final String EL_EventGroups = "GroupID";
+public static final String EL_SearchBtn = "//img[contains(@src,'search_small')]";
+public static final String EL_CloseWindowBtn = "//img[contains(@src,'close_window_large')]";
+public static final String EL_LinkToClick = "//a[contains(@href,'javascript:populateValues')]";
+//#**********************************************************#
+//#	 Webcenter - Add/Edit Registration Event  - Page
+//#**********************************************************#
+public static final String AER_FirstName = "//input[@id='q33686']";
+public static final String AER_LastName = "//input[@id='q33687']";
+public static final String AER_Birthdate = "//input[@id='q33688']";
+public static final String AER_Email = "//input[@id='q33689']";
+public static final String AER_Scode = "//input[@id='q33690']";
+public static final String AER_NotAttened = "//img[contains(@src,'will_not_attend')]";
+public static final String AER_Register = "//img[contains(@src,'register_large')]";
+public static final String AER_UpdateMyInformation = "//img[contains(@src,'update_my_information')]";
+public static final String AER_RegisterOrNotAttened = "//img[contains(@src,'register_large') or contains(@src,'register_large') or contains(@src,'update_my_information')]";
+//#**********************************************************#
+//#	 Webcenter - Add/Edit Group  - Page
+//#**********************************************************#
+public static final String AEG_GroupName = "GroupName";
+public static final String AEG_Description = "Description";
+public static final String AEG_Folder = "Group";
 
 }
 

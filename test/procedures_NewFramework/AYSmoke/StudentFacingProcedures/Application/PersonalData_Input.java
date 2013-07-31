@@ -94,7 +94,11 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdcellphone.equals("")) {
 			Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
 			String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);				
-			sendKeys(attributeName_xpath,Cellphonepd, pdcellphone);
+			if (pdcellphone.equalsIgnoreCase("Null")) {
+				attributeNameValue(attributeName_xpath, Cellphonepd).clear();
+			}else {
+				sendKeys(attributeName_xpath,Cellphonepd, pdcellphone);
+			}
 		}
 		if (!pdfulltimestudent.equals("")) {
 			Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");

@@ -35,9 +35,14 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 			}			
 			if (!eventtitleclick.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+eventtitleclick+"]");
+				if (eventtitleclick.equals("Event Title")) {
+					String Eventtitleclick = Runtimedataread(eventtitleclick);
+					clickWebdriver(attributeName_partiallinktext, Eventtitleclick);
+					recentPopupSelectWebdriver("EventRecurrence");
+				}else{
 				clickWebdriver(attributeName_partiallinktext, eventtitleclick);
 				recentPopupSelectWebdriver("EventRecurrence");
-				
+				}
 			}
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 4 - Select an action as ["+selectanaction+"]");

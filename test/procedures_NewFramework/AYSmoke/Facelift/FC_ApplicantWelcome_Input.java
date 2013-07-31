@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
 
 import org.openqa.selenium.Keys;
@@ -88,46 +89,46 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 			}
 			if (!selectpaymethod.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on Select Method ("+selectpaymethod+")");
-				if (selectpaymethod.equalsIgnoreCase("Check")) {
-					click(AW_CheckRadio);
-				}else if (selectpaymethod.equalsIgnoreCase("Fee Waiver")) {
-					click(AW_FeeWaiverRadio);
-				}else if (selectpaymethod.equalsIgnoreCase("Credit Card")) {
-					click(AW_CreditCardRadio);
-				}
+					if (selectpaymethod.equalsIgnoreCase("Check")) {
+						click(AW_CheckRadio);
+					}else if (selectpaymethod.equalsIgnoreCase("Fee Waiver")) {
+						click(AW_FeeWaiverRadio);
+					}else if (selectpaymethod.equalsIgnoreCase("Credit Card")) {
+						click(AW_CreditCardRadio);
+					}
 			}
 
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+button_to_click+") Button");
-				if (button_to_click.equalsIgnoreCase("Start Application")) {
-					click(AW_StartAppBtn);
-				}else if (button_to_click.equalsIgnoreCase("Messages")) {
-					click(AW_AppInstBtn);
-				}else if (button_to_click.equalsIgnoreCase("Profile")) {
-					click(AW_SubAppBtn);
-				}else if (button_to_click.equalsIgnoreCase("Continue")) {
-					click(AW_ContinueBtn);
-					waitForPageToLoad();
-				}else if (button_to_click.equalsIgnoreCase("Pay and Continue")) {
-//					clickchooseokgetconfirmationpagepload(AW_PayContinueBtn);
-					clickWebdriver(attributeName_xpath, AW_PayContinueBtn);
-//					alertAccept();
-					waitForPageToLoad();
-				}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
-					waitForElementPresent(AW_PrintPreviewBtn, "Pdf Button");
-					clickWebdriver(attributeName_xpath,AW_PrintPreviewBtn);
-//					SelectPrintWindow("PrintApplication");
-					recentPopupSelectWebdriver("Print Pdf");
-//					waitForUniqueNameWindow();
+					if (button_to_click.equalsIgnoreCase("Start Application")) {
+						click(AW_StartAppBtn);
+					}else if (button_to_click.equalsIgnoreCase("Messages")) {
+						click(AW_AppInstBtn);
+					}else if (button_to_click.equalsIgnoreCase("Profile")) {
+						click(AW_SubAppBtn);
+					}else if (button_to_click.equalsIgnoreCase("Continue")) {
+						click(AW_ContinueBtn);
+						waitForPageToLoad();
+					}else if (button_to_click.equalsIgnoreCase("Pay and Continue")) {
+//						clickchooseokgetconfirmationpagepload(AW_PayContinueBtn);
+						clickWebdriver(attributeName_xpath, AW_PayContinueBtn);
+//						alertAccept();
+						waitForPageToLoad();
+					}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
+						waitForElementPresent(AW_PrintPreviewBtn, "Pdf Button");
+						clickWebdriver(attributeName_xpath,AW_PrintPreviewBtn);
+//						SelectPrintWindow("PrintApplication");
+						recentPopupSelectWebdriver("Print Pdf");
+//						waitForUniqueNameWindow();
+					}
+					else if (button_to_click.equalsIgnoreCase("Preview Application")) {
+						waitForElementPresent(AW_PrintPreviewPdfBtn, "Pdf Button");
+						clickWebdriver(attributeName_xpath,AW_PrintPreviewPdfBtn);
+//						SelectPrintWindow("PrintApplication");
+						recentPopupSelectWebdriver("Print Pdf");
+//						waitForUniqueNameWindow();
+					}
 				}
-				else if (button_to_click.equalsIgnoreCase("Preview Application")) {
-					waitForElementPresent(AW_PrintPreviewPdfBtn, "Pdf Button");
-					clickWebdriver(attributeName_xpath,AW_PrintPreviewPdfBtn);
-//					SelectPrintWindow("PrintApplication");
-					recentPopupSelectWebdriver("Print Pdf");
-//					waitForUniqueNameWindow();
-				}
-			}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

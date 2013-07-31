@@ -23,7 +23,8 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
 				Reporter.log("Step 1 - Click the link as ["+weltopupdatelogout+"]");
-				
+				clickWebdriver(attributeName_partiallinktext, weltopupdatelogout);
+				waitForPageToLoadWebdriver();
 			}
 			if (!welpackage.equals("")) {
 				Reporter.log("Step 2 - Select the Name of the Package as ["+welpackage+"]");

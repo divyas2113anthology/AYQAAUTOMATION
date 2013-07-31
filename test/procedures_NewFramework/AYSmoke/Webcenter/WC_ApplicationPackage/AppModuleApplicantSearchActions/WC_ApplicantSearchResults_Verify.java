@@ -26,7 +26,7 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 //				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
 //				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
-				waitForText(successmessage, "Success Message");
+				waitForText(successmessage, successmessage);
 				verifyTextPresent(successmessage);
 			}
 			if (!pagename.equals("")) {

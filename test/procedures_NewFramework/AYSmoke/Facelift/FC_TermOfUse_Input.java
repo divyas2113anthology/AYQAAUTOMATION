@@ -21,7 +21,9 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 			if (!iagree.equals("")) {
 				Reporter.log("Proceed to  ("+iagree+") in the 'I agree' Checkbox");
 				if (iagree.equalsIgnoreCase("Check")) {
-					check(TOU_Iagree);
+					if (isElementPresentWebdriver(attributeName_cssselector, TOU_Iagree)) {
+						check(TOU_Iagree);
+					}
 				}else if (iagree.equalsIgnoreCase("Uncheck")) {
 					uncheck(TOU_Iagree);
 				}			
@@ -30,7 +32,9 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 			if (!privacy_policy.equals("")) {
 				Reporter.log("Proceed to check ("+privacy_policy+") in the 'Privacy Policy' Radio");
 				if (privacy_policy.equalsIgnoreCase("Check")) {
-					check(TOU_PrivacPolicy);
+					if (isElementPresentWebdriver(attributeName_cssselector, TOU_PrivacPolicy)) {
+						check(TOU_PrivacPolicy);
+					}
 				}else if (privacy_policy.equalsIgnoreCase("Uncheck")) {
 					uncheck(TOU_PrivacPolicy);
 				}
@@ -43,11 +47,13 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 			if (!button_to_click.equals("")) {
 				Reporter.log("Proceed to Click on ("+button_to_click+") button");
 				if (button_to_click.equalsIgnoreCase("Continue and Create")) {
+					if (isElementPresentWebdriver(attributeName_xpath, TOU_ContinuAndCreate)) {
 //					click(TOU_ContinuAndCreate);
 					clickWebdriver(attributeName_xpath, TOU_ContinuAndCreate);
 					waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "Dashboard Page Title");
 //					waitForPageToLoad();
 //					waitForConditionisElementPresent(DB_PageTitle, "5");
+					}
 				}			
 			}
 			

@@ -1866,6 +1866,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				}
 			}		
 			String data = "NotFound";
+			
 			int k;
 			int rowcount = getCssCount(tablename+">tbody>tr");
 			for (k = 1; k <= rowcount; k++) {					

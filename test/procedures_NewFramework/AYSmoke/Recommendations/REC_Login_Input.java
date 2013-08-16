@@ -28,7 +28,7 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 			} else {
 				generatepin = pac;					
 			}
-			Reporter.log("Proceed to Enter PAC as ("+pac+")");
+			Reporter.log("Proceed to Enter PAC as ("+generatepin+")");
 			sendKeys(attributeName_xpath, RL_PerAccessCode, generatepin);	
 //			String generatepin = Runtimedataread(pac);
 //			Reporter.log("Proceed to Enter PIN as ("+pac+")");
@@ -44,7 +44,7 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 			} else {
 				generatepassword = password;					
 			}
-			Reporter.log("Proceed to Enter Password as ("+password+")");		
+			Reporter.log("Proceed to Enter Password as ("+generatepassword+")");		
 			sendKeys(attributeName_xpath, RL_Password, generatepassword);
 		}
 		if (!login.equals("")) {

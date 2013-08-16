@@ -21,17 +21,34 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Webcenter Login' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!clientid.equals("")) {
-				Reporter.log("Step 1 - Enter Clients as ["+clientid+"]");
-				type(WCL_ClientID, clientid);				
+				if (clientid.equals("WebcenterClientID")) {
+					String ClientID = Runtimedataread(clientid);
+					Reporter.log("Step 1 - Enter Clients as ["+ClientID+"]");
+					sendKeys(attributeName_cssselector, WCL_ClientID, ClientID);
+				} else {
+					Reporter.log("Step 1 - Enter Clients as ["+clientid+"]");
+					sendKeys(attributeName_cssselector, WCL_ClientID, clientid);
+				}
 			}			
 			if (!userid.equals("")) {
-				Reporter.log("Step 2 - Enter User ID as ["+userid+"]");
-				type(WCL_UserID, userid);
+				if (userid.equals("WebcenterUserID")) {
+					String UserID = Runtimedataread(userid);
+					Reporter.log("Step 2 - Enter User ID as ["+UserID+"]");
+					sendKeys(attributeName_cssselector, WCL_UserID, UserID);
+				} else {
+					Reporter.log("Step 2 - Enter User ID as ["+userid+"]");
+					sendKeys(attributeName_cssselector, WCL_UserID, userid);
+				}
 			}			
 			if (!password.equals("")) {
-				String Password = Runtimedataread(password);
-				Reporter.log("Step 3 - Enter Password as ["+Password+"]");
-				type(WCL_Password, Password);
+				if (password.equals("WebcenterPassword")) {
+					String Password = Runtimedataread(password);
+					Reporter.log("Step 3 - Enter Password as ["+Password+"]");
+					sendKeys(attributeName_cssselector,WCL_Password, Password);
+				} else {
+					Reporter.log("Step 3 - Enter Password as ["+password+"]");
+					sendKeys(attributeName_cssselector,WCL_Password, password);
+				}
 			}			
 			if (!needpasswordgo.equals("")) {
 				Reporter.log("Step 4 - Click on ["+needpasswordgo+"] button or Link");

@@ -97,6 +97,7 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 			}else if (gobacksavenext.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_xpath, CI_SaveBtn);
 			}else if (gobacksavenext.equalsIgnoreCase("Next")) {
+				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, gobacksavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
 				waitForPageToLoad();
 			}

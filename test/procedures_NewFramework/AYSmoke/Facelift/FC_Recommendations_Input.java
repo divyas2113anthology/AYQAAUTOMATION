@@ -2,6 +2,8 @@ package procedures_NewFramework.AYSmoke.Facelift;
 
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.internal.selenesedriver.SwitchToFrame;
+import org.openqa.selenium.internal.seleniumemulation.SelectFrame;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -144,8 +146,10 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcaddproviderbtn.equals("")) {
 				Reporter.log("Step 22 - Click on ("+rcaddproviderbtn+") Button");
 //				click(RI_AddProvBtn);
-				clickWebdriverWithCoordinates(attributeName_cssselector, RI_AddProvBtn);
+				clickWebdriverWithCoordinates(attributeName_xpath, RI_AddProvBtnBottom);
+//				clickWebdriverWithCoordinates(attributeName_xpath, "//input[@value='Add Provider']");
 				waitForPageToLoad();
+				
 			}
 			if (!submitapplication.equals("")) {
 				Reporter.log("Step 23 - Click on ("+submitapplication+") Button");

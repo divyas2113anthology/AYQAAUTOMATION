@@ -81,12 +81,12 @@ public class WC_EventLookUp_Input extends CommonSeleniumActions implements OR {
 				selectByVisibleTextWebdriver(attributeName_name, EL_EventGroups, eventgroups);
 			}
 			if (!searchclose.equals("")) {
-				Reporter.log("Step 3 - Proceed to Click on ("+searchclose+") Button");
+				Reporter.log("Step 9 - Proceed to Click on ("+searchclose+") Button");
 				if (searchclose.equalsIgnoreCase("Search")) {
 					clickWebdriver(attributeName_xpath, EL_SearchBtn);
 					waitForPageToLoadWebdriver();
 					if (isElementPresentWebdriver(attributeName_xpath, EL_LinkToClick)) {
-						clickWebdriver(attributeName_partiallinktext, "Public Event");
+						clickWebdriver(attributeName_xpath, EL_LinkToClick);
 						selectMainWindowWebdriver();
 					}
 				}else if (searchclose.equalsIgnoreCase("Close Window")) {

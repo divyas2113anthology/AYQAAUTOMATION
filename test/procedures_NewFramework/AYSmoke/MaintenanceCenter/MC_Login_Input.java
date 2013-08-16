@@ -21,13 +21,24 @@ public class MC_Login_Input extends CommonSeleniumActions implements OR {
 			String btnlogin = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Maintenance center Login' Page");
 			if (!userid.equals("")) {
-				Reporter.log("Step 1 - Enter userid as ["+userid+"]");
-				type(MCL_UserID, userid);				
-			}
+				if (userid.equals("WebcenterUserID")) {
+					String UserID = Runtimedataread(userid);
+					Reporter.log("Step 2 - Enter User ID as ["+UserID+"]");
+					sendKeys(attributeName_cssselector, MCL_UserID, UserID);
+				} else {
+					Reporter.log("Step 2 - Enter User ID as ["+userid+"]");
+					sendKeys(attributeName_cssselector, MCL_UserID, userid);
+				}
+			}			
 			if (!password.equals("")) {
-				Reporter.log("Step 2 - Enter password as ["+password+"]");
-				String Password = Runtimedataread(password);
-				type(MCL_Password, Password);				
+				if (password.equals("WebcenterPassword")) {
+					String Password = Runtimedataread(password);
+					Reporter.log("Step 3 - Enter Password as ["+Password+"]");
+					sendKeys(attributeName_cssselector,MCL_Password, Password);
+				} else {
+					Reporter.log("Step 3 - Enter Password as ["+password+"]");
+					sendKeys(attributeName_cssselector,MCL_Password, password);
+				}
 			}
 			if (!btnlogin.equals("")) {
 				Reporter.log("Step 3 - Click the Login Button");

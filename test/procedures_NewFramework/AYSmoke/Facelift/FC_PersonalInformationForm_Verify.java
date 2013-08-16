@@ -46,7 +46,7 @@ public class FC_PersonalInformationForm_Verify extends CommonSeleniumActions	imp
 				Reporter.log("Step 3 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
 //				String addrwaitID = getElementIDbyLabel("Address Line1", PII_AddressLine1_wait);
 //				waitForConditionisElementPresent(addrwaitID, "60000");
-//				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, "Address Lookup");
+				waitForElementPresentWebdriver(attributeName_xpath, PII_AddressLine1, "Address Lookup");
 				String addrID1 = getElementIDbyLabel("Address Line1", PII_AddressLine1);			
 				String line1 = getValue(addrID1);
 				if (line1.equals(pivaddressline1)) {

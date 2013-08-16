@@ -114,6 +114,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 						clickWebdriver(attributeName_xpath, AW_PayContinueBtn);
 //						alertAccept();
 						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
 						waitForElementPresent(AW_PrintPreviewBtn, "Pdf Button");
 						clickWebdriver(attributeName_xpath,AW_PrintPreviewBtn);

@@ -7,6 +7,7 @@ Send("{DOWN}")
 Send("{ENTER}")
 WinWait("Enter name of file to save")
 WinActivate("Enter name of file to save")
+Sleep(1000)
 $filename = ControlGetText("Enter name of file to save", "", "[CLASS:Edit;INSTANCE:1]")
 ;ControlSetText("Enter name of file to save", "", "[CLASS:Edit;INSTANCE:1]", $CmdLine[1]&"\"&$filename)
 $location = $CmdLine[1]&"\"&$filename

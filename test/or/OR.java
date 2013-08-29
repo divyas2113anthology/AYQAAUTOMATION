@@ -1159,6 +1159,9 @@ public static final String AER_RegisterOrNotAttened = "//img[contains(@src,'regi
 public static final String AEG_GroupName = "GroupName";
 public static final String AEG_Description = "Description";
 public static final String AEG_Folder = "Group";
+public static final String CL_PrintBtn = "//img[contains(@src,'admin_print_small')]";
+public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]";
+public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 
 }
 

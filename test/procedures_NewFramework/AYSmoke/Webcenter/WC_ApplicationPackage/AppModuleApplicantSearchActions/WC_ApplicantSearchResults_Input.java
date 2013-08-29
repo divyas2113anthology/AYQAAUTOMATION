@@ -28,6 +28,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				if (checkagainstname.contains("check")) {
 					String CheckFrstLstName = checkagainstname.replace(";", ",");
 					String[] SplitFirstLastName = CheckFrstLstName.split(",");
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']", CheckFrstLstName);
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}else if (checkagainstname.contains("uncheck")) {
 					String CheckFrstLstName = checkagainstname.replace(";", ",");

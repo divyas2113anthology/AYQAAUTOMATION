@@ -24,8 +24,10 @@ public class WC_Package_AddEdit_Verify extends CommonSeleniumActions implements 
 			switchToFrameNameIdWebdriver("frmContent");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, "Not Present");
-				verifyTextPresent(message);
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
+				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
+//				waitForText(message, "Not Present");
+//				verifyTextPresent(message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

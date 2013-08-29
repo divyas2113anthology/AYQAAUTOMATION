@@ -49,10 +49,10 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath, HTML_PublishToProd);
 //					switchToDefaultContentWebdriver();
 					alertAccept();
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				} else if (publishproddev.equalsIgnoreCase("Publish To Dev")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}		
 			switchToDefaultContentWebdriver();

@@ -20,7 +20,8 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 		if (!tab_to_select.equals("")) {
 			Reporter.log("Step 1 - Select this Tab, '"+ tab_to_select +"'");
 			if (tab_to_select.equalsIgnoreCase("Create Account")) {
-				click(LI_CreateAccountSelect);
+//				click(LI_CreateAccountSelect);
+				clickWebdriver(attributeName_linktext, tab_to_select);
 				waitForElementPresentWebdriver(attributeName_cssselector, CA_FirstName, "First or Given Name");
 			}	else if (tab_to_select.equalsIgnoreCase("User Login")) {
 				Reporter.log("Select the Tab, '"+ tab_to_select +"'");

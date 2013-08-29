@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,6 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			String formlablemessage = fpvdatarepo[4];
 			String pagename = fpvdatarepo[5];
 			String verifyui = fpvdatarepo[6];
-
 			Reporter.log("Verify Test Data was retrieved for 'Search for Applicant' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
@@ -34,7 +34,6 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			if (!sysmsgheading.equals("")) {
 				Reporter.log("Step 2 - Verify Message Heading ("+sysmsgheading+") was displayed correctly");
 				verifyElementTextWebdriver(attributeName_xpath, SAV_FormHeading, sysmsgheading, "Error Message Heading");
-				
 			}
 			if (!systemmessage.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+systemmessage+") was displayed correctly");
@@ -45,9 +44,11 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 				verifyElementTextWebdriver(attributeName_xpath, SAV_FormLabel+formlable+"']/following-sibling::td", formlablemessage, "Error Message");
 			}
 			if (!pagename.equals("")) {
-				Reporter.log("Step 6 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
-				verifyElementTextWebdriver(attributeName_xpath, SAV_PageName, pagename, "Page Name for Search For Applicant");
+				Reporter.log("Step 5 - Verify its navigate to ("+pagename+") page");
+//				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
+//				verifyElementTextWebdriver(attributeName_xpath, SAV_PageName, pagename, "Page Name for Search For Applicant");
+				waitForText(pagename, "Search Results");
+				verifyTextPresent(pagename);
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");

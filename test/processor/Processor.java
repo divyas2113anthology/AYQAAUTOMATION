@@ -23,6 +23,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -224,6 +225,7 @@ public class Processor {
 				driver = new FirefoxDriver(profile);
 				break;
 			case "googlechrome":
+				System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver.exe");
 				driver = new ChromeDriver();
 				break;
 			case "safari":

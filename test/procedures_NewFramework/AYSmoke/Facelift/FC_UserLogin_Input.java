@@ -53,7 +53,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 //			}	
 			waitForElementPresentWebdriver(attributeName_partiallinktext, forgotpin, forgotpin);
 			clickWebdriver(attributeName_partiallinktext,forgotpin);
-			waitForPageToLoadWebdriver();
+//			waitForPageToLoadWebdriver();
 			waitForElementPresentWebdriver(attributeName_id, "ay-forgotSubmit", "Search Button");
 		}
 	

@@ -395,7 +395,7 @@ public static final String CA_BirthDate = "css=#aycreateDOB";
 public static final String CA_ZipCode = "css=#aycreatePC";
 public static final String CA_Password = "css=#aycreatePassword";
 public static final String CA_ConfirmPassword = "css=#aycreateConfirmPassword";
-public static final String CA_CreateAccountBtn = "css=#ay-createSubmit";
+public static final String CA_CreateAccountBtn = "ay-createSubmit";
 public static final String CA_LoginBtn = "//input[@id='ay-create-login']";
 //#**********************************************************#
 //# Facelift Create Account Input

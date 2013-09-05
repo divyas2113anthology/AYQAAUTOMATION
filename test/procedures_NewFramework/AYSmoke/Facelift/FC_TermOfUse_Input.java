@@ -22,10 +22,10 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Proceed to  ("+iagree+") in the 'I agree' Checkbox");
 				if (iagree.equalsIgnoreCase("Check")) {
 					if (isElementPresentWebdriver(attributeName_cssselector, TOU_Iagree)) {
-						check(TOU_Iagree);
+						checkWebdriver(attributeName_cssselector, TOU_Iagree);
 					}
 				}else if (iagree.equalsIgnoreCase("Uncheck")) {
-					uncheck(TOU_Iagree);
+					uncheckWebdriver(attributeName_cssselector, TOU_Iagree);
 				}			
 			}
 			
@@ -33,10 +33,10 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Proceed to check ("+privacy_policy+") in the 'Privacy Policy' Radio");
 				if (privacy_policy.equalsIgnoreCase("Check")) {
 					if (isElementPresentWebdriver(attributeName_cssselector, TOU_PrivacPolicy)) {
-						check(TOU_PrivacPolicy);
+						checkWebdriver(attributeName_cssselector,TOU_PrivacPolicy);
 					}
 				}else if (privacy_policy.equalsIgnoreCase("Uncheck")) {
-					uncheck(TOU_PrivacPolicy);
+					uncheckWebdriver(attributeName_cssselector,TOU_PrivacPolicy);
 				}
 //				if (privacy_policy.equalsIgnoreCase("Yes")) {
 //					check(TOU_PrivacPolicy_Yes);

@@ -1,9 +1,5 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.internal.selenesedriver.SwitchToFrame;
-import org.openqa.selenium.internal.seleniumemulation.SelectFrame;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 

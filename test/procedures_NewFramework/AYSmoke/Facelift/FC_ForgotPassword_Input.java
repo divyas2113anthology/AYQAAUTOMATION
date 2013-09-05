@@ -22,12 +22,14 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 			if (!pin.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
 				waitForElementPresentWebdriver(attributeName_cssselector, FPI_Pin, pin);
-				type(FPI_Pin,pin);
+//				type(FPI_Pin,pin);
+				sendKeys(attributeName_cssselector, FPI_Pin,pin);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+emailaddress+")");
 				waitForElementPresentWebdriver(attributeName_cssselector, FPI_EmailAddr, emailaddress);
-				type(FPI_EmailAddr, emailaddress);
+//				type(FPI_EmailAddr, emailaddress);
+				sendKeys(attributeName_cssselector, FPI_EmailAddr, emailaddress);
 			}
 			if (!fpsearch.equals("")) {
 				Reporter.log("Step 3 - Click on ("+fpsearch+") Button");

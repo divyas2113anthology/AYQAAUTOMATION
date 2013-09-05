@@ -15,7 +15,6 @@
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -39,9 +38,6 @@ Thumbs.db
 
 # Unnecessary framework files #
 ###############################
-/csv/
-/Results
-/bin
 .classpath
 .project
 

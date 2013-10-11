@@ -23,30 +23,31 @@ public class FC_Application2Welcome_Input extends CommonSeleniumActions implemen
 	//		selectMainWindow();
 			if (!button_to_click.equals("")) {
 				if (button_to_click.equalsIgnoreCase("Start Application")) {
-					click(AW_StartAppBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_cssselector, AW_StartAppBtn);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Messages")) {
-					click(AW_AppInstBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_AppInstBtn);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Profile")) {
-					click(AW_SubAppBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_cssselector,AW_SubAppBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 			
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+link_to_click+") Link");
 				if (link_to_click.equalsIgnoreCase("Application2")) {
-					click(AW_App2Lnk);
-					waitForPageToLoad();
+					waitForElementPresentWebdriver(attributeName_xpath,AW_App2Lnk, link_to_click);
+					clickWebdriver(attributeName_xpath,AW_App2Lnk);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Virginia")) {
 //					waitForElement(AW_VirginiaLnk, "Virginia Link");
-					click(AW_VirginiaLnk);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_VirginiaLnk);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Fa1rfax")) {
 //					waitForElement(AW_Fa1rfaxLnk, "Fa1rfax Link");
-					click(AW_Fa1rfaxLnk);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_Fa1rfaxLnk);
+					waitForPageToLoadWebdriver();
 				}
 			}
 	

@@ -65,16 +65,13 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
-//			if (addrsubmit.equalsIgnoreCase("Submit")) {
-//				click(AL_Submit);
-				clickWebdriver(attributeName_xpath, AL_Submit);
-				writeConsole("Submit");
-//				waitForPageToLoad();
-//				Thread.sleep(2000);
-				if (isElementPresent(AL_AddressLink)) {
-					click(AL_AddressLink);
-				}
-//			}
+			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);
+			clickWebdriver(attributeName_xpath, AL_Submit);
+			writeConsole("Submit");
+//			waitForPageToLoadWebdriver();
+			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+				clickWebdriver(attributeName_xpath, AL_AddressLink);
+			}
 		}
 		selectMainWindowWebdriver();				
 		

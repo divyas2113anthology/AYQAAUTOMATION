@@ -25,7 +25,7 @@ public class EnrollmentSubmissionComplete_Input extends CommonSeleniumActions im
 				String printclose = accprofileidatarepo[0];
 				Reporter.log("Input Test Data was retrieved for 'Enrollment Submission Complete' page");
 				if (!printclose.equals("")) {
-					Reporter.log("Step 2 - Click on '"+printclose+"' button");
+					Reporter.log("Step 1 - Click on '"+printclose+"' button");
 					if (printclose.equalsIgnoreCase("Print")) {
 						clickWebdriver(attributeName_xpath, EFP_PrintBtn);
 						waitForPageToLoad();	
@@ -33,6 +33,10 @@ public class EnrollmentSubmissionComplete_Input extends CommonSeleniumActions im
 						clickWebdriver(attributeName_xpath, EFP_CloseWindowBtn);
 //						waitForPageToLoad();
 						selectMainWindowWebdriver();
+					}else if (printclose.equalsIgnoreCase("Close")) {
+						closeWindowWebdriver();
+//						waitForPageToLoad();
+//						selectMainWindowWebdriver();
 					}
 				}
 				

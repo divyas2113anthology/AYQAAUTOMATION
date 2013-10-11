@@ -19,7 +19,7 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 			String button_to_click = eulaidatarepo[2];
 			Reporter.log("Input Test Data was retrieved for 'Term of Use' page");
 			if (!iagree.equals("")) {
-				Reporter.log("Proceed to  ("+iagree+") in the 'I agree' Checkbox");
+				Reporter.log("Step 1 - Proceed to  ("+iagree+") in the 'I agree' Checkbox");
 				if (iagree.equalsIgnoreCase("Check")) {
 					if (isElementPresentWebdriver(attributeName_cssselector, TOU_Iagree)) {
 						checkWebdriver(attributeName_cssselector, TOU_Iagree);
@@ -30,7 +30,7 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 			}
 			
 			if (!privacy_policy.equals("")) {
-				Reporter.log("Proceed to check ("+privacy_policy+") in the 'Privacy Policy' Radio");
+				Reporter.log("Step 2 - Proceed to check ("+privacy_policy+") in the 'Privacy Policy' Radio");
 				if (privacy_policy.equalsIgnoreCase("Check")) {
 					if (isElementPresentWebdriver(attributeName_cssselector, TOU_PrivacPolicy)) {
 						checkWebdriver(attributeName_cssselector,TOU_PrivacPolicy);
@@ -45,7 +45,7 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 //				}			
 			}
 			if (!button_to_click.equals("")) {
-				Reporter.log("Proceed to Click on ("+button_to_click+") button");
+				Reporter.log("Step 3 - Proceed to Click on ("+button_to_click+") button");
 				if (button_to_click.equalsIgnoreCase("Continue and Create")) {
 					if (isElementPresentWebdriver(attributeName_xpath, TOU_ContinuAndCreate)) {
 //					click(TOU_ContinuAndCreate);

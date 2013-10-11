@@ -22,6 +22,7 @@ public class EnrollmentApplicantProcess_Input extends CommonSeleniumActions impl
 				Reporter.log("Click on ("+enrollment+") Link");
 				waitForElementPresentWebdriver(attributeName_partiallinktext, enrollment, enrollment);
 				clickWebdriver(attributeName_partiallinktext, enrollment);
+				waitForPageToLoadWebdriver();
 			}
 			if (!printclose.equals("")) {
 				Reporter.log("Click on ("+printclose+") Event Package");

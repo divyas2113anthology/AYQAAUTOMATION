@@ -50,8 +50,9 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			if (!wellinks.equals("")) {
 				Reporter.log("Step 4 - Click the Name of the Link as ["+wellinks+"]");
 				if (wellinks.equalsIgnoreCase("logout")) {
-					clickWebdriver(attributeName_xpath,WebcenteLogout);
-					waitForPageToLoad();
+//					clickWebdriver(attributeName_xpath,WebcenteLogout);
+					clickWebdriver(attributeName_partiallinktext, wellinks);
+					waitForPageToLoadWebdriver();
 				}else if (wellinks.equalsIgnoreCase("online support top")) {
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportTop);
 					recentPopupSelectWebdriver("Online Support");

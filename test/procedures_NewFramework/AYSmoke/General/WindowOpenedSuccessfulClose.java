@@ -21,14 +21,14 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 			Reporter.log("Close the Popup Window and navigate to main window");
 			if (!contents.equals("")) {
 				if (contents.equalsIgnoreCase("Support Center")) {
-					environment = Runtimedataread("Instance");
-					if (contents.contains("Center")) {
-						if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
-							contents = contents.replace("Center", "Centre");
-						}
-					}
-					waitForElementPresentWebdriver(attributeName_linktext, contents, contents);
-					verifyElementPresentWebdriver(attributeName_linktext, contents, contents);
+//					environment = Runtimedataread("Instance");
+//					if (contents.contains("Center")) {
+//						if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+//							contents = contents.replace("Center", "Centre");
+//						}
+//					}
+					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='narrowSearch']/h2", contents);
+					verifyElementPresentWebdriver(attributeName_xpath, "//div[@class='narrowSearch']/h2", contents);
 				}else if (contents.equalsIgnoreCase("Navigation Overview") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
 					waitForText(contents, "Text not present");
 					verifyTextPresent(contents);

@@ -58,17 +58,15 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
-//			if (addrsubmit.equalsIgnoreCase("Submit")) {
-				clickWebdriver(attributeName_xpath,AL_Submit);
-//				waitForElementNotVisibleWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
-//				waitForPageToLoad();
-//				click("//ul[@id='lstPickListItems']/li[1]/a[1]");
-//				Thread.sleep(2000);
-//				selectMainWindow();	
-				if (isElementPresent(AL_AddressLink)) {
-					click(AL_AddressLink);
-				}
+			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);
+			clickWebdriver(attributeName_xpath, AL_Submit);
+			writeConsole("Submit");
+//			waitForPageToLoadWebdriver();
+//			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+//				clickWebdriver(attributeName_xpath, AL_AddressLink);
 //			}
+//			waitForElementPresentWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
+//			waitForPageToLoadWebdriver();
 		}
 		selectMainWindowWebdriver();		
 		

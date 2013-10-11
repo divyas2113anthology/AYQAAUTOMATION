@@ -15,21 +15,21 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			String[]  instancedatarepo = datacontainer;
 			Reporter.log("Proceed to retrieve Test Data for URL");		
 			String url = instancedatarepo[0];
+			String openurl = instancedatarepo[1];
 			Reporter.log("Test Data was retrieved for URL");
 			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			environment = Runtimedataread("Instance");
 			String envirurl = null;
-			if ((url.contains("app")) && (url.contains("facelift"))) {			
+			if ((url.contains("app")) && (url.contains("ayauto&facelift"))) {			
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto&facelift=true";
-				}else if (environment.equalsIgnoreCase("USPR")) {
+				}else if (environment.equalsIgnoreCase("USPR")) { 
 					envirurl = "https://app.applyyourself.com/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://app.hobsons.co.uk/?id=ayauto&facelift=true";
 				}
-//			}else if ((url.contains("app")) && (!url.contains("facelift"))) {	
 			}else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {	
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://uatapp.applyyourself.com/?id=ayauto";
@@ -100,13 +100,24 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
-			}else if (url.contains("ApplicantConnectLogin")) {
+			}else if (url.contains("ApplicantConnectLogin") && url.endsWith("aybusqa")) {
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://uatapp.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "";
 				}else if (environment.equalsIgnoreCase("USPR")) {
+					envirurl = "https://app.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa";
+				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
+				}
+			}
+			else if (url.contains("ApplicantConnectLogin") && url.contains("aybusqa&facelift")) {
+				if (environment.equalsIgnoreCase("USQA")) {
+					envirurl = "https://uatapp.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa&facelift=true";
+				}else if (environment.equalsIgnoreCase("UKQA")) {
+					envirurl = "";
+				}else if (environment.equalsIgnoreCase("USPR")) {
+					envirurl = "https://app.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
@@ -130,6 +141,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
+			}
+			else if (!openurl.equals("")) {
+				
 			}
 			Reporter.log("Step 1 - Proceed to Open URL("+envirurl+")");
 			writeConsole("Entering URL : "+envirurl);

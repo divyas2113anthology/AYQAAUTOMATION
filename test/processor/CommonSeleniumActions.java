@@ -2679,7 +2679,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				public void actionsClickWebdriver(String attributename,String attributevalue){	
 					writeConsole("Webdriver Action Click["+attributename+", "+attributevalue+"]");
 					Actions actions = new Actions(driver);	
-					actions.moveToElement(attributeNameValue(attributename, attributevalue)).click().perform();
+					actions.moveToElement(attributeNameValue(attributename, attributevalue)).click().build().perform();
 				}
 				
 				public void doubleClickWebdriver(String attributename,String attributevalue){	
@@ -2740,6 +2740,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 					Alert alert = driver.switchTo().alert();
 					alert.dismiss();
 
+				}
+				public String alertMessage(){		
+					writeConsole("Webdriver Alert Message");
+					Alert alert = driver.switchTo().alert();		
+					String AlertMessage = alert.getText();
+					return AlertMessage;
 				}
 				
 				public void selectMainWindowWebdriver(){	
@@ -4303,6 +4309,55 @@ public class CommonSeleniumActions extends Processor implements OR {
 				}
 				
 //				******************************End of Selenium Webdriver*******************************************************
+				public void verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(String attributenametable,String attributevaluetable,String ColumnNames,String Rowvalues) throws Exception{			
+					String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
+					String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
+					ArrayList<Integer> columnnumber = new ArrayList<Integer>();
+					waitForElementPresentWebdriver(attributenametable,attributevaluetable+"/*/tr/th", "Table First Column");
+					int columncount = attributeNameValues(attributenametable,attributevaluetable+"/*/tr/th").size();			
+					writeConsole("Elements Column Count["+columncount+"]");
+					for (int i = 0; i < ColumnNamesArray.length; i++) {		
+						String column = "NotFound";
+						for (int j = 1;j<=columncount;j++) {
+							String currentcoulmnName = getTextWebdriver(attributenametable, attributevaluetable+"/*/tr/th["+j+"]");
+							if (currentcoulmnName.equals(ColumnNamesArray[i])) {
+								columnnumber.add(j);
+								column = "Found";
+								break;
+							}
+						}			
+						if (column.equals("NotFound")) {					
+							writeFailure("Column Name["+ColumnNamesArray[i]+"] was Not Found in the Table");
+						}
+					}		
+					String data = "NotFound";
+					int k;
+					int rowcount = attributeNameValues(attributenametable,attributevaluetable+"/tbody/tr").size();
+					writeConsole("Elements Row Count["+rowcount+"]");
+					for (k = 1 ;k <= rowcount;k++) {					
+						for (int x = 0; x < columnnumber.size(); x++) {
+							String currentrowvalue = getTextWebdriver(attributenametable, attributevaluetable+"/tbody/tr["+k+"]/*["+columnnumber.get(x)+"]");
+							if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
+								RowvaluesArray[x] = " ";
+							}
+							if (currentrowvalue.equals(RowvaluesArray[x])) {
+								data = "Found";								
+							}else {
+								data = "NotFound";
+								break; // moving to next row
+							}
+						}	
+						if (data.equals("Found")) {
+							break;
+						}
+					}
+					if (data.equals("NotFound")) {
+						writeFailure("Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"] was Not Found in the Table ");
+					}
+					if (data.equals("Found")) {
+						Reporter.log("Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"] was Found in the Table ");
+					}		
+				}
 
 
 }

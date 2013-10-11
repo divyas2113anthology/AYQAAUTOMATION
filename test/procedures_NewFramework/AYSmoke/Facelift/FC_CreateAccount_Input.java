@@ -30,15 +30,17 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				String lastorfamilyname = createAccArray[2];
 				String emailaddress = createAccArray[3];
 				String confirmemailaddress = createAccArray[4];
-				String birthdate = createAccArray[5];
-				String zippostalcode = createAccArray[6];
-				String password = createAccArray[7];
-				String confirmpassword = createAccArray[8];
-				String confirmyes = createAccArray[9];
-				String pin = createAccArray[10];
-				String button_to_click = createAccArray[11];
+				String confirmemaillabel = createAccArray[5];
+				String birthdate = createAccArray[6];
+				String zippostalcode = createAccArray[7];
+				String password = createAccArray[8];
+				String confirmpassword = createAccArray[9];
+				String confirmyes = createAccArray[10];
+				String pin = createAccArray[11];
+				String username = createAccArray[12];
+				String usernamelabel = createAccArray[13];
+				String button_to_click = createAccArray[14];
 				Reporter.log("Input Test Data was retrieved for 'Create Account Profile' page");
-				
 				Date date = new Date();  
 				DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 				String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
@@ -46,51 +48,62 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");
 //					type(CA_FirstName, firstname);	
 					sendKeys(attributeName_cssselector, CA_FirstName, firstname);
-					if (! firstname_lable.equals("")) {
-						Reporter.log("Proceed to Write First Name as ("+firstname+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+					if (!firstname_lable.equals("")) {
+						Reporter.log("Step 2 - Proceed to Write First Name as ("+firstname+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(firstname, firstname_lable);
 					}
 				}	
 				String lastname = lastorfamilyname+Calendar.getInstance().getTimeInMillis();		
 				if (!lastorfamilyname.equals("")) {
-					Reporter.log("Step 2 - Enter 'Last or Family Name' as ("+lastname+")");		
+					Reporter.log("Step 3 - Enter 'Last or Family Name' as ("+lastname+")");		
 //					type(CA_LastName, lastname);
 					sendKeys(attributeName_cssselector, CA_LastName, lastname);
 				}	
-				
+				String Email = emailaddress+Calendar.getInstance().getTimeInMillis()+"@Smoke.com";
 				if (!emailaddress.equals("")) {
-					Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");		
-//					type(CA_EmailAddress, emailaddress);
-					sendKeys(attributeName_cssselector, CA_EmailAddress, emailaddress);
+					Reporter.log("Step 4 - Enter 'Email Address' as ("+Email+")");
+					if (!emailaddress.contains("@")) {
+						sendKeys(attributeName_cssselector, CA_EmailAddress, Email);
+					} else {
+						sendKeys(attributeName_cssselector, CA_EmailAddress, emailaddress);
+					}
 				}
 				
 				if (!confirmemailaddress.equals("")) {			
-					Reporter.log("Step 4 - Enter 'Confirm Email Address' as ("+confirmemailaddress+")");	
+					Reporter.log("Step 5 - Enter 'Confirm Email Address' as ("+Email+")");	
 //					type(CA_ConfirmEmailAddress, confirmemailaddress);
-					sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, confirmemailaddress);
+					if (!confirmemailaddress.contains("@")) {
+						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, Email);
+						if (!confirmemaillabel.equalsIgnoreCase("")) {
+							Reporter.log("Step 6 - Proceed to Write Confirm Password as ("+confirmemaillabel+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+							Runtimedatawrite(Email,confirmemaillabel);			
+						}
+					} else {
+						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, confirmemailaddress);
+					}
 				}	
 				
 				if (!birthdate.equals("")) {
-					Reporter.log("Step 5 - Enter 'Birth date' as ("+birthdate+")");		
+					Reporter.log("Step 7 - Enter 'Birth date' as ("+birthdate+")");		
 //					type(CA_BirthDate, birthdate);
 					sendKeys(attributeName_cssselector, CA_BirthDate, birthdate);
 				}
 				
 				if (!zippostalcode.equals("")) {
-					Reporter.log("Step 6 - Enter 'Zip/Postal Code' as ("+zippostalcode+")");			
+					Reporter.log("Step 8 - Enter 'Zip/Postal Code' as ("+zippostalcode+")");			
 //					type(CA_ZipCode, zippostalcode);
 					sendKeys(attributeName_cssselector, CA_ZipCode, zippostalcode);
 				}
 				
 				if (!password.equals("")) {			
-					Reporter.log("Step 7 - Enter 'Password' as ("+password+")");	
+					Reporter.log("Step 9 - Enter 'Password' as ("+password+")");	
 					String Password = Runtimedataread(password);
 //					type(CA_Password, Password);
 					sendKeys(attributeName_cssselector, CA_Password, Password);
 				}		
 				
 				if (!confirmpassword.equals("")) {
-					Reporter.log("Step 8 - Enter 'Confirm Password' as ("+confirmpassword+")");	
+					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");	
 					String ConfirmPassword = Runtimedataread(confirmpassword);
 //					type(CA_ConfirmPassword, ConfirmPassword);	
 					sendKeys(attributeName_cssselector, CA_ConfirmPassword, ConfirmPassword);
@@ -100,32 +113,49 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 //					}
 				}	
 				if (!pin.equals("")) {
-					Reporter.log("Step 9  - Proceed to Get 'PIN' number");
+					Reporter.log("Step 11  - Proceed to Get 'PIN' number");
 					waitForElementPresentWebdriver(attributeName_xpath, CA_LoginBtn, "Login");
-					String Pin = getText(FC_PinNumber);
-					System.out.println("Pin : "+Pin);
-					String[] PinSplit = Pin.split("  ");			
-		//			System.out.println("Length"+PinSplit.length);
-		//			for (int i = 0; i < PinSplit.length; i++) {
-		//				System.out.println("Value"+PinSplit[i]);
-		//			}
-		//			System.out.println("2");
-					String PinNumber = PinSplit[1];
-		//			System.out.println("3");
-					Reporter.log("Proceed to Write PIN Number as ("+PinNumber+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
-		//			System.out.println("4");
-					Runtimedatawrite(PinNumber,pin);
-		//			System.out.println("5");
+					if (pin.contains("Pin")) {
+						String Pin = getText(FC_PinNumber);
+						System.out.println("Pin : "+Pin);
+						String[] PinSplit = Pin.split("  ");			
+			//			System.out.println("Length"+PinSplit.length);
+			//			for (int i = 0; i < PinSplit.length; i++) {
+			//				System.out.println("Value"+PinSplit[i]);
+			//			}
+			//			System.out.println("2");
+						String PinNumber = PinSplit[1];
+			//			System.out.println("3");
+						Reporter.log("Step 12 - Proceed to Write PIN Number as ("+PinNumber+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			//			System.out.println("4");
+						Runtimedatawrite(PinNumber,pin);
+			//			System.out.println("5");
+					}else if (pin.contains("User")) {
+						String Name = getText(FC_UserName);
+						System.out.println("User Name : "+Name);
+						String[] UserNameSplit = Name.split("  ");	
+						String UserName = UserNameSplit[1];
+						Reporter.log("Step 13 - Proceed to Write PIN Number as ("+UserName+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+						Runtimedatawrite(UserName,pin);
+					}
 				}
-				
+				String UserName = username+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();		
+				if (!username.equals("")) {
+					Reporter.log("Step 14  - Proceed to enter the user name as ("+UserName+") ");
+					sendKeys(attributeName_id, CA_UserName, UserName);
+					if (!usernamelabel.equals("")) {
+						Reporter.log("Step 15 - Proceed to Write User Name as ("+UserName+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+						Runtimedatawrite(UserName, usernamelabel);
+					}
+				}
 				if (!button_to_click.equals("")) {
 					if (button_to_click.equalsIgnoreCase("create account")) {
-						Reporter.log("Step 10 - Click on 'Create Account' button");
+						Reporter.log("Step 16 - Click on 'Create Account' button");
 						clickWebdriver(attributeName_id, CA_CreateAccountBtn);	
 						waitForElementPresent(CA_LoginBtn, "Login button");
 //						waitForPageToLoad();	
 					} else if (button_to_click.equalsIgnoreCase("Login")) {
-						Reporter.log("Step 10 - Click on 'Login' button if found");
+						Reporter.log("Step 17 - Click on 'Login' button if found");
 						waitForElementPresent(CA_LoginBtn, "Login button");
 						clickWebdriver(attributeName_xpath, CA_LoginBtn);
 						waitForElementPresent(TOU_pageTitle, "Terms Of Use");			

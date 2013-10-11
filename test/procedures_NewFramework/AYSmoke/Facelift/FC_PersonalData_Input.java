@@ -54,6 +54,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
 				String Sufixpd = getElementIDbyLabel("Suffix",PSD_Suffix);				
 //				select(Sufixpd,pdsufix);
+				waitForElementPresentWebdriver(attributeName_xpath, Sufixpd,pdsufix);
 				selectByValueWebdriver(attributeName_xpath, Sufixpd,pdsufix);
 			}
 			if (!pdfirstname.equals("")) {
@@ -100,6 +101,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdcellphone.equals("")) {
 				Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
 				String Cellphonepd = getElementIDbyLabelContains("Cell Phone",PSD_CellPhone);
+				waitForElementPresentWebdriver(attributeName_xpath, Cellphonepd, pdcellphone);
 				if (pdcellphone.equalsIgnoreCase("Null")) {
 					attributeNameValue(attributeName_xpath, Cellphonepd).clear();
 				}else {
@@ -109,22 +111,10 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdfulltimestudent.equals("")) {
 				Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");
 				if (pdfulltimestudent.equalsIgnoreCase("Yes")){
-//					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes);
-//					sendKeysType(attributeName_xpath, PSD_Fulltimestudent_Yes, " ");
-//					clickWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes);
-//					sendKeyStroke(attributeName_xpath, PSD_Fulltimestudent_Yes, Keys.SPACE);
-//					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Fulltimestudent_Yes);
+					waitForElementPresentWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes, pdfulltimestudent);
 					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes);
-//					click(PSD_Fulltimestudent_Yes);		
 				}else if (pdfulltimestudent.equalsIgnoreCase("No")){
-//					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);					
-//					sendKeysType(attributeName_xpath, PSD_Fulltimestudent_No, " ");
-//					radioWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
-//					click(PSD_Fulltimestudent_No);
-//					sendKeysType(attributeName_xpath, PSD_Fulltimestudent_No, " ");
-//					clickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
-//					sendKeyStroke(attributeName_xpath, PSD_Fulltimestudent_No, Keys.SPACE);
-//					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Fulltimestudent_No);
+					waitForElementPresentWebdriver(attributeName_xpath, PSD_Fulltimestudent_No, pdfulltimestudent);
 					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
 				}			
 			}
@@ -143,18 +133,20 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 //					}
 //				}
 //				select(Countrypd,pdcountry);
+				waitForElementPresentWebdriver(attributeName_xpath, Countrypd,pdcountry);
 				selectByValueWebdriver(attributeName_xpath, Countrypd,pdcountry);
 			}
 			if (!pdstate.equals("")) {
 				Reporter.log("Step 14 - Select State / province as ("+pdstate+")");
 				String Statepd = getElementIDbyLabel("State / province",PSD_Stateprovince);
-				environment = Runtimedataread("Instance");
-				if (pdstate.contains("Washington DC")) {
-					if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
-						pdstate = pdstate.replace("Washington DC", "Virginia");
-					}
-				}
+//				environment = Runtimedataread("Instance");
+//				if (pdstate.contains("Washington DC")) {
+//					if (environment.equalsIgnoreCase("UKQA") || environment.equalsIgnoreCase("UKPR")) {
+//						pdstate = pdstate.replace("Washington DC", "Virginia");
+//					}
+//				}
 //				select(Statepd,pdstate);
+				waitForElementPresentWebdriver(attributeName_xpath, Statepd,pdstate);
 				selectByValueWebdriver(attributeName_xpath, Statepd,pdstate);
 			}
 			if (!pdgradelevel.equals("")) {
@@ -163,9 +155,9 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 //				System.out.println("Grade Level ID : "+Gradelevelpd);
 //				checkWebdriver(attributeName_xpath, Gradelevelpd);
 				if ( !attributeNameValue(attributeName_xpath, PSD_GradeLevel+pdgradelevel+"']").isSelected() )
-						{
-							attributeNameValue(attributeName_xpath, PSD_GradeLevel+pdgradelevel+"']").click();
-						}
+				{
+					attributeNameValue(attributeName_xpath, PSD_GradeLevel+pdgradelevel+"']").click();
+				}
 //				check(Gradelevelpd);
 			}
 			if (!pdessay.equals("")) {
@@ -188,6 +180,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 19 - Select Sports Interest as ("+pdsportsintrest+")");
 				String Sportsintrestpd = getElementIDbyLabel("Sports Interest", PSD_SportsInterest);
 //				select(Sportsintrestpd,pdsportsintrest);	
+				waitForElementPresentWebdriver(attributeName_xpath, Sportsintrestpd, pdsportsintrest);
 				selectByValueWebdriver(attributeName_xpath, Sportsintrestpd, pdsportsintrest);
 			}
 			if (!pdtestscore.equals("")) {
@@ -230,7 +223,10 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdsave.equals("")) {
 				Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 				if(pdsave.equalsIgnoreCase("Save")){
-					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
+					waitForElementPresentWebdriver(attributeName_xpath, PSD_SaveBottom, pdsave);
+//					actionsClickWebdriver(attributeName_xpath, PSD_Save);
+					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveBottom);
+//					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
 					waitForPageToLoadWebdriver();
 				}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);

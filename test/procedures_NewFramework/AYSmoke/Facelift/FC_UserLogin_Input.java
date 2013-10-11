@@ -24,19 +24,19 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin = Runtimedataread(pin);
-			Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
+			Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");
 			type(UL_PinField, generatepin);			
 						
 		}
 		if (!password.equals("")) {
-			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			Reporter.log("Step 3 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword = Runtimedataread(password);
-			Reporter.log("Proceed to Enter PIN as ("+generatepassword+")");		
+			Reporter.log("Step 4 - Proceed to Enter PIN as ("+generatepassword+")");		
 			type(UL_PswdField, generatepassword);
 			
 		}
 		if (!login.equals("")) {
-			Reporter.log("Step 3 - Click on 'Login' Button");
+			Reporter.log("Step 5 - Click on 'Login' Button");
 			if (login.equalsIgnoreCase("login")) {
 				click(UL_Login);
 				waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "My Applications");	
@@ -44,7 +44,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			}			
 		}
 		if (!forgotpin.equals("")) {
-			Reporter.log("Step 4 - Click on 'Forgot your PIN or Password?' Button");
+			Reporter.log("Step 6 - Click on 'Forgot your PIN or Password?' Button");
 //			if (forgotpin.equalsIgnoreCase("Forgot your PIN or Password?")) {
 //				waitForElementPresentWebdriver(attributeName_xpath, UL_ForgotPINPassword, forgotpin);
 //				clickWebdriver(attributeName_xpath,UL_ForgotPINPassword);

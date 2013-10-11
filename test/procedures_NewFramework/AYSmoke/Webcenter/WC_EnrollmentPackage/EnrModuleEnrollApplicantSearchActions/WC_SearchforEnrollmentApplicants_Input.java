@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EnrollmentPackage.EnrModuleEnrollApplicantSearchActions;
 
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -42,10 +43,12 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			if (!firstname.equals("")) {
 				String FirstName = Runtimedataread(firstname);
 				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
 				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 4 - Enter the Last Name as ["+lastname+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
 			}
 			if (!birthdate.equals("")) {
@@ -54,6 +57,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			}	
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 6 - Enter the email address as ["+emailaddress+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_EmailAddress, emailaddress);
 				sendKeys(attributeName_xpath, SAI_EmailAddress, emailaddress);
 			}
 			if (!zip.equals("")) {
@@ -74,7 +78,8 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			}
 			if (!searchindiquerygroupaction.equals("")) {
 				Reporter.log("Step 11 - Search by using ["+searchindiquerygroupaction+"]");
-				clickWebdriver(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/preceding-sibling::td/input[@type='radio']");
+				sendKeyStroke(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/preceding-sibling::td/input[@type='radio']", Keys.SPACE);
+//				clickWebdriver(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/preceding-sibling::td/input[@type='radio']");
 				clickWebdriver(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]");
 				waitForPageToLoad();
 			}

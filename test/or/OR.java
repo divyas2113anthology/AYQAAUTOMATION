@@ -57,6 +57,7 @@ public static final String ConfirmPassword = "//input[@id='AppConPassword']";
 public static final String PinNumber = "//*[contains(text(),'PIN:')]";
 //public static final String FC_PinNumber = "xpath=(//*[contains(text(),'PIN:')])[2]";
 public static final String FC_PinNumber = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'PIN:')]";
+public static final String FC_UserName = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'User Name:')]";
 
 //#**********************************************************#
 //#ELUA Page
@@ -145,6 +146,7 @@ public static final String AL_PostalCode = "//input[@id='txtZip']";
 public static final String AL_Country = "//select[@id='ddlQasCountryCode']";
 public static final String AL_Submit = "//input[@id='btnValidate']";
 public static final String AL_AddressLink = "//ul[@id='lstPickListItems']/li[1]/a[1]";
+public static final String HC_BodyFrame = "iframe";
 //#**********************************************************#
 //# Education Background Page - EB
 //#**********************************************************#
@@ -397,6 +399,7 @@ public static final String CA_Password = "css=#aycreatePassword";
 public static final String CA_ConfirmPassword = "css=#aycreateConfirmPassword";
 public static final String CA_CreateAccountBtn = "ay-createSubmit";
 public static final String CA_LoginBtn = "//input[@id='ay-create-login']";
+public static final String CA_UserName = "aycreateUserName";
 //#**********************************************************#
 //# Facelift Create Account Input
 //#**********************************************************#
@@ -428,6 +431,7 @@ public static final String DB_QaAutomationEditButton = "//div[@class='appListSub
 //public static final String DB_App2StartButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text(),'Start Application')]";
 public static final String DB_App2StartButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
 public static final String DB_App2EditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application')]";
+public static final String DB_App2StartEditButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application') or contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
 public static final String DB_SubmittedMsg = "//div[@class='span8']//h4";
 public static final String DB_ApplicationButton = "//ul[@id='appList']/li[2]/div/a";
 public static final String DB_TestButton = "//ul[@id='appList']/li[3]/div/a";
@@ -755,9 +759,11 @@ public static final String SAI_UserQuries = "//select[@name='QueryID']";
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
 public static final String SAI_SubmitBtnBottom = "//input[@name='imageField2']";
-public static final String SAI_SearchByIndividualsSubmit = "//td[font[contains(text(),'Individual')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
+public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[contains(@src,'admin_submit_small')])[3]";
+//public static final String SAI_SearchByIndividualsSubmit = "//td[font[contains(text(),'Individual')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
 public static final String SAI_SearchByDateSubmit = "//td[font[contains(text(),'Search by Date')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
-public static final String SAI_SearchByIndividualsRadio = "//td[font[contains(text(),'Individual')]]/preceding-sibling::td/input[@type='radio']";
+//public static final String SAI_SearchByIndividualsRadio = "//td[font[contains(text(),'Individual')]]/preceding-sibling::td/input[@type='radio']";
+public static final String SAI_SearchByIndividualsRadio = "//input[@value='individual']";
 //#**********************************************************#
 //# Webcenter Search For Applicant Verify - SAV
 //#**********************************************************#
@@ -1107,8 +1113,10 @@ public static final String EPI_ResetBtn = "//img[@alt='Reset']";
 //#	 Enrollment - Enrollment Fee Payment - Page
 //#**********************************************************#
 public static final String EFP_ReturnEnrollBtn = "//img[@alt='return to enrollment form']";
-public static final String EFP_PayAndContinue = "//img[@alt='pay and continue']";
-public static final String EFP_SubmitEnrollmentBtn = "//img[@alt='submit enrollment']";
+//public static final String EFP_PayAndContinue = "//img[@alt='pay and continue']";
+public static final String EFP_PayAndContinue = "//*[@alt='pay and continue' or @name='PayButton']";
+//public static final String EFP_SubmitEnrollmentBtn = "//img[@alt='submit enrollment']";
+public static final String EFP_SubmitEnrollmentBtn = "//*[@alt='submit enrollment' or @id='ay-recSubmit']";
 public static final String EFP_PrintBtn = "//img[@alt='print this paget']";
 public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 //#**********************************************************#
@@ -1162,6 +1170,45 @@ public static final String AEG_Folder = "Group";
 public static final String CL_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]";
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
-
+//#**********************************************************#
+//#	 Application - Application Welcome Input  - Page
+//#**********************************************************#
+public static final String AW_TecSupp = "//a[contains(@href,'techSupportWindow')]";
+public static final String AW_Home =  "//a[contains(@href,'goHome')]";
+public static final String AW_Profile = "//a[contains(@href,'goUpdateProfile')]";
+public static final String AW_Submit = "//a[contains(@href,'doApplicationSubmit')]";
+//#**********************************************************#
+//#	 Bridge - Cofigured Clients Input  - Page
+//#**********************************************************#
+public static final String BR_PageTitle = "//span[@id='ctl00_LabelPageTitle']";
+public static final String BR_AuthSchemeSelect = "ctl00_ContentPlaceHolder1_DropDownListAuthAndMatchSchme";
+public static final String BR_BackBtn = "ClickBack";
+public static final String BRSM_SaveBtn = "ctl00$ContentPlaceHolder1$Button1";
+//#**********************************************************#
+//#	 Connect - Login  - Page
+//#**********************************************************#
+public static final String CNT_Username = "userName";
+public static final String CNT_Password = "clearTextPwd";
+public static final String CNT_LoginBtn = "loginBtn";
+public static final String CNT_WelPageTitle = "//div[@id='maincontent']/h1";
+public static final String CNT_SearchFrstName = "firstname";
+public static final String CNT_SearchTopBtn = "searchTop";
+//#**********************************************************#
+//#	 Regestrant Details - Page
+//#**********************************************************#
+public static final String RD_FirstName = "//input[@id='q34474']";
+public static final String RD_LastName = "//input[@id='q34475']";
+public static final String RD_Gender = "//input[@value='";
+public static final String RD_Ethincity = "//select[@id='s34477']";
+public static final String RD_EmailAddress = "//input[@id='q34478']";
+public static final String RD_GuestYesOrNo = "//input[contains(@value,'";
+//public static finalString RD_GuestNo = "//input[contains@name,'N34479']";
+public static final String RD_Phone1 = "//input[@id='q34480']";
+public static final String RD_Phone2 = "//input[@id='q34481']";
+public static final String RD_Phone3 = "//input[@id='q34482']";
+public static final String RD_Phone4 = "//input[@id='q34483']";
+public static final String RD_Phone5 = "//input[@id='q34484']";
+public static final String RD_TextFF = "//input[@id='q34485']";
+public static final String RD_TextFFUpperCase = "//input[@id='q34486']";
 }
 

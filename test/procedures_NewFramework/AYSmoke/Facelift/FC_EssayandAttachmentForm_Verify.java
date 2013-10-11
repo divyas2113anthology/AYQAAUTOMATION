@@ -55,11 +55,14 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 				String[] essaywithattachmentuploaddocumentpresentarray = essaywithattachmentuploaddocumentpresent.split(";");				
 				for (int i = 0; i < essaywithattachmentuploaddocumentpresentarray.length; i++) {
 					if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("upload document")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");						
 					}else if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("view document")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						
 					}else if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("delete")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						
 					}else {
@@ -73,12 +76,15 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 				String[] essaywithattachmentuploaddocumentnotpresentarray = essaywithattachmentuploaddocumentnotpresent.split(";");				
 				for (int i = 0; i < essaywithattachmentuploaddocumentnotpresentarray.length; i++) {
 					if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("pload document")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");	
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("view document")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("delete")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						
 					}else {
@@ -104,12 +110,15 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 				String[] uploadattachmentonlydocumentpresentarray = uploadattachmentonlydocumentpresent.split(";");				
 				for (int i = 0; i < uploadattachmentonlydocumentpresentarray.length; i++) {
 					if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("upload document")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
 						
 					}else if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("view document")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						
 					}else if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("delete")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						
 					}else {
@@ -123,12 +132,15 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 				String[] uploadattachmentonlydocumentnotpresenttarray = uploadattachmentonlydocumentnotpresent.split(";");				
 				for (int i = 0; i < uploadattachmentonlydocumentnotpresenttarray.length; i++) {
 					if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("upload document")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
 						
 					}else if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("view document")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						
 					}else if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("delete")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						
 					}else {
@@ -142,12 +154,15 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 				String[] uploadmediafilepresentarray = uploadmediafilepresent.split(";");				
 				for (int i = 0; i < uploadmediafilepresentarray.length; i++) {
 					if (uploadmediafilepresentarray[i].equalsIgnoreCase("Upload File")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_UploadMedia, "Media Attachment Upload Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_UploadMedia, "Media Attachment Upload Document");	
 						
 					}else if (uploadmediafilepresentarray[i].equalsIgnoreCase("View File")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Viewfile, "Media Attachment View Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Viewfile, "Media Attachment View Document");
 						
 					}else if (uploadmediafilepresentarray[i].equalsIgnoreCase("delete")) {
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Deletefile, "Media Attachment Delete Document");
 						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Deletefile, "Media Attachment Delete Document");
 						
 					}else {

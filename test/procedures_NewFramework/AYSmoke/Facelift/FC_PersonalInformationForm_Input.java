@@ -88,28 +88,12 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
 				if (button_to_click.equalsIgnoreCase("Address Lookup")) {
-//					sendKeyStroke(attributeName_xpath, PII_AddressLookupBtn, Keys.ENTER);
 					clickWebdriverWithCoordinates(attributeName_xpath, PII_AddressLookupBtn);
-//					driver.findElement(By.xpath(PII_AddressLookupBtn)).sendKeys(" ");
-//					clickWebdriver(attributeName_xpath, PII_AddressLookupBtn);
-//					actionsClickWebdriver(attributeName_xpath, PII_AddressLookupBtn);
 					recentPopupSelectWebdriver("Address Lookup");
-//				    String popupID =selenium.getEval("{var windowId; for(var x in selenium.browserbot.openedWindows ) {windowId=x;} }"); //javascript to get last opened window
-//				    selenium.waitForPopUp(popupID, "90000");
-//				    selenium.selectWindow(popupID);
-//				    selenium.windowFocus();
-					//click(PII_AddressLookupBtn);
-//					click("//input[@value='Address Lookup']");
-//					recentPopupSelect("");
-					//Thread.sleep(30000);
-					//waitForUniqueNameWindow();
-//					selenium.waitForPopUp("AddressWithAVS", "9000");
-//					selenium.selectWindow("AddressWithAVS");
-				//	selenium.selectPopUp("AddressWithAVS");
-//					recentPopupSelect("Address Lookup");
 				} else if(button_to_click.equalsIgnoreCase("Save")){
-					click(PII_SaveBottom);
-					waitForPageToLoad();
+					waitForElementPresentWebdriver(attributeName_xpath,PII_SaveBottom, button_to_click);
+					clickWebdriver(attributeName_xpath,PII_SaveBottom);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					click(PII_SaveContinue);
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {

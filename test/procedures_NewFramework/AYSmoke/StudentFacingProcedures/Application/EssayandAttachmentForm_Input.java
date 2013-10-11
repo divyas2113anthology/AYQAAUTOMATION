@@ -74,6 +74,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 				}else if (uploadattachmentonlydocument.equals("delete")) {
 //					clickchooseokgetconfirmationpagepload(EA_AttachmentOnly_DeleteDocument);
 //					chooseOkOnNextConfirmation();
+					waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, uploadattachmentonlydocument);
 					clickWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument);
 //					getConfirmation();
 					alertAccept();
@@ -101,6 +102,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 			}
 			if (!save.equals("")) {
 				if (save.equalsIgnoreCase("Save")) {
+					waitForElementPresentWebdriver(attributeName_xpath, EA_Save, save);
 					clickWebdriver(attributeName_xpath, EA_Save);
 					waitForPageToLoad();
 				} else if (save.equalsIgnoreCase("Save & Continue")) {

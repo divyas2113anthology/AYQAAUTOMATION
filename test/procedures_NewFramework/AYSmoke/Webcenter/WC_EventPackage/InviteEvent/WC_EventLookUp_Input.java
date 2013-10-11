@@ -83,9 +83,11 @@ public class WC_EventLookUp_Input extends CommonSeleniumActions implements OR {
 			if (!searchclose.equals("")) {
 				Reporter.log("Step 9 - Proceed to Click on ("+searchclose+") Button");
 				if (searchclose.equalsIgnoreCase("Search")) {
+					waitForElementPresentWebdriver(attributeName_xpath, EL_SearchBtn, searchclose);
 					clickWebdriver(attributeName_xpath, EL_SearchBtn);
 					waitForPageToLoadWebdriver();
 					if (isElementPresentWebdriver(attributeName_xpath, EL_LinkToClick)) {
+						waitForElementPresentWebdriver(attributeName_xpath, EL_LinkToClick, "Lookup Title");
 						clickWebdriver(attributeName_xpath, EL_LinkToClick);
 						selectMainWindowWebdriver();
 					}

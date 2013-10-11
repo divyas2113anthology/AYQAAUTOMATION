@@ -185,6 +185,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Close Window")) {
+					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);
 					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
 					selectMainWindowWebdriver();
 				}

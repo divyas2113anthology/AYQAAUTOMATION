@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions;
 
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -52,6 +53,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						recentPopupSelectWebdriver("Application Summary");
 					}else if (clickname.equalsIgnoreCase("FaceliftAppFirstName")) {
 						String ReadClickName = Runtimedataread(clickname);
+//						sendKeyStroke(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]", Keys.SPACE);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						recentPopupSelectWebdriver("Application Summary");
 					}else{

@@ -48,8 +48,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath,DB_QaAutomationEditButton);	
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application2_Start")){
-					waitForElementPresentWebdriver(attributeName_xpath, DB_App2StartButton, "Start Application");
-					clickWebdriver(attributeName_xpath,DB_App2StartButton);	
+					waitForElementPresentWebdriver(attributeName_xpath, DB_App2StartEditButton, "Start Application");
+					clickWebdriver(attributeName_xpath,DB_App2StartEditButton);	
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application2_Edit")){
 					waitForElementPresent(DB_App2EditButton, "Edit Application");
@@ -76,7 +76,9 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 				
 			}
 			if (!link_to_click.equals("")) {
-				
+				Reporter.log("Step 4 - Click the Link as ("+link_to_click+"):");
+				clickWebdriver(attributeName_linktext, link_to_click);
+				waitForPageToLoadWebdriver();
 			}
 	
 		} catch (Exception e) {

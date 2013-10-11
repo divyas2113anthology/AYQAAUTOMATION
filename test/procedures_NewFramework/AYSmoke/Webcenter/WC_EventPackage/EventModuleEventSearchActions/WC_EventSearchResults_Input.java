@@ -25,21 +25,31 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 			if (!performOperation.equals("") && !eventtitlecheck.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+eventtitlecheck+"]");
 				String [] splitevent = eventtitlecheck.split(";");
+				if (eventtitlecheck.equals("Event Title")) {
+					String EventTitleName = Runtimedataread(eventtitlecheck);
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+EventTitleName+ASR_CheckBox, eventtitlecheck);
+					checkWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+EventTitleName+ASR_CheckBox);
+				}else{
 				for (int i = 0; i < splitevent.length; i++) {
 					if (performOperation.equalsIgnoreCase("check")) {
+						waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox, eventtitlecheck);
 						checkWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox);
 					}else if (performOperation.equalsIgnoreCase("uncheck")) {
+						waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox, eventtitlecheck);
 						uncheckWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox);
 					}
+				}
 				}
 			}			
 			if (!eventtitleclick.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+eventtitleclick+"]");
 				if (eventtitleclick.equals("Event Title")) {
 					String Eventtitleclick = Runtimedataread(eventtitleclick);
+					waitForElementPresentWebdriver(attributeName_partiallinktext, Eventtitleclick, Eventtitleclick);
 					clickWebdriver(attributeName_partiallinktext, Eventtitleclick);
 					recentPopupSelectWebdriver("EventRecurrence");
 				}else{
+				waitForElementPresentWebdriver(attributeName_partiallinktext, eventtitleclick, eventtitleclick);
 				clickWebdriver(attributeName_partiallinktext, eventtitleclick);
 				recentPopupSelectWebdriver("EventRecurrence");
 				}

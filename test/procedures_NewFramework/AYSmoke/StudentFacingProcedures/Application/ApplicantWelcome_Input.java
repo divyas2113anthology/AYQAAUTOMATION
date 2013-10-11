@@ -25,7 +25,6 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			String print = applicantwelidatarepo[4];
 			String applicationhome = applicantwelidatarepo[5];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
-	//		selectMainWindow();
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
 				click(Logoutmain+logout+"']");
@@ -34,28 +33,24 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!updatetechsupport.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+updatetechsupport+") Button");
 				if (updatetechsupport.equalsIgnoreCase("Home")) {
-//					click(Updatetech+updatetechsupport+"']");
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'goHome')]", updatetechsupport);
-					clickWebdriver(attributeName_xpath, "//a[contains(@href,'goHome')]");
+					waitForElementPresentWebdriver(attributeName_xpath,AW_Home, updatetechsupport);
+					clickWebdriver(attributeName_xpath, AW_Home);
 					waitForPageToLoad();
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
-//					click(Updatetech+updatetechsupport+"']");
-//					recentPopupSelect("Technical Support");
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'techSupportWindow')]", updatetechsupport);
-					clickWebdriver(attributeName_xpath, "//a[contains(@href,'techSupportWindow')]");
+					waitForElementPresentWebdriver(attributeName_xpath, AW_TecSupp, updatetechsupport);
+					clickWebdriver(attributeName_xpath, AW_TecSupp);
 					recentPopupSelectWebdriver("Technical Support");
-					alertAccept();
+//					alertAccept();
 				}else if (updatetechsupport.equalsIgnoreCase("Update your Profile")) {
 //					sendKeyStroke(attributeName_xpath, UpdateProfileBtn, Keys.SPACE);
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'goUpdateProfile')]", updatetechsupport);
-					clickWebdriver(attributeName_xpath, "//a[contains(@href,'goUpdateProfile')]");
+					waitForElementPresentWebdriver(attributeName_xpath, AW_Profile, updatetechsupport);
+					clickWebdriver(attributeName_xpath, AW_Profile);
 					recentPopupSelectWebdriver("Update Profile");
 				}else if (updatetechsupport.equalsIgnoreCase("Submit")) {
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'doApplicationSubmit')]", updatetechsupport);
-					clickWebdriver(attributeName_xpath, "//a[contains(@href,'doApplicationSubmit')]");
-//					click(Updatetech+updatetechsupport+"']");
-					waitForPageToLoad();
+					waitForElementPresentWebdriver(attributeName_xpath, AW_Submit, updatetechsupport);
+					clickWebdriver(attributeName_xpath,AW_Submit);
+					waitForPageToLoadWebdriver();
 				}
 			}
 			if (!applicantsection.equals("")) {

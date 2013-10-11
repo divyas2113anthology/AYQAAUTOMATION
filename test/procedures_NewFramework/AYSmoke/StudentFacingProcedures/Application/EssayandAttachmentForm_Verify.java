@@ -47,7 +47,9 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 			if (!shortessay.equals("")) {
 				Reporter.log("Step 4 - Verify Short Essay as ["+shortessay+"]");
 				String shortessayID = getElementIDbyLabel("Short Essay", EA_ShortEssay);					
-				verifyElementText(shortessayID, shortessay, "Short Essay");
+//				verifyElementText(shortessayID, shortessay, "Short Essay");
+				waitForElementPresentWebdriver(attributeName_xpath,shortessayID, shortessay);
+				verifyElementValueWebdriver(attributeName_xpath,shortessayID, shortessay, shortessay);
 
 			}
 			if (!essaywithattachmentuploaddocumentpresent.equals("")) {
@@ -55,12 +57,15 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				String[] essaywithattachmentuploaddocumentpresentarray = essaywithattachmentuploaddocumentpresent.split(";");				
 				for (int i = 0; i < essaywithattachmentuploaddocumentpresentarray.length; i++) {
 					if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("upload document")) {
-						verifyElementPresent(EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");						
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");						
 					}else if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("view document")) {
-						verifyElementPresent(EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						
 					}else if (essaywithattachmentuploaddocumentpresentarray[i].equalsIgnoreCase("delete")) {
-						verifyElementPresent(EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+essaywithattachmentuploaddocumentpresentarray[i]+"] either Incorrect or has not be Scripted ");
@@ -72,14 +77,17 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				Reporter.log("Step 6 - Verify Button["+essaywithattachmentuploaddocumentnotpresent+"] is Not Displayed");
 				String[] essaywithattachmentuploaddocumentnotpresentarray = essaywithattachmentuploaddocumentnotpresent.split(";");				
 				for (int i = 0; i < essaywithattachmentuploaddocumentnotpresentarray.length; i++) {
-					if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("upload document")) {
-						verifyElementNotPresent(EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");	
+					if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("pload document")) {
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");	
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("view document")) {
-						verifyElementNotPresent(EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("delete")) {
-						verifyElementNotPresent(EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+essaywithattachmentuploaddocumentnotpresentarray[i]+"] either Incorrect or has not be Scripted ");
@@ -104,13 +112,16 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				String[] uploadattachmentonlydocumentpresentarray = uploadattachmentonlydocumentpresent.split(";");				
 				for (int i = 0; i < uploadattachmentonlydocumentpresentarray.length; i++) {
 					if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("upload document")) {
-						verifyElementPresent(EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
 						
 					}else if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("view document")) {
-						verifyElementPresent(EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						
 					}else if (uploadattachmentonlydocumentpresentarray[i].equalsIgnoreCase("delete")) {
-						verifyElementPresent(EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+uploadattachmentonlydocumentpresentarray[i]+"] either Incorrect or has not be Scripted ");
@@ -123,13 +134,16 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				String[] uploadattachmentonlydocumentnotpresenttarray = uploadattachmentonlydocumentnotpresent.split(";");				
 				for (int i = 0; i < uploadattachmentonlydocumentnotpresenttarray.length; i++) {
 					if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("upload document")) {
-						verifyElementNotPresent(EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_UploadDocument, "Attachment Only Upload Document");	
 						
 					}else if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("view document")) {
-						verifyElementNotPresent(EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, "Attachment Only View Document");
 						
 					}else if (uploadattachmentonlydocumentnotpresenttarray[i].equalsIgnoreCase("delete")) {
-						verifyElementNotPresent(EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
+						waitForElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_DeleteDocument, "Attachment Only Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+uploadattachmentonlydocumentnotpresenttarray[i]+"] either Incorrect or has not be Scripted ");
@@ -142,13 +156,16 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				String[] uploadmediafilepresentarray = uploadmediafilepresent.split(";");				
 				for (int i = 0; i < uploadmediafilepresentarray.length; i++) {
 					if (uploadmediafilepresentarray[i].equalsIgnoreCase("Upload File")) {
-						verifyElementPresent(EA_MediaAttach_UploadMedia, "Media Attachment Upload Document");	
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_UploadMedia, "Media Attachment Upload Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_UploadMedia, "Media Attachment Upload Document");	
 						
 					}else if (uploadmediafilepresentarray[i].equalsIgnoreCase("View File")) {
-						verifyElementPresent(EA_MediaAttach_Viewfile, "Media Attachment View Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Viewfile, "Media Attachment View Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Viewfile, "Media Attachment View Document");
 						
 					}else if (uploadmediafilepresentarray[i].equalsIgnoreCase("delete")) {
-						verifyElementPresent(EA_MediaAttach_Deletefile, "Media Attachment Delete Document");
+						waitForElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Deletefile, "Media Attachment Delete Document");
+						verifyElementPresentWebdriver(attributeName_xpath, EA_MediaAttach_Deletefile, "Media Attachment Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+uploadmediafilepresentarray[i]+"] either Incorrect or has not be Scripted ");
@@ -161,13 +178,13 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 				String[] uploadmediafilenotpresentarray = uploadmediafilenotpresent.split(";");				
 				for (int i = 0; i < uploadmediafilenotpresentarray.length; i++) {
 					if (uploadmediafilenotpresentarray[i].equalsIgnoreCase("upload document")) {
-						verifyElementNotPresent(EA_MediaAttachment_UploadFile, "Media Attachment Upload Document");	
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_MediaAttachment_UploadFile, "Media Attachment Upload Document");	
 						
 					}else if (uploadmediafilenotpresentarray[i].equalsIgnoreCase("view document")) {
-						verifyElementNotPresent(EA_MediaAttachment_Viewfile, "Media Attachment View Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_MediaAttachment_Viewfile, "Media Attachment View Document");
 						
 					}else if (uploadmediafilenotpresentarray[i].equalsIgnoreCase("delete")) {
-						verifyElementNotPresent(EA_MediaAttachment_Deletefile, "Media Attachment Delete Document");
+						verifyElementNotPresentWebdriver(attributeName_xpath, EA_MediaAttachment_Deletefile, "Media Attachment Delete Document");
 						
 					}else {
 						writeFailure("Given Test Data["+uploadmediafilenotpresentarray[i]+"] either Incorrect or has not be Scripted ");

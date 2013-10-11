@@ -60,11 +60,11 @@ public class MC_ApplicantLookup_Input extends CommonSeleniumActions implements O
 			}
 			if (!lastaccessedmodified.equals("")) {
 				Reporter.log("Step 9 - Select the Last Accessed/Modified as  ["+lastaccessedmodified+"]");
-				selectByValueWebdriver(attributeName_xpath, AL_LastAccessedModified, lastaccessedmodified);
+				selectByVisibleTextWebdriver(attributeName_xpath, AL_LastAccessedModified, lastaccessedmodified);
 			}
 			if (!profilecreated.equals("")) {
 				Reporter.log("Step 10 - Select the Profile Created as  ["+profilecreated+"]");
-				selectByValueWebdriver(attributeName_xpath, AL_ProfileCreated, profilecreated);
+				selectByVisibleTextWebdriver(attributeName_xpath, AL_ProfileCreated, profilecreated);
 			}
 			if (!lookuptype.equals("")) {
 				Reporter.log("Step 11 - Select the LookUp Type as  ["+lookuptype+"]");
@@ -77,6 +77,7 @@ public class MC_ApplicantLookup_Input extends CommonSeleniumActions implements O
 			if (!button.equals("")) {
 				Reporter.log("Step 11 - Click the submit Button");
 				clickWebdriver(attributeName_xpath, AL_SubmitBtn);
+				waitForPageToLoadWebdriver();
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());

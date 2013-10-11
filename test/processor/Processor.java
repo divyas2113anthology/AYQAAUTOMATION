@@ -558,10 +558,10 @@ public class Processor {
 	    		
 	    		if (Fail ==0 && Skip == 0 && Failconfig == 0 && Skipconfig == 0 ) {
 	    			Status = "Pass";
-	    			System.out.println("Pass");	    	
+	    			System.out.println("Test Passed");	    	
 				} else {
 					Status = "Failed";
-					System.out.println("Fail");	
+					System.out.println("Test Failed");	
 				}
 	    		String[] outfilename = Resultoutput.split("\\\\");
 				String csvfile = outfilename[outfilename.length-2];	  

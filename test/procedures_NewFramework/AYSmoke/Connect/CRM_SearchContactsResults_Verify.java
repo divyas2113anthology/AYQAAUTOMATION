@@ -28,9 +28,14 @@ public class CRM_SearchContactsResults_Verify extends CommonSeleniumActions impl
 				verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(attributeName_xpath, "//table[@class='simplegrid-data-content']", "First Name", VerifyFirstName);
 			}
 			if (!verifyemail.equals("")) {
-				String VerifyEmail = Runtimedataread(verifyemail);
-				Reporter.log("Step 3 - Verify Email was displayed("+VerifyEmail+")correctly");
-				verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(attributeName_xpath, "//table[@class='simplegrid-data-content']", "E-mail", VerifyEmail);
+				if (verifyemail.equals("BridgeEmail")) {
+					String VerifyEmail = Runtimedataread(verifyemail);
+					Reporter.log("Step 3 - Verify Email was displayed("+VerifyEmail+")correctly");
+					verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(attributeName_xpath, "//table[@class='simplegrid-data-content']", "E-mail", VerifyEmail);
+				}else{
+					Reporter.log("Step 3 - Verify Email was displayed("+verifyemail+")correctly");
+					verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(attributeName_xpath, "//table[@class='simplegrid-data-content']", "E-mail", verifyemail);
+				}
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

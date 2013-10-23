@@ -20,11 +20,12 @@ public class REC_PreviewSubmit_Input extends CommonSeleniumActions implements OR
 		Reporter.log("Input Test Data was retrieved for 'Preview and Submit' page");
 		if (!previewrecommendation.equals("")) {
 			Reporter.log("Step 1 -Click the Preview Recommendation button");
+			waitForElementPresentWebdriver(attributeName_xpath, PAS_PrevRecPdf, previewrecommendation);
 			clickWebdriver(attributeName_xpath, PAS_PrevRecPdf);
 			recentPopupSelectWebdriver("Recommmomdation");
 		}
 		if (!gobacksubmit.equals("")) {
-			Reporter.log("Step 1 -Click the button as '"+gobacksubmit+"'");
+			Reporter.log("Step 2 -Click the button as '"+gobacksubmit+"'");
 			if (gobacksubmit.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
 				waitForPageToLoad();

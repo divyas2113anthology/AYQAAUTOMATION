@@ -55,10 +55,10 @@ public class FC_CEEBLookUp_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 6 - Click on ("+avssearch+") Button");
 				if (avssearch.equalsIgnoreCase("search")) {
 //					click(EL_searchclose+avssearch+"']");
-					click(CB_Search);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,CB_Search);
+//					waitForPageToLoad();
 					Reporter.log(" Click on ("+avsname+") Link");
-					click(EL_hslink+avsname+"')]");
+					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
 //					selectMainWindow();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					click(EL_searchclose+avssearch+"']");

@@ -36,7 +36,16 @@ public class WC_AddEditGroup_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!linkcontains.equals("")) {
 				Reporter.log("Step 4 - Click Group URL Link");
+				String environment = Runtimedataread("Instance").toLowerCase();
+//				String getLinkHref = getAttribute(HC_LinkContians+linkcontains+"')]", "href");
+//				Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
+				if (environment.equals("USQA")) {
+					String ScheduleURL = getTextWebdriver(attributeName_partiallinktext, linkcontains); 
+					String[] ScheduleURLSplit = ScheduleURL.split("http://");
+					get("http://uat"+ScheduleURLSplit);
+				}else{				
 				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+linkcontains+"')]");
+				}
 			}
 			if (!savecancel.equals("")) {
 				Reporter.log("Step 5 - Click button as ["+savecancel+"]");

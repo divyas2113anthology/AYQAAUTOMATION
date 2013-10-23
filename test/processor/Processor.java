@@ -47,6 +47,8 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
+import com.sun.corba.se.spi.ior.WriteContents;
 import com.thoughtworks.selenium.BrowserConfigurationOptions;
 import com.thoughtworks.selenium.DefaultSelenium;
 import static processor.CommonSeleniumActions.Runtimedataread;
@@ -279,8 +281,9 @@ public class Processor {
 			default:
 				writeFailure("Invalid Browser Name("+browser+")");				
 			}
+			Reporter.log("Launch the Browser as :"+browsername);
+			System.out.println("Launch the Browser as :"+browsername);
 			return browsername;
-			
 		}
 		
 //		public String getenvironment() throws Exception{
@@ -516,6 +519,7 @@ public class Processor {
 	    public void shutdownseleniumserver(ITestContext result) throws Exception {
 	    	driver.close();
 	    	selenium.stop(); 
+	    	driver.quit();
 //	    	jettyProxy.stop();
 	    	
 //		        if(jettyProxyWasStartedByATest) {

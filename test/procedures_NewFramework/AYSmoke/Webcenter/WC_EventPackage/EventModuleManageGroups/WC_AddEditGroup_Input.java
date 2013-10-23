@@ -3,15 +3,14 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.EventModuleMan
 import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import processor.CommonSeleniumActions;
 
 
 public class WC_AddEditGroup_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is to perform some Operation in 'Add Edit Group' page")
-	public void WC_AddEditGroup_Input () throws Exception{
+	public void WC_AddEditGroup_Input() throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Add Edit Group' page");
@@ -36,13 +35,14 @@ public class WC_AddEditGroup_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!linkcontains.equals("")) {
 				Reporter.log("Step 4 - Click Group URL Link");
-				String environment = Runtimedataread("Instance").toLowerCase();
+				environment = Runtimedataread("Instance");
 //				String getLinkHref = getAttribute(HC_LinkContians+linkcontains+"')]", "href");
 //				Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
 				if (environment.equals("USQA")) {
 					String ScheduleURL = getTextWebdriver(attributeName_partiallinktext, linkcontains); 
 					String[] ScheduleURLSplit = ScheduleURL.split("http://");
-					get("http://uat"+ScheduleURLSplit);
+					writeConsole(ScheduleURLSplit[1]);
+					get("http://uat"+ScheduleURLSplit[1]);
 				}else{				
 				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+linkcontains+"')]");
 				}

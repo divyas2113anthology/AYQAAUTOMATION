@@ -22,14 +22,17 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!downloadlocation.equals("")) {
 				Reporter.log("Proceed to Download and Save a file in the Location["+downloadlocation+"] using AUTOIT");
-				Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/Firefox/Application/DownloadDocFirefox.exe "+downloadlocation+"");	
+//				Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/Firefox/Application/DownloadDocFirefox.exe "+downloadlocation+"");	
+				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Application/DownloadDocFirefox.exe "+downloadlocation+"");
 			}
 			if (!filepresentlocation.equals("")) {
 				String ReadExportFile = Runtimedataread(filepresentlocation);
 				Reporter.log("Proceed to verify file in the Location["+ReadExportFile+"]");
 //				Thread.sleep(50000);
-				waitForFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile); // this will hold the script to complete the File Download
-				verifyFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
+//				waitForFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile); // this will hold the script to complete the File Download
+//				verifyFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
+				waitForFile("C:\\SeleniumScripts\\AYQAAutomation\\SourceFile\\Webcenter\\Export\\"+ReadExportFile); // this will hold the script to complete the File Download
+				verifyFile("C:\\SeleniumScripts\\AYQAAutomation\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

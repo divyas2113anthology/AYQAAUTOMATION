@@ -857,6 +857,7 @@ public static final String CloseWindow = "//img[@alt='close window']";
 public static final String ApplicantCloseWindow = "//img[contains(@src,'admin_close_window_large')]";
 public static final String BP_ApplicationBatchs = "//img[@alt='Application Batches']";
 public static final String BP_RefreshBtn = "//img[@alt='Refresh Search']";
+public static final String BP_ViewBtn =  "//img[contains(@src,'admin_view')]";
 //#**********************************************************#
 //# Webcenter Question Add/Edit Page - QAE
 //#**********************************************************#

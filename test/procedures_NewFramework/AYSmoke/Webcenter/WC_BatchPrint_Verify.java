@@ -24,7 +24,8 @@ public class WC_BatchPrint_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Batch Printing' page");
 			if (!message.equals("")) {
 //				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				
+				waitForElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Batch Printing Message");
+				verifyElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Batch Printing Message");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

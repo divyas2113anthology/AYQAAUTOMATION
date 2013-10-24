@@ -27,6 +27,7 @@ public class WC_BatchPrint_Input extends CommonSeleniumActions implements OR {
 			if (!buttons.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the button as ["+buttons+"]");
 				if (buttons.equalsIgnoreCase("Application Batches")) {
+					waitForElementPresentWebdriver(attributeName_xpath, BP_ApplicationBatchs, buttons);
 					clickWebdriver(attributeName_xpath, BP_ApplicationBatchs);
 					waitForPageToLoad();
 				}else if (buttons.equalsIgnoreCase("Back")) {
@@ -36,8 +37,14 @@ public class WC_BatchPrint_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath, SIE_DeleteBtn);
 					waitForPageToLoad();
 				}else if (buttons.equalsIgnoreCase("Refresh")) {
-					clickWebdriver(attributeName_xpath, BP_RefreshBtn);
-					waitForPageToLoad();
+					for (int i = 0; i <= 3; i++) {
+						writeConsole("Refresh Ideration Started"+i);
+						clickWebdriver(attributeName_xpath, BP_RefreshBtn);
+//						Thread.sleep(5000);
+						waitForPageToLoadWebdriver();
+						writeConsole("Refresh Ideration Ended"+i);
+					}
+					waitForElementPresentWebdriver(attributeName_xpath,BP_ViewBtn, buttons);
 				}
 			}
 		} catch (Exception e) {

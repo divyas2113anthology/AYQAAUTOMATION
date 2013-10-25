@@ -20,8 +20,9 @@ public class WC_RunExportResults_Input extends CommonSeleniumActions implements 
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!downloadfilename.equals("")) {
 				Reporter.log("Step 1 - Proceed to Read Download Export File from Excel Sheet(C:/Selenium/InputTestdata.xls)");
-				String GetExportFile = getText("//a[contains(@href, 'javascript:frmDownload.submit();')]");
-//				String[] SplitExtensionGetExportFile = GetExportFile.split(".txt");
+				String GetExportFile = getTextWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]");
+				String[] SplitExtensionGetExportFile = GetExportFile.split(".txt");
+//				writeConsole("Export File Name"+SplitExtensionGetExportFile[0]);
 				Runtimedatawrite(GetExportFile, downloadfilename);
 			}
 			if (!linktoclick.equals("")) {

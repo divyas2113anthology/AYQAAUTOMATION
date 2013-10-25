@@ -1,3 +1,6 @@
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Compression=4
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 WinWait("Opening")
 WinActivate("Opening")
 ;$filename = ControlGetText("File Download","","[CLASS:SysLink]")
@@ -7,7 +10,7 @@ Send("{DOWN}")
 Send("{ENTER}")
 WinWait("Enter name of file to save")
 WinActivate("Enter name of file to save")
-Sleep(3000)
+Sleep(2000)
 $filename = ControlGetText("Enter name of file to save", "", "[CLASS:Edit;INSTANCE:1]")
 ;ControlSetText("Enter name of file to save", "", "[CLASS:Edit;INSTANCE:1]", $CmdLine[1]&"\"&$filename)
 $location = $CmdLine[1]&"\"&$filename

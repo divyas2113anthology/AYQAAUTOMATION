@@ -4283,13 +4283,20 @@ public class CommonSeleniumActions extends Processor implements OR {
 							break;       
 							}else { //       writeConsole("File is Not Exist in the Location["+pathname+"]");       }       Thread.sleep(1000);       if
 						}
+						Thread.sleep(1000);
+						if (i > 60) {
+							writeConsole("File is Not Exist");
+						}
+						
 					}
 				}
 				public void verifyFile(String pathname) throws Exception{
 					Reporter.log("Verify File is Exist in the Path["+pathname+"]");
+					writeConsole("Verify File is Exist in the Path["+pathname+"]");
 					File file = new File(pathname);
 					if (file.isFile()) {
 						Reporter.log("File is Exist in the Location["+pathname+"]");
+						writeConsole("File is Exist in the Location["+pathname+"]");
 					} else {
 						writeFailure("File is Not Exist in the Location["+pathname+"]");
 					}

@@ -28,6 +28,7 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 			if (!filepresentlocation.equals("")) {
 				String ReadExportFile = Runtimedataread(filepresentlocation);
 				Reporter.log("Proceed to verify file in the Location["+ReadExportFile+"]");
+				writeConsole("Export File Name : "+ReadExportFile);
 //				Thread.sleep(50000);
 //				waitForFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile); // this will hold the script to complete the File Download
 //				verifyFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);

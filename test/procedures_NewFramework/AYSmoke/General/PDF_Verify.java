@@ -3,6 +3,7 @@
  */
 package procedures_NewFramework.AYSmoke.General;
 
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,6 +24,12 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved to verify PDF is Open successfully");
 			writeConsole("Verify Test Data was retrieved to verify PDF is Open successfully");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
+			String browser = Runtimedataread("Browser").toLowerCase();
+			writeConsole(browser);
+//			String exceptionMsg = null;
+//			String[] Pdfwindows = new String[0];								
+			if (browser.equalsIgnoreCase("Firefox") || browser.equalsIgnoreCase("GoogleChrome")) {
+				writeConsole(browser);
 			if (!pdfname.equals("")) {
 				writeConsole("Step 1 - Verify PDF is Open Successfully");
 //				int waitforpdfint = Integer.parseInt(wait)*1000;
@@ -66,6 +73,34 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					closeWindowWebdriver();
 					selectMainWindowWebdriver();
 				}
+			}else{
+				writeConsole("Inter Net "+browser);
+				writeConsole("Step 1 - Verify PDF is Open Successfully");
+				String exceptionMsg = null;
+//				String[] Pdfwindows = new String[0];
+//				Pdfwindows = selenium.getAllWindowNames();
+//				int wintotal = Pdfwindows.length-1;
+//				System.out.println("Window-->" + Pdfwindows[wintotal]);
+//				selenium.selectWindow("name=" + Pdfwindows[wintotal]);
+//				Reporter.log("Popup Window is selected....");
+				Thread.sleep(90000);
+				try {
+					exceptionMsg = selenium.getBodyText();
+//					exceptionMsg = driver.getPageSource();
+				} catch (Exception e) {			
+					System.out.println("Fail1"+e.getMessage());
+					exceptionMsg = e.getMessage();
+					writeFailure(exceptionMsg);
+				}
+					if (exceptionMsg.equals("ERROR: Current window or frame is closed!")) {
+						Reporter.log("PDF file was displayed Properly");
+					} else {
+						Assert.fail("PDF File was not displayed");
+					}
+					writeConsole("close PDF File :");
+					closeWindowWebdriver();
+					selectMainWindowWebdriver();
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

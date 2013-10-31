@@ -89,7 +89,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 				}else if (uploadmediafile.equals("View File")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EAI_MediaAttachment_UploadFile, uploadmediafile);
 					clickWebdriver(attributeName_xpath, EA_MediaAttachment_Viewfile);
-					recentPopupSelectWebdriver("View File");
+//					recentPopupSelectWebdriver("View File");
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
 				}else if (uploadmediafile.equals("delete")) {
 //					clickchooseokgetconfirmationpagepload(EA_MediaAttachment_Deletefile);

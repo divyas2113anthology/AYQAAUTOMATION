@@ -1069,7 +1069,7 @@ public static final String MSS_RecStudent = "//input[@id='q25340']";
 //#**********************************************************#
 //#	 Recommendation - Preview and submit Page - PAS
 //#**********************************************************#
-public static final String PAS_PrevRecPdf = "//a[text()='Preview Recommendation']";
+public static final String PAS_PrevRecPdf = "//a[contains(text(),'Preview Recommendation')]";
 public static final String PAS_SubmitBtn = "//img[@alt='submit']";
 //#**********************************************************#
 //#	 Maintanance - Applicant Lookup - AL

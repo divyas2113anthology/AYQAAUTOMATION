@@ -30,39 +30,39 @@ public class MC_ApplicantLookup_Verify extends CommonSeleniumActions implements 
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Lookup' Result Section");
 			if (!clientid.equals("")) {
 				Reporter.log("Step 1 - Verify the Client ID as  ["+clientid+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Client ID", clientid);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Client ID", clientid);
 			}
 			if (!name.equals("")) {
 				Reporter.log("Step 2 - Verify the Name as  ["+name+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Name", name);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Name", name);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 3 - Verify the Email Address as  ["+emailaddress+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Email Address", emailaddress);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Email Address", emailaddress);
 			}
 			if (!dateofbirth.equals("")) {
 				Reporter.log("Step 4 - Verify the DOB as  ["+dateofbirth+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Date Of Birth", dateofbirth);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Date Of Birth", dateofbirth);
 			}
 			if (!zip.equals("")) {
 				Reporter.log("Step 5 - Verify the ZIP as  ["+zip+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Zip", zip);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Zip", zip);
 			}
 			if (!pin.equals("")) {
 				Reporter.log("Step 6 - Verify the PIN as  ["+pin+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "PIN", pin);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "PIN", pin);
 			}
 			if (!pac.equals("")) {
 				Reporter.log("Step 7 - Verify the PAC as  ["+pac+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "PAC", pac);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "PAC", pac);
 			}
 			if (!lastaccessmodified.equals("")) {
 				Reporter.log("Step 8 - Verify the Last Access/Modified as  ["+lastaccessmodified+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Last Access / Modified", lastaccessmodified);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Last Access / Modified", lastaccessmodified);
 			}
 			if (!profilecreated.equals("")) {
 				Reporter.log("Step 9 - Verify the Profile Created as  ["+profilecreated+"]");
-				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Result found')]/table", "Profile Created", profilecreated);
+				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Profile Created", profilecreated);
 			}
 			
 			

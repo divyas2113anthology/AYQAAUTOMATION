@@ -236,7 +236,7 @@ public class Processor {
 			default:
 				writeFailure("Invalid Browser Name("+browser+")");				
 			}
-			selenium  = new WebDriverBackedSelenium(driver, "https://arqa.applyyourself.com/");
+			selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
 			driver.manage().window().maximize();
 //			System.out.println("classpath=" + System.getProperty("java.class.path")); 
 //	        selenium.windowFocus();

@@ -25,7 +25,8 @@ public class WC_ManageUsers_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Manage Users' Page");
 			if (!status.equals("")) {
 				Reporter.log("Step 1 - Select the view by status ["+status+"]");
-				clickWebdriver(attributeName_id, status);
+				waitForElementPresentWebdriver(attributeName_id, "active", status);
+				clickWebdriver(attributeName_id, "active");
 			}
 			
 			if (!checkusername.equals("")) {
@@ -72,16 +73,22 @@ public class WC_ManageUsers_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 5 - Select an action as ["+selectanaction+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, ASR_SelectanAction, selectanaction);
-			}	
+				selectByVisibleTextWebdriver(attributeName_xpath, MU_SelectAnAction, selectanaction);
+//				selectByValueWebdriver(attributeName_xpath, EVR_SelectAnAction, selectanaction);
+			}			
 			if (!apply.equals("")) {
-				
+				Reporter.log("Step 6 - Select the Radio button as ["+apply+"]");
+				if (apply.equalsIgnoreCase("Apply to Selected")) {
+					clickWebdriver(attributeName_xpath, ASR_ApplySelected);
+				}else if (apply.equalsIgnoreCase("Apply to All")) {
+					clickWebdriver(attributeName_xpath, ASR_ApplyAll);
+				}
 			}
 			if (!sort.equals("")) {
-				Reporter.log("Step 5 - Select the Radio button as ["+sort+"]");
+				Reporter.log("Step 7 - Select the Radio button as ["+sort+"]");
 			}
 			if (!click.equals("")) {
-				Reporter.log("Step 6 - Click button as ["+click+"]");
+				Reporter.log("Step 8 - Click button as ["+click+"]");
 				if (click.equalsIgnoreCase("New Search")) {
 					clickWebdriver(attributeName_xpath, ASR_NewSearchbtn);
 				}else if (click.equalsIgnoreCase("Back")) {

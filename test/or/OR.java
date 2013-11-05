@@ -1005,6 +1005,7 @@ public static final String SFE_SearchBySubmit = "']]/following-sibling::td/input
 //#**********************************************************#
 public static final String EVR_SelectAnAction = "//select[@name='EventActionTypeID']";
 public static final String AEV_SuccessMsg = "//div[@id='divAyConfirmation']";
+public static final String MU_SelectAnAction = "//select[@name='ActionTypeID']";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#
@@ -1171,6 +1172,7 @@ public static final String AEG_Folder = "Group";
 public static final String CL_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]";
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
+public static final String WC_ViewBtn = "//img[contains(@src,'view')]";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#

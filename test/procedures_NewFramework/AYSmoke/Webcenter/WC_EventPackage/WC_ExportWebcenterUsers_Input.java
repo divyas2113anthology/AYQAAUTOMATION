@@ -21,6 +21,7 @@ public class WC_ExportWebcenterUsers_Input extends CommonSeleniumActions impleme
 				Reporter.log("Step 4 - Click on ["+button_to_click+"] button or Link");
 				waitForElementPresentWebdriver(attributeName_xpath, WC_ViewBtn, button_to_click);
 				clickWebdriver(attributeName_xpath, WC_ViewBtn);
+				Thread.sleep(30000);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

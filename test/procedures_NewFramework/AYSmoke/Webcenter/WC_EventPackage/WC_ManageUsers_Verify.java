@@ -26,6 +26,7 @@ public class WC_ManageUsers_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, BP_PageName, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, BP_PageName, pagename, "Page Name for Manage Users");
 			}
 			if (!verifyui.equals("")) {

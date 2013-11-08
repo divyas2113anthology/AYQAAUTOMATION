@@ -95,7 +95,7 @@ public class WC_ManageUsers_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 				}else if (click.equalsIgnoreCase("Go")) {
 					clickWebdriver(attributeName_xpath, ASR_GoBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}			
 		} catch (Exception e) {

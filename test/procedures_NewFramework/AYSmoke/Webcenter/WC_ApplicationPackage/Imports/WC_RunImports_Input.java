@@ -26,11 +26,17 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!clickradioagainstname.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+clickradioagainstname+"]");
-				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']");
+//				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']", clickradioagainstname);
+//				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input", clickradioagainstname);
+				clickWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input");
+
 			}			
 			if (!choosefile.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+choosefile+"]");
 				clickWebdriver(attributeName_name, "attfile");
+//				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");
+				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 			}
 			if (!columnheader.equals("")) {
 				Reporter.log("Step 3 - Select the column header as ["+columnheader+"]");
@@ -62,13 +68,16 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				}
 			}
 			if (!actionhistorytext.equals("")) {
+				
 				Reporter.log("Step 7 - Enter the Action History as ["+actionhistorytext+"]");
 				sendKeys(attributeName_name, "ActionHistoryText", actionhistorytext);
 			}
 			
 			if (!click.equals("")) {
 				Reporter.log("Step 8 - Click button as ["+click+"]");
+				waitForElementPresentWebdriver(attributeName_name, "Transferx", click);
 				clickWebdriver(attributeName_name, "Transferx");
+				waitForPageToLoadWebdriver();
 			}			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -18,10 +18,17 @@ public class WC_ExportWebcenterUsers_Input extends CommonSeleniumActions impleme
 			Reporter.log("Input Test Data was retrieved for 'Export Webcenter User' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!button_to_click.equals("")) {
-				Reporter.log("Step 4 - Click on ["+button_to_click+"] button or Link");
+				Reporter.log("Step 1 - Click on ["+button_to_click+"] button or Link");
 				waitForElementPresentWebdriver(attributeName_xpath, WC_ViewBtn, button_to_click);
 				clickWebdriver(attributeName_xpath, WC_ViewBtn);
-				Thread.sleep(30000);
+				Thread.sleep(3000);
+//				String browser = Runtimedataread("Browser");
+//				if (browser.equalsIgnoreCase("Firefox")) {
+//					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
+//				}else if (browser.equalsIgnoreCase("InternetExplorer")) {
+//					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/IEFileDownloaded.exe");
+//				}
+//				Thread.sleep(30000);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

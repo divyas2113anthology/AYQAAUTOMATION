@@ -20,7 +20,7 @@ public class WC_RunImports_Verify extends CommonSeleniumActions implements OR {
 			String[]  fpvdatarepo = datacontainer;
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
-			String verifyui = fpvdatarepo[2];
+//			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Run Import' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -31,9 +31,9 @@ public class WC_RunImports_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Run Import");
 			}
-			if (verifyui.equals("")) {
-				Reporter.log("Step 3 - Verify the UI information in Add Import page");
-			}
+//			if (verifyui.equals("")) {
+//				Reporter.log("Step 3 - Verify the UI information in Add Import page");
+//			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

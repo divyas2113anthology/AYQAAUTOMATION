@@ -41,7 +41,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
 //					VerifyPDFOpen("ShowDocument", 1000);
-					recentPopupSelectWebdriver("view document");
+//					recentPopupSelectWebdriver("view document");
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
 //					waitForUniqueNameWindow();
 //					SelectPrintWindow("ShowDocument");
@@ -69,7 +69,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 				}else if (uploadattachmentonlydocument.equals("view document")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument, uploadattachmentonlydocument);
 					clickWebdriver(attributeName_xpath, EA_AttachmentOnly_ViewDocument);
-					recentPopupSelectWebdriver("view document");
+//					recentPopupSelectWebdriver("view document");
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
 				}else if (uploadattachmentonlydocument.equals("delete")) {
 //					clickchooseokgetconfirmationpagepload(EA_AttachmentOnly_DeleteDocument);

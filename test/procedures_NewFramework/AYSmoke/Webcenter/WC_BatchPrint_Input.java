@@ -37,14 +37,21 @@ public class WC_BatchPrint_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath, SIE_DeleteBtn);
 					waitForPageToLoad();
 				}else if (buttons.equalsIgnoreCase("Refresh")) {
-					for (int i = 0; i <= 3; i++) {
+					for (int i = 0; i <= 20; i++) {
 						writeConsole("Refresh Ideration Started"+i);
 						clickWebdriver(attributeName_xpath, BP_RefreshBtn);
-//						Thread.sleep(5000);
 						waitForPageToLoadWebdriver();
-						writeConsole("Refresh Ideration Ended"+i);
+						if (isElementPresentWebdriver(attributeName_xpath, BP_ViewBtn)) {
+							writeConsole("Refresh Ideration Ended"+i);
+							break;
+						}
+						Thread.sleep(2000);
 					}
+//					waitForElementPresentWebdriver(attributeName_xpath,BP_ViewBtn, buttons);
+				}else if (buttons.equalsIgnoreCase("View")) {
 					waitForElementPresentWebdriver(attributeName_xpath,BP_ViewBtn, buttons);
+					clickWebdriver(attributeName_xpath, CL_ViewBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {

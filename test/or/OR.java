@@ -353,6 +353,7 @@ public static final String MCL_Searchbutton = "//img[contains(@src,'admin_search
 public static final String MCL_pageicon = "//img[contains(@src,'quickview_icon')]";
 public static final String MCL_ClientName = "link=ayauto";
 public static final String MCL_NewSearchbutton = "//img[contains(@src,'new_search_large')]";
+public static final String MCL_MoveToFolderBtn = "//img[contains(@src,'move_to_folder')]";
 
 //# click on application package
 //public static final String MCL_ClientName = "";
@@ -939,6 +940,7 @@ public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]
 public static final String MSR_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
 public static final String MSR_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PS_HobsonsLogo = "//div[@id='masthead']";
+public static final String PS_HobsonsAuthMessage = "//div[@class='ay_section']";
 //#**********************************************************#
 //# Webcenter Add/Edit Event Page - AEE
 //#**********************************************************#
@@ -1213,5 +1215,11 @@ public static final String RD_Phone4 = "//input[@id='q34483']";
 public static final String RD_Phone5 = "//input[@id='q34484']";
 public static final String RD_TextFF = "//input[@id='q34485']";
 public static final String RD_TextFFUpperCase = "//input[@id='q34486']";
+//#**********************************************************#
+//#	 Webcenter - Import Results - Page
+//#**********************************************************#
+public static final String IR_PageTitle = "//tr[@class='FormHeading']/td";
+public static final String IR_MessageContent = "//font[@class='FormHeading']";
+
 }
 

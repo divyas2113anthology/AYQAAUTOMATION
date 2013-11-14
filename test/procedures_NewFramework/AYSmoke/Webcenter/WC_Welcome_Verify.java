@@ -19,6 +19,7 @@ public class WC_Welcome_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Proceed to retrieve Verify Test Data 'Welcome' page");
 			String[]  fpvdatarepo = datacontainer;
 			String pagename = fpvdatarepo[0];
+			String message = fpvdatarepo[1];
 			Reporter.log("Verify Test Data was retrieved for 'Welcome' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
@@ -34,6 +35,11 @@ public class WC_Welcome_Verify extends CommonSeleniumActions implements OR {
 					waitForText(pagename, "Page Name");
 					verifyTextPresent(pagename);
 				}
+			}
+			if (!message.equals("")) {
+				Reporter.log("Step 1 - Verify message as ("+message+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
+				verifyElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

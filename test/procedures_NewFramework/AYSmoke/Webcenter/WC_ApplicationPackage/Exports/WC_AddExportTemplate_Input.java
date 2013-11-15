@@ -35,6 +35,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			String ExportName = exportname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!exportname.equals("")) {
 				Reporter.log("Step 1 - Enter the Import as ["+ExportName+"]");
+				waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
 				sendKeys(attributeName_name, "txtName", ExportName);
 			}
 			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();    
@@ -56,7 +57,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			}
 			if (!fileformat.equals("")) {
 				Reporter.log("Step 5 - Select the File Format as ["+fileformat+"]");
-				selectByValueWebdriver(attributeName_name, "txtFormatTypeId", fileformat);
+				selectByVisibleTextWebdriver(attributeName_name, "txtFormatTypeId", fileformat);
 			}
 			if (!delimiter.equals("")) {
 				Reporter.log("Step 6 - Select the Delimiter as ["+delimiter+"]");
@@ -72,7 +73,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 				if (quotedstring.contains("Check")) {
 					checkWebdriver(attributeName_name, "chkUpdate");
 				}else if (quotedstring.contains("Uncheck")) {
-					checkWebdriver(attributeName_name, "chkUpdate");
+					uncheckWebdriver(attributeName_name, "chkUpdate");
 				}
 			}
 			if (!lock.equals("")) {
@@ -80,15 +81,20 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 				if (lock.contains("Check")) {
 					checkWebdriver(attributeName_name, "cbxLock");
 				}else if (lock.contains("Uncheck")) {
-					checkWebdriver(attributeName_name, "cbxLock");
+					uncheckWebdriver(attributeName_name, "cbxLock");
 				}
 			}
 			if (!click.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
-				if (click.equals("Save")) {
-					clickWebdriver(attributeName_xpath, QAE_SaveButton);
-				} else if (click.equals("Cancel")) {
-					clickWebdriver(attributeName_xpath, QAE_CancelButton);
+				if (click.equalsIgnoreCase("Save")) {
+					clickWebdriver(attributeName_name, AE_ExportSaveBtn);
+					waitForPageToLoadWebdriver();
+				} else if (click.equalsIgnoreCase("Cancel")) {
+					clickWebdriver(attributeName_xpath, AE_ExportCancelBtn);
+					waitForPageToLoadWebdriver();
+				} else if (click.equalsIgnoreCase("Field Definitions")) {
+					clickWebdriver(attributeName_xpath, AE_FieldDefBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {

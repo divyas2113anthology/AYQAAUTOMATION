@@ -16,7 +16,7 @@ public class WC_ManageExportTemplate_Input extends CommonSeleniumActions impleme
 			String[] testdata = datacontainer;
 			String checktemplatenamecheckbox = testdata[0];
 			String clicktemplatename = testdata[1];
-			String button = testdata[3];
+			String button = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Manage Export Template' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			waitForElementPresentWebdriver(attributeName_xpath, MCL_MoveToFolderBtn, "Move to folder Button");

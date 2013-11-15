@@ -31,10 +31,13 @@ public class WC_AddExportTemplate_Verify extends CommonSeleniumActions implement
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			if (!message.equals("")) {
 //				String[] Message = message.split(" ");
-				String SplitMessage = message+Calendar.getInstance().getTimeInMillis();
+//				String SplitMessage = message+Calendar.getInstance().getTimeInMillis();
+				String ExportName = message+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(SplitMessage+"was successfully Added. Please proceed to add the Field Definitions", "Not Present");
-				verifyTextPresent(SplitMessage+"was successfully Added. Please proceed to add the Field Definitions");
+				waitForText(ExportName+"was successfully Added. Please proceed to add the Field Definitions", "Not Present");
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, ExportName+"was successfully Added. Please proceed to add the Field Definitions", message);
+				verifyTextPresent(ExportName+"was successfully Added. Please proceed to add the Field Definitions");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

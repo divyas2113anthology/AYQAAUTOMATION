@@ -1220,6 +1220,24 @@ public static final String RD_TextFFUpperCase = "//input[@id='q34486']";
 //#**********************************************************#
 public static final String IR_PageTitle = "//tr[@class='FormHeading']/td";
 public static final String IR_MessageContent = "//font[@class='FormHeading']";
+//#**********************************************************#
+//#	 Webcenter - Field Definitions for Export - Page
+//#**********************************************************#
+public static final String FD_AddItem = "BtnAddField";
+public static final String FD_InsertItem = "BtnInsertField";
+public static final String FD_RemoveItem = "BtnRemoveField";
+public static final String FD_MoveUp = "BtnMoveUpField";
+public static final String FD_MoveDown = "BtnMoveDownField";
+public static final String FD_RemoveAll = "BtnRemoveAll";
+public static final String FD_ShowCode = "BtnShowSample";
+public static final String FD_SaveBtn = "imgSubmitBtnBotm";
+public static final String FD_BackBtn = "imgBackBtnBotm";
+//#**********************************************************#
+//#	 Webcenter - Add Export for Export - Page
+//#**********************************************************#
+public static final String AE_ExportSaveBtn = "imgSubmitBtnTop";
+public static final String AE_ExportCancelBtn = "//img[contains(@src,'cancel_small')]";
+public static final String AE_FieldDefBtn = "//img[contains(@src,'field_definitions_large')]";
 
 }
 

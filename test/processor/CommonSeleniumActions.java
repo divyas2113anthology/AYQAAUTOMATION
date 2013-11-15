@@ -4261,6 +4261,23 @@ public class CommonSeleniumActions extends Processor implements OR {
 //						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 					}
 				}
+				public void PackageSelectionFieldDefinition(String section,String index) {
+					Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
+					selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+					String seconclickName = selenium.getAttribute("xpath=(//font[contains(text(),'"+section+"')])["+index+"]/@onclick");
+					writeConsole("Onclick Value for Section "+seconclickName);
+					String[] secNamespl =seconclickName.split("\\(");
+					String[] secnodespl = secNamespl[1].split("\\)");
+					String secnode = secnodespl[0];
+					writeConsole("Node Value for Section "+secnode);
+					String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+					writeConsole("Plus OuterHTML Value "+nodePlus);
+					if (nodePlus.contains("Click to expand")) {
+						clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
+//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
+					}
+				}
 				public void ClosePackageSelection() throws Exception {
 					Reporter.log("Proceed to Click on Minus Buton to Close package");
 					//selenium.selectFrame("relative=up");

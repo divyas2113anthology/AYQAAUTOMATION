@@ -29,41 +29,42 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			String privilagesassigned = testdata[13];
 			String privilagesnotassigned = testdata[14];
 			String statusreportschedule = testdata[15];
-			String raaccountassigned = testdata[15];
-			String button = testdata[16];
+			String raaccountassigned = testdata[16];
+			String button = testdata[17];
 			
 			Reporter.log("Input Test Data was retrieved for 'Webcenter add user' Page");
 			if (!userid.equals("")) {
 				Reporter.log("Enter User ID");
-				type(WCL_userid, userid);			
+				waitForElementPresentWebdriver(attributeName_cssselector, WCL_userid, userid);
+				sendKeys(attributeName_cssselector, WCL_userid, userid);			
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Enter first name");
-				type(WCL_firstname, firstname);			
+				sendKeys(attributeName_cssselector, WCL_firstname, firstname);			
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Enter last name");
-				type(WCL_lastname, lastname);			
+				sendKeys(attributeName_cssselector, WCL_lastname, lastname);			
 			}
 			if (!title.equals("")) {
 				Reporter.log("Enter title");
-				type(WCL_title, title);			
+				sendKeys(attributeName_cssselector, WCL_title, title);			
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Enter email address");
-				type(WCL_emailaddress, emailaddress);			
+				sendKeys(attributeName_cssselector, WCL_emailaddress, emailaddress);			
 			}
 			if (!password.equals("")) {
 				Reporter.log("Enter password");
-				type(WCL_password, password);	
+				sendKeys(attributeName_cssselector, WCL_password, password);	
 			}
 			if (!confrmpassword.equals("")) {
 				Reporter.log("Enter confirm password");
-				type(WCL_confrmpassword, confrmpassword);			
+				sendKeys(attributeName_cssselector, WCL_confrmpassword, confrmpassword);			
 			}
 			if (!changepassword.equals("")) {
 				Reporter.log("Change password");
-				type(WCL_changepassword, changepassword);			
+				sendKeys(attributeName_cssselector, WCL_changepassword, changepassword);			
 			}
 			if (!excludepasswordfromnewaccountemail.equals("")) {
 				Reporter.log("Check/uncheck User must change passageword at next login");
@@ -71,11 +72,15 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!status.equals("")) {
 				Reporter.log("Select status");
-				select(WCL_status, status);			
+				selectByVisibleTextWebdriver(attributeName_name, WCL_status, status);			
 			}
 			if (!locked.equals("")) {
 				Reporter.log("Check/uncheck locked");
-				check(WCL_locked);			
+				if (locked.contains("Check")) {
+					checkWebdriver(attributeName_name, WCL_locked);
+				}else if (locked.contains("Uncheck")) {
+					uncheckWebdriver(attributeName_name, WCL_locked);
+				}
 			}
 			if (!rolesassigned.equals("")) {
 				Reporter.log("Check/uncheck ");
@@ -102,9 +107,14 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 				select(WCL_raaccountassigned, raaccountassigned);			
 			}
 			if (!button.equals("")) {
-				Reporter.log("Click on save or cancel Button");
-				click(WCL_button);		
-				waitForPageToLoad();
+				Reporter.log("Click on save or cancel Button as ["+button+"]");
+				if (button.equalsIgnoreCase("Save")) {
+					clickWebdriver(attributeName_xpath, WCL_Savebutton);		
+					waitForPageToLoadWebdriver();
+				}else if (button.equalsIgnoreCase("Cancel")) {
+					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);		
+					waitForPageToLoadWebdriver();
+				}
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

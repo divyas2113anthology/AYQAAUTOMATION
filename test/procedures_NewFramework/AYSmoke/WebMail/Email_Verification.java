@@ -309,28 +309,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 			}
 			if (!verifycontents.equals("")) {
 				Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
-				String environment = Runtimedataread("Instance").toLowerCase();
-				if (verifycontents.contains("http://ardemo.applyyourself.com/")) {
-					verifycontents = verifycontents.replace("http://ardemo.applyyourself.com/", "http://"+environment+".applyyourself.com/");
-				}else if (verifycontents.contains("http://arqa.applyyourself.com/")) {
-					verifycontents = verifycontents.replace("http://arqa.applyyourself.com/", "http://"+environment+".applyyourself.com/");
-				}else if (verifycontents.contains("http://ar.applyyourself.com/")) {
-					verifycontents = verifycontents.replace("http://ar.applyyourself.com/", "http://"+environment+".applyyourself.com/");
-				}	
-				
-				if (verifycontents.contains(";;")) {
-					verifycontents = verifycontents.replace(";;", " \n\n");						
-				}					
-				if (verifycontents.contains(";")) {						
-					verifycontents = verifycontents.replace(";", " \n");
-				}
-				System.out.println("Expected Text"+verifycontents);
-//				Thread.sleep(10000);
-//				getText("css=div[id='divBdy']");
-//				getText("css=iframe[id='ifBdy']");
-//				getText("css=body[ocsi='1']");
-//				waitForElementPresent(HC_MailBody_Content, "Email Body Content");
-				verifyElementText(HC_MailBody_Content, verifycontents, "Email Body");
+//				String environment = Runtimedataread("Instance").toLowerCase();
+				waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
+				verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
 				
 			}
 			if (!contentcontains.equals("")) {

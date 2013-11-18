@@ -320,15 +320,16 @@ public static final String WCL_password = "css=input[name='txtNewPassword']";
 public static final String WCL_confrmpassword = "css=input[name='txtConfirmNewPassword']";
 public static final String WCL_changepassword = "";
 public static final String WCL_excludepasswordfromnewaccountemail = "";
-public static final String WCL_status = "";
-public static final String WCL_locked = "";
+public static final String WCL_status = "Status";
+public static final String WCL_locked = "locked";
 public static final String WCL_rolesassigned = "";
 public static final String WCL_rolesnotassigned = "css=input[name='cbRoleID1']";
 public static final String WCL_privilagesassigned = "";
 public static final String WCL_privilagesnotassigned = "";
 public static final String WCL_statusreportschedule = "";
 public static final String WCL_raaccountassigned = "";
-public static final String WCL_button = "//img[contains(@src,'admin_save_small_n')]";
+public static final String WCL_Savebutton = "//img[contains(@src,'admin_save_small')]";
+public static final String WCL_Cancelbutton = "//img[@alt,'cancel']";
 //public static final String WCL_userid = "";
 //public static final String WCL_userid = "";
 //public static final String WCL_userid = "";
@@ -642,6 +643,7 @@ public static final String HC_Content_LinkContians = "css=a:contains('";
 //public static final String HC_CloseButton = "//button[text()='Close']";
 public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
+public static final String WebMail_Body = "//div[@class='PlainText']";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#
@@ -1238,6 +1240,13 @@ public static final String FD_BackBtn = "imgBackBtnBotm";
 public static final String AE_ExportSaveBtn = "imgSubmitBtnTop";
 public static final String AE_ExportCancelBtn = "//img[contains(@src,'cancel_small')]";
 public static final String AE_FieldDefBtn = "//img[contains(@src,'field_definitions_large')]";
+//#**********************************************************#
+//#	 Webcenter - Adhoc Analysis - Page
+//#**********************************************************#
+public static final String Ad_ActivatedBy = "ActivityList";
+public static final String Ad_ConvAnalysis = "ConversionList";
+public static final String Ad_CrossTab = "CrosstabList";
+public static final String Ad_Customlist = "CustomList";
 
 }
 

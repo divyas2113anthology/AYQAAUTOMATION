@@ -1247,6 +1247,17 @@ public static final String Ad_ActivatedBy = "ActivityList";
 public static final String Ad_ConvAnalysis = "ConversionList";
 public static final String Ad_CrossTab = "CrosstabList";
 public static final String Ad_Customlist = "CustomList";
-
+public static final String Ad_QuestionList = "QuestionList";
+public static final String Ad_CombinedResp = "CombinedResp";
+public static final String Ad_SysQueryList = "SysQueryList";
+public static final String Ad_QueryList = "QueryList";
+public static final String Ad_ChartType = "ChartType";
+public static final String Ad_DateFrom = "DateFrom";
+public static final String Ad_DateTo = "DateTo";
+public static final String Ad_HTML = "//input[@value='HTML']";
+public static final String Ad_Excel = "//input[@value='XLS']";
+public static final String Ad_RunAnalysis = "//img[contains(@src,'run_analysis')]";
+public static final String Ad_FormHeading = "//font[@class='FormHeading']";
+public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 }
 

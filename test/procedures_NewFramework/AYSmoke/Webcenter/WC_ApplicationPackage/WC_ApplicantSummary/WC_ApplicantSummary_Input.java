@@ -37,10 +37,9 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String enrollment = testdata[12];
 			String buttons = testdata[13];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
-//			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-//			driver.manage().window().maximize();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
+				waitForElementPresentWebdriver(attributeName_linktext, subscribed, subscribed);
 				clickWebdriver(attributeName_linktext, subscribed);
 			}	
 			if (!inprocessstatus.equals("")) {
@@ -116,6 +115,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 10 - Click the View Full Application as ["+viewfullapplication+"]");
 				String[] Splitviwefullapp = viewfullapplication.split(";");
 				for (int i = 0; i < Splitviwefullapp.length; i++) {
+					waitForElementPresentWebdriver(attributeName_linktext, Splitviwefullapp[i], viewfullapplication);
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
 				}
 				recentPopupSelectWebdriver("Application Form3");

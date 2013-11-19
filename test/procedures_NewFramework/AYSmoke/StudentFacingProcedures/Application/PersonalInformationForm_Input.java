@@ -93,6 +93,10 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 					waitForPageToLoad();
 				}else if (pisavebutton.equalsIgnoreCase("Reset")) {
 					click(PI_Reset);
+				}else if (pisavebutton.equalsIgnoreCase("close window")) {
+					closeWindowWebdriver();
+					Thread.sleep(3000);
+					selectMainWindowWebdriver();
 				}
 			}
 			

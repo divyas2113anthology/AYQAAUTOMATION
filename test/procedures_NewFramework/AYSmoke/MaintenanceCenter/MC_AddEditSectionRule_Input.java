@@ -1,7 +1,11 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
+import java.util.List;
+
 import or.OR;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,6 +27,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!name.equals("")) {
 			Reporter.log("Step 1 - Enter the Section Name as ["+name+"]");
+			waitForElementPresentWebdriver(attributeName_xpath, ESR_Name, name);
 			sendKeys(attributeName_xpath, ESR_Name, name);
 		}
 		if (!description.equals("")) {
@@ -31,26 +36,43 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!section.equals("")) {
 			Reporter.log("Step 3 - Select the Section as ["+section+"]");
-			selectByValueWebdriver(attributeName_xpath, ESR_Section, section);
+			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
 		}
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
-			selectByValueWebdriver(attributeName_xpath, ESR_Field, field);
+			waitForElementPresentWebdriver(attributeName_xpath, ESR_Field, field);
+//			WebElement select = driver.findElement(By.xpath("//select[contains(@name,'txtField')]"));
+//			List<WebElement> options = select.findElements(By.tagName("option"));
+////			writeConsole("List Option : "+options);
+//			for (WebElement option : options) {
+//				String Opt = option.getText().trim();
+//				writeConsole("List Option One : "+Opt);
+//			    if(field.equals(option.getText().trim()))
+//			        option.click();   
+//			}
+			selectByIndexWebdriver(attributeName_xpath, ESR_Field, Integer.parseInt(field));
+//			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			Thread.sleep(3000);
+//			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);
 		}
 		if (!operator.equals("")) {
 			Reporter.log("Step 5  - Select the operator as ["+operator+"]");
-			selectByValueWebdriver(attributeName_xpath, ESR_Operator, operator);
+			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Operator, operator);
 		}
 		if (!value.equals("")) {
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
+			waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
 			selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
 		}
 		if (!button.equals("")) {
 			Reporter.log("Step 7 - Click the name of the button as ["+button+"]");
-			if (button.equals("Save")) {
+			if (button.equalsIgnoreCase("Save")) {
+				waitForElementPresentWebdriver(attributeName_xpath, ESR_Save, button);
 				clickWebdriver(attributeName_xpath, ESR_Save);
-			}else if (button.equals("Cancel")) {
+				waitForPageToLoadWebdriver();
+			}else if (button.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
+				waitForPageToLoadWebdriver();
 			}
 		}
 		

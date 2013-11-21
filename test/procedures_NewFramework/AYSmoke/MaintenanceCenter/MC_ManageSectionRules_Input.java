@@ -21,9 +21,10 @@ public class MC_ManageSectionRules_Input extends CommonSeleniumActions implement
 		if (!checkrulename.equals("") && !operationtoperform.equals("")) {
 			Reporter.log("Step 1 - Check the checkbox against ["+checkrulename+"]");
 			if (operationtoperform.equalsIgnoreCase("Check")) {
-				checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+checkrulename+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkrulename+"')]]/preceding-sibling::td/input[@type='checkbox']", checkrulename);
+				checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkrulename+"')]]/preceding-sibling::td/input[@type='checkbox']");
 			}else if (operationtoperform.equalsIgnoreCase("UnCheck")) {
-				checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+checkrulename+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				uncheckWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkrulename+"')]]/preceding-sibling::td/input[@type='checkbox']");
 			}
 		}
 		if (!clickrulename.equals("")) {
@@ -32,12 +33,17 @@ public class MC_ManageSectionRules_Input extends CommonSeleniumActions implement
 		}
 		if (!button.equals("")) {
 			Reporter.log("Step 3 - Click on button as ["+button+"]");
-			if (button.equalsIgnoreCase("Save")) {
+			if (button.equalsIgnoreCase("Add")) {
+				waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, button);
 				clickWebdriver(attributeName_xpath, MSR_AddBtn);
 			}else if (button.equalsIgnoreCase("Back")) {
 				clickWebdriver(attributeName_xpath, MSR_BackBtn);
 			}else if (button.equalsIgnoreCase("Delete")) {
 				clickWebdriver(attributeName_xpath, MSR_DeleteBtn);
+				String RuleDeleteAlertMsg = alertMessage();
+				Reporter.log("Delete Rule Alert Message : "+RuleDeleteAlertMsg);
+				alertAccept();
+				waitForPageToLoadWebdriver();
 			}
 		}
 	}catch(Exception e){

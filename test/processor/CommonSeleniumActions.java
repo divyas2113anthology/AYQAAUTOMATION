@@ -2669,9 +2669,18 @@ public class CommonSeleniumActions extends Processor implements OR {
 				public void selectByVisibleTextWithSpaceWebdriver(String attributename,String attributevalue,String text){	
 					writeConsole("Webdriver selectByVisibleTextWithSpace["+attributename+", "+attributevalue+", "+text+"]");
 					WebElement select = attributeNameValue(attributename, attributevalue);
-					List<WebElement> options = select.findElements(By.tagName(text));
+					List<WebElement> options = select.findElements(By.tagName("option"));
 					for (WebElement option : options) {
 					    if(text.equals(option.getText()))
+					        option.click();   
+					}
+				}
+				public void selectByVisibleTextWithTrimSpaceWebdriver(String attributename,String attributevalue,String text){	
+					writeConsole("Webdriver selectByVisibleTextWithSpace["+attributename+", "+attributevalue+", "+text+"]");
+					WebElement select = attributeNameValue(attributename, attributevalue);
+					List<WebElement> options = select.findElements(By.tagName("option"));
+					for (WebElement option : options) {
+					    if(text.equals(option.getText().trim()))
 					        option.click();   
 					}
 				}

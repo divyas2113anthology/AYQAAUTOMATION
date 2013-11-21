@@ -18,10 +18,12 @@ public class MC_ManageSectionRules_Verify extends CommonSeleniumActions implemen
 			Reporter.log("Check application package is saved in  Maintenance center");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
+				waitForText(message, message);
 				verifyTextPresent(message);				
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify page name is ["+pagename+"]");
+				waitForText(pagename, pagename);
 				verifyTextPresent(pagename);				
 			}
 		}catch(Exception e){

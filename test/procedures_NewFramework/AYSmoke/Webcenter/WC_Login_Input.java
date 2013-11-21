@@ -56,7 +56,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 					click(WCL_NeedPasswordLogin);
 					recentPopupSelect("Forgot Password Search");
 				}else if (needpasswordgo.equalsIgnoreCase("GO")) {
-					click(WCL_Go);
+					clickWebdriver(attributeName_xpath, WCL_Go);
 					waitForPageToLoad();
 				}
 				else {

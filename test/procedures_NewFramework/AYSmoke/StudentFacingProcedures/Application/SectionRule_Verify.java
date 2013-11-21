@@ -26,6 +26,8 @@ public class SectionRule_Verify extends CommonSeleniumActions implements OR {
 					verifyElementPresent(SRI_Fa1rfaxLnk, "Page with Title["+section_present+"]");
 				}else if (section_present.equalsIgnoreCase("Sports")) {
 					verifyElementPresent(SRI_SportsLnk, "Page with Title["+section_present+"]");
+				}else if (section_present.equalsIgnoreCase("Business Rules")) {
+					verifyElementPresentWebdriver(attributeName_linktext, section_not_present, section_not_present);
 				}
 			}
 			if (!section_not_present.equals("")) {
@@ -34,6 +36,8 @@ public class SectionRule_Verify extends CommonSeleniumActions implements OR {
 					verifyElementNotPresent(SRI_Fa1rfaxLnk, "Page with Title["+section_not_present+"]");
 				}else if (section_present.equalsIgnoreCase("Sports")) {
 					verifyElementNotPresent(SRI_SportsLnk, "Page with Title["+section_not_present+"]");
+				}else if (section_present.equalsIgnoreCase("Business Rules")) {
+					verifyElementNotPresentWebdriver(attributeName_linktext, section_not_present, section_not_present);
 				}
 			}
 			

@@ -308,7 +308,8 @@ public static final String RC_Save = "//img[@alt='save']";
 public static final String WCL_ClientID = "css=input[name='ClientID']";
 public static final String WCL_UserID = "css=input[name='UserID']";
 public static final String WCL_Password = "css=input[name='Password']";
-public static final String WCL_Go = "css=input[alt='Login']";
+//public static final String WCL_Go = "css=input[alt='Login']";login
+public static final String WCL_Go = "//input[@alt='login']";
 public static final String WCL_NeedPasswordLogin = "css=a[innerHTML='Need Password or Login Help']";
 
 public static final String WCL_userid = "css=input[name='txtUserID']";
@@ -927,9 +928,10 @@ public static final String QA_Question = "//input[@id='q31501']";
 public static final String ESR_Name = "//input[@name='txtName']";
 public static final String ESR_Description = "//textarea[@name='txtDescription']";
 public static final String ESR_Section = "//select[@name='selSection']";
-public static final String ESR_Field = "//select[@name='txtField0']";
+public static final String ESR_Field = "//select[contains(@name,'txtField')]";
 public static final String ESR_Operator = "//select[@name='txtOperator0']";
-public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
+//public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
+public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
 public static final String ESR_ValueText = "//input[@name='txtValue0']";
 public static final String ESR_RadioYes = "//input[@value='Y']";
 public static final String ESR_RadioNo = "//input[@value='N']";

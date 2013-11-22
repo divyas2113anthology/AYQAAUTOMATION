@@ -309,7 +309,7 @@ public static final String WCL_ClientID = "css=input[name='ClientID']";
 public static final String WCL_UserID = "css=input[name='UserID']";
 public static final String WCL_Password = "css=input[name='Password']";
 //public static final String WCL_Go = "css=input[alt='Login']";login
-public static final String WCL_Go = "//input[@alt='login']";
+public static final String WCL_Go = "//input[@alt='Login']";
 public static final String WCL_NeedPasswordLogin = "css=a[innerHTML='Need Password or Login Help']";
 
 public static final String WCL_userid = "css=input[name='txtUserID']";
@@ -644,7 +644,7 @@ public static final String HC_Content_LinkContians = "css=a:contains('";
 //public static final String HC_CloseButton = "//button[text()='Close']";
 public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
-public static final String WebMail_Body = "//div[@class='PlainText']";
+public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy'] ";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#
@@ -1261,5 +1261,17 @@ public static final String Ad_Excel = "//input[@value='XLS']";
 public static final String Ad_RunAnalysis = "//img[contains(@src,'run_analysis')]";
 public static final String Ad_FormHeading = "//font[@class='FormHeading']";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
+//#**********************************************************#
+//#	 Webcenter - Send Email - Page
+//#**********************************************************#
+public static final String SE_SendBtn = "//img[contains(@src,'send_small')]";
+public static final String SE_BackBtn = "//img[contains(@src,'admin_back_small')]";
+public static final String SE_Template = "TemplateList";
+public static final String SE_From = "FromAddress";
+public static final String SE_EmailTo = "EmailTo";
+public static final String SE_ApplicantProfile = "//input[@value='student']";
+public static final String SE_OtherEmail = "//input[@value='others']";
+public static final String SE_OtherEmailText = "TextEmailTo";
+public static final String SE_MailBatchName = "BatchName";
 }
 

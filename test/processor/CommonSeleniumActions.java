@@ -2672,19 +2672,24 @@ public class CommonSeleniumActions extends Processor implements OR {
 					List<WebElement> options = select.findElements(By.tagName("option"));
 					for (WebElement option : options) {
 					    if(text.equals(option.getText()))
-					        option.click();   
+					        option.click();  
 					}
 				}
 				public void selectByVisibleTextWithTrimSpaceWebdriver(String attributename,String attributevalue,String text){	
-					writeConsole("Webdriver selectByVisibleTextWithSpace["+attributename+", "+attributevalue+", "+text+"]");
+					writeConsole("Webdriver selectByVisibleTextWithTrimSpaceWebdriver["+attributename+", "+attributevalue+", "+text+"]");
+					try {
 					WebElement select = attributeNameValue(attributename, attributevalue);
 					List<WebElement> options = select.findElements(By.tagName("option"));
 					for (WebElement option : options) {
-					    if(text.equals(option.getText().trim()))
-					        option.click();   
-					}
+						    if(text.equals(option.getText().trim()))
+						    	writeConsole("Option Value : "+option);
+						        option.click();  
+								}
+
+						} catch (Exception e) {
+//							writeConsole("Exception: "+e);
+						}
 				}
-				
 				public void actionsClickWebdriver(String attributename,String attributevalue){	
 					writeConsole("Webdriver Action Click["+attributename+", "+attributevalue+"]");
 					Actions actions = new Actions(driver);	

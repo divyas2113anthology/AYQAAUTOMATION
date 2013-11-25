@@ -38,6 +38,9 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				}else if (checkagainstname.equalsIgnoreCase("All")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]", checkagainstname);
 					clickWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]");
+				}else if (checkagainstname.equalsIgnoreCase("emtqaaccount@hobsons.com")) {
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']", checkagainstname);
+					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}
 			}			
 			if (!clickname.equals("")) {

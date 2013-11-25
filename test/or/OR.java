@@ -1273,5 +1273,13 @@ public static final String SE_ApplicantProfile = "//input[@value='student']";
 public static final String SE_OtherEmail = "//input[@value='others']";
 public static final String SE_OtherEmailText = "TextEmailTo";
 public static final String SE_MailBatchName = "BatchName";
+//#**********************************************************#
+//#	 Webcenter - Run Report - Page
+//#**********************************************************#
+public static final String RR_PdfFormate = "//img[contains(@src,'icon_pdf')]/preceding-sibling::input";
+public static final String RR_ExcelFormate = "//img[contains(@src,'MSExcel')]/preceding-sibling::input";
+public static final String RR_WordFormate = "//img[contains(@src,'MSWord')]/preceding-sibling::input";
+public static final String RR_HtmlFormate = "//img[contains(@src,'MSHTML')]/preceding-sibling::input";
+public static final String RR_ClearBtn = "//img[contains(@src,'admin_clear')]";
 }
 

@@ -6,19 +6,19 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
-public class WC_RunReport_Verify extends CommonSeleniumActions implements OR {
+public class WC_RunReportResults_Verify extends CommonSeleniumActions implements OR {
 
 
-	@Test(description="This Procedure is to perform some Verification in 'Run Report' page")
-	public void WC_RunReport_Verify() throws Exception{
+	@Test(description="This Procedure is to perform some Verification in 'Run Report Results' page")
+	public void WC_RunReportResults_Verify() throws Exception{
 		try {
 			writeDetails();
-			Reporter.log("Proceed to retrieve Verify Test Data 'Run Report' page");
+			Reporter.log("Proceed to retrieve Verify Test Data 'Run Report Results' page");
 			String[]  fpvdatarepo = datacontainer;
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
-			Reporter.log("Verify Test Data was retrieved for 'Run Report' page");
+			Reporter.log("Verify Test Data was retrieved for 'Run Report Results' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForText(message, message);

@@ -14,9 +14,6 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 		public void WC_SearchforApplicants_Verify() throws Exception{
 		try {
 			writeDetails();
-//			headerStatement("PersonalData_Verify");
-//			startExecutionOrder(j);
-//			writeParametersTable();
 			Reporter.log("Proceed to retrieve Verify Test Data 'Search for Applicant' page");
 			String[]  fpvdatarepo = datacontainer;
 			String successmessage = fpvdatarepo[0];

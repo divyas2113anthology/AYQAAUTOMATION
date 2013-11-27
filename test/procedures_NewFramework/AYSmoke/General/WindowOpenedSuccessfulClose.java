@@ -32,8 +32,11 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 				}else if (contents.equalsIgnoreCase("Navigation Overview") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
 					waitForText(contents, "Text not present");
 					verifyTextPresent(contents);
-				}else if (contents.equalsIgnoreCase("My Events/Interviews") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
+				}else if (contents.equalsIgnoreCase("My Events/Interviews")) {
 					waitForText(contents, "Text not present");
+					verifyTextPresent(contents);
+				}else{
+					waitForText(contents, contents);
 					verifyTextPresent(contents);
 				}
 //				waitForElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
@@ -44,13 +47,17 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 				Reporter.log("Proceed to Close the Popup Window");	
 				if (closewindow.equalsIgnoreCase("Close Window")) {
 					clickWebdriver(attributeName_xpath, CloseWindow);
-					selectMainWindowWebdriver();
+					recentPopupSelect("Select Previous Window");
+//					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("Close")) {
 					closeWindowWebdriver();
 					selectMainWindowWebdriver();
+					recentOpenedPopupSelectWebdriver("Select Previous Window");
+//					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("CloseWindow")) {
 					clickWebdriver(attributeName_xpath, ApplicantCloseWindow);
-					selectMainWindowWebdriver();
+					recentPopupSelect("Select Previous Window");
+//					selectMainWindowWebdriver();
 				}
 			}	
 //			selectMainWindowWebdriver();

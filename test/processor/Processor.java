@@ -1,5 +1,6 @@
 package processor;
 import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,13 +48,12 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
-
-import com.sun.corba.se.spi.ior.WriteContents;
 import com.thoughtworks.selenium.BrowserConfigurationOptions;
 import com.thoughtworks.selenium.DefaultSelenium;
 import static processor.CommonSeleniumActions.Runtimedataread;
 import static processor.CommonSeleniumActions.backtodetails;
 import static processor.CommonSeleniumActions.writeFailure;
+import static processor.CommonSeleniumActions.writeConsole;
 
 public class Processor {
  //	    protected SeleniumServer jettyProxy;
@@ -81,6 +81,8 @@ public class Processor {
 	    public static String[] statuscontainer;
 	    public static ArrayList<String> Summarydetails = new ArrayList<String>();
 	    public static String browser;
+		public static String mainwindow;
+		public static int timeOutInSeconds = 60;
 
 		
 ////		@Parameters({"csvfile"})
@@ -238,6 +240,8 @@ public class Processor {
 			}
 			selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
 			driver.manage().window().maximize();
+			mainwindow = driver.getWindowHandle();
+			writeConsole("Webdriver Main Window["+mainwindow+"]");
 //			System.out.println("classpath=" + System.getProperty("java.class.path")); 
 //	        selenium.windowFocus();
 //	        System.out.println("File Name "+testName);	

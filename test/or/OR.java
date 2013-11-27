@@ -1281,5 +1281,24 @@ public static final String RR_ExcelFormate = "//img[contains(@src,'MSExcel')]/pr
 public static final String RR_WordFormate = "//img[contains(@src,'MSWord')]/preceding-sibling::input";
 public static final String RR_HtmlFormate = "//img[contains(@src,'MSHTML')]/preceding-sibling::input";
 public static final String RR_ClearBtn = "//img[contains(@src,'admin_clear')]";
+//#**********************************************************#
+//#	 Webcenter - Prospect Match - Page
+//#**********************************************************#
+public static final String PM_LastName = "chkMatchOnLastName";
+public static final String PM_FirstName = "chkMatchOnFirstName";
+public static final String PM_PostalCode = "chkMatchOnZip";
+public static final String PM_Email = "chkMatchOnEmail";
+public static final String PM_BirthDate = "chkMatchOnBirthDate";
+public static final String PM_MatchToOriginal = "//input[@value='original']";
+public static final String PM_MatchToMostRecent = "//input[@value='most']";
+public static final String PM_SubmitApplicants = "//input[@value='yes']";
+public static final String PM_AllApplicants = "//input[@value='no']";
+//#**********************************************************#
+//#	 Webcenter - Quick Add - Page
+//#**********************************************************#
+public static final String QA_Domestic = "//font[contains(text(),'Domestic')]/input[@type='radio']";
+public static final String QA_International = "//font[contains(text(),'Domestic')]/input[@type='radio']";
+public static final String QA_SubmitBtn = "//img[@alt='Submit']";
+public static final String QA_ResetBtn = "//img[@alt='Reset']";
 }
 

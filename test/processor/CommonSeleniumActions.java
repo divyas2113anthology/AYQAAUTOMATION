@@ -54,8 +54,7 @@ import org.openqa.selenium.internal.Locatable;
 
 
 public class CommonSeleniumActions extends Processor implements OR {	
-	public static String mainwindow;
-	public static int timeOutInSeconds = 60;
+
 	
 	
 	public void open(String url){
@@ -2788,22 +2787,96 @@ public class CommonSeleniumActions extends Processor implements OR {
 					}
 				}
 				
+				 // This Function is used to Wait till Window or Popup opens.
+			    public void waitForMultiplePopupWebdriver(int currentpopupcount) throws Exception {
+			     writeConsole("Webdriver Wait for Popup Window");
+			     for (int second = 0;; second++) {
+			      if (second > 60) {
+			       writeFailure("Popup was not Opened after waiting for 60 Second");
+			      }
+			      try {
+			       Set<String> popwindow = driver.getWindowHandles();
+			       int popupcount = popwindow.size();
+			       writeConsole("Webdriver popupcount : "+popupcount );
+			       if (popupcount > currentpopupcount) {
+			        break;
+			       }
+			      } catch (Exception e) {
+
+			      }
+			      Thread.sleep(1000);
+
+			     }
+			    }
+			    
+			    public int getWindowHandles(){     
+			        int popupcount; 
+			        popupcount= driver.getWindowHandles().size();
+			        writeConsole("Pop up Window count ["+popupcount+"]");
+			        return popupcount;
+			       }
+			    
+
+			    // This Function is used to Select Recently Opened Window or Popup.
+			    public void recentMultiplePopupSelectWebdriver(String windowname,int currentpopupcount) throws Exception {
+//			     int windownull = 0;
+//			     int currentpopupcount = driver.getWindowHandles().size();
+//			     mainwindow = driver.getWindowHandle();
+			     writeConsole("Webdriver Main Window["+mainwindow+"]");
+//			     writeConsole("Count Webdriver Main Window["+currentpopupcount+"]");
+//			     Set<String> popwindow = driver.getWindowHandles();
+//			     Iterator<String> it = popwindow.iterator();
+//			     waitForPopupWebdriver();
+//			     if (currentpopupcount < 1) {
+//			      waitForPopupWebdriver(currentpopupcount);
+//			     }     
+			     waitForMultiplePopupWebdriver(currentpopupcount);
+//			     Thread.sleep(5000);
+			     Iterator<String> popwindow = driver.getWindowHandles().iterator();
+			     while (popwindow.hasNext()) {
+			      String window = popwindow.next();
+			      if (!mainwindow.equals(window)) {
+			       writeConsole("Webdriver Switch To Window["+window+"]");
+			       driver.switchTo().window(window);
+			      }
+			     }
+			    }
+				
 				// This Function is used to Select Recently Opened Window or Popup.
 				public void recentPopupSelectWebdriver(String windowname) throws Exception {
-//					 int windownull = 0;
-				mainwindow = driver.getWindowHandle();
-				writeConsole("Webdriver Main Window["+mainwindow+"]");
+					//					 int windownull = 0;
+					String currentwindow = driver.getWindowHandle();
+					writeConsole("Webdriver Main Window["+mainwindow+"]");
+//					writeConsole("Webdriver Current Window["+currentwindow+"]");					
 //					 Set<String> popwindow = driver.getWindowHandles();
 //					 Iterator<String> it = popwindow.iterator();
-				waitForPopupWebdriver();
-				Iterator<String> popwindow = driver.getWindowHandles().iterator();
-				while (popwindow.hasNext()) {
-				String window = popwindow.next();
-				if (!mainwindow.equals(window)) {
-				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(window);
+					waitForPopupWebdriver();
+					Iterator<String> popwindow = driver.getWindowHandles().iterator();
+					while (popwindow.hasNext()) {
+						String window = popwindow.next();
+						if (!mainwindow.equals(window)) {
+							writeConsole("Webdriver Switch To Window["+window+"]");
+							driver.switchTo().window(window);
+						}
+					}
 				}
-				}
+				
+				// This Function is used to Select Recently Opened Window or Popup.
+				public void recentOpenedPopupSelectWebdriver(String windowname) throws Exception {
+					//					 int windownull = 0;
+//					String currentwindow = driver.getWindowHandle();
+					writeConsole("Webdriver Main Window["+mainwindow+"]");
+//					writeConsole("Webdriver Current Window["+currentwindow+"]");					
+//					 Set<String> popwindow = driver.getWindowHandles();
+//					 Iterator<String> it = popwindow.iterator();
+					Iterator<String> popwindow = driver.getWindowHandles().iterator();
+					while (popwindow.hasNext()) {
+						String window = popwindow.next();
+						if (!mainwindow.equals(window)) {
+							writeConsole("Webdriver Switch To Window["+window+"]");
+							driver.switchTo().window(window);
+						}
+					}
 				}
 				// This Function is used to Select Recently Opened Window or Popup.
 				public void recentPopupCloseWebdriver() throws Exception {

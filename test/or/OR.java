@@ -1300,5 +1300,12 @@ public static final String QA_Domestic = "//font[contains(text(),'Domestic')]/in
 public static final String QA_International = "//font[contains(text(),'Domestic')]/input[@type='radio']";
 public static final String QA_SubmitBtn = "//img[@alt='Submit']";
 public static final String QA_ResetBtn = "//img[@alt='Reset']";
+//#**********************************************************#
+//#	 Webcenter - Manage Queries - Page
+//#**********************************************************#
+public static final String MQ_FieldName = "//select[contains(@name,'txtField')]";
+public static final String MQ_Operator = "//select[contains(@name,'txtOperator')]";
+public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
+public static final String MQ_SaveAndRun = "topsaverunbutton";
 }
 

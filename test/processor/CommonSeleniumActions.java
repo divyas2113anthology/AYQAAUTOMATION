@@ -3244,6 +3244,31 @@ public class CommonSeleniumActions extends Processor implements OR {
 			}
 		}      
 	}
+	
+
+	public void verifyDropDownContainsOptionsWebdriver(String attributename, String attributevalue,String elementoptions,String elementname){
+		Reporter.log("Verify ["+elementname+"] Drop down has Option["+elementoptions+"]");
+		String[] elementoptionsarray = elementoptions.split(";");
+		for (int i = 0; i < elementoptionsarray.length; i++) {
+			String actualoptionstring = "";
+			String options = "NotFound";
+			String actualtext;
+			List<WebElement> getOptions = attributeNameValues(attributename,attributevalue);			
+			for (WebElement element : getOptions) {
+				actualtext = element.getText();
+				actualoptionstring = actualoptionstring+actualtext;
+				if (actualtext.equals(elementoptionsarray[i])) {
+					Reporter.log("["+elementname+"] Drop down has Option["+elementoptions+"]");
+					options = "Found";
+					break;
+				}
+			}
+			if (options.equals("NotFound")) {
+				writeFailure("Element Drop Down["+elementname+"] with Actual Options["+actualoptionstring+"] did not match with Expected Option["+elementoptionsarray[i]+"]");
+
+			}
+		}      
+	}
 
 	public void verifyElementVisibleWebdriver(String attributename,String attributevalue,String elementname) throws Exception{
 		Reporter.log("Proceed to verify Element("+elementname+") is Visible correctly");

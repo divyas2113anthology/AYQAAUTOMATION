@@ -35,11 +35,14 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 			if (!fieldname.equals("")) {
 				Reporter.log("Step 2 - Select the field name as ["+fieldname+"]");
 //				select(MQ_FieldName, "regexp:"+fieldname);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
 				selectByVisibleTextWebdriver(attributeName_xpath, MQ_FieldName, "    --"+fieldname);
+				Thread.sleep(3000);
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
 				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator, operator);
+				Thread.sleep(3000);
 			}
 			if (!value.equals("")) {
 				Reporter.log("Step 4 - Enter the value as ["+value+"]");

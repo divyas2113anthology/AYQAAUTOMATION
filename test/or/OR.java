@@ -1307,5 +1307,7 @@ public static final String MQ_FieldName = "//select[contains(@name,'txtField')]"
 public static final String MQ_Operator = "//select[contains(@name,'txtOperator')]";
 public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
 public static final String MQ_SaveAndRun = "topsaverunbutton";
+public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset']/li";
+public static final String MQ_ValueButton = "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']";
 }
 

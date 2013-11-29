@@ -1,5 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -31,7 +34,9 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 			}
 			if (!verifyvalues.equals("")) {
 				Reporter.log("Step 3 - Verify the list values as ["+verifyvalues+"]");
-				verifySelectContainsOptionsWebdriver(attributeName_xpath, MQ_Value, verifyvalues, verifyvalues);
+				clickWebdriver(attributeName_xpath, MQ_ValueButton);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues);
+				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues, verifyvalues);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

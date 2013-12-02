@@ -1309,5 +1309,14 @@ public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
 public static final String MQ_SaveAndRun = "topsaverunbutton";
 public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset']/li";
 public static final String MQ_ValueButton = "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']";
+//#**********************************************************#
+//#	 Webcenter - Configure Downloadable Forms - Page
+//#**********************************************************#
+public static final String CDF_FormName = "FormName";
+public static final String CDF_Description = "Description";
+public static final String CDF_FormOrder = "FormOrder";
+public static final String CDF_UrlToFormFile = "URL";
+public static final String CDF_FormFileToUpload = "Location";
+public static final String CDF_PrintPdf = "printPDF";
 }
 

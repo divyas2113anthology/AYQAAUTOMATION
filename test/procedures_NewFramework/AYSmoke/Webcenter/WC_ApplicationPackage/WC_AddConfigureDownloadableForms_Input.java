@@ -25,14 +25,14 @@ public class WC_AddConfigureDownloadableForms_Input extends CommonSeleniumAction
 			String urltoformfile = testdata[3];
 			String formfiletoupload = testdata[4];
 			String printpdf = testdata[5];
-			String button = testdata[7];
+			String button = testdata[6];
 			Reporter.log("Input Test Data was retrieved for 'Add Configure Downloadable Forms' Page");
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String FormName = formname+dateFormat.format(date)+Calendar.getInstance().getTime();
+			String FormName = formname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();
 			if (!formname.equals("")) {
 				Reporter.log("Step 1 - Enter the Form Name as ["+formname+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, CDF_FormName, formname);
+				waitForElementPresentWebdriver(attributeName_name, CDF_FormName, formname);
 				sendKeys(attributeName_name, CDF_FormName, FormName);
 				Runtimedatawrite(FormName, "Form Name");
 			}	
@@ -50,9 +50,10 @@ public class WC_AddConfigureDownloadableForms_Input extends CommonSeleniumAction
 			}
 			if (!formfiletoupload.equals("")) {
 				Reporter.log("Step 5 - Enter the form file to upload as ["+formfiletoupload+"]");
-				clickWebdriver(attributeName_name, CDF_FormFileToUpload);
-				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
-				Thread.sleep(3000);
+//				clickWebdriver(attributeName_name, CDF_FormFileToUpload);
+				sendKeysType(attributeName_name, CDF_FormFileToUpload, formfiletoupload);
+//				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
+//				Thread.sleep(3000);
 			}
 			if (!printpdf.equals("")) {
 				Reporter.log("Step 6 - Select the print pdf as ["+printpdf+"]");
@@ -67,7 +68,7 @@ public class WC_AddConfigureDownloadableForms_Input extends CommonSeleniumAction
 				Reporter.log("Step 7 - Click button as ["+button+"]");
 				if (button.equalsIgnoreCase("Save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button);
-					clickWebdriver(attributeName_xpath, "Transferx");
+					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);

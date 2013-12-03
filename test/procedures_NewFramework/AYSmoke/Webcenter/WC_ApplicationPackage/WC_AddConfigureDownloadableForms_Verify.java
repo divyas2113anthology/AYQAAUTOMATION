@@ -23,7 +23,7 @@ public class WC_AddConfigureDownloadableForms_Verify extends CommonSeleniumActio
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				String ReadFormName = Runtimedataread(message);
 				waitForElementPresentWebdriver(attributeName_partiallinktext, ReadFormName, message);
-				verifyElementContainsTextWebdriver(attributeName_partiallinktext, ReadFormName, message, message);
+				verifyElementContainsTextWebdriver(attributeName_partiallinktext, ReadFormName, ReadFormName, message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

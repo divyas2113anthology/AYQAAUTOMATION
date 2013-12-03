@@ -63,16 +63,15 @@ public class WC_ConfigureDownloadableForms_Input extends CommonSeleniumActions i
 				}
 			}
 			if (!click.equals("")) {
-				Reporter.log("Step 6 - Click button as ["+click+"]");
-				if (click.equalsIgnoreCase("New Search")) {
-					clickWebdriver(attributeName_xpath, ASR_NewSearchbtn);
-				}else if (click.equalsIgnoreCase("Back")) {
+				Reporter.log("Step 3 - Click button as ["+click+"]");
+				if (click.equalsIgnoreCase("Add")) {
+					waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, click);
+					clickWebdriver(attributeName_xpath, MSR_AddBtn);
+					waitForPageToLoadWebdriver();
+				}else if (click.equalsIgnoreCase("Delete")) {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
-				}else if (click.equalsIgnoreCase("Go")) {
-					clickWebdriver(attributeName_xpath, ASR_GoBtn);
-					waitForPageToLoad();
-				}
-			}			
+					waitForPageToLoadWebdriver();
+				}			}			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

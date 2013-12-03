@@ -1318,5 +1318,9 @@ public static final String CDF_FormOrder = "FormOrder";
 public static final String CDF_UrlToFormFile = "URL";
 public static final String CDF_FormFileToUpload = "Location";
 public static final String CDF_PrintPdf = "printPDF";
+//#**********************************************************#
+//#	 Webcenter - Configure Dynamic Text - Page
+//#**********************************************************#
+public static final String CDT_EditText = "FormName";
 }
 

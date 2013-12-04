@@ -136,7 +136,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!systemqueries.equals("")) {
 				Reporter.log("Step 16 - Select the system quries as ["+systemqueries+"]");
-				selectByValueWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
 			}	
 			if (!userqueries.equals("")) {
 				Reporter.log("Step 17 - Select the user quries as ["+userqueries+"]");
@@ -145,6 +146,11 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			
 			if (!search_using_query.equals("")) {
 				Reporter.log("Step 18 - Click the Search using query Submit Button ");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit, search_using_query);
+				sendKeyStroke(attributeName_xpath, SAI_SearchUsingQueryRadio, Keys.SPACE);
+				clickWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit);
+				waitForPageToLoad();
+				
 			}
 			if (!selectagroup.equals("")) {
 				Reporter.log("Step 19 - Select a group as ["+selectagroup+"]");

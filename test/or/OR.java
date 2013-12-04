@@ -768,6 +768,8 @@ public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[conta
 public static final String SAI_SearchByDateSubmit = "//td[font[contains(text(),'Search by Date')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
 //public static final String SAI_SearchByIndividualsRadio = "//td[font[contains(text(),'Individual')]]/preceding-sibling::td/input[@type='radio']";
 public static final String SAI_SearchByIndividualsRadio = "//input[@value='individual']";
+public static final String SAI_SearchUsingQueryRadio = "//input[@value='query']";
+public static final String SAI_SearchUsingQuerySubmit = "//td[font[contains(text(),'Using Query')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
 //#**********************************************************#
 //# Webcenter Search For Applicant Verify - SAV
 //#**********************************************************#
@@ -1321,6 +1323,11 @@ public static final String CDF_PrintPdf = "printPDF";
 //#**********************************************************#
 //#	 Webcenter - Configure Dynamic Text - Page
 //#**********************************************************#
-public static final String CDT_EditText = "FormName";
+public static final String CDT_TextRadio = "Radio1";
+public static final String CDT_HtmlRadio = "Radio2";
+public static final String CDT_HtmlEditorBtn = "btnHtmlEditor";
+public static final String CDT_TextArea = "DynamicText";
+public static final String CDT_PreviewBtn = "//img[contains(@src,'preview_small')]";
+public static final String CDT_UndoBtn = "//img[contains(@src,'undo_small')]";
 }
 

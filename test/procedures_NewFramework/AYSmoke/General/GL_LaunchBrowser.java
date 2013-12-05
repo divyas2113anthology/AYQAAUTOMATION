@@ -72,11 +72,11 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}
 			}else if (url.contains("inq")) {
 				if (environment.equalsIgnoreCase("USQA")) {
-					envirurl = "https://uatinq.applyyourself.com";
+					envirurl = "https://uatinq.applyyourself.com/?id=ayauto&pid=447";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "";
 				}else if (environment.equalsIgnoreCase("USPR")) {
-					envirurl = "https://inq.applyyourself.com";
+					envirurl = "https://inq.applyyourself.com/?id=ayauto&pid=447";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}

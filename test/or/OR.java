@@ -1329,5 +1329,29 @@ public static final String CDT_HtmlEditorBtn = "btnHtmlEditor";
 public static final String CDT_TextArea = "DynamicText";
 public static final String CDT_PreviewBtn = "//img[contains(@src,'preview_small')]";
 public static final String CDT_UndoBtn = "//img[contains(@src,'undo_small')]";
+//#**********************************************************#
+//#	 Prospect - Information Request - Page
+//#**********************************************************#
+public static final String IR_PI_FirstName = "//input[@id='q24518']";
+public static final String IR_PI_LastName = "//input[@id='q24519']";
+public static final String IR_PI_Email = "//input[@id='q24520']";
+public static final String IR_PI_Dob = "//input[@id='q24521']";
+public static final String IR_PI_Ethincity = "//select[@id='s24523']";
+public static final String IR_PI_Ssn = "//input[@id='q24524']";
+public static final String IR_AI_Address = "//input[@id='q24528']";
+public static final String IR_AI_SuiteNumber = "//input[@id='q24532']";
+public static final String IR_AI_City = "//input[@id='q24529']";
+public static final String IR_AI_State = "//input[@id='q24530']";
+public static final String IR_AI_ZipCode = "//input[@id='q24531']";
+public static final String IR_AI_Country = "//input[@id='q24533']";
+public static final String IR_OI_SchoolInterest = "//select[@id='s24534']";
+public static final String IR_OI_TermInterest = "//input[@id='s24535']";
+public static final String IR_OI_Major = "//select[@id='s24536']";
+public static final String IR_LookupBtn = "cdelkpbutton";
+public static final String IR_SubmitBtn = "//img[contains(@src,'submit_small')]";
+//#**********************************************************#
+//#	 Prospect - Look Up - Page
+//#**********************************************************#
+public static final String IR_LU_FirstName = "//input[@id='q24518']";
 }
 

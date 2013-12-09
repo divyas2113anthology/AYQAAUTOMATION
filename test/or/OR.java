@@ -1358,5 +1358,14 @@ public static final String HS_City = "//input[@id='q24543']";
 public static final String HS_State = "//input[@id='q24544']";
 public static final String HS_Country = "//input[@id='q24545']";
 public static final String HS_Zip = "//input[@id='q24546']";
+//#**********************************************************#
+//#	 Maintananace - Upload Images - Page
+//#**********************************************************#
+public static final String UI_ClassicRadio = "//input[@value='classic']";
+public static final String UI_FaceliftRadio = "//input[@value='facelift']";
+public static final String UI_CornerImage = "chkCornerPackage";
+public static final String UI_Package = "selPackages";
+
+public static final String UI_UploadBtn = "//img[contains(@src,'upload')]";
 }
 

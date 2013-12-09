@@ -61,7 +61,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						recentPopupSelectWebdriver("Application Summary");
 					}else{
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
-					recentPopupSelectWebdriver("Application Summary");
+					int WindowCount = getWindowHandles();
+					recentMultiplePopupSelectWebdriver("Application Summary", WindowCount);
 					}
 				}else{
 				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]");

@@ -44,7 +44,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!eduhighschoolname.equals("")) {
 				Reporter.log("Step 4 - Verify data("+eduhighschoolname+") was displayed correctly in the 'High School Name' Field");
-				String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
+				String hsnameID = getElementIDbyLabel("HS Name", HS_Name);
 				waitForElementPresentWebdriver(attributeName_xpath, hsnameID, eduhighschoolname);
 				String vhsname = getValue(hsnameID);
 				if (vhsname.equals(eduhighschoolname)) {
@@ -55,7 +55,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!educity.equals("")) {
 				Reporter.log("Step 8 - Verify data("+educity+") was displayed correctly in the 'City' Field");
-				String cityID = getElementIDbyLabel("City", EB_City);
+				String cityID = getElementIDbyLabel("HS City", HS_City);
 				String vcity = getValue(cityID);
 				if (vcity.equals(educity)) {
 					Reporter.log("Data("+vcity+") was displayed correctly in the [City] Field");				
@@ -65,7 +65,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!edustate.equals("")) {
 				Reporter.log("Step 9 - Verify data("+edustate+") was displayed correctly in the 'State' Field");
-				String stateID = getElementIDbyLabel("State", EB_State);
+				String stateID = getElementIDbyLabel("HS State", HS_State);
 				String vstate = getValue(stateID);
 				if (vstate.equals(edustate)) {
 					Reporter.log("Data("+vstate+") was displayed correctly in the [State] Field");				
@@ -75,7 +75,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!educountry.equals("")) {
 				Reporter.log("Step 10 - Verify data("+educountry+") was displayed correctly in the 'Country' Field");
-				String countryID = getElementIDbyLabel("Country", EB_Country);
+				String countryID = getElementIDbyLabel("HS Country", HS_Country);
 				String vcountry = getValue(countryID);
 				if (vcountry.equals(educountry)) {
 					Reporter.log("Data("+vcountry+") was displayed correctly in the [Country] Field");				
@@ -85,7 +85,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!edupostalcode.equals("")) {
 				Reporter.log("Step 11 - Verify data("+edupostalcode+") was displayed correctly in the 'Postal Code' Field");
-				String postalID = getElementIDbyLabel("Postal Code", EB_PostalCode);
+				String postalID = getElementIDbyLabel("HS Zip", HS_Zip);
 				String vpostal = getValue(postalID);
 				if (vpostal.equals(edupostalcode)) {
 					Reporter.log("Data("+vpostal+") was displayed correctly in the [Postal Code] Field");				

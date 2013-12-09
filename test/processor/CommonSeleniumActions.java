@@ -2570,14 +2570,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}					
 		//				writeConsole("["+by+"]");
 		return by;
-
-
 	}
-
-
-
-
-
 	public void get(String url){
 		writeConsole("get["+url+"]");
 		driver.get(url);
@@ -2595,7 +2588,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,"+y+");");
 		attributeNameValue(attributename, attributevalue).click();
 	}
-
+	
+	public void mouseOverWebdriver(String attributename,String attributevalue){
+		writeConsole("Webdriver mouseOver["+attributename+", "+attributevalue+"]");
+		Actions actions = new Actions(driver);	
+		actions.moveToElement(attributeNameValue(attributename, attributevalue)).build().perform();
+	}
 
 	public void sendKeys(String attributename,String attributevalue,String value){
 		writeConsole("Webdriver Clear and sendKeys["+attributename+", "+attributevalue+", "+value+"]");

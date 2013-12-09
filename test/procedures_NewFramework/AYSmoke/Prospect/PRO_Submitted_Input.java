@@ -21,7 +21,8 @@ public class PRO_Submitted_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
 			if (!updateunsubscription.equals("")) {
 				Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
-				clickWebdriver(attributeName_xpath, "");
+				waitForElementPresentWebdriver(attributeName_partiallinktext, updateunsubscription, updateunsubscription);
+				clickWebdriver(attributeName_partiallinktext, updateunsubscription);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

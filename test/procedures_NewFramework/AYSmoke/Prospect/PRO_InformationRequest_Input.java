@@ -68,7 +68,7 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			if (!ssn.equals("")) {
 				Reporter.log("Step 7 - Enter Favourite Sports as ("+ssn+")");
 				String SsnID = getElementIDbyLabelContains("SSN", IR_PI_Ssn);
-				select(SsnID,ssn);			
+				type(SsnID,ssn);			
 			}
 			if (!address.equals("")) {
 				Reporter.log("Step 8 - Enter the address as ("+address+")");
@@ -112,8 +112,9 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			}
 			if (!major.equals("")) {
 				Reporter.log("Step 16 - Select the major as ("+major+")");
-				String Major = getElementIDbyLabelContains("Ethnicity", IR_PI_Ethincity);
-				selectByVisibleTextWebdriver(attributeName_xpath, Major, major);
+				String MajorID = getElementIDbyLabel("Major:", IR_OI_Major);
+//				select("//select[@id='s24536']", major);
+				selectByVisibleTextWebdriver(attributeName_xpath, MajorID, major);
 			}
 			if (!lookupsubmitreset.equals("")) {
 				Reporter.log("Step 17 - Click on ("+lookupsubmitreset+")Button");
@@ -121,10 +122,11 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 					clickWebdriver(attributeName_name, IR_LookupBtn);
 					recentPopupSelectWebdriver("Address Lookup");
 				}else if (lookupsubmitreset.equalsIgnoreCase("Submit")) {
-					clickWebdriver(attributeName_name, IR_SubmitBtn);
+					waitForElementPresentWebdriver(attributeName_xpath, IR_SubmitBtn, lookupsubmitreset);
+					clickWebdriver(attributeName_xpath, IR_SubmitBtn);
 					waitForPageToLoadWebdriver();
 				}else if (lookupsubmitreset.equalsIgnoreCase("Reset")) {
-					clickWebdriver(attributeName_name,PI_Reset);
+					clickWebdriver(attributeName_xpath,PI_Reset);
 				}
 			}
 			

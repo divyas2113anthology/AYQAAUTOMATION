@@ -1345,7 +1345,7 @@ public static final String IR_AI_State = "//input[@id='q24530']";
 public static final String IR_AI_ZipCode = "//input[@id='q24531']";
 public static final String IR_AI_Country = "//input[@id='q24533']";
 public static final String IR_OI_SchoolInterest = "//select[@id='s24534']";
-public static final String IR_OI_TermInterest = "//input[@id='s24535']";
+public static final String IR_OI_TermInterest = "//select[@id='s24535']";
 public static final String IR_OI_Major = "//select[@id='s24536']";
 public static final String IR_LookupBtn = "cdelkpbutton";
 public static final String IR_SubmitBtn = "//img[contains(@src,'submit_small')]";
@@ -1353,5 +1353,10 @@ public static final String IR_SubmitBtn = "//img[contains(@src,'submit_small')]"
 //#	 Prospect - Look Up - Page
 //#**********************************************************#
 public static final String IR_LU_FirstName = "//input[@id='q24518']";
+public static final String HS_Name = "//input[@id='q24542']";
+public static final String HS_City = "//input[@id='q24543']";
+public static final String HS_State = "//input[@id='q24544']";
+public static final String HS_Country = "//input[@id='q24545']";
+public static final String HS_Zip = "//input[@id='q24546']";
 }
 

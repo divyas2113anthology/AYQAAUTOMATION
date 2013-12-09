@@ -119,6 +119,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
 				}
 				recentPopupSelectWebdriver("Application Form3");
+//				int WindowCount = getWindowHandles();
+//				recentMultiplePopupSelectWebdriver("Application Form3", WindowCount);
 //				if (viewfullapplication.equalsIgnoreCase("Applicant Detail")) {
 //					clickWebdriver(attributeName_linktext, viewfullapplication);
 //				} else if (viewfullapplication.equalsIgnoreCase("Application Form3")){

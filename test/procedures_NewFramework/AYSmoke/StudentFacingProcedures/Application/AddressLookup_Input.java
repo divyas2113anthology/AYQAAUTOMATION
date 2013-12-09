@@ -69,6 +69,7 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 //			waitForPageToLoadWebdriver();
 		}
 		selectMainWindowWebdriver();		
+		recentOpenedPopupSelectWebdriver("Select Previous Window");
 		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

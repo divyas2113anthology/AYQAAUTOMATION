@@ -43,10 +43,10 @@ public class MC_UploadImages_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!cornerimagepackage.equals("")) {
 				Reporter.log("Step 4 - Select the CheckBox as ["+cornerimagepackage+"] ");
-				if (cornerimagepackage.contains("check")) {
-					checkWebdriver(attributeName_xpath, UI_CornerImage);
-				}else if (cornerimagepackage.contains("Uncheck")) {
-					uncheckWebdriver(attributeName_xpath, UI_CornerImage);
+				if (cornerimagepackage.equalsIgnoreCase("Check")) {
+					checkWebdriver(attributeName_name, UI_CornerImage);
+				}else if (cornerimagepackage.equalsIgnoreCase("Uncheck")) {
+					uncheckWebdriver(attributeName_name, UI_CornerImage);
 				}				
 			}
 			if (!selectapackage.equals("")) {
@@ -95,7 +95,8 @@ public class MC_UploadImages_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Delete")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SAE_DeleteButton, buttons);
-					clickWebdriver(attributeName_xpath, SAE_DeleteButton);				
+					clickWebdriver(attributeName_xpath, SAE_DeleteButton);	
+					alertAccept();
 					waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Cancel")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SAE_CancelButton, buttons);

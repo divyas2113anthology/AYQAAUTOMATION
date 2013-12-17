@@ -29,6 +29,16 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://app.applyyourself.com/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://app.hobsons.co.uk/?id=ayauto&facelift=true";
+				}else if (environment.equalsIgnoreCase("IAD1PW081")) {
+					envirurl = "http://iad1pw081app.emt.hobsons.local/?id=ayauto&facelift=true";
+				}else if (environment.equalsIgnoreCase("IAD1PW082")) {
+					envirurl = "http://iad1pw082app.emt.hobsons.local/?id=ayauto&facelift=true";
+				}else if (environment.equalsIgnoreCase("IAD1PW083")) {
+					envirurl = "http://iad1pw083app.emt.hobsons.local/?id=ayauto&facelift=true";
+				}else if (environment.equalsIgnoreCase("IAD1PW084")) {
+					envirurl = "http://iad1pw084app.emt.hobsons.local/?id=ayauto&facelift=true";
+				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
+					envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto&facelift=true";
 				}
 			}else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {	
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -39,6 +49,16 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://app.applyyourself.com/?id=ayauto";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://app.hobsons.co.uk/?id=ayauto";
+				}else if (environment.equalsIgnoreCase("IAD1PW081")) {
+					envirurl = "http://iad1pw081app.emt.hobsons.local/?id=ayauto";
+				}else if (environment.equalsIgnoreCase("IAD1PW082")) {
+					envirurl = "http://iad1pw082app.emt.hobsons.local/?id=ayauto";
+				}else if (environment.equalsIgnoreCase("IAD1PW083")) {
+					envirurl = "http://iad1pw083app.emt.hobsons.local/?id=ayauto";
+				}else if (environment.equalsIgnoreCase("IAD1PW084")) {
+					envirurl = "http://iad1pw084app.emt.hobsons.local/?id=ayauto";
+				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
+					envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto";
 				}
 			}else if (url.contains("webcenter")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -49,6 +69,16 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://webcenter.applyyourself.com/";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://webcenter.hobsons.co.uk";
+				}else if (environment.equalsIgnoreCase("IAD1PW081")) {
+					envirurl = "http://iad1pw081:8088/";
+				}else if (environment.equalsIgnoreCase("IAD1PW082")) {
+					envirurl = "http://iad1pw082:8088/";
+				}else if (environment.equalsIgnoreCase("IAD1PW083")) {
+					envirurl = "http://iad1pw083:8088/";
+				}else if (environment.equalsIgnoreCase("IAD1PW084")) {
+					envirurl = "http://iad1pw084:8088/";
+				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
+					envirurl = "http://iad1pw085:8088/";
 				}
 			}else if (url.contains("manage")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -69,6 +99,16 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://rec.applyyourself.com";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://rec.hobsons.co.uk";
+				}else if (environment.equalsIgnoreCase("IAD1PW081")) {
+					envirurl = "http://iad1pw081:8091/";
+				}else if (environment.equalsIgnoreCase("IAD1PW082")) {
+					envirurl = "http://iad1pw082:8091/";
+				}else if (environment.equalsIgnoreCase("IAD1PW083")) {
+					envirurl = "http://iad1pw083:8091/";
+				}else if (environment.equalsIgnoreCase("IAD1PW084")) {
+					envirurl = "http://iad1pw084:8091/";
+				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
+					envirurl = "http://iad1pw085:8091/";
 				}
 			}else if (url.contains("inq")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -141,8 +181,17 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
-			}
-			else if (!openurl.equals("")) {
+			}else if (url.contains("iad1")) {
+				if (environment.equalsIgnoreCase("USQA")) {
+					envirurl = "https://aybus.hobsonsemt.net/sso/Sso/Login";
+				}else if (environment.equalsIgnoreCase("UKQA")) {
+					envirurl = "";
+				}else if (environment.equalsIgnoreCase("USPR")) {
+					envirurl = "";
+				}else if (environment.equalsIgnoreCase("UKPR")) {
+					envirurl = "";
+				}
+			}else if (!openurl.equals("")) {
 				
 			}
 			Reporter.log("Step 1 - Proceed to Open URL("+envirurl+")");

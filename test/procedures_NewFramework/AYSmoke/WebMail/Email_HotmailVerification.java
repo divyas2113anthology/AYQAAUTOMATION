@@ -32,7 +32,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			Reporter.log("Input and Verify  Test Data was retrieved for 'Hotmail Verification'  in Hobsons Account");	
 			if (!url.equals("")) {						
 				Reporter.log("Step 1 - Opening the Hotmail Window");
-				get("http://mail.hotmail.com/");
+				get("http://www.hotmail.com/");
 				waitForPageToLoad(); 
 			}
 			if (!username.equals("")) {

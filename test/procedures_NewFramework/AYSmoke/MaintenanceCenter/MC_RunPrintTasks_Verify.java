@@ -30,7 +30,6 @@ public class MC_RunPrintTasks_Verify extends CommonSeleniumActions implements OR
 			writeFailure(e.getLocalizedMessage());
 		}
 	}
-
 }
 
 

@@ -33,14 +33,16 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		String pdsportsintrest = fpdatarepo[11];
 		String pdschoolcode = fpdatarepo[12];
 		String pdemailaddress= fpdatarepo[13];
-		String feereviewappfee = fpdatarepo[14];
-		String feepaymentmethod = fpdatarepo[15];
-		String paymentreceiveddate = fpdatarepo[16];
-		String paymentstatus = fpdatarepo[17];
-		String pdsave = fpdatarepo[18];
-		String addrecommendationproviders = fpdatarepo[19];
+		String pullquestion = fpdatarepo[14];
+		String pushquestion = fpdatarepo[15];
+		String feereviewappfee = fpdatarepo[16];
+		String feepaymentmethod = fpdatarepo[17];
+		String paymentreceiveddate = fpdatarepo[18];
+		String paymentstatus = fpdatarepo[19];
+		String pdsave = fpdatarepo[20];
+		String addrecommendationproviders = fpdatarepo[21];
 		Reporter.log("Retrieved Test Data in 'Quick Add' input");
-//		recentPopupSelectWebdriver("Quick Add");
+		recentPopupSelectWebdriver("Quick Add");
 		if (!pdsufix.equals("")) {
 			Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
 			String Sufixpd = getElementIDbyLabel("Suffix",PD_Suffix);
@@ -122,8 +124,18 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 			String Emailaddresspd = getElementIDbyLabel("Email address",PD_Emailaddress);
 			sendKeys(attributeName_xpath,Emailaddresspd,pdemailaddress);
 		}
+		if (!pullquestion.equals("")) {
+			Reporter.log("Step 15 - Enter Pull Question as ("+pullquestion+")");
+			String PullQuestion = getElementIDbyLabel("Pull Question",PD_PullQuestion);
+			sendKeys(attributeName_xpath,PullQuestion,pullquestion);
+		}
+		if (!pushquestion.equals("")) {
+			Reporter.log("Step 16 - Enter Push Question as ("+pushquestion+")");
+			String PullQuestion = getElementIDbyLabel("Push Question",PD_PullQuestion);
+			sendKeys(attributeName_xpath,PullQuestion,pullquestion);
+		}
 		if (!feereviewappfee.equals("")) {
-			Reporter.log("Step 15 - Proceed to Check ("+feereviewappfee+") Review Application Fee Radio");
+			Reporter.log("Step 17 - Proceed to Check ("+feereviewappfee+") Review Application Fee Radio");
 			clickWebdriver(attributeName_xpath, "//font[contains(text(),'"+feereviewappfee+"')]/input[@type='radio']");
 //			if (feereviewappfee.equalsIgnoreCase("Domestic")) {
 //				clickWebdriver(attributeName_xpath, QA_Domestic);				
@@ -132,7 +144,7 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 //			}
 		}
 		if (!feepaymentmethod.equals("")) {
-			Reporter.log("Step 16 - Proceed to Check ("+feepaymentmethod+") Select Payment Method Radio");
+			Reporter.log("Step 18 - Proceed to Check ("+feepaymentmethod+") Select Payment Method Radio");
 			clickWebdriver(attributeName_xpath, "//font[contains(text(),'"+feepaymentmethod+"')]/input[@type='radio']");
 //			if (feepaymentmethod.equalsIgnoreCase("Check")) {
 //				clickWebdriver(attributeName_xpath, QA_International);	
@@ -143,15 +155,15 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 //			}			
 		}
 		if (!paymentreceiveddate.equals("")) {
-			Reporter.log("Step 17 - Enter the payment received ("+paymentreceiveddate+") ");
+			Reporter.log("Step 19 - Enter the payment received ("+paymentreceiveddate+") ");
 			sendKeys(attributeName_name, "paymentReceivedDt", paymentreceiveddate);
 		}
 		if (!paymentstatus.equals("")) {
-			Reporter.log("Step 18 - Enter the payment status ("+paymentreceiveddate+") ");
+			Reporter.log("Step 20 - Enter the payment status ("+paymentreceiveddate+") ");
 			selectByVisibleTextWebdriver(attributeName_name, "paymentstatus", paymentstatus);
 		}
 		if (!pdsave.equals("")) {
-			Reporter.log("Step 19 - Click on ("+pdsave+")Button");
+			Reporter.log("Step 21 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Submit")){
 				clickWebdriver(attributeName_xpath, QA_SubmitBtn);
 				waitForPageToLoadWebdriver();
@@ -160,7 +172,7 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 			}
 		}
 		if (!addrecommendationproviders.equals("")) {
-			Reporter.log("Step 20 - Select the add recommendation providers ("+feereviewappfee+")");
+			Reporter.log("Step 22 - Select the add recommendation providers ("+feereviewappfee+")");
 			if (addrecommendationproviders.contains("check")) {
 				checkWebdriver(attributeName_name, "cbAddRcmds");				
 			}else if (addrecommendationproviders.contains("Uncheck")) {

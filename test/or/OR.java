@@ -268,6 +268,8 @@ public static final String PD_Testscore = "//input[@id='q24316']";
 public static final String PD_AcademicInterest = "//select[@id='s24317']";
 public static final String PD_SchoolCode = "//input[@id='q24318']";
 public static final String PD_Emailaddress = "//input[@id='q24319']";
+public static final String PD_PullQuestion = "//input[@id='q26168']";
+public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
 public static final String PD_Save = "//img[@alt='Save']";

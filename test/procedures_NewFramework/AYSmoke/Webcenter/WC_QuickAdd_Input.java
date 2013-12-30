@@ -51,8 +51,10 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdfirstname.equals("")) {
 			Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
-			String Fnamepd = getElementIDbyLabel("First Given Name",PD_FirstGivenName);				
-			sendKeys(attributeName_xpath,Fnamepd,pdfirstname+Calendar.getInstance().getTimeInMillis());
+			String Fnamepd = getElementIDbyLabel("First Given Name",PD_FirstGivenName);	
+			String PDFirstName = pdfirstname+Calendar.getInstance().getTimeInMillis();
+			sendKeys(attributeName_xpath,Fnamepd,PDFirstName);
+			Runtimedatawrite(PDFirstName, pdfirstname);
 		}
 		if (!pdmiddlename.equals("")) {
 			Reporter.log("Step 3 - Enter Middle Name as ("+pdmiddlename+")");

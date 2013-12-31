@@ -36,7 +36,9 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!section.equals("")) {
 			Reporter.log("Step 3 - Select the Section as ["+section+"]");
-			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
+			waitForElementPresentWebdriver(attributeName_xpath, ESR_Section, section);
+//			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
+			select(ESR_Section, "regexp:"+section);
 		}
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
@@ -50,7 +52,8 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 //			    if(field.equals(option.getText().trim()))
 //			        option.click();   
 //			}
-			selectByIndexWebdriver(attributeName_xpath, ESR_Field, Integer.parseInt(field));
+//			selectByIndexWebdriver(attributeName_xpath, ESR_Field, Integer.parseInt(field));
+			select(ESR_Section, "regexp:"+field);
 //			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
 			Thread.sleep(3000);
 //			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);

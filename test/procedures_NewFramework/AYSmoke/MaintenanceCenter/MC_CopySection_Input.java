@@ -29,18 +29,18 @@ public class MC_CopySection_Input extends CommonSeleniumActions implements OR{
 			}
 			if (!sourcepackage.equals("")) {
 				Reporter.log("Step 2 - Click the Source Package as  ["+sourcepackage+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+sourcepackage+"')]/input", sourcepackage);
-				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+sourcepackage+"')]/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+sourcepackage+"')]/input[@name='sPackageID']", sourcepackage);
+				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+sourcepackage+"')]/input[@name='sPackageID']");
 			}
 			if (!sourceform.equals("")) {
 				Reporter.log("Step 3 - Click the Source Form as  ["+sourceform+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourceform+"')]/input", sourceform);
-				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourceform+"')]/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourceform+"')]/input[@name='FormID']", sourceform);
+				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourceform+"')]/input[@name='FormID']");
 			}
 			if (!sourcesection.equals("")) {
 				Reporter.log("Step 4 - Click the Source Section as  ["+sourcesection+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourcesection+"')]/input", sourcesection);
-				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourcesection+"')]/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourcesection+"')]/input[@name='SectionID']", sourcesection);
+				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+sourcesection+"')]/input[@name='SectionID']");
 			}
 			if (!targetclientid.equals("")) {
 				Reporter.log("Step 5 - Select the Target ClientID as  ["+targetclientid+"]");
@@ -49,17 +49,17 @@ public class MC_CopySection_Input extends CommonSeleniumActions implements OR{
 			}
 			if (!targetpackage.equals("")) {
 				Reporter.log("Step 6 - Click the Target Package as  ["+targetpackage+"]");
-//				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+targetpackage+"')]/input", targetpackage);
-				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+targetpackage+"')]/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+targetpackage+"')]/input[@name='tPackageID']", targetpackage);
+				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+targetpackage+"')]/input[@name='tPackageID']");
 			}
 			if (!targetsection.equals("")) {
 				Reporter.log("Step 7 - Click the Target Form as  ["+targetsection+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+targetsection+"')]/input", targetsection);
-				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+targetsection+"')]/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+targetsection+"')]/input[@name='tFormID']", targetsection);
+				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+targetsection+"')]/input[@name='tFormID']");
 			}
 			if (!button.equals("")) {
 				Reporter.log("Step 8 - Click the submit Button");
-				clickWebdriver(attributeName_xpath, AL_SubmitBtn);
+				clickWebdriver(attributeName_xpath, MCL_SaveModbutton);
 				waitForPageToLoadWebdriver();
 			}
 		}catch(Exception e){

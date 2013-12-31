@@ -54,7 +54,7 @@ public class MC_CopyPickList_Input extends CommonSeleniumActions implements OR{
 				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+targetapplicationforqaautomation+"')]/input[@name='tPackageID']");
 			}
 			if (!button.equals("")) {
-				Reporter.log("Step 8 - Click the submit Button");
+				Reporter.log("Step 6 - Click the submit Button");
 				clickWebdriver(attributeName_xpath, MCL_SaveModbutton);
 				waitForPageToLoadWebdriver();
 			}

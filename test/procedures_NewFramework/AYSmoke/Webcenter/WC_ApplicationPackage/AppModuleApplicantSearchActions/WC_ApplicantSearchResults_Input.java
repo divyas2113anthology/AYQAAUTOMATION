@@ -59,6 +59,10 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 //						sendKeyStroke(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]", Keys.SPACE);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						recentPopupSelectWebdriver("Application Summary");
+					}else if (clickname.equalsIgnoreCase("OLIVE")) {
+						String ReadClickName = Runtimedataread(clickname);
+						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						recentPopupSelectWebdriver("Application Summary");
 					}else{
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
 					int WindowCount = getWindowHandles();

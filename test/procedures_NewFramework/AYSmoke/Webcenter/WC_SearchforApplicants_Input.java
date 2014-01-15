@@ -95,6 +95,9 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				}else if (firstname.equals("FaceliftAppFirstName")) {
 					String DataFirstName = Runtimedataread(firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
+				}else if (firstname.equals("OLIVE")) {
+					String DataFirstName = Runtimedataread(firstname);
+					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}
 				else{
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);

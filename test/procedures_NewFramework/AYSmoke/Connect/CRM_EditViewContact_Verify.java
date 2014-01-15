@@ -36,23 +36,28 @@ public class CRM_EditViewContact_Verify extends CommonSeleniumActions implements
 			}
 			if (!contactedit.equals("")) {
 				Reporter.log("Step 3 - Verify the exact contact edit log ("+contactedit+") correctly");
-				verifyAllUserTableCellValuePresentInColumn(contactedit, "Contact Edit");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+contactedit+"']]", "Contact Edit");
+				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(contactedit, "Contact Edit");
 			}
 			if (!datasource.equals("")) {
-				Reporter.log("Step 4 - Verify the exact contact edit log ("+datasource+") correctly");
-				verifyAllUserTableCellValuePresentInColumn(datasource, "Datasource");
+				Reporter.log("Step 4 - Verify the exact datasource log ("+datasource+") correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+datasource+"']]", "Datasource");
+				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(datasource, "Datasource");
 			}
 			if (!sourcecode.equals("")) {
-				Reporter.log("Step 5 - Verify the exact contact edit log ("+sourcecode+") correctly");
-				verifyAllUserTableCellValuePresentInColumn(sourcecode, "Source Code");
+				Reporter.log("Step 5 - Verify the exact sourcecode log ("+sourcecode+") correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+sourcecode+"']]", "Source Code");
+				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(sourcecode, "Source Code");
 			}
 			if (!editeddate.equals("")) {
-				Reporter.log("Step 6 - Verify the exact contact edit log ("+editeddate+") correctly");
-				verifyAllUserTableCellValuePresentInColumn(editeddate, "Edited Date");
+				Reporter.log("Step 6 - Verify the exact editeddate log ("+editeddate+") correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+editeddate+"']]", "Edited Date");
+				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(editeddate, "Edited Date");
 			}
 			if (!editedby.equals("")) {
-				Reporter.log("Step 7 - Verify the exact contact edit log ("+editedby+") correctly");
-				verifyAllUserTableCellValuePresentInColumn(editedby, "Edited By");
+				Reporter.log("Step 7 - Verify the exact editedby log ("+editedby+") correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+editedby+"']]", "Edited By");
+				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(editedby, "Edited By");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

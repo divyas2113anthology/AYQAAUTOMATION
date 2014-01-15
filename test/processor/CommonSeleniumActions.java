@@ -1006,6 +1006,20 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
 		}			
 	}
+	public void verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(String expectedcellvalue,String columnname) throws Exception{
+		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Present in the Column Name ["+columnname+"]");
+		if (isElementPresent("//tr[td[text()='"+expectedcellvalue+"']]")) {	
+			String actualcellvalue = getText("//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+1]");
+			if (actualcellvalue.equals(expectedcellvalue)) {
+				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
+			} 
+			else {
+				writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
+			}
+		}else {
+			writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
+		}			
+	}
 
 	public void verifyAllUserTableCellValueNotPresentInColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Not Present in the Column Name ["+columnname+"]");

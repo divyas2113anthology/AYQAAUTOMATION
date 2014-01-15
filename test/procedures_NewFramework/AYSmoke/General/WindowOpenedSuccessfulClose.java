@@ -47,16 +47,16 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 				Reporter.log("Proceed to Close the Popup Window");	
 				if (closewindow.equalsIgnoreCase("Close Window")) {
 					clickWebdriver(attributeName_xpath, CloseWindow);
-					recentPopupSelect("Select Previous Window");
+					recentOpenedPopupSelectWebdriver("Select Previous Window");
 //					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("Close")) {
 					closeWindowWebdriver();
 					selectMainWindowWebdriver();
-					recentOpenedPopupSelectWebdriver("Select Previous Window");
+//					recentOpenedPopupSelectWebdriver("Select Previous Window");
 //					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("CloseWindow")) {
 					clickWebdriver(attributeName_xpath, ApplicantCloseWindow);
-					recentPopupSelect("Select Previous Window");
+					recentOpenedPopupSelectWebdriver("Select Previous Window");
 //					selectMainWindowWebdriver();
 				}
 			}	

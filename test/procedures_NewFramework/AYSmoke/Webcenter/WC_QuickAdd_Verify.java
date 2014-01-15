@@ -28,7 +28,6 @@ public class WC_QuickAdd_Verify extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath, BP_PageName, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, BP_PageName, pagename, "Page Name for Manage Users");
 			}
-			selectMainWindowWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

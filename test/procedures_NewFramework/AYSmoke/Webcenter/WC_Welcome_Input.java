@@ -17,7 +17,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			String weltopupdatelogout = testdata[0];
 			String welpackage = testdata[1];
 			String welmenulinks = testdata[2];
-			String wellinks = testdata[3];
+			String link_to_click = testdata[3];
 			
 			Reporter.log("Input Test Data was retrieved for 'Welcome' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
@@ -52,21 +52,23 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoad();
 				}
 			}	
-			if (!wellinks.equals("")) {
-				Reporter.log("Step 4 - Click the Name of the Link as ["+wellinks+"]");
-				if (wellinks.equalsIgnoreCase("logout")) {
-//					clickWebdriver(attributeName_xpath,WebcenteLogout);
-					clickWebdriver(attributeName_partiallinktext, wellinks);
+			if (!link_to_click.equals("")) {
+				Reporter.log("Step 4 - Click the Name of the Link as ["+link_to_click+"]");
+				if (link_to_click.equalsIgnoreCase("logout")) {
+					clickWebdriver(attributeName_partiallinktext, link_to_click);
 					waitForPageToLoadWebdriver();
-				}else if (wellinks.equalsIgnoreCase("online support top")) {
+				}else if (link_to_click.equalsIgnoreCase("online support top")) {
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportTop);
 					recentPopupSelectWebdriver("Online Support");
-				}else if (wellinks.equalsIgnoreCase("online support bottom")) {
+				}else if (link_to_click.equalsIgnoreCase("online support bottom")) {
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportBottom);
 					recentPopupSelectWebdriver("Online Support");
-				}else if (wellinks.equalsIgnoreCase("Product Suggestions")) {
+				}else if (link_to_click.equalsIgnoreCase("Product Suggestions")) {
 					clickWebdriver(attributeName_xpath, WebcenteProdSug);
 					recentPopupSelectWebdriver("Product Suggestions");
+				}else if (link_to_click.equalsIgnoreCase("CRM")) {
+					clickWebdriver(attributeName_linktext, link_to_click);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {

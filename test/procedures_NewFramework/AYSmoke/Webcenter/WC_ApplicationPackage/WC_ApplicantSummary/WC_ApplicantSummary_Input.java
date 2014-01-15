@@ -130,6 +130,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			if (!supportingdocuments.equals("")) {
 				Reporter.log("Step 11 - Click the SUpporting Document as ["+supportingdocuments+"]");
 				clickWebdriver(attributeName_linktext, supportingdocuments);
+				recentPopupSelectWebdriver("Supporting Document");
 //				if (supportingdocuments.equalsIgnoreCase("Application Fee")) {
 //					clickWebdriver(attributeName_linktext, supportingdocuments);
 //				} else if (supportingdocuments.equalsIgnoreCase("Recommendation-Shiva")){

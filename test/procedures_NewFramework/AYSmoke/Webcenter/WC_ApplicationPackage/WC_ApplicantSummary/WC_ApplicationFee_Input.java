@@ -31,15 +31,15 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			}
 			if (!payment_status.equals("")) {
 				Reporter.log("Select the payment status as ["+payment_status+"]");
-				selectByVisibleTextWebdriver(attributeName_name, "pmtstatus", payment_type);
+				selectByVisibleTextWebdriver(attributeName_name, "pmtstatus", payment_status);
 			}
 			if (!payment_amount_received.equals("")) {
-				Reporter.log("Enter the first name as ["+payment_amount+"]");
-				sendKeys(attributeName_name, "pmtAmount", payment_amount);
+				Reporter.log("Enter the first name as ["+payment_amount_received+"]");
+				sendKeys(attributeName_name, "pmtAmount", payment_amount_received);
 			}
 			if (!payment_received_date.equals("")) {
-				Reporter.log("Enter the first name as ["+payment_amount+"]");
-				sendKeys(attributeName_name, "pmtdt", payment_amount);
+				Reporter.log("Enter the first name as ["+payment_received_date+"]");
+				sendKeys(attributeName_name, "pmtdt", payment_received_date);
 			}
 			if (!button_to_click.equals("")) {
 				Reporter.log("Click the button as ["+button_to_click+"]");
@@ -53,6 +53,9 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				}else if (button_to_click.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);	
 					selectMainWindowWebdriver();
+				}else if (button_to_click.equalsIgnoreCase("add")) {
+					clickWebdriver(attributeName_xpath, MSR_AddBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {
@@ -62,6 +65,3 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 	}
 
 }
-
-
-

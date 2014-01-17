@@ -1264,6 +1264,7 @@ public static final String Ad_HTML = "//input[@value='HTML']";
 public static final String Ad_Excel = "//input[@value='XLS']";
 public static final String Ad_RunAnalysis = "//img[contains(@src,'run_analysis')]";
 public static final String Ad_FormHeading = "//font[@class='FormHeading']";
+public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page

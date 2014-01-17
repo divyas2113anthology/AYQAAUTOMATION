@@ -25,8 +25,8 @@ public class WC_ManageConfigureDynamicText_Verify extends CommonSeleniumActions 
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, Ad_PageName, pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageName, pagename, "Page Name for Package");
+				waitForElementPresentWebdriver(attributeName_xpath, Ad_PageHeading, pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageHeading, pagename, "Page Name for Package");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

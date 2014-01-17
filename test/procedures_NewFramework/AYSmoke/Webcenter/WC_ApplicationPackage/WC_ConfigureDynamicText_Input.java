@@ -1,4 +1,4 @@
-package procedures_NewFramework.AYSmoke.Webcenter;
+package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -37,7 +37,7 @@ public class WC_ConfigureDynamicText_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Edit with HTML Editor")) {
-					clickWebdriver(attributeName_xpath, CDT_HtmlEditorBtn);
+					clickWebdriver(attributeName_name, CDT_HtmlEditorBtn);
 					recentPopupSelectWebdriver("HTML Editor");
 				}else if (button.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);

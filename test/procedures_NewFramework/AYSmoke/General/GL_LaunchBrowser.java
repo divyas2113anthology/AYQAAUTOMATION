@@ -187,7 +187,6 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 1 - Proceed to Open URL("+envirurl+")");
 			writeConsole("Entering URL : "+envirurl);
 			get(envirurl);
-//			selenium.open(envirurl);
 			waitForPageToLoadWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

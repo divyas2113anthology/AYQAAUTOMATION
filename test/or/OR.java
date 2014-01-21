@@ -1266,6 +1266,7 @@ public static final String Ad_RunAnalysis = "//img[contains(@src,'run_analysis')
 public static final String Ad_FormHeading = "//font[@class='FormHeading']";
 public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
+public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page
 //#**********************************************************#

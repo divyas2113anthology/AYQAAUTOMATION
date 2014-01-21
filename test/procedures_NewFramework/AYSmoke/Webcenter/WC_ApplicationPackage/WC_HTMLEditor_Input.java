@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
+import java.util.Calendar;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
@@ -22,31 +24,17 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 			String button = testdata[1];
 			Reporter.log("Input Test Data was retrieved for 'HTML Editor' Page");
 //			waitForElementPresentWebdriver(attributeName_name, CDT_HtmlEditorBtn, "HTML Edit Button");
+			String lastname = textarea+Calendar.getInstance().getTimeInMillis();
 			if (!textarea.equals("")) {
-				Reporter.log("Step 2 - Enter the Dynamic Text  Area as ["+textarea+"]");
+				Reporter.log("Step 1 - Enter the Dynamic Text  Area as ["+textarea+"]");
 				Thread.sleep(10000);
 				 WebElement frame = driver.findElement(By.tagName("iframe"));
-//				 WebElement frame = driver.findElement(By.xpath("//p/b/font/u"));
 				 driver.switchTo().frame(frame);
-				 
-				 clickWebdriver(attributeName_xpath, "//a[@title='HTML']");
-				 Thread.sleep(10000);
-				 
-				 GetHTML = getAttributeWebdriver(attributeName_xpath, "//body/textarea", "innerHTML");
-				 writeConsole("Get HTML : "+GetHTML);
-				 
-//				 GetHTML = getTextWebdriver(attributeName_xpath, "");
-//				 WebElement elem = driver.findElement(By.tagName("body"));
-//				 WebElement elem = driver.findElement(By.xpath("//body//p"));
-//		            elem.click();
-//		            elem.sendKeys("HELLO!!!!");
-//		        //    driver.SwitchTo().Window(currentWindowHandle);
-	//			switchToFrameNameIdWebdriver("ctlRAD_contentIframe");
-	//			sendKeys(attributeName_xpath, "//body", textarea);
-//				clickWebdriver(attributeName_xpath, attributevalue);
-//				String GetMessage = getTextWebdriver(attributeName_xpath, "//b/font");
-//				sendKeys(attributeName_name, CDT_TextArea, textarea);
-//				sendKeyStroke(attributename, attributevalue, keystroke.);
+				 WebElement elem = driver.findElement(By.xpath("//body//p"));
+		         elem.click();
+		         elem.sendKeys(lastname);
+		         Runtimedatawrite(lastname, textarea);
+	            switchToDefaultContentWebdriver();
 			}
 			if (!button.equals("")) {
 				if (button.equalsIgnoreCase("Back")) {
@@ -63,6 +51,10 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 				}else if (button.equalsIgnoreCase("Preview")) {
 					clickWebdriver(attributeName_xpath, CDT_PreviewBtn);
 					recentPopupSelectWebdriver("Dynamic Text/Instruction Preview");
+				}else if (button.equalsIgnoreCase("Update")) {
+					clickWebdriver(attributeName_id, "btnSubmit");
+//					waitForPageToLoadWebdriver();
+					selectMainWindowWebdriver();
 				}
 			}
 		} catch (Exception e) {

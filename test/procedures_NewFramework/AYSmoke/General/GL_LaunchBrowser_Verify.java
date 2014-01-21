@@ -31,8 +31,11 @@ public class GL_LaunchBrowser_Verify extends CommonSeleniumActions implements OR
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify UI in present as ("+pagename+") Home page");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/p/strong", verifyui);
-				verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/p/strong", verifyui, verifyui);
+				if (verifyui.equalsIgnoreCase("Auto")) {
+					String VerifyRAD = Runtimedataread(verifyui);
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/h1", VerifyRAD);
+					verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/h1", VerifyRAD, VerifyRAD);
+				}
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

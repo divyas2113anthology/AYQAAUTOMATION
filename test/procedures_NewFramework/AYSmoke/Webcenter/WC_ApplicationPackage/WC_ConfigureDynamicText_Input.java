@@ -47,6 +47,7 @@ public class WC_ConfigureDynamicText_Input extends CommonSeleniumActions impleme
 				}else if (button.equalsIgnoreCase("Preview")) {
 					clickWebdriver(attributeName_xpath, CDT_PreviewBtn);
 					recentPopupSelectWebdriver("Dynamic Text/Instruction Preview");
+					
 				}
 			}
 		} catch (Exception e) {

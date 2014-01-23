@@ -1363,7 +1363,7 @@ public static final String HS_State = "//input[@id='q24544']";
 public static final String HS_Country = "//input[@id='q24545']";
 public static final String HS_Zip = "//input[@id='q24546']";
 //#**********************************************************#
-//#	 Maintananace - Upload Images - Page
+//#	 Maintananace - Upload Images - Page Name
 //#**********************************************************#
 public static final String UI_ClassicRadio = "//input[@value='classic']";
 public static final String UI_FaceliftRadio = "//input[@value='facelift']";

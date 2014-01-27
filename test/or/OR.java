@@ -1369,7 +1369,6 @@ public static final String UI_ClassicRadio = "//input[@value='classic']";
 public static final String UI_FaceliftRadio = "//input[@value='facelift']";
 public static final String UI_CornerImage = "chkCornerPackage";
 public static final String UI_Package = "selPackages";
-
 public static final String UI_UploadBtn = "//img[contains(@src,'upload')]";
 }
 

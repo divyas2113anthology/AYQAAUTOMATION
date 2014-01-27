@@ -35,8 +35,10 @@ public class GL_LaunchBrowser_Verify extends CommonSeleniumActions implements OR
 					String VerifyRAD = Runtimedataread(verifyui);
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/h1", VerifyRAD);
 					verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']/h1", VerifyRAD, VerifyRAD);
-				}
-			}
+				}else if (verifyui.equalsIgnoreCase("Application System Requirements")) {
+					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'"+verifyui+"')]", verifyui);
+					verifyElementContainsTextWebdriver(attributeName_xpath, "//b[contains(text(),'"+verifyui+"')]", verifyui, verifyui);
+				}			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

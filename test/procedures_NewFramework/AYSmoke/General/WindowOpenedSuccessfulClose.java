@@ -2,6 +2,9 @@ package procedures_NewFramework.AYSmoke.General;
 
 import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -12,6 +15,10 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 	
 	@Test(description="This Procedure is used to Close the Window and select Application Main Window")	
 	public void WindowOpenedSuccessfulClose(){
+		Set<String> set = driver.getWindowHandles();
+		Iterator<String> it = set.iterator();
+		String parent = it.next();
+		String child = it.next();
 		try {
 			writeDetails();			
 			Reporter.log("Close the Application window");
@@ -63,6 +70,12 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 //			selectMainWindowWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
+		}
+		try{
+			driver.switchTo().window(parent);
+		}catch(Exception e)
+		{
+			driver.switchTo().window(child);
 		}
 		
 	}

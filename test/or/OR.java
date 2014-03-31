@@ -1370,5 +1370,65 @@ public static final String UI_FaceliftRadio = "//input[@value='facelift']";
 public static final String UI_CornerImage = "chkCornerPackage";
 public static final String UI_Package = "selPackages";
 public static final String UI_UploadBtn = "//img[contains(@src,'upload')]";
+
+			//Created by  : Malik
+
+//#**********************************************************#
+//#	 Connect - Connect User Login Page - CULP 
+//#**********************************************************#
+
+public static final String CULP_UserName = "//input[@id='userName']";
+public static final String CULP_PassWord = "//input[@id='clearTextPwd']";
+public static final String CULP_Login = "//input[@id='loginBtn']";
+public static final String CULP_Reset_Pwd = "//*[contains(text(),'Reset password')]";
+
+
+//#**********************************************************#
+//#	 Connect - WC_Manage My Profile - WMMP 
+//#**********************************************************#
+
+public static final String WMMP_LastName = "//input[@id='txtLastName']";
+public static final String WMMP_Save = "//img[@alt='save']";
+public static final String WMMP_Cancel = "//img[@alt='cancel']";
+public static final String WMMP_CRM = "//*[contains(text(),'CRM')]";
+
+//#**********************************************************#
+//#	 Connect - Edit User Profile - CEUP 
+//#**********************************************************#
+
+public static final String CEUPI_Lastname = "//input[contains(@id,'TextBox_LastName')]";
+public static final String CEUPV_Lastname = "//input[contains(@id,'TextBox_LastName') and @value='";	//reddy']";
+public static final String CEUP_Save = "//input[@value='Save']";
+public static final String CEUP_Cancel = "//input[@value='Cancel']";
+public static final String CEUP_Application = "//*[contains(text(),'Application')]";
+
+//#**********************************************************#
+//#	 Connect - Reset Password - RP 
+//#**********************************************************#
+
+public static final String RP_EmailId = "//input[@id='EMAIL']";
+public static final String RP_Ok = "//input[@id='okButton']";
+public static final String RP_Cancel = "//input[@id='cancelButton']";
+public static final String RP_Ok_Confirm = "//input[@id='okButton']";
+public static final String RP_Lock_Msg = "//div[@class='simplemessage-error']";
+public static final String RP_password = "//input[@id='clearTextPwd']";
+public static final String RP_ResetPwd = "//input[@id='confirm']";
+
+//#**********************************************************#
+//#	 Connect - MainMenu list - MML 
+//#**********************************************************#
+
+public static final String MML_ManageUsers = "//div[contains(text(),'Manage Users')]";
+public static final String MML_Add = "//a[contains(@href,'add()')]";
+public static final String MML_userid = "//input[@id='txtUserID']";
+public static final String MML_FirstName = "//input[@id='txtFirstName']";
+public static final String MML_LastName = "//input[@id='txtLastName']";
+public static final String MML_Email = "//input[@id='txtEmail']";
+public static final String MML_Save = "//a[contains(@href,'ValidateAndSubmit')]";
+public static final String MML_Cancel =	"//a[contains(@href,'Cancel')]";
+public static final String MML_TotalUsers = "//a[@id='ctl00_ContentPlaceHolder1_HyperLink_TotalUsers']";
+public static final String MML_UName = "//input[@id='Username']";
+public static final String MML_Search = "//input[@id='userSearchButton']";
+public static final String MML_UNameVerify = "//table[@id='userSearchResultsTable']/tbody/tr[1]/td[2]";
 }
 

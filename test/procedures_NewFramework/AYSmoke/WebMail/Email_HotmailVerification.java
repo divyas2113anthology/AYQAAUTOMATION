@@ -194,6 +194,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
 				clickWebdriver(attributeName_partiallinktext, "Sign out");
 				waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
+				driver.close();
 			}
 			} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

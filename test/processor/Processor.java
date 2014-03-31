@@ -1,6 +1,5 @@
 package processor;
 import java.io.BufferedReader;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,6 +22,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
+//import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -48,8 +48,10 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
 import com.thoughtworks.selenium.BrowserConfigurationOptions;
 import com.thoughtworks.selenium.DefaultSelenium;
+
 import static processor.CommonSeleniumActions.Runtimedataread;
 import static processor.CommonSeleniumActions.backtodetails;
 import static processor.CommonSeleniumActions.writeFailure;

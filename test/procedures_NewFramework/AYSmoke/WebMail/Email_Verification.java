@@ -9,8 +9,8 @@ import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Email_Verification extends CommonSeleniumActions implements OR {
-//	public static String browser;
-	
+	//	public static String browser;
+
 	@Test(description="This Procedure is used to Perform operation and Verification in Received Email in User Account Hobsons")
 	public void Email_Verification (){
 		try {
@@ -39,66 +39,66 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 			String browser = Runtimedataread("Browser").toLowerCase();
 			if (browser.equalsIgnoreCase("InternetExplorer")) {
 				writeConsole("Internet Explorer Browser");
-					if (!url.equals("")) {						 
-						Reporter.log("Step 1 - Open URL");
-						get("http://webmail.hobsons.com/");
-						waitForPageToLoad();
-					}
+				if (!url.equals("")) {						 
+					Reporter.log("Step 1 - Open URL");
+					get("http://webmail.hobsons.com/");
+					waitForPageToLoad();
+				}
 
-					if (!username.equals("")) {
-						Reporter.log("Step 2 - Enter UserName");
-						sendKeys(attributeName_xpath,HC_UserName,username);
-					}
-					if (!password.equals("")) {
-						Reporter.log("Step 3 - Enter Password");
-						sendKeys(attributeName_xpath,HC_Password,password);
-					}
-					if (!login.equals("")) {
-						Reporter.log("Step 4 - Click Log-In Button");
-//						clickWebdriver(attributeName_xpath,HC_Login);
-//						waitForPageToLoadWebdriver();	
-						clickWebdriver(attributeName_xpath, HC_Login);
-                        waitForElementPresentWebdriver(attributeName_xpath, HC_LogOff, "Log Off");
-					}
-//				}
-//				waitForConditionisElementPresent(HC_LogOff, "120000");
+				if (!username.equals("")) {
+					Reporter.log("Step 2 - Enter UserName");
+					sendKeys(attributeName_xpath,HC_UserName,username);
+				}
+				if (!password.equals("")) {
+					Reporter.log("Step 3 - Enter Password");
+					sendKeys(attributeName_xpath,HC_Password,password);
+				}
+				if (!login.equals("")) {
+					Reporter.log("Step 4 - Click Log-In Button");
+					//						clickWebdriver(attributeName_xpath,HC_Login);
+					//						waitForPageToLoadWebdriver();	
+					clickWebdriver(attributeName_xpath, HC_Login);
+					waitForElementPresentWebdriver(attributeName_xpath, HC_LogOff, "Log Off");
+				}
+				//				}
+				//				waitForConditionisElementPresent(HC_LogOff, "120000");
 				if (!emailsubject.equals("")) {
 					Reporter.log("Step 5 - Click on Email Subject");
-//                      waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']", "Email Subject["+emailsubject+"]");
-                        switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
-                        if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']")) {                                      
-                               doubleClickWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']");      
-                               recentPopupSelectWebdriver("Open Email");
-                        } else {
-                               writeFailure("Email Notification Subject["+emailsubject+"] was not Recevied in Hobsons WebMail Inbox ");
-                        }
-                        
-//                      if (isElementPresent(HC_EmailSubject+emailsubject+"']")) {
-//                             clickAt(HC_EmailSubject+emailsubject+"']","");
-//                             doubleClick(HC_EmailSubject+emailsubject+"']");                             
-//                             recentPopupSelect("Open Email");
-//                      } else {
-//                             writeFailure("Email Notification Subject["+emailsubject+"] was not Recevied in Hobsons WebMail Inbox ");
-//                      }
+					//                      waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']", "Email Subject["+emailsubject+"]");
+					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']")) {                                      
+						doubleClickWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']");      
+						recentPopupSelectWebdriver("Open Email");
+					} else {
+						writeFailure("Email Notification Subject["+emailsubject+"] was not Recevied in Hobsons WebMail Inbox ");
+					}
+
+					//                      if (isElementPresent(HC_EmailSubject+emailsubject+"']")) {
+					//                             clickAt(HC_EmailSubject+emailsubject+"']","");
+					//                             doubleClick(HC_EmailSubject+emailsubject+"']");                             
+					//                             recentPopupSelect("Open Email");
+					//                      } else {
+					//                             writeFailure("Email Notification Subject["+emailsubject+"] was not Recevied in Hobsons WebMail Inbox ");
+					//                      }
 				}
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
-						switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
-                        if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
-                               doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");                                     
-                               recentPopupSelectWebdriver("Open Email");                                   
-		                 } else {
-		                        writeFailure("Email Notification Subject["+emailsubjectcontains+"] was not Recevied in Hobsons WebMail Inbox ");
-		                 }
-//                      if (isElementPresent(HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
-//                             clickAt(HC_EmailSubjectContains+emailsubjectcontains+"')]","");                           
-//                             doubleClick(HC_EmailSubjectContains+emailsubjectcontains+"')]");                     
-//                             recentPopupSelect("Open Email");
-//                      } else {
-//                             writeFailure("Email Notification Subject["+emailsubjectcontains+"] was not Recevied in Hobsons WebMail Inbox ");
-//                      }
+					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
+						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");                                     
+						recentPopupSelectWebdriver("Open Email");                                   
+					} else {
+						writeFailure("Email Notification Subject["+emailsubjectcontains+"] was not Recevied in Hobsons WebMail Inbox ");
+					}
+					//                      if (isElementPresent(HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
+					//                             clickAt(HC_EmailSubjectContains+emailsubjectcontains+"')]","");                           
+					//                             doubleClick(HC_EmailSubjectContains+emailsubjectcontains+"')]");                     
+					//                             recentPopupSelect("Open Email");
+					//                      } else {
+					//                             writeFailure("Email Notification Subject["+emailsubjectcontains+"] was not Recevied in Hobsons WebMail Inbox ");
+					//                      }
 				}
-				
+
 				if (!from.equals("")) {
 					Reporter.log("Step 7 - Verify 'From' Address");
 					verifyElementWithTitle(HC_From, from, "From Address["+from+"]");
@@ -121,7 +121,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					}else if (verifycontents.contains("http://ar.applyyourself.com/")) {
 						verifycontents = verifycontents.replace("http://ar.applyyourself.com/", "http://"+environment+".applyyourself.com/");
 					}	
-					
+
 					if (verifycontents.contains(";;")) {
 						verifycontents = verifycontents.replace(";;", " \n\n");						
 					}					
@@ -129,34 +129,34 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						verifycontents = verifycontents.replace(";", " \n");
 					}
 					System.out.println("Expected Text"+verifycontents);
-//					Thread.sleep(10000);
-//					getText("css=div[id='divBdy']");
-//					getText("css=iframe[id='ifBdy']");
-//					getText("css=body[ocsi='1']");
-//					waitForElementPresent(HC_MailBody_Content, "Email Body Content");
+					//					Thread.sleep(10000);
+					//					getText("css=div[id='divBdy']");
+					//					getText("css=iframe[id='ifBdy']");
+					//					getText("css=body[ocsi='1']");
+					//					waitForElementPresent(HC_MailBody_Content, "Email Body Content");
 					verifyElementText(HC_MailBody_Content, verifycontents, "Email Body");
-					
+
 				}
 				if (!contentcontains.equals("")) {
 					Reporter.log("Step 11 - Verify Email Subject Content Contains");
-//					if (contentcontains.contains(":")) {
-//						contentcontains = contentcontains.replace(":", ",");
-//					}
+					//					if (contentcontains.contains(":")) {
+					//						contentcontains = contentcontains.replace(":", ",");
+					//					}
 					String[] contentcontainsarray = contentcontains.split(";");
 					for (int i = 0; i < contentcontainsarray.length; i++) {
-//						verifyIsTextPresent(contentcontainsarray[i]);						
+						//						verifyIsTextPresent(contentcontainsarray[i]);						
 						verifyElementContainsText(HC_Body, contentcontainsarray[i], "EMail Body Content ");
 					}
-					
+
 				}
-				
+
 				if (!verifylink.equals("")) {
 					Reporter.log("Step 12 - Verify Email Content link["+verifylink+"]");
 					Reporter.log("Proceed to retrieve Environment Instance From Excel Sheet(C:/Selenium/InputTestdata.xls)");
 					String environment = Runtimedataread("Instance").toLowerCase();					
-//					if (verifylink.contains(":")) {
-//						verifylink = verifylink.replace(":", ",");
-//					}
+					//					if (verifylink.contains(":")) {
+					//						verifylink = verifylink.replace(":", ",");
+					//					}
 					String[] verifylinkarray = verifylink.split(";");
 					for (int i = 0; i < verifylinkarray.length; i++) {
 						String urlprefix = null;
@@ -171,9 +171,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							verifyElementPresent(HC_Content_Link+verifylinkarray[i]+"']", "Email Content Link ("+verifylinkarray[i]+")");
 						}
 					}
-					
+
 				}
-				
+
 				if (!verifylinkcontains.equals("")) {
 					Reporter.log("Step 13 -Verify Email Content link contains["+verifylinkcontains+"]");
 					if (verifylinkcontains.contains(":")) {
@@ -183,13 +183,13 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					for (int i = 0; i < verifylinkcontainsarray.length; i++) {
 						verifyElementPresent(HC_Content_LinkContians+verifylinkcontainsarray[i]+"')", "Email Content Link Contains("+verifylinkcontainsarray[i]+")");
 					}
-					
+
 				}
-				
+
 				if (!linkcontains.equals("")) {
 					Reporter.log("Step 14 - Click on Link Contains");
-//					waitForElementPresentWebdriver(attributeName_partiallinktext, linkcontains, linkcontains);
-//					clickWebdriver(attributeName_partiallinktext, linkcontains);
+					//					waitForElementPresentWebdriver(attributeName_partiallinktext, linkcontains, linkcontains);
+					//					clickWebdriver(attributeName_partiallinktext, linkcontains);
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'AYForgottenpassword')]", linkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'AYForgottenpassword')]");
@@ -217,7 +217,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					waitForPageToLoad();
 				}
 			}
-//			This is for Other browsers like "Firefox, Chrome"
+			//			This is for Other browsers like "Firefox, Chrome"
 			else{
 				writeConsole("Other Browser");
 				if (!url.equals("")) {						
@@ -236,172 +236,191 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!login.equals("")) {
 					Reporter.log("Step 4 - Click Log-In Button");
-//					clickWebdriver(attributeName_xpath,HC_Login);
-//					waitForPageToLoadWebdriver();	
-					clickWebdriver(attributeName_xpath, HC_Login);
-                    waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
+					//					clickWebdriver(attributeName_xpath,HC_Login);
+					//					waitForPageToLoadWebdriver();	
+					//clickWebdriver(attributeName_xpath, HC_Login);
+					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
 				}
-//			}
-//			waitForConditionisElementPresent(HC_LogOff, "120000");
-			if (!emailsubject.equals("")) {
-				Reporter.log("Step 5 - Click on Email Subject");
-				try {
-			    	for (int second = 0;; second++)
-			    	{
-						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
-						 waitForPageToLoad();
-						try { if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text()='"+emailsubject+"']")) break; } catch (Exception e) {}
-						Thread.sleep(500);
-					}
-			    	selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']\")", "120000");
-			    	clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']");
-			    	Thread.sleep(3000);
-			    	// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
-			    	waitForPageToLoad();
-			    	if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
-			    		clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
-			    		Thread.sleep(3000);
-			    		 	}
-			    	} catch (Exception e) {
-			    	//System.out.println("Error message("+e.getMessage()+")");
-			    	writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");
-			    }
-			}
-			if (!emailsubjectcontains.equals("")) {
-				Reporter.log("Step 6 - Click on Email Subject Contains");
-				try {
-			    	for (int second = 0;; second++)
-			    	{
-						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
-						 waitForPageToLoad();
-						try { if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]")) break; } catch (Exception e) {}
-						Thread.sleep(500);
-					}
-			    	selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
-			    	clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
-			    	Thread.sleep(3000);
-			    	// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
-//			    	waitForPageToLoad();
-			    	waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
-			    	if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
-			    		clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
-			    		Thread.sleep(3000);
-			    		 	}
-			    	} catch (Exception e) {
-			    	//System.out.println("Error message("+e.getMessage()+")");
-			    	writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");
-			    }
-			}
-			
-			if (!from.equals("")) {
-				Reporter.log("Step 7 - Verify 'From' Address");
-				verifyElementWithTitle(HC_From, from, "From Address["+from+"]");
-			}
-			if (!to.equals("")) {
-				Reporter.log("Step 8 - Verify 'To' Address");
-				verifyElementWithTitle(HC_To,to, "To Address("+to+")");
-			}
-			if (!subject.equals("")) {
-				Reporter.log("Step 9 - Verify 'Subject'");
-				verifyElementText(HC_Subject,subject, "Subject("+subject+")");
-			}
-			if (!verifycontents.equals("")) {
-				Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
-//				String environment = Runtimedataread("Instance").toLowerCase();
-				waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
-				verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
-				
-			}
-			if (!contentcontains.equals("")) {
-				Reporter.log("Step 11 - Verify Email Subject Content Contains");
-//				if (contentcontains.contains(":")) {
-//					contentcontains = contentcontains.replace(":", ",");
-//				}
-				String[] contentcontainsarray = contentcontains.split(";");
-				for (int i = 0; i < contentcontainsarray.length; i++) {
-//					verifyIsTextPresent(contentcontainsarray[i]);						
-					verifyElementContainsText(HC_Body, contentcontainsarray[i], "EMail Body Content ");
-				}
-				
-			}
-			
-			if (!verifylink.equals("")) {
-				Reporter.log("Step 12 - Verify Email Content link["+verifylink+"]");
-				Reporter.log("Proceed to retrieve Environment Instance From Excel Sheet(C:/Selenium/InputTestdata.xls)");
-				String environment = Runtimedataread("Instance").toLowerCase();					
-//				if (verifylink.contains(":")) {
-//					verifylink = verifylink.replace(":", ",");
-//				}
-				String[] verifylinkarray = verifylink.split(";");
-				for (int i = 0; i < verifylinkarray.length; i++) {
-					String urlprefix = null;
-					if (verifylinkarray[i].contains("ar") && verifylinkarray[i].contains("applyyourself")) {
-						String[] urlarray = verifylinkarray[i].split("\\.");
-						urlprefix = "http://"+environment;
-						for (int j = 1; j < urlarray.length; j++) {
-							urlprefix = urlprefix+"."+urlarray[j];
-						}					
-						verifyElementPresent(HC_Content_Link+urlprefix+"']", "Email Content Link ("+urlprefix+")");
-					}else {
-						verifyElementPresent(HC_Content_Link+verifylinkarray[i]+"']", "Email Content Link ("+verifylinkarray[i]+")");
+				//			}
+				//			waitForConditionisElementPresent(HC_LogOff, "120000");
+				if (!emailsubject.equals("")) {
+					Reporter.log("Step 5 - Click on Email Subject");
+					try {
+						for (int second = 0;; second++)
+						{
+							if (second >= 300) writeFailure(" Timeout after 1 minute..");
+							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
+							waitForPageToLoad();
+							try { if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text()='"+emailsubject+"']")) break; } catch (Exception e) {}
+							Thread.sleep(500);
+						}
+						selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']\")", "120000");
+						clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']");
+						Thread.sleep(3000);
+						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
+						waitForPageToLoad();
+						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
+							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
+							Thread.sleep(3000);
+						}
+					} catch (Exception e) {
+						//System.out.println("Error message("+e.getMessage()+")");
+						writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");
 					}
 				}
-				
-			}
-			
-			if (!verifylinkcontains.equals("")) {
-				Reporter.log("Step 13 -Verify Email Content link contains["+verifylinkcontains+"]");
-				if (verifylinkcontains.contains(":")) {
-					verifylinkcontains = verifylinkcontains.replace(":", ",");
+				if (!emailsubjectcontains.equals("")) {
+					Reporter.log("Step 6 - Click on Email Subject Contains");
+					try {
+						for (int second = 0;; second++)
+						{
+							if (second >= 300) writeFailure(" Timeout after 1 minute..");
+							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
+							Thread.sleep(500); 
+							//waitForPageToLoad();
+							try { 
+								if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]"))
+									break; 
+							} catch (Exception e) {}
+							Thread.sleep(500);
+						}
+						selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+						clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
+						Thread.sleep(3000);
+						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
+						//			    	waitForPageToLoad();
+						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
+						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
+							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
+							Thread.sleep(3000);
+						}
+					} catch (Exception e) {
+						//System.out.println("Error message("+e.getMessage()+")");
+						writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");
+					}
 				}
-				String[] verifylinkcontainsarray = verifylinkcontains.split(";");
-				for (int i = 0; i < verifylinkcontainsarray.length; i++) {
-					verifyElementPresent(HC_Content_LinkContians+verifylinkcontainsarray[i]+"')", "Email Content Link Contains("+verifylinkcontainsarray[i]+")");
+
+				if (!from.equals("")) {
+					Reporter.log("Step 7 - Verify 'From' Address");
+					verifyElementWithTitle(HC_From, from, "From Address["+from+"]");
 				}
-				
-			}
-			
-			if (!linkcontains.equals("")) {
-				Reporter.log("Step 14 - Click on Link Contains");
-				if (linkcontains.equalsIgnoreCase("Click here")) {
-					clickWebdriver(attributeName_partiallinktext, linkcontains);
-					recentPopupSelectWebdriver("Register Event");
-				}else{
-				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+linkcontains+"')]");
-				recentPopupSelectWebdriver("Create/Reset Password");
+				if (!to.equals("")) {
+					Reporter.log("Step 8 - Verify 'To' Address");
+					verifyElementWithTitle(HC_To,to, "To Address("+to+")");
 				}
+				if (!subject.equals("")) {
+					Reporter.log("Step 9 - Verify 'Subject'");
+					verifyElementText(HC_Subject,subject, "Subject("+subject+")");
+				}
+				if (!verifycontents.equals("")) {
+					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
+					//				String environment = Runtimedataread("Instance").toLowerCase();
+					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
+					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
+
+				}
+				if (!contentcontains.equals("")) {
+					Reporter.log("Step 11 - Verify Email Subject Content Contains");
+					//				if (contentcontains.contains(":")) {
+					//					contentcontains = contentcontains.replace(":", ",");
+					//				}
+					String[] contentcontainsarray = contentcontains.split(";");
+					for (int i = 0; i < contentcontainsarray.length; i++) {
+						//					verifyIsTextPresent(contentcontainsarray[i]);						
+						verifyElementContainsText(HC_Body, contentcontainsarray[i], "EMail Body Content ");
+					}
+
+				}
+
+				if (!verifylink.equals("")) {
+					Reporter.log("Step 12 - Verify Email Content link["+verifylink+"]");
+					Reporter.log("Proceed to retrieve Environment Instance From Excel Sheet(C:/Selenium/InputTestdata.xls)");
+					String environment = Runtimedataread("Instance").toLowerCase();					
+					//				if (verifylink.contains(":")) {
+					//					verifylink = verifylink.replace(":", ",");
+					//				}
+					String[] verifylinkarray = verifylink.split(";");
+					for (int i = 0; i < verifylinkarray.length; i++) {
+						String urlprefix = null;
+						if (verifylinkarray[i].contains("ar") && verifylinkarray[i].contains("applyyourself")) {
+							String[] urlarray = verifylinkarray[i].split("\\.");
+							urlprefix = "http://"+environment;
+							for (int j = 1; j < urlarray.length; j++) {
+								urlprefix = urlprefix+"."+urlarray[j];
+							}					
+							verifyElementPresent(HC_Content_Link+urlprefix+"']", "Email Content Link ("+urlprefix+")");
+						}else {
+							verifyElementPresent(HC_Content_Link+verifylinkarray[i]+"']", "Email Content Link ("+verifylinkarray[i]+")");
+						}
+					}
+
+				}
+
+				if (!verifylinkcontains.equals("")) {
+					Reporter.log("Step 13 -Verify Email Content link contains["+verifylinkcontains+"]");
+					if (verifylinkcontains.contains(":")) {
+						verifylinkcontains = verifylinkcontains.replace(":", ",");
+					}
+					String[] verifylinkcontainsarray = verifylinkcontains.split(";");
+					for (int i = 0; i < verifylinkcontainsarray.length; i++) {
+						verifyElementPresent(HC_Content_LinkContians+verifylinkcontainsarray[i]+"')", "Email Content Link Contains("+verifylinkcontainsarray[i]+")");
+					}
+
+				}
+
+				if (!linkcontains.equals("")) {
+					Reporter.log("Step 14 - Click on Link Contains");
+					if(!linkcontains.equals(""))
+					{
+						if (linkcontains.equalsIgnoreCase("Click here")) 
+						{
+							clickWebdriver(attributeName_partiallinktext, linkcontains);
+							recentPopupSelectWebdriver("Register Event");
+						}
+						else if(linkcontains.equalsIgnoreCase("Reset your password")){
+							//a[contains(text(),'Reset your password')]
+							Reporter.log("Clicked on Reset Link");
+							clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linkcontains+"')]");
+							recentPopupSelectWebdriver("Create/Reset Password");
+						}
+						else
+						{
+							//verifyElementPresent(attributeName_xpath, "//a[contains(text(),'"+linkcontains+"')]");
+							clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linkcontains+"')]");
+							recentPopupSelectWebdriver("Create/Reset Password");
+
+						}
+					}
+				}
+				if (!getlinkopen.equals("")) {
+					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
+					String getLinkText = getText(HC_LinkContians+getlinkopen+"')]");
+					openAndWait(getLinkText);
+				}
+				if (!getinternallink.equals("")) {
+					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window");
+					String getLinkHref = getAttribute(HC_LinkContians+getinternallink+"')]", "href");
+					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
+					openAndWait(getLinkHref);					
+				}
+				if (!openemailclose.equals("")) {
+					Reporter.log("Step 17 - Closing All Opened Pop Ups");
+					recentPopupClose();
+				}
+				if (!logout.equals("")) {
+					Reporter.log("Step 18 - Click on Log Off Link");
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);
+					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
+					waitForPageToLoad();
+				}
+
 			}
-			if (!getlinkopen.equals("")) {
-				Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
-				String getLinkText = getText(HC_LinkContians+getlinkopen+"')]");
-				openAndWait(getLinkText);
-			}
-			if (!getinternallink.equals("")) {
-				Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window");
-				String getLinkHref = getAttribute(HC_LinkContians+getinternallink+"')]", "href");
-				Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
-				openAndWait(getLinkHref);					
-			}
-			if (!openemailclose.equals("")) {
-				Reporter.log("Step 17 - Closing All Opened Pop Ups");
-				recentPopupClose();
-			}
-			if (!logout.equals("")) {
-				Reporter.log("Step 18 - Click on Log Off Link");
-				waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);
-				clickWebdriver(attributeName_xpath, "//a[@id='lo']");
-				waitForPageToLoad();
-			}
-				
-			}
-			
+
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
- 			
+
 		}
-		
+
 	}
 
 }

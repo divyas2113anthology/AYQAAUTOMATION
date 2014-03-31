@@ -25,8 +25,8 @@ public class ResetPassword_Input extends CommonSeleniumActions implements OR {
 			if (!password.equals("")) {
 				Password = Runtimedataread(password);
 				Reporter.log("Step 1 - Enter PIN as ("+password+")");
-				waitForElementPresentWebdriver(attributeName_name,"Password",Password);
 				sendKeysType(attributeName_name,"Password",Password);
+//				waitForElementPresentWebdriver(attributeName_name,"Password",Password);
 			}
 			if (!confirmpassword.equals("")) {
 				Password = Runtimedataread(confirmpassword);

@@ -21,6 +21,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 
+import org.apache.commons.io.FileUtils;
+
 import processor.GenerateCsv;
 
 import com.inflectra.spirateam.mylyn.core.internal.services.soap.ArrayOfRemoteTestCaseParameter;
@@ -81,6 +83,11 @@ public class DriverScript {
 		//ByteArrayOutputStream testOutput = new ByteArrayOutputStream();
 		String line;
 		String testTextOut = "";
+
+		String resultsLocation = testDir+"\\Results\\"+testIdInput+"_"+testNameInput;
+		File resultsFile = new File(resultsLocation);
+		FileUtils.deleteDirectory(resultsFile);//delete prior run results folder if present
+		
 		//Start testNG test with command line call
 		Process pr = rt.exec("java.exe -classpath C:\\SeleniumScripts\\AYQAAutomation\\bin;C:\\Selenium\\*; org.testng.TestNG C:\\SeleniumScripts\\AYQAAutomation\\Suite\\DriverSuite.xml -d C:\\SeleniumScripts\\AYQAAutomation\\Results\\"+testIdInput+"_"+testNameInput);
 		//Capture console output

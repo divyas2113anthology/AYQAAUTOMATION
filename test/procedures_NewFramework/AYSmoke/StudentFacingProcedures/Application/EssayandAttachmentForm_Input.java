@@ -82,16 +82,16 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 			}
 
 			if (!uploadmediafile.equals("")) {
-				if (uploadmediafile.equals("Upload File")) {
+				if (uploadmediafile.equalsIgnoreCase("Upload File")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EAI_MediaAttachment_UploadFile, uploadmediafile);
 					clickWebdriver(attributeName_xpath,EAI_MediaAttachment_UploadFile);
 					recentPopupSelectWebdriver("File Upload");
-				}else if (uploadmediafile.equals("View File")) {
+				}else if (uploadmediafile.equalsIgnoreCase("View File")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EAI_MediaAttachment_UploadFile, uploadmediafile);
 					clickWebdriver(attributeName_xpath, EA_MediaAttachment_Viewfile);
 //					recentPopupSelectWebdriver("View File");
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
-				}else if (uploadmediafile.equals("delete")) {
+				}else if (uploadmediafile.equalsIgnoreCase("delete")) {
 //					clickchooseokgetconfirmationpagepload(EA_MediaAttachment_Deletefile);
 //					chooseOkOnNextConfirmation();
 					clickWebdriver(attributeName_xpath, EA_MediaAttachment_Deletefile);

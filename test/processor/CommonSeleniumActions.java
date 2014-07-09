@@ -32,7 +32,6 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
-
 import or.OR;
 
 import org.openqa.selenium.Alert;
@@ -531,7 +530,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			}
 		}
 	}
-
+	
 	//	 This Method is used to get the ID of the Element by using its label where ID is Generated during Run-time(Dynamic ID) 
 	//	and also get respective element from Property File and replace the element ID(Static ID) in Property file with Dynamic ID. 
 	public String getElementIDbyLabel(String Label,String OR) throws Exception {
@@ -2849,6 +2848,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
+				Thread.sleep(5000);
 				driver.switchTo().window(window);
 			}
 		}
@@ -2857,18 +2857,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupSelectWebdriver(String windowname) throws Exception {
 		//					 int windownull = 0;
-		String currentwindow = driver.getWindowHandle();
+		//String currentwindow = driver.getWindowHandle();
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		//					writeConsole("Webdriver Current Window["+currentwindow+"]");					
 		//					 Set<String> popwindow = driver.getWindowHandles();
 		//					 Iterator<String> it = popwindow.iterator();
 		waitForPopupWebdriver();
 		Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		//String windiwscoun[] = selenium.getAllWindowTitles(); 
+		//writeConsole("Webdriver Switch To Window["+windiwscoun+"]");
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
+//				Thread.sleep(6000);
 				driver.switchTo().window(window);
+//				Thread.sleep(3000);
 			}
 		}
 	}

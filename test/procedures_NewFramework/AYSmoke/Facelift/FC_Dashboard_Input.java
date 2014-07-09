@@ -19,10 +19,11 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 			String event_package = applicantwelidatarepo[2];
 			String link_to_click = applicantwelidatarepo[3];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
+			writeConsole("Welcome");
 			if (!dashboard_button.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+dashboard_button+") Button");
 				if (dashboard_button.equalsIgnoreCase("Dashboard")) {
-					clickWebdriver(attributeName_xpath, DB_DbBtn);
+					clickWebdriver(attributeName_xpath, DB_MsgBtn);	//DB_DbBtn
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Messages")) {
 					clickWebdriver(attributeName_cssselector,DB_MsgBtn);
@@ -45,6 +46,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath,DB_QaAutomationStartButton);
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application for QA Automation_Edit")){
+					Thread.sleep(2000);
+					writeConsole("Edit");
 					clickWebdriver(attributeName_xpath,DB_QaAutomationEditButton);	
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application2_Start")){

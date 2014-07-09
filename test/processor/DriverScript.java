@@ -58,7 +58,7 @@ public class DriverScript {
 			try {
 				projectIdInput = Integer.parseInt(args[0]);
 				testSetIdInput =  Integer.parseInt(args[1]);
-				testIdInput =  Integer.parseInt(args[2]);
+				testIdInput =  Integer.parseInt(args[2]); 
 				
 			} catch (NumberFormatException e) {
 		        System.err.println("Argument" + " must be an integer");

@@ -30,9 +30,9 @@ public static final String Browser_Safari = "safari";
 //#**********************************************************#
 //#Login Page
 //#**********************************************************#	
-public static final String	PinField = "//input[@id='UserID']";
-public static final String	PasswordField = "//input[@id='Password']";
-public static final String Login = "//input[@alt='login']";
+public static final String	PinField = "//input[@name='UserID']";
+public static final String	PasswordField = "//input[@name='Password']";
+public static final String Login = "//input[@value='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
 public static final String CreateAccount = "//img[@alt='create account']";
 public static final String ContactUs = "//font[text()='Contact Us']";
@@ -51,6 +51,20 @@ public static final String BirthDate = "//input[@id='AppBirthdt']";
 public static final String ZipCode = "//input[@id='AppZip']";
 public static final String Password = "//input[@id='AppPassword']";
 public static final String ConfirmPassword = "//input[@id='AppConPassword']";
+
+//#**********************************************************#
+//#Account Profile Page Manual Add
+//#**********************************************************#
+public static final String	FName_Manual = "//input[@name='AppFName']";
+public static final String	LName_Manual = "//input[@name='AppLName']";
+public static final String Email_Manual = "//input[@name='AppEmail']";
+public static final String ConfirmEmail_Manual = "//input[@name='AppVerificationEmail']";
+public static final String Birth_Manual = "//input[@name='AppBirthdt']";
+public static final String Postal_Manual = "//input[@name='AppZip']";
+public static final String CreateAccount_Manual= "//img[@alt='create account']";
+
+
+
 //#**********************************************************#
 //#Applicant Account Pin Page
 //#**********************************************************#
@@ -209,14 +223,14 @@ public static final String EA_ShortEssay = "//textarea[@id='q24515']";
 public static final String EA_EssaywithAttachment = "//textarea[@id='q24516']";
 public static final String EA_EssaywithoutAttachment = "//textarea[@id='q24517']";
 public static final String EA_EssaywithAttachment_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[1]";
-public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//img[@alt='View Document'])[1]";
-public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[1]";
+public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])[1]";
+public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[1]";
 public static final String EA_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
-public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
-public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
+public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
+public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[2]";
 public static final String EA_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
-public static final String EA_MediaAttachment_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
-public static final String EA_MediaAttachment_Deletefile = "xpath=(//img[@alt='Delete Attachment'])[3]";
+public static final String EA_MediaAttachment_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
+public static final String EA_MediaAttachment_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
 public static final String EA_Save = "//img[@alt='Save']";
 public static final String EA_SaveandContinue = "//img[@alt='Save and Continue']";
 public static final String EA_Reset = "//img[@alt='Reset']";
@@ -278,7 +292,9 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//input[@value='Recommendation Provider List']";
+//public static final String RC_RecProviderlist = "//input[@value='Recommendation Provider List']";
+public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
+public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
 public static final String RC_RecProvidercheck ="";
 public static final String RC_Add = "//img[@alt='add']";
@@ -424,7 +440,6 @@ public static final String TOU_pageTitle = "//strong[text()='Terms Of Use']";
 //#**********************************************************#
 //# Facelift Dashboard Input
 //#**********************************************************#
-public static final String DB_DbBtn = "//div[@id='header']//a[contains(text(),'Dashboard')]";
 public static final String DB_MsgBtn = "css=#message";
 public static final String DB_ProfBtn = "css=#Profile";
 public static final String DB_TecSupportBtn = "#Techsupport.btn";
@@ -603,7 +618,8 @@ public static final String EAI_ShortEssay = "//textarea[@id='q24515']";
 public static final String EAI_EssaywithAttachment = "//textarea[@id='q24516']";
 public static final String EAI_EssaywithoutAttachment = "//textarea[@id='q24517']";
 public static final String EAI_EssaywithAttachment_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[1]";
-public static final String EAI_EssaywithAttachment_ViewDocument = "xpath=(//img[@alt='View Document'])[1]";
+//public static final String EAI_EssaywithAttachment_ViewDocument = "xpath=(//img[@alt='View Document'])[1]";
+public static final String EAI_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])";
 public static final String EAI_EssaywithAttachment_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[1]";
 public static final String EAI_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
 public static final String EAI_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
@@ -614,7 +630,8 @@ public static final String EAI_MediaAttachment_Deletefile = "xpath=(//img[@alt='
 public static final String EAI_Save = "//img[@alt='Save']";
 public static final String EAI_SaveandContinue = "//img[@alt='Save and Continue']";
 public static final String EAI_Reset = "//img[@alt='Reset']";
-public static final String EAI_UploadBrowser = "//input[@id='fileUpload']";
+//public static final String EAI_UploadBrowser = "//input[@id='fileUpload']";
+public static final String EAI_UploadBrowser = "//input[@id='Upload']";
 public static final String EAI_UploadDoc = "//input[@alt='Upload Document']";
 public static final String EAI_CloseButton = "//img[@alt='close window']";
 //#**********************************************************#
@@ -671,8 +688,8 @@ public static final String AW_DoYouLiveNo = "//input[@value='N']";
 public static final String AW_Fa1rfaxLnk = "//div[@id='menu']//font[text()='Fa1rfax']";
 public static final String TS_PageName = "//div[@id='mainnav']//a[contains(text(),'Support Center')]";
 public static final String EA_MediaAttach_UploadMedia = "xpath=(//img[@alt='Upload Attachment'])[3]";
-public static final String EA_MediaAttach_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
-public static final String EA_MediaAttach_Deletefile = "xpath=(//img[@alt='Delete Attachment'])[3]";
+public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
+public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
@@ -693,7 +710,8 @@ public static final String RI_Email = "css=#email";
 public static final String RI_Title = "css=#title";
 public static final String RI_Employer = "css=#employer";
 public static final String RI_Relationship = "css=#relationship";
-public static final String RI_Recommendationtype = "css=#recommendationtype";
+//public static final String RI_Recommendationtype = "css=#recommendationtype";
+public static final String RI_Recommendationtype = "css=#field1";
 public static final String RI_WaeveRecY = "//input[@id='rbY1' and @value='Yes']";
 public static final String RI_WaeveRecN = "//input[@id='rbN1' and @value='No']";
 public static final String RI_ProviderRecY = "//input[@id='rbY2' and @value='Yes']";
@@ -794,7 +812,8 @@ public static final String EL_PageTitle = "css=td.BasePageFont b:contains('Terms
 //# Main Page - MN
 //#**********************************************************#
 public static final String MN_PageTitle = "//*[contains(text(),'Univeristy of AYAUTO')]";
-public static final String MN_BaseTableFont = "//td[@class='BaseTableFont']";
+//public static final String MN_BaseTableFont = "//td[@class='BaseTableFont']";
+public static final String MN_BaseTableFont = "//a[@class='btn btn-primary appListButton']";
 //#**********************************************************#
 //# Event Search All Page - ESA
 //#**********************************************************#
@@ -1020,9 +1039,9 @@ public static final String MU_SelectAnAction = "//select[@name='ActionTypeID']";
 //# Recommendation Login Page
 //#**********************************************************#
 public static final String RL_PerAccessCode = "//input[@id='Pin']";
-public static final String RL_Password = "//input[@id='Password']";
+public static final String RL_Password = "//input[@name='Password']";
 public static final String RL_ConfirmPass = "//input[@id='ConPassword']";
-public static final String RL_LoginBtn = "//input[@alt='Login']";
+public static final String RL_LoginBtn = "//input[@value='Login' or @alt='Login']";
 public static final String RL_SubmitBtn = "//input[@alt='submit' or @alt='Login']";
 public static final String TOU_CheckUncheck = "//input[@id='chkAcceptEULA']";
 public static final String TOU_Continue = "//img[@alt='Continue']";
@@ -1034,14 +1053,39 @@ public static final String CP_Message = "//table[not(@id)]//td[@class='BasePageF
 public static final String CP_CurrentPass = "//input[@id='oldPassword']";
 public static final String CP_NewPass = "//input[@id='newPassword']";
 public static final String CP_ConfirmPass = "//input[@id='conNewPassword']";
+
+//#**********************************************************#
+//# Recommendation Facelift Page
+//#**********************************************************#
+
+public static final String RF_Password = "//input[@id='Password']";
+public static final String RF_Cnf_Password = "//input[@id='ConPassword']";
+public static final String RF_Submit = "//input[@id='rec-createSubmit']";
+public static final String RF_Welcome = "//div[@id='home']/h2[contains(text(),'";
+public static final String RF_Start_Rec = "//a[contains(text(),'Recommendations')]";
+public static final String RF_PAC = "//input[@id='rec-login']";
+public static final String RF_Rec_Password = "//input[@name='Password']";
+public static final String RF_Rec_Submit = "//input[@id='rec-loginSubmit']";
+public static final String RF_Forgot_Pwd = "//a[@id='forgotPass']";
+public static final String RF_Forgot_PAC = "//input[@id='recforgotPAC']";
+public static final String RF_Forgot_Email = "//input[@id='recforgotEmail']";
+public static final String RF_Forgot_Lname = "//input[@id='recforgotAppLN']";
+public static final String RF_Forgot_Search = "//input[@id='rec-forgotSubmit']";
+
 //#**********************************************************#
 //#	 WebMail Login Page - Hotmail
 //#**********************************************************#
 public static final String HM_WLogin = "//input[@id='i0116']";
 public static final String HM_WPassword = "//input[@id='i0118']";
 public static final String HM_WSignIn = "//input[@id='idSIButton9']";
-public static final String HM_Inbox = "Inbox";
-public static final String HM_InboxSide ="//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]";
+//public static final String HM_Inbox = "Inbox";
+public static final String HM_Inbox = "link=Inbox";   
+//public static final String HM_Inbox = "//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
+//public static final String HM_InboxSide ="//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]";
+//public static final String HM_InboxSide ="//span[contains(@class,'editableLabel readonly') and text()='Inbox']";
+public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
+
+
 //#**********************************************************#
 //#	 Recommendation - Contact Information Page - CI
 //#**********************************************************#

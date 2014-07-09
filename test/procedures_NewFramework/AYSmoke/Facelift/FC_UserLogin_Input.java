@@ -21,14 +21,22 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		String forgotpin = parameterValuesArray[3];
 		Reporter.log("Input Test Data was retrieved for 'Application Login' page");
 		
-		if (!pin.equals("")) {
+		if (pin.equals("8KSJ2FD9G36")) {
+			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
+			type(UL_PinField, pin);			
+						
+		}else if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin = Runtimedataread(pin);
 			Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");
 			type(UL_PinField, generatepin);			
 						
 		}
-		if (!password.equals("")) {
+		if (password.equals("Auto123+")) {
+			Reporter.log("Step 2 - Proceed to Enter PIN as ("+password+")");		
+			type(UL_PswdField, password);
+			
+		}else if (!password.equals("")) {
 			Reporter.log("Step 3 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword = Runtimedataread(password);
 			Reporter.log("Step 4 - Proceed to Enter PIN as ("+generatepassword+")");		

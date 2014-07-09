@@ -55,11 +55,19 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				recentPopupSelectWebdriver("Enrollment");
 			}
 			if (!link_to_click.equalsIgnoreCase("")) {
+				
 				if (link_to_click.equalsIgnoreCase("Logout")) {
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
 					click(Logoutmain+link_to_click+"']");
 					waitForPageToLoad();
 				}
+				else
+				{
+					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
+					clickWebdriver(attributeName_xpath, MN_BaseTableFont);
+					waitForPageToLoad();
+				}
+				
 			}
 			
 		} catch (Exception e) {

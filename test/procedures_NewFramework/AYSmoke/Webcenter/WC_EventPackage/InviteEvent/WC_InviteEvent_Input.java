@@ -3,7 +3,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 import or.OR;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.internal.seleniumemulation.Uncheck;
+import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 

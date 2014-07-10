@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
-import org.openqa.selenium.internal.seleniumemulation.OpenWindow;
+import com.thoughtworks.selenium.webdriven.commands.OpenWindow;
 
 import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 

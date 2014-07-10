@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import org.openqa.selenium.internal.seleniumemulation.SelectFrame;
+import com.thoughtworks.selenium.webdriven.commands.SelectFrame;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 

@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import org.openqa.selenium.internal.seleniumemulation.WaitForPopup;
+import com.thoughtworks.selenium.webdriven.commands.WaitForPopup;
 import org.openqa.selenium.remote.server.handler.CloseWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;

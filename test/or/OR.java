@@ -642,9 +642,14 @@ public static final String EAI_CloseButton = "//img[@alt='close window']";
 //public static final String HC_Subject = "//li/h2[contains(text(),'"; //AppReview new user account set up')]
 //public static final String HC_Body = "//div[@id='mpf0_MsgContainer']";
 //public static final String HC_LinkContians = "//a[contains (text(),'";
-public static final String HC_UserName = "//input[@name='user_name']";
-public static final String HC_Password = "//input[@name='password']";
-public static final String HC_Login = "//input[@value='Log-In']";
+//public static final String HC_UserName = "//input[@name='user_name']";
+public static final String HC_UserName = "//input[@name='login']";	
+//public static final String HC_Password = "//input[@name='password']";
+public static final String HC_Password = "//input[@name='passwd']";
+//public static final String HC_Login = "//input[@value='Log-In']";    
+public static final String HC_Login = "//span[@id='cred_sign_in_button']";
+public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
+public static final String HC_Home = "//button[@aria-label='EMT QA Account']";
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
 public static final String HC_MailBody_Content = "css=html>body[ocsi='1']";

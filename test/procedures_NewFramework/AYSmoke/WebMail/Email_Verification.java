@@ -41,7 +41,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				writeConsole("Internet Explorer Browser");
 				if (!url.equals("")) {						 
 					Reporter.log("Step 1 - Open URL");
-					get("http://webmail.hobsons.com/");
+//					get("http://webmail.hobsons.com/");
+					get("http://mail.hobsons.com/");
 					waitForPageToLoad();
 				}
 
@@ -222,7 +223,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				writeConsole("Other Browser");
 				if (!url.equals("")) {						
 					Reporter.log("Step 1 - Open URL");
-					get("http://webmail.hobsons.com/");
+//					get("http://webmail.hobsons.com/");
+					get("http://mail.hobsons.com/");
 					waitForPageToLoad();
 				}
 
@@ -237,10 +239,15 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!login.equals("")) {
 					Reporter.log("Step 4 - Click Log-In Button");
 					//					clickWebdriver(attributeName_xpath,HC_Login);
-					//					waitForPageToLoadWebdriver();	
+					
+									waitForPageToLoadWebdriver();	
 					//clickWebdriver(attributeName_xpath, HC_Login);
+					checkWebdriver(attributeName_xpath, HC_Login);
+					//Thread.sleep(6000);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
-					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
+					//waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
+					
+					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");         
 				}
 				//			}
 				//			waitForConditionisElementPresent(HC_LogOff, "120000");
@@ -250,13 +257,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						for (int second = 0;; second++)
 						{
 							if (second >= 300) writeFailure(" Timeout after 1 minute..");
-							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
+//							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");   
+							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoad();
-							try { if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text()='"+emailsubject+"']")) break; } catch (Exception e) {}
+							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]")) break; } catch (Exception e) {}
 							Thread.sleep(500);
 						}
-						selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']\")", "120000");
-						clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[text(),'"+emailsubject+"']");
+						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
 						Thread.sleep(3000);
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						waitForPageToLoad();
@@ -275,21 +283,32 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						for (int second = 0;; second++)
 						{
 							if (second >= 300) writeFailure(" Timeout after 1 minute..");
-							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
-							Thread.sleep(500); 
-							//waitForPageToLoad();
+							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
+							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+//							checkWebdriver(attributeName_xpath, HC_Inbox);
+							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']"); 
+							writeConsole("I am here");
+							Thread.sleep(6000); 
+							
+							//waitForPageToLoad();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
 							try { 
-								if (selenium.isVisible("//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]"))
+								
+								if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]"))
+									writeConsole("I am in try block");
 									break; 
 							} catch (Exception e) {}
 							Thread.sleep(500);
 						}
-						selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
-						clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
+						//selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+						//clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
+						
+						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
 						Thread.sleep(3000);
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						//			    	waitForPageToLoad();
-						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
+//						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
+						waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']/span[contains(text(),'To:')]", "To");
 						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
 							Thread.sleep(3000);

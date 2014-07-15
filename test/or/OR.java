@@ -32,7 +32,8 @@ public static final String Browser_Safari = "safari";
 //#**********************************************************#	
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
-public static final String Login = "//input[@value='login']";
+//public static final String Login = "//input[@value='login']";
+public static final String Login = "//input[@alt='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
 public static final String CreateAccount = "//img[@alt='create account']";
 public static final String ContactUs = "//font[text()='Contact Us']";
@@ -148,7 +149,7 @@ public static final String PI_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PI_Save = "//img[@alt='Save']";
 public static final String PI_Reset = "//img[@alt='Reset']";
 
-//#**********************************************************#
+//#**********************************************************#//input[@alt='login']
 //# Address Lookup Page - AL
 //#**********************************************************#
 public static final String AL_Line1 = "//input[@id='txtLine1']";
@@ -351,7 +352,7 @@ public static final String WCL_Savebutton = "//img[contains(@src,'admin_save_sma
 public static final String WCL_Cancelbutton = "//img[@alt,'cancel']";
 //public static final String WCL_userid = "";
 //public static final String WCL_userid = "";
-//public static final String WCL_userid = "";
+//public static final String WCL_userid = "";//input[@id='Image1']
 
 //#**********************************************************#
 //#Maintenance center Login - MCL

@@ -25,6 +25,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Applicant Main' page");
 			if (!packagename.equals("")) {
 				Reporter.log("Click on ("+packagename+") Package");
+				writeConsole("I am in package level");
 //				waitForElementPresent(Applpackage+packagename+"']", packagename);
 				clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
 //				waitForPageToLoad();			
@@ -64,6 +65,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				else
 				{
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
+					writeConsole("I am in Link text");
 					clickWebdriver(attributeName_xpath, MN_BaseTableFont);
 					waitForPageToLoad();
 				}

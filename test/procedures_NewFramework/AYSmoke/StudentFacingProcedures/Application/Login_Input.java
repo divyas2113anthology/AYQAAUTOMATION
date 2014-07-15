@@ -46,8 +46,8 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 3 - Click on 'Login' Button");
 			if (login.equalsIgnoreCase("login")) {
 				clickWebdriver(attributeName_xpath, Login);
-				waitForElementPresentWebdriver(attributeName_xpath, MN_BaseTableFont, "Base Table Font");
-//				waitForPageToLoad();
+//				waitForElementPresentWebdriver(attributeName_xpath, MN_BaseTableFont, "Base Table Font");
+				waitForPageToLoad();
 			}			
 		}
 		if (!forgotpin.equals("")) {

@@ -428,9 +428,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!logout.equals("")) {
 					Reporter.log("Step 18 - Click on Log Off Link");
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);
-					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
-					waitForPageToLoad();
+//					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);
+					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account"); 
+//					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
+					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
+					Thread.sleep(6000);
+					clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
+					//waitForPageToLoad();
+					Thread.sleep(6000);
 				}
 
 			}

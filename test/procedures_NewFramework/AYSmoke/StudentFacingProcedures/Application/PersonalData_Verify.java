@@ -25,6 +25,7 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
+				Thread.sleep(6000);
 				if (selenium.isTextPresent(successmessage)) {
 					Reporter.log("Message("+successmessage+") was displayed correctly");
 				} else {

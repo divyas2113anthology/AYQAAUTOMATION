@@ -55,11 +55,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					sendKeys(attributeName_xpath,HC_Password,password);
 				}
 				if (!login.equals("")) {
-					Reporter.log("Step 4 - Click Log-In Button");
-					//						clickWebdriver(attributeName_xpath,HC_Login);
-					//						waitForPageToLoadWebdriver();	
-					clickWebdriver(attributeName_xpath, HC_Login);
-					waitForElementPresentWebdriver(attributeName_xpath, HC_LogOff, "Log Off");
+
+						waitForPageToLoadWebdriver();	
+	//					clickWebdriver(attributeName_xpath, HC_Login);
+						checkWebdriver(attributeName_xpath, HC_Login);
+	//					Thread.sleep(6000);
+						doubleClickWebdriver(attributeName_xpath, HC_Login);
+	//					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
+						waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
 				}
 				//				}
 				//				waitForConditionisElementPresent(HC_LogOff, "120000");

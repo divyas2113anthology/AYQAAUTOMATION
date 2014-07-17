@@ -27,9 +27,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";
 					//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					//envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto&facelift=true";
+					envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto&facelift=true";
 					//envirurl = "https://qaapp.hobsons.co.uk/?id=ayauto&facelift=true";
-					envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto&facelift=true";
+					//envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("USPR")) { 
 					envirurl = "https://app.applyyourself.com/?id=ayauto&facelift=true";
 					//envirurl = "https://app.applyyourself.com/?id=ayauto&facelift=true";

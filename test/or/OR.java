@@ -1064,9 +1064,9 @@ public static final String CP_ConfirmPass = "//input[@id='conNewPassword']";
 //# Recommendation Facelift Page
 //#**********************************************************#
 
-public static final String RF_Password = "//input[@id='Password']";
+public static final String RF_Password = "//input[@id='rec-password']";
 public static final String RF_Cnf_Password = "//input[@id='ConPassword']";
-public static final String RF_Submit = "//input[@id='rec-createSubmit']";
+public static final String RF_Submit = "//input[@id='rec-loginSubmit']";
 public static final String RF_Welcome = "//div[@id='home']/h2[contains(text(),'";
 public static final String RF_Start_Rec = "//a[contains(text(),'Recommendations')]";
 public static final String RF_PAC = "//input[@id='rec-login']";
@@ -1091,6 +1091,18 @@ public static final String HM_Inbox = "link=Inbox";
 //public static final String HM_InboxSide ="//span[contains(@class,'editableLabel readonly') and text()='Inbox']";
 public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
 
+//#**********************************************************#
+//#	 WebMail Login Page - Gmail
+//#**********************************************************#
+public static final String GM_WLogin = "//input[@id='Email']";
+public static final String GM_WPassword = "//input[@id='Passwd']";
+public static final String GM_WSignIn = "//input[@id='signIn']";
+//public static final String HM_Inbox = "Inbox";
+public static final String GM_Inbox = "link=Inbox";   
+//public static final String HM_Inbox = "//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
+//public static final String HM_InboxSide ="//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]";
+//public static final String HM_InboxSide ="//span[contains(@class,'editableLabel readonly') and text()='Inbox']";
+public static final String GM_InboxSide ="//div[@class='aim ain']//a[contains(text(),'Inbox')]";
 
 //#**********************************************************#
 //#	 Recommendation - Contact Information Page - CI

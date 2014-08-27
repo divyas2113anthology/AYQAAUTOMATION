@@ -60,9 +60,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "http://IAD1PW001:8089/?id=ayauto";
 					//envirurl = "http://iad1pw001app.emt.hobsons.local/?id=ayauto";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					//envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto";
+					envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto";
 					//envirurl = "https://qaapp.hobsons.co.uk/?id=ayauto";
-					envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto";
+					//envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://app.applyyourself.com/?id=ayauto";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -86,7 +86,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "https://uatwebcenter.hobsons.co.uk";
 					//envirurl = "https://qawebcenter.hobsons.co.uk";
-					envirurl = "http://LHR1PW003:8088";
+					//envirurl = "http://LHR1PW003:8088";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://webcenter.applyyourself.com/";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -108,9 +108,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://qamanage.applyyourself.com";
 					//envirurl = "http://IAD1PW001:8092";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					//envirurl = "http://uatmanage.hobsons.co.uk";
+					envirurl = "http://uatmanage.hobsons.co.uk";
 					//envirurl = "http://qamanage.hobsons.co.uk";
-					envirurl = "http://LHR1PW003:8092";
+					//envirurl = "http://LHR1PW003:8092";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "http://manage.applyyourself.com";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -122,9 +122,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://qarec.applyyourself.com";
 					//envirurl = "http://IAD1PW001:8091";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					//envirurl = "https://uatrec.hobsons.co.uk";
+					envirurl = "https://uatrec.hobsons.co.uk";
 					//envirurl = "https://qarec.hobsons.co.uk";
-					envirurl = "http://LHR1PW003:8091";
+					//envirurl = "http://LHR1PW003:8091";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://rec.applyyourself.com";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -146,8 +146,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://qainq.applyyourself.com/?id=ayauto&pid=447";
 					//envirurl = "http://IAD1PW001:8090/?id=ayauto&pid=3788";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					//envirurl = "https://uatinq.hobsons.co.uk/?id=ayauto&pid=447";
-					envirurl = "http://LHR1PW003:8090";
+					envirurl = "https://uatinq.hobsons.co.uk/?id=ayauto&pid=447";
+					//envirurl = "http://LHR1PW003:8090";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://inq.applyyourself.com/?id=ayauto&pid=447";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -171,7 +171,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://10.56.148.8:8051/Map/BridgeList.aspx";
 					//envirurl = "http://IAD1PW001:8051";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					envirurl = "http://LHR1PW003:8051";
+					//envirurl = "http://LHR1PW003:8051";
+					envirurl = "";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
@@ -183,7 +184,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "https://qaapp.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa";
 					//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/ApplicantConnectLogin.asp?id=icu";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
-					envirurl = "http://lhr1pw003app.emt.hobsons.local/AYApplicantLogin/ApplicantConnectLogin.asp?id=bkc&facelift=true";
+					//envirurl = "http://lhr1pw003app.emt.hobsons.local/AYApplicantLogin/ApplicantConnectLogin.asp?id=bkc&facelift=true";
+					envirurl = "https://uatapp.hobsons.co.uk/AYApplicantLogin/ApplicantConnectLogin.asp?id=bkc&facelift=true";
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://app.applyyourself.com/AYApplicantLogin/ApplicantConnectLogin.asp?id=aybusqa";
 				}else if (environment.equalsIgnoreCase("UKPR")) {

@@ -27,6 +27,14 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 		String addrcountry = addressidatarepo[6];
 		String addrsubmit = addressidatarepo[7];
 		Reporter.log("Input Test Data was retrieved for 'Address Lookup' page");
+		if (!addrcountry.equals("")) {
+			Reporter.log("Enter Country as ("+addrcountry+")");
+			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);
+		}
+		if (!addrcountry.equals("")) {
+			Reporter.log("Enter Country as ("+addrcountry+")");
+			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);
+		}
 		if (!addrline1.equals("")) {
 			Reporter.log("Step 1 - Enter Line 1 as ("+addrline1+")");
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Line1,addrline1);
@@ -52,10 +60,10 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");
 			sendKeys(attributeName_xpath, AL_PostalCode, addrpostalcodezip);
 		}
-		if (!addrcountry.equals("")) {
+		/*if (!addrcountry.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
 			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);
-		}
+		}*/
 		if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);

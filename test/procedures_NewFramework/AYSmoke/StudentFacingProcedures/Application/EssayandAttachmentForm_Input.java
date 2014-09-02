@@ -41,7 +41,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
 //					VerifyPDFOpen("ShowDocument", 1000);
-//					recentPopupSelectWebdriver("view document");
+				recentPopupSelectWebdriver("view document");
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
 //					waitForUniqueNameWindow();
 //					SelectPrintWindow("ShowDocument");

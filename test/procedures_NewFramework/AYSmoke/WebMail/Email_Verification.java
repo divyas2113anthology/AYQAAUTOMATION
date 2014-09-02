@@ -124,7 +124,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						verifycontents = verifycontents.replace("http://arqa.applyyourself.com/", "http://"+environment+".applyyourself.com/");
 					}else if (verifycontents.contains("http://ar.applyyourself.com/")) {
 						verifycontents = verifycontents.replace("http://ar.applyyourself.com/", "http://"+environment+".applyyourself.com/");
-					}	
+					}
 
 					if (verifycontents.contains(";;")) {
 						verifycontents = verifycontents.replace(";;", " \n\n");						
@@ -289,7 +289,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
 							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
-							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']"); 
+							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
+							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
 							writeConsole("I am here");
 							Thread.sleep(6000); 
 							
@@ -431,12 +432,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!logout.equals("")) {
 					Reporter.log("Step 18 - Click on Log Off Link");
-//					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);
+//					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);  //button[@aria-label='EMT QA Account - Away menu with submenu']
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account"); 
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
-					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
+					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
+					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account - Available menu with submenu']");
 					Thread.sleep(6000);
-					clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
+					//clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
+					clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");
 					//waitForPageToLoad();
 					Thread.sleep(6000);
 				}

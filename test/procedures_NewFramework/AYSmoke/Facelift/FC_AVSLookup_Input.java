@@ -28,6 +28,19 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		String addrsubmit = addressidatarepo[7];
 		Reporter.log("Input Test Data was retrieved for 'Address Lookup' page");
 		
+		if (!addrcountry.equals("")) {
+			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
+			selectByVisibleTextWebdriver(attributeName_xpath, AL_Country, addrcountry);
+//			select(AL_Country, addrcountry);
+		}
+		
+		
+		if (!addrcountry.equals("India")) {
+			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
+			selectByVisibleTextWebdriver(attributeName_xpath, AL_Country, addrcountry);
+//			select(AL_Country, addrcountry);
+		}
+		
 //		selenium.waitForCondition("selenium.isVisible(\"//input[@id='btnValidate']\")", "30000");
 		if (!addrline1.equals("")) {
 			Reporter.log("Step 1 - Enter Line 1 as ("+addrline1+")");
@@ -59,21 +72,22 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");
 			type(AL_PostalCode, addrpostalcodezip);
 		}
-		if (!addrcountry.equals("")) {
+		/*if (!addrcountry.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
 			select(AL_Country, addrcountry);
-		}
+		}*/
 		if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
 //			waitForPageToLoadWebdriver();
-			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+			/*if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
 				clickWebdriver(attributeName_xpath, AL_AddressLink);
-			}
+			}*/
 		}
-		selectMainWindowWebdriver();				
+		selectMainWindowWebdriver();
+		recentOpenedPopupSelectWebdriver("Select Previous Window");
 		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

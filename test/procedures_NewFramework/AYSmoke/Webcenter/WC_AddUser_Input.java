@@ -1,5 +1,10 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -33,18 +38,24 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			String button = testdata[17];
 			
 			Reporter.log("Input Test Data was retrieved for 'Webcenter add user' Page");
+			Date date = new Date();  
+			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+			//String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!userid.equals("")) {
 				Reporter.log("Enter User ID");
+				String user_id = userid+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				waitForElementPresentWebdriver(attributeName_cssselector, WCL_userid, userid);
-				sendKeys(attributeName_cssselector, WCL_userid, userid);			
+				sendKeys(attributeName_cssselector, WCL_userid, user_id);			
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Enter first name");
-				sendKeys(attributeName_cssselector, WCL_firstname, firstname);			
+				String firstgivenname = firstname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
+				sendKeys(attributeName_cssselector, WCL_firstname, firstgivenname);			
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Enter last name");
-				sendKeys(attributeName_cssselector, WCL_lastname, lastname);			
+				String lastgivenname = lastname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
+				sendKeys(attributeName_cssselector, WCL_lastname, lastgivenname);			
 			}
 			if (!title.equals("")) {
 				Reporter.log("Enter title");

@@ -23,7 +23,15 @@ public class WC_AddUser_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Display Added User Message");
 //				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, "Display Added User Message");
-				verifyElementTextWebdriver(attributeName_xpath,QAE_Message, message+" was successfully Added", message);
+				String Text=selenium.getText(QAE_Message);
+				writeConsole(Text);
+				String[] part = Text.split("(?<=\\D)(?=\\d)");
+				System.out.println(part[0]);
+				String QA_Message= part[0];
+				writeConsole("Malik");
+				writeConsole(QA_Message);
+				verifyElementTextWebdriver(attributeName_xpath,QA_Message, message,message);
+				//verifyElementTextWebdriver(attributeName_xpath,QA_Message, message+" was successfully Added", message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

@@ -3364,7 +3364,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				writeFailure("Element["+elementname+"] with Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
 			}			
 		} catch (Exception e) {
-			writeFailure("Element ["+elementname+" ] was Not Present");
+			writeFailure("Element ["+elementname+"] was Not Present");
 		}
 	}
 

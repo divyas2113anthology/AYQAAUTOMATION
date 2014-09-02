@@ -168,7 +168,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}
 			}else if (url.contains("Bridge")) {
 				if (environment.equalsIgnoreCase("USQA")) {
-					envirurl = "http://10.56.148.8:8051/Map/BridgeList.aspx";
+					//envirurl = "http://10.56.148.8:8051/Map/BridgeList.aspx";
+					envirurl = "http://iad1qw015:8051/Map/BridgeList.aspx";
 					//envirurl = "http://IAD1PW001:8051";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					//envirurl = "http://LHR1PW003:8051";

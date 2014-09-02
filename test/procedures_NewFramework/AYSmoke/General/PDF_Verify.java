@@ -48,13 +48,16 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 							Reporter.log("Step 1 - Verify PDF Contains text");
 							String [] splitpdftext = pdfcontainstext.split(";");
 							for (int i = 0; i < splitpdftext.length; i++) {
-								verifyTextContains(splitpdftext[i], exceptionMsg, "Contains PDF Text");
+								//verifyTextContains(splitpdftext[i], exceptionMsg, "Contains PDF Text");Page:
+								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
 								writeConsole("Pdf Contains Text was verified successfully");
 //								if (exceptionMsg.contains(splitpdftext[i])) {
 //									verifyTextPresent(splitpdftext[i]);
 ////									writeConsole("PDF File :"+splitpdftext[i]);
 //								}
 							}
+							//deselectPopUp();
+							recentPopupClose();
 						}
 						if (wait.equals("")) {
 							
@@ -70,7 +73,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //							writeFailure("PDF File["+pdfname+"] was not Opened Successfully");
 //						}
 					writeConsole("close PDF File :");
-					closeWindowWebdriver();
+					//closeWindowWebdriver();
 					selectMainWindowWebdriver();
 				}
 			}else{

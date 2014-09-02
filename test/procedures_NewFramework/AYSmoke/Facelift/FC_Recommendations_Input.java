@@ -118,6 +118,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcrectype.equals("")) {
 				Reporter.log("Step 18 - Select Recommendation type as ("+rcrectype+")");
 				select(RI_Recommendationtype,rcrectype);
+				
 			}
 			if (!rcwaiverighttoexamineletter.equals("")) {
 				Reporter.log("Step 19 - Check Waiver right examine letter as ("+rcwaiverighttoexamineletter+")");

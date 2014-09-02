@@ -33,7 +33,8 @@ public class FileUpload_Input extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_UploadDoc, buttons);
 					clickWebdriver(attributeName_xpath, EA_UploadDoc);				
 					deselectPopUp();
-					selectMainWindowWebdriver();
+//					selectMainWindowWebdriver();
+					recentOpenedPopupSelectWebdriver("Window");
 					waitForPageToLoad();
 				}else if (buttons.equalsIgnoreCase("Upload File")) {
 //					waitForElementVisibleWebdriver(attributeName_xpath, EA_UploadDoc, buttons);

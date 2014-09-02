@@ -655,8 +655,11 @@ public static final String HC_UserName = "//input[@name='login']";
 public static final String HC_Password = "//input[@name='passwd']";
 //public static final String HC_Login = "//input[@value='Log-In']";    
 public static final String HC_Login = "//span[@id='cred_sign_in_button']";
-public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
-public static final String HC_Home = "//button[@aria-label='EMT QA Account']";
+//public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
+public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']";
+//public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
+//public static final String HC_Home = "//span[text()='EMT QA Account']";
+public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']";
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
 public static final String HC_MailBody_Content = "css=html>body[ocsi='1']";
@@ -675,7 +678,8 @@ public static final String HC_Content_LinkContians = "css=a:contains('";
 //public static final String HC_CloseButton = "//button[text()='Close']";
 public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
-public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy'] ";
+//public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy']";
+public static final String WebMail_Body = "//div[@id='Item.MessageUniqueBody']/div/div/font/span[text()[contains(.,'SmokeTest')]]";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#
@@ -724,8 +728,9 @@ public static final String RI_Email = "css=#email";
 public static final String RI_Title = "css=#title";
 public static final String RI_Employer = "css=#employer";
 public static final String RI_Relationship = "css=#relationship";
-public static final String RI_Recommendationtype = "css=#recommendationtype";
-//public static final String RI_Recommendationtype = "css=#field1";
+//public static final String RI_Recommendationtype = "css=#recommendationtype";
+//public static final String RI_Recommendationtype = "css=#recommendationtype";
+public static final String RI_Recommendationtype = "css=#field1";
 public static final String RI_WaeveRecY = "//input[@id='rbY1' and @value='Yes']";
 public static final String RI_WaeveRecN = "//input[@id='rbN1' and @value='No']";
 public static final String RI_ProviderRecY = "//input[@id='rbY2' and @value='Yes']";

@@ -24,7 +24,9 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Proceed to Download and Save a file in the Location["+downloadlocation+"] using AUTOIT");
 //				Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/Firefox/Application/DownloadDocFirefox.exe "+downloadlocation+"");	
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
-				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.au3");
+				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.au3");
+				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.au3");
+				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.exe");
 			}
 			if (!filepresentlocation.equals("")) {
 				String ReadExportFile = Runtimedataread(filepresentlocation);

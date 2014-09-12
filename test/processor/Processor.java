@@ -21,9 +21,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
 import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -191,11 +194,17 @@ public class Processor {
 			internetexplorer,firefox,safari,googlechrome	
 			
 		}
+//		@org.junit.Test
+//		public void start(){
+//			WebDriver driver=new FirefoxDriver();
+//			driver.get("http://www.google.com");
+//		}
 	    
 	    @BeforeSuite
 	   	public void startseleniumserver(ITestContext context) throws Exception {
 	    	System.out.println("Start: ");
 			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			
 //			try {
 //				jettyProxy = new SeleniumServer();
 //				jettyProxy.start();
@@ -211,7 +220,6 @@ public class Processor {
 			case "internetexplorer":
 				File file = new File("C:/Selenium/IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-				
 //				InternetExplorerDriverService.Builder ies = new InternetExplorerDriverService.Builder();
 //				ies.usingAnyFreePort().withLogFile(new File("somefile.log")).withLogLevel(InternetExplorerDriverLogLevel.INFO);
 //				InternetExplorerDriverService service = ies.build();
@@ -222,12 +230,11 @@ public class Processor {
 				driver = new InternetExplorerDriver();
 				break;
 			case "firefox":		
-//				File file = new File("C:\\FF");
-//				FirefoxProfile profile = new FirefoxProfile(file);
+//				File file1 = new File("C:\\FF");
+//				FirefoxProfile profile = new FirefoxProfile(file1);
 //				driver= new FirefoxDriver(profile);
-				File profileDir = new File("C:\\FF");
-				FirefoxProfile profile = new FirefoxProfile(profileDir);
-				driver = new FirefoxDriver(profile);
+				driver =new FirefoxDriver();
+				
 				break;
 			case "googlechrome":
 				System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver.exe");

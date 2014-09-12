@@ -43,6 +43,7 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Retrieved Test Data in Recommendations input");
 			if (!rcrecommenderproviderlist .equals("")) {
 				Reporter.log("Step 1 - Click button("+rcrecommenderproviderlist +")");
+				waitForElementPresentWebdriver(attributeName_xpath, RC_RecProviderlist, rcrecommenderproviderlist);
 					click(RC_RecProviderlist);
 			}
 			if (!rcrecommendername .equals("")) {

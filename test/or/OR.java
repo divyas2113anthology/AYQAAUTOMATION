@@ -229,8 +229,8 @@ public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//a[@al
 public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[1]";
 //public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'][1])";
 public static final String EA_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
-//public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
-public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
+public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
+//public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
 //public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[2]";
 public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
 public static final String EA_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
@@ -299,8 +299,8 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-//public static final String RC_RecProviderlist = "//input[@value='Recommendation Provider List']";
-public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
+public static final String RC_RecProviderlist = "//input[@value='Recommendation Provider List']";
+//public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
 public static final String RC_RecProvidercheck ="";
@@ -629,7 +629,7 @@ public static final String EAI_EssaywithAttachment_UploadDocument = "xpath=(//im
 public static final String EAI_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])";
 public static final String EAI_EssaywithAttachment_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[1]";
 public static final String EAI_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
-public static final String EAI_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
+public static final String EAI_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
 public static final String EAI_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
 public static final String EAI_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
 public static final String EAI_MediaAttachment_Viewfile = "xpath=(//img[@alt='View Document'])[3]";

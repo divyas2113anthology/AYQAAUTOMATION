@@ -26,11 +26,13 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Enter Data in PIN if it is not empty");
 			if (!fppin.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+fppin+")");
-				type(FRP_Pin,fppin);
+				sendKeys(attributeName_xpath, FRP_Pin,fppin);
 			}
 			if (!fpemaiaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+fpemaiaddress+")");
-				type(FRP_EmailAddre,fpemaiaddress);
+				waitForElementPresentWebdriver(attributeName_xpath, FRP_EmailAddre,"Email");
+				//type(FRP_EmailAddre,fpemaiaddress);
+				sendKeys(attributeName_xpath, FRP_EmailAddre,fpemaiaddress);
 			}
 			if (!fpsearch.equals("")) {
 				Reporter.log("Step 3 - Click on ("+fpsearch+") Button");

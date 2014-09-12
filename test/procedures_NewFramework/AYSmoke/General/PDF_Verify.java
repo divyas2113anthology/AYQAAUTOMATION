@@ -39,23 +39,28 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					int wintotal = Pdfwindows.length-1;
 					selenium.selectWindow("name=" + Pdfwindows[wintotal]);
 					Reporter.log("Window["+pdfname+"] was selected");
+					writeConsole("Window["+pdfname+"] was selected");
 					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");
 //					Thread.sleep(waitforpdfint);				
 					try {
 						exceptionMsg = selenium.getBodyText();
 						writeConsole("Pdf Getbody Text : "+exceptionMsg);
 						if (!pdfcontainstext.equalsIgnoreCase("")) {
+							System.out.println("aaaa");
 							Reporter.log("Step 1 - Verify PDF Contains text");
+							//verifyTextContains(pdfcontainstext, exceptionMsg, "Page");
 							String [] splitpdftext = pdfcontainstext.split(";");
+							
 							for (int i = 0; i < splitpdftext.length; i++) {
 								//verifyTextContains(splitpdftext[i], exceptionMsg, "Contains PDF Text");Page:
-								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
-								writeConsole("Pdf Contains Text was verified successfully");
-//								if (exceptionMsg.contains(splitpdftext[i])) {
-//									verifyTextPresent(splitpdftext[i]);
-////									writeConsole("PDF File :"+splitpdftext[i]);
-//								}
+//								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
+//								writeConsole("Pdf Contains Text was verified successfully");
+								if (exceptionMsg.contains(splitpdftext[i])) {
+									verifyTextPresent(splitpdftext[i]);
+//									writeConsole("PDF File :"+splitpdftext[i]);
+								}
 							}
+							//verifyTextContains(splitpdftext, exceptionMsg, "Page");
 							//deselectPopUp();
 							recentPopupClose();
 						}

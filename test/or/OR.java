@@ -693,6 +693,15 @@ public static final String RPI_submit = "//input[contains(@src,'submit_small')]"
 //# Facelift Application Welcome Verify - AW
 //#**********************************************************#
 public static final String AW_PageTitle = "//div[@id='ay-landing-text']/b";
+//#**********************************************************#
+//#Batchupdate  - Web center
+//#*********************************************************#
+
+
+public static final String BU_SportsInterest = "//select[@name='q35038']";
+public static final String BU_Submit = "//img[contains(@src,'admin_submit_small')]";
+public static final String BU_PD_AD_SportsInterest = "//select[@id='s35038']";
+
 
 //#**********************************************************#
 //# Facelift Application Welcome Input - AW

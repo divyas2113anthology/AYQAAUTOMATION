@@ -79,6 +79,8 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 				}			
 			}
 			if (!verifyui.equals("")) {
+				Reporter.log("Step 3 - Verify Message("+verifyui+") was displayed correctly");
+				verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
 			
 			}
 			

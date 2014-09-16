@@ -230,7 +230,7 @@ public class Processor {
 				driver = new InternetExplorerDriver();
 				break;
 			case "firefox":		
-//				File file1 = new File("C:\\FF");
+//				File file1 = new File("C:\\Selenium\\FF");
 //				FirefoxProfile profile = new FirefoxProfile(file1);
 //				driver= new FirefoxDriver(profile);
 				driver =new FirefoxDriver();

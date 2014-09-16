@@ -2809,12 +2809,14 @@ public class CommonSeleniumActions extends Processor implements OR {
 				Set<String> popwindow = driver.getWindowHandles();
 				int popupcount = popwindow.size();
 				writeConsole("Webdriver popupcount : "+popupcount );
+				writeConsole("Webdriver currentpopupcount : "+currentpopupcount );
 				if (popupcount > currentpopupcount) {
 					break;
 				}
 			} catch (Exception e) {
 
 			}
+			
 			Thread.sleep(1000);
 
 		}

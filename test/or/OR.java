@@ -808,6 +808,8 @@ public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "//select[@name='SysQuery']";
 public static final String SAI_UserQuries = "//select[@name='QueryID']";
+//public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
+
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
 public static final String SAI_SubmitBtnBottom = "//input[@name='imageField2']";

@@ -105,6 +105,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 9 - Enter the Last Name as ["+lastname+"]");
+				waitForPageToLoadWebdriver();
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
 			}
 			if (!birthdate.equals("")) {
@@ -129,11 +131,13 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!searchbyindividual.equals("")) {
 				Reporter.log("Step 15 - Click Submit in search by Individual");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio, searchbyindividual);
 //				actionsClickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
 //				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
 //				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit, searchbyindividual);
 				sendKeyStroke(attributeName_xpath, SAI_SearchByIndividualsRadio, Keys.SPACE);
+				
 				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit);
 				waitForPageToLoad();
 			}
@@ -144,7 +148,14 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}	
 			if (!userqueries.equals("")) {
 				Reporter.log("Step 17 - Select the user quries as ["+userqueries+"]");
-				selectByValueWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
+//				waitForElementPresentWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
+//				selectByValueWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
+				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
+				if(isElementPresentWebdriver(attributeName_xpath, SAI_UserQuries+"/option[contains(text(),'"+userqueries+"')]")) {
+					selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, "   "+userqueries);
+				} else {
+					selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
+				}
 			}
 			
 			if (!search_using_query.equals("")) {

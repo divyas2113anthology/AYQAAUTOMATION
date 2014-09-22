@@ -59,7 +59,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						waitForPageToLoadWebdriver();	
 	//					clickWebdriver(attributeName_xpath, HC_Login);
 						checkWebdriver(attributeName_xpath, HC_Login);
-	//					Thread.sleep(6000);
+	//					Thread.sleep(6000);    
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
 	//					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
 						waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
@@ -88,6 +88,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]","Send Email");
 					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
 						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");                                     
 						recentPopupSelectWebdriver("Open Email");                                   

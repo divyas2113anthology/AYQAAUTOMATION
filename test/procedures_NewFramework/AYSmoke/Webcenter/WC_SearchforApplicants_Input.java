@@ -1,6 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -76,7 +77,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}			
 			if (!createddate.equals("")) {
 				Reporter.log("Step 5 - Select the creation date as ["+createddate+"]");
-				selectByValueWebdriver(attributeName_xpath, SAI_CreationDate, createddate);
+				selectByVisibleTextWebdriver(attributeName_xpath, SAI_CreationDate, createddate);
 			}
 			if (!submittedate.equals("")) {
 				Reporter.log("Step 6 - Select the submission date as ["+submittedate+"]");
@@ -86,6 +87,19 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 7 - Click Submit in search by date");
 				clickWebdriver(attributeName_xpath, SAI_SearchByDateSubmit);
 				waitForPageToLoad();
+			}
+			if (!searchbyindividual.equals("")) {
+				Reporter.log("Step 15 - Click Submit in search by Individual");
+				waitForPageToLoadWebdriver();
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio, searchbyindividual);
+//				actionsClickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
+//				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
+//				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit, searchbyindividual);
+				sendKeyStroke(attributeName_xpath, SAI_SearchByIndividualsRadio, Keys.SPACE);
+			    //clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit);
+				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
+				waitForPageToLoad();
+				
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Step 8 - Enter the First Name as ["+firstname+"]");
@@ -100,6 +114,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}
 				else{
+					System.out.println("Malik");
+					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 				}
 			}
@@ -129,18 +145,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 14 - Enter the Applicant ID as ["+applicantid+"]");
 				sendKeys(attributeName_xpath, SAI_ApplicantID, applicantid);
 			}
-			if (!searchbyindividual.equals("")) {
-				Reporter.log("Step 15 - Click Submit in search by Individual");
-				waitForPageToLoadWebdriver();
-				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio, searchbyindividual);
-//				actionsClickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
-//				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
-//				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit, searchbyindividual);
-				sendKeyStroke(attributeName_xpath, SAI_SearchByIndividualsRadio, Keys.SPACE);
-				
-				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit);
-				waitForPageToLoad();
-			}
+			
 			if (!systemqueries.equals("")) {
 				Reporter.log("Step 16 - Select the system quries as ["+systemqueries+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);

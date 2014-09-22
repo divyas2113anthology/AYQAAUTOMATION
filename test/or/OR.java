@@ -831,6 +831,13 @@ public static final String SAV_PageName = "//div[@id='AYInstructions']/following
 public static final String PageName = "//div[@id='AYInstructions']/following-sibling::font";
 
 //#**********************************************************#
+//# Webcenter Manage Queries - MQ
+//#**********************************************************#
+
+public static final String MQ_Queryselect = "//a[contains(text(),'";  //TestforUserQueries')]"
+public static final String MQ = "";
+
+//#**********************************************************#
 //# Account Profile Page - AP
 //#**********************************************************#
 public static final String AP_PageTitle = "//font[@class='Section']";
@@ -1396,6 +1403,9 @@ public static final String QA_ResetBtn = "//img[@alt='Reset']";
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
 public static final String MQ_FieldName = "//select[contains(@name,'txtField')]";
+public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
+public static final String MQ_AppInProgress = "//input[@name='SubmittedApps' and @value='No']";
+public static final String MQ_QuerySave = "//input[@name='topsavebutton']";
 public static final String MQ_Operator = "//select[contains(@name,'txtOperator')]";
 public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
 public static final String MQ_SaveAndRun = "topsaverunbutton";

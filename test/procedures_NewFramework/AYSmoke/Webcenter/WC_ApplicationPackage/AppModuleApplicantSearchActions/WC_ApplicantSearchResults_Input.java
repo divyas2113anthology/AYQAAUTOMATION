@@ -99,7 +99,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			}
 			if (!click.equals("")) {
 				Reporter.log("Step 6 - Click button as ["+click+"]");
-				Thread.sleep(10000);
+				//Thread.sleep(10000);
 				if (click.equalsIgnoreCase("New Search")) {
 					waitForElementPresentWebdriver(attributeName_xpath, ASR_NewSearchbtn,"NewSearch");
 					clickWebdriver(attributeName_xpath, ASR_NewSearchbtn);

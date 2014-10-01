@@ -41,6 +41,7 @@ public static final String freqa = "//font[text()='Frequently Asked Questions']"
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
 public static final String SecurityInformation = "//font[text()='Security Information']";
 public static final String CreateAcctLogin = "//img[@alt='login']";
+public static final String Message = "//td[contains(text(),'"; //Testing for Post Message"')]";
 //#**********************************************************#
 //#Account Profile Page
 //#**********************************************************#
@@ -1380,6 +1381,15 @@ public static final String RR_ExcelFormate = "//img[contains(@src,'MSExcel')]/pr
 public static final String RR_WordFormate = "//img[contains(@src,'MSWord')]/preceding-sibling::input";
 public static final String RR_HtmlFormate = "//img[contains(@src,'MSHTML')]/preceding-sibling::input";
 public static final String RR_ClearBtn = "//img[contains(@src,'admin_clear')]";
+
+//#**********************************************************#
+//#	 Webcenter - Post Message - Page
+//#**********************************************************#
+public static final String PM_Submit = "//a[contains(@href,'ValidateAndSubmit')]";
+public static final String PM_Back = "//a[contains(@href,'SubmitSearch')]";
+public static final String PM_Subject = "//input[@name='MsgSubject']";
+public static final String PM_DispUntil = "//input[@name='MsgDisplayUntilDate']";
+public static final String PM_Message = "//textarea[@name='MsgToApplicant']";
 //#**********************************************************#
 //#	 Webcenter - Prospect Match - Page
 //#**********************************************************#

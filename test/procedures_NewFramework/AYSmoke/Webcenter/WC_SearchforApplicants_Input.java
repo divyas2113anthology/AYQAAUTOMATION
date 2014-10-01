@@ -105,7 +105,9 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 8 - Enter the First Name as ["+firstname+"]");
 				if (firstname.equals("Applicant First Name")) {
 					String DataFirstName = Runtimedataread(firstname);
+					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
+					
 				}else if (firstname.equals("FaceliftAppFirstName")) {
 					String DataFirstName = Runtimedataread(firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
@@ -115,6 +117,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				}
 				else{
 					System.out.println("Malik");
+					click(SAI_FirstName);
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 				}

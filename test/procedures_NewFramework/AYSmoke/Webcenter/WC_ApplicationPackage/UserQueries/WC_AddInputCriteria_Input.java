@@ -10,7 +10,7 @@ import processor.CommonSeleniumActions;
 public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is to perform some Operation in 'Add Input Criteria' page")
-	public WC_AddInputCriteria_Input () throws Exception{
+	public void WC_AddInputCriteria_Input () throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Add Input Criteria' page");

@@ -30,11 +30,20 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		
 		if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
-			String generatepin = Runtimedataread(pin);
-			Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
-			type(PinField, generatepin);			
+			   
+			if (pin.equals("Pin Number")) {
+				String generatepin = Runtimedataread(pin);
+				Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
+				type(PinField, generatepin);
+			}
+			else
+			{
+				Reporter.log("Proceed to Enter PIN as ("+pin+")");
+				type(PinField, pin);
+			}
 						
 		}
+		
 		if (!password.equals("")) {
 			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword = Runtimedataread(password);

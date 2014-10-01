@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+          <include name="startseleniumserver"/>
+          <include name="shutdownseleniumserver"/>
+          <include name="WC_ApplicantSearchResults_Input"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

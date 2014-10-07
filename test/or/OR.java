@@ -123,6 +123,28 @@ public static final String NP_Cancel = "//input[@id='PageTemplate_ctl00_GWConten
 //# Business Rules Page - BR
 //#**********************************************************#
 public static final String BR_StudentStatus = "//select[@id='s24419']";
+public static final String BR_RuleName = "//a[contains(text(),'";
+public static final String BR_Name = "//input[@name='RuleName']";
+public static final String BR_Desc = "//textarea[@name='RuleDesc']";
+public static final String BR_Folder = "//select[@id='Select1']";
+public static final String BR_UserType = "//select[@name='UserTypeId']";
+public static final String BR_Action = "//select[@name='ActionId']";
+public static final String BR_AppliesToSection = "//select[@name='SectionId']";
+public static final String BR_AppliesToQuestion = "//select[@name='QuestionId']";
+public static final String BR_EventType = "//select[@name='EventTypeId']";
+public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
+public static final String BR_TargetStatus = "//select[@name='DocStatusID']";
+public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
+public static final String BR_TargetGroup = "//select[@name='GroupId']";
+public static final String BR_TargetTrack = "//select[@name='TargetTrackId']";
+public static final String BR_TargetForm = "//select[@name='TargetFormId']";
+public static final String BR_TargetSection = "//select[@name='TargetSectionId']";
+public static final String BR_TargetQuestion = "//select[@name='TargetQuestionId']";
+public static final String BR_TargetValue = "//select[@name='TargetValue']";
+public static final String BR_TargetUrl = "//input[@name='TargetURL']";
+public static final String BR_TargetEmail = "//select[@name='EmailId']";
+public static final String BR_Save = "//img[@name='imageSave1']";
+public static final String BR_Cancel = "//img[@name='imageCancel']";
 //#**********************************************************#
 //# Personal Information Page - PI
 //#**********************************************************#

@@ -8,10 +8,10 @@
       <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="212" started-at="2014-09-30T12:15:45Z" finished-at="2014-09-30T12:15:45Z">
+  <suite name="Default suite" duration-ms="208" started-at="2014-10-07T11:11:41Z" finished-at="2014-10-07T11:11:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="212" started-at="2014-09-30T12:15:45Z" finished-at="2014-09-30T12:15:45Z">
-      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc]" name="startseleniumserver" is-config="true" duration-ms="5709" started-at="2014-09-30T08:15:39Z" finished-at="2014-09-30T08:15:45Z">
+    <test name="Default test" duration-ms="208" started-at="2014-10-07T11:11:41Z" finished-at="2014-10-07T11:11:42Z">
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5]" name="startseleniumserver" is-config="true" duration-ms="10860" started-at="2014-10-07T07:11:30Z" finished-at="2014-10-07T07:11:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@f04fcf]]>
+                <![CDATA[org.testng.TestRunner@242ba3]]>
               </value>
             </param>
           </params>
@@ -42,7 +42,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc]" name="datagenerator" is-config="true" duration-ms="0" started-at="2014-09-30T08:15:45Z" finished-at="2014-09-30T08:15:45Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5]" name="datagenerator" is-config="true" duration-ms="0" started-at="2014-10-07T07:11:41Z" finished-at="2014-10-07T07:11:41Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="SKIP" signature="WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc]" name="WC_ApplicantSearchResults_Input" duration-ms="1" started-at="2014-09-30T08:15:45Z" description="This Procedure is used to perform some operation in &#039;Application search results&#039; page" finished-at="2014-09-30T08:15:45Z">
+        <test-method status="SKIP" signature="WC_EditBusinessRule_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5]" name="WC_EditBusinessRule_Input" duration-ms="0" started-at="2014-10-07T07:11:41Z" description="This Procedure is to perform some input operation in &#039;Configure Business Rules&#039; page" finished-at="2014-10-07T07:11:41Z">
           <reporter-output>
             <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG]]>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG]]>
             </line>
             <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG' height='200' width='200'></a>]]>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG' height='200' width='200'></a>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- WC_ApplicantSearchResults_Input -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc]" name="failurescreenshot" is-config="true" duration-ms="186" started-at="2014-09-30T08:15:45Z" finished-at="2014-09-30T08:15:45Z">
+        </test-method> <!-- WC_EditBusinessRule_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5]" name="failurescreenshot" is-config="true" duration-ms="165" started-at="2014-10-07T07:11:41Z" finished-at="2014-10-07T07:11:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=WC_ApplicantSearchResults_Input status=SKIP method=WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG]]]>
+                <![CDATA[[TestResult name=WC_EditBusinessRule_Input status=SKIP method=WC_EditBusinessRule_Input.WC_EditBusinessRule_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditBusinessRule_Input_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@f04fcf]]>
+                <![CDATA[org.testng.TestRunner@242ba3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@f673cc]" name="shutdownseleniumserver" is-config="true" duration-ms="2995" started-at="2014-09-30T08:15:45Z" finished-at="2014-09-30T08:15:48Z">
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input@a2bfd5]" name="shutdownseleniumserver" is-config="true" duration-ms="255" started-at="2014-10-07T07:11:42Z" finished-at="2014-10-07T07:11:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@f04fcf]]>
+                <![CDATA[org.testng.TestRunner@242ba3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Input -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -29,6 +29,8 @@ public class WC_EditBusinessRule_Verify extends CommonSeleniumActions implements
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, PA_PageName, pagename);
+				writeConsole("Hi");
 				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Business Rule");
 			}
 			

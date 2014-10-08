@@ -1,5 +1,10 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -26,7 +31,10 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				Thread.sleep(12000);
-				if (selenium.isTextPresent(successmessage)) {
+				if (successmessage.equals("Congratulations")) {
+					verifyElementPresentWebdriver(attributeName_xpath, BU_BR_Submit, successmessage);
+				}
+				else if (selenium.isTextPresent(successmessage)) {
 					Reporter.log("Message("+successmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+successmessage+") was not displayed correctly");
@@ -80,8 +88,22 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+verifyui+") was displayed correctly");
-				verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
-			
+				if(verifyui.equals("Virginia"))
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_State, verifyui);
+				else if(verifyui.equals("Business Rules"))
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_BRules, verifyui);
+				else if(verifyui.equals("09/23/2014")){
+					Date date = new Date();  
+					DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+					String sysdate = dateFormat.format(date);
+					System.out.println(sysdate);
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, sysdate);
+					}
+				else if(verifyui.equals("F"))
+						verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, verifyui);
+				else
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
+				
 			}
 			
 		} catch (Exception e) {

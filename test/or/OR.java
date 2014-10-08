@@ -724,6 +724,10 @@ public static final String AW_PageTitle = "//div[@id='ay-landing-text']/b";
 public static final String BU_SportsInterest = "//select[@name='q35038']";
 public static final String BU_Submit = "//img[contains(@src,'admin_submit_small')]";
 public static final String BU_PD_AD_SportsInterest = "//select[@id='s35038']";
+public static final String BU_PD_State = "//select[@id='s35033']";
+public static final String BU_PD_BRules = "//font[contains(text(),'Business Rules')]";
+public static final String BU_PD_DOB = "//input[@id='q35023']";
+public static final String BU_BR_Submit = "//font[contains(text(),'Congratulations')]";
 
 
 //#**********************************************************#

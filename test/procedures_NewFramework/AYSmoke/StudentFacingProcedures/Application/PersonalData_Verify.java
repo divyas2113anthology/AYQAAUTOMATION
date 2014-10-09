@@ -46,6 +46,7 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 				String[] errormessage1 = errormessage.split(";");
 				waitForElementPresentWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage);
 				for (int i = 0; i < errormessage1.length; i++) {
+					System.out.println(errormessage1[i]);
 					verifyElementContainsTextWebdriver(attributeName_xpath, PD_ErrorMsg, errormessage1[i], "System Message:");
 				}
 //				String errormessage1 = errormessage.replace(";", "\n");
@@ -101,6 +102,16 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 					}
 				else if(verifyui.equals("F"))
 						verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, verifyui);
+				else if(verifyui.equals("BR Required Form")){
+					int rowcount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr");
+					for(int i=0; i < rowcount; i++) {
+						int columncount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr["+i+"]/td");
+						for(int j = 0; j < columncount; j++) {
+							verifyElementContainsTextWebdriver(attributeName_xpath,"//div[@id='linksMouseOver']//tr/td/table/tbody/tr[["+i+"]/td[["+j+"]", verifyui, verifyui);
+						}
+
+					}
+				}
 				else
 					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
 				

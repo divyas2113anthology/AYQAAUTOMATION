@@ -339,6 +339,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!verifycontents.equals("")) {
 					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
 					//				String environment = Runtimedataread("Instance").toLowerCase();
+					System.out.println("aaaaaaaaaa");
 					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
 					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
 

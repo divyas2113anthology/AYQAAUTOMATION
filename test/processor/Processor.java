@@ -34,6 +34,7 @@ import org.openqa.selenium.ie.InternetExplorerDriverLogLevel;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -243,6 +244,10 @@ public class Processor {
 			case "safari":
 				driver = new SafariDriver();
 				break;
+			case "phantomjs":
+				driver = new PhantomJSDriver();
+				break;
+				
 			default:
 				writeFailure("Invalid Browser Name("+browser+")");				
 			}

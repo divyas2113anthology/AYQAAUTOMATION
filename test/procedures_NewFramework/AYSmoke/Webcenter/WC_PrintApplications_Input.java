@@ -80,7 +80,8 @@ public class WC_PrintApplications_Input extends CommonSeleniumActions implements
 				Reporter.log("Step 8 - Click the button as ["+button+"]");
 				if (button.equalsIgnoreCase("Print")) {
 					clickWebdriver(attributeName_xpath, PA_PrintBtn);
-					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Successfully printed applications.");
+					recentPopupCloseWebdriver();
+					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Successfully Genearated PDFs.");
 //					waitForElementNotPresentWebdriver(attributeName_xpath, QAE_Message, "Successfully printed applications.");
 //					recentPopupSelect("Application.pdf");
 //					recentPopupSelectWebdriver("PrintingApplication");

@@ -29,7 +29,8 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			String piDateofBirth = personalinfoidatarepo[6];
 			String pisportsinterest = personalinfoidatarepo[7];
 			String piluckyno = personalinfoidatarepo[8];
-			String pisavebutton = personalinfoidatarepo[9];
+			String picity = personalinfoidatarepo[9];
+			String pisavebutton = personalinfoidatarepo[10];
 			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
 			if (!pisuffix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pisuffix+")");

@@ -35,7 +35,7 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		
 		
-		if (!addrcountry.equals("India")) {
+		if (!addrcountry.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
 			selectByVisibleTextWebdriver(attributeName_xpath, AL_Country, addrcountry);
 //			select(AL_Country, addrcountry);

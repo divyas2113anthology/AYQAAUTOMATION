@@ -68,7 +68,7 @@ public class Processor {
 	    protected boolean jettyProxyWasStartedByATest = false;
 	    protected final static String SELENIUM_SERVER_HOST = "localhost";
 	    protected final static int SELENIUM_SERVER_PORT = 4444;
-	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "120000"; //milliseconds
+	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "200000"; //milliseconds
 //	    public static DefaultSelenium selenium;
 	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 60; //second
 	    public static int golbalProcedureOrder=0;

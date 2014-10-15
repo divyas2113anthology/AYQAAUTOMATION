@@ -919,7 +919,8 @@ public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//tr[@class='FormText']/td/font";
-public static final String PA_PrintBtn = "//img[@alt='print']";
+//public static final String PA_PrintBtn = "//img[@alt='print']";
+public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
 //#**********************************************************#
 //# Webcenter Applicant Summary - AS
 //#**********************************************************#

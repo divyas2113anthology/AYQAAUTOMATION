@@ -30,7 +30,8 @@ public class WC_AddUser_Verify extends CommonSeleniumActions implements OR {
 				String QA_Message= part[0];
 				writeConsole("Malik");
 				writeConsole(QA_Message);
-				verifyElementTextWebdriver(attributeName_xpath,QA_Message, message,message);
+				//verifyElementTextWebdriver(attributeName_xpath,QA_Message, message,message);
+				verifyElementContainsTextWebdriver(attributeName_xpath,QA_Message, message,message);
 				//verifyElementTextWebdriver(attributeName_xpath,QA_Message, message+" was successfully Added", message);
 			}
 			if (!pagename.equals("")) {

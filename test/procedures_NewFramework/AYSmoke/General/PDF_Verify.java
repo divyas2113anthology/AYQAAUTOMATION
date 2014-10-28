@@ -62,7 +62,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 							}
 							//verifyTextContains(splitpdftext, exceptionMsg, "Page");
 							//deselectPopUp();
-							recentPopupClose();
+							recentPopupCloseWebdriver();
 						}
 						if (wait.equals("")) {
 							
@@ -79,7 +79,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //						}
 					writeConsole("close PDF File :");
 					//closeWindowWebdriver();
-					selectMainWindowWebdriver();
+					//selectMainWindowWebdriver();
 				}
 			}else{
 				writeConsole("Inter Net "+browser);

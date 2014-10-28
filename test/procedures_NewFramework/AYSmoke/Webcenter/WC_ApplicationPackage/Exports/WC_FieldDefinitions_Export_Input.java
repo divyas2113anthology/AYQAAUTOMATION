@@ -30,6 +30,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			switchToFrameNameIdWebdriver("frameQuestionsTree");
 			if (!fieldquestion.equals("")) {
 				Reporter.log("Select the field question as ["+fieldquestion+"]");
+				System.out.println(fieldquestion);
 				String [] SplitPackage = fieldquestion.split(";");
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package : "+SplitPackage[i]);

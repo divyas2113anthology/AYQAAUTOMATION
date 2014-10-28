@@ -36,6 +36,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String completestatus = testdata[11];
 			String enrollment = testdata[12];
 			String buttons = testdata[13];
+			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
@@ -175,6 +176,12 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				}	
 				
 			}
+			if(!view.equals("")){
+				waitForElementPresentWebdriver(attributeName_xpath, AS_View+view+"')]", "View");
+				clickWebdriver(attributeName_xpath, AS_View+view+"')]");
+				recentPopupSelectWebdriver("View");
+			}
+				
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

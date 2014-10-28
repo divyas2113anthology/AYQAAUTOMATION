@@ -23,10 +23,10 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 			if (!downloadlocation.equals("")) {
 				Reporter.log("Proceed to Download and Save a file in the Location["+downloadlocation+"] using AUTOIT");
 //				Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/Firefox/Application/DownloadDocFirefox.exe "+downloadlocation+"");	
-				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
+				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.au3");
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.au3");
-				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.exe");
+				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.exe");
 			}
 			if (!filepresentlocation.equals("")) {
 				String ReadExportFile = Runtimedataread(filepresentlocation);
@@ -35,8 +35,13 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 //				Thread.sleep(50000);
 //				waitForFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile); // this will hold the script to complete the File Download
 //				verifyFile("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
-				waitForFile("C:\\SeleniumScripts\\DownloadedFileLocation\\"+ReadExportFile); // this will hold the script to complete the File Download
-				verifyFile("C:\\SeleniumScripts\\DownloadedFileLocation\\"+ReadExportFile);
+				//waitForFile("C:\\SeleniumScripts\\DownloadedFileLocation\\"+ReadExportFile); // this will hold the script to complete the File Download
+				//verifyFile("C:\\SeleniumScripts\\DownloadedFileLocation\\"+ReadExportFile);
+				//waitForFile("C:\\SeleniumScripts\\AYQAAutomation\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
+				//verifyFile("C:\\SeleniumScripts\\AYQAAutomation\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
+				waitForFile("C:\\Users\\emtqaaccount\\AppData\\Local\\Temp\\"+ReadExportFile);
+				verifyFile("C:\\Users\\emtqaaccount\\AppData\\Local\\Temp\\"+ReadExportFile);
+				recentPopupClose();
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

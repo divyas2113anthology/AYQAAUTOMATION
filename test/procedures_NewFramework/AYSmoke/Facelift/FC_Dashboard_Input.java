@@ -23,7 +23,7 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 			if (!dashboard_button.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+dashboard_button+") Button");
 				if (dashboard_button.equalsIgnoreCase("Dashboard")) {
-					clickWebdriver(attributeName_xpath, DB_MsgBtn);	//DB_DbBtn
+					clickWebdriver(attributeName_xpath, DB_DbBtn);	//DB_DbBtn
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Messages")) {
 					clickWebdriver(attributeName_cssselector,DB_MsgBtn);

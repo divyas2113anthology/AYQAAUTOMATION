@@ -2872,7 +2872,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-//				Thread.sleep(6000);
+				Thread.sleep(6000);
 				driver.switchTo().window(window);
 //				Thread.sleep(3000);
 			}
@@ -4418,7 +4418,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void PackageSelectionFieldDefinition(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
 		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
-//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);

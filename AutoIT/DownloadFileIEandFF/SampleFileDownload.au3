@@ -22,6 +22,8 @@ WinActivate("Opening");
 _Log("File Download")
 
 Send("{ENTER}")
+Send("{ENTER}")
+WinClose("[CLASS:Notepad]")
 EndIf
 
 ;used for logging

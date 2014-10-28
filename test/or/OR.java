@@ -471,6 +471,7 @@ public static final String TOU_pageTitle = "//strong[text()='Terms Of Use']";
 //# Facelift Dashboard Input
 //#**********************************************************#
 public static final String DB_MsgBtn = "css=#message";
+public static final String DB_DbBtn = "//a[contains(@class,'inverse')]";
 public static final String DB_ProfBtn = "css=#Profile";
 public static final String DB_TecSupportBtn = "#Techsupport.btn";
 public static final String DB_LogoutBtn = "//a[contains(text(),'Log Out')]";
@@ -937,7 +938,14 @@ public static final String AS_ApplicationFee = "//input[@name='chkAppFee']";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//span[contains(text(),'print application')]";
+public static final String AS_View = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window')]";
+public static final String AS_ViewApplication = "";
+public static final String AS_ViewRecommendation = "";
+public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";
+public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
+public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
+public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
 //#**********************************************************#
 //# Webcenter Batch Printing - BP
 //#**********************************************************#

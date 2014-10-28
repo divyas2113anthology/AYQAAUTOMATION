@@ -53,8 +53,9 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 //			        option.click();   
 //			}
 //			selectByIndexWebdriver(attributeName_xpath, ESR_Field, Integer.parseInt(field));
-			select(ESR_Field, "regexp:"+field);
-//			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			//select(ESR_Field, "regexp:"+field);
+			selectByValueWebdriver(attributeName_xpath,ESR_Field, field);
+			//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
 			Thread.sleep(3000);
 //			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);
 		}

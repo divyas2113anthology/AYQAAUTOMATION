@@ -44,7 +44,7 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 				Reporter.log("Step 5 - Verify its navigate to ("+pagename+") page");
 //				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
 //				verifyElementTextWebdriver(attributeName_xpath, SAV_PageName, pagename, "Page Name for Search For Applicant");
-				waitForText(pagename, "Search Results");
+				//waitForText(pagename, "Search Results");
 				verifyTextPresent(pagename);
 			}
 			if (!verifyui.equals("")) {

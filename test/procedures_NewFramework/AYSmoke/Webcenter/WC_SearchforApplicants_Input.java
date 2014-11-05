@@ -39,6 +39,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			String select_action = testdata[20];
 			String searchbyaction = testdata[21];
 			String submit = testdata[22];
+			String pros_id = testdata[23];
 			Reporter.log("Input Test Data was retrieved for 'Search For Applicants' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			waitForElementPresentWebdriver(attributeName_xpath, SAI_NoOFRecords, "Number of Records Display");
@@ -109,6 +110,11 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 					
 				}else if (firstname.equals("FaceliftAppFirstName")) {
+					String DataFirstName = Runtimedataread(firstname);
+					click(SAI_FirstName);
+					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
+				}else if (firstname.equals("AppReview FirstName")) {
+					System.out.println("aaaa"+firstname);
 					String DataFirstName = Runtimedataread(firstname);
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
@@ -189,6 +195,11 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!searchbyaction.equals("")) {
 				Reporter.log("Step 22 - Click the search by action submit button");
+			}
+			if (!pros_id.equals("")) {
+				Reporter.log("Step 24 - Send Prospect ID");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchProspectID, pros_id);
+				sendKeys(attributeName_xpath, SAI_SearchProspectID, pros_id);
 			}
 			if (!submit.equals("")) {
 				Reporter.log("Step 23 - Click the submit button");

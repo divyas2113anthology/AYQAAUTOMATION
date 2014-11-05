@@ -847,6 +847,7 @@ public static final String SAI_SearchByDateSubmit = "//td[font[contains(text(),'
 //public static final String SAI_SearchByIndividualsRadio = "//td[font[contains(text(),'Individual')]]/preceding-sibling::td/input[@type='radio']";
 public static final String SAI_SearchByIndividualsRadio = "//input[@value='individual']";
 public static final String SAI_SearchUsingQueryRadio = "//input[@value='query']";
+public static final String SAI_SearchProspectID = "//font[text()='Prospect ID:']/following::input[@name='ApplyyourSelfID']     ";
 public static final String SAI_SearchUsingQuerySubmit = "//td[font[contains(text(),'Using Query')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
 //#**********************************************************#
 //# Webcenter Search For Applicant Verify - SAV
@@ -857,6 +858,7 @@ public static final String SAV_FormMsg = "//td[@class='FormText']";
 public static final String SAV_FormLabel = "//table/tbody/tr/td[text()='";
 public static final String SAV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
 public static final String PageName = "//div[@id='AYInstructions']/following-sibling::font";
+public static final String APP_Status = "//table/tbody/tr/td[contains(text(),'";
 
 //#**********************************************************#
 //# Webcenter Manage Queries - MQ
@@ -946,6 +948,9 @@ public static final String AS_ViewComments = "//font[contains(text(),'Comments')
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
+public static final String AS_AppReviewStatus = "//font[contains(text(),'";
+public static final String AS_StatusSubmit = "//a[contains(@href,'Submit')]";
+public static final String AS_StatusBack = "//a[contains(@href,'SubmitSearch')]";
 //#**********************************************************#
 //# Webcenter Batch Printing - BP
 //#**********************************************************#
@@ -1102,6 +1107,14 @@ public static final String SFE_Title = "//input[@name='evTitle']";
 public static final String SFE_InternalName = "//input[@name='evIName']";
 public static final String SFE_SearchByRadio = "']]/preceding-sibling::td/input[@type='radio']";
 public static final String SFE_SearchBySubmit = "']]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
+public static final String SFE_SpecificDate = "//input[@name='evWhenOn']";
+public static final String SFE_DateRangeFrom = "//input[@name='evWhenFrom']";
+public static final String SFE_DateRangeTo	= "//input[@name='evWhenTo']";
+public static final String SFE_Clear = "//input[@name='clearRadios']";
+public static final String SFE_CalYear = "//select[contains(@name,'intYearSelector')]";
+public static final String SFE_CalMonth = "//select[contains(@name,'intMonthSelector')]";
+//public static final String SFE_CalDay = "//a[@class='calthismonth']";
+public static final String SFE_CalDay = "//a[text()='";
 //#**********************************************************#
 //# Webcenter Event Search Results Page - EVR
 //#**********************************************************#

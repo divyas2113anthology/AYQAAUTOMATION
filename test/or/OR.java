@@ -838,6 +838,7 @@ public static final String SAI_SysQuries = "//select[@name='SysQuery']";
 public static final String SAI_UserQuries = "//select[@name='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
 
+
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
 public static final String SAI_SubmitBtnBottom = "//input[@name='imageField2']";
@@ -894,6 +895,23 @@ public static final String ESA_FutureWithSpace = "//input[@id='FutureOpen']";
 public static final String ESA_SearchByEvent = "//a[contains(@href,'ValidateAndSubmitEventInfo')]";
 public static final String ESA_Message = "//td[@class='BaseTableFont']";
 public static final String ESA_NoEventsMessage = "//td[@class='BaseTableFont']/b";
+public static final String ESA_RegNumber = "//input[@name='regno']";
+public static final String ESA_StatusInvited = "//input[@value=1]";
+public static final String ESA_StatusRegistered = "//input[@value=2]";
+public static final String ESA_StatusDeclined = "//input[@value=3]";
+public static final String ESA_StatusWaitlisted= "//input[@value=4]";
+public static final String ESA_StatusAttended= "//input[@value=5]";
+public static final String ESA_StatusDidnotattend= "//input[@value=6]";
+public static final String ESA_ApplicantID = "//input[@name='matchToApplicantID']";
+public static final String ESA_ProspectID = "//input[@name='matchToProspectID']";
+public static final String ESA_Findallrecordsnotmatchedtoapplicants = "//input[@name='findNotMatchedToApplicants']";
+public static final String ESA_Findallrecordsmatchedtoapplicants = "//input[@name='findMatchedToApplicants']";
+public static final String ESA_Findallrecordsnotmatchedtoprospects = "//input[@name='findNotMatchedToProspects']";
+public static final String ESA_Findallrecordsmatchedtoprospects = "//input[@name='findMatchedToProspects']";
+public static final String ESA_SpecificDate = "//input[@name='registrationon']";
+public static final String ESA_DateRangeFrom = "//input[@name='registrationFromDt']";
+public static final String ESA_DateRangeTo = "//input[@name='registrationToDt']";
+
 //#**********************************************************#
 //# Webcenter Applicant Search Results - ASR
 //#**********************************************************#

@@ -96,10 +96,10 @@ public class WC_SearchRegistrant_Input extends CommonSeleniumActions implements 
 				waitForElementPresentWebdriver(attributeName_xpath, ESA_Findallrecordsnotmatchedtoprospects, Findallrecordsnotmatchedtoprospects);
 				clickWebdriver(attributeName_xpath, ESA_Findallrecordsnotmatchedtoprospects);
 			}
-			if (!Findallrecordsmatchedtoapplicants.equals("")) {
+			if (!Findallrecordsmatchedtoprospects.equals("")) {
 				Reporter.log("Matched Record as ["+Findallrecordsmatchedtoapplicants+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, ESA_Findallrecordsmatchedtoapplicants, Findallrecordsmatchedtoapplicants);
-				clickWebdriver(attributeName_xpath, ESA_Findallrecordsmatchedtoapplicants);
+				waitForElementPresentWebdriver(attributeName_xpath, ESA_Findallrecordsmatchedtoprospects, Findallrecordsmatchedtoprospects);
+				clickWebdriver(attributeName_xpath, ESA_Findallrecordsmatchedtoprospects);
 			}
 			if (!Regspecificdate.equals("")) {
 				Reporter.log("Specific Date as"+Regspecificdate);		

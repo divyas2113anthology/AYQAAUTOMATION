@@ -199,6 +199,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			if (!pros_id.equals("")) {
 				Reporter.log("Step 24 - Send Prospect ID");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchProspectID, pros_id);
+				clickWebdriver(attributeName_xpath, SAI_SearchProspectID);
 				sendKeys(attributeName_xpath, SAI_SearchProspectID, pros_id);
 			}
 			if (!submit.equals("")) {

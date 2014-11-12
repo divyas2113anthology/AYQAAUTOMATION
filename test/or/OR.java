@@ -837,6 +837,8 @@ public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "//select[@name='SysQuery']";
 public static final String SAI_UserQuries = "//select[@name='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
+ public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
+ public static final String SAI_Action = "//select[@name='ActionID']";
 
 
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
@@ -850,6 +852,31 @@ public static final String SAI_SearchByIndividualsRadio = "//input[@value='indiv
 public static final String SAI_SearchUsingQueryRadio = "//input[@value='query']";
 public static final String SAI_SearchProspectID = "//font[text()='Prospect ID:']/following::input[@name='ApplyyourSelfID']     ";
 public static final String SAI_SearchUsingQuerySubmit = "//td[font[contains(text(),'Using Query')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
+public static final String SFR_DisplayOffline = "//input[@value='offline']";
+public static final String SFR_DisplayBoth = "//input[@value='both']";
+public static final String SFR_RecSubmitted	= "//font[contains(text(),'Record Options ')]/following::input[1]";
+public static final String SFR_RecNotSubmitted = "//font[contains(text(),'Record Options ')]/following::input[2]";
+public static final String SFR_RecAppSubmitted =  "//font[contains(text(),'Record Options ')]/following::input[3]";
+public static final String SFR_RecNotPrinted = "//font[contains(text(),'Record Options ')]/following::input[4]";
+public static final String SFR_RecNotExported = "//font[contains(text(),'Record Options ')]/following::input[5]";
+public static final String SFR_RecFirstName = "//input[@name='recFirstName']";
+public static final String SFR_RecLastName = "//input[@name='recLastName']";
+public static final String SFR_RecEmail = "//input[@name='recEmail']";
+public static final String SFR_RecPAC = "//input[@name='recPin']";
+public static final String SFR_AppFirstName = "//input[@name='appFirstName']";
+public static final String SFR_AppLastName = "//input[@name='appLastName']";
+public static final String SFR_AppEmail = "//input[@name='appEmail']";
+public static final String SFR_AppPin = "//input[@name='appPin']";
+public static final String SFR_AppID = "//input[@name='appAYID']";
+public static final String SFR_SubmittedFrom = "//input[@name='SubmittedFrom']";
+public static final String SFR_SubmittedTo = "//input[@name='SubmittedTo']";
+public static final String SFR_PrintedFrom = "//input[@name='PrintedFrom']";
+public static final String SFR_PrintedTo = "//input[@name='PrintedTo']";
+public static final String SFR_ExportedFrom = "//input[@name='ExportedFrom']";
+public static final String SFR_ExportedTo = "//input[@name='ExportedTo']";
+
+
+
 //#**********************************************************#
 //# Webcenter Search For Applicant Verify - SAV
 //#**********************************************************#
@@ -1427,6 +1454,7 @@ public static final String Ad_FormHeading = "//font[@class='FormHeading']";
 public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";
+public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/td/font";
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page
 //#**********************************************************#

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Verify">
+      <class name="procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input">
         <methods>
-          <include name="WC_EditBusinessRule_Verify"/>
           <include name="datagenerator"/>
           <include name="failurescreenshot"/>
           <include name="startseleniumserver"/>
           <include name="shutdownseleniumserver"/>
+          <include name="WC_SearchRegistrant_Input"/>
         </methods>
-      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules.WC_EditBusinessRule_Verify -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

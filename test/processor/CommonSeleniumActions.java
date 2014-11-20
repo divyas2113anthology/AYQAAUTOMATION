@@ -42,8 +42,10 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.Locatable;
+
 import com.thoughtworks.selenium.webdriven.commands.GetAttribute;
 import com.thoughtworks.selenium.webdriven.commands.GetXpathCount;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -2395,6 +2397,14 @@ public class CommonSeleniumActions extends Processor implements OR {
 			returndate = dateformat.format(calendar.getTime()).toString();		    
 			System.out.println("Time:" + returndate + "'");
 		}	
+		if(date.contains("Current Minute+2")){
+			returndate = dateformat.format(calendar.getTime()).toString();
+			System.out.println("Time:" + returndate + "'");
+			int number=Integer.parseInt(returndate);
+			int timeadd=number+2;
+			System.out.println("Added Time:" +timeadd );
+			returndate=Integer.toString(timeadd);
+		}
 		return returndate;
 	}
 	//#*****************************End of Section*************#//

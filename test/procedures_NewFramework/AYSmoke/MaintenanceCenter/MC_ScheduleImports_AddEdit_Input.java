@@ -25,7 +25,8 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 		String startdate = testdata[8];
 		String starthour = testdata[9];
 		String startminute = testdata[10];
-		String testsavecancel = testdata[11];
+		String enddate = testdata[11];
+		String testsavecancel = testdata[12];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!importdefinition.equals("")) {
 			Reporter.log("Step 1 - Select the Import Definition as ["+importdefinition+"]");
@@ -81,6 +82,11 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 			Reporter.log("Step 11 - Enter the Start Minute as ["+startminute+"]");
 			String StartMinute = requiredHourAndMinute("mm", startminute);
 			selectByVisibleTextWebdriver(attributeName_name, "selMinutesStart", StartMinute);
+		}
+		if (!enddate.equals("")) {
+			Reporter.log("Step 9 - Enter the Start Date as ["+enddate+"]");
+			String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", enddate);
+			sendKeys(attributeName_name, "txtEndDate", getcurrentdate+1);
 		}
 		if (!testsavecancel.equals("")) {
 			Reporter.log("Step 12 - Click the name of the button as ["+testsavecancel+"]");

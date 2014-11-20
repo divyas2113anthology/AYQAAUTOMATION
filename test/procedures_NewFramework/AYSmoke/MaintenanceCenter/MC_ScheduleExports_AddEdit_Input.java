@@ -23,7 +23,9 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		String startdate = testdata[6];
 		String starthour = testdata[7];
 		String startminute = testdata[8];
-		String testsavecancel = testdata[9];
+		String enddate = testdata[9];
+		String testsavecancel = testdata[10];
+		String exportfilename = testdata[11];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!exportdefinition.equals("")) {
 			Reporter.log("Step 1 - Select the Export Definition as ["+exportdefinition+"]");
@@ -32,6 +34,10 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 //			WebElement SelectValue = attributeNameValue(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 //			SelectValue.click();
 			clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
+		}
+		if (!exportfilename.equals("")) {
+			Reporter.log("Step 11 - Enter the Export file name as ["+exportfilename+"]");
+			sendKeys(attributeName_name, "txtFilename", exportfilename);
 		}
 		if (!servernameip.equals("")) {
 			Reporter.log("Step 2 - Enter the Server Name as ["+servernameip+"]");
@@ -57,23 +63,29 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 			Reporter.log("Step 6 - Enter the Password as ["+password+"]");
 			sendKeys(attributeName_name, "txtFTPPassword", password);
 		}
+		
 		if (!startdate.equals("")) {
-			Reporter.log("Step 7 - Enter the Start Date as ["+startdate+"]");
+			Reporter.log("Step 8 - Enter the Start Date as ["+startdate+"]");
 			String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
 			sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
 		}
 		if (!starthour.equals("")) {
-			Reporter.log("Step 8 - Enter the Start Hour as ["+starthour+"]");
+			Reporter.log("Step 9 - Enter the Start Hour as ["+starthour+"]");
 			String StartHour = requiredHourAndMinute("hh", starthour);
 			selectByVisibleTextWebdriver(attributeName_name, "selHourStart", StartHour);
 		}
 		if (!startminute.equals("")) {
-			Reporter.log("Step 9 - Enter the Start Minute as ["+startminute+"]");
+			Reporter.log("Step 10 - Enter the Start Minute as ["+startminute+"]");
 			String StartMinute = requiredHourAndMinute("mm", startminute);
 			selectByVisibleTextWebdriver(attributeName_name, "selMinutesStart", StartMinute);
 		}
+		if (!enddate.equals("")) {
+			Reporter.log("Step 11 - Enter the Start Date as ["+enddate+"]");
+			String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", enddate);
+			sendKeys(attributeName_name, "txtEndDate", getcurrentdate+1);
+		}
 		if (!testsavecancel.equals("")) {
-			Reporter.log("Step 10 - Click the name of the button as ["+testsavecancel+"]");
+			Reporter.log("Step 12 - Click the name of the button as ["+testsavecancel+"]");
 			if (testsavecancel.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_name, "imgSubmitBtnTop");
 			}else if (testsavecancel.equalsIgnoreCase("Cancel")) {

@@ -8,10 +8,10 @@
       <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="284" started-at="2014-11-12T14:27:19Z" finished-at="2014-11-12T14:27:19Z">
+  <suite name="Default suite" duration-ms="311" started-at="2014-11-26T09:14:48Z" finished-at="2014-11-26T09:14:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="284" started-at="2014-11-12T14:27:19Z" finished-at="2014-11-12T14:27:19Z">
-      <class name="procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37]" name="startseleniumserver" is-config="true" duration-ms="10909" started-at="2014-11-12T09:27:08Z" finished-at="2014-11-12T09:27:19Z">
+    <test name="Default test" duration-ms="311" started-at="2014-11-26T09:14:48Z" finished-at="2014-11-26T09:14:49Z">
+      <class name="procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6]" name="startseleniumserver" is-config="true" duration-ms="9689" started-at="2014-11-26T04:14:39Z" finished-at="2014-11-26T04:14:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1cab16f]]>
+                <![CDATA[org.testng.TestRunner@14badea]]>
               </value>
             </param>
           </params>
@@ -42,7 +42,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37]" name="datagenerator" is-config="true" duration-ms="0" started-at="2014-11-12T09:27:19Z" finished-at="2014-11-12T09:27:19Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6]" name="datagenerator" is-config="true" duration-ms="0" started-at="2014-11-26T04:14:48Z" finished-at="2014-11-26T04:14:48Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37]" name="failurescreenshot" is-config="true" duration-ms="203" started-at="2014-11-12T09:27:19Z" finished-at="2014-11-12T09:27:19Z">
+        <test-method status="SKIP" signature="MC_ScheduleExport_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6]" name="MC_ScheduleExport_Input" duration-ms="1" started-at="2014-11-26T04:14:48Z" description="This Procedure is to perform some Operation in &#039;Schedule Exports Add/Edit&#039; page" finished-at="2014-11-26T04:14:48Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- MC_ScheduleExport_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6]" name="failurescreenshot" is-config="true" duration-ms="261" started-at="2014-11-26T04:14:48Z" finished-at="2014-11-26T04:14:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=WC_SearchRegistrant_Input status=SKIP method=WC_SearchRegistrant_Input.WC_SearchRegistrant_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG]]]>
+                <![CDATA[[TestResult name=MC_ScheduleExport_Input status=SKIP method=MC_ScheduleExport_Input.MC_ScheduleExport_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\MC_ScheduleExport_Input_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@1cab16f]]>
+                <![CDATA[org.testng.TestRunner@14badea]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="SKIP" signature="WC_SearchRegistrant_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37]" name="WC_SearchRegistrant_Input" duration-ms="0" started-at="2014-11-12T09:27:19Z" description="This Procedure is to perform some Verification in &#039;Event Registration&#039; page" finished-at="2014-11-12T09:27:19Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG]]>
-            </line>
-            <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_SearchRegistrant_Input_0.PNG' height='200' width='200'></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- WC_SearchRegistrant_Input -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input@175db37]" name="shutdownseleniumserver" is-config="true" duration-ms="469" started-at="2014-11-12T09:27:20Z" finished-at="2014-11-12T09:27:20Z">
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input@b536e6]" name="shutdownseleniumserver" is-config="true" duration-ms="217" started-at="2014-11-26T04:14:49Z" finished-at="2014-11-26T04:14:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1cab16f]]>
+                <![CDATA[org.testng.TestRunner@14badea]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.Event.WC_SearchRegistrant_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

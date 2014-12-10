@@ -1722,7 +1722,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		return rowvalue;
 	}
-	// This method is used to Verify Expected array[contains before sort Table row value respective to column Name] with actual array[contains After sort[Ascending or Descending] Table row value respective to column Name] 
+	// This method is used to Verify Expected array[contains before sort Table row value respective to column Name] with actual array[contains After sort[   or Descending] Table row value respective to column Name] 
 	public void veriftytableascendingdescendingorderbasedoncloumnnameusingcss(String tablenameor,String ColumnNames,ArrayList<String> expectedrowvalue,String arrayorder,String tablename) throws Exception{
 		String column = "NotFound";
 		int columnnumber;
@@ -1734,7 +1734,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (columnnumber= 0; columnnumber < columncount; columnnumber++) {				
 			//				String currentcoulmnName = selenium.getTable(tablenameor+".0."+columnnumber);
 			String currentcoulmnName = getTable(tablenameor,0,columnnumber);
-			if (currentcoulmnName.equals(ColumnNames)) {
+			if (currentcoulmnName.equals(ColumnNames)) {        
 				column = "Found";
 				break;					
 			}

@@ -90,7 +90,7 @@ public static final String Continue = "//img[@alt='Continue']";
 public static final String Logoutmain ="//font[text()='";
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
-public static final String Section ="//font[text()='";
+public static final String Section ="//font[contains(text(),'";
 public static final String helphint ="//font[text()='";
 public static final String PrintBtn = "//img[@alt='";
 public static final String updatelink = "//a[text()='";
@@ -254,13 +254,14 @@ public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//a[@
 public static final String EA_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
 public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
 //public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
-//public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[2]";
-public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
-public static final String EA_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
-//public static final String EA_MediaAttachment_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
-public static final String EA_MediaAttachment_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
+public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[2]";
+//public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
+//public static final String EA_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
+public static final String EA_MediaAttachment_UploadFile = "xpath=(//a[@alt='Upload Attachment'])[3]";
+public static final String EA_MediaAttachment_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
+//public static final String EA_MediaAttachment_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
 //public static final String EA_MediaAttachment_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
-public static final String EA_MediaAttachment_Deletefile = "xpath=(//img[@alt='Delete Attachment'])[3]";
+public static final String EA_MediaAttachment_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
 public static final String EA_Save = "//img[@alt='Save']";
 public static final String EA_SaveandContinue = "//img[@alt='Save and Continue']";
 public static final String EA_Reset = "//img[@alt='Reset']";
@@ -322,7 +323,7 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//input[@value='Recommendation Provider List']";
+public static final String RC_RecProviderlist = "//input[contains(@value,'Recommendation Provider List')]";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
@@ -505,7 +506,7 @@ public static final String AW_PaymentProBtn = "//font[text()='Payment Processing
 public static final String AW_PerInfoBtn = "//font[text()='Personal Information']";
 public static final String AW_EssayAttBtn = "//font[text()='Essay and Attachment']";
 public static final String AW_EduBackBtn = "//font[text()='Education Background']";
-public static final String AW_RecommendationBtn = "//font[text()='Recommendations']";
+public static final String AW_RecommendationBtn = "//font[contains(text(),'Recommendations')]";
 public static final String AW_DownFormBtn = "//font[text()='Downloadable Forms']";
 public static final String AW_CheckAppBtn = "//font[text()='Check Your Application']";
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
@@ -656,8 +657,8 @@ public static final String EAI_AttachmentOnly_UploadDocument = "xpath=(//img[@al
 public static final String EAI_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
 public static final String EAI_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
 public static final String EAI_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
-public static final String EAI_MediaAttachment_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
-public static final String EAI_MediaAttachment_Deletefile = "xpath=(//img[@alt='Delete Attachment'])[3]";
+public static final String EAI_MediaAttachment_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
+public static final String EAI_MediaAttachment_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
 public static final String EAI_Save = "//img[@alt='Save']";
 public static final String EAI_SaveandContinue = "//img[@alt='Save and Continue']";
 public static final String EAI_Reset = "//img[@alt='Reset']";
@@ -742,9 +743,9 @@ public static final String AW_Fa1rfaxLnk = "//div[@id='menu']//font[text()='Fa1r
 public static final String TS_PageName = "//div[@id='mainnav']//a[contains(text(),'Support Center')]";
 public static final String EA_MediaAttach_UploadMedia = "xpath=(//img[@alt='Upload Attachment'])[3]";
 //public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
-public static final String EA_MediaAttach_Viewfile = "xpath=(//img[@alt='View Document'])[3]";
+public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
 //public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
-public static final String EA_MediaAttach_Deletefile = "xpath=(//img[@alt='Delete Attachment'])[3]";
+public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";

@@ -81,10 +81,12 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
-//			waitForPageToLoadWebdriver();
-			/*if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+			waitForPageToLoadWebdriver();
+			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
 				clickWebdriver(attributeName_xpath, AL_AddressLink);
-			}*/
+			}
+			waitForPageToLoadWebdriver();
+			clickWebdriver(attributeName_xpath, AL_AddressLink);
 		}
 		selectMainWindowWebdriver();
 		recentOpenedPopupSelectWebdriver("Select Previous Window");

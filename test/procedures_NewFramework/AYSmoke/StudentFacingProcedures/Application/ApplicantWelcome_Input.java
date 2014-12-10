@@ -56,7 +56,7 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!applicantsection.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Applicant Section ("+applicantsection+") Link");
-				click(Section+applicantsection+"']");
+				click(Section+applicantsection+"')]");
 				waitForPageToLoad();			
 			}
 			if (!helpfulhints.equals("")) {

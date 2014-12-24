@@ -1371,6 +1371,7 @@ public static final String CL_PrintBtn = "//img[contains(@src,'admin_print_small
 public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]";
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 public static final String WC_ViewBtn = "//img[contains(@src,'view')]";
+public static final String WC_AddDelMoveToFolder = "//img[contains(@src,'";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#
@@ -1378,6 +1379,18 @@ public static final String AW_TecSupp = "//a[contains(@href,'techSupportWindow')
 public static final String AW_Home =  "//a[contains(@href,'goHome')]";
 public static final String AW_Profile = "//a[contains(@href,'goUpdateProfile')]";
 public static final String AW_Submit = "//a[contains(@href,'doApplicationSubmit')]";
+//#**********************************************************#
+//#	 Application - Application Manage Email Template  - Page
+//#**********************************************************#
+public static final String AMET_TemplateName = "//input[@name='EmailTempName']";
+public static final String AMET_Description = "//textarea[@name='EmailTempDesc']";
+public static final String AMET_EmailSender = "//input[@name='EmailSender']";
+public static final String AMET_EmailFrom = "//input[@name='From']";
+public static final String AMET_Subject = "//input[@name='Subject']";
+public static final String AMET_Message = "//textarea[@name='Message']";
+public static final String AMET_MailMergeSection = "//select[@name='SectionId']";
+public static final String AMET_MailMergeTag = "//select[@name='QuestionId']";
+public static final String AMET_QueryTag = "//textarea[@name='MailMerge']";
 //#**********************************************************#
 //#	 Bridge - Cofigured Clients Input  - Page
 //#**********************************************************#

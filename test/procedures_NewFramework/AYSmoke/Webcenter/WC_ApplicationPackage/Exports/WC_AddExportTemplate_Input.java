@@ -29,6 +29,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			String quotedstring = testdata[7];
 			String lock = testdata[8];
 			String click = testdata[9];
+			String fielddefinition = testdata[10];
 			Reporter.log("Input Test Data was retrieved for 'Add Export Template' Page");
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -84,6 +85,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 					uncheckWebdriver(attributeName_name, "cbxLock");
 				}
 			}
+			
 			if (!click.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
 				waitForElementPresentWebdriver(attributeName_name, AE_ExportSaveBtn, click);

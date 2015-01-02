@@ -21,6 +21,7 @@ public class WC_ManageEmailTemplates_Input extends CommonSeleniumActions impleme
 			String[]  fpvdatarepo = datacontainer;
 			String add_delete_folder = fpvdatarepo[0];
 			String link_click = fpvdatarepo[1];
+			String template_name = fpvdatarepo[2];
 			
 			Reporter.log("Verify Test Data was retrieved for ''Manage Email Template' page");
 			
@@ -31,8 +32,16 @@ public class WC_ManageEmailTemplates_Input extends CommonSeleniumActions impleme
 			}
 			if (!add_delete_folder.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
+				if(add_delete_folder.equals("add")) {
 				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]", add_delete_folder);
 				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
+				}
+				else
+				{
+					waitForElementPresentWebdriver(attributeName_xpath, AMET_CheckboxTemplate, "TestMail");
+					clickWebdriver(attributeName_xpath, AMET_CheckboxTemplate+template_name+"']]/preceding-sibling::td/input");
+					clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
+				}
 			}
 			
 			

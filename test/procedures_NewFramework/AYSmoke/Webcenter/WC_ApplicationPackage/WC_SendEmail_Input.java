@@ -1,5 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.SendKeysAction;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -127,7 +130,9 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				if (button.equalsIgnoreCase("Send")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SE_SendBtn, button);
 					clickWebdriver(attributeName_xpath, SE_SendBtn);
-//					waitForPageToLoadWebdriver();
+					selenium.keyPressNative("10");
+					//SendKeys(Keys.ENTER);
+         //					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, SE_BackBtn);
 					waitForPageToLoadWebdriver();

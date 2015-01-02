@@ -68,6 +68,8 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				String query=selenium.getValue(AMET_QueryTag);
 				System.out.println(query);
+				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");
+				
 			}
 			if (!savecancel.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

@@ -1391,6 +1391,8 @@ public static final String AMET_Message = "//textarea[@name='Message']";
 public static final String AMET_MailMergeSection = "//select[@name='SectionId']";
 public static final String AMET_MailMergeTag = "//select[@name='QuestionId']";
 public static final String AMET_QueryTag = "//textarea[@name='MailMerge']";
+public static final String AMET_CheckboxTemplate = "//td[a[text()='";
+public static final String AMET_FieldDefinition = "//a[@name='FieldDef']";
 //#**********************************************************#
 //#	 Bridge - Cofigured Clients Input  - Page
 //#**********************************************************#

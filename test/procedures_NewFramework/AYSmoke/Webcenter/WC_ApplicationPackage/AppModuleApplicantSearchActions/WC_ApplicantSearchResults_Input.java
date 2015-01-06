@@ -1,5 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -109,8 +112,13 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 				}else if (click.equalsIgnoreCase("Go")) {
 					clickWebdriver(attributeName_xpath, ASR_GoBtn);
-					waitForPageToLoad();
+					
+					Robot robot = new Robot();
+					robot.keyPress(KeyEvent.VK_ENTER);
+					//waitForPageToLoad();
+					Thread.sleep(6000);
 				}
+				
 			}			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

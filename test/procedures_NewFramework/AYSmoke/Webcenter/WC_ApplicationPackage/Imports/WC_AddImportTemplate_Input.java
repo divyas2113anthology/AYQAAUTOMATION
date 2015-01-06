@@ -35,7 +35,10 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			String ImportName = importname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!importname.equals("")) {
 				Reporter.log("Step 1 - Enter the Import as ["+ImportName+"]");
-				sendKeys(attributeName_name, "txtName", ImportName);
+				if(importname.equals("TestImport"))
+					sendKeys(attributeName_name, "txtName", importname);
+				else
+					sendKeys(attributeName_name, "txtName", ImportName);
 			}
 			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();
 			if (!description.equals("")) {
@@ -56,16 +59,28 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			}
 			if (!fileformat.equals("")) {
 				Reporter.log("Step 5 - Select the File Format as ["+fileformat+"]");
-				selectByValueWebdriver(attributeName_name, "txtFormatTypeId", fileformat);
+				//selectByValueWebdriver(attributeName_name, "txtFormatTypeId", fileformat);
+				selectByVisibleTextWebdriver(attributeName_name, "txtFormatTypeId", fileformat);
 			}
 			if (!delimiter.equals("")) {
 				Reporter.log("Step 6 - Select the Delimiter as ["+delimiter+"]");
-				selectByValueWebdriver(attributeName_name, "selDelimiter", delimiter);
+				//selectByValueWebdriver(attributeName_name, "selDelimiter", delimiter);
+				selectByVisibleTextWebdriver(attributeName_name, "selDelimiter", delimiter);
 			}
 			if (!delimitertype.equals("")) {
 				Reporter.log("Step 7 - Enter the value as ["+delimitertype+"]");
-				String Delimitertype = delimitertype.replace(";", ",");
-				sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
+				if(delimitertype.equals("comma")){
+					//String Delimitertype = delimitertype.replace(";" , ",");
+					String Delimitertype = delimitertype.replace(delimitertype, ",");
+					System.out.println("aaa"+Delimitertype);
+					sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
+				}
+				else
+				{
+					String Delimitertype = delimitertype.replace(";" , ",");
+					sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
+				}
+				Thread.sleep(12000);
 			}
 			if (!importanupdate.equals("")) {
 				Reporter.log("Step 8 - Choose the Important Update as ["+importanupdate+"]");
@@ -89,6 +104,9 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
 				} else if (click.equals("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
+				}else if (click.equalsIgnoreCase("Field Definitions")) {
+					clickWebdriver(attributeName_xpath, AE_FieldDefBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {

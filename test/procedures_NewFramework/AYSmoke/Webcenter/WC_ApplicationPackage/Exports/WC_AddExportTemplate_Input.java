@@ -29,15 +29,20 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			String quotedstring = testdata[7];
 			String lock = testdata[8];
 			String click = testdata[9];
-			String fielddefinition = testdata[10];
 			Reporter.log("Input Test Data was retrieved for 'Add Export Template' Page");
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			String ExportName = exportname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!exportname.equals("")) {
 				Reporter.log("Step 1 - Enter the Import as ["+ExportName+"]");
+				if(exportname.equals("TestExport")){
+					waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
+					sendKeys(attributeName_name, "txtName", exportname);
+				}
+				else{
 				waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
 				sendKeys(attributeName_name, "txtName", ExportName);
+				}
 			}
 			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();    
 			if (!description.equals("")) {
@@ -62,12 +67,18 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			}
 			if (!delimiter.equals("")) {
 				Reporter.log("Step 6 - Select the Delimiter as ["+delimiter+"]");
-				selectByValueWebdriver(attributeName_name, "selDelimiter", delimiter);
+				//selectByValueWebdriver(attributeName_name, "selDelimiter", delimiter);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "selDelimiter", delimiter);
 			}
 			if (!delimitertype.equals("")) {
 				Reporter.log("Step 7 - Enter the value as ["+delimitertype+"]");
-				String Delimitertype = delimitertype.replace(";", ",");
-				sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
+				System.out.println("entered");
+				if(delimitertype.equals("comma")){
+					//String Delimitertype = delimitertype.replace(";" , ",");
+					String Delimitertype = delimitertype.replace(delimitertype, ",");
+					System.out.println("aaa"+Delimitertype);
+					sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
+				}
 			}
 			if (!quotedstring.equals("")) {
 				Reporter.log("Step 8 - Choose the Important Update as ["+quotedstring+"]");

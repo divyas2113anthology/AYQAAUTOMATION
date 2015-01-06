@@ -1,5 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.remote.server.handler.SendKeys;
@@ -37,11 +40,22 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 			String datetobemaild = testdata[17];
 			String button = testdata[18];
 			Reporter.log("Input Test Data was retrieved for 'Send Email' Page");
+			System.out.println("aaaa");
+			Thread.sleep(3000);
+//		String[] window=selenium.getAllWindowNames();
+//		System.out.println("sdfsdfsd"+window);
+//			selenium.selectWindow("ApplyYourself Webcenter");
+//			recentPopupClose();
+			//selenium.refresh();
+			//selectMainWindowWebdriver();
+			
 			if (!selectatemplate.equals("")) {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
-				waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
+				System.out.println("bbb");
+				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
+				waitForElementPresentWebdriver(attributeName_xpath, SE_TemplateName, selectatemplate);
 				select(SE_Template, "regexp:"+selectatemplate);
-//				selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
+				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
 				Thread.sleep(3000);
 			}
 			

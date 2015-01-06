@@ -1483,6 +1483,7 @@ public static final String SE_ApplicantProfile = "//input[@value='student']";
 public static final String SE_OtherEmail = "//input[@value='others']";
 public static final String SE_OtherEmailText = "TextEmailTo";
 public static final String SE_MailBatchName = "BatchName";
+public static final String SE_TemplateName = "//font[contains(text(),'Select')]";
 //#**********************************************************#
 //#	 Webcenter - Run Report - Page
 //#**********************************************************#

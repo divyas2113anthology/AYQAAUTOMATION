@@ -2,6 +2,9 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email;
 
 import or.OR;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -41,6 +44,14 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 					//waitForElementPresentWebdriver(attributeName_xpath, AMET_CheckboxTemplate, "TestMail");
 					clickWebdriver(attributeName_xpath, AMET_CheckboxTemplate+template_name+"']]/preceding-sibling::td/input");
 					clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
+					try {
+				        Alert alert = driver.switchTo().alert();
+				        String AlertText = alert.getText();
+				        System.out.println(AlertText);
+				        alert.accept();
+				    } catch (Exception e) {
+				        System.out.println("no alert");
+				    }
 				}
 			}
 			

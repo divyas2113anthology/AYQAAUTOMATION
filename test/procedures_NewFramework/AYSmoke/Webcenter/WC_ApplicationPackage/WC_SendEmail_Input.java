@@ -3,6 +3,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.remote.server.handler.SendKeys;
@@ -41,13 +42,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 			String button = testdata[18];
 			Reporter.log("Input Test Data was retrieved for 'Send Email' Page");
 			System.out.println("aaaa");
-			Thread.sleep(3000);
-//		String[] window=selenium.getAllWindowNames();
-//		System.out.println("sdfsdfsd"+window);
-//			selenium.selectWindow("ApplyYourself Webcenter");
-//			recentPopupClose();
-			//selenium.refresh();
-			//selectMainWindowWebdriver();
+
 			
 			if (!selectatemplate.equals("")) {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
@@ -57,6 +52,14 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				select(SE_Template, "regexp:"+selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
 				Thread.sleep(3000);
+				try {
+			        Alert alert = driver.switchTo().alert();
+			        String AlertText = alert.getText();
+			        System.out.println(AlertText);
+			        alert.accept();
+			    } catch (Exception e) {
+			        System.out.println("no alert");
+			    }
 			}
 			
 			if (!subject.equals("")) {

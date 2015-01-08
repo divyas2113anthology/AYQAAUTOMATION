@@ -3,7 +3,9 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModul
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -112,11 +114,21 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 				}else if (click.equalsIgnoreCase("Go")) {
 					clickWebdriver(attributeName_xpath, ASR_GoBtn);
-					
-					Robot robot = new Robot();
-					robot.keyPress(KeyEvent.VK_ENTER);
-					//waitForPageToLoad();
-					Thread.sleep(6000);
+//					Actions action = new Actions(driver);
+//					action.sendKeys(Keys.RETURN);
+//					action.perform();
+					Thread.sleep(5000);
+					try {
+				        Alert alert = driver.switchTo().alert();
+				        String AlertText = alert.getText();
+				        System.out.println(AlertText);
+				        alert.accept();
+				    } catch (Exception e) {
+				        System.out.println("no alert");
+				    }
+					waitForPageToLoad();
+			
+					//driver.switchTo().alert().accept();
 				}
 				
 			}			

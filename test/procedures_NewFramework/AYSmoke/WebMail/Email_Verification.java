@@ -61,8 +61,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						checkWebdriver(attributeName_xpath, HC_Login);
 	//					Thread.sleep(6000);    
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
+						waitForPageToLoadWebdriver();
 	//					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
-						waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
+						//waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
 				}
 				//				}
 				//				waitForConditionisElementPresent(HC_LogOff, "120000");
@@ -250,8 +251,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//Thread.sleep(6000);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
 					//waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
-					
-					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");         
+					waitForPageToLoadWebdriver();
+					waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+					//waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");         
 				}
 				//			}
 				//			waitForConditionisElementPresent(HC_LogOff, "120000");
@@ -291,13 +293,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
-							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
+							//clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
+							clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
 							Thread.sleep(6000); 
 							
 							//waitForPageToLoad();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
 							try { 
-								
+								System.out.println("Entered in try block");
 								if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]"))
 									writeConsole("I am in try block");
 									break; 

@@ -4428,11 +4428,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void PackageSelectionFieldDefinition(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
   //selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
+		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
 		//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 	//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
-		String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
+		String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");

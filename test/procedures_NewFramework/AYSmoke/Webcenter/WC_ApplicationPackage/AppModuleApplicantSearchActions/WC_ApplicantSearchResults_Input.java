@@ -127,7 +127,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				        System.out.println("no alert");
 				    }
 					waitForPageToLoad();
-			
+					
 					//driver.switchTo().alert().accept();
 				}
 				

@@ -37,6 +37,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 			String logout = EmailVerify[17];				
 			Reporter.log("Input and Verify  Test Data was retrieved for 'Email Verification'  in Hobsons Account");	
 			String browser = Runtimedataread("Browser").toLowerCase();
+			
 			if (browser.equalsIgnoreCase("InternetExplorer")) {
 				writeConsole("Internet Explorer Browser");
 				if (!url.equals("")) {						 
@@ -61,7 +62,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						checkWebdriver(attributeName_xpath, HC_Login);
 	//					Thread.sleep(6000);    
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
-						waitForPageToLoadWebdriver();
+						Thread.sleep(5000);
+						//waitForPageToLoadWebdriver();
 	//					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
 						//waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
 				}

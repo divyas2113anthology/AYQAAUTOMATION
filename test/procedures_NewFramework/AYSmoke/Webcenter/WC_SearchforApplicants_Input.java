@@ -91,6 +91,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!searchbyindividual.equals("")) {
 				Reporter.log("Step 15 - Click Submit in search by Individual");
+				
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio, searchbyindividual);
 //				actionsClickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);

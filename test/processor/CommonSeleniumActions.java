@@ -3079,6 +3079,27 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 
 	}
+	public boolean booleanElementPresentWebdriver(String attributename,String attributevalue,String elementname) throws Exception{
+		for (int second = 0;; second++) {
+
+			// try catch block is used handle 'Permission Denied Error' when waiting for element
+			try {
+				writeConsole("Webdriver Elements Present["+attributename+", "+attributevalue+"]");
+				WebElement elementone = attributeNameValue(attributename, attributevalue);
+				writeConsole("Webdriver Element Present");
+				break;
+			} catch (Exception e) {				
+				writeConsole("Webdriver Element Not Present");
+			}
+
+			if (second>=60) {
+				writeFailure("Elements["+attributename+"] was Not Found after waiting for 1 Minute");
+			}
+			Thread.sleep(1000);
+		}
+		return jettyProxyWasStartedByATest;
+
+	}
 
 	public void waitForElementNotPresentWebdriver(String attributename,String attributevalue,String elementname) throws Exception{
 		for (int second = 0;; second++) {

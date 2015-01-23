@@ -76,10 +76,20 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 			if (!updateclose.equals("")) {
 				Reporter.log("Step 9 - Click on ("+updateclose+") Button");
 				if (updateclose.equalsIgnoreCase("update")) {
-					click(upaupdatebtn);
-					waitForPageToLoad();
+					if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
+					{						
+						click(upaupdatebtn);
+						waitForPageToLoad();
+					}else
+					{
+						click(upaupdatebtn1);
+						waitForPageToLoad();
+					}
 				}else if (updateclose.equalsIgnoreCase("close window")) {
-					click(upaclosebtn);
+					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtnClassic, updateclose))
+						click(upaclosebtn);
+					else
+						click(upaclosebtnClassic);
 //					writeFailure("Its Not Naviagted to Main Page");
 					selectMainWindowWebdriver();			
 	//				writeFailure("Its Not Naviagted to Main Page");

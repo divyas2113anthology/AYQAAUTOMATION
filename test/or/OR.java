@@ -106,8 +106,10 @@ public static final String upaPassword = "//input[@id='AppPassword']";
 public static final String upaConfirmPassword = "//input[@id='AppConPassword']";
 public static final String upaappsubmission_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String upaappsubmission_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String upaupdatebtn = "//img[@alt='update']";
-public static final String upaclosebtn = "//img[@alt='close window']";
+public static final String upaupdatebtn1 = "//img[@alt='update']";
+public static final String upaupdatebtn = "//input[@id='ay-createSubmit']";
+public static final String upaclosebtnClassic = "//img[@alt='close window']";
+public static final String upaclosebtn = "//button[@class='close']";
 public static final String countinuebtn = "//img[contains(@src,'continue_small')]";
 //#**********************************************************#
 //#Applicant Main Page

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input">
+      <class name="procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input">
         <methods>
           <include name="datagenerator"/>
-          <include name="MC_ScheduleExport_Input"/>
+          <include name="UpdateProfile_Input"/>
           <include name="failurescreenshot"/>
           <include name="startseleniumserver"/>
           <include name="shutdownseleniumserver"/>
         </methods>
-      </class> <!-- procedures_NewFramework.AYSmoke.MaintenanceCenter.MC_ScheduleExport_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -106,6 +106,10 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 						click(CreateAccount);
 						waitForPageToLoad();	
 					}
+					if(createaccount.equalsIgnoreCase("update account")){
+						click(CA_CreateAccountBtn);
+						waitForPageToLoad();
+					}
 				}
 				
 		} catch (Exception e) {

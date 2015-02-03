@@ -22,7 +22,14 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 			String successmessage = fpverifydata[1];
 			String fppagename = fpverifydata[2];
 	//		String ui = fpverifydata[2];
+			String userpinpassword = fpverifydata[3];
 			Reporter.log("Email is sent to your account");
+			if (!userpinpassword.equals("")) {
+				Reporter.log("Step 4 - Verify ("+userpinpassword+") was displayed correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
+				verifyElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
+				
+			}
 			if (!fpmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+fpmessage+") was displayed correctly");
 //				if (selenium.isTextPresent(fpmessage)) {
@@ -47,7 +54,8 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 				}	
 //				waitForElementPresent(FPV_SuccessMsg, successmessage);
 //				verifyElementText(FPV_SuccessMsg, successmessage, "Forgot Password Reset Message");
-			}
+			
+		}
 		
 		
 //		if (!ui.equals("")) {

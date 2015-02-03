@@ -21,6 +21,7 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 			String page_title = fpverifydata[1];
 			String errormessage = fpverifydata[2];
 			String successmessage = fpverifydata[3];
+			String userpinpassword = fpverifydata[4];
 			Reporter.log("Email is sent to your account");
 			Thread.sleep(5000);
 			if (!ui.equals("")) {
@@ -50,6 +51,12 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 //				messagecontains = successmessage;
 				waitForElementPresentWebdriver(attributeName_xpath, FPV_SuccessMsg, successmessage);
 				verifyElementTextWebdriver(attributeName_xpath, FPV_SuccessMsg, successmessage, "Forgot Password Reset Message");
+			}
+			if (!userpinpassword.equals("")) {
+				Reporter.log("Step 4 - Verify ("+userpinpassword+") was displayed correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
+				verifyElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
+				
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

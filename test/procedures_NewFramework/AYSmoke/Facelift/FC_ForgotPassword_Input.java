@@ -21,9 +21,9 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Enter Data in PIN if it is not empty");
 			if (!pin.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
-				waitForElementPresentWebdriver(attributeName_cssselector, FPI_Pin, pin);
+				waitForElementPresentWebdriver(attributeName_xpath, FPI_Pin, pin);
 //				type(FPI_Pin,pin);
-				sendKeys(attributeName_cssselector, FPI_Pin,pin);
+				sendKeys(attributeName_xpath, FPI_Pin, pin);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+emailaddress+")");
@@ -40,6 +40,11 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 //					clickWebdriver(attributeName_xpath,"//input[@id='ay-forgotSubmit']");
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
 					click(FPI_upaclosebtn);
+				}else if(fpsearch.equalsIgnoreCase("back"))
+				{
+					waitForElementPresentWebdriver(attributeName_xpath,CI_BackBtnFL, fpsearch);
+					clickWebdriver(attributeName_xpath,CI_BackBtnFL);
+					waitForPageToLoad(); 
 				}
 			}
 			

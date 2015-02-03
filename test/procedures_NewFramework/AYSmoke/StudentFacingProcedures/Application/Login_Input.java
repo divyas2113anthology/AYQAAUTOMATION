@@ -64,8 +64,14 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 //			environment = Runtimedataread("Instance");
 //			if (forgotpin.equalsIgnoreCase("Forgot your PIN or Password?")) {
 //				if (environment.equals("USQA")) {
+			if(forgotpin.equals("User Name")){
+				waitForElementPresentWebdriver(attributeName_xpath, ForgotUserNamePassword, forgotpin);
+				clickWebdriver(attributeName_xpath,ForgotUserNamePassword);
+				waitForPageToLoad();
+			}else{
 					clickWebdriver(attributeName_xpath,ForgotPINPassword);
 					waitForPageToLoad();
+			} 
 //				}else if (environment.equals("USPR")) {
 //					clickWebdriver(attributeName_xpath,ForgotPINPassword);
 //					recentPopupSelectWebdriver("Forgot/Reset Password");

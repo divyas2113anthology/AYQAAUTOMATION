@@ -27,6 +27,7 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Select the Tab, '"+ tab_to_select +"'");
 				click(LI_UserLoginSelect);
 			}
+			
 		}
 		
 		if (!link_to_click.equalsIgnoreCase("")) {
@@ -46,6 +47,10 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 			} else if (link_to_click.equalsIgnoreCase("System Requirements")) {
 				Reporter.log("Click the 'Technical Support' Link");
 				click(LI_systemRequirements);
+			}else if(!tab_to_select.equalsIgnoreCase("User Name")){
+				waitForElementPresentWebdriver(attributeName_xpath, ForgotUserNamePassword, tab_to_select);
+				clickWebdriver(attributeName_xpath,ForgotUserNamePassword);
+				waitForPageToLoad();
 			}
 			
 		}

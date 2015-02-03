@@ -35,6 +35,8 @@ public static final String	PasswordField = "//input[@name='Password']";
 //public static final String Login = "//input[@value='login']";
 public static final String Login = "//input[@alt='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
+public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
+public static final String UserName = "//b[contains(text(),'";
 public static final String CreateAccount = "//img[@alt='create account']";
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
@@ -285,7 +287,8 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //#**********************************************************#
 //# Forgot password
 //#**********************************************************#
-public static final String FRP_Pin = "//input[@id='UserID']";
+//public static final String FRP_Pin = "//input[@id='UserID']";
+public static final String FRP_Pin = "//input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
 public static final String FRP_Search = "//input[@alt='search']";
 //#**********************************************************#
@@ -638,7 +641,8 @@ public static final String FPV_ErrorMsg = "//div[@id='divErrMsg']";
 //#**********************************************************#
 //# Facelift Forgot Password Input - FPV
 //#**********************************************************#
-public static final String FPI_Pin = "css=#UserID";
+//public static final String FPI_Pin = "css=#UserID";
+public static final String FPI_Pin = "//input[@id='UserName']";
 public static final String FPI_EmailAddr = "css=#Email";
 //public static final String FPI_Search = "css=#ay-forgotSubmit";
 public static final String FPI_Search = "//input[@id='ay-forgotSubmit']";
@@ -1252,6 +1256,7 @@ public static final String CI_Country = "//select[@id='s24574']";
 public static final String CI_NextBtn = "//img[@alt='next']";
 public static final String CI_SaveBtn = "//img[@alt='save']";
 public static final String CI_BackBtn = "//img[@alt='back']";
+public static final String CI_BackBtnFL = "//input[@value='Back']";
 public static final String CI_PageName = "//td[@class='Color1']/font";
 public static final String CI_SectionMenu = "//table[@class='rightBorder']";
 public static final String MoreDetails = "//font[@class='HelpBoxesFont']/b";

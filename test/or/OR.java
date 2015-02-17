@@ -543,6 +543,7 @@ public static final String PSD_HomePhone = "//input[@id='q24305']";
 public static final String PSD_CellPhone = "//input[@id='q24306']";
 public static final String PSD_Fulltimestudent_Yes = "//input[@type='radio' and @value='Y']";
 public static final String PSD_Fulltimestudent_No = "//input[@type='radio' and @value='N']";
+public static final String PSD_TestDemo = "//input[@id='q36515']";
 public static final String PSD_Extracurricularactivities = "//textarea[@id='q24308']";
 public static final String PSD_Country = "//select[@id='s24309']";
 public static final String PSD_Stateprovince = "//select[@id='s24310']";
@@ -756,7 +757,7 @@ public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete 
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
-
+public static final String RC_Question = "//p[contains(text(),'";
 //#**********************************************************#
 //# Facelift Recommendation Input - RI
 //#**********************************************************#
@@ -1086,6 +1087,7 @@ public static final String ESR_Field = "//select[contains(@name,'txtField')]";
 public static final String ESR_Operator = "//select[@name='txtOperator0']";
 //public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
 public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
+
 public static final String ESR_ValueText = "//input[@name='txtValue0']";
 public static final String ESR_RadioYes = "//input[@value='Y']";
 public static final String ESR_RadioNo = "//input[@value='N']";

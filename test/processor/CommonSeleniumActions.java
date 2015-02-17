@@ -2691,8 +2691,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 		WebElement select = attributeNameValue(attributename, attributevalue);
 		List<WebElement> options = select.findElements(By.tagName("option"));
 		for (WebElement option : options) {
-			if(text.equals(option.getText()))
+			String optionvalue = option.getText();
+			if(optionvalue.contains(text)) {
 				option.click();  
+				break;
+			}
 		}
 	}
 	public void selectByVisibleTextWithTrimSpaceWebdriver(String attributename,String attributevalue,String text){	

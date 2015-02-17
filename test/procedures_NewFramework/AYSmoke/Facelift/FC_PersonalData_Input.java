@@ -33,22 +33,23 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			String pdhomephone = fpdatarepo[8];
 			String pdcellphone = fpdatarepo[9];
 			String pdfulltimestudent = fpdatarepo[10];
-			String pdextracircularactivities = fpdatarepo[11];
-			String pdcountry = fpdatarepo[12];
-			String pdstate = fpdatarepo[13];
-			String pdgradelevel = fpdatarepo[14];
-			String pdessay = fpdatarepo[15];
-			String pdupload = fpdatarepo[16];
-			String pdcollegehousing = fpdatarepo[17];
-			String pdsportsintrest = fpdatarepo[18];
-			String pdtestscore = fpdatarepo[19];
-			String pdacademicintrest = fpdatarepo[20];
-			String pdschoolcode = fpdatarepo[21];
-			String pdemailaddress= fpdatarepo[22];
-			String pdaptnumber = fpdatarepo[23];
-			String pdemailrecommended = fpdatarepo[24];
-			String pisubmitappbtn = fpdatarepo[25];
-			String pdsave = fpdatarepo[26];
+			String pdtestdemo = fpdatarepo[11];
+			String pdextracircularactivities = fpdatarepo[12];
+			String pdcountry = fpdatarepo[13];
+			String pdstate = fpdatarepo[14];
+			String pdgradelevel = fpdatarepo[15];
+			String pdessay = fpdatarepo[16];
+			String pdupload = fpdatarepo[17];
+			String pdcollegehousing = fpdatarepo[18];
+			String pdsportsintrest = fpdatarepo[19];
+			String pdtestscore = fpdatarepo[20];
+			String pdacademicintrest = fpdatarepo[21];
+			String pdschoolcode = fpdatarepo[22];
+			String pdemailaddress= fpdatarepo[23];
+			String pdaptnumber = fpdatarepo[24];
+			String pdemailrecommended = fpdatarepo[25];
+			String pisubmitappbtn = fpdatarepo[26];
+			String pdsave = fpdatarepo[27];
 			Reporter.log("Retrieved Test Data in Personal Data input");
 			if (!pdsufix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
@@ -117,6 +118,12 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, PSD_Fulltimestudent_No, pdfulltimestudent);
 					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
 				}			
+			}
+			if(!pdtestdemo.equals(""))
+			{
+				Reporter.log("Step 11.5 - Enter value for TestDemo as("+pdtestdemo+")");
+				waitForElementPresentWebdriver(attributeName_xpath, PSD_TestDemo, pdtestdemo);
+				sendKeys(attributeName_xpath, PSD_TestDemo, pdtestdemo);
 			}
 			if (!pdextracircularactivities.equals("")) {
 				Reporter.log("Step 12 - Enter Extracurricular activities as ("+pdcellphone+")");
@@ -214,12 +221,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				String Emailrecommendedpd = getElementIDbyLabel("EmailRecommended",PSD_EmailRecommended);
 				sendKeys(attributeName_xpath,Emailrecommendedpd,pdemailrecommended);
 			}
-			if (!pisubmitappbtn.equals("")) {
-				Reporter.log("Step 26 - Click on ("+pisubmitappbtn+")Button");
-				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
-					clickWebdriver(attributeName_cssselector, AW_SubAppBtn);
-				}
-			}
+			
 			if (!pdsave.equals("")) {
 				Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 				if(pdsave.equalsIgnoreCase("Save")){
@@ -234,7 +236,14 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				}else if (pdsave.equalsIgnoreCase("Reset")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Reset);
 				}
+				if (!pisubmitappbtn.equals("")) {
+					Reporter.log("Step 26 - Click on ("+pisubmitappbtn+")Button");
+					if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
+						clickWebdriver(attributeName_cssselector, AW_SubAppBtn);
+					}
+				}
 			}
+			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

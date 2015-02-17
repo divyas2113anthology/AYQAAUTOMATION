@@ -31,7 +31,8 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 				verifyElementText(PSD_PageName, "Personal Data", "Page Name");
 			}
 			if (!verifyui.equals("")) {
-			
+				Reporter.log("Step 3 - Verify the expected ("+verifyui+") text present");
+				verifyElementContainsTextWebdriver(attributeName_xpath, RC_Question+verifyui+"')]", verifyui, verifyui);
 			}
 			
 	

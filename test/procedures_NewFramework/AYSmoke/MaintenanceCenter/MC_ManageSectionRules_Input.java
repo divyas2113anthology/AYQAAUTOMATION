@@ -18,6 +18,7 @@ public class MC_ManageSectionRules_Input extends CommonSeleniumActions implement
 		String clickrulename = testdata[2];
 		String button = testdata[3];
 		Reporter.log("Check user clicked on application package in Maintenance center");
+		
 		if (!checkrulename.equals("") && !operationtoperform.equals("")) {
 			Reporter.log("Step 1 - Check the checkbox against ["+checkrulename+"]");
 			if (operationtoperform.equalsIgnoreCase("Check")) {

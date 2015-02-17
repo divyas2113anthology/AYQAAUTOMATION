@@ -107,6 +107,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://iad1pw084:8088/";
 				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
 					envirurl = "http://iad1pw085:8088/";
+				}else if (environment.equalsIgnoreCase("IAD1DW001")){
+					envirurl = "http://iad1dw001:8088/";
 				}
 			}else if (url.contains("manage")) {
 				if (environment.equalsIgnoreCase("USQA")) {

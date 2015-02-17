@@ -37,8 +37,8 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		if (!section.equals("")) {
 			Reporter.log("Step 3 - Select the Section as ["+section+"]");
 			waitForElementPresentWebdriver(attributeName_xpath, ESR_Section, section);
-//			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
-			select(ESR_Section, "regexp:"+section);
+			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
+			//select(ESR_Section, "regexp:"+section);
 		}
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
@@ -54,8 +54,9 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 //			}
 //			selectByIndexWebdriver(attributeName_xpath, ESR_Field, Integer.parseInt(field));
 			//select(ESR_Field, "regexp:"+field);
-			selectByValueWebdriver(attributeName_xpath,ESR_Field, field);
-			//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			//selectByValueWebdriver(attributeName_xpath,ESR_Field, field);
+			//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
 			Thread.sleep(3000);
 //			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);
 		}
@@ -65,8 +66,11 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!value.equals("")) {
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
-			waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
+			//waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
+			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueText, value))
+				selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
+			else
+				sendKeys(attributeName_xpath, ESR_ValueText, value);
 		}
 		if (!button.equals("")) {
 			Reporter.log("Step 7 - Click the name of the button as ["+button+"]");

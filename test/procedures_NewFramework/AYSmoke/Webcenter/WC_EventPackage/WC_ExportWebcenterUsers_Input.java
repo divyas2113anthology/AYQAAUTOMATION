@@ -21,14 +21,15 @@ public class WC_ExportWebcenterUsers_Input extends CommonSeleniumActions impleme
 				Reporter.log("Step 1 - Click on ["+button_to_click+"] button or Link");
 				waitForElementPresentWebdriver(attributeName_xpath, WC_ViewBtn, button_to_click);
 				clickWebdriver(attributeName_xpath, WC_ViewBtn);
-				Thread.sleep(3000);
-//				String browser = Runtimedataread("Browser");
-//				if (browser.equalsIgnoreCase("Firefox")) {
-//					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
-//				}else if (browser.equalsIgnoreCase("InternetExplorer")) {
-//					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/IEFileDownloaded.exe");
-//				}
-//				Thread.sleep(30000);
+				Thread.sleep(30000);
+				String browser = Runtimedataread("Browser");
+				if (browser.equalsIgnoreCase("Firefox")) {
+					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/SampleFileDownload.exe");
+				}else if (browser.equalsIgnoreCase("InternetExplorer")) {
+					Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFileIEandFF/IEFileDownloaded.exe");
+				}
+				Thread.sleep(30000);
+				//C:\SeleniumScripts\DownloadedFileLocation
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -20,7 +20,9 @@ WinActivate("Opening");
 ;WinActivate($CmdLine[2]);
 ;_Log($CmdLine[2]&" :" )
 _Log("File Download")
-
+Sleep(3000)
+Send("!s")
+Sleep(3000)
 Send("{ENTER}")
 Send("{ENTER}")
 WinClose("[CLASS:Notepad]")

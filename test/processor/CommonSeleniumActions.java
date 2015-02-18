@@ -490,7 +490,19 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return Rundata;
 
 	}
-
+	public static String  RuntimedatareadforRole(String datalabel) throws Exception{
+		String filename = "C:\\Users\\emtqaaccount\\Downloads\\ExportClientUsers.xls";
+		Workbook workbook = Workbook.getWorkbook(new File(filename));
+		//Sheet sheet = workbook.getSheet("RunTimeData");	
+		Sheet sheet = workbook.getSheet("Users");
+		Cell tableStart=sheet.findCell(datalabel);
+		int  Row,Col;
+		Row=tableStart.getRow();
+		Col=tableStart.getColumn();			 
+		String Rundata = sheet.getCell(Col, Row).getContents().trim();
+		workbook.close();
+		return Rundata;
+	}
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupSelect(String windowname) throws Exception {
 		Reporter.log("Proceed to select the ("+windowname+") popup");						

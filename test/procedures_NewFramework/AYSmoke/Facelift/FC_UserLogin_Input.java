@@ -23,6 +23,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		
 		if (pin.equals("8KSJ2FD9G36")) {
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
+			Thread.sleep(3000);
 			type(UL_PinField, pin);			
 						
 		}else if (!pin.equals("")) {

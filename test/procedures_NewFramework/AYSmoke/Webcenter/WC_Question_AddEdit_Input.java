@@ -23,7 +23,7 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			String questionbefore = testdata[6];
 			String order = testdata[7];
 			String questioncategory = testdata[8];
-			String savedeletecancel = testdata[9];
+			String usagesavedeletecancel = testdata[9];
 			Reporter.log("Input Test Data was retrieved for 'Question Add/Edit Input' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			switchToFrameNameIdWebdriver("frmContent");
@@ -63,12 +63,17 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 9 - Select the Question Category as ["+questioncategory+"]");
 				selectByValueWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
 			}
-			if (!savedeletecancel.equals("")) {
-				Reporter.log("Step 10 - Click the Button as ["+savedeletecancel+"]");
-				if (savedeletecancel.equalsIgnoreCase("Save")) {
+			if (!usagesavedeletecancel.equals("")) {
+				Reporter.log("Step 10 - Click the Button as ["+usagesavedeletecancel+"]");
+				if (usagesavedeletecancel.equalsIgnoreCase("Usage")) {
+					waitForElementPresentWebdriver(attributeName_xpath, QAE_UsageButton,"Usage");
+					clickWebdriver(attributeName_xpath, QAE_UsageButton);
+					waitForPageToLoad();
+				} else
+				if (usagesavedeletecancel.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
 					waitForPageToLoad();
-				} else if (savedeletecancel.equalsIgnoreCase("Cancel")) {
+				} else if (usagesavedeletecancel.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
 					waitForPageToLoad();
 				}

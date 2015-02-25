@@ -836,6 +836,7 @@ public static final String SAI_CreationDateRadio = "//input[@name='SearchTypes' 
 public static final String SAI_SubmissionDateRadio = "//input[@name='SearchTypes' and @value='submissionDate']";
 public static final String SAI_CreationDate = "//select[@name='Days']";
 public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
+public static final String SAI_SpecificPeriod = "//select[@name='Days']";
 public static final String SAI_FirstName = "//input[@name='FirstName']";
 public static final String SAI_LastName = "//input[@name='LastName']";
 public static final String SAI_BirthDate = "//input[@name='BirthDate']";
@@ -976,6 +977,7 @@ public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//tr[@class='FormText']/td/font";
+public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
 //#**********************************************************#
@@ -991,6 +993,7 @@ public static final String AS_DecisionDate = "//input[@name='DecDate']";
 public static final String AS_DecisionPublishDate = "//input[@name='DecPubDate']";
 public static final String AS_EnrolmentDeadLineDate = "//input[@name='EnrollDeadlineDate']";
 public static final String AS_ApplicationFee = "//input[@name='chkAppFee']";
+public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//span[contains(text(),'print application')]";
@@ -1012,7 +1015,8 @@ public static final String BP_PageName = "//div[@id='AYInstructions']/following-
 public static final String BP_BackBtn = "//img[contains(@src,'admin_back_small')]";
 //public static final String BP_ApplicationBatchs = "//img[contains(@src,'application_batches')]";
 public static final String BP_ConformationMsg = "//td[@class='FormHeading']/b";
-public static final String CloseWindow = "//img[@alt='close window']";
+//public static final String CloseWindow = "//img[@alt='close window']";
+public static final String CloseWindow = "//img[contains(@src,'close_window')]";
 public static final String ApplicantCloseWindow = "//img[contains(@src,'admin_close_window_large')]";
 public static final String BP_ApplicationBatchs = "//img[@alt='Application Batches']";
 public static final String BP_RefreshBtn = "//img[@alt='Refresh Search']";
@@ -1041,6 +1045,7 @@ public static final String QAE_QuestionCategory = "//select[@name='txtQuestionCa
 public static final String QAE_QuickAdd = "//input[@name='chkQuickAdd']";
 public static final String QAE_DisplayOnly = "//input[@name='chkdisplayonly']";
 public static final String QAE_Script = "//textarea[@name='javascriptEvent']";
+public static final String QAE_UsageButton = "//img[contains(@src,'admin_usage_small')]";
 public static final String QAE_SaveButton = "//img[contains(@src,'admin_save_small')]";
 public static final String QAE_CancelButton = "//img[contains(@src,'cancel_small')]";
 public static final String QAE_FieldLength = "//input[@name='txtResponseLength']";
@@ -1048,6 +1053,7 @@ public static final String QAE_FieldFormat = "//select[@name='txtFormat']";
 public static final String QAE_QuestionBefor = "//select[@name='selorderquestion']";
 public static final String QAE_PageName = "//div[@id='AYInstructions']/following-sibling::font";
 public static final String QAE_Message = "//div[@id='divAyConfirmation']/font";
+public static final String QAE_PaymentType = "//select[@name='ChangePaymentType']";
 //#**********************************************************#
 //# Webcenter Section Add/Edit Page - SAE
 //#**********************************************************#
@@ -1657,5 +1663,18 @@ public static final String MML_TotalUsers = "//a[@id='ctl00_ContentPlaceHolder1_
 public static final String MML_UName = "//input[@id='Username']";
 public static final String MML_Search = "//input[@id='userSearchButton']";
 public static final String MML_UNameVerify = "//table[@id='userSearchResultsTable']/tbody/tr[1]/td[2]";
+
+//#*************************************************************#
+//#   WC-Recommendation pachage-configureforms-Applicant Info Display
+//#**************************************************************#
+
+public static final String AID_Display_Check= "//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@type,'checkbox')]";
+public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
+public static final String AID_save_button="//img[contains(@src,'save')]";
+
 }
+
+
+
+
 

@@ -17,6 +17,7 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			String[]  fpvdatarepo = datacontainer;
 			String pagename = fpvdatarepo[0];
 			String successmessage = fpvdatarepo[1];
+			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Application Fee' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
@@ -28,7 +29,11 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
 				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, successmessage, "Sucessful message for Application Fee");
 			}
-			
+			if (!verifyui.equals("")) {
+				Reporter.log("Step 1 - Verify Message("+verifyui+") was displayed correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_PaymentType, verifyui);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

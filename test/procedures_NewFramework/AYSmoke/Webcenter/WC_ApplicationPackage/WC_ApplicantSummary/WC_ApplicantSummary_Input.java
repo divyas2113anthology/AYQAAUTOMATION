@@ -173,8 +173,11 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				}else if (buttons.equalsIgnoreCase("Print Application")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
 					recentPopupSelectWebdriver("Application Printing");
-				}	
+				}else if (buttons.equalsIgnoreCase("Application Fee")) {
+					clickWebdriver(attributeName_xpath, AS_AppFee);
+					recentPopupSelectWebdriver("Application Printing");	
 				
+				}
 			}
 			if(!view.equals("")){
 				waitForElementPresentWebdriver(attributeName_xpath, AS_View+view+"')]", "View");

@@ -73,6 +73,7 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 			recentMultiplePopupSelectWebdriver("Online Application", currentpopupcount);
 			
 		}
+		
 		if (!pddateofbirth.equals("")) {
 			Reporter.log("Step 6 - Enter Date of birth as ("+pddateofbirth+")");
 			String Dateofbirthpd = getElementIDbyLabel("Date of birth",PD_Dateofbirth);				

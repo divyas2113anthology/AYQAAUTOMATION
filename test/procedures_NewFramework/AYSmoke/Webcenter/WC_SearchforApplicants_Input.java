@@ -82,7 +82,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!submittedate.equals("")) {
 				Reporter.log("Step 6 - Select the submission date as ["+submittedate+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SubmissionDate, submittedate);
+				//selectByVisibleTextWebdriver(attributeName_xpath, SAI_SubmissionDate, submittedate);
+				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SpecificPeriod, submittedate);
 			}
 			if (!searchbydate_submit.equals("")) {
 				Reporter.log("Step 7 - Click Submit in search by date");

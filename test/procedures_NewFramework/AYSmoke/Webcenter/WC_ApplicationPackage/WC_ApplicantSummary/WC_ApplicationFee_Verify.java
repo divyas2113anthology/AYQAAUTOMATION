@@ -32,7 +32,8 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+verifyui+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_PaymentType, verifyui);
-				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
+				VerifyFirstSelectedOptionWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

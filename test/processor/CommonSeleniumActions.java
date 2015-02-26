@@ -3038,10 +3038,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	}
 
-	public WebElement getFirstSelectedOption(String attributename,String attributevalue){		
-		Select select = new Select(attributeNameValue(attributename, attributevalue));
-		return select.getFirstSelectedOption();		
-	}
+//	public String getFirstSelectedOption(String attributename,String attributevalue){		
+//		Select select = new Select(attributeNameValue(attributename, attributevalue));
+//		return select.getFirstSelectedOption();		
+//	}
 
 	public List<WebElement> getAllSelectedOptions(String attributename,String attributevalue){		
 		Select select = new Select(attributeNameValue(attributename, attributevalue));
@@ -3482,7 +3482,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Element ["+elementname+"] was Not Visible");
 		}
 	}
+	public String getFirstSelectedOption(String attributename,String attributevalue){  
+		  Select select = new Select(attributeNameValue(attributename, attributevalue));
+		  String actual = select.getFirstSelectedOption().getText();
+		  writeConsole("Webdriver getFirstSelectedOption["+actual+"]");
+		  return actual;
+		 }    
 
+		 public void VerifyFirstSelectedOptionWebdriver(String attributename,String attributevalue,String expectedoption,String elementname){  
+		  Reporter.log("Verify Element["+elementname+"] with Option["+expectedoption+"] is displaying correctly");
+		  String actualoption = getFirstSelectedOption(attributename, attributevalue);
+		  if (actualoption.equals(expectedoption)) {
+		   Reporter.log("Element["+elementname+"] with Option["+actualoption+"] was displayed correctly");     
+		  } else {
+		   writeFailure("Element["+elementname+"] with Actual Option - ["+actualoption+"] did not match with Expected Option["+expectedoption+"]");
+		  }      
+		 }
 	public void waitForElementPresentVerifyTextWebdriver(String attributename,String attributevalue,String expectedtext,String elementname) throws Exception{
 		Reporter.log("Wait for Element("+elementname+") Present and Verify with Text("+expectedtext+")");
 		for (int second = 0;; second++) {

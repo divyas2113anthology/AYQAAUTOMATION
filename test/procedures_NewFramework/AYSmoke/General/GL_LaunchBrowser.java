@@ -241,6 +241,17 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
+			}else if (url.contains("ar")) {
+				if (environment.equalsIgnoreCase("USQA")) {
+					envirurl = "https://arqa.applyyourself.com/";
+					//envirurl = "http://IAD1PW001:8078";
+				}else if (environment.equalsIgnoreCase("UKQA")) {
+					envirurl = "";
+				}else if (environment.equalsIgnoreCase("USPR")) {
+					envirurl = "";
+				}else if (environment.equalsIgnoreCase("UKPR")) {
+					envirurl = "";
+				}
 			}else if (!openurl.equals("")) {
 				
 			}

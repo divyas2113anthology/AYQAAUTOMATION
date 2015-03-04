@@ -35,6 +35,7 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 				//verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
 				VerifyFirstSelectedOptionWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
 			}
+			recentPopupCloseWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

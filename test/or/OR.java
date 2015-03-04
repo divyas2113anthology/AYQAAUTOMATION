@@ -1672,6 +1672,47 @@ public static final String AID_Display_Check= "//td[font[contains(text(),'Last n
 public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
 public static final String AID_save_button="//img[contains(@src,'save')]";
 
+//#**********************************************************#
+//# NGU - Quick Add
+//#**********************************************************#
+
+public static final String NGU_Prefix = "//select[option[@value='Mr.']]";
+public static final String NGU__MiddleName = "//input[@id='q674']";
+public static final String NGU_FirstName = "//input[@id='q13649']";
+public static final String NGU_LastName	= "//input[@id='q675']";
+public static final String NGU_DescYourself = "//input[@type='checkbox' and @value='Chinese']";
+public static final String NGU_DOB = "//input[@id='q682']";
+public static final String NGU_CityOfBirth = "//input[@id='q683']";
+public static final String NGU_CountryofBirth = "//select[option[@value='US']]";
+public static final String NGU_FinancialAid = "//font[label[contains(text(),'Yes')]]/preceding-sibling::input[@value='Y']";
+public static final String NGU_StreetAddress1 = "//input[@id='q700']";
+public static final String NGU_City = "//input[@id='q701']";
+public static final String NGU_State = "//select[option[@value='Virginia']]";
+public static final String NGU_Country = "//select[@id='s703' and option[@value='US']]";
+public static final String NGU_PostalCode = "//input[@id='q704']";
+public static final String NGU_Email = "//input[@id='q711']";
+public static final String NGU_ReviewAppFee = "//input[@id='appfee']";
+public static final String NGU_PaymentMethod = "//input[@id='paymentmethod']";
+public static final String NGU_Submit = "//img[@alt='Submit']";
+public static final String NGU_Reset = "//img[@alt='Reset']";
+//#**********************************************************#
+//# AppReview - AR
+//#**********************************************************#
+
+public static final String AR_School = "//input[@id='SchoolLoginId']";
+public static final String AR_Username = "//input[@id='UserName']";
+public static final String AR_Password = "//input[@id='Password']";
+public static final String AR_Login = "//button[@class='btn btn-primary']";
+public static final String AR_ForgotUsername = "//a[contains(@href,'Username')]";
+public static final String AR_ForgotPassword = "//a[contains(@href,'Password')]";
+public static final String AR_SuperuserLogin = "//a[contains(@class,'dropdown-toggle') and contains(text(),'ARSuperuser')]";
+public static final String AR_Logoff = "//a[contains(@href,'logoff')]";
+public static final String AR_MainSubmenu = "//a[contains(text(),'";
+public static final String AR_AppSearchBox = "//input[@id='searchPhraseField']";
+public static final String AR_AppSearchButton  = "//button[@data-original-title='Click here to search']";
+public static final String AR_SearchAppLName = "//tr[@class='unread']/td[@class='sorted']/a[contains(text(),'";
+public static final String AR_ReviewPool = "//select[@id='reviewPoolToggler']";
+
 }
 
 

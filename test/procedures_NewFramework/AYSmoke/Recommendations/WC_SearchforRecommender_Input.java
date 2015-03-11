@@ -40,7 +40,8 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 		String exporteddate_to = fpvdatarepo[24];
 		String clear = fpvdatarepo[25];
 		String submit = fpvdatarepo[26];
-		
+		String daterange_from = fpvdatarepo[27];
+		String daterange_to = fpvdatarepo[28];
 		
 		if (!online.equals("")) {
 			Reporter.log("Step 1 - Verify Message("+online+") was displayed correctly");
@@ -92,6 +93,18 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 			Reporter.log("Step 9 - Select the option of ("+submission_date+")");
 			waitForElementPresentWebdriver(attributeName_xpath, SAI_SubmissionDate, submission_date);
 			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SAI_SubmissionDate, submission_date);
+		}
+		if(!daterange_from.equals("")){
+			Reporter.log("Step 9.2 - Enter the date range from as ("+daterange_from+")");  
+			waitForElementPresentWebdriver(attributeName_xpath, SAI_DateRangeFrom, daterange_from);
+			clickWebdriver(attributeName_xpath, SAI_DateRangeFrom);
+			sendKeys(attributeName_xpath, SAI_DateRangeFrom, daterange_from);
+		}
+		if(!daterange_to.equals("")){
+			Reporter.log("Step 9.5 - Enter the date range to as ("+daterange_to+")");  
+			waitForElementPresentWebdriver(attributeName_xpath, SAI_DateRangeFrom, daterange_to);
+			clickWebdriver(attributeName_xpath, SAI_DateRangeTo);
+			sendKeys(attributeName_xpath, SAI_DateRangeTo, daterange_to);
 		}
 		if (!rec_firstname.equals("")) {
 			Reporter.log("Step 10 - Select the option of ("+rec_firstname+")");

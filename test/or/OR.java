@@ -835,8 +835,11 @@ public static final String SAI_ViewRecords = "//input[@name='chkAgree']";
 public static final String SAI_CreationDateRadio = "//input[@name='SearchTypes' and @value='creationDate']";
 public static final String SAI_SubmissionDateRadio = "//input[@name='SearchTypes' and @value='submissionDate']";
 public static final String SAI_CreationDate = "//select[@name='Days']";
-public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
+//public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
+public static final String SAI_SubmissionDate = "//select[@name='Days']";
 public static final String SAI_SpecificPeriod = "//select[@name='Days']";
+public static final String SAI_DateRangeFrom = "//input[@name='dateRangeFrom']";
+public static final String SAI_DateRangeTo = "//input[@name='dateRangeTo']";
 public static final String SAI_FirstName = "//input[@name='FirstName']";
 public static final String SAI_LastName = "//input[@name='LastName']";
 public static final String SAI_BirthDate = "//input[@name='BirthDate']";
@@ -1671,6 +1674,12 @@ public static final String MML_UNameVerify = "//table[@id='userSearchResultsTabl
 public static final String AID_Display_Check= "//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@type,'checkbox')]";
 public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
 public static final String AID_save_button="//img[contains(@src,'save')]";
+public static final String AID_pagename="//table[@id='Table1']/tbody/tr/td/font"; //[contains(text(),'Application')]";
+public static final String AID_message="//div[@id='divAyConfirmation']/font";
+public static final String AID_RecPlus = "//img[contains(@src,'plus')]";
+public static final String AID_RecAppInfoDisp = "//a[text()='Applicant Info Display']";
+
+
 
 //#**********************************************************#
 //# NGU - Quick Add
@@ -1680,6 +1689,7 @@ public static final String NGU_Prefix = "//select[option[@value='Mr.']]";
 public static final String NGU__MiddleName = "//input[@id='q674']";
 public static final String NGU_FirstName = "//input[@id='q13649']";
 public static final String NGU_LastName	= "//input[@id='q675']";
+public static final String NGU_Gender = "//input[@value='Male']";
 public static final String NGU_DescYourself = "//input[@type='checkbox' and @value='Chinese']";
 public static final String NGU_DOB = "//input[@id='q682']";
 public static final String NGU_CityOfBirth = "//input[@id='q683']";
@@ -1709,9 +1719,12 @@ public static final String AR_SuperuserLogin = "//a[contains(@class,'dropdown-to
 public static final String AR_Logoff = "//a[contains(@href,'logoff')]";
 public static final String AR_MainSubmenu = "//a[contains(text(),'";
 public static final String AR_AppSearchBox = "//input[@id='searchPhraseField']";
-public static final String AR_AppSearchButton  = "//button[@data-original-title='Click here to search']";
+//public static final String AR_AppSearchButton  = "//button[@data-original-title='Click here to search']";
+public static final String AR_AppSearchButton = "//div[@id='simpleSearch']/button";
 public static final String AR_SearchAppLName = "//tr[@class='unread']/td[@class='sorted']/a[contains(text(),'";
 public static final String AR_ReviewPool = "//select[@id='reviewPoolToggler']";
+public static final String AR_AssignReadyforReviewStatusSubmit = "//img[@alt='print']";
+public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]"; 
 
 }
 

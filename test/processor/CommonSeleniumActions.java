@@ -3432,6 +3432,27 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Element ["+elementname+" ] was Not Present");
 		}
 	}
+	
+	public void verifyElementNotContainsTextWebdriver(String attributename,String attributevalue,String expectedtext,String elementname) throws Exception{
+		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
+		writeConsole("Element["+attributename+", "+attributevalue+"]");
+		System.out.println("aaaa");
+		try {
+			System.out.println("Malik");
+			WebElement element = attributeNameValue(attributename, attributevalue);
+			String actualtext = element.getText().trim();
+			System.out.println("bbbbb");
+			writeConsole("Element Actual getText["+actualtext+"]");
+			if (!actualtext.contains(expectedtext)) {
+				Reporter.log("Element["+elementname+"] not Contains ["+expectedtext+"]Text was displayed correctly ");
+			} else {
+				writeFailure("Element["+elementname+"] not Contains Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
+			}			
+		} catch (Exception e) {
+			writeFailure("Element ["+elementname+" ] was Not Present");
+		}
+		System.out.println("ccccc");
+	}
 
 	public void verifyElementVisibleTextWebdriver(String attributename,String attributevalue,String expectedtext,String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
@@ -4461,6 +4482,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 	public void PackageSelection(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
+		System.out.println(section);
 		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')])["+index+"]/@onclick");

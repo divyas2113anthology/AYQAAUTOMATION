@@ -30,7 +30,7 @@ public class WC_AssignReadyforReviewStatus_Verify extends CommonSeleniumActions 
 				waitForElementPresentWebdriver(attributeName_xpath, AS_AppReviewStatus+pagename+"')]", pagename);
 				//waitForElementPresentVerifyContainsTextWebdriver(attributename, attributevalue, expectedtext, elementname);
 				verifyElementPresentWebdriver(attributeName_xpath, AS_AppReviewStatus+pagename+"')]", pagename);
-				
+				System.out.println("sdfsdfasffsdfsdsda");
 			}
 			
 		} catch (Exception e) {

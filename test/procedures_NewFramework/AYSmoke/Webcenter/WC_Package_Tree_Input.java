@@ -39,7 +39,9 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
 						waitForPageToLoad();
 					}else{
+						System.out.println(SplitPackage[i]);
 						PackageSelection(SplitPackage[i], "1");
+						
 					}
 				}
 				ClosePackageSelection();

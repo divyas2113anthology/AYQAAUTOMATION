@@ -40,6 +40,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			String searchbyaction = testdata[21];
 			String submit = testdata[22];
 			String pros_id = testdata[23];
+			String daterange_from = testdata[24];
+			String daterange_to = testdata[25];
 			Reporter.log("Input Test Data was retrieved for 'Search For Applicants' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			waitForElementPresentWebdriver(attributeName_xpath, SAI_NoOFRecords, "Number of Records Display");
@@ -85,13 +87,25 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				//selectByVisibleTextWebdriver(attributeName_xpath, SAI_SubmissionDate, submittedate);
 				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SpecificPeriod, submittedate);
 			}
+			if(!daterange_from.equals("")) {
+				Reporter.log("Step 7 - Enter the date range from as ["+daterange_from+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_DateRangeFrom, daterange_from);
+				sendKeys(attributeName_xpath, SAI_DateRangeFrom, daterange_from);
+			}
+			if(!daterange_to.equals("")) {
+				Reporter.log("Step 8 - Enter the date range to as ["+daterange_to+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_DateRangeTo, daterange_to);
+				clickWebdriver(attributeName_xpath, SAI_DateRangeTo);
+				sendKeys(attributeName_xpath, SAI_DateRangeTo, daterange_to);
+			}
+			
 			if (!searchbydate_submit.equals("")) {
-				Reporter.log("Step 7 - Click Submit in search by date");
+				Reporter.log("Step 9 - Click Submit in search by date");
 				clickWebdriver(attributeName_xpath, SAI_SearchByDateSubmit);
 				waitForPageToLoad();
 			}
 			if (!searchbyindividual.equals("")) {
-				Reporter.log("Step 15 - Click Submit in search by Individual");
+				Reporter.log("Step 10 - Click Submit in search by Individual");
 				
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio, searchbyindividual);
@@ -105,7 +119,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				
 			}
 			if (!firstname.equals("")) {
-				Reporter.log("Step 8 - Enter the First Name as ["+firstname+"]");
+				Reporter.log("Step 11 - Enter the First Name as ["+firstname+"]");
 				if (firstname.equals("Applicant First Name")) {
 					String DataFirstName = Runtimedataread(firstname);
 					click(SAI_FirstName);
@@ -132,39 +146,39 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				}
 			}
 			if (!lastname.equals("")) {
-				Reporter.log("Step 9 - Enter the Last Name as ["+lastname+"]");
+				Reporter.log("Step 12 - Enter the Last Name as ["+lastname+"]");
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
 			}
 			if (!birthdate.equals("")) {
-				Reporter.log("Step 10 - Enter the birth date as ["+birthdate+"]");
+				Reporter.log("Step 13 - Enter the birth date as ["+birthdate+"]");
 				sendKeys(attributeName_xpath, SAI_BirthDate, birthdate);
 			}	
 			if (!emailaddress.equals("")) {
-				Reporter.log("Step 11 - Enter the email address as ["+emailaddress+"]");
+				Reporter.log("Step 14 - Enter the email address as ["+emailaddress+"]");
 				sendKeys(attributeName_xpath, SAI_EmailAddress, emailaddress);
 			}
 			if (!zip.equals("")) {
-				Reporter.log("Step 12 - Enter the Zip as ["+zip+"]");
+				Reporter.log("Step 15 - Enter the Zip as ["+zip+"]");
 				sendKeys(attributeName_xpath, SAI_Zip, zip);
 			}
 			if (!pin.equals("")) {
-				Reporter.log("Step 13 - Enter the PIN as ["+pin+"]");
+				Reporter.log("Step 16 - Enter the PIN as ["+pin+"]");
 				sendKeys(attributeName_xpath, SAI_Pin, pin);
 			}
 			if (!applicantid.equals("")) {
-				Reporter.log("Step 14 - Enter the Applicant ID as ["+applicantid+"]");
+				Reporter.log("Step 17 - Enter the Applicant ID as ["+applicantid+"]");
 				sendKeys(attributeName_xpath, SAI_ApplicantID, applicantid);
 			}
 			
 			if (!systemqueries.equals("")) {
-				Reporter.log("Step 16 - Select the system quries as ["+systemqueries+"]");
+				Reporter.log("Step 18 - Select the system quries as ["+systemqueries+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
 				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
 			}	
 			if (!userqueries.equals("")) {
-				Reporter.log("Step 17 - Select the user quries as ["+userqueries+"]");
+				Reporter.log("Step 19 - Select the user quries as ["+userqueries+"]");
 //				waitForElementPresentWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
 //				selectByValueWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
 				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
@@ -176,7 +190,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			
 			if (!search_using_query.equals("")) {
-				Reporter.log("Step 18 - Click the Search using query Submit Button ");
+				Reporter.log("Step 20 - Click the Search using query Submit Button ");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit, search_using_query);
 				sendKeyStroke(attributeName_xpath, SAI_SearchUsingQueryRadio, Keys.SPACE);
 				clickWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit);
@@ -184,19 +198,19 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				
 			}
 			if (!selectagroup.equals("")) {
-				Reporter.log("Step 19 - Select a group as ["+selectagroup+"]");
+				Reporter.log("Step 21 - Select a group as ["+selectagroup+"]");
 				selectByValueWebdriver(attributeName_xpath, SAI_SearchGroupSelect, selectagroup);
 			}			
 			if (!search_by_group.equals("")) {
-				Reporter.log("Step 20 - Click the Search by using Submit Button");
+				Reporter.log("Step 21 - Click the Search by using Submit Button");
 				
 			}
 			if (!select_action.equals("")) {
-				Reporter.log("Step 21 - Select a action as ["+select_action+"]");
+				Reporter.log("Step 22 - Select a action as ["+select_action+"]");
 				selectByValueWebdriver(attributeName_xpath, SAI_SearchbyActionSelect, select_action);
 			}
 			if (!searchbyaction.equals("")) {
-				Reporter.log("Step 22 - Click the search by action submit button");
+				Reporter.log("Step 23 - Click the search by action submit button");
 			}
 			if (!pros_id.equals("")) {
 				Reporter.log("Step 24 - Send Prospect ID");
@@ -205,7 +219,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				sendKeys(attributeName_xpath, SAI_SearchProspectID, pros_id);
 			}
 			if (!submit.equals("")) {
-				Reporter.log("Step 23 - Click the submit button");
+				Reporter.log("Step 25 - Click the submit button");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SubmitBtnBottom, submit);
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
 			}

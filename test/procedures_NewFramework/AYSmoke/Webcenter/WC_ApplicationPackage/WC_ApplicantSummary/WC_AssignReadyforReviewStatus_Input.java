@@ -23,17 +23,18 @@ public class WC_AssignReadyforReviewStatus_Input extends CommonSeleniumActions i
 			String back = fpvdatarepo[1];
 			String appreviewstatus = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Assign Ready for Review Status' page");
+			System.out.println("sdfsffsfsfsdfsdfsfsdsdfsd");
 			if (!appreviewstatus.equals("")) {
 				
 			}
 			if (!submit.equals("")) {
-				waitForElementPresentWebdriver(attributeName_xpath, AS_StatusSubmit, submit);
-				clickWebdriver(attributeName_xpath, AS_StatusSubmit);
+				waitForElementPresentWebdriver(attributeName_xpath, AR_AssignReadyforReviewStatusSubmit, submit);
+				clickWebdriver(attributeName_xpath, AR_AssignReadyforReviewStatusSubmit);
 				
 			}
 			if (!back.equals("")) {
-				waitForElementPresentWebdriver(attributeName_xpath, AS_StatusBack, back);
-				clickWebdriver(attributeName_xpath, AS_StatusBack);
+				waitForElementPresentWebdriver(attributeName_xpath, AR_AssignReadyforReviewStatusBack, back);
+				clickWebdriver(attributeName_xpath, AR_AssignReadyforReviewStatusBack);
 				
 			}
 			

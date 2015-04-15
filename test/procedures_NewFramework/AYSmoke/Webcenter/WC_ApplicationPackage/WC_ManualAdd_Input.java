@@ -28,7 +28,7 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		String Birth = testdata[4];
 		String Postal = testdata[5];
 		String CreateAccount = testdata[6];
-		
+		String Close = testdata[7];
 		
 		String winHandleBefore = driver.getWindowHandle();
 		 for(String winHandle : driver.getWindowHandles()){
@@ -75,6 +75,12 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 			clickWebdriver(attributeName_xpath, CreateAccount_Manual);
 		}
 		//driver.switchTo().window(winHandleBefore);
+		if (!Close.equals("")) {
+			Reporter.log("Step 8 - Click on 'Close Window'");
+			clickWebdriver(attributeName_xpath, Close_Window);
+			//driver.switchTo().window(winHandleBefore);
+			driver.switchTo().activeElement();
+		}
 		}catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

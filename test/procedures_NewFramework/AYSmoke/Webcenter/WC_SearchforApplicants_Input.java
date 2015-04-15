@@ -157,6 +157,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}	
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 14 - Enter the email address as ["+emailaddress+"]");
+				clickWebdriver(attributeName_xpath, SAI_EmailAddress);
 				sendKeys(attributeName_xpath, SAI_EmailAddress, emailaddress);
 			}
 			if (!zip.equals("")) {

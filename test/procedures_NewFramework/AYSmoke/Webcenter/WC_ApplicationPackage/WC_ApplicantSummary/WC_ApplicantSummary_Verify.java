@@ -40,7 +40,7 @@ public class WC_ApplicantSummary_Verify extends CommonSeleniumActions implements
 				verifyElementContainsTextWebdriver(attributeName_xpath, APP_Status+verifyui+"')]", verifyui, verifyui);
 				
 			}
-			recentPopupCloseWebdriver();
+			//recentPopupCloseWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

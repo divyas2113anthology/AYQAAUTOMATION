@@ -66,7 +66,7 @@ public static final String ConfirmEmail_Manual = "//input[@name='AppVerification
 public static final String Birth_Manual = "//input[@name='AppBirthdt']";
 public static final String Postal_Manual = "//input[@name='AppZip']";
 public static final String CreateAccount_Manual= "//img[@alt='create account']";
-
+public static final String Close_Window = "//font[@class='Menu' and contains(text(),'Close Window')]";
 
 
 //#**********************************************************#
@@ -152,7 +152,8 @@ public static final String BR_Cancel = "//img[@name='imageCancel']";
 //#**********************************************************#
 //# Personal Information Page - PI
 //#**********************************************************#
-public static final String PI_Suffix = "//select[@id='s24494']";
+public static final String PI_Suffix = "//select[@id='s27099']";
+//public static final String PI_Suffix = "//input[@id='q24494']";
 public static final String PI_FirstName = "//input[@id='q24495']";
 public static final String PI_LastName = "//input[@id='q24496']";
 public static final String PI_FullTimeStudent_Yes = "//input[@value='Y']";
@@ -396,7 +397,7 @@ public static final String MCL_UserID = "css=input[name='UserID']";
 public static final String MCL_Password = "css=input[name='Password']";
 public static final String MCL_Loginbutton = "//input[contains(@src,'admin_login_small')]";
 
-//#Logout and click nemu in MC
+//#Logout and click menu in MC
 public static final String MCL_Logoutbutton = "link=logout";
 public static final String MCL_ManageClientMenu = "//div[@id='oMenu_oMenu2']";
 
@@ -693,6 +694,7 @@ public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
 public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']";
+//button[@aria-label='EMT QA Account - Available menu with submenu']
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
 public static final String HC_MailBody_Content = "css=html>body[ocsi='1']";
@@ -821,6 +823,7 @@ public static final String WebcenterAddAnApplicant = "//div[@id='oMenu_mnuAddApp
 public static final String WebcenterQuickAddApplicant = "//div[text()='Add a QuickAdd Application']";
 public static final String WebcenteSearchForApplicants = "//div[text()='Search for Applicants']";
 public static final String WebcenteLogout = "//a[contains(text(),'logout')]";
+public static final String WClogoutLink = "//a[contains(@href,'logout')]";
 public static final String WebcenteOnlineSupportTop = "//tr[@valign='top']//a[contains(text(),'online support')]";
 public static final String WebcenteOnlineSupportBottom = "//div[@class='footerLinks']/a[contains(text(),'Online Support')]";
 public static final String WebcenteProdSug = "//div[@class='footerLinks']/a[contains(text(),'Product Suggestions')]";
@@ -906,7 +909,9 @@ public static final String APP_Status = "//table/tbody/tr/td[contains(text(),'";
 //#**********************************************************#
 
 public static final String MQ_Queryselect = "//a[contains(text(),'";  //TestforUserQueries')]"
-public static final String MQ = "";
+public static final String MQ_QueryName = "//input[@name='txtQueryName']";
+public static final String MQ_QueryDescription = "//textarea[@name='txtDescription']";
+
 
 //#**********************************************************#
 //# Account Profile Page - AP
@@ -983,6 +988,19 @@ public static final String PA_PageName = "//tr[@class='FormText']/td/font";
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
+//#**********************************************************#
+//# Webcenter Code Lookup - CL
+//#**********************************************************#
+public static final String CL_LookupTName = "//input[@name='lookupgroupid']";
+public static final String CL_AddEdit = "//img[contains(@src,'"; //edit')]"
+public static final String CL_Code = "//input[@name='prompt1field']";
+public static final String CL_Name = "//input[@name='prompt2field']";
+public static final String CL_Address1 = "//input[@name='prompt3field']";
+public static final String CL_City = "//input[@name='prompt4field']";
+public static final String CL_State = "//input[@name='prompt5field']";
+public static final String CL_Country = "//input[@name='prompt6field']";
+public static final String CL_BackSearch = "//img[contains(@src,'";
+public static final String CL_AddressList = "//table[@id='Table1']/tbody/tr[11]/td/a";
 //#**********************************************************#
 //# Webcenter Applicant Summary - AS
 //#**********************************************************#
@@ -1542,15 +1560,27 @@ public static final String QA_ResetBtn = "//img[@alt='Reset']";
 //#**********************************************************#
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
-public static final String MQ_FieldName = "//select[contains(@name,'txtField')]";
+
+public static final String MQ_FieldName = "//select[@name='txtField0' and @class='FormFields']"; //"//select[@name='txtField']";
 public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
 public static final String MQ_AppInProgress = "//input[@name='SubmittedApps' and @value='No']";
-public static final String MQ_QuerySave = "//input[@name='topsavebutton']";
-public static final String MQ_Operator = "//select[contains(@name,'txtOperator')]";
+//public static final String MQ_QuerySave = "//tr[@class='FormHeading']//td/input[@name='topsavebutton']";
+public static final String MQ_QuerySave = "//tr[@class='FormHeading']//img[contains(@name,'topsave')]";
+public static final String MQ_QuerySave1 = "//tr[@class='FormHeading']//input[contains(@name,'topsave')]";
+public static final String MQ_Operator = "//select[@name='txtOperator0' and @class='FormFields']";//"//select[contains(@name,'txtOperator')]";
 public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
 public static final String MQ_SaveAndRun = "topsaverunbutton";
 public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset']/li";
 public static final String MQ_ValueButton = "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']";
+public static final String MQ_AddRow = "//img[contains(@src,'plus')]";
+public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
+public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
+public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
+public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
+public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+public static final String MQ_Add = "//img[@name='imageField']";
+public static final String MQ_Delete = "//img[@name='imageField2']";
+
 //#**********************************************************#
 //#	 Webcenter - Configure Downloadable Forms - Page
 //#**********************************************************#
@@ -1671,13 +1701,16 @@ public static final String MML_UNameVerify = "//table[@id='userSearchResultsTabl
 //#   WC-Recommendation pachage-configureforms-Applicant Info Display
 //#**************************************************************#
 
-public static final String AID_Display_Check= "//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@type,'checkbox')]";
+public static final String AID_Display_Check= "//td[font[contains(text(),'";
 public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
 public static final String AID_save_button="//img[contains(@src,'save')]";
 public static final String AID_pagename="//table[@id='Table1']/tbody/tr/td/font"; //[contains(text(),'Application')]";
 public static final String AID_message="//div[@id='divAyConfirmation']/font";
 public static final String AID_RecPlus = "//img[contains(@src,'plus')]";
 public static final String AID_RecAppInfoDisp = "//a[text()='Applicant Info Display']";
+public static final String REC_Display_lname = "//dl[@class='dl-horizontal']/dt[contains(text(),'Acad`~!@#$%^*+-/()_-+={}[]|\')]";
+public static final String REC_Display_dob = "//div[@id='rec-AppInfoBox']/dl/dt[contains(text(),'BirthDate')]";
+
 
 
 

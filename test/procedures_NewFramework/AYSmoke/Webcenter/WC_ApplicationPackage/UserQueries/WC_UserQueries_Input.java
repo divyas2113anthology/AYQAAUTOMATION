@@ -19,12 +19,23 @@ public class WC_UserQueries_Input extends CommonSeleniumActions implements OR {
 			String delete = testdata[1];
 			String movetofolder = testdata[2];
 			String queryselection = testdata[3];
-			
+			String querycheckbox=testdata[4];
+			if (!add.equals("")) {
+				clickWebdriver(attributeName_xpath, MQ_Add);
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_linktext, "Applicant Detail");
+			}
 			if (!queryselection.equals("")) {
 				Reporter.log("Click on the Query"+queryselection);
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_Queryselect+queryselection+"')]", queryselection);    //TestforUserQueries')]"
 				clickWebdriver(attributeName_xpath, MQ_Queryselect+queryselection+"')]");
 			}
+			if(!querycheckbox.equals("")){
+				clickWebdriver(attributeName_xpath, MQ_QueryCheck);
+				clickWebdriver(attributeName_xpath, MQ_Delete);
+				
+			}
+			
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

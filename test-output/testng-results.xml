@@ -8,10 +8,10 @@
       <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="159" started-at="2015-01-22T13:38:14Z" finished-at="2015-01-22T13:38:14Z">
+  <suite name="Default suite" duration-ms="393" started-at="2015-04-13T12:41:28Z" finished-at="2015-04-13T12:41:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="159" started-at="2015-01-22T13:38:14Z" finished-at="2015-01-22T13:38:14Z">
-      <class name="procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778]" name="startseleniumserver" is-config="true" duration-ms="9987" started-at="2015-01-22T08:38:04Z" finished-at="2015-01-22T08:38:14Z">
+    <test name="Default test" duration-ms="393" started-at="2015-04-13T12:41:28Z" finished-at="2015-04-13T12:41:28Z">
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="startseleniumserver" is-config="true" duration-ms="11409" started-at="2015-04-13T08:41:17Z" finished-at="2015-04-13T08:41:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1756f3c]]>
+                <![CDATA[org.testng.TestRunner@585a96]]>
               </value>
             </param>
           </params>
@@ -42,7 +42,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-01-22T08:38:14Z" finished-at="2015-01-22T08:38:14Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:28Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778]" name="failurescreenshot" is-config="true" duration-ms="128" started-at="2015-01-22T08:38:14Z" finished-at="2015-01-22T08:38:14Z">
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="failurescreenshot" is-config="true" duration-ms="359" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UpdateProfile_Input status=SKIP method=UpdateProfile_Input.UpdateProfile_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG]]]>
+                <![CDATA[[TestResult name=WC_AddInputCriteria_Input status=SKIP method=WC_AddInputCriteria_Input.WC_AddInputCriteria_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@1756f3c]]>
+                <![CDATA[org.testng.TestRunner@585a96]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="SKIP" signature="UpdateProfile_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778]" name="UpdateProfile_Input" duration-ms="0" started-at="2015-01-22T08:38:14Z" description="This Procedure is to perform some Operation in &#039;Update Profile&#039; page" finished-at="2015-01-22T08:38:14Z">
+        <test-method status="SKIP" signature="WC_AddInputCriteria_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="WC_AddInputCriteria_Input" duration-ms="0" started-at="2015-04-13T08:41:28Z" description="This Procedure is to perform some Operation in &#039;Add Input Criteria&#039; page" finished-at="2015-04-13T08:41:28Z">
           <reporter-output>
             <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG]]>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]>
             </line>
             <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\UpdateProfile_Input_0.PNG' height='200' width='200'></a>]]>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG' height='200' width='200'></a>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- UpdateProfile_Input -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input@1d5e778]" name="shutdownseleniumserver" is-config="true" duration-ms="297" started-at="2015-01-22T08:38:14Z" finished-at="2015-01-22T08:38:15Z">
+        </test-method> <!-- WC_AddInputCriteria_Input -->
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="shutdownseleniumserver" is-config="true" duration-ms="359" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1756f3c]]>
+                <![CDATA[org.testng.TestRunner@585a96]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application.UpdateProfile_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

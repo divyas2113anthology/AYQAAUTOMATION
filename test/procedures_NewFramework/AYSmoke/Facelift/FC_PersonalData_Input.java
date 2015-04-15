@@ -236,13 +236,14 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				}else if (pdsave.equalsIgnoreCase("Reset")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Reset);
 				}
+			}
 				if (!pisubmitappbtn.equals("")) {
 					Reporter.log("Step 26 - Click on ("+pisubmitappbtn+")Button");
 					if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
 						clickWebdriver(attributeName_cssselector, AW_SubAppBtn);
 					}
 				}
-			}
+			
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

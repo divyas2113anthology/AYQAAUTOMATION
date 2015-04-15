@@ -18,8 +18,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			String url = instancedatarepo[0];
 			String openurl = instancedatarepo[1];
 			Reporter.log("Test Data was retrieved for URL");
-			System.out.println("Proceed to retrieve Environment From Excel Sheet(C:/Selenium/InputTestdata.xls)");
-			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			System.out.println("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
+			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			environment = Runtimedataread("Instance");
 			String envirurl = null;
 			if ((url.contains("app")) && (url.contains("ayauto&facelift"))) {			
@@ -189,7 +189,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
-					envirurl = "";
+					envirurl = "http://bridgebuilderuk/Map/BridgeList.aspx";
 				}
 			}else if (url.contains("ApplicantConnectLogin") && url.endsWith("aybusqa")||url.endsWith("icu")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -239,7 +239,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("USPR")) {
 					envirurl = "https://aybus.hobsonsemt.net/sso/Sso/Login";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
-					envirurl = "";
+					envirurl = "https://test1client.hobsons.co.uk/sso/sso/Login";
 				}
 			}else if (url.contains("ar")) {
 				if (environment.equalsIgnoreCase("USQA")) {

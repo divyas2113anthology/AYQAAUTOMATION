@@ -17,6 +17,7 @@ public class WC_AddEditEventRegistration_Verify extends CommonSeleniumActions im
 			String[]  fpvdatarepo = datacontainer;
 			String successmessage = fpvdatarepo[0];
 			String closewindow = fpvdatarepo[1];
+			
 			Reporter.log("Verify Test Data was retrieved for 'Add/Edit Event Registration' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
@@ -28,6 +29,7 @@ public class WC_AddEditEventRegistration_Verify extends CommonSeleniumActions im
 				closeWindowWebdriver();
 				selectMainWindowWebdriver();
 			}
+			selectMainWindowWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

@@ -36,6 +36,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 				Reporter.log("Step 1 - Select Suffix as ("+pisuffix+")");
 				String SufID = getElementIDbyLabel("Suffix",PI_Suffix);				
 				select(SufID, pisuffix);
+				//sendKeys(attributeName_xpath, PI_Suffix, pisuffix);
 			}
 			if (!pifirstgivenname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");

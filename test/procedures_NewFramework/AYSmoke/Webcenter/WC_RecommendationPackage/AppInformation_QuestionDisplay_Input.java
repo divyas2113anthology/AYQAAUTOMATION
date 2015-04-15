@@ -19,15 +19,18 @@ public class AppInformation_QuestionDisplay_Input extends CommonSeleniumActions 
 			String save_button=testdata[2];
 
 			Reporter.log("Input Test Data was retrieved for 'Application Information' Page");
-
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!display_check.equals("")){
-
-				clickWebdriver(attributeName_xpath, AID_Display_Check);		
+				
+				waitForElementPresentWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]", display_check);
+				//clickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");	
+				doubleClickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");
 
 			}
 
 			if (!label_text.equals("")){
-
+				
+				waitForElementPresentWebdriver(attributeName_xpath, AID_label_text, label_text);	
 				sendKeys(attributeName_xpath, AID_label_text, label_text);		
 
 			}
@@ -37,6 +40,7 @@ public class AppInformation_QuestionDisplay_Input extends CommonSeleniumActions 
 				clickWebdriver(attributeName_xpath, AID_save_button);		
 
 			}
+			switchToDefaultContentWebdriver();
 		}catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

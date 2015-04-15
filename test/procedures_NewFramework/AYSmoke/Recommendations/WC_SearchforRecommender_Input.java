@@ -67,6 +67,7 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 		if (!rec_notsubmitted.equals("")) {
 			Reporter.log("Step 5 - Select the option of ("+rec_notsubmitted+")");
 			waitForElementPresentWebdriver(attributeName_xpath, SFR_RecNotSubmitted, rec_notsubmitted);
+			clickWebdriver(attributeName_xpath, "//input[@value='creationDate']");
 			clickWebdriver(attributeName_xpath, SFR_RecNotSubmitted);
 		}
 		if (!rec_app_submitted.equals("")) {
@@ -77,6 +78,8 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 		if (!rec_notprinted.equals("")) {
 			Reporter.log("Step 7 - Select the option of ("+rec_notprinted+")");
 			waitForElementPresentWebdriver(attributeName_xpath, SFR_RecNotPrinted, rec_notprinted);
+			clickWebdriver(attributeName_xpath, SFR_RecNotSubmitted);
+			clickWebdriver(attributeName_xpath, "//input[@value='creationDate']");
 			clickWebdriver(attributeName_xpath, SFR_RecNotPrinted);
 		}
 		if (!rec_notexported.equals("")) {

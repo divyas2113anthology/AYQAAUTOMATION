@@ -129,7 +129,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
 						if (selenium.isVisible("//div[@class='messageListContainer']")) {
-							Thread.sleep(3000);
+							Thread.sleep(6000);
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
@@ -229,8 +229,10 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			
 			if (!clicklinkcontains.equals("")) {
 				Reporter.log("Step  8 - Proceed to click on Message contains Link");
-				waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
-				clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
+				//waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
+				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]", clicklinkcontains);
+				clickWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]");
 				Thread.sleep(12000);
 				recentPopupSelectWebdriver("Update Information");
 				//recentPopupSelect("Update Information");

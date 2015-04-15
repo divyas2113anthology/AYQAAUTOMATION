@@ -19,11 +19,30 @@ public class WC_QueryDetails_Input extends CommonSeleniumActions implements OR {
 			String description = testdata[1];
 			String folder = testdata[2];
 			String save = testdata[3];
+						
+			if(!queryname.equals("")){
+				Reporter.log("Enter the Query Name");
+				sendKeys(attributeName_xpath, MQ_QueryName, queryname);
+				
+				
+			if(!description.equals("")){
+				Reporter.log("Enter the Description");
+				sendKeys(attributeName_xpath, MQ_QueryDescription, description);
+				
+			}			
 			if (!save.equals("")) {
 				Reporter.log("Click on Save");
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_QuerySave, save);    
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_QuerySave , save);   
 				clickWebdriver(attributeName_xpath, MQ_QuerySave);
+				
 			}
+			}
+			
+			if(queryname.equalsIgnoreCase("QueriesTest")){
+			
+				clickWebdriver(attributeName_xpath, MQ_QuerySave1);
+			}
+			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

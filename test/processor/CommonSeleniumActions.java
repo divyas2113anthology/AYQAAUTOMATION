@@ -2903,7 +2903,24 @@ public class CommonSeleniumActions extends Processor implements OR {
 			}
 		}
 	}
-
+	// This Function is used to Select Recently Opened Window or Popup without Window Name.
+	public void recentPopupSelect_without_window_nameWebdriver() throws Exception {
+		   //     int windownull = 0;
+		   mainwindow = driver.getWindowHandle();
+		   writeConsole("Webdriver Main Window["+mainwindow+"]");
+		   //     Set<String> popwindow = driver.getWindowHandles();
+		   //     Iterator<String> it = popwindow.iterator();
+		   waitForPopupWebdriver();
+		   Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		   while (popwindow.hasNext()) {
+		    String window = popwindow.next();
+		    
+		     writeConsole("Webdriver Switch To Window["+window+"]");
+		     driver.switchTo().window(window);
+		   /*  if (!mainwindow.equals(window)) {*/
+		   }
+	}
+		 
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentOpenedPopupSelectWebdriver(String windowname) throws Exception {
 		//					 int windownull = 0;

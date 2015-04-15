@@ -16,53 +16,81 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Add Input Criteria' page");
 			String[]  applicantwelidatarepo = datacontainer;
-			String datatree = applicantwelidatarepo[0];
-			String fieldname = applicantwelidatarepo[1];
-			String operator = applicantwelidatarepo[2];
-			String value = applicantwelidatarepo[3];
-			String button = applicantwelidatarepo[4];
+			String backsaverun = applicantwelidatarepo[0];
+			String appsubmitted = applicantwelidatarepo[1];
+			String appinprogress = applicantwelidatarepo[2];
+			//String datatree = applicantwelidatarepo[0];
+			String fieldname = applicantwelidatarepo[3];
+			String operator = applicantwelidatarepo[4];
+			String value = applicantwelidatarepo[5];
+			String groups = applicantwelidatarepo[6];
+			//String button = applicantwelidatarepo[4];
+			String add = applicantwelidatarepo[7];
 			Reporter.log("Input Test Data was retrieved for 'Add Input Criteria' page");
-			if (!datatree.equals("")) {
-				Reporter.log("Step 1 - Perform the operation to click the tree as ["+datatree+"]");
-				if (datatree.contains("Tree")) {
-					clickWebdriver(attributeName_xpath, "//font[b/a[text()='"+datatree+"']]/preceding-sibling::img[contains(@src,'closed')]");
-				}else{
-					waitForElementPresentWebdriver(attributeName_linktext, datatree, datatree);
-					clickWebdriver(attributeName_linktext, datatree);
-					waitForPageToLoadWebdriver();
-				}
-			}
+//			if (!datatree.equals("")) {
+//				Reporter.log("Step 1 - Perform the operation to click the tree as ["+datatree+"]");
+//				if (datatree.contains("Tree")) {
+//					clickWebdriver(attributeName_xpath, "//font[b/a[text()='"+datatree+"']]/preceding-sibling::img[contains(@src,'closed')]");
+//				}else{
+//					waitForElementPresentWebdriver(attributeName_linktext, datatree, datatree);
+//					clickWebdriver(attributeName_linktext, datatree);
+//					waitForPageToLoadWebdriver();
+//				}
+//			}
 			if (!fieldname.equals("")) {
 				Reporter.log("Step 2 - Select the field name as ["+fieldname+"]");
 //				select(MQ_FieldName, "regexp:"+fieldname);
+//				if(add.equalsIgnoreCase("Add"))
+//				{
+//					waitForElementPresentWebdriver(attributeName_xpath, "//select[@name='txtField1' and @class='FormFields']", fieldname);
+//					selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='txtField0' and @class='FormFields']", "    --"+fieldname);
+//				}
+//				else{
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
 				selectByVisibleTextWebdriver(attributeName_xpath, MQ_FieldName, "    --"+fieldname);
 				Thread.sleep(3000);
+				//}
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
 				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator, operator);
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 			}
 			if (!value.equals("")) {
 				Reporter.log("Step 4 - Enter the value as ["+value+"]");
-				sendKeys(attributeName_xpath, MQ_Value, value);
+				if(value.equalsIgnoreCase("List")){
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
+					System.out.println("Select the value");
+					Thread.sleep(3000);
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectOption);
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				}
+				else
+					sendKeys(attributeName_xpath, MQ_Value, value);
 			}
-			if (!button.equals("")) {
-				Reporter.log("Step 3 - Click button as ["+button+"]");
-				if (button.equalsIgnoreCase("Back")) {
+			if (!backsaverun.equals("")) {
+				Reporter.log("Step 3 - Click button as ["+backsaverun+"]");
+				if (backsaverun.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 					waitForPageToLoadWebdriver();
-				}else if (button.equalsIgnoreCase("Save")) {
+				}else if (backsaverun.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
 					waitForPageToLoadWebdriver();
-				}else if (button.equalsIgnoreCase("save and run")) {
+				}else if (backsaverun.equalsIgnoreCase("save and run")) {
 					clickWebdriver(attributeName_name, MQ_SaveAndRun);
 					waitForPageToLoadWebdriver();
-				}else if (button.equalsIgnoreCase("run")) {
+				}else if (backsaverun.equalsIgnoreCase("run")) {
 					clickWebdriver(attributeName_xpath, RPT_RunBtn);
 					waitForPageToLoadWebdriver();
 				}
+				
+			}
+			if (!add.equals("")) {
+				Reporter.log("Step 5 - Click on Add Row");
+				//sendKeys(attributeName_xpath, MQ_Value, value);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_AddRow, add);
+				clickWebdriver(attributeName_xpath, MQ_AddRow);
+				
 			}
 			
 		} catch (Exception e) {

@@ -40,22 +40,23 @@ public void AppInformation_QuestionDisplay_Verify() throws Exception{
 				}
 			}
 		}
+		switchToDefaultContentWebdriver();
+		switchToFrameNameIdWebdriver("frmContent");
 		if (!message.equals("")){
-
+			
+			waitForElementPresentWebdriver(attributeName_xpath,AID_message,message);
 			verifyElementContainsTextWebdriver(attributeName_xpath,AID_message,message, message);		
 
 		}
-
+		
 		if (!Pagename.equals("")){
-			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			
 			verifyElementPresentWebdriver(attributeName_xpath, AID_pagename, Pagename);
-			String pagename = getTextWebdriver(attributeName_xpath, AID_pagename);
+			String pagename = getTextWebdriver(attributeName_xpath, AID_pagename);						
+			verifyElementContainsTextWebdriver(attributeName_xpath,AID_pagename,pagename, pagename);			
 			
-			System.out.println(pagename);
-			verifyElementContainsTextWebdriver(attributeName_xpath,AID_pagename,pagename, pagename);		
-
 		}
+		switchToDefaultContentWebdriver();
 		if (!verifyUI.equals("")){
 
 			//sendKeys(attributeName_xpath, AID_message);		

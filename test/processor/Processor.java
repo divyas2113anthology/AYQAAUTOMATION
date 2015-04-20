@@ -35,6 +35,7 @@ import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -217,6 +218,7 @@ public class Processor {
 			
 			browser = Runtimedataread("Browser").toLowerCase().trim();
 //			String browsername = null;
+			
 			switch(browser){
 			case "internetexplorer":
 				File file = new File("C:/Selenium/IEDriverServer.exe");
@@ -245,7 +247,11 @@ public class Processor {
 				driver = new SafariDriver();
 				break;
 			case "phantomjs":
-				driver = new PhantomJSDriver();
+		        // prepare capabilities
+				DesiredCapabilities capabilities = new DesiredCapabilities();
+		        capabilities.setJavascriptEnabled(true);                //< not really needed: JS enabled by default
+		        capabilities.setCapability("takesScreenshot", true);    //< yeah, GhostDriver haz screenshotz!
+		        capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,"C:/SeleniumScripts/AYQAAutomation/lib/phantomjs-2.0.0-windows/bin/phantomjs.exe");
 				break;
 				
 			default:

@@ -476,8 +476,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 	// datalabel - which gets the Test data Label from QC(parameter) and used to read Test Data from the Excel then used by required Procedures.	
 
 	public static String Runtimedataread(String datalabel) throws Exception{
-		Reporter.log("Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)");
-		String filename = "C:/Selenium/InputTestdata.xls";
+		Reporter.log("Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
+		String filename = "C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls";
 		Workbook workbook = Workbook.getWorkbook(new File(filename));
 		//Sheet sheet = workbook.getSheet("RunTimeData");	
 		Sheet sheet = workbook.getSheet("InputTestdata");

@@ -26,8 +26,8 @@ public class WC_SearchforEnrollmentApplicants_Verify extends CommonSeleniumActio
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-			waitForElementPresentWebdriver(attributeName_xpath, En_PageName, pagename);
-			verifyElementContainsTextWebdriver(attributeName_xpath, En_PageName, pagename, pagename);
+			waitForElementPresentWebdriver(attributeName_xpath, SRV_PageName, pagename);
+			verifyElementContainsTextWebdriver(attributeName_xpath, SRV_PageName, pagename, pagename);
 		}
 		if (!verifyui.equals("")) {
 			

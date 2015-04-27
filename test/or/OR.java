@@ -1759,6 +1759,87 @@ public static final String AR_ReviewPool = "//select[@id='reviewPoolToggler']";
 public static final String AR_AssignReadyforReviewStatusSubmit = "//img[@alt='print']";
 public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]"; 
 
+//#**********************************************************#
+//# Webcenter - Manage Choice Groups - MCG
+//#**********************************************************#
+public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'Enrollment-DT')]";
+public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
+public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'6')]";
+public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
+
+//#**********************************************************#
+//# Webcenter - Enrollment - ER
+//#**********************************************************#
+public static final String ER_linktoclick = "//a[contains(text(),'"; //Enrollment-DT Module Home')]";
+public static final String AY_ConfigureStatusConfirmationText = "//div[@class='AYConfirmationText']/font";
+//#**********************************************************#
+//# Webcenter - Enrollment DT Fee - ER
+//#**********************************************************#
+public static final String EDT_Page = "//font[contains(text(),'Search Results')]";
+public static final String EDT_PaymentStatus = "//select[@id='pmtstatus']";
+public static final String EDT_ButtontoClick = "//img[contains(@src,'"; //close_window')]";
+public static final String EDT_PageName = "//td[@class='FormHeading']/font";
+//#**********************************************************#
+//# Webcenter - Recommendation Details Page - RD
+//#**********************************************************#
+public static final String RD_Pagename = "//font[contains(text(),'Recommendations')]";
+//#**********************************************************#
+//# Webcenter Search For Recommendation Verify - SRV
+//#**********************************************************#
+public static final String SRV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+//#**********************************************************#
+//# Webcenter - Recommendation Update Status - RUS
+//#**********************************************************#
+public static final String RUS_Pagename = "//td[@class='FormHeading']/font";
+//#**********************************************************#
+//# Webcenter - Recommendation System Field Batch Update - RSFBU
+//#**********************************************************#
+
+public static final String RSFBU_Pagename = "//table[@id='Table1']//font";  
+public static final String RSFBU_Status = "//select[@id='sysStatus']";
+public static final String RSFBU_SubmitBack = "//img[contains(@src,'";
+//#**********************************************************#
+//# Webcenter - Recommendation Search Result - RSR
+//#**********************************************************#
+public static final String RSR_ApplicantClick = "//a[contains(text(),'";   //'TestHaja, TestMalik')]
+//#**********************************************************#
+//# Webcenter - Recommendation Update Status - RUS
+//#**********************************************************#
+public static final String RUS_Status = "//select[@id='StatusVal']";
+public static final String RUS_CloseWindow = "//img[contains(@src,'";     //close_window')]";
+
+//#**********************************************************#
+//# Webcenter - Recommendation - Recommendation Summary RS
+//#**********************************************************#
+public static final String RS_Status = "//a[contains(@onclick,'Status')]";
+//#**********************************************************#
+//# Webcenter - Application - Applicant Summary AS
+//#**********************************************************#
+public static final String AS_pagename = "//font[contains(text(),'Transcripts')]";
+public static final String AS_TestScoreStatus = "//select[@name='TestStatus']";
+public static final String AS_SupportingDocCloseWindow = "//img[contains(@src,'"; 
+public static final String AS_TestScorepagename = "//font[contains(text(),'Manage Test Scores')]";
+public static final String AS_TranscriptStatus = "//select[@id='Select1']";
+public static final String AS_SupportingDocumentStatus = "//select[@id='Status']";
+//#**********************************************************#
+//# Maintenance center - Manage User - MS
+//#**********************************************************#
+public static final String MS_addgo = "//img[contains(@src,'";      //'add')]";
+public static final String MS_userid = "//input[@id='txtUserID']";
+public static final String MS_firstname = "//input[@id='txtFirstName']";
+public static final String MS_lastname = "//input[@id='txtLastName']";
+public static final String MS_title = "//input[@id='txtTitle']";
+public static final String MS_Email = "//input[@id='txtEmail']";
+public static final String MS_savecancel = "//img[contains(@src,'";    //'save')]
+public static final String MS_CheckPrivilege = "//table[@id='tblPrivsNOTAssigned']//td//font/text()[normalize-space(.) ='";  //Maintain Users']//preceding-sibling::input[@type='checkbox']";
+public static final String MS_ConfirmationText = "//div[@class='AYConfirmationText']";
+public static final String MS_NewPassword = "//input[@name='Password']";
+public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
+public static final String MS_Submit = "//input[contains(@src,'submit')]";
+
+
+
+
 }
 
 

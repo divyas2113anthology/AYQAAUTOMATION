@@ -20,6 +20,7 @@ public void AppInformation_QuestionDisplay_Verify() throws Exception{
 		String Pagename=testdata[1];
 		String verifyUI=testdata[2];
 		String treepackage= testdata[3];
+		String linktoclick = testdata[4];
 		Reporter.log("Input Test Data was retrieved for 'Application Information' Page");
 		switchToFrameNameIdWebdriver("frmTreeMenu");
 		verifyElementPresentWebdriver(attributeName_xpath, "//a[text()='Logout']", "Logout");
@@ -62,6 +63,13 @@ public void AppInformation_QuestionDisplay_Verify() throws Exception{
 			//sendKeys(attributeName_xpath, AID_message);		
 
 		}
+		switchToFrameNameIdWebdriver("frmTreeMenu");
+		if (!linktoclick.equals("")){
+			
+			clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");		
+
+		}
+		switchToDefaultContentWebdriver();
 	}catch (Exception e) {
 		writeFailure(e.getLocalizedMessage());
 	}

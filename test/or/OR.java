@@ -1766,6 +1766,7 @@ public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'Enro
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
 public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'6')]";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
+public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
 
 //#**********************************************************#
 //# Webcenter - Enrollment - ER
@@ -1798,6 +1799,7 @@ public static final String RUS_Pagename = "//td[@class='FormHeading']/font";
 public static final String RSFBU_Pagename = "//table[@id='Table1']//font";  
 public static final String RSFBU_Status = "//select[@id='sysStatus']";
 public static final String RSFBU_SubmitBack = "//img[contains(@src,'";
+public static final String RSFBU_StatusGrey = "//select[@id='StatusVal'][option[contains(@style,'Grey')]]";
 //#**********************************************************#
 //# Webcenter - Recommendation Search Result - RSR
 //#**********************************************************#

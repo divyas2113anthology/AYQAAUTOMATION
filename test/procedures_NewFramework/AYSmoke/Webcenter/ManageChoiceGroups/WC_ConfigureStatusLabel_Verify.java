@@ -19,8 +19,9 @@ public class WC_ConfigureStatusLabel_Verify extends CommonSeleniumActions implem
 			Reporter.log("Proceed to retrieve Verify Test Data for 'Manage Choice Groups'Page");
 			
 			String[] testdata = datacontainer;
-			String pagename = testdata[0];
-			String message = testdata[0];
+			String pagename = testdata[0];  
+			String message = testdata[1];
+			switchToFrameNameIdWebdriver("frmContent");
 			
 			if(!pagename.equals("")){
 				Reporter.log("Verify its navigate to ("+pagename+") page");

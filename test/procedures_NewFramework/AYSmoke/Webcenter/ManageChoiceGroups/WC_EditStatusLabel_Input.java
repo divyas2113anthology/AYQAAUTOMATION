@@ -21,17 +21,24 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String statuscategory = testdata[2];
 			String label = testdata[3];
 			String active=testdata[4];
-			String delete=testdata[4];
-			String savecanceladdrow=testdata[4];
+			String delete=testdata[5];
+			String savecanceladdrow=testdata[6];
+			String addrow=testdata[7];
 			
 			if (!groupdescription.equals("")) {
 				Reporter.log("Enter Group Description");
 				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);	
 			}
+			if (!addrow.equals("")) {
+				Reporter.log("Create a new row");
+				clickWebdriver(attributeName_xpath, MCG_AddRow);
+			}
 			if (!statuscategory.equals("")) {
 				Reporter.log("Select ("+statuscategory+")from Status Category");
-				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory, statuscategory);	
+				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory, statuscategory);
+				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
+			
 			if (!label.equals("")) {
 				Reporter.log("Enter Label");
 				sendKeys(attributeName_xpath, MCG_label, label);	

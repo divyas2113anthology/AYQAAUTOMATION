@@ -7,7 +7,7 @@ import or.OR;
 import processor.CommonSeleniumActions;
 
 public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
-	
+	public static String environment;
 	@Test(description="This Procedure is to perform some operation in 'Application Login' page")
 	public void FC_UserLogin_Input () throws Exception{
 		try {
@@ -19,14 +19,26 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		String password = parameterValuesArray[1];
 		String login = parameterValuesArray[2];
 		String forgotpin = parameterValuesArray[3];
+		environment = Runtimedataread("Instance");
+		System.out.println("Environment"+environment);
 		Reporter.log("Input Test Data was retrieved for 'Application Login' page");
-		
-		if (pin.equals("8KSJ2FD9G36")) {
+		if (environment.equalsIgnoreCase("USQA") && pin.equals("8KSJ2FD9G36")) {
+//			if (pin.equals("8KSJ2FD9G36") || pin.equals("N3M6633823N")) {
+			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
 			Thread.sleep(3000);
 			type(UL_PinField, pin);			
 						
-		}else if (!pin.equals("")) {
+		}
+		else if (environment.equalsIgnoreCase("UKQA") && pin.equals("8KSJ2FD9G36")) {
+//			if (pin.equals("8KSJ2FD9G36") || pin.equals("N3M6633823N")) {
+			System.out.println("sdfsdfsdfs");
+			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
+			Thread.sleep(3000);
+			type(UL_PinField, "N3M6633823N");			
+						
+		}
+		else if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin = Runtimedataread(pin);
 			Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");

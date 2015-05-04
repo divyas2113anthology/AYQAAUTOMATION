@@ -284,7 +284,7 @@ public class Processor {
 
 
 		public String getbrowser() throws Exception{
-			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			String browser = Runtimedataread("Browser");
 			String browsername = null;
 			switch(testbrowser.valueOf(browser.toLowerCase().trim())){			

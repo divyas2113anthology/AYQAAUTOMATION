@@ -21,7 +21,7 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 			String linktoclick = testdata[0];
 			String printdatatree = testdata[1];
 			String menulink = testdata[2];
-						
+			switchToFrameNameIdWebdriver("frmTreeMenu");			
 			if(!linktoclick.equals("")){
 				Reporter.log("Click on the Link"+linktoclick);
 				clickWebdriver(attributeName_xpath, ER_linktoclick +linktoclick+"')]");
@@ -31,9 +31,10 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 				Reporter.log("Perform the operation to click the Package as ["+menulink+"]");
 				String [] SplitPackage = menulink.split(";");
 				for (int i = 0; i < SplitPackage.length; i++) {
-					waitForElementPresentWebdriver(attributeName_xpath,"//*[text()='"+SplitPackage[i]+"']", "Page Name");
-					if (i== SplitPackage.length-1) {
-						clickWebdriver(attributeName_linktext, SplitPackage[i]);
+					
+					//waitForElementPresentWebdriver(attributeName_xpath,"//*[text()='"+SplitPackage[i]+"']", "Page Name");
+					if (i<= SplitPackage.length-1) {
+						clickWebdriver(attributeName_xpath, MCG_PackageTree+SplitPackage[i]+"')]");
 						waitForPageToLoad();
 					}else{
 						System.out.println(SplitPackage[i]);

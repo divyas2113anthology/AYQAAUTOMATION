@@ -42,7 +42,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 //						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 //					}
 //				}
-				//Malik
+				
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package : "+SplitPackage[i]);
 					if(i==0){
@@ -63,8 +63,13 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 					else if (i== SplitPackage.length-1) {
 						System.out.println("Verification");
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
-						clickWebdriver(attributeName_name, FD_AddItem);
-						waitForPageToLoad();
+						wait(3000);
+						
+						switchToFrameNameIdWebdriver("frameActions");
+						clickWebdriver(attributeName_xpath, FD_AddItem);
+						switchToDefaultContentWebdriver();
+						
+						//waitForPageToLoad();
 					}else{
 						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 					}
@@ -75,7 +80,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			switchToFrameNameIdWebdriver("frameIntfFieldDef");
 			if (!fieldname.equals("")) {
 				Reporter.log("Select the field Name as ["+fieldname+"]");
-				String[] FieldName = fieldname.split("_");
+				String[] FieldName = fieldname.split(";");
 				if (fieldname.contains("Check")) {
 					checkWebdriver(attributeName_xpath, "//font[text()='"+FieldName[0]+"']/preceding-sibling::input[@type='checkbox']");
 				}else if (fieldname.contains("Uncheck")) {
@@ -85,9 +90,10 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frameActions");
 			if (!itemaction.equals("")) {
+				
 				Reporter.log("Click the item action as ["+itemaction+"]");
 				if (itemaction.equalsIgnoreCase("Add Item")) {
-					clickWebdriver(attributeName_name, FD_AddItem);
+					clickWebdriver(attributeName_xpath, FD_AddItem);
 				}else if (itemaction.equalsIgnoreCase("Insert Item")) {
 					clickWebdriver(attributeName_name, FD_InsertItem);
 				}else if (itemaction.equalsIgnoreCase("Remove Item")) {
@@ -107,10 +113,11 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 					clickWebdriver(attributeName_name, FD_ShowCode);
 				}
 			}
+			switchToDefaultContentWebdriver();
 			if (!fieldnamelabel.equals("")) {
 	
 			}
-			switchToDefaultContentWebdriver();
+			
 			if (!saveback.equals("")) {
 				Reporter.log("Click the button as ["+saveback+"]");
 				if (saveback.equalsIgnoreCase("Save")) {

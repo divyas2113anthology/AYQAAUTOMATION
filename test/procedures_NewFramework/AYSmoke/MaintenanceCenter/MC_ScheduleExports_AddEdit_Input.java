@@ -26,6 +26,8 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		String enddate = testdata[9];
 		String testsavecancel = testdata[10];
 		String exportfilename = testdata[11];
+		String searchoption = testdata[12];
+		String queryname = testdata[13];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!exportdefinition.equals("")) {
 			Reporter.log("Step 1 - Select the Export Definition as ["+exportdefinition+"]");
@@ -34,6 +36,15 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 //			WebElement SelectValue = attributeNameValue(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 //			SelectValue.click();
 			clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
+		}
+		if(!searchoption.equals("")){ 
+			Reporter.log("Step 12 - Click on Search option as ["+searchoption+"]");
+			clickWebdriver(attributeName_xpath, "//input[contains(@id,'Query')]");
+		}
+		if(!queryname.equals("")){  
+			Reporter.log("Step 13 - Select query name as ["+queryname+"]");
+			//clickWebdriver(attributeName_xpath, "//input[contains(@id,'Query')]");
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_AppQueryName, queryname);
 		}
 		if (!exportfilename.equals("")) {
 			Reporter.log("Step 11 - Enter the Export file name as ["+exportfilename+"]");

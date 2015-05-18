@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -31,7 +32,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			}
 			if (!payment_status.equals("")) {
 				Reporter.log("Select the payment status as ["+payment_status+"]");
-				selectByVisibleTextWebdriver(attributeName_name, "pmtstatus", payment_status);
+				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus , payment_status);
 			}
 			if (!payment_amount_received.equals("")) {
 				Reporter.log("Enter the first name as ["+payment_amount_received+"]");
@@ -51,13 +52,18 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("close window")) {
-					clickWebdriver(attributeName_xpath, AS_CloseWindow);	
-					selectMainWindowWebdriver();
+			
+				//clickWebdriver(attributeName_xpath, AS_CloseWindow);
+				driver.close();
+				Thread.sleep(1000);
+				selectMainWindowWebdriver();
+					
 				}else if (button_to_click.equalsIgnoreCase("add")) {
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 					waitForPageToLoadWebdriver();
 				}
 			}
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

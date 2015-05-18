@@ -25,8 +25,10 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			String movetofolder = fpvdatarepo[3];
 			String rulename = fpvdatarepo[4];
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
+			
 			if (!add.equals("")) {
-				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
+				Reporter.log("Click on the add button");
+				clickWebdriver(attributeName_xpath, BR_Save);
 				
 			}
 			if (!delete.equals("")) {

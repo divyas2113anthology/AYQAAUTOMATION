@@ -39,6 +39,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			String targeturl = fpvdatarepo[16];
 			String targetemailtemplate = fpvdatarepo[17];
 			String savecancel = fpvdatarepo[18];
+			String verifygreystatus = fpvdatarepo[19];
+			String verifystatus = fpvdatarepo[20];
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!rulename.equals("")) {
 				Reporter.log("Step 1 - Type Rule Name as ("+rulename+")");
@@ -125,6 +127,22 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				else
 					clickWebdriver(attributeName_xpath, BR_Cancel);
 			}
+			
+			if (!verifygreystatus.equals("")) {
+					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
+					
+					//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
+					//verifyElementContainsTextWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
+				}
+			
+			if (!verifystatus.equals("")) {
+				Reporter.log("Verify the status is present or not");
+				clickWebdriver(attributeName_xpath, BR_TargetStatus);
+				verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
+				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
+				//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"'))]", verifystatus, verifystatus);
+				wait(3000);
+				}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

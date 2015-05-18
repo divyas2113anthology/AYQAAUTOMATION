@@ -166,6 +166,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!pin.equals("")) {
 				Reporter.log("Step 16 - Enter the PIN as ["+pin+"]");
+				clickWebdriver(attributeName_xpath, SAI_Pin);
 				sendKeys(attributeName_xpath, SAI_Pin, pin);
 			}
 			if (!applicantid.equals("")) {

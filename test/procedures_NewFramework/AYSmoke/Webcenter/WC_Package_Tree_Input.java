@@ -24,27 +24,35 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 //			driver.switchTo().frame("relative=up");
 //			driver.switchTo().frame("frmTreeMenu");\
 //			switchToFrameNameIdWebdriver("relative=up");
+			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmTreeMenu");
+			
 			if (!logoutmain.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to click the link as ["+logoutmain+"]");
-				clickWebdriver(attributeName_linktext, logoutmain);
+				clickWebdriver(attributeName_xpath, MCG_MainLogout+logoutmain+"')]");
+				waitForPageToLoadWebdriver();
 			}
 			if (!treepackage.equals("")) {
 				Reporter.log("Step 2 - Perform the operation to click the Package as ["+treepackage+"]");
 //				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
 				String [] SplitPackage = treepackage.split(";");
+				System.out.println("Length : "+SplitPackage.length);
+				System.out.println("Package1"+SplitPackage[0]);
+				System.out.println("Package1"+SplitPackage[1]);
 				for (int i = 0; i < SplitPackage.length; i++) {
-					writeConsole("Tree Package : "+SplitPackage[i]);
+					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
 						waitForPageToLoad();
 					}else{
 						System.out.println(SplitPackage[i]);
-						PackageSelection(SplitPackage[i], "1");
+						//PackageSelection(SplitPackage[i], "1");
+						PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
 						
 					}
 				}
 				ClosePackageSelection();
+				
 			}
 			switchToDefaultContentWebdriver();
 		} catch (Exception e) {

@@ -149,6 +149,9 @@ public static final String BR_TargetUrl = "//input[@name='TargetURL']";
 public static final String BR_TargetEmail = "//select[@name='EmailId']";
 public static final String BR_Save = "//img[@name='imageSave1']";
 public static final String BR_Cancel = "//img[@name='imageCancel']";
+public static final String BR_StatusGrey = "//select[@id='DocStatusID' and contains(@style,'Grey')]";
+public static final String BR_VerifyStatus = "//select[@id='DocStatusID']/option[contains(text(),'";  //Waived')]";
+//public static final String BR_VerifyStatus = "//option[contains(@style,'Grey') and [not(contains(text(),'"; 
 //#**********************************************************#
 //# Personal Information Page - PI
 //#**********************************************************#
@@ -237,6 +240,7 @@ public static final String AF_Check = "//input[@id='ptCheck1']";
 public static final String AF_FeeWaiver = "//input[@id='ptWaiver1']";
 public static final String AF_CreditCard = "//input[@id='ptCreditCard']";
 public static final String AF_PayContinue = "//img[@alt='pay and continue']";
+public static final String AF_PaymentStatus = "//select[@name='pmtstatus']";
 //#**********************************************************#
 //# Signature Page - SP
 //#*********************************************************#
@@ -1017,7 +1021,7 @@ public static final String AS_ApplicationFee = "//input[@name='chkAppFee']";
 public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
-public static final String AS_PrintApplicationBtn = "//span[contains(text(),'print application')]";
+public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window')]";
 public static final String AS_ViewApplication = "";
@@ -1419,17 +1423,18 @@ public static final String AW_Submit = "//a[contains(@href,'doApplicationSubmit'
 //#**********************************************************#
 //#	 Application - Application Manage Email Template  - Page
 //#**********************************************************#
-public static final String AMET_TemplateName = "//input[@name='EmailTempName']";
-public static final String AMET_Description = "//textarea[@name='EmailTempDesc']";
+public static final String AMET_TemplateName = "//input[contains(@name,'TempName')]";
+public static final String AMET_Description = "//textarea[contains(@name,'TempDesc')]";
 public static final String AMET_EmailSender = "//input[@name='EmailSender']";
 public static final String AMET_EmailFrom = "//input[@name='From']";
 public static final String AMET_Subject = "//input[@name='Subject']";
-public static final String AMET_Message = "//textarea[@name='Message']";
+public static final String AMET_Message = "//textarea[contains(@name,'Message')]";
 public static final String AMET_MailMergeSection = "//select[@name='SectionId']";
 public static final String AMET_MailMergeTag = "//select[@name='QuestionId']";
 public static final String AMET_QueryTag = "//textarea[@name='MailMerge']";
 public static final String AMET_CheckboxTemplate = "//td[a[text()='";
 public static final String AMET_FieldDefinition = "//a[@name='FieldDef']";
+public static final String AMET_Decision = "//select[@name= 'TempDecisionValue']";
 //#**********************************************************#
 //#	 Bridge - Cofigured Clients Input  - Page
 //#**********************************************************#
@@ -1471,7 +1476,7 @@ public static final String IR_MessageContent = "//font[@class='FormHeading']";
 //#**********************************************************#
 //#	 Webcenter - Field Definitions for Export - Page
 //#**********************************************************#
-public static final String FD_AddItem = "BtnAddField";
+public static final String FD_AddItem = "//img[@name='BtnAddField']";
 public static final String FD_InsertItem = "BtnInsertField";
 public static final String FD_RemoveItem = "BtnRemoveField";
 public static final String FD_MoveUp = "BtnMoveUpField";
@@ -1560,14 +1565,14 @@ public static final String QA_ResetBtn = "//img[@alt='Reset']";
 //#**********************************************************#
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
-
-public static final String MQ_FieldName = "//select[@name='txtField0' and @class='FormFields']"; //"//select[@name='txtField']";
+public static final String MQ_AppQueryName = "//select[@name='selQuery']";
+public static final String MQ_FieldName = "//select[@name='txtField0']";   
 public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
 public static final String MQ_AppInProgress = "//input[@name='SubmittedApps' and @value='No']";
 //public static final String MQ_QuerySave = "//tr[@class='FormHeading']//td/input[@name='topsavebutton']";
 public static final String MQ_QuerySave = "//tr[@class='FormHeading']//img[contains(@name,'topsave')]";
 public static final String MQ_QuerySave1 = "//tr[@class='FormHeading']//input[contains(@name,'topsave')]";
-public static final String MQ_Operator = "//select[@name='txtOperator0' and @class='FormFields']";//"//select[contains(@name,'txtOperator')]";
+public static final String MQ_Operator = "//select[@name='txtOperator0']";
 public static final String MQ_Value = "//input[contains(@name,'txtValue')]";
 public static final String MQ_SaveAndRun = "topsaverunbutton";
 public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset']/li";
@@ -1580,6 +1585,8 @@ public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; 
 public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
+public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
+public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
 
 //#**********************************************************#
 //#	 Webcenter - Configure Downloadable Forms - Page
@@ -1703,7 +1710,7 @@ public static final String MML_UNameVerify = "//table[@id='userSearchResultsTabl
 
 public static final String AID_Display_Check= "//td[font[contains(text(),'";
 public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
-public static final String AID_save_button="//img[contains(@src,'save')]";
+public static final String AID_save_button="//img[contains(@src,'save_small')]";
 public static final String AID_pagename="//table[@id='Table1']/tbody/tr/td/font"; //[contains(text(),'Application')]";
 public static final String AID_message="//div[@id='divAyConfirmation']/font";
 public static final String AID_RecPlus = "//img[contains(@src,'plus')]";
@@ -1762,24 +1769,36 @@ public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@
 //#**********************************************************#
 //# Webcenter - Manage Choice Groups - MCG
 //#**********************************************************#
-public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'Enrollment-DT')]";
+public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
 public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'6')]";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
+public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]";
+public static final String MCG_Active = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@type='checkbox']]";
+public static final String MCG_DeleteCheck = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@name='chkDelete']]";
+public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelectedNode') and contains(text(),'";   //Enrollment')]";
 
 //#**********************************************************#
 //# Webcenter - Enrollment - ER
 //#**********************************************************#
 public static final String ER_linktoclick = "//a[contains(text(),'"; //Enrollment-DT Module Home')]";
 public static final String AY_ConfigureStatusConfirmationText = "//div[@class='AYConfirmationText']/font";
+
 //#**********************************************************#
 //# Webcenter - Enrollment DT Fee - ER
 //#**********************************************************#
 public static final String EDT_Page = "//font[contains(text(),'Search Results')]";
 public static final String EDT_PaymentStatus = "//select[@id='pmtstatus']";
+public static final String EDT_VerifyPaymentStatus = "//select[@id='pmtstatus']//option[contains(text(),'";   //ManageQueries')]";
 public static final String EDT_ButtontoClick = "//img[contains(@src,'"; //close_window')]";
 public static final String EDT_PageName = "//td[@class='FormHeading']/font";
+
+
+//#**********************************************************#
+//# Webcenter - Enrollment Detail Page- ED
+//#**********************************************************#
+public static final String ED_Buttons = "//span[contains(text(),'Enrollments-DT fee')]";
 //#**********************************************************#
 //# Webcenter - Recommendation Details Page - RD
 //#**********************************************************#
@@ -1823,6 +1842,8 @@ public static final String AS_SupportingDocCloseWindow = "//img[contains(@src,'"
 public static final String AS_TestScorepagename = "//font[contains(text(),'Manage Test Scores')]";
 public static final String AS_TranscriptStatus = "//select[@id='Select1']";
 public static final String AS_SupportingDocumentStatus = "//select[@id='Status']";
+public static final String AS_ApplicantDecision="//font[@class='BasePageFont' and contains(text(),'";     //Received')]";
+public static final String AS_PrintCloseWindow = "//img[contains(@src,'";    //print')]";
 //#**********************************************************#
 //# Maintenance center - Manage User - MS
 //#**********************************************************#
@@ -1838,10 +1859,29 @@ public static final String MS_ConfirmationText = "//div[@class='AYConfirmationTe
 public static final String MS_NewPassword = "//input[@name='Password']";
 public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
 public static final String MS_Submit = "//input[contains(@src,'submit')]";
-
-
-
-
+//#**********************************************************#
+//# Webcenter - Add Recommendation - AR
+//#**********************************************************#
+public static final String AR_FirstName = "//input[@id='firstname']";
+public static final String AR_LastName = "//input[@id='lastname']";
+public static final String AR_Address1 = "//input[@id='address1']";
+public static final String AR_Address2 = "//input[@id='address2']";
+public static final String AR_City = "//input[@id='city']";
+public static final String AR_State = "//select[@id='state']";
+public static final String AR_PostalCode = "//input[@id='zip']";
+public static final String AR_Country = "//select[@id='country']";
+public static final String AR_Phone = "//input[@id='phone']";
+public static final String AR_EmailAddress = "//input[@id='email']";
+public static final String AR_Title = "//input[@id='title']";
+public static final String AR_Employer = "//input[@id='employer']";
+public static final String AR_RelationShip = "//input[@id='employer']";
+public static final String AR_RecommendationType = "//select[@id='field1']";
+public static final String AR_Save = "//img[contains(@src,'save_small')]";
+//#**********************************************************#
+//# Webcenter - Recommendation DT Page- RD
+//#**********************************************************#
+public static final String RD_VerifyStatus = "//a[contains(text(),'";  //Not Received')]";
+public static final String RD_CloseWindow = "//img[contains(@src,'close_window')]";
 }
 
 

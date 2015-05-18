@@ -24,16 +24,18 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			String checkchoicegroup = testdata[3];
 			String configurestatuslabellink =testdata[4];
 			String adddeleteexportdynamiclist =testdata[5];
-			
+			switchToFrameNameIdWebdriver("frmContent");
 			if(!configurestatuslabellink.equals("")){
 				Reporter.log("Click on the Link"+configurestatuslabellink);
-				clickWebdriver(attributeName_xpath, MCG_ConfigureStatusLabel);
+				
+				waitForElementPresentWebdriver(attributeName_xpath,MCG_ConfigureStatusLabel+configurestatuslabellink+"')]", configurestatuslabellink);
+				clickWebdriver(attributeName_xpath, MCG_ConfigureStatusLabel+configurestatuslabellink+"')]");
 			}
 			if(!linktoclick.equals("")){
 				Reporter.log("Click on the Link"+linktoclick);
 				clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
 			}
-				
+			switchToDefaultContentWebdriver();	
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

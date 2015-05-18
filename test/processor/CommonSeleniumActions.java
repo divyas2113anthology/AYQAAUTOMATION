@@ -2764,7 +2764,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		writeConsole("Webdriver uncheck["+attributename+", "+attributevalue+"]");
 		WebElement uncheck = attributeNameValue(attributename, attributevalue);
 		uncheck.click();
-		if (uncheck.isSelected()) {
+		boolean status= uncheck.isSelected();
+		System.out.println(status);
+		if (status) {
 			uncheck.click();
 		}			
 	}
@@ -3453,9 +3455,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void verifyElementNotContainsTextWebdriver(String attributename,String attributevalue,String expectedtext,String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
 		writeConsole("Element["+attributename+", "+attributevalue+"]");
-		System.out.println("aaaa");
+		
 		try {
-			System.out.println("Malik");
+			
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
 			System.out.println("bbbbb");
@@ -4502,7 +4504,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		System.out.println(section);
 		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
-		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')])["+index+"]/@onclick");
+//		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')])["+index+"]/@onclick");
+		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");
@@ -4514,6 +4517,25 @@ public class CommonSeleniumActions extends Processor implements OR {
 			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
 			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 		}
+	}
+	public void PackageSelectionWebdriver(String attribut_name, String section,String index) throws Exception {
+		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
+		System.out.println(section);
+		waitForElementPresentWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]", section);
+		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		clickWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]");
+//		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
+//		writeConsole("Onclick Value for Section "+seconclickName);
+//		String[] secNamespl =seconclickName.split("\\(");
+//		String[] secnodespl = secNamespl[1].split("\\)");
+//		String secnode = secnodespl[0];
+//		writeConsole("Node Value for Section "+secnode);
+//		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+//		writeConsole("Plus OuterHTML Value "+nodePlus);
+//		if (nodePlus.contains("Click to expand")) {
+//			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
+//			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
+//		}
 	}
 	public void PackageSelectionFieldDefinition(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");

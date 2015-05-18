@@ -35,7 +35,8 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			String ExportName = exportname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!exportname.equals("")) {
 				Reporter.log("Step 1 - Enter the Import as ["+ExportName+"]");
-				if(exportname.equals("TestExport")){
+				if(exportname.equals("TestExportCustomLabel")){
+					System.out.println("Inside if");
 					waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
 					sendKeys(attributeName_name, "txtName", exportname);
 				}

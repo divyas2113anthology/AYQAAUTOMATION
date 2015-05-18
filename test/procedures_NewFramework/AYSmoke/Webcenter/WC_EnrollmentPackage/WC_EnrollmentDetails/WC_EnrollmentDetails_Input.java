@@ -22,6 +22,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 			String livein = testdata[5];
 			String mychoice = testdata[6];
 			String buttons = testdata[7];
+			String closeproceed = testdata[8];
 			Reporter.log("Input Test Data was retrieved for 'Enrollment Details' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!subscriptionstatus.equals("")) {
@@ -62,16 +63,22 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 				
 			}
 			
+			if(!buttons.equals("")){
+				Reporter.log("Click the button as ["+buttons+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, ED_Buttons, buttons);
+				clickWebdriverWithCoordinates(attributeName_xpath, ED_Buttons);
+				
+			}
 			
-			if (!buttons.equals("")) {
-				Reporter.log("Step 7 - Click the button as ["+buttons+"]");				
-				if (buttons.equalsIgnoreCase("proceed to submission")) {
+			if (!closeproceed.equals("")) {
+				Reporter.log("Click the button as ["+closeproceed+"]");				
+				if (closeproceed.equalsIgnoreCase("proceed to submission")) {
 //					clickWebdriver(attributeName_xpath, EPI_ProToSubBtn);
 					waitForElementPresentWebdriver(attributeName_xpath, EPI_ProToSubBtn, "Proceed Submission");
 					clickWebdriverWithCoordinates(attributeName_xpath, EPI_ProToSubBtn);
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
 //					waitForPageToLoad();
-				}else if (buttons.equalsIgnoreCase("Close Window")) {
+				}else if (closeproceed.equalsIgnoreCase("Close Window")) {
 					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
 					selectMainWindowWebdriver();
 				}

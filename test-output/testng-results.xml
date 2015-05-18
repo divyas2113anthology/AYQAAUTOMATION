@@ -5,13 +5,13 @@
       <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/Selenium/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)]]>
+      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="393" started-at="2015-04-13T12:41:28Z" finished-at="2015-04-13T12:41:28Z">
+  <suite name="Default suite" duration-ms="314" started-at="2015-05-11T13:38:00Z" finished-at="2015-05-11T13:38:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="393" started-at="2015-04-13T12:41:28Z" finished-at="2015-04-13T12:41:28Z">
-      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="startseleniumserver" is-config="true" duration-ms="11409" started-at="2015-04-13T08:41:17Z" finished-at="2015-04-13T08:41:28Z">
+    <test name="Default test" duration-ms="314" started-at="2015-05-11T13:38:00Z" finished-at="2015-05-11T13:38:00Z">
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780]" name="startseleniumserver" is-config="true" duration-ms="5361" started-at="2015-05-11T09:37:55Z" finished-at="2015-05-11T09:38:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@585a96]]>
+                <![CDATA[org.testng.TestRunner@141cf89]]>
               </value>
             </param>
           </params>
@@ -38,15 +38,15 @@
               <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/Selenium/InputTestdata.xls)]]>
             </line>
             <line>
-              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/Selenium/InputTestdata.xls)]]>
+              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:28Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-05-11T09:38:00Z" finished-at="2015-05-11T09:38:00Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at processor.Processor.datagenerator(Processor.java:461)
+	at processor.Processor.datagenerator(Processor.java:467)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="failurescreenshot" is-config="true" duration-ms="359" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:28Z">
+        <test-method status="SKIP" signature="WC_EditEmailTemplates_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780]" name="WC_EditEmailTemplates_Input" duration-ms="0" started-at="2015-05-11T09:38:00Z" description="This Procedure is to perform some input operation in &#039;Edit Email Template&#039; page" finished-at="2015-05-11T09:38:00Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_EditEmailTemplates_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780]" name="failurescreenshot" is-config="true" duration-ms="298" started-at="2015-05-11T09:38:00Z" finished-at="2015-05-11T09:38:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=WC_AddInputCriteria_Input status=SKIP method=WC_AddInputCriteria_Input.WC_AddInputCriteria_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]]>
+                <![CDATA[[TestResult name=WC_EditEmailTemplates_Input status=SKIP method=WC_EditEmailTemplates_Input.WC_EditEmailTemplates_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_EditEmailTemplates_Input_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@585a96]]>
+                <![CDATA[org.testng.TestRunner@141cf89]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="SKIP" signature="WC_AddInputCriteria_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="WC_AddInputCriteria_Input" duration-ms="0" started-at="2015-04-13T08:41:28Z" description="This Procedure is to perform some Operation in &#039;Add Input Criteria&#039; page" finished-at="2015-04-13T08:41:28Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG]]>
-            </line>
-            <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_AddInputCriteria_Input_0.PNG' height='200' width='200'></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- WC_AddInputCriteria_Input -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input@1e4b53d]" name="shutdownseleniumserver" is-config="true" duration-ms="359" started-at="2015-04-13T08:41:28Z" finished-at="2015-04-13T08:41:29Z">
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input@1a2a780]" name="shutdownseleniumserver" is-config="true" duration-ms="672" started-at="2015-05-11T09:38:00Z" finished-at="2015-05-11T09:38:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@585a96]]>
+                <![CDATA[org.testng.TestRunner@141cf89]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries.WC_AddInputCriteria_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_EditEmailTemplates_Input -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,8 +1,17 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries;
 
 import or.OR;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+
+
+
 
 
 import processor.CommonSeleniumActions;
@@ -15,17 +24,17 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Add Input Criteria' page");
-			String[]  applicantwelidatarepo = datacontainer;
-			String backsaverun = applicantwelidatarepo[0];
-			String appsubmitted = applicantwelidatarepo[1];
-			String appinprogress = applicantwelidatarepo[2];
-			//String datatree = applicantwelidatarepo[0];
-			String fieldname = applicantwelidatarepo[3];
-			String operator = applicantwelidatarepo[4];
-			String value = applicantwelidatarepo[5];
+			String[] applicantwelidatarepo = datacontainer;
+			String applicationstatus = applicantwelidatarepo[0];
+			String fieldname = applicantwelidatarepo[1];
+			String operator = applicantwelidatarepo[2];
+			String value = applicantwelidatarepo[3];
+			String verifyvalue = applicantwelidatarepo[4];
+			String adddeleterow = applicantwelidatarepo[5];
 			String groups = applicantwelidatarepo[6];
-			//String button = applicantwelidatarepo[4];
-			String add = applicantwelidatarepo[7];
+			String groupvalue = applicantwelidatarepo[7];
+			String actionhistory = applicantwelidatarepo[8];
+			String buttonstoclick = applicantwelidatarepo[9];
 			Reporter.log("Input Test Data was retrieved for 'Add Input Criteria' page");
 //			if (!datatree.equals("")) {
 //				Reporter.log("Step 1 - Perform the operation to click the tree as ["+datatree+"]");
@@ -38,7 +47,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 //				}
 //			}
 			if (!fieldname.equals("")) {
-				Reporter.log("Step 2 - Select the field name as ["+fieldname+"]");
+				Reporter.log("Select the field name as ["+fieldname+"]");
 //				select(MQ_FieldName, "regexp:"+fieldname);
 //				if(add.equalsIgnoreCase("Add"))
 //				{
@@ -46,49 +55,61 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 //					selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='txtField0' and @class='FormFields']", "    --"+fieldname);
 //				}
 //				else{
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
-				selectByVisibleTextWebdriver(attributeName_xpath, MQ_FieldName, "    --"+fieldname);
-				Thread.sleep(3000);
+				clickWebdriver(attributeName_xpath, MQ_FieldName);
+				waitForElementPresentWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
+				//clickWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]");
+				selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
+				wait(3000);
+//				Select sel = new Select(driver.findElement(By.xpath("//select[@name='txtField0']")));
+//				sel.selectByVisibleText("--Payment Status");
+				
+//				WebElement element = driver.findElement(By.xpath("//select[@name='txtField0']//option[contains(text(),'Payment Status')]"));
+//				JavascriptExecutor executor = (JavascriptExecutor)driver;
+//				executor.executeScript("arguments[0].click();", element);	
 				//}
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator, operator);
+				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator+operator+"')]", operator);
 				Thread.sleep(5000);
 			}
 			if (!value.equals("")) {
-				Reporter.log("Step 4 - Enter the value as ["+value+"]");
-				if(value.equalsIgnoreCase("List")){
+				if (value.equalsIgnoreCase("List")) {
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					System.out.println("Select the value");
 					Thread.sleep(3000);
-					clickWebdriver(attributeName_xpath, MQ_MultiSelectOption);
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus);
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
 				else
 					sendKeys(attributeName_xpath, MQ_Value, value);
 			}
-			if (!backsaverun.equals("")) {
-				Reporter.log("Step 3 - Click button as ["+backsaverun+"]");
-				if (backsaverun.equalsIgnoreCase("Back")) {
+//			if (!fieldname.equals("")) {
+//				Reporter.log("Verify the value ["+fieldname+"]");
+//				waitForElementPresentWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus, fieldname);
+//				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus, fieldname, fieldname);
+//			}
+			if (!buttonstoclick.equals("")) {
+				Reporter.log("Step 3 - Click button as ["+buttonstoclick+"]");
+				if (buttonstoclick.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("Save")) {
+				}else if (buttonstoclick.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
 					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("save and run")) {
+				}else if (buttonstoclick.equalsIgnoreCase("save and run")) {
 					clickWebdriver(attributeName_name, MQ_SaveAndRun);
 					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("run")) {
+				}else if (buttonstoclick.equalsIgnoreCase("run")) {
 					clickWebdriver(attributeName_xpath, RPT_RunBtn);
 					waitForPageToLoadWebdriver();
 				}
 				
 			}
-			if (!add.equals("")) {
+			if (!adddeleterow.equals("")) {
 				Reporter.log("Step 5 - Click on Add Row");
 				//sendKeys(attributeName_xpath, MQ_Value, value);
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_AddRow, add);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_AddRow, adddeleterow);
 				clickWebdriver(attributeName_xpath, MQ_AddRow);
 				
 			}

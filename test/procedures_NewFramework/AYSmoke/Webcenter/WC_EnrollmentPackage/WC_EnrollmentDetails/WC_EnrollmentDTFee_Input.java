@@ -19,17 +19,21 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			
 			String[] testdata = datacontainer;
 			String paymenttype = testdata[0];
-			String paymentstatus = testdata[1];
-			String paymentamountreceived = testdata[2];
-			String paymentreceiveddate = testdata[3];
-			String backcloseprintsave =testdata[4];
+			String verifypaymentstatus = testdata[1];
+			String paymentstatus = testdata[2];
+			String paymentamountreceived = testdata[3];
+			String paymentreceiveddate = testdata[4];
+			String backcloseprintsave = testdata[5];
 						
-			if(!paymentstatus.equals("")){
-				Reporter.log("Verify("+paymentstatus+")is present");
-				waitForElementPresentWebdriver(attributeName_xpath, EDT_PaymentStatus, paymentstatus);
-				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_PaymentStatus, paymentstatus, paymentstatus);
+			if(!verifypaymentstatus.equals("")){
+				Reporter.log("Verify("+verifypaymentstatus+")is present");
+				waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus);
+				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus, verifypaymentstatus+verifypaymentstatus+"')]", verifypaymentstatus);
 			}
-			
+			if (!paymentstatus.equals("")) {
+				Reporter.log("Select the payment status as ["+paymentstatus+"]");
+				selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus , paymentstatus);
+			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");

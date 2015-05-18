@@ -29,8 +29,14 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			String mailmergetag = fpvdatarepo[7];
 			String querytag = fpvdatarepo[8];
 			String savecancel = fpvdatarepo[9];
-			
+			String decision = fpvdatarepo[10];
+						
 			Reporter.log("Verify Test Data was retrieved for 'Edit Email Template' page");
+			if (!decision.equals("")) {
+				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
+				//sendKeys(attributeName_xpath, AMET_TemplateName, templatename);
+				selectByVisibleTextWebdriver(attributeName_xpath, AMET_Decision, decision);
+			}
 			if (!templatename.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				sendKeys(attributeName_xpath, AMET_TemplateName, templatename);
@@ -58,14 +64,19 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			if (!mailmergesection.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				//sendKeys(attributeName_xpath, AMET_MailMergeSection, mailmergesection);
-				select(AMET_MailMergeSection, mailmergesection);
+				selectByVisibleTextWebdriver(attributeName_xpath , AMET_MailMergeSection, mailmergesection);
+				//select(AMET_MailMergeSection, mailmergesection);
 			}
 			if (!mailmergetag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				select(AMET_MailMergeTag, mailmergetag);
+				//select(AMET_MailMergeTag, mailmergetag);
+				selectByVisibleTextWebdriver(attributeName_xpath, AMET_MailMergeTag, mailmergetag);
+				
 			}
 			if (!querytag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				wait(1000);
+				System.out.println("aaaaaaaaaaaaaaaaaaaaa");
 				String query=selenium.getValue(AMET_QueryTag);
 				System.out.println(query);
 				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");

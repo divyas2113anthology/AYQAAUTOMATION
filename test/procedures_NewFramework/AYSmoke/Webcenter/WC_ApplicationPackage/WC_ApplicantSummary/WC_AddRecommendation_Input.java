@@ -69,7 +69,7 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 			}
 			if (!country.equals("")) {
 				Reporter.log("Select ("+country+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, AR_State, country);
+				selectByVisibleTextWebdriver(attributeName_xpath, AR_Country, country);
 			}
 			if(!phone.equals("")){
 				Reporter.log("Enter the Phone");
@@ -103,7 +103,9 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				Reporter.log("Click on Save");
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Save , saveclose);   
 				clickWebdriver(attributeName_xpath, AR_Save);
-				driver.close();
+				recentPopupCloseWebdriver();
+				//recentPopupCloseSelectSecondWebdriver();
+				
 			}
 			
 		

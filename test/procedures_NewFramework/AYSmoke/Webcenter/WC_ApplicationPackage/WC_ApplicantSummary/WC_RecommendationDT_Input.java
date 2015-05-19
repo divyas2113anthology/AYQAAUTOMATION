@@ -17,7 +17,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Recommendation DT'Page");
-			
+			System.out.println("Recommendation procedure");
 			String[] testdata = datacontainer;
 			String editprofile = testdata[0];
 			String online = testdata[1];
@@ -25,8 +25,9 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			String status = testdata[3];
 			String verifystatus = testdata[4];
 			String closewindow = testdata[5];
-						
+			//recentPopupSelect_without_window_nameWebdriver();
 			if(!verifystatus.equals("")){
+				System.out.println("Verification");
 				Reporter.log("Verify("+verifystatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, RD_VerifyStatus+verifystatus+"')]", verifystatus);
 				verifyElementContainsTextWebdriver(attributeName_xpath, RD_VerifyStatus+verifystatus+"')]", verifystatus, verifystatus);
@@ -34,7 +35,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			}
 			if(!status.equals("")){
 				Reporter.log("Click on the Status"+status);
-				clickWebdriver(attributeName_xpath, RD_VerifyStatus);
+				clickWebdriver(attributeName_xpath, RD_VerifyStatus+verifystatus+"')]");
 			}
 			if(!closewindow.equals("")){
 				Reporter.log("Click on the Button"+closewindow);

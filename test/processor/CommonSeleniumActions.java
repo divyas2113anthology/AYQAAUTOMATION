@@ -4661,6 +4661,34 @@ public class CommonSeleniumActions extends Processor implements OR {
 			Reporter.log("Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"] was Found in the Table ");
 		}		
 	}
+	public void recentPopupCloseSelectSecondWebdriver() throws Exception {								
+		Reporter.log("Proceed to Close All Opened Pop Ups");		
+//		String mainwindow = driver.getWindowHandle();		
+//		getWindowHandle();		
+//		writeConsole("Webdriver Main Window["+mainwindow+"]");		
+//		Thread.sleep(2000);		
+//		driver.switchTo().window(mainwindow);		
+		selectMainWindowWebdriver();		
+		writeConsole("Webdriver Main Window["+mainwindow+"]");		
+//		Set<String> popwindow = driver.getWindowHandles();		
+//		Iterator<String> it = popwindow.iterator();		
+		Iterator<String> popwindow = driver.getWindowHandles().iterator();		
+		while (popwindow.hasNext()) {		
+			//waitForMultiplePopupWebdriver();	
+			String window = popwindow.next();	
+//			writeConsole("Webdriver Switch To Window["+window+"]");	
+//			driver.switchTo().window(window);	
+			if (!mainwindow.equals(window)) {	
+				writeConsole("Webdriver Switch To Pop-up Window["+window+"]");
+				driver.switchTo().window(window);
+				Thread.sleep(1000);
+				closeWindowWebdriver();
+				window = popwindow.next();
+				driver.switchTo().window(window);
+			} 	
+		}		
+				
+	}			
 
 
 }

@@ -25,7 +25,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			String status = testdata[3];
 			String verifystatus = testdata[4];
 			String closewindow = testdata[5];
-			//recentPopupSelect_without_window_nameWebdriver();
+			recentPopupSelect_without_window_nameWebdriver();
 			if(!verifystatus.equals("")){
 				System.out.println("Verification");
 				Reporter.log("Verify("+verifystatus+")is present");
@@ -35,11 +35,13 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			}
 			if(!status.equals("")){
 				Reporter.log("Click on the Status"+status);
-				clickWebdriver(attributeName_xpath, RD_VerifyStatus+verifystatus+"')]");
+				waitForElementPresentWebdriver(attributeName_xpath, RD_VerifyStatus+status+"')]", status);
+				clickWebdriver(attributeName_xpath, RD_VerifyStatus+status+"')]");
 			}
 			if(!closewindow.equals("")){
 				Reporter.log("Click on the Button"+closewindow);
 				clickWebdriver(attributeName_xpath, RD_CloseWindow);
+				recentPopupClose();
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

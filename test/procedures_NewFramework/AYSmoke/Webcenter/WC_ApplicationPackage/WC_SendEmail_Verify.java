@@ -17,6 +17,13 @@ public class WC_SendEmail_Verify extends CommonSeleniumActions implements OR {
 			String[]  fpvdatarepo = datacontainer;
 			String successmessage = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
+			
+			/*String host = "outlook.office365.com";// change accordingly
+		    String mailStoreType = "pop3";
+		    String username = "emtqaaccount@hobsons.com";// change accordingly
+		    String password = "Hobsons22!";// change accordingly
+*/
+		      
 			Reporter.log("Verify Test Data was retrieved for 'Send Email' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
@@ -29,15 +36,16 @@ public class WC_SendEmail_Verify extends CommonSeleniumActions implements OR {
 				waitForText(pagename, pagename);
 				verifyTextPresent(pagename);
 			}
+			//CheckingMails.check(host, mailStoreType, username, password);
+			Runtime.getRuntime().exec("CheckingMails.java");
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
 		//endExecutionOrder(j);
 //		Reporter.log("##########End of Execution Order ["+j+"]##########");
 	}
-
+	
 }
-
 
 
 

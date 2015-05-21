@@ -22,13 +22,20 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 			String hour = testdata[2];
 			String minutes = testdata[3];
 			String saveclosewindow = testdata[4];
-			
-			
-			if(!status.equals("")){
-				Reporter.log("Verify("+status+")is present");
-				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, status);
-				verifyElementContainsTextWebdriver(attributeName_xpath, RUS_Status, status, status);
+			String verifystatus = testdata[5];
+			recentPopupSelect_without_window_nameWebdriver();
+			if(!verifystatus.equals("")){
+				Reporter.log("Verify("+verifystatus+")is present");
+				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, verifystatus);
+				verifyElementContainsTextWebdriver(attributeName_xpath, RUS_Status, status, verifystatus);
 			}
+			if(!status.equals("")){
+				Reporter.log("Select the Status("+status+")");
+				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, status);
+				selectByVisibleTextWebdriver(attributeName_xpath, RUS_Status, status);
+
+			}	
+			
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");

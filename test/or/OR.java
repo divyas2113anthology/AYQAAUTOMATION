@@ -1881,7 +1881,17 @@ public static final String AR_Save = "//img[contains(@src,'save_small')]";
 //# Webcenter - Recommendation DT Page- RD
 //#**********************************************************#
 public static final String RD_VerifyStatus = "//a[contains(text(),'";  //Not Received')]";
+
 public static final String RD_CloseWindow = "//img[contains(@src,'close_window')]";
+//#**********************************************************#
+//# Webcenter - Application -Email Template -Add Filter - ET
+//#**********************************************************#
+public static final String ET_FilterName = "//input[@name='txtName']";
+public static final String ET_Description = "//textarea[@class='FormFields']";
+public static final String ET_FieldName = "//select[@name='txtField0']";
+public static final String ET_Operator = "//select[@name='txtOperator0']";
+public static final String ET_Value = "//button[contains(@class,'ui-multiselect')]";
+public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_small')]";
 }
 
 

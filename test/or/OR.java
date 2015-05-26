@@ -424,6 +424,11 @@ public static final String MCL_PackageName = "link=Application for QA Automation
 
 public static final String MCL_SaveModbutton = "//img[contains(@src,'admin_save_small')]";
 
+//# Manage RA Accounts
+public static final String MCL_ClickRAName = "//a[contains(text(),'";    //TestRAaccount')]";
+public static final String MCL_addprintdelete = "//img[contains(@src,'";    //add')]";
+public static final String MCL_VerifyValue = "//span[contains(text(),'";   //TestingRA')]";
+
 //#**********************************************************#
 //*************************************************************************************
 //
@@ -1606,6 +1611,9 @@ public static final String CDT_HtmlEditorBtn = "btnHtmlEditor";
 public static final String CDT_TextArea = "DynamicText";
 public static final String CDT_PreviewBtn = "//img[contains(@src,'preview_small')]";
 public static final String CDT_UndoBtn = "//img[contains(@src,'undo_small')]";
+public static final String CDT_CreateEditText ="//td[contains(text(),'";//Application Post Submission Home')]/following-sibling::td/a[contains(text(),'Text')]";
+public static final String CDT_Filter = "//img[contains(@src,'";    //plusfilter')]";
+public static final String CDT_FilterName = "//a[contains(text(),'";   //TestFilter')]";
 //#**********************************************************#
 //#	 Prospect - Information Request - Page
 //#**********************************************************#

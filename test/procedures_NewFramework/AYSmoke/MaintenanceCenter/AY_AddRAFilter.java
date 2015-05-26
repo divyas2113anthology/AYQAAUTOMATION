@@ -48,7 +48,11 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
 				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_Value, value);
+				clickWebdriver(attributeName_xpath, ET_Value);
+				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
+				//clickWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				
 			}
 			if(!savecancel.equals("")){
 				Reporter.log("Click on the Button"+savecancel);
@@ -57,7 +61,8 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			
 			if(!verifyvalue.equals("")){
 				Reporter.log("Verify"+savecancel);
-				waitForElementPresentWebdriverWait(attributeName_xpath, ET_Value, verifyvalue);
+				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
+				clickWebdriver(attributeName_xpath, ET_Value);
 				verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+verifyvalue+"')]", verifyvalue, verifyvalue);
 			}		
 			

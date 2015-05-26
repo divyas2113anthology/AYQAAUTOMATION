@@ -428,6 +428,7 @@ public static final String MCL_SaveModbutton = "//img[contains(@src,'admin_save_
 public static final String MCL_ClickRAName = "//a[contains(text(),'";    //TestRAaccount')]";
 public static final String MCL_addprintdelete = "//img[contains(@src,'";    //add')]";
 public static final String MCL_VerifyValue = "//span[contains(text(),'";   //TestingRA')]";
+public static final String MCL_CheckValue = "//input[@title='";    //TestingRA']";
 
 //#**********************************************************#
 //*************************************************************************************

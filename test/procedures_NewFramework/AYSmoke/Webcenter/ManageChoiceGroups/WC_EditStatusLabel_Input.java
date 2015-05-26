@@ -65,7 +65,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				if (savecanceladdrow.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
 					clickWebdriver(attributeName_xpath, AID_save_button);
-					wait(2000);
+					waitForPageToLoadWebdriver();
 					}
 			}
 			switchToDefaultContentWebdriver();	

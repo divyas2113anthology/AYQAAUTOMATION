@@ -17,6 +17,7 @@ public class WC_QuickAdd_Verify extends CommonSeleniumActions implements OR {
 			String[]  fpvdatarepo = datacontainer;
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
+			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Quick Add' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -27,6 +28,11 @@ public class WC_QuickAdd_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				waitForElementPresentWebdriver(attributeName_xpath, BP_PageName, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, BP_PageName, pagename, "Page Name for Manage Users");
+			}
+			if (!verifyui.equals("")) {
+				Reporter.log("Step 3 - Verify its navigate to ("+verifyui+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, QA_PaymentStatus, verifyui);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QA_PaymentStatus, verifyui, verifyui);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -3,6 +3,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_RecommendationPackage;
 
 import or.OR;
 
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -39,7 +40,10 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");
-			}	
+				
+			}
+			recentOpenedPopupSelectWebdriver("Parent");
+			System.out.println("Switch to default contents");
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

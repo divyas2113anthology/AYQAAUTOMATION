@@ -56,6 +56,7 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 			if (!submit.equals("")) {
 				Reporter.log("Click on the submit button");
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+				waitForPageToLoadWebdriver();
 			}
 
 

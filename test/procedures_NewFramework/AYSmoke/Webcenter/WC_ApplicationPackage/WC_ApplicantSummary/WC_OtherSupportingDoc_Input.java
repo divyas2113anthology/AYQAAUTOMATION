@@ -25,11 +25,17 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			String saveclosewindow = testdata[4];
 									
 			Reporter.log("Input Test Data was retrieved for 'Supporting Documents' Page");
-			
+			if(!supdocumentname.equals("")){
+				Reporter.log("Verify("+supdocumentname+")is present");
+				waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentName, supdocumentname);
+				selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentName, supdocumentname);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
+			}
 			if(!status.equals("")){
 				Reporter.log("Verify("+status+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status);
-				verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
+				selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
 			}
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);

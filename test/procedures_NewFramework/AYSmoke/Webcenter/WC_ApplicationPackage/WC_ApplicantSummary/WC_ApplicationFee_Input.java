@@ -48,6 +48,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					waitForPageToLoadWebdriver();
+					recentPopupCloseWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();

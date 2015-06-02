@@ -30,9 +30,10 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 			}
 		}
 		if (!applicantclick.equals("")) {
-			String ApplicantFirstName = Runtimedataread(applicantclick);
-			Reporter.log("Step 2 - Click on Rule name ["+ApplicantFirstName+"]");
-			clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ApplicantFirstName+"')]");
+			//String ApplicantFirstName = Runtimedataread(applicantclick);
+			Reporter.log("Step 2 - Click on Rule name ["+applicantclick+"]");
+			waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
+			clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
 			recentPopupSelectWebdriver("Enrollment");
 		}
 		if (!selectaction.equals("")) {

@@ -37,15 +37,20 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 			String saveclosewindow = testdata[16];
 						
 			Reporter.log("Input Test Data was retrieved for 'Transcript' Page");
-			
+			if (!universityname.equals("")) {
+				Reporter.log("Enter the First Name");
+				sendKeys(attributeName_xpath, AS_TestScoreSchoolName, universityname);
+			}
 			if(!status.equals("")){
 				Reporter.log("Verify("+status+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
-				verifyElementContainsTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status, status);
+				selectByVisibleTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status, status);
 			}
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+saveclosewindow+"')]");
+				recentPopupCloseWebdriver();
 			}	
 			
 		} catch (Exception e) {

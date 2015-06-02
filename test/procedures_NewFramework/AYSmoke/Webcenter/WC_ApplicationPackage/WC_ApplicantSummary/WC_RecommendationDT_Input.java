@@ -3,6 +3,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_Appli
 
 import or.OR;
 
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,9 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			String status = testdata[3];
 			String verifystatus = testdata[4];
 			String closewindow = testdata[5];
-			recentPopupSelect_without_window_nameWebdriver();
+			//recentPopupSelectWebdriver("Recommendation");
+			//recentPopupSelect_without_window_nameWebdriver();
+			
 			if(!verifystatus.equals("")){
 				System.out.println("Verification");
 				Reporter.log("Verify("+verifystatus+")is present");
@@ -42,7 +45,8 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				Reporter.log("Click on the Button"+closewindow);
 				clickWebdriver(attributeName_xpath, RD_CloseWindow);
 				recentPopupClose();
-			}		
+			}	
+			
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

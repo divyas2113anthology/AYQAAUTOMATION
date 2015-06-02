@@ -122,6 +122,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			if (!submit.equals("")) {
 				Reporter.log("Step 16 - Click the submit button");
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+				waitForPageToLoadWebdriver();
 			}
 
 

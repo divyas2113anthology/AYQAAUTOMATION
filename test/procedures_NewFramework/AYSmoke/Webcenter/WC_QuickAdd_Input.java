@@ -163,7 +163,8 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!paymentstatus.equals("")) {
 			Reporter.log("Step 20 - Enter the payment status ("+paymentreceiveddate+") ");
-			selectByVisibleTextWebdriver(attributeName_name, "paymentstatus", paymentstatus);
+			//selectByVisibleTextWebdriver(attributeName_name, "paymentstatus", paymentstatus);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_name, "paymentstatus", paymentstatus);
 		}
 		if (!pdsave.equals("")) {
 			Reporter.log("Step 21 - Click on ("+pdsave+")Button");

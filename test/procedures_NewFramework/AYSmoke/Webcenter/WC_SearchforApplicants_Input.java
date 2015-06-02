@@ -149,6 +149,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 12 - Enter the Last Name as ["+lastname+"]");
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
+				clickWebdriver(attributeName_xpath, SAI_LastName);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
 			}
 			if (!birthdate.equals("")) {

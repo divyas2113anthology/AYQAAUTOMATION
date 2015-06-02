@@ -434,8 +434,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 	// Testdatalabel - which gets Test Data Label from QC(parameter) and used to label the Test Data in the Excel for easy to read.	
 
 	public void Runtimedatawrite(String Testdata,String Testdatalabel) throws IOException, BiffException, RowsExceededException, WriteException{		
-		Reporter.log("Proceed to Write Run time Data in Excel Sheet in the location 'C:/Selenium/InputTestdata.xls'");
-		String filename = "C:/Selenium/InputTestdata.xls";
+		Reporter.log("Proceed to Write Run time Data in Excel Sheet in the location 'C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls'");
+		String filename = "C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls";
 		Workbook existworkbook = Workbook.getWorkbook(new File(filename));
 		WritableWorkbook workbook = Workbook.createWorkbook(new File(filename),existworkbook);
 		WritableSheet sheet = workbook.getSheet("InputTestdata");		 
@@ -2919,8 +2919,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		    
 		     writeConsole("Webdriver Switch To Window["+window+"]");
 		     driver.switchTo().window(window);
-		   /*  if (!mainwindow.equals(window)) {*/
+		     /*  if (!mainwindow.equals(window)) {*/
 		   }
+		  
 	}
 		 
 	// This Function is used to Select Recently Opened Window or Popup.

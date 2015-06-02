@@ -231,6 +231,8 @@ public static final String EL_hslink = "//a[contains(text(),'";
 public static final String AS_PreviewApp = "//font[contains(text(),'Preview Application')]";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
 public static final String AS_Continue = "//img[@alt='continue']";
+public static final String AS_VerifyApplicationFee = "//li[contains(text(),'TestingApplicationFee')]";
+public static final String AS_VerifyTranscripts = "//ul//li[contains(text(),'TranscriptStatus')]";
 //#**********************************************************#
 //# Application Fee Payment Page - AF
 //#*********************************************************#
@@ -869,7 +871,7 @@ public static final String SAI_UserQuries = "//select[@name='QueryID']";
 
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
-public static final String SAI_SubmitBtnBottom = "//input[@name='imageField2']";
+public static final String SAI_SubmitBtnBottom = "//input[contains(@src,'submit')]";
 public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[contains(@src,'admin_submit_small')])[3]";
 //public static final String SAI_SearchByIndividualsSubmit = "//td[font[contains(text(),'Individual')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
 public static final String SAI_SearchByDateSubmit = "//td[font[contains(text(),'Search by Date')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
@@ -1356,6 +1358,10 @@ public static final String EPI_SayNo = "//input[@id='q24476']";
 public static final String EPI_LiveIn = "//select[@id='s29464']";
 public static final String EPI_ProToSubBtn = "//img[@alt='proceed to submission']";
 public static final String EPI_ResetBtn = "//img[@alt='Reset']";
+
+//Enrollment - Search or Students
+public static final String ES_ApplicantClick = "//a[contains(text(),'";    //LastName, TestDemo')]"'
+
 //#**********************************************************#
 //#	 Enrollment - Enrollment Fee Payment - Page
 //#**********************************************************#
@@ -1568,6 +1574,7 @@ public static final String QA_Domestic = "//font[contains(text(),'Domestic')]/in
 public static final String QA_International = "//font[contains(text(),'Domestic')]/input[@type='radio']";
 public static final String QA_SubmitBtn = "//img[@alt='Submit']";
 public static final String QA_ResetBtn = "//img[@alt='Reset']";
+public static final String QA_PaymentStatus = "//select[@name='paymentstatus']";
 //#**********************************************************#
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
@@ -1721,7 +1728,7 @@ public static final String AID_Display_Check= "//td[font[contains(text(),'";
 public static final String AID_label_text="//td[font[contains(text(),'Last name')]]/following-sibling::td/font/input[contains(@id,'DISPLABEL')]";
 public static final String AID_save_button="//img[contains(@src,'save_small')]";
 public static final String AID_pagename="//table[@id='Table1']/tbody/tr/td/font"; //[contains(text(),'Application')]";
-public static final String AID_message="//div[@id='divAyConfirmation']/font";
+public static final String AID_message="//div[@id='divAyConfirmation']/font[contains(text(),'";
 public static final String AID_RecPlus = "//img[contains(@src,'plus')]";
 public static final String AID_RecAppInfoDisp = "//a[text()='Applicant Info Display']";
 public static final String REC_Display_lname = "//dl[@class='dl-horizontal']/dt[contains(text(),'Acad`~!@#$%^*+-/()_-+={}[]|\')]";
@@ -1780,7 +1787,7 @@ public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@
 //#**********************************************************#
 public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
-public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'6')]";
+public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'7')]";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
 public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]";
@@ -1792,7 +1799,7 @@ public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelected
 //# Webcenter - Enrollment - ER
 //#**********************************************************#
 public static final String ER_linktoclick = "//a[contains(text(),'"; //Enrollment-DT Module Home')]";
-public static final String AY_ConfigureStatusConfirmationText = "//div[@class='AYConfirmationText']/font";
+public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divAyConfirmation']/font[contains(text(),'";
 
 //#**********************************************************#
 //# Webcenter - Enrollment DT Fee - ER
@@ -1847,10 +1854,19 @@ public static final String RS_Status = "//a[contains(@onclick,'Status')]";
 //#**********************************************************#
 public static final String AS_pagename = "//font[contains(text(),'Transcripts')]";
 public static final String AS_TestScoreStatus = "//select[@name='TestStatus']";
+public static final String AS_TestType = "//select[@name='PackageTestId']";
 public static final String AS_SupportingDocCloseWindow = "//img[contains(@src,'"; 
 public static final String AS_TestScorepagename = "//font[contains(text(),'Manage Test Scores')]";
+public static final String AS_TestScoreEnglish = "//input[@name='Composite']";
+public static final String AS_TestScoreSave = "//img[contains(@src,'save')]";
+public static final String AS_TestScoreReading = "//input[@name='Reading']";
+public static final String AS_TestScoreMath = "//input[@name='Math']";
+public static final String AS_TestScoreScience = "//input[@name='Science']";
+public static final String AS_TestScoreComposite = "//input[@name='Composite']";
+public static final String AS_TestScoreSchoolName = "//input[@name='schoolname']";
 public static final String AS_TranscriptStatus = "//select[@id='Select1']";
 public static final String AS_SupportingDocumentStatus = "//select[@id='Status']";
+public static final String AS_SupportingDocumentName = "//select[@name='SuppDocID']";
 public static final String AS_ApplicantDecision="//font[@class='BasePageFont' and contains(text(),'";     //Received')]";
 public static final String AS_PrintCloseWindow = "//img[contains(@src,'";    //print')]";
 //#**********************************************************#

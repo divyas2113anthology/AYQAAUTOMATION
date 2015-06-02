@@ -17,19 +17,20 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Recommendation Search Result'Page");
 			String[] testdata = datacontainer;
-			String applicantcheck = testdata[0];
-			String applicantclick = testdata[1];
-			String pdf = testdata[2];
-			String selectaction = testdata[3];
-			String apply=testdata[4];
-			String buttons=testdata[4];
-						
-			if (!applicantclick.equals("")) {
-				Reporter.log("Click on Applicant Name");
-				clickWebdriver(attributeName_xpath, RSR_ApplicantClick+applicantclick+"')]");	
-				
-			}
+			String operationtoperform = testdata[0];
+			String applicantcheck = testdata[1];
+			String applicantclick = testdata[2];
+			String pdf = testdata[3];
+			String selectaction = testdata[4];
+			String apply = testdata[5];
+			String buttons = testdata[6];
 			
+			if (!applicantclick.equals("")) {
+				Reporter.log("Click on Rule name ["+applicantclick+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
+				clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
+				recentPopupSelectWebdriver("Recommendation");
+			}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

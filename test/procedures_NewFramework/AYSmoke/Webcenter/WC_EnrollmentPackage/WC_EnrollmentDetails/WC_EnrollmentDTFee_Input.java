@@ -37,6 +37,7 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
+				recentPopupCloseWebdriver();
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

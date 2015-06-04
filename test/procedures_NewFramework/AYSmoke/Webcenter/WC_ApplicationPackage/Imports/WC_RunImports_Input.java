@@ -22,6 +22,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			String actionhistory = testdata[5];
 			String actionhistorytext = testdata[6];
 			String click = testdata[7];
+			
 			Reporter.log("Input Test Data was retrieved for 'Run Imports' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!clickradioagainstname.equals("")) {

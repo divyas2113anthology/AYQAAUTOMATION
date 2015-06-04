@@ -89,7 +89,6 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			}
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frameActions");
-			System.out.println("aaaaaaaaaaaaaaaaaaa");
 			if (!itemaction.equals("")) {
 				
 				Reporter.log("Click the item action as ["+itemaction+"]");

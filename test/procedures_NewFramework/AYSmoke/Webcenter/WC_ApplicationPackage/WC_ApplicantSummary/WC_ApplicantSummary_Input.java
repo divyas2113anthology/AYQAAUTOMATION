@@ -38,8 +38,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
-			driver.navigate().refresh();
-			waitForPageToLoadWebdriver();
+			//driver.navigate().refresh();
+			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
 				waitForElementPresentWebdriver(attributeName_linktext, subscribed, subscribed);
@@ -135,7 +135,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				
 				
 //				clickWebdriver(attributeName_linktext, supportingdocuments);
-//				recentPopupSelectWebdriver("Supporting Document");
+				recentPopupSelectWebdriver("Supporting Document");
 				String[] splitsupport = supportingdocuments.split(";");
 				System.out.println("String1"+splitsupport[0]);
 				System.out.println("String1"+splitsupport[1]);
@@ -143,7 +143,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
 					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 				}
-				recentPopupSelectWebdriver("Supporting Document");
+				//recentPopupSelectWebdriver("Supporting Document");
 //				if (supportingdocuments.equalsIgnoreCase("Application Fee")) {
 //					clickWebdriver(attributeName_linktext, supportingdocuments);
 //				} else if (supportingdocuments.equalsIgnoreCase("Recommendation-Shiva")){

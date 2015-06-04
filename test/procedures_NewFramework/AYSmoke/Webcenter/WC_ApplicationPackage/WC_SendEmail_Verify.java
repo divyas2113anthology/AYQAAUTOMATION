@@ -2,17 +2,6 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import java.util.Properties;
-
-import javax.mail.Flags;
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.MessagingException;  //WC_JavaMailAPI_CheckingMail
-import javax.mail.NoSuchProviderException;
-import javax.mail.Session;
-import javax.mail.Store;
-
-
 import or.OR;
 import processor.CommonSeleniumActions;
 

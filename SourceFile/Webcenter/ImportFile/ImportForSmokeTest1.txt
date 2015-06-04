@@ -1,1 +1,2 @@
 bbbbbbbb	CustomLabelTest	LabelTest
+TestApplicationPayment	SupportingDoc	TestScore	TranscriptStatus

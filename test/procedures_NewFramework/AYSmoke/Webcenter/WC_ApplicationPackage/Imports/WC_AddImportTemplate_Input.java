@@ -29,6 +29,7 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			String importanupdate = testdata[7];
 			String lock = testdata[8];
 			String click = testdata[9];
+			
 			Reporter.log("Input Test Data was retrieved for 'Add Import Template' Page");
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
@@ -101,6 +102,7 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			if (!click.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
 				if (click.equals("Save")) {
+					waitForElementPresentWebdriver(attributeName_xpath, QAE_SaveButton, click);
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
 				} else if (click.equals("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);

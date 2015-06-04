@@ -41,6 +41,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			String savecancel = fpvdatarepo[18];
 			String verifygreystatus = fpvdatarepo[19];
 			String verifystatus = fpvdatarepo[20];
+			String filtername = fpvdatarepo[21];
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!rulename.equals("")) {
 				Reporter.log("Step 1 - Type Rule Name as ("+rulename+")");
@@ -101,7 +102,9 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targetstatus.equals("")) {
 				Reporter.log("Step 14 - Select Target Status as : ("+targetstatus+")");
-				select(BR_TargetStatus, targetstatus);			
+				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
+				selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
+				//select(BR_TargetStatus, targetstatus);			
 			}
 			if (!targettestscore.equals("")) {
 				Reporter.log("Step 15 - Select Target test score as : ("+targettestscore+")");
@@ -126,11 +129,12 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_xpath, BR_Save);	
 				else
 					clickWebdriver(attributeName_xpath, BR_Cancel);
+					
 			}
 			
 			if (!verifygreystatus.equals("")) {
+					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
 					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
-					
 					//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 					//verifyElementContainsTextWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 				}
@@ -141,9 +145,12 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
 				//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"'))]", verifystatus, verifystatus);
-				wait(3000);
+				
 				}
-			
+			if (!filtername.equals("")) {
+				Reporter.log("Click on the Filter Name");
+				clickWebdriver(attributeName_xpath, BR_FilterName+filtername+"')]");
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

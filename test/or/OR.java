@@ -1378,6 +1378,7 @@ public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 public static final String AIT_CRLF = "//input[@value='crLf']";
 public static final String AIT_LF = "//input[@value='Lf']";
 public static final String FS_SubmitApp = "//a[contains(@href,'ApplicationSubmit')]";
+public static final String AIT_RemoveAll = "//img[@name='BtnRemoveAll']";
 //#**********************************************************#
 //#	 Webcenter - Invite Event - Page
 //#**********************************************************#

@@ -63,7 +63,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 					else if (i== SplitPackage.length-1) {
 						System.out.println("Verification");
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
-						wait(3000);
+						switchToDefaultContentWebdriver();
 						
 						switchToFrameNameIdWebdriver("frameActions");
 						clickWebdriver(attributeName_xpath, FD_AddItem);
@@ -89,10 +89,12 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			}
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frameActions");
+			System.out.println("aaaaaaaaaaaaaaaaaaa");
 			if (!itemaction.equals("")) {
 				
 				Reporter.log("Click the item action as ["+itemaction+"]");
 				if (itemaction.equalsIgnoreCase("Add Item")) {
+					waitForElementPresentWebdriver(attributeName_xpath, FD_AddItem, itemaction);
 					clickWebdriver(attributeName_xpath, FD_AddItem);
 				}else if (itemaction.equalsIgnoreCase("Insert Item")) {
 					clickWebdriver(attributeName_name, FD_InsertItem);
@@ -103,13 +105,13 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			}
 			if (!fieldnameposition.equals("")) {
 				Reporter.log("Click the field name position as ["+fieldnameposition+"]");
-				if (itemaction.equalsIgnoreCase("Move Down")) {
+				if (fieldnameposition.equalsIgnoreCase("Move Down")) {
 					clickWebdriver(attributeName_name, FD_MoveDown);
-				}else if (itemaction.equalsIgnoreCase("Move Up")) {
+				}else if (fieldnameposition.equalsIgnoreCase("Move Up")) {
 					clickWebdriver(attributeName_name, FD_MoveUp);
-				}else if (itemaction.equalsIgnoreCase("Remove All")) {
-					clickWebdriver(attributeName_name, FD_RemoveAll);
-				}else if (itemaction.equalsIgnoreCase("Show Code")) {
+				}else if (fieldnameposition.equalsIgnoreCase("Remove All")) {
+					clickWebdriver(attributeName_xpath, AIT_RemoveAll);
+				}else if (fieldnameposition.equalsIgnoreCase("Show Code")) {
 					clickWebdriver(attributeName_name, FD_ShowCode);
 				}
 			}

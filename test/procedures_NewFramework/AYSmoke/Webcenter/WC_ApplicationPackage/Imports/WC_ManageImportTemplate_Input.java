@@ -16,10 +16,10 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 			String[] testdata = datacontainer;
 			String checktemplatenamecheckbox = testdata[0];
 			String clicktemplatename = testdata[1];
-			String button = testdata[3];
+			String button = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Manage Import Template' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			waitForElementPresentWebdriver(attributeName_xpath, MCL_NewSearchbutton, "New Search Button");
+			//waitForElementPresentWebdriver(attributeName_xpath, MCL_NewSearchbutton, "New Search Button");
 			if (!checktemplatenamecheckbox.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checktemplatenamecheckbox+"]");
 				if (checktemplatenamecheckbox.equalsIgnoreCase("check")) {
@@ -30,6 +30,7 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 			}			
 			if (!clicktemplatename.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clicktemplatename+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicktemplatename+"')]", clicktemplatename);
 				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicktemplatename+"')]");
 			}
 			if (!button.equals("")) {

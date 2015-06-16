@@ -27,7 +27,7 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 			String savecancelclose = testdata[5];
 						
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score ACT' Page");
-			
+			recentPopupSelect_without_window_nameWebdriver();
 			if (!english.equals("")) {
 				Reporter.log("Enter the First Name");
 				sendKeys(attributeName_xpath, AS_TestScoreEnglish, english);
@@ -56,7 +56,7 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 				clickWebdriver(attributeName_xpath, AS_TestScoreSave);
 				waitForPageToLoadWebdriver();
 			}
-			
+			switchToDefaultContentWebdriver();
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -57,6 +57,7 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			if(!savecancel.equals("")){
 				Reporter.log("Click on the Button"+savecancel);
 				clickWebdriver(attributeName_xpath, ET_SaveCancel+savecancel+"')]");
+				waitForPageToLoadWebdriver();
 			}		
 			
 			if(!verifyvalue.equals("")){

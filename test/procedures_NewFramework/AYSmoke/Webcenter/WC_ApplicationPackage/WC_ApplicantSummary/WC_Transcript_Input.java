@@ -35,7 +35,8 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 			String degreeearned = testdata[14];
 			String degree = testdata[15];
 			String saveclosewindow = testdata[16];
-						
+			
+			recentPopupSelect_without_window_nameWebdriver();	
 			Reporter.log("Input Test Data was retrieved for 'Transcript' Page");
 			if (!universityname.equals("")) {
 				Reporter.log("Enter the First Name");
@@ -50,9 +51,10 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+saveclosewindow+"')]");
+				waitForPageToLoadWebdriver();
 				recentPopupCloseWebdriver();
 			}	
-			
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

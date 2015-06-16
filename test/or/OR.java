@@ -137,7 +137,7 @@ public static final String BR_AppliesToSection = "//select[@name='SectionId']";
 public static final String BR_AppliesToQuestion = "//select[@name='QuestionId']";
 public static final String BR_EventType = "//select[@name='EventTypeId']";
 public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
-public static final String BR_TargetStatus = "//select[@name='TestStatusID']";
+public static final String BR_TargetStatus = "//select[@name='DocStatusID']";
 public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";
 public static final String BR_TargetTrack = "//select[@name='TargetTrackId']";
@@ -147,10 +147,12 @@ public static final String BR_TargetQuestion = "//select[@name='TargetQuestionId
 public static final String BR_TargetValue = "//select[@name='TargetValue']";
 public static final String BR_TargetUrl = "//input[@name='TargetURL']";
 public static final String BR_TargetEmail = "//select[@name='EmailId']";
-public static final String BR_Save = "//img[@name='imageSave1']";
-public static final String BR_Cancel = "//img[@name='imageCancel']";
-public static final String BR_StatusGrey = "//select[@id='TestStatusID' and contains(@style,'Grey')]";
-public static final String BR_VerifyStatus = "//select[@id='TestStatusID']/option[contains(text(),'";  //Waived')]";
+public static final String BR_Save = "//img[@name='imageAdd1']";
+public static final String BR_Add = "//img[@name='imageAdd1']";
+public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
+public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
+public static final String BR_StatusGrey = "//select[@id='DocStatusID' and contains(@style,'Grey')]";
+public static final String BR_VerifyStatus = "//select[@id='DocStatusID']/option[contains(text(),'";  //Waived')]";
 public static final String BR_FilterName = "//a[contains(text(),'";    //TestFilter')]";
 //public static final String BR_VerifyStatus = "//option[contains(@style,'Grey') and [not(contains(text(),'"; 
 //#**********************************************************#
@@ -1790,7 +1792,7 @@ public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@
 public static final String MCG_Package = "//img[contains(@src,'";   //publish_prod_large')]"
 public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
-public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'7')]";
+public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'8')]";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
 public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]";

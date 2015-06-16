@@ -13,7 +13,7 @@ import processor.CommonSeleniumActions;
 public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Supporting Documents' page")
-	public void WC_TestScore_Input(){
+	public void WC_OtherSupportingDoc_Input(){
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Supporting Documents' Page");
@@ -23,7 +23,7 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			String receiveddate = testdata[2];
 			String comments = testdata[3];
 			String saveclosewindow = testdata[4];
-									
+			recentPopupSelect_without_window_nameWebdriver();					
 			Reporter.log("Input Test Data was retrieved for 'Supporting Documents' Page");
 			if(!supdocumentname.equals("")){
 				Reporter.log("Verify("+supdocumentname+")is present");
@@ -40,8 +40,10 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+saveclosewindow+"')]");
+				waitForPageToLoadWebdriver();
+				recentPopupCloseWebdriver();
 			}	
-			
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

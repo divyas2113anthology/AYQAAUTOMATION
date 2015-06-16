@@ -23,6 +23,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
 				Reporter.log("Step 1 - Click the link as ["+weltopupdatelogout+"]");
+				waitForElementPresentWebdriver(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
 				clickWebdriver(attributeName_partiallinktext, weltopupdatelogout);
 				driver.manage().deleteAllCookies();
 				System.out.println("Cookies cleared");

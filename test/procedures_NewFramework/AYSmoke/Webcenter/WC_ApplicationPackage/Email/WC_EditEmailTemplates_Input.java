@@ -30,7 +30,9 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			String querytag = fpvdatarepo[8];
 			String savecancel = fpvdatarepo[9];
 			String decision = fpvdatarepo[10];
-						
+			String filter = fpvdatarepo[11];
+			String conditionalmessage = fpvdatarepo[12];
+			String clickfiltername = fpvdatarepo[13];
 			Reporter.log("Verify Test Data was retrieved for 'Edit Email Template' page");
 			if (!decision.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -84,9 +86,19 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			}
 			if (!savecancel.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]",savecancel);
 				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]");
 			}
-			
+			if (!filter.equals("")) {
+				Reporter.log("Click on Filter button");
+				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+filter+"')]");
+				waitForPageToLoadWebdriver();
+			}
+			if (!clickfiltername.equals("")) {
+				Reporter.log("Click on the Filter Name");
+				clickWebdriver(attributeName_xpath, CDT_FilterName+clickfiltername+"')]");
+				waitForPageToLoadWebdriver();
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

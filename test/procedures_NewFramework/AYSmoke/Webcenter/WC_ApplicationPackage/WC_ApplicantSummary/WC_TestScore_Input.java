@@ -29,7 +29,7 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 			String verifystatus = testdata[7];		
 			
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score' Page");
-			
+			recentPopupSelect_without_window_nameWebdriver();
 			if(!testtype.equals("")){
 				Reporter.log("Select the Status("+testtype+")");
 				waitForElementPresentWebdriver(attributeName_xpath, AS_TestType, testtype);
@@ -51,7 +51,7 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Click on the Button"+nextclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+nextclosewindow+"')]");
 			}	
-			
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

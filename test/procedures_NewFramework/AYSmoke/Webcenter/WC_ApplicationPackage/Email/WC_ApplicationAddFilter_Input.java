@@ -24,7 +24,8 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			String operator = testdata[3];
 			String value = testdata[4];
 			String adddeleterow = testdata[5];
-			String savecancel = testdata[6];
+			String verifyvalue = testdata[6];
+			String savecancel = testdata[7];
 			//recentPopupSelect_without_window_nameWebdriver();
 			if(!filtername.equals("")){
 				Reporter.log("Enter the Filter Nmae as("+filtername+")");
@@ -38,20 +39,43 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			}
 			if (!field.equals("")) {
 				Reporter.log("Select ("+field+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_FieldName, field);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ET_FieldName, field);
+				//selectByVisibleTextWebdriver(attributeName_xpath, ET_FieldName, field);
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Select ("+operator+")");
 				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator, operator);
 			}
+			
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_Value, value);
+				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
+				clickWebdriver(attributeName_xpath, ET_Value);
+				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
+				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 			}
-			if(!savecancel.equals("")){
-				Reporter.log("Click on the Button"+savecancel);
-				clickWebdriver(attributeName_xpath, ET_SaveCancel+savecancel+"')]");
-			}		
+			if(!verifyvalue.equals("")){
+				Reporter.log("Verify"+verifyvalue);
+				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
+				clickWebdriver(attributeName_xpath, ET_Value);
+				verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+verifyvalue+"')]", verifyvalue, verifyvalue);
+			}	
+			if (!savecancel.equals("")) {
+				Reporter.log("Clicking on : ("+savecancel+")");
+				if(savecancel.equalsIgnoreCase("add")){
+					waitForElementPresentWebdriver(attributeName_xpath,BR_Add, savecancel);
+					clickWebdriver(attributeName_xpath,BR_Add);
+				}
+				else if(savecancel.equalsIgnoreCase("save")){
+					clickWebdriver(attributeName_xpath, BR_Save);
+				}
+				else if(savecancel.equalsIgnoreCase("cancel")){
+					clickWebdriver(attributeName_xpath, BR_Cancel);
+				}
+								
+			}
+				
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

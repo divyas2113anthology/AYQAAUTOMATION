@@ -112,7 +112,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targetgroup.equals("")) {
 				Reporter.log("Step 16 - Select Target group as : ("+targetgroup+")");
-				select(BR_TargetGroup, targetgroup);			
+				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetGroup, targetgroup);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, BR_TargetGroup, targetgroup);
 			}
 			if (!targeturl.equals("")) {
 				Reporter.log("Step 17 - Type target URL as : ("+targeturl+")");
@@ -125,10 +126,20 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!savecancel.equals("")) {
 				Reporter.log("Step - Clicking on : ("+savecancel+")");
-				if(savecancel.equalsIgnoreCase("save"))
-					clickWebdriver(attributeName_xpath, BR_Save);	
-				else
+				if(savecancel.equalsIgnoreCase("save")){
+					waitForElementPresentWebdriver(attributeName_xpath,BR_Save, savecancel);
+					clickWebdriver(attributeName_xpath,BR_Save);
+				}
+				else if(savecancel.equalsIgnoreCase("plusfilter")){
+					clickWebdriver(attributeName_xpath, BR_PlusFilter);
+					waitForPageToLoadWebdriver();
+				}
+				else if(savecancel.equalsIgnoreCase("cancel")){
+					Thread.sleep(5000);
 					clickWebdriver(attributeName_xpath, BR_Cancel);
+					waitForPageToLoadWebdriver();
+				}
+					
 					
 			}
 			

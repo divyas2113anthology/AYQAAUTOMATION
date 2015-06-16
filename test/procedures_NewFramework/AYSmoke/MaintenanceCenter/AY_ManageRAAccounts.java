@@ -21,6 +21,7 @@ public class AY_ManageRAAccounts extends CommonSeleniumActions implements OR{
 			
 			if (!clickname.equals("")) {
 				Reporter.log("Click on ["+clickname+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, MCL_ClickRAName+clickname+"')]", clickname);
 				clickWebdriver(attributeName_xpath, MCL_ClickRAName+clickname+"')]");
 			}
 			if (!addprintdelete.equals("")) {

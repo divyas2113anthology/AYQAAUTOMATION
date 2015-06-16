@@ -20,10 +20,10 @@ public class WC_EditConfigureDynamicText_Input extends CommonSeleniumActions imp
 			String displayformattype = applicantwelidatarepo[0];
 			String dynamictext = applicantwelidatarepo[1];
 			String applicationsections = applicantwelidatarepo[2];
-			String conditionalmessage = applicantwelidatarepo[3];
+			String conditionalmessagecheck = applicantwelidatarepo[3];
 			String adddeletefilter = applicantwelidatarepo[4];
-			String buttonstoclick = applicantwelidatarepo[4];
-			String conditionalmessagename = applicantwelidatarepo[5];
+			String buttonstoclick = applicantwelidatarepo[5];
+			String conditionalmessagename = applicantwelidatarepo[6];
 			Reporter.log("Input Test Data was retrieved for 'Configure Dynamic Text' page");
 			
 			if (!adddeletefilter.equals("")) {
@@ -33,7 +33,14 @@ public class WC_EditConfigureDynamicText_Input extends CommonSeleniumActions imp
 
 			if (!conditionalmessagename.equals("")) {
 				Reporter.log("Perform the operation to click["+conditionalmessagename+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, CDT_FilterName+conditionalmessagename+"')]",conditionalmessagename);
 				clickWebdriver(attributeName_xpath, CDT_FilterName+conditionalmessagename+"')]");
+			}
+			if (!buttonstoclick.equals("")) {
+				Reporter.log("Perform the operation to click["+buttonstoclick+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, ET_SaveCancel+buttonstoclick+"')]",buttonstoclick);
+				clickWebdriver(attributeName_xpath, ET_SaveCancel+buttonstoclick+"')]");
+				waitForPageToLoadWebdriver();
 			}
 			
 		} catch (Exception e) {

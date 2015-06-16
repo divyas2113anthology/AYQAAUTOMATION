@@ -32,6 +32,7 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				waitForElementPresentWebdriver(attributeName_xpath, Applpackage+link_click+"')]", link_click);
 				clickWebdriver(attributeName_xpath, Applpackage+link_click+"')]");
+				waitForPageToLoadWebdriver();
 			}
 			if (!add_delete_folder.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");

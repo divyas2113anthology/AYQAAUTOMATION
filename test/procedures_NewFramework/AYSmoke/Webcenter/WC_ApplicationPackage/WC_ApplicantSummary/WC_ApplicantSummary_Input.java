@@ -38,7 +38,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
-			//driver.navigate().refresh();
+			driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
@@ -132,13 +132,11 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			}
 			if (!supportingdocuments.equals("")) {
 				Reporter.log("Step 11 - Click the SUpporting Document as ["+supportingdocuments+"]");
-				
-				
-//				clickWebdriver(attributeName_linktext, supportingdocuments);
-				recentPopupSelectWebdriver("Supporting Document");
+				//clickWebdriver(attributeName_linktext, supportingdocuments);
+				//recentPopupSelect_without_window_nameWebdriver();
 				String[] splitsupport = supportingdocuments.split(";");
 				System.out.println("String1"+splitsupport[0]);
-				System.out.println("String1"+splitsupport[1]);
+				//System.out.println("String1"+splitsupport[1]);
 				for (int i = 0; i < splitsupport.length; i++) {
 					waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
 					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);

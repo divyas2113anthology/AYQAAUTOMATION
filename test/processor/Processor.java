@@ -69,7 +69,7 @@ public class Processor {
 	    protected boolean jettyProxyWasStartedByATest = false;
 	    protected final static String SELENIUM_SERVER_HOST = "localhost";
 	    protected final static int SELENIUM_SERVER_PORT = 4444;
-	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "200000"; //milliseconds
+	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "5000"; //milliseconds
 //	    public static DefaultSelenium selenium;
 	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 60; //second
 	    public static int golbalProcedureOrder=0;
@@ -221,7 +221,7 @@ public class Processor {
 			
 			switch(browser){
 			case "internetexplorer":
-				File file = new File("C:/Selenium/IEDriverServer.exe");
+				File file = new File("C:/SeleniumScripts/AYQAAutomation/lib/IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 //				InternetExplorerDriverService.Builder ies = new InternetExplorerDriverService.Builder();
 //				ies.usingAnyFreePort().withLogFile(new File("somefile.log")).withLogLevel(InternetExplorerDriverLogLevel.INFO);
@@ -240,7 +240,7 @@ public class Processor {
 				
 				break;
 			case "googlechrome":
-				System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "C:/SeleniumScripts/AYQAAutomation/lib/chromedriver.exe");
 				driver = new ChromeDriver();
 				break;
 			case "safari":

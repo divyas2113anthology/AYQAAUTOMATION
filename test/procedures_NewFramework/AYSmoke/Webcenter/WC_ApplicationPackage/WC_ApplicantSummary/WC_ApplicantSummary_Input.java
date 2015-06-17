@@ -38,6 +38,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
+			
 			driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
@@ -194,7 +195,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				clickWebdriver(attributeName_xpath, AS_View+view+"')]");
 				recentPopupSelectWebdriver("View");
 			}
-				
+			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

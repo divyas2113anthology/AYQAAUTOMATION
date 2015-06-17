@@ -42,8 +42,9 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");
 				
 			}
-			recentOpenedPopupSelectWebdriver("Parent");
-			System.out.println("Switch to default contents");
+			selectMainWindowWebdriver();
+			//recentOpenedPopupSelectWebdriver("Parent");
+			//System.out.println("Switch to default contents");
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

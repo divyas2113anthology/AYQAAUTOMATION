@@ -44,7 +44,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			if(!closewindow.equals("")){
 				Reporter.log("Click on the Button"+closewindow);
 				clickWebdriver(attributeName_xpath, RD_CloseWindow);
-				recentPopupClose();
+				//recentPopupClose();
 			}	
 			
 			} catch (Exception e) {

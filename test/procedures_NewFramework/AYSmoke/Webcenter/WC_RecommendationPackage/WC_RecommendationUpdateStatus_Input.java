@@ -42,9 +42,12 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");
 				
 			}
-			selectMainWindowWebdriver();
+			//selectMainWindowWebdriver();
 			//recentOpenedPopupSelectWebdriver("Parent");
+			//recentPopupCloseWebdriver();
+			//switchToDefaultContentWebdriver();
 			//System.out.println("Switch to default contents");
+			driver.switchTo().window("frmMain");
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

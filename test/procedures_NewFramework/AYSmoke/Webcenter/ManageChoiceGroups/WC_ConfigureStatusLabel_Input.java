@@ -25,6 +25,7 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			String configurestatuslabellink =testdata[4];
 			String adddeleteexportdynamiclist =testdata[5];
 			switchToFrameNameIdWebdriver("frmContent");
+			
 			if(!configurestatuslabellink.equals("")){
 				Reporter.log("Click on the Link"+configurestatuslabellink);
 				

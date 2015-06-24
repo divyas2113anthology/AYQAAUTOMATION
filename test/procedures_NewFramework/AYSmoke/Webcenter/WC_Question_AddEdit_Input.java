@@ -23,7 +23,8 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			String questionbefore = testdata[6];
 			String order = testdata[7];
 			String questioncategory = testdata[8];
-			String usagesavedeletecancel = testdata[9];
+			String assigntranscriptstatus = testdata[9];
+			String usagesavedeletecancel = testdata[10];
 			Reporter.log("Input Test Data was retrieved for 'Question Add/Edit Input' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			switchToFrameNameIdWebdriver("frmContent");

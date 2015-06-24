@@ -22,6 +22,7 @@ public class WC_BatchPrint_Input extends CommonSeleniumActions implements OR {
 			if (!batchprintdate.equals("")) {
 				Reporter.log("Step 1 - Enter the Batch Print Date as ["+batchprintdate+"]");
 				String EnrollmentDeadlineDate = requiredDateAndFormat("MM/dd/yyyy", batchprintdate);
+				System.out.println(EnrollmentDeadlineDate);
 				sendKeys(attributeName_name, "txtDateFrom", EnrollmentDeadlineDate);
 			}
 			if (!buttons.equals("")) {

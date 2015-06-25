@@ -3342,6 +3342,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				actualtext = element.getText();
 				actualoptionstring = actualoptionstring+actualtext;
 				if (actualtext.equals(elementoptionsarray[i])) {
+					System.out.println("["+elementname+"] Drop down has Option["+elementoptions+"]");
 					Reporter.log("["+elementname+"] Drop down has Option["+elementoptions+"]");
 					options = "Found";
 					break;

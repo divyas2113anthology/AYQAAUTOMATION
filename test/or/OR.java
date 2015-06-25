@@ -1889,6 +1889,8 @@ public static final String MS_ConfirmationText = "//div[@class='AYConfirmationTe
 public static final String MS_NewPassword = "//input[@name='Password']";
 public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
 public static final String MS_Submit = "//input[contains(@src,'submit')]";
+public static final String MC_SR_SelectMenu = "//button[contains(@class,'ui-multiselect')]"; 
+public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span";
 //#**********************************************************#
 //# Webcenter - Add Recommendation - AR
 //#**********************************************************#

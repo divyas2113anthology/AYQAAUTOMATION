@@ -29,7 +29,9 @@ public class MC_AddEditSectionRule_Verify extends CommonSeleniumActions implemen
 			}
 			if (!values.equals("")) {
 				Reporter.log("Step 3 - Verify the Presented values as ["+values+"]");
-				verifySelectContainsOptionsWebdriver(attributeName_name, "txtValue0", values, values);
+				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
+				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MC_SR_Values, values, values);
+				//verifySelectContainsOptionsWebdriver(attributeName_xpath, MC_SR_Values, values, values);
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage()); }

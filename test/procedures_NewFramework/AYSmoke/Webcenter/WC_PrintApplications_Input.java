@@ -85,7 +85,7 @@ public class WC_PrintApplications_Input extends CommonSeleniumActions implements
 //					waitForElementNotPresentWebdriver(attributeName_xpath, QAE_Message, "Successfully printed applications.");
 //					recentPopupSelect("Application.pdf");
 //					recentPopupSelectWebdriver("PrintingApplication");
-				}else if (button.equalsIgnoreCase("Batch Print")) {
+				}else if (button.equalsIgnoreCase("Generate PDF")) {
 					clickWebdriver(attributeName_xpath, PA_PrintBtn);
 					waitForPageToLoad();
 				}else if (button.equalsIgnoreCase("Back")) {

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail">
+      <class name="procedures_NewFramework.AYSmoke.WebMail.Email_Verification">
         <methods>
           <include name="datagenerator"/>
           <include name="failurescreenshot"/>
+          <include name="Email_Verification"/>
           <include name="startseleniumserver"/>
           <include name="shutdownseleniumserver"/>
-          <include name="WC_JavaMailAPI_CheckingMail"/>
         </methods>
-      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail -->
+      </class> <!-- procedures_NewFramework.AYSmoke.WebMail.Email_Verification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

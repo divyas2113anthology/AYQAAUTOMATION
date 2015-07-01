@@ -28,12 +28,8 @@ public class WC_Export_Input extends CommonSeleniumActions implements OR {
 			}			
 			if (!checkbox.equals("")) {
 				Reporter.log("Step 2 - Select the column header as ["+checkbox+"]");
-				if (checkbox.contains("check")) {
-					checkWebdriverCheckbox(attributeName_name, "IncludeHeader");
-				}else if (checkbox.contains("uncheck")) {
-					uncheckWebdriverCheckbox(attributeName_name, "IncludeHeader");
-				}
-
+				clickWebdriver(attributeName_xpath, RPT_CheckBox+checkbox+"')]");
+			
 			}
 			if (!actionhistory.equals("")) {
 				Reporter.log("Step 3 - Select an Rule as ["+actionhistory+"]");

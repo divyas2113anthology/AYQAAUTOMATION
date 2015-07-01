@@ -8,10 +8,10 @@
       <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="236" started-at="2015-05-22T12:49:38Z" finished-at="2015-05-22T12:49:39Z">
+  <suite name="Default suite" duration-ms="251" started-at="2015-06-29T08:22:07Z" finished-at="2015-06-29T08:22:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="236" started-at="2015-05-22T12:49:38Z" finished-at="2015-05-22T12:49:39Z">
-      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30]" name="startseleniumserver" is-config="true" duration-ms="8736" started-at="2015-05-22T08:49:30Z" finished-at="2015-05-22T08:49:38Z">
+    <test name="Default test" duration-ms="251" started-at="2015-06-29T08:22:07Z" finished-at="2015-06-29T08:22:08Z">
+      <class name="procedures_NewFramework.AYSmoke.WebMail.Email_Verification">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="startseleniumserver" is-config="true" duration-ms="4986" started-at="2015-06-29T04:22:02Z" finished-at="2015-06-29T04:22:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2c2958]]>
+                <![CDATA[org.testng.TestRunner@13e4e54]]>
               </value>
             </param>
           </params>
@@ -42,7 +42,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-05-22T08:49:38Z" finished-at="2015-05-22T08:49:38Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-06-29T04:22:07Z" finished-at="2015-06-29T04:22:07Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="SKIP" signature="WC_JavaMailAPI_CheckingMail()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30]" name="WC_JavaMailAPI_CheckingMail" duration-ms="0" started-at="2015-05-22T08:49:38Z" description="This Procedure is to perform some input operation in &#039;Edit Email Template&#039; page using JavaMail API" finished-at="2015-05-22T08:49:38Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG]]>
-            </line>
-            <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG' height='200' width='200'></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- WC_JavaMailAPI_CheckingMail -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30]" name="failurescreenshot" is-config="true" duration-ms="204" started-at="2015-05-22T08:49:38Z" finished-at="2015-05-22T08:49:39Z">
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="failurescreenshot" is-config="true" duration-ms="234" started-at="2015-06-29T04:22:07Z" finished-at="2015-06-29T04:22:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=WC_JavaMailAPI_CheckingMail status=SKIP method=WC_JavaMailAPI_CheckingMail.WC_JavaMailAPI_CheckingMail()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\WC_JavaMailAPI_CheckingMail_0.PNG]]]>
+                <![CDATA[[TestResult name=Email_Verification status=SKIP method=Email_Verification.Email_Verification()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@2c2958]]>
+                <![CDATA[org.testng.TestRunner@13e4e54]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail@1a0df30]" name="shutdownseleniumserver" is-config="true" duration-ms="578" started-at="2015-05-22T08:49:39Z" finished-at="2015-05-22T08:49:39Z">
+        <test-method status="SKIP" signature="Email_Verification()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="Email_Verification" duration-ms="0" started-at="2015-06-29T04:22:07Z" description="This Procedure is used to Perform operation and Verification in Received Email in User Account Hobsons" finished-at="2015-06-29T04:22:07Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Email_Verification -->
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="shutdownseleniumserver" is-config="true" duration-ms="406" started-at="2015-06-29T04:22:08Z" finished-at="2015-06-29T04:22:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2c2958]]>
+                <![CDATA[org.testng.TestRunner@13e4e54]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email.WC_JavaMailAPI_CheckingMail -->
+      </class> <!-- procedures_NewFramework.AYSmoke.WebMail.Email_Verification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

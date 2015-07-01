@@ -702,7 +702,7 @@ public static final String HC_UserName = "//input[@name='login']";
 //public static final String HC_Password = "//input[@name='password']";
 public static final String HC_Password = "//input[@name='passwd']";
 //public static final String HC_Login = "//input[@value='Log-In']";    
-public static final String HC_Login = "//span[@id='cred_sign_in_button']";
+public static final String HC_Login = "//span[contains(text(),'Sign in')]";
 //public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
 //public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']";
 public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']";
@@ -1344,12 +1344,21 @@ public static final String AL_SubmitBtn = "//img[contains(@src,'admin_submit_sma
 public static final String MCS_ClientID = "//input[@value='srchClientAbbr']";
 public static final String MCS_ClientName = "//input[@value='srchClientName']";
 public static final String RPT_RunBtn = "//img[contains(@src,'run_small')]";
+public static final String RPT_CheckBox = "//input[@class='FormFields' and contains(@name,'";  //chkMakeExcelFile')]
 //#**********************************************************#
 //#	 Maintanance - Schedule Import/Export - Page
 //#**********************************************************#
 public static final String SIE_AddImpSched = "//img[contains(@src,'add_import')]";
 public static final String SIE_AddExpSched = "//img[contains(@src,'add_export')]";
 public static final String SIE_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
+//#**********************************************************#
+//#	 Maintanance - Schedule PDF Delivery - Page
+//#**********************************************************#
+public static final String SPDF_AddPdf = "//img[contains(@src,'addPdfDelivery')]";
+public static final String SPDF_ScheduleBatch = "//select[@name='PrintScheduled']";
+public static final String SPDF_ServerName = "//input[@name='txtFTPServer']";
+public static final String SPDF_ZipPdf = "//input[@name='chkZip']";
+public static final String SPDF_SendDelivery = "//input[@name='chkConfirmEmail']";
 //#**********************************************************#
 //#	 Enrollment - Enrollment Personal Info - Page
 //#**********************************************************#

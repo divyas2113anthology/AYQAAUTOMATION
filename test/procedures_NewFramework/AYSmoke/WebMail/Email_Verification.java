@@ -55,20 +55,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 3 - Enter Password");
 					sendKeys(attributeName_xpath,HC_Password,password);
 				}
-				if (!login.equals("")) {
-
-						waitForPageToLoadWebdriver();	
-	//					clickWebdriver(attributeName_xpath, HC_Login);
-						checkWebdriver(attributeName_xpath, HC_Login);
-	//					Thread.sleep(6000);    
-						doubleClickWebdriver(attributeName_xpath, HC_Login);
-						Thread.sleep(5000);
-						//waitForPageToLoadWebdriver();
-	//					waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
-						//waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");  
-				}
-				//				}
-				//				waitForConditionisElementPresent(HC_LogOff, "120000");
+				
 				if (!emailsubject.equals("")) {
 					Reporter.log("Step 5 - Click on Email Subject");
 					//                      waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubject+emailsubject+"']", "Email Subject["+emailsubject+"]");
@@ -232,7 +219,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 1 - Open URL");
 //					get("http://webmail.hobsons.com/");
 					get("http://mail.hobsons.com/");
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 
 				if (!username.equals("")) {
@@ -245,16 +232,15 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!login.equals("")) {
 					Reporter.log("Step 4 - Click Log-In Button");
-					//					clickWebdriver(attributeName_xpath,HC_Login);
-					
-									waitForPageToLoadWebdriver();	
-					//clickWebdriver(attributeName_xpath, HC_Login);
-					checkWebdriver(attributeName_xpath, HC_Login);
-					//Thread.sleep(6000);
+					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					waitForPageToLoadWebdriver();	
+					//clickWebdriver(attributeName_xpath, HC_Login);
+					//checkWebdriver(attributeName_xpath, HC_Login);
+					//Thread.sleep(6000);
 					//waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
-					waitForPageToLoadWebdriver();
-					waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+					
+					//waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 					//waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");         
 				}
 				//			}

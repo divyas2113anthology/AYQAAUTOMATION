@@ -181,14 +181,15 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					selectMainWindowWebdriver();
-				}else if (buttons.equalsIgnoreCase("print")) {
+				}
+				/*}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
 					//recentPopupSelectWebdriver("Application Printing");
 				}else if (buttons.equalsIgnoreCase("Application Fee")) {
 					clickWebdriver(attributeName_xpath, AS_AppFee);
 					recentPopupSelectWebdriver("Application Printing");	
 				
-				}
+				}*/
 			}
 			if(!view.equals("")){
 				waitForElementPresentWebdriver(attributeName_xpath, AS_View+view+"')]", "View");

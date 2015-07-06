@@ -874,6 +874,7 @@ public static final String SAI_UserQuries = "//select[@name='QueryID']";
 
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
+
 public static final String SAI_SubmitBtnBottom = "//input[contains(@src,'submit')]";
 public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[contains(@src,'admin_submit_small')])[3]";
 //public static final String SAI_SearchByIndividualsSubmit = "//td[font[contains(text(),'Individual')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]";
@@ -1672,6 +1673,12 @@ public static final String UI_FaceliftRadio = "//input[@value='facelift']";
 public static final String UI_CornerImage = "chkCornerPackage";
 public static final String UI_Package = "selPackages";
 public static final String UI_UploadBtn = "//img[contains(@src,'upload')]";
+//#**********************************************************#
+//#	 Maintananace - Add/Edit Package 
+//#**********************************************************#
+public static final String IncludeOffline = "//td[contains(text(),'Include Offline Recommendation')]";
+public static final String IncludeOfflineCheck = "//input[@name='chkPrintOfflineRcmd']";
+public static final String RecIncludeOffline = "//font[contains(text(),'Include Offline Recommendation')]";
 
 			//Created by  : Malik
 
@@ -1832,10 +1839,12 @@ public static final String ED_Buttons = "//span[contains(text(),'Enrollments-DT 
 //#**********************************************************#
 //# Webcenter - Recommendation Details Page - RD
 //#**********************************************************#
+public static final String RD_RecStartDate = "//td[contains(text(),'This Recommender  has not started the Recommendations')]";
 public static final String RD_Pagename = "//font[contains(text(),'Recommendations')]";
 //#**********************************************************#
 //# Webcenter Search For Recommendation Verify - SRV
 //#**********************************************************#
+
 public static final String SRV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
 //#**********************************************************#
 //# Webcenter - Recommendation Update Status - RUS

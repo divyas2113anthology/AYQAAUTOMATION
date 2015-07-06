@@ -45,6 +45,7 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 			String submit = testdata[26];
 			String daterange_from = testdata[27];
 			String daterange_to = testdata[28];
+			String systemqueries = testdata[29];
 			
 			Reporter.log("Input Test Data was retrieved for 'Search For Enrollment Applicants' Page");
 			
@@ -52,12 +53,18 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 				Reporter.log("Enter the First Name");
 				sendKeys(attributeName_xpath, SFR_RecFirstName, app_firstname);
 			}
-			
-			if (!submit.equals("")) {
-				Reporter.log("Click on the submit button");
-				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
-				waitForPageToLoadWebdriver();
+			if (!systemqueries.equals("")) {
+				Reporter.log("Select a system query as ["+systemqueries+"]");
+				clickWebdriver(attributeName_xpath, "//input[@value='query']");
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				}
+					/*if (!submit.equals("")) {
+					Reporter.log("Click on the submit button");
+					clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+					waitForPageToLoadWebdriver();
 			}
+			*/
 
 
 		} catch (Exception e) {

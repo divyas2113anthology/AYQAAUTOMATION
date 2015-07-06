@@ -14,10 +14,23 @@ public class MC_AddEditPackageApplication_Input extends CommonSeleniumActions im
 			Reporter.log("Proceed to click on package name in quick view screen of Maintenance center");
 			String[] testdata = datacontainer;
 			String button = testdata[0];
+			String offlinerecommendation = testdata[1];
+			String offlinerecommendationcheck = testdata[2];
 			Reporter.log("Check user clicked on save button in application package of Maintenance center");
+			
+			if (!offlinerecommendation.equals("")) {
+				Reporter.log("Verify the Text as ["+offlinerecommendation+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, IncludeOffline, offlinerecommendation);
+				verifyElementContainsTextWebdriver(attributeName_xpath, IncludeOffline,offlinerecommendation,offlinerecommendation);
+			}
+			if (!offlinerecommendationcheck.equals("")) {
+				Reporter.log("Perform the operation to click the  Button as ["+offlinerecommendationcheck+"]");
+				doubleClickWebdriver(attributeName_xpath, IncludeOfflineCheck);
+			}			
+			
 			if (!button.equals("")) {
-				click(MCL_SaveModbutton);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,CL_AddEdit+button+"')]");
+				waitForPageToLoadWebdriver();
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());}

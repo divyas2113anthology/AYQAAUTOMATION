@@ -29,6 +29,11 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			//recentPopupSelectWebdriver("Recommendation");
 			//recentPopupSelect_without_window_nameWebdriver();
 			
+			if (!online.equals("")) {
+				Reporter.log("Verify the Text ["+online+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, RD_Online, online);
+				verifyElementContainsTextWebdriver(attributeName_xpath, RD_Online,online,online);
+			}
 			if(!verifystatus.equals("")){
 				System.out.println("Verification");
 				Reporter.log("Verify("+verifystatus+")is present");

@@ -41,6 +41,7 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			}			
 			
 			if (!button.equals("")) {
+				waitForElementPresentWebdriver(attributeName_xpath,CL_AddEdit+button+"')]", button);
 				clickWebdriver(attributeName_xpath,CL_AddEdit+button+"')]");
 				waitForPageToLoadWebdriver();
 			}

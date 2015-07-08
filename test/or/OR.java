@@ -468,8 +468,8 @@ public static final String CA_EmailAddress = "css=#aycreateEMail.emails";
 public static final String CA_ConfirmEmailAddress = "css=#aycreateConfirmEMail.emails";
 public static final String CA_BirthDate = "css=#aycreateDOB";
 public static final String CA_ZipCode = "css=#aycreatePC";
-public static final String CA_Password = "css=#aycreatePassword";
-public static final String CA_ConfirmPassword = "css=#aycreateConfirmPassword";
+public static final String CA_Password = "//input[@id='aycreatePassword']";
+public static final String CA_ConfirmPassword = "//input[@id='aycreateConfirmPassword']";
 public static final String CA_CreateAccountBtn = "ay-createSubmit";
 public static final String CA_LoginBtn = "//input[@id='ay-create-login']";
 public static final String CA_UserName = "aycreateUserName";
@@ -870,7 +870,7 @@ public static final String SAI_UserQuries = "//select[@name='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";
-
+ public static final String VerifySystemQueryLabel = "//font[contains(text(),'Queries')]";
 
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
 public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
@@ -1680,6 +1680,7 @@ public static final String IncludeOffline = "//td[contains(text(),'Include Offli
 public static final String IncludeOfflineCheck = "//input[@name='chkPrintOfflineRcmd']";
 public static final String RecIncludeOffline = "//font[contains(text(),'Include Offline Recommendation')]";
 
+
 			//Created by  : Malik
 
 //#**********************************************************#
@@ -1839,7 +1840,7 @@ public static final String ED_Buttons = "//span[contains(text(),'Enrollments-DT 
 //#**********************************************************#
 //# Webcenter - Recommendation Details Page - RD
 //#**********************************************************#
-public static final String RD_RecStartDate = "//td[contains(text(),'This Recommender  has not started the Recommendations')]";
+public static final String RD_RecStartDate = "//td[contains(text(),'";    //This Recommender  has not started the Recommendations')]";
 public static final String RD_Pagename = "//font[contains(text(),'Recommendations')]";
 //#**********************************************************#
 //# Webcenter Search For Recommendation Verify - SRV
@@ -1931,6 +1932,7 @@ public static final String AR_Save = "//img[contains(@src,'save_small')]";
 //# Webcenter - Recommendation DT Page- RD
 //#**********************************************************#
 public static final String RD_VerifyStatus = "//a[contains(text(),'";  //Not Received')]";
+public static final String RD_Online = "//a[contains(text(),'No')]";
 
 public static final String RD_CloseWindow = "//img[contains(@src,'close_window')]";
 //#**********************************************************#

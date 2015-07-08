@@ -8,10 +8,10 @@
       <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
     </line>
     <line>
-      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG]]>
     </line>
     <line>
-      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG' height='200' width='200'></a>]]>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG' height='200' width='200'></a>]]>
     </line>
     <line>
       <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
@@ -20,16 +20,16 @@
       <![CDATA[<hr noshade="noshade"/> ]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="251" started-at="2015-06-29T08:22:07Z" finished-at="2015-06-29T08:22:08Z">
+  <suite name="Default suite" duration-ms="235" started-at="2015-07-08T11:31:23Z" finished-at="2015-07-08T11:31:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="251" started-at="2015-06-29T08:22:07Z" finished-at="2015-06-29T08:22:08Z">
-      <class name="procedures_NewFramework.AYSmoke.WebMail.Email_Verification">
-        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="startseleniumserver" is-config="true" duration-ms="4986" started-at="2015-06-29T04:22:02Z" finished-at="2015-06-29T04:22:07Z">
+    <test name="Default test" duration-ms="235" started-at="2015-07-08T11:31:23Z" finished-at="2015-07-08T11:31:23Z">
+      <class name="procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7]" name="startseleniumserver" is-config="true" duration-ms="4299" started-at="2015-07-08T07:31:18Z" finished-at="2015-07-08T07:31:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@13e4e54]]>
+                <![CDATA[org.testng.TestRunner@820699]]>
               </value>
             </param>
           </params>
@@ -42,7 +42,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- startseleniumserver -->
-        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-06-29T04:22:07Z" finished-at="2015-06-29T04:22:07Z">
+        <test-method status="FAIL" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7]" name="datagenerator" is-config="true" duration-ms="0" started-at="2015-07-08T07:31:23Z" finished-at="2015-07-08T07:31:23Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -79,44 +79,44 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datagenerator -->
-        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="failurescreenshot" is-config="true" duration-ms="234" started-at="2015-06-29T04:22:07Z" finished-at="2015-06-29T04:22:08Z">
+        <test-method status="SKIP" signature="FC_CreateAccount_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7]" name="FC_CreateAccount_Input" duration-ms="0" started-at="2015-07-08T07:31:23Z" description="This Procedure is to perform some Operation in &#039;Create Account Profile&#039; page" finished-at="2015-07-08T07:31:23Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- FC_CreateAccount_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7]" name="failurescreenshot" is-config="true" duration-ms="213" started-at="2015-07-08T07:31:23Z" finished-at="2015-07-08T07:31:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Email_Verification status=SKIP method=Email_Verification.Email_Verification()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]]>
+                <![CDATA[[TestResult name=FC_CreateAccount_Input status=SKIP method=FC_CreateAccount_Input.FC_CreateAccount_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\FC_CreateAccount_Input_0.PNG]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@13e4e54]]>
+                <![CDATA[org.testng.TestRunner@820699]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- failurescreenshot -->
-        <test-method status="SKIP" signature="Email_Verification()[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="Email_Verification" duration-ms="0" started-at="2015-06-29T04:22:07Z" description="This Procedure is used to Perform operation and Verification in Received Email in User Account Hobsons" finished-at="2015-06-29T04:22:07Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG]]>
-            </line>
-            <line>
-              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\test-output\Failurescreenshot\Email_Verification_0.PNG' height='200' width='200'></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- Email_Verification -->
-        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.WebMail.Email_Verification@4242a9]" name="shutdownseleniumserver" is-config="true" duration-ms="406" started-at="2015-06-29T04:22:08Z" finished-at="2015-06-29T04:22:08Z">
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input@1d30fe7]" name="shutdownseleniumserver" is-config="true" duration-ms="246" started-at="2015-07-08T07:31:23Z" finished-at="2015-07-08T07:31:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@13e4e54]]>
+                <![CDATA[org.testng.TestRunner@820699]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdownseleniumserver -->
-      </class> <!-- procedures_NewFramework.AYSmoke.WebMail.Email_Verification -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Facelift.FC_CreateAccount_Input -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

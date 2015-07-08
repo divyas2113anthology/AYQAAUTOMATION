@@ -46,8 +46,9 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 			String daterange_from = testdata[27];
 			String daterange_to = testdata[28];
 			String systemqueries = testdata[29];
+			String verifysystemquerylabel = testdata[30];
 			
-			Reporter.log("Input Test Data was retrieved for 'Search For Enrollment Applicants' Page");
+			Reporter.log("Input Test Data was retrieved for 'Search For Recommendation' Page");
 			
 			if (!app_firstname.equals("")) {
 				Reporter.log("Enter the First Name");
@@ -65,7 +66,11 @@ public class WC_SearchforRecommender_Input extends CommonSeleniumActions impleme
 					waitForPageToLoadWebdriver();
 			}
 			*/
-
+			if (!verifysystemquerylabel.equals("")) {
+				Reporter.log("Verify the label ["+verifysystemquerylabel+"] is present");
+				waitForElementPresentWebdriver(attributeName_xpath, VerifySystemQueryLabel, verifysystemquerylabel);
+				verifyElementContainsTextWebdriver(attributeName_xpath,VerifySystemQueryLabel,verifysystemquerylabel,verifysystemquerylabel);
+			}
 
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

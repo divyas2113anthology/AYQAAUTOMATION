@@ -19,15 +19,21 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			String renotify = testdata[1];
 			String recommendationsystemurl = testdata[2];
 			String online = testdata[3];
-			String recommendationstartdate = testdata[4];
-			String closewindow = testdata[5];
+			String verifynotstatus = testdata[4];
+			String recommendationstartdate = testdata[5];
+			String closewindow = testdata[6];
 			
 			Reporter.log("Input Test Data was retrieved for 'Recommendation Provider Information' window");
-
+			
+			if (!verifynotstatus.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+verifynotstatus+"]");
+				verifyElementNotContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+recommendationstartdate+"')]",verifynotstatus,verifynotstatus);
+			}
+			
 			if (!recommendationstartdate.equals("")) {
 				Reporter.log("Verify the Recommendation Start Date as ["+recommendationstartdate+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, RD_RecStartDate, recommendationstartdate);
-				verifyElementContainsTextWebdriver(attributeName_xpath, RD_RecStartDate,recommendationstartdate,recommendationstartdate);
+				waitForElementPresentWebdriver(attributeName_xpath, RD_RecStartDate+recommendationstartdate+"')]", recommendationstartdate);
+				verifyElementContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+recommendationstartdate+"')]",recommendationstartdate,recommendationstartdate);
 			}
 			if (!closewindow.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+closewindow+"]");

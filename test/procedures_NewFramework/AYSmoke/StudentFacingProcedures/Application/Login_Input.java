@@ -26,6 +26,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		String fqa = parameterValuesArray[6];
 		String technicalsupport = parameterValuesArray[7];
 		String securityinformation = parameterValuesArray[8];
+		String viewsource = parameterValuesArray[9];
 		Reporter.log("Input Test Data was retrieved for 'Application Login' page");
 		
 		if (!pin.equals("")) {
@@ -112,7 +113,13 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 				recentPopupSelect("Security/Privacy Information");				
 			}			
 		}
-		
+		if(!viewsource.equals("")){
+			String pagesource = driver.getPageSource();
+			if(pagesource.contains(viewsource))
+				System.out.println("String Present");
+			else 
+				writeFailure("Given Test Data["+viewsource+"] has not be available");
+		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());
 		}

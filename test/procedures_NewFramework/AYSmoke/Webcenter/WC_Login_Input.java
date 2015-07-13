@@ -18,6 +18,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 			String userid = testdata[1];
 			String password = testdata[2];
 			String needpasswordgo = testdata[3];
+			String viewsource = testdata[4];
 			Reporter.log("Input Test Data was retrieved for 'Webcenter Login' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!clientid.equals("")) {
@@ -64,6 +65,14 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 					writeFailure("Given Test Data["+needpasswordgo+"] either Incorrect or has not be Scripted ");
 				}
 
+			}
+			if(!viewsource.equals("")){
+				String pagesource = driver.getPageSource();
+				System.out.println(pagesource);
+				if(pagesource.contains(viewsource))
+					System.out.println("String Present");
+				else 
+					writeFailure("Given Test Data["+viewsource+"] has not be available");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

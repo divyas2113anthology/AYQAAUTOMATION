@@ -59,7 +59,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {	
 				if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto";
-					System.out.println("aaa");
+					//System.out.println("aaa");
 					envirurl = "https://qaapp.applyyourself.com/?id=ayauto";
 					//envirurl = "http://IAD1PW001:8089/?id=ayauto";
 					//envirurl = "http://iad1pw001app.emt.hobsons.local/?id=ayauto";

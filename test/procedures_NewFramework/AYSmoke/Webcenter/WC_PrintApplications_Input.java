@@ -71,6 +71,7 @@ public class WC_PrintApplications_Input extends CommonSeleniumActions implements
 			if (!includesubmittedrecommendations.equals("")) {
 				Reporter.log("Step 7 - Perform the operation to check the checkbox as ["+includesubmittedrecommendations+"]");
 				if (includesubmittedrecommendations.equalsIgnoreCase("Check")) {
+					waitForElementPresentWebdriver(attributeName_xpath, PA_IncludeRecomendation, includesubmittedrecommendations);
 					checkWebdriverCheckbox(attributeName_xpath, PA_IncludeRecomendation);
 				}else if (includesubmittedrecommendations.equalsIgnoreCase("UnCheck")) {
 					checkWebdriverCheckbox(attributeName_xpath, PA_IncludeRecomendation);

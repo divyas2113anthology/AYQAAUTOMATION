@@ -16,6 +16,7 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 		Reporter.log("Proceed to retrieve Input Test Data for 'Application Login' page");
 		String tab_to_select = loginInputArray[0];
 		String link_to_click = loginInputArray[1];
+		String view_source = loginInputArray[2];
 		Reporter.log("Input Test Data was retrieved for 'Application Login' page");
 		if (!tab_to_select.equals("")) {
 			Reporter.log("Step 1 - Select this Tab, '"+ tab_to_select +"'");
@@ -54,7 +55,13 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 			}
 			
 		}
-		
+		if(!view_source.equals("")){
+			String pagesource = driver.getPageSource();
+			if(pagesource.contains(view_source))
+				System.out.println("String Present");
+			else 
+				writeFailure("Given Test Data["+view_source+"] has not be available");
+		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());
 		}

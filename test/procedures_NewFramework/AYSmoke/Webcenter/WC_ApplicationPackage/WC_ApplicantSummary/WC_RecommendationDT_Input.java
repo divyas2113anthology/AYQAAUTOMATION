@@ -27,7 +27,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			String verifystatus = testdata[4];
 			String closewindow = testdata[5];
 			//recentPopupSelectWebdriver("Recommendation");
-			//recentPopupSelect_without_window_nameWebdriver();
+			recentPopupSelect_without_window_nameWebdriver();
 			
 			if (!online.equals("")) {
 				Reporter.log("Verify the Text ["+online+"]");
@@ -50,7 +50,9 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				Reporter.log("Click on the Button"+closewindow);
 				clickWebdriver(attributeName_xpath, RD_CloseWindow);
 				//recentPopupClose();
+				recentPopupSelectWebdriver("AY");
 			}	
+//			selectMainWindowWebdriver();
 			
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

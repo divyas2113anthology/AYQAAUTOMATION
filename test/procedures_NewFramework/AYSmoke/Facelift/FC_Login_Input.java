@@ -57,10 +57,16 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 		}
 		if(!view_source.equals("")){
 			String pagesource = driver.getPageSource();
-			if(pagesource.contains(view_source))
-				System.out.println("String Present");
-			else 
+			String instance = Runtimedataread("Instance");
+			
+			if(pagesource.contains(view_source)){
+				if(instance.equalsIgnoreCase("USQA") && pagesource.contains("id=GTM-5BXB27"))
+						System.out.println("US QA String Present");
+			else if(instance.equalsIgnoreCase("UKQA") && pagesource.contains("id=GTM-PSKDLP"))
+						System.out.println("US QA String Present");
+			else
 				writeFailure("Given Test Data["+view_source+"] has not be available");
+			}
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

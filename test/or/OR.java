@@ -1560,6 +1560,7 @@ public static final String RR_ExcelFormate = "//img[contains(@src,'MSExcel')]/pr
 public static final String RR_WordFormate = "//img[contains(@src,'MSWord')]/preceding-sibling::input";
 public static final String RR_HtmlFormate = "//img[contains(@src,'MSHTML')]/preceding-sibling::input";
 public static final String RR_ClearBtn = "//img[contains(@src,'admin_clear')]";
+public static final String RR_Rules = "//input[@name='execBusRules' and @value='";   //2']";
 
 //#**********************************************************#
 //#	 Webcenter - Post Message - Page

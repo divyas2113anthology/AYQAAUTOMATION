@@ -25,7 +25,7 @@ public class WC_ManageTestScore_Input extends CommonSeleniumActions implements O
 			String adddeleteclosewindow = testdata[2];
 									
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score' Page");
-			recentPopupSelect_without_window_nameWebdriver();
+			//recentPopupSelect_without_window_nameWebdriver();
 								
 			if(!adddeleteclosewindow.equals("")){
 				Reporter.log("Click on the button");
@@ -33,8 +33,7 @@ public class WC_ManageTestScore_Input extends CommonSeleniumActions implements O
 				clickWebdriver(attributeName_xpath,CloseWindow);
 				
 			}
-			//switchToDefaultContentWebdriver();
-			
+			selectMainWindowWebdriver();	
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

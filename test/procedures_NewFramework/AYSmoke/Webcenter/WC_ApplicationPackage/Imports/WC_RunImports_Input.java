@@ -51,7 +51,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rule.equals("")) {
 				Reporter.log("Step 4 - Select an Rule as ["+rule+"]");
-				
+				clickWebdriver(attributeName_xpath, RR_Rules+rule+"']");
 			}			
 			if (!unsubmittedstatus.equals("")) {
 				Reporter.log("Step 5 - Select the Column Header as ["+unsubmittedstatus+"]");

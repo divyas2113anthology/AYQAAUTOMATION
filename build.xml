@@ -10,15 +10,26 @@
     <property name="source" value="1.7"/>
     <path id="AYQAAutomation.classpath">
         <pathelement location="bin"/>
+        <pathelement location="lib/activation.jar"/>
+        <pathelement location="lib/javax.mail-1.4.5.jar"/>
+        <pathelement location="lib/javax.mail.jar"/>
         <pathelement location="lib/jxl.jar"/>
+        <pathelement location="lib/pop3-1.5.0.jar"/>
+        <pathelement location="lib/smtp-1.4.5.jar"/>
         <pathelement location="lib/SpiraApi.jar"/>
         <pathelement location="lib/testng-6.9beta.jar"/>
-        <pathelement location="lib/selenium-server-standalone-2.45.0.jar"/>
+        <pathelement location="lib/selenium-server-standalone-2.46.0.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="test">
+                <exclude name="**/*.java"/>
+                <exclude name="procedures_NewFramework/AYSmoke/Webcenter/WC_ApplicationPackage/Email/"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test/procedures_NewFramework/AYSmoke/Webcenter/WC_ApplicationPackage/Email">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -33,6 +44,8 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="test"/>
+            <src path="test/procedures_NewFramework/AYSmoke/Webcenter/WC_ApplicationPackage/Email"/>
+            <exclude name="procedures_NewFramework/AYSmoke/Webcenter/WC_ApplicationPackage/Email/"/>
             <classpath refid="AYQAAutomation.classpath"/>
         </javac>
     </target>
@@ -49,16 +62,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="DriverScript">
-        <java classname="processor.DriverScript" failonerror="true" fork="yes">
-            <arg line="15 1806 23723"/>
-            <classpath refid="AYQAAutomation.classpath"/>
-        </java>
-    </target>
-    <target name="PhantomExample">
-        <java classname="processor.PhantomExample" failonerror="true" fork="yes">
-            <classpath refid="AYQAAutomation.classpath"/>
-        </java>
     </target>
 </project>

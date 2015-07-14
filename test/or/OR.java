@@ -1305,6 +1305,18 @@ public static final String CI_BackBtnFL = "//input[@value='Back']";
 public static final String CI_PageName = "//td[@class='Color1']/font";
 public static final String CI_SectionMenu = "//table[@class='rightBorder']";
 public static final String MoreDetails = "//font[@class='HelpBoxesFont']/b";
+
+//#**********************************************************#
+//#	 Recommendation - Remind Recommender action 
+//#**********************************************************#
+public static final String RR_SelectTemplate = "//font[contains(text(),'Send a Reminder to Recommender')]";
+public static final String RR_ActionLabel = "//input[@name='ActionLabel']";
+public static final String RR_Comment = "//textarea[@id='CommentText']";
+public static final String RR_Subject = "//input[contains(@name,'EmailSubject')]";
+public static final String RR_MailNow = "//input[@name='MailNow']";
+public static final String RR_SendBack = "//img[contains(@src,'";   //send_small')]"
+
+
 //#**********************************************************#
 //#	 Recommendation - Secondary School Supp Page - SSS
 //#**********************************************************#
@@ -1537,7 +1549,7 @@ public static final String Ad_RunAnalysis = "//img[contains(@src,'run_analysis')
 public static final String Ad_FormHeading = "//font[@class='FormHeading']";
 public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
-public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";
+public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";  
 public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/td/font";
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page

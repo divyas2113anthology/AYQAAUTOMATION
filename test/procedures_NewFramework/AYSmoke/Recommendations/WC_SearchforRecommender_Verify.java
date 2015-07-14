@@ -20,8 +20,8 @@ public class WC_SearchforRecommender_Verify extends CommonSeleniumActions implem
 		Reporter.log("Verify Test Data was retrieved for 'Search for Recommender' page");
 		if (!message.equals("")) {
 			Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-			waitForElementPresentWebdriver(attributeName_xpath, Ad_PageName, message);
-			verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageName, message, message);
+			waitForElementPresentWebdriver(attributeName_xpath, Ad_MessageHeading, message);
+			verifyElementContainsTextWebdriver(attributeName_xpath, Ad_MessageHeading, message, message);
 			
 		}
 		if (!pagename.equals("")) {

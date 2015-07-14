@@ -39,6 +39,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
+			
 			driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
@@ -122,7 +123,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					waitForElementPresentWebdriver(attributeName_linktext, Splitviwefullapp[i], viewfullapplication);
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
 				}
-				recentPopupSelectWebdriver("Application Form3");
+				//recentPopupSelectWebdriver("Application Form3");
 //				int WindowCount = getWindowHandles();
 //				recentMultiplePopupSelectWebdriver("Application Form3", WindowCount);
 //				if (viewfullapplication.equalsIgnoreCase("Applicant Detail")) {
@@ -180,7 +181,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				}else if (buttons.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
-					selectMainWindowWebdriver();
+					switchToDefaultContentWebdriver();
 				}
 				/*}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);

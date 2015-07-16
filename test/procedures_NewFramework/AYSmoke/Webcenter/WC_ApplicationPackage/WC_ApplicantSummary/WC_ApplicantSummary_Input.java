@@ -2,13 +2,18 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_Appli
 
 import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
+
 import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 
 
 import or.OR;
@@ -39,6 +44,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String view = testdata[14];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
+			AppSummaryWindowName = driver.getWindowHandle();
 			
 			driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
@@ -179,10 +185,12 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					waitForPageToLoad();
 //					selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close Window")) {
+					
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
-					switchToDefaultContentWebdriver();
-				}
+					driver.manage().deleteAllCookies();
+					//driver.switchTo().window(ApplicationPage);
+					}
 				/*}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
 					//recentPopupSelectWebdriver("Application Printing");

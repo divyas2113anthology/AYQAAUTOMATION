@@ -56,8 +56,13 @@ import org.openqa.selenium.internal.Locatable;
 
 public class CommonSeleniumActions extends Processor implements OR {	
 
-
-
+	//Declared AppSummaryWindowName as Global Variable for Window Handling in Applicant Summary_Input procedure
+	public static String AppSummaryWindowName;
+	//Declared ApplicationPage as Global Variable for Window Handling in Search For Applicants procedure
+	public static String ApplicationPage;
+	//Declared RecommendationDTwindow as Global Variable for Window Handling in Recommendation DT Page
+	public static String RecommendationDTwindow;
+	
 	public void open(String url){
 		writeConsole("Open ["+url+"]");
 		selenium.open(url);

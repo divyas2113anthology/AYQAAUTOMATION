@@ -24,7 +24,9 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 			String minutes = testdata[3];
 			String saveclosewindow = testdata[4];
 			String verifystatus = testdata[5];
+			
 			recentPopupSelect_without_window_nameWebdriver();
+			
 			if(!verifystatus.equals("")){
 				Reporter.log("Verify("+verifystatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, verifystatus);
@@ -34,20 +36,14 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 				Reporter.log("Select the Status("+status+")");
 				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, status);
 				selectByVisibleTextWebdriver(attributeName_xpath, RUS_Status, status);
-
 			}	
 			
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");
-				
 			}
-			//selectMainWindowWebdriver();
-			//recentOpenedPopupSelectWebdriver("Parent");
-			//recentPopupCloseWebdriver();
-			//switchToDefaultContentWebdriver();
-			//System.out.println("Switch to default contents");
-			driver.switchTo().window("frmMain");
+			
+			driver.switchTo().window(RecommendationDTwindow);
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

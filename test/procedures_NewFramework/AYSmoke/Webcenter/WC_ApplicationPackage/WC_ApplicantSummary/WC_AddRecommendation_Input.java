@@ -33,6 +33,8 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 			String receiveddate = testdata[15];
 			String saveclose = testdata[16];
 			
+			recentPopupSelect_without_window_nameWebdriver();
+			
 			if(!firstname.equals("")){
 				Reporter.log("Enter the First Name");
 				sendKeys(attributeName_xpath, AR_FirstName, firstname);
@@ -104,11 +106,10 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Save , saveclose);   
 				clickWebdriver(attributeName_xpath, AR_Save);
 				recentPopupCloseWebdriver();
-				//recentPopupCloseSelectSecondWebdriver();
-				
+								
 			}
 			
-		
+			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

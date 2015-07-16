@@ -23,7 +23,9 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			String receiveddate = testdata[2];
 			String comments = testdata[3];
 			String saveclosewindow = testdata[4];
-			recentPopupSelect_without_window_nameWebdriver();					
+			
+			recentPopupSelect_without_window_nameWebdriver();	
+			
 			Reporter.log("Input Test Data was retrieved for 'Supporting Documents' Page");
 			if(!supdocumentname.equals("")){
 				Reporter.log("Verify("+supdocumentname+")is present");

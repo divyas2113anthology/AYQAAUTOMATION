@@ -1822,7 +1822,7 @@ public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@
 public static final String MCG_Package = "//img[contains(@src,'";   //publish_prod_large')]"
 public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
-public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'6')]";
+public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'7')]";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
 public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]";

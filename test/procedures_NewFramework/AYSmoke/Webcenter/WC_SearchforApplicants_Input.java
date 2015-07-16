@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
@@ -42,9 +44,16 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			String pros_id = testdata[23];
 			String daterange_from = testdata[24];
 			String daterange_to = testdata[25];
+			
+			//ApplicationPage = driver.getWindowHandle();
+			ApplicationPage = driver.getWindowHandle();
+			
+					
 			Reporter.log("Input Test Data was retrieved for 'Search For Applicants' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			waitForElementPresentWebdriver(attributeName_xpath, SAI_NoOFRecords, "Number of Records Display");
+			
+					
 			if (!numberofrecordsdisplay.equals("")) {
 				Reporter.log("Step 1 - Enter Number Of recodrs display as ["+numberofrecordsdisplay+"]");
 				selectByValueWebdriver(attributeName_xpath, SAI_NoOFRecords, numberofrecordsdisplay);

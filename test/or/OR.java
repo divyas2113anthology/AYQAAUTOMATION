@@ -1315,7 +1315,10 @@ public static final String RR_Comment = "//textarea[@id='CommentText']";
 public static final String RR_Subject = "//input[contains(@name,'EmailSubject')]";
 public static final String RR_MailNow = "//input[@name='MailNow']";
 public static final String RR_SendBack = "//img[contains(@src,'";   //send_small')]"
-
+public static final String RR_Preview = "//input[@name='btnHtmlEditor']";
+public static final String RR_PreviewEmailTemplate = "//b[contains(text(),'Preview Email Template')]";
+public static final String RR_Comments = "//td[contains(.,'Remind to Reminder')]";
+public static final String RR_Close = "//img[contains(@src,'close_small')]";
 
 //#**********************************************************#
 //#	 Recommendation - Secondary School Supp Page - SSS

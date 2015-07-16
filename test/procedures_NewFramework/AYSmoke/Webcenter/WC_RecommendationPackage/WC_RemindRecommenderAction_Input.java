@@ -21,20 +21,21 @@ public class WC_RemindRecommenderAction_Input extends CommonSeleniumActions impl
 			String selectatemplate = testdata[0];
 			String subject = testdata[1];
 			String comment = testdata[2];
-			String preview = testdata[3];
-			String sender = testdata[4];
-			String from = testdata[5];
-			String replyto = testdata[6];
-			String to = testdata[7];		
-			String recordemail = testdata[8];	
-			String actionlabel = testdata[9];	
-			String batchname = testdata[10];	
-			String batchdescription = testdata[11];	
-			String mailnow = testdata[12];	
-			String timehr = testdata[13];	
-			String timemin = testdata[14];	
-			String date = testdata[15];	
-			String sendback = testdata[16];	
+			String verifypreview = testdata[3];
+			String preview = testdata[4];
+			String sender = testdata[5];
+			String from = testdata[6];
+			String replyto = testdata[7];
+			String to = testdata[8];		
+			String recordemail = testdata[9];	
+			String actionlabel = testdata[10];	
+			String batchname = testdata[11];	
+			String batchdescription = testdata[12];	
+			String mailnow = testdata[13];	
+			String timehr = testdata[14];	
+			String timemin = testdata[15];	
+			String date = testdata[16];	
+			String sendback = testdata[17];	
 				
 			Reporter.log("Input Test Data was retrieved for 'Remind Recommender Action' Page");
 			
@@ -53,6 +54,17 @@ public class WC_RemindRecommenderAction_Input extends CommonSeleniumActions impl
 				Reporter.log("SProvide the comments as("+comment+")");
 				sendKeys(attributeName_xpath, RR_Comment, comment);
 
+			}
+			if(!verifypreview.equals("")){
+				Reporter.log("Verify("+verifypreview+") button is present");
+				waitForElementPresentWebdriver(attributeName_xpath, RR_Preview, verifypreview);
+				verifyElementValueWebdriver(attributeName_xpath, RR_Preview, verifypreview, verifypreview);
+				
+			}
+			if(!preview.equals("")){
+				Reporter.log("Click on ("+preview+") button");
+				clickWebdriver(attributeName_xpath, RR_Preview);
+				
 			}
 			if(!actionlabel.equals("")){
 				Reporter.log("Verify("+actionlabel+")is present");

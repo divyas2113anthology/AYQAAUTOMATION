@@ -89,7 +89,7 @@ public class DriverScript {
 		FileUtils.deleteDirectory(resultsFile);//delete prior run results folder if present
 		
 		//Start testNG test with command line call
-		Process pr = rt.exec("java.exe -classpath C:\\SeleniumScripts\\AYQAAutomation\\bin;C:\\Selenium\\*; org.testng.TestNG C:\\SeleniumScripts\\AYQAAutomation\\Suite\\DriverSuite.xml -d C:\\SeleniumScripts\\AYQAAutomation\\Results\\"+testIdInput+"_"+testNameInput);
+		Process pr = rt.exec("java.exe -classpath C:\\SeleniumScripts\\AYQAAutomation\\bin;C:\\SeleniumScripts\\AYQAAutomation\\lib\\*; org.testng.TestNG C:\\SeleniumScripts\\AYQAAutomation\\Suite\\DriverSuite.xml -d C:\\SeleniumScripts\\AYQAAutomation\\Results\\"+testIdInput+"_"+testNameInput);
 		//Capture console output
 		BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 		  while ((line = input.readLine()) != null) {

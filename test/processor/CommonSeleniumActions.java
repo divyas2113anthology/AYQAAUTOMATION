@@ -6,13 +6,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
@@ -20,8 +17,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.SimpleFormatter;
-import java.lang.IllegalArgumentException;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -42,16 +37,11 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.Locatable;
-
-import com.thoughtworks.selenium.webdriven.commands.GetAttribute;
-import com.thoughtworks.selenium.webdriven.commands.GetXpathCount;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.openqa.selenium.internal.Locatable;
 
 
 public class CommonSeleniumActions extends Processor implements OR {	

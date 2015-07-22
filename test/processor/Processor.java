@@ -205,7 +205,7 @@ public class Processor {
 	    @BeforeSuite
 	   	public void startseleniumserver(ITestContext context) throws Exception {
 	    	System.out.println("Start: ");
-			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			
 //			try {
 //				jettyProxy = new SeleniumServer();

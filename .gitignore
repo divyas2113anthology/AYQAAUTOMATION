@@ -37,8 +37,7 @@ ehthumbs.db
 Thumbs.db
 
 # Unnecessary framework files #
-###############################
-.classpath
+##############################
 .project
 
 /bin

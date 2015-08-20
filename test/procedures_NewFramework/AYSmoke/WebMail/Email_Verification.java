@@ -429,7 +429,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account"); 
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
 					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
-					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account - Available menu with submenu']");
+					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account menu with submenu']");
 					Thread.sleep(6000);
 					//clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
 					clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");

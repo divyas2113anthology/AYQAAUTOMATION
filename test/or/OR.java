@@ -158,8 +158,8 @@ public static final String BR_FilterName = "//a[contains(text(),'";    //TestFil
 //#**********************************************************#
 //# Personal Information Page - PI
 //#**********************************************************#
-public static final String PI_Suffix = "//select[@id='s27099']";
-//public static final String PI_Suffix = "//input[@id='q24494']";
+//public static final String PI_Suffix = "//select[@id='s27099']";
+public static final String PI_Suffix = "//input[@id='q24494']";
 public static final String PI_FirstName = "//input[@id='q24495']";
 public static final String PI_LastName = "//input[@id='q24496']";
 public static final String PI_FullTimeStudent_Yes = "//input[@value='Y']";
@@ -708,7 +708,8 @@ public static final String HC_Login = "//span[contains(text(),'Sign in')]";
 public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
-public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']";
+//public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']"; 
+public static final String HC_Home = "//button[@aria-label='EMT QA Account menu with submenu']";
 //button[@aria-label='EMT QA Account - Available menu with submenu']
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";

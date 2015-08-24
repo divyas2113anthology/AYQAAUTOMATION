@@ -281,8 +281,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
-							//clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
-							clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
+							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
+							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
 							Thread.sleep(6000); 
 							

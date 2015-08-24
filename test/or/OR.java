@@ -704,8 +704,8 @@ public static final String HC_Password = "//input[@name='passwd']";
 //public static final String HC_Login = "//input[@value='Log-In']";    
 public static final String HC_Login = "//span[contains(text(),'Sign in')]";
 //public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
-//public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']";
-public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']";
+public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']";
+//public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']"; 

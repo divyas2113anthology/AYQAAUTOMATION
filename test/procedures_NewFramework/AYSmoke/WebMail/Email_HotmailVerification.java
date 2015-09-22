@@ -48,7 +48,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");
 				clickWebdriver(attributeName_xpath, HM_WSignIn);
-				waitForElementPresentWebdriver(attributeName_xpath, "//img[@class='is_img']", "Outlook Image");
+				waitForElementPresentWebdriver(attributeName_xpath, "//button[@role='menuitem']", "Outlook Image");
 			}
 			if (!emailsubject.equals("")) {
 				Reporter.log("Step 5 - Email Subject as'"+emailsubject+"'");
@@ -118,7 +118,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step 6 - Entered Username and Password");
 				//public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
 				//selenium.waitForCondition("selenium.isElementPresent(\"//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]\")", "120000");
-				selenium.waitForCondition("selenium.isElementPresent(\"//li[contains(@class,'leftnavitem')]//span[text()='Inbox']\")", "120000");
+				//selenium.waitForCondition("selenium.isElementPresent(\"//li[contains(@class,'leftnavitem')]//span[text()='Inbox']\")", "120000");
+				selenium.waitForCondition("selenium.isElementPresent(\"//div[@role='treeitem']//span[text()='Inbox']\")","120000");
 				Reporter.log("Click on Inbox");
 				writeConsole("Click on Inbox");
 				//clickWebdriver(attributeName_partiallinktext, HM_Inbox);

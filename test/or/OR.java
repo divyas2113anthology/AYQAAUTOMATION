@@ -1268,7 +1268,8 @@ public static final String HM_Inbox = "link=Inbox";
 //public static final String HM_Inbox = "//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
 //public static final String HM_InboxSide ="//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]";
 //public static final String HM_InboxSide ="//span[contains(@class,'editableLabel readonly') and text()='Inbox']";
-public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
+//public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']"; //div[@role='treeitem']//span[text()='Inbox']
+public static final String HM_InboxSide = "//div[@role='treeitem']//span[text()='Inbox']";
 
 //#**********************************************************#
 //#	 WebMail Login Page - Gmail
@@ -1555,6 +1556,18 @@ public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";  
 public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/td/font";
+//#**********************************************************#
+//#	 Webcenter - Configure Search Column - Page
+//#**********************************************************#
+
+public static final String CSC_FormHeading = "//font[contains(text(),'"; //+Application Module')]"
+public static final String CSC_Field = "//select[@name='Question']";
+public static final String CSC_Label = "//input[@name='txtLabel']";
+public static final String CSC_Order = "//input[@name='txtOrder']";
+public static final String CSC_ShowAfterDefault = "//input[@name='chkShowAfter']";
+public static final String CSC_Delete = "//input[@name='chkDelete']";
+public static final String CSC_AddRow = "//img[contains(@src,'addrow')]";
+public static final String CSC_Save = "//img[contains(@src,'admin_save')]";
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page
 //#**********************************************************#

@@ -43,7 +43,7 @@ public class ResetPassword_Input extends CommonSeleniumActions implements OR {
 					recentPopupClose();
 				}else if (submit.equalsIgnoreCase("here")) {
 					clickWebdriver(attributeName_partiallinktext, submit);
-					waitForElementPresentWebdriver(attributeName_linktext, "Logout", "Welcome Page");	
+					//waitForElementPresentWebdriver(attributeName_linktext, "Logout", "Welcome Page");	
 				}
 			}
 			

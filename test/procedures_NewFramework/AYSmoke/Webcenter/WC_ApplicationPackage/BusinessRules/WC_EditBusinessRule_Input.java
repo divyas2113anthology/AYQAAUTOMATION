@@ -135,7 +135,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 					waitForPageToLoadWebdriver();
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
-					Thread.sleep(5000);
+					waitForElementPresentWebdriver(attributeName_xpath, BR_Cancel, "Cancel");
 					clickWebdriver(attributeName_xpath, BR_Cancel);
 					waitForPageToLoadWebdriver();
 				}

@@ -34,7 +34,7 @@ public void AppInformation_QuestionDisplay_Verify() throws Exception{
 					waitForPageToLoad();
 				}else{
 					System.out.println(SplitPackage[i]);
-					Thread.sleep(4000);
+					waitForElementPresentWebdriver(attributeName_xpath, AID_RecPlus, "Tree");
 					
 					clickWebdriver(attributeName_xpath, AID_RecPlus);
 					

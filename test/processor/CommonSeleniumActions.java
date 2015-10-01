@@ -68,7 +68,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			selenium.click(locator);	
 		} catch (Exception e) {
 			writeConsole("click["+locator+"]");
-			Thread.sleep(500);
+			//Removed wait time
 			selenium.click(locator);
 		}
 	}
@@ -261,7 +261,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);		
+			waitForPageToLoadWebdriver();
 		}
 
 	}
@@ -278,7 +278,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);			
+			waitForPageToLoadWebdriver();			
 		}
 	}
 	public void waitForElementVisible(String elementLocater, String elementname)throws Exception{
@@ -293,7 +293,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 				writeConsole("Element["+elementLocater+"] Not Found");
 			}
-			Thread.sleep(1000);			
+			waitForPageToLoadWebdriver();			
 		}		
 	}
 
@@ -309,7 +309,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);			
+			waitForPageToLoadWebdriver();			
 		}
 	}
 
@@ -344,14 +344,14 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeConsole("waitForTextPresent : "+message+"");
 			if (second >= 60) writeFailure(message+" Timeout after 1 minute..");
 			try { if (selenium.isTextPresent(pattern)) break; } catch (Exception e) {}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 	public void waitForTextNotPresent(String pattern, String message)throws Exception{
 		for (int second = 0;; second++) {
 			if (second >= 60) writeFailure(message+" Timeout after 1 minute..");
 			try { if (!selenium.isTextPresent(pattern)) break; } catch (Exception e) {}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -364,7 +364,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeConsole("Actual isElementPresent["+iselementpresent+"]");
 			return iselementpresent;			
 		} catch (Exception e) {
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 			boolean iselementpresent = selenium.isElementPresent(locator);
 			writeConsole("Actual isElementPresent["+iselementpresent+"]");
 			return iselementpresent;			
@@ -712,7 +712,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -734,7 +734,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -754,7 +754,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -776,7 +776,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -796,7 +796,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -817,7 +817,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}			
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}	
 
 	}
@@ -1151,7 +1151,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			//				Thread.sleep(1000);			
+						
 		}		
 	}
 
@@ -1201,7 +1201,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(500);			
+			waitForPageToLoadWebdriver();			
 		}		
 	}
 
@@ -1220,7 +1220,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);			
+			waitForPageToLoadWebdriver();			
 		}
 	}
 
@@ -1238,7 +1238,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);			
+			waitForPageToLoadWebdriver();			
 		}
 
 
@@ -1266,7 +1266,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(500);			
+			waitForPageToLoadWebdriver();			
 		}		
 	}
 
@@ -1312,7 +1312,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(500);			
+			waitForPageToLoadWebdriver();			
 		}
 
 
@@ -2026,7 +2026,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 					select(elementor, ShowItemsOptionsArray[i-1]);
 					focus(elementor);
 					keyPressNative(String.valueOf(KeyEvent.VK_DOWN));
-					Thread.sleep(1000);
+					waitForPageToLoadWebdriver();
 					options = "Found";
 					break;
 				}
@@ -2117,7 +2117,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			try {
 				selenium.windowFocus();
 			} catch (Exception e) {
-				Thread.sleep(3000);
+				waitForPageToLoadWebdriver();
 				selenium.windowFocus();
 			}
 		} else if (BrowName.equalsIgnoreCase("Firefox"))  {
@@ -2164,7 +2164,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			System.out.println("Window-->" + Pdfwindows[wintotal]);
 			selenium.selectWindow("name=" + Pdfwindows[wintotal]);
 			Reporter.log("Popup Window is selected....");
-			Thread.sleep(wait);
+			waitForPageToLoadWebdriver();
 			try {
 				exceptionMsg = selenium.getBodyText();
 			} catch (Exception e) {			
@@ -2815,7 +2815,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			//Removed wait time
 
 		}
 	}
@@ -2839,7 +2839,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 			}
 			
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 
 		}
 	}
@@ -2866,13 +2866,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//			      waitForPopupWebdriver(currentpopupcount);
 		//			     }     
 		waitForMultiplePopupWebdriver(currentpopupcount);
-		//			     Thread.sleep(5000);
 		Iterator<String> popwindow = driver.getWindowHandles().iterator();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				Thread.sleep(5000);
+				waitForPageToLoadWebdriver();
 				driver.switchTo().window(window);
 			}
 		}
@@ -2894,9 +2893,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				Thread.sleep(6000);
+				waitForPageToLoadWebdriver();
 				driver.switchTo().window(window);
-//				Thread.sleep(3000);
 			}
 		}
 	}
@@ -3105,7 +3103,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+attributename+"] was Not Found after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 
 	}
@@ -3125,7 +3123,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+attributename+"] was Not Found after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 		return jettyProxyWasStartedByATest;
 
@@ -3147,7 +3145,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+attributename+"] was Found after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 
 	}
@@ -3173,7 +3171,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+attributename+"] was Not Visible after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -3198,7 +3196,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+attributename+"] was Visible after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -3246,7 +3244,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//						} catch (Exception e) {
 	//
 	//						}
-	//						Thread.sleep(1000);		
 	//					}
 	//
 	//				}
@@ -3555,7 +3552,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -3580,7 +3577,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -3606,7 +3603,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -3632,7 +3629,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -4196,7 +4193,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+elementonename+" and "+elementtwoname+" and "+elementthreename+"] was Not Found after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}			
 
 	}
@@ -4224,7 +4221,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+elementonename+" and "+elementtwoname+"] was Not Found after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -4263,7 +4260,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+elementonename+" and "+elementtwoname+" and "+elementthreename+"] was Not Visible after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}			
 
 	}
@@ -4297,7 +4294,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (second>=60) {
 				writeFailure("Elements["+elementonename+" and "+elementtwoname+"] was Not Visible after waiting for 1 Minute");
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -4574,9 +4571,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (file.isFile()) {        
 				writeConsole("File is Exist in the Location["+pathname+"]");        
 				break;       
-			}else { //       writeConsole("File is Not Exist in the Location["+pathname+"]");       }       Thread.sleep(1000);       if
+			}else { //       writeConsole("File is Not Exist in the Location["+pathname+"]");       }       
 			}
-			Thread.sleep(1000);
+			waitForPageToLoadWebdriver();
 			if (i > 60) {
 				writeConsole("File is Not Exist");
 			}
@@ -4662,8 +4659,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Proceed to Close All Opened Pop Ups");		
 //		String mainwindow = driver.getWindowHandle();		
 //		getWindowHandle();		
-//		writeConsole("Webdriver Main Window["+mainwindow+"]");		
-//		Thread.sleep(2000);		
+//		writeConsole("Webdriver Main Window["+mainwindow+"]");			
 //		driver.switchTo().window(mainwindow);		
 		selectMainWindowWebdriver();		
 		writeConsole("Webdriver Main Window["+mainwindow+"]");		
@@ -4678,7 +4674,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (!mainwindow.equals(window)) {	
 				writeConsole("Webdriver Switch To Pop-up Window["+window+"]");
 				driver.switchTo().window(window);
-				Thread.sleep(1000);
 				closeWindowWebdriver();
 				window = popwindow.next();
 				driver.switchTo().window(window);

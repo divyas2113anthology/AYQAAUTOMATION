@@ -14,7 +14,7 @@ public class GL_PDF_Close_MainWindow extends CommonSeleniumActions implements	OR
 			writeDetails();			
 			Reporter.log("Close the Application PDF Window Using AutoIT");
 			Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/PdfClose.exe");
-			Thread.sleep(5000);
+			//Removed wait time
 			selectMainWindowWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

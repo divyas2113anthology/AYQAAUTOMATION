@@ -51,7 +51,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath, SE_TemplateName, selectatemplate);
 				select(SE_Template, "regexp:"+selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
-				Thread.sleep(3000);
+				waitForPageToLoadWebdriver();
 				try {
 			        Alert alert = driver.switchTo().alert();
 			        String AlertText = alert.getText();

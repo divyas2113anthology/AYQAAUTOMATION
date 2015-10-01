@@ -47,7 +47,7 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		//	selenium.focus(AL_Line1);
 //			waitForElement(AL_Submit, addrline1);
 //			waitForElementVisible(AL_Submit, addrline1);
-//			Thread.sleep(15000);
+
 //			selenium.getBodyText();
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Line1, addrline1);
 			type(AL_Line1,addrline1);

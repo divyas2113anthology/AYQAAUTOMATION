@@ -24,7 +24,7 @@ public class DownloadableForms_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Step 1 - Downloadable Form name as ("+formname+")");
 			Runtime.getRuntime().exec("T:\\WebProducts\\QA\\SeleniumScripts\\AY\\AutoIT\\Firefox\\Application\\DownloadForm.exe");
 			click(DF_FormName+formname+"')]");
-//			Thread.sleep(30000);
+
 		}
 		
 		} catch (Exception e) {

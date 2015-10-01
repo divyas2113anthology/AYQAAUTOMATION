@@ -97,7 +97,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 					click(PI_Reset);
 				}else if (pisavebutton.equalsIgnoreCase("close window")) {
 					closeWindowWebdriver();
-					Thread.sleep(3000);
+					//Removed wait time
 					selectMainWindowWebdriver();
 				}
 			}

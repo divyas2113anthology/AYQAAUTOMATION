@@ -81,7 +81,7 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 					String Delimitertype = delimitertype.replace(";" , ",");
 					sendKeys(attributeName_name, "txtDelimiter", Delimitertype);
 				}
-				Thread.sleep(12000);
+				//Removed wait time
 			}
 			if (!importanupdate.equals("")) {
 				Reporter.log("Step 8 - Choose the Important Update as ["+importanupdate+"]");

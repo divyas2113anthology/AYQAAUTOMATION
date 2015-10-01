@@ -31,7 +31,6 @@ public class CRM_SearchContactsResults_Input extends CommonSeleniumActions imple
 				Reporter.log("Step 2 - Clicking on ("+button_click+")");
 				if(button_click.equalsIgnoreCase("Delete")){
 					clickWebdriver(attributeName_xpath, "//input[@value='"+button_click+"']");
-					//Thread.sleep(3000);
 					//recentPopupSelect_without_window_nameWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, "//button[contains(@class,'ui-button')]/span[contains(text(),'Yes')]", "Delete");
 					clickWebdriver(attributeName_xpath, "//div[span[text()='Delete Confirmation']]/following-sibling::div[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//button/span[text()='Yes']");

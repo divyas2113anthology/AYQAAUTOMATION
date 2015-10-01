@@ -520,7 +520,7 @@ public static final String DB_PageTitle = "css=#appListHeader";
 public static final String AW_StartAppBtn = "css=#StartApp";
 public static final String AW_AppInstBtn = "//a[contains(text(),'Application Instructions')]";
 public static final String AW_SubAppBtn = "css=input.ay-Submit";
-public static final String AW_personalDataLnk = "//font[text()='Personal Data']";
+public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[text()='Family']";
 public static final String AW_BussRulesBtn = "//font[text()='Business Rules']";
 public static final String AW_PaymentProBtn = "//font[text()='Payment Processing']";
@@ -561,7 +561,8 @@ public static final String PSD_Fulltimestudent_Yes = "//input[@type='radio' and 
 public static final String PSD_Fulltimestudent_No = "//input[@type='radio' and @value='N']";
 public static final String PSD_TestDemo = "//input[@id='q36515']";
 public static final String PSD_Extracurricularactivities = "//textarea[@id='q24308']";
-public static final String PSD_Country = "//select[@id='s24309']";
+//public static final String PSD_Country = "//select[@id='s24309']";
+public static final String PSD_Country = "//select[@id='s35032']";
 public static final String PSD_Stateprovince = "//select[@id='s24310']";
 //public static final String PSD_GradeLevel = "//input[@id='rc24311_1']";
 public static final String PSD_GradeLevel = "//input[@value='";
@@ -569,6 +570,7 @@ public static final String PSD_Essaywithoutattachment = "//textarea[@id='q24312'
 public static final String PSD_uploaddocument = "//img[@alt='Upload Attachment']";
 public static final String PSD_Collegehousing = "//select[@id='s24314']";
 public static final String PSD_SportsInterest = "//select[@id='s24315']";
+//public static final String PSD_SportsInterest = "//select[@id='s35038']";
 public static final String PSD_Testscore = "//input[@id='q24316']";
 public static final String PSD_AcademicInterest = "//select[@id='s24317']";
 public static final String PSD_SchoolCode = "//input[@id='q24318']";
@@ -986,6 +988,7 @@ public static final String ASR_NewSearchbtn = "//img[contains(@src,'new_search_l
 public static final String ASR_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String ASR_GoBtn = "//img[contains(@src,'go_small')]";
 public static final String ASR_Pagename = "//table[@id='ResultsTable']//td/font";
+public static final String ASR_SearchColumn = "//table[contains(@class,'dataTable')]";
 public static final String ASR_CheckBox = "']]/preceding-sibling::td/input[@type='checkbox']";
 //#**********************************************************#
 //# Webcenter Print Application - PA
@@ -1561,7 +1564,9 @@ public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/t
 //#**********************************************************#
 
 public static final String CSC_FormHeading = "//font[contains(text(),'"; //+Application Module')]"
-public static final String CSC_Field = "//select[@name='Question']";
+public static final String CSC_Field = "//td[contains(@class,'FormFields') and text()="; //3]/following::select";
+public static final String CSC_Field1 = "]/following::select";
+public static final String CSC_Field2 = "]/following-sibling::td[3]";
 public static final String CSC_Label = "//input[@name='txtLabel']";
 public static final String CSC_Order = "//input[@name='txtOrder']";
 public static final String CSC_ShowAfterDefault = "//input[@name='chkShowAfter']";

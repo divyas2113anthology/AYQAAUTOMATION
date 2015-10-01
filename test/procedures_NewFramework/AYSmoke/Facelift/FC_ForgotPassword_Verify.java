@@ -23,7 +23,7 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 			String successmessage = fpverifydata[3];
 			String userpinpassword = fpverifydata[4];
 			Reporter.log("Email is sent to your account");
-			Thread.sleep(5000);
+			
 			if (!ui.equals("")) {
 
 			}

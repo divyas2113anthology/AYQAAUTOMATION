@@ -487,7 +487,7 @@ public class Processor {
 ////	    		selenium.windowFocus();
 //	    		selenium.captureScreenshot(outputfolder+result.getName()+"_"+golbalProcedureOrder+".PNG");
 ////	    		selenium.captureEntirePageScreenshot(outputfolder+result.getName()+".PNG","background=#CCFFDD");	
-////	    		Thread.sleep(1000);
+
 //	    		try {
 //	    			selenium.captureEntirePageScreenshot(outputfolder+result.getName()+"_"+golbalProcedureOrder+".PNG","background=#CCFFDD");	
 //				} catch (Exception e) {

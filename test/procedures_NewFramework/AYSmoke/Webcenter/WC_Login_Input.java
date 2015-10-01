@@ -58,8 +58,8 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 					recentPopupSelect("Forgot Password Search");
 				}else if (needpasswordgo.equalsIgnoreCase("GO")) {
 					clickWebdriver(attributeName_xpath, WCL_Go);
-					//waitForPageToLoad();
-					Thread.sleep(3000);
+					waitForPageToLoadWebdriver();
+					
 				}
 				else {
 					writeFailure("Given Test Data["+needpasswordgo+"] either Incorrect or has not be Scripted ");

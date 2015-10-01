@@ -53,7 +53,7 @@ public class WC_AddConfigureDownloadableForms_Input extends CommonSeleniumAction
 //				clickWebdriver(attributeName_name, CDF_FormFileToUpload);
 				sendKeysType(attributeName_name, CDF_FormFileToUpload, formfiletoupload);
 //				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
-//				Thread.sleep(3000);
+
 			}
 			if (!printpdf.equals("")) {
 				Reporter.log("Step 6 - Select the print pdf as ["+printpdf+"]");

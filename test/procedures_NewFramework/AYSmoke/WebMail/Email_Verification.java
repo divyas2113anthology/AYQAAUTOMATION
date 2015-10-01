@@ -124,7 +124,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						verifycontents = verifycontents.replace(";", " \n");
 					}
 					System.out.println("Expected Text"+verifycontents);
-					//					Thread.sleep(10000);
+
 					//					getText("css=div[id='divBdy']");
 					//					getText("css=iframe[id='ifBdy']");
 					//					getText("css=body[ocsi='1']");
@@ -237,7 +237,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();	
 					//clickWebdriver(attributeName_xpath, HC_Login);
 					//checkWebdriver(attributeName_xpath, HC_Login);
-					//Thread.sleep(6000);
+
 					//waitForElementPresentWebdriver(attributeName_id, "lo", "Log Off");
 					
 					//waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
@@ -255,16 +255,16 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoad();
 							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]")) break; } catch (Exception e) {}
-							Thread.sleep(500);
+							waitForPageToLoadWebdriver();
 						}
 						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
-						Thread.sleep(3000);
+						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						waitForPageToLoad();
 						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
-							Thread.sleep(3000);
+							waitForPageToLoadWebdriver();
 						}
 					} catch (Exception e) {
 						//System.out.println("Error message("+e.getMessage()+")");
@@ -284,7 +284,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
 							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
-							Thread.sleep(6000); 
+							waitForPageToLoadWebdriver();
 							
 							//waitForPageToLoad();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
 							try { 
@@ -293,21 +293,21 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 									writeConsole("I am in try block");
 									break; 
 							} catch (Exception e) {}
-							Thread.sleep(500);
+							waitForPageToLoadWebdriver();
 						}
 						//selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						//clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
 						
 						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
-						Thread.sleep(3000);
+						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						//			    	waitForPageToLoad();
 //						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
 						waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']/span[contains(text(),'To:')]", "To");
 						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
-							Thread.sleep(3000);
+							waitForPageToLoadWebdriver();
 						}
 					} catch (Exception e) {
 						//System.out.println("Error message("+e.getMessage()+")");
@@ -430,11 +430,11 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
 					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
 					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account menu with submenu']");
-					Thread.sleep(6000);
+					waitForPageToLoadWebdriver();
 					//clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
 					clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");
 					//waitForPageToLoad();
-					Thread.sleep(6000);
+					waitForPageToLoadWebdriver();
 				}
 
 			}

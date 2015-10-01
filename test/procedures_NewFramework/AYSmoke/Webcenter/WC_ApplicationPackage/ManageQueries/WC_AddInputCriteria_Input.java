@@ -59,7 +59,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 				waitForElementPresentWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
 				//clickWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]");
 				selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
-				wait(3000);
+				waitForPageToLoadWebdriver();
 //				Select sel = new Select(driver.findElement(By.xpath("//select[@name='txtField0']")));
 //				sel.selectByVisibleText("--Payment Status");
 				
@@ -71,13 +71,13 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
 				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator+operator+"')]", operator);
-				Thread.sleep(5000);
+				waitForPageToLoadWebdriver();
 			}
 			if (!value.equals("")) {
 				if (value.equalsIgnoreCase("List")) {
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					System.out.println("Select the value");
-					Thread.sleep(3000);
+					waitForElementPresentWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus, "Value");
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus);
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}

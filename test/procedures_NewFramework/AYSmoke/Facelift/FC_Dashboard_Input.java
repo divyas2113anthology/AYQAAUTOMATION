@@ -46,7 +46,7 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath,DB_QaAutomationStartButton);
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application for QA Automation_Edit")){
-					Thread.sleep(2000);
+					waitForElementPresentWebdriver(attributeName_xpath, DB_QaAutomationEditButton, "Search");
 					writeConsole("Edit");
 					clickWebdriver(attributeName_xpath,DB_QaAutomationEditButton);	
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");

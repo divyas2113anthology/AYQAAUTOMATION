@@ -55,7 +55,7 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 			}
 			if (!buttons.equals("")) {
 				Reporter.log("Click button as ["+buttons+"]");
-				//Thread.sleep(10000);
+				
 				if (buttons.equalsIgnoreCase("New Search")) {
 					waitForElementPresentWebdriver(attributeName_xpath, ASR_NewSearchbtn,"NewSearch");
 					clickWebdriver(attributeName_xpath, ASR_NewSearchbtn);
@@ -67,7 +67,7 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 //					Actions action = new Actions(driver);
 //					action.sendKeys(Keys.RETURN);
 //					action.perform();
-					Thread.sleep(5000);
+					waitForPageToLoadWebdriver();
 					try {
 				        Alert alert = driver.switchTo().alert();
 				        String AlertText = alert.getText();

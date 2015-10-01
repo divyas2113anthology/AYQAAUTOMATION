@@ -24,7 +24,7 @@ public class WC_RunReportResults_Input extends CommonSeleniumActions implements 
 				} else if (button.equalsIgnoreCase("View")) {
 					waitForElementPresentWebdriver(attributeName_xpath, BP_ViewBtn, button);
 					clickWebdriver(attributeName_xpath, BP_ViewBtn);
-					Thread.sleep(2000);
+					waitForPageToLoadWebdriver();
 				}
 			}
 		} catch (Exception e) {

@@ -55,7 +55,7 @@ public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Step 4 - Enter the Export file name as ["+export_filename+"]");
 			waitForElementPresentWebdriver(attributeName_name, "rdoFilename",export_filename);
 			clickWebdriver(attributeName_id, "rdoFilenameGiven");
-			Thread.sleep(2000);
+			waitForElementPresentWebdriver(attributeName_name, "txtFilename", "Export");
 			sendKeys(attributeName_name, "txtFilename", export_filename);
 		}
 		if (!servernameip.equals("")) {

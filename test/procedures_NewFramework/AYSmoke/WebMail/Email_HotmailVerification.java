@@ -61,7 +61,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				//clickWebdriver(attributeName_xpath, HM_Inbox);
 				/*clickWebdriver(attributeName_xpath, HM_InboxSide);
 				writeConsole("I am here");
-				Thread.sleep(6000);
+				
 				try {    
 					for (int second = 0;; second++)
 					{
@@ -69,10 +69,10 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 						//switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
 						//if (selenium.isVisible(HM_InboxSide)) {
 						if (selenium.isVisible("//div[@class='ContentRight WithRightRail RPOff']")) {
-							Thread.sleep(3000);
+							
 							//clickWebdriver(attributeName_xpath,"//div[@class='ContentRight WithRightRail RPOff']");
 							try { if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubject+"')]")) break; } catch (Exception e) {}
-							Thread.sleep(500);
+							
 						}
 					}
 					selenium.waitForCondition("selenium.isVisible(\"//*[contains(@class,'InboxTable')]//li[contains(@class,'mlUnrd')]//span[@class='Sb']/a[text()[contains(.,'"+emailsubject+"')]\")", "120000");
@@ -83,15 +83,15 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				} catch (Exception e) {
 					writeFailure("Email Notification was not Recevied in Hotmail Inbox or Element Error message("+e.getMessage()+")");
 				}*/
-				Thread.sleep(6000);
+				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, HM_InboxSide);
-				Thread.sleep(6000);
+				waitForPageToLoadWebdriver();
 				try {
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
 						if (selenium.isVisible("//div[@class='messageListContainer']")) {
-							Thread.sleep(3000);
+							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubject+"')]]"))
@@ -99,7 +99,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 									break;
 								}
 //								} catch (Exception e) {}
-//							Thread.sleep(500);
+
 //						}
 					}
 					selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubject+"')]]\")", "120000");
@@ -124,13 +124,13 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				writeConsole("Click on Inbox");
 				//clickWebdriver(attributeName_partiallinktext, HM_Inbox);
 				clickWebdriver(attributeName_xpath, HM_InboxSide);
-				Thread.sleep(6000);
+				waitForPageToLoadWebdriver();
 				try {
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
 						if (selenium.isVisible("//div[@class='messageListContainer']")) {
-							Thread.sleep(6000);
+							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
@@ -138,7 +138,6 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 									break;
 								}
 //								} catch (Exception e) {}
-//							Thread.sleep(500);
 //						}
 					}
 					selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]\")", "120000");
@@ -234,7 +233,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
 				waitForElementPresentWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]", clicklinkcontains);
 				clickWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]");
-				Thread.sleep(12000);
+				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Update Information");
 				//recentPopupSelect("Update Information");
 			}

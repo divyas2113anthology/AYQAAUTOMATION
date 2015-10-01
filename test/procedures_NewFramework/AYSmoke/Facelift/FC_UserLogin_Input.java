@@ -26,7 +26,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 //			if (pin.equals("8KSJ2FD9G36") || pin.equals("N3M6633823N")) {
 			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
-			Thread.sleep(3000);
+			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "Pin");
 			type(UL_PinField, pin);			
 						
 		}
@@ -34,7 +34,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 //			if (pin.equals("8KSJ2FD9G36") || pin.equals("N3M6633823N")) {
 			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
-			Thread.sleep(3000);
+			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "Pin");
 			type(UL_PinField, "N3M6633823N");			
 						
 		}

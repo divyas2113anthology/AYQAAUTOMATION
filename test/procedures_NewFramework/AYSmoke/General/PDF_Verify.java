@@ -40,8 +40,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					selenium.selectWindow("name=" + Pdfwindows[wintotal]);
 					Reporter.log("Window["+pdfname+"] was selected");
 					writeConsole("Window["+pdfname+"] was selected");
-					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");
-//					Thread.sleep(waitforpdfint);				
+					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");				
 					try {
 						exceptionMsg = selenium.getBodyText();
 						writeConsole("Pdf Getbody Text : "+exceptionMsg);
@@ -91,7 +90,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //				System.out.println("Window-->" + Pdfwindows[wintotal]);
 //				selenium.selectWindow("name=" + Pdfwindows[wintotal]);
 //				Reporter.log("Popup Window is selected....");
-				Thread.sleep(90000);
+				//Removed wait time
 				try {
 					exceptionMsg = selenium.getBodyText();
 //					exceptionMsg = driver.getPageSource();

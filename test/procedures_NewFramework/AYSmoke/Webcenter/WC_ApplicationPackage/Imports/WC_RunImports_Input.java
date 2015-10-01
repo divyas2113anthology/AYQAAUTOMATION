@@ -38,7 +38,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 				clickWebdriver(attributeName_name, "attfile");
 //				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");
-				Thread.sleep(3000);
+				//Removed wait time
 			}
 			if (!columnheader.equals("")) {
 				Reporter.log("Step 3 - Select the column header as ["+columnheader+"]");

@@ -56,7 +56,7 @@ public class TestSetRunner {
 			processor.DriverScript.main(runParams);
 			//System.out.println("*************test "+testId+"status: "+testToRun.getExecutionStatusId().getValue());
 		}
-		Thread.sleep(5000);
+		//Removed wait time
 		for (int i = 0; i < numTests; i++) {
 			RemoteTestCase testToRun = tests.getRemoteTestCase().get(i);
 			testToRun = tests.getRemoteTestCase().get(i);

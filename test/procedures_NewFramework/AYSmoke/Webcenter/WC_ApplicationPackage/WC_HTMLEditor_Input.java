@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+
 import or.OR;
 import processor.CommonSeleniumActions;
 
@@ -27,7 +29,7 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 			String lastname = textarea+Calendar.getInstance().getTimeInMillis();
 			if (!textarea.equals("")) {
 				Reporter.log("Step 1 - Enter the Dynamic Text  Area as ["+textarea+"]");
-				Thread.sleep(10000);
+				waitForPageToLoadWebdriver();
 				 WebElement frame = driver.findElement(By.tagName("iframe"));
 				 driver.switchTo().frame(frame);
 				 WebElement elem = driver.findElement(By.xpath("//body//p"));

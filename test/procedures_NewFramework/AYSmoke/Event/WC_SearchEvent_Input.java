@@ -101,15 +101,16 @@ public class WC_SearchEvent_Input extends CommonSeleniumActions implements OR {
 				System.out.println(Splitdays[1]);
 				System.out.println(Splitdays[2]);
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SFE_CalMonth , Splitdays[0]);
-//				Thread.sleep(10000);
+//				
 //				selectByVisibleTextWebdriver(attributeName_xpath,  SFE_CalYear, Splitdays[1]);
-//				Thread.sleep(10000);
+//				
 //				sendKeys(attributeName_xpath, SFE_CalDay, Splitdays[2]);
 				//new Select(driver.findElement(By.xpath(""))).selectByVisibleText(Splitdays[0]);;
 				new Select (driver.findElement(By.xpath("//select[contains(@name,'intMonthSelector')]"))).selectByVisibleText(Splitdays[0]);
-				Thread.sleep(2000);
+				
+				waitForElementPresentWebdriver(attributeName_xpath, "//select[contains(@name,'intMonthSelector')]", "Search"); //change for sleep
 				new Select (driver.findElement(By.xpath("//select[contains(@name,'intYearSelector')]"))).selectByVisibleText(Splitdays[1]);
-				Thread.sleep(2000);
+				waitForElementPresentWebdriver(attributeName_xpath, SFE_CalDay+Splitdays[2]+"']", "Search"); //change for sleep
 				clickWebdriver(attributeName_xpath, SFE_CalDay+Splitdays[2]+"']");
 				
 

@@ -645,7 +645,8 @@ public static final String PII_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Facelift User Login Input - UI
 //#**********************************************************#
-public static final String UL_PinField = "css=#ay-login";
+//public static final String UL_PinField = "css=#ay-login";
+public static final String UL_PinField = "//input[@id='ay-login']";
 public static final String UL_PswdField = "css=#ay-password";
 public static final String UL_Login = "css=#ay-loginSubmit";
 //public static final String UL_ForgotPINPassword = "css=#forgotPIN";

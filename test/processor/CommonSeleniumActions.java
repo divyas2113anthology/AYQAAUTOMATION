@@ -3104,6 +3104,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				writeFailure("Elements["+attributename+"] was Not Found after waiting for 1 Minute");
 			}
 			waitForPageToLoadWebdriver();
+			
 		}
 
 	}

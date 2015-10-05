@@ -26,8 +26,12 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 //			if (pin.equals("8KSJ2FD9G36") || pin.equals("N3M6633823N")) {
 			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
-			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "Pin");
-			type(UL_PinField, pin);			
+			//(attributeName_xpath, UL_PinField, "Pin");
+			//waitForPageToLoad();
+			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "PIN");
+			//type(UL_PinField, pin);
+			System.out.println(pin);
+			sendKeys(attributeName_xpath, UL_PinField, pin);
 						
 		}
 		else if (environment.equalsIgnoreCase("UKQA") && pin.equals("8KSJ2FD9G36")) {
@@ -35,7 +39,8 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
 			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "Pin");
-			type(UL_PinField, "N3M6633823N");			
+			//type(UL_PinField, "N3M6633823N");
+			sendKeys(attributeName_xpath, UL_PinField, pin);
 						
 		}
 		else if (!pin.equals("")) {
@@ -61,7 +66,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			if (login.equalsIgnoreCase("login")) {
 				click(UL_Login);
 				waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "My Applications");	
-//				waitForPageToLoad();
+				waitForPageToLoad();
 			}			
 		}
 		if (!forgotpin.equals("")) {

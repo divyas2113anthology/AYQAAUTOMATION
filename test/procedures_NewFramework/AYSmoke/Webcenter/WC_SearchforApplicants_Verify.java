@@ -49,6 +49,7 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");
+				verifyElementContainsTextWebdriver(attributeName_xpath, SAI_SysQuries, "Recommendations -DT", "Recommendation");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

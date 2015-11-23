@@ -284,8 +284,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
 							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
-							waitForPageToLoadWebdriver();
-							
+							//waitForPageToLoadWebdriver();
+							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 							//waitForPageToLoad();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
 							try { 
 								System.out.println("Entered in try block");
@@ -429,7 +429,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account"); 
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
 					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
-					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account menu with submenu']");
+					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account - Away menu with submenu']");
 					waitForPageToLoadWebdriver();
 					//clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
 					clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");

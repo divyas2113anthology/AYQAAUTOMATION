@@ -3,6 +3,9 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManagePa
 
 import or.OR;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -27,6 +30,8 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			String includeofflinecheck = testdata[9];
 			String filterdate = testdata[10];
 			String button = testdata[11];
+			String applicationreview = testdata[12];
+			String applicationfilter = testdata[13];
 			
 			Reporter.log("Input Test Data was retrieved for 'Manage Package' Page");
 			
@@ -38,7 +43,17 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			if (!includeofflinecheck.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+includeofflinecheck+"]");
 				doubleClickWebdriver(attributeName_xpath, IncludeOfflineCheck);
-			}			
+			}
+			if (!applicationreview.equals("")) {
+				Reporter.log("Perform the operation/verify Application Review");
+				verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+applicationreview+"')", applicationreview, applicationreview);
+			}
+			if (!applicationfilter.equals("")) {
+				Reporter.log("Perform the operation to click the  Button as ["+includeofflinecheck+"]");
+				WebElement filtercondition = driver.findElement(By.xpath("//td[strong[contains(text(),'If')]]"));
+			    String readonly = filtercondition.getAttribute("readonly");
+			    Assert.assertNotNull(readonly);
+			}
 			
 			if (!button.equals("")) {
 				waitForElementPresentWebdriver(attributeName_xpath,CL_AddEdit+button+"')]", button);

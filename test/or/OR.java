@@ -1855,7 +1855,8 @@ public static final String AR_AppSearchButton = "//div[@id='simpleSearch']/butto
 public static final String AR_SearchAppLName = "//tr[@class='unread']/td[@class='sorted']/a[contains(text(),'";
 public static final String AR_ReviewPool = "//select[@id='reviewPoolToggler']";
 public static final String AR_AssignReadyforReviewStatusSubmit = "//img[@alt='print']";
-public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]"; 
+public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]";
+public static final String AR_OverrideAppReviewFilter = "//input[@name='OverRideAppReviewFilter']";
 
 //#**********************************************************#
 //# Webcenter - Manage Choice Groups - MCG

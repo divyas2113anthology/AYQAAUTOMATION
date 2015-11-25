@@ -22,9 +22,15 @@ public class WC_AssignReadyforReviewStatus_Input extends CommonSeleniumActions i
 			String submit = fpvdatarepo[0];
 			String back = fpvdatarepo[1];
 			String appreviewstatus = fpvdatarepo[2];
+			String Override_Check = fpvdatarepo[3];
 			Reporter.log("Verify Test Data was retrieved for 'Assign Ready for Review Status' page");
 			System.out.println("sdfsffsfsfsdfsdfsfsdsdfsd");
 			if (!appreviewstatus.equals("")) {
+				
+			}
+			if (!Override_Check.equals("")) {
+				waitForElementPresentWebdriver(attributeName_xpath, AR_OverrideAppReviewFilter, Override_Check);
+				clickWebdriver(attributeName_xpath, AR_OverrideAppReviewFilter);
 				
 			}
 			if (!submit.equals("")) {
@@ -37,6 +43,7 @@ public class WC_AssignReadyforReviewStatus_Input extends CommonSeleniumActions i
 				clickWebdriver(attributeName_xpath, AR_AssignReadyforReviewStatusBack);
 				
 			}
+			
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -1,14 +1,9 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
 import java.util.Calendar;
 
 import or.OR;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 

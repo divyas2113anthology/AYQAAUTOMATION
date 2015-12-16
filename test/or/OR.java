@@ -577,7 +577,8 @@ public static final String PSD_SchoolCode = "//input[@id='q24318']";
 public static final String PSD_Emailaddress = "//input[@id='q24319']";
 public static final String PSD_Aptnumber = "//input[@id='q24395']";
 public static final String PSD_EmailRecommended = "//input[@id='q24433']";
-public static final String PSD_Save = "//img[@alt='Save']";
+//public static final String PSD_Save = "//img[@alt='Save']";
+public static final String PSD_Save = "//tr[3]/td/table/tbody/tr[1]/td/a[1]/img[@alt='Save']";
 public static final String PSD_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
 public static final String PSD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PSD_Reset = "//img[@alt='Reset']";
@@ -712,7 +713,7 @@ public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT 
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']"; 
-public static final String HC_Home = "//button[@aria-label='EMT QA Account menu with submenu']";
+public static final String HC_Home = "//button[@aria-label='EMT QA Account - Away menu with submenu']";
 //button[@aria-label='EMT QA Account - Available menu with submenu']
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
@@ -1022,6 +1023,7 @@ public static final String CL_State = "//input[@name='prompt5field']";
 public static final String CL_Country = "//input[@name='prompt6field']";
 public static final String CL_BackSearch = "//img[contains(@src,'";
 public static final String CL_AddressList = "//table[@id='Table1']/tbody/tr[11]/td/a";
+public static final String CL_EnableAppreview = "//input[@name='chkReviewEnabled']";
 //#**********************************************************#
 //# Webcenter Applicant Summary - AS
 //#**********************************************************#
@@ -1368,6 +1370,21 @@ public static final String MCS_ClientName = "//input[@value='srchClientName']";
 public static final String RPT_RunBtn = "//img[contains(@src,'run_small')]";
 public static final String RPT_CheckBox = "//input[@class='FormFields' and contains(@name,'";  //chkMakeExcelFile')]
 //#**********************************************************#
+//#	 Maintanance - AppReviewfilter - Page
+//#**********************************************************#
+public static final String MC_ARF_Filtername = "//td[text()='Filter Name*:']/following::input[@name='txtName'] ";
+public static final String MC_ARF_Description = "//td[text()='Description*:']/following::textarea[@name='txtDescription']";
+public static final String MC_ARF_Field1 = "//td[contains(text(),"; //3
+public static final String MC_ARF_Field2 = ")]/following-sibling::td/select[contains(@name,'txtField')]";
+public static final String MC_ARF_Operator2 = ")]/following-sibling::td[2]/select[contains(@name,'txtOperator')]";
+public static final String MC_ARF_Operator1="//td[contains(text(),";
+public static final String MC_ARF_Value1 = "//td[contains(text(),";
+public static final String MC_ARF_Value2=")]/following-sibling::td[3]//button[contains(@class,'multiselect')]";
+public static final String MC_ARF_SelectByValue1 = "//span[text(),";
+public static final String MC_ARF_SelectByValue2=")]/preceding-sibling::input";
+
+
+
 //#	 Maintanance - Schedule Import/Export - Page
 //#**********************************************************#
 public static final String SIE_AddImpSched = "//img[contains(@src,'add_import')]";
@@ -1565,15 +1582,18 @@ public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/t
 //#**********************************************************#
 
 public static final String CSC_FormHeading = "//font[contains(text(),'"; //+Application Module')]"
+public static final String CSC_ConfigField = "//select[@name='Question']";
 public static final String CSC_Field = "//td[contains(@class,'FormFields') and text()="; //3]/following::select";
 public static final String CSC_Field1 = "]/following::select";
-public static final String CSC_Field2 = "]/following-sibling::td[3]";
+public static final String CSC_Field2 = "]/following-sibling::td/input[@name='txtOrder']";
 public static final String CSC_Label = "//input[@name='txtLabel']";
 public static final String CSC_Order = "//input[@name='txtOrder']";
 public static final String CSC_ShowAfterDefault = "//input[@name='chkShowAfter']";
 public static final String CSC_Delete = "//input[@name='chkDelete']";
 public static final String CSC_AddRow = "//img[contains(@src,'addrow')]";
 public static final String CSC_Save = "//img[contains(@src,'admin_save')]";
+public static final String CSC_Select="//select[@name='Question']";
+
 //#**********************************************************#
 //#	 Webcenter - Send Email - Page
 //#**********************************************************#

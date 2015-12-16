@@ -29,8 +29,10 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		
 		if (!field.equals("")) {
 			Reporter.log("Step 1 - Select values as ("+field+")");
-			waitForElementPresentWebdriver(attributeName_xpath, CSC_Field+serial+CSC_Field1, field);
+			waitForElementPresentWebdriver(attributeName_xpath, CSC_ConfigField, field);
 			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, CSC_Field+serial+CSC_Field1, field);
+			//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath, CSC_ConfigField, field);
+			//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, CSC_ConfigField, field);
 			
 		}
 		if (!label.equals("")) {
@@ -41,7 +43,7 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		if (!order.equals("")) {
 			Reporter.log("Step 3 - Enter the order as ("+label+")");
 			//waitForElementPresentWebdriver(attributeName_xpath, CSC_Order, order);
-			waitForElementPresentWebdriver(attributeName_xpath, CSC_Field+serial+CSC_Field2, order);
+			waitForElementPresentWebdriver(attributeName_xpath, CSC_Order, order);
 			sendKeys(attributeName_xpath, CSC_Field+serial+CSC_Field2, order);
 		}
 		if (!showafterdefault.equals("")) {

@@ -16,6 +16,8 @@ public class MC_AddEditPackageApplication_Input extends CommonSeleniumActions im
 			String button = testdata[0];
 			String offlinerecommendation = testdata[1];
 			String offlinerecommendationcheck = testdata[2];
+			String enableapplicationreview = testdata[3];
+			String readyforreviewcondition = testdata[4];
 			Reporter.log("Check user clicked on save button in application package of Maintenance center");
 			
 			if (!offlinerecommendation.equals("")) {
@@ -27,7 +29,17 @@ public class MC_AddEditPackageApplication_Input extends CommonSeleniumActions im
 				Reporter.log("Perform the operation to click the  Button as ["+offlinerecommendationcheck+"]");
 				doubleClickWebdriver(attributeName_xpath, IncludeOfflineCheck);
 			}			
-			
+			if (!enableapplicationreview.equals("")) {
+				Reporter.log("Perform the operation to Verify enable application review");
+				if(enableapplicationreview.equalsIgnoreCase("verify"))
+					verifyElementCheckedWebdriver(attributeName_xpath, CL_EnableAppreview, enableapplicationreview);
+				else if(enableapplicationreview.equalsIgnoreCase("check"))
+					checkWebdriverCheckbox(attributeName_xpath, CL_EnableAppreview);					
+			}
+			if (!readyforreviewcondition.equals("")) {
+				Reporter.log("Perform the operation to click the  Button as ["+offlinerecommendationcheck+"]");
+				
+			}
 			if (!button.equals("")) {
 				clickWebdriver(attributeName_xpath,CL_AddEdit+button+"')]");
 				waitForPageToLoadWebdriver();

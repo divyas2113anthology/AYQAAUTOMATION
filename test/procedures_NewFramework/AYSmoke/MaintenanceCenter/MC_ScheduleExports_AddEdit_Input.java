@@ -28,6 +28,8 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		String exportfilename = testdata[11];
 		String searchoption = testdata[12];
 		String queryname = testdata[13];
+		String publickey = testdata[14];
+		String sftpport = testdata[15];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!exportdefinition.equals("")) {
 			Reporter.log("Step 1 - Select the Export Definition as ["+exportdefinition+"]");
@@ -73,6 +75,15 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		if (!password.equals("")) {
 			Reporter.log("Step 6 - Enter the Password as ["+password+"]");
 			sendKeys(attributeName_name, "txtFTPPassword", password);
+		}
+		if (!publickey.equals("")) {
+			Reporter.log("Step 6A - Click on Radio button");
+			clickWebdriver(attributeName_id, "colSFTP0");
+		}
+		if (!sftpport.equals("")) {
+			Reporter.log("Step 6B - Enter the port as ["+sftpport+"]");
+			if(sftpport.equals("26"))
+				sendKeys(attributeName_name, "txtSFTPPort", sftpport);
 		}
 		
 		if (!startdate.equals("")) {

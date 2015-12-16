@@ -1,14 +1,9 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
 import java.util.Calendar;
 
 import or.OR;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -225,9 +220,9 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdsave.equals("")) {
 				Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 				if(pdsave.equalsIgnoreCase("Save")){
-					waitForElementPresentWebdriver(attributeName_xpath, PSD_SaveBottom, pdsave);
+					waitForElementPresentWebdriver(attributeName_xpath, PSD_Save, pdsave);
 //					actionsClickWebdriver(attributeName_xpath, PSD_Save);
-					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveBottom);
+					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
 					waitForPageToLoadWebdriver();
 				}else if (pdsave.equalsIgnoreCase("Save & Continue")) {

@@ -3322,6 +3322,29 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}      
 	}
 	
+	public void verifySelectNotContainsOptionsWebdriver(String attributename, String attributevalue,String elementoptions,String elementname){
+		Reporter.log("Verify ["+elementname+"] Select or Drop down has Option["+elementoptions+"]");
+		String[] elementoptionsarray = elementoptions.split(";");
+		for (int i = 0; i < elementoptionsarray.length; i++) {
+			String actualoptionstring = "";
+			String options = "NotFound";
+			String actualtext;
+			List<WebElement> getOptions =  getOptionsWebdriver(attributename, attributevalue);
+			for (int j = 0; j < getOptions.size(); j++) {
+				actualtext = getOptions.get(j).getText();
+				actualoptionstring = actualoptionstring+actualtext;
+				if (!actualtext.equals(elementoptionsarray[i])) {
+					Reporter.log("["+elementname+"] Select or Drop down has Option["+elementoptions+"]");
+					options = "Found";
+					break;
+				}
+			}
+			if (options.equals("NotFound")) {
+				writeFailure("Element Select["+elementname+"] with Actual Options["+actualoptionstring+"] did not match with Expected Option["+elementoptionsarray[i]+"]");
+
+			}
+		}      
+	}
 
 	public void verifyDropDownContainsOptionsWebdriver(String attributename, String attributevalue,String elementoptions,String elementname){
 		Reporter.log("Verify ["+elementname+"] Drop down has Option["+elementoptions+"]");

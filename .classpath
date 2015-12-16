@@ -5,8 +5,8 @@
 	<classpathentry kind="lib" path="lib/testng-6.9beta.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/SeleniumScripts/AYQAAutomation/lib/javax.mail.jar"/>
-	<classpathentry kind="lib" path="C:/SeleniumScripts/AYQAAutomation/lib/selenium-server-standalone-2.46.0.jar"/>
-	<classpathentry kind="lib" path="C:/SeleniumScripts/AYQAAutomation/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="lib/javax.mail-1.4.5.jar"/>
+	<classpathentry kind="lib" path="lib/jxl.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.46.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

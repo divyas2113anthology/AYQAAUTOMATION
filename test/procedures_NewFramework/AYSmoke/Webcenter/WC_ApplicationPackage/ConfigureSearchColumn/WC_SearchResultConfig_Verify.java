@@ -29,8 +29,9 @@ public class WC_SearchResultConfig_Verify extends CommonSeleniumActions implemen
 			waitForElementPresentWebdriver(attributeName_xpath, Ad_PageName, pagename);
 			verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageName, pagename, "SearchResultConfig");
 		}
-		if (verifyui.equals("")) {
+		if (!verifyui.equals("")) {
 			Reporter.log("Step 3 - Verify the UI information in SearchResultConfig page");
+			verifySelectNotContainsOptionsWebdriver(attributeName_xpath, CSC_Select, verifyui,verifyui);
 		}
 	} catch (Exception e) {
 		writeFailure(e.getLocalizedMessage());

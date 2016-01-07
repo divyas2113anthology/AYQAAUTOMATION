@@ -86,6 +86,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				String[] SplitFirstLastName = ClickPDF.split(",");
 				clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
 				recentPopupSelectWebdriver("Application Summary");
+				waitForPageToLoadWebdriver();
 			}
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 4 - Select an action as ["+selectanaction+"]");

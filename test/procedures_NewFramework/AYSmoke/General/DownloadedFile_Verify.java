@@ -29,6 +29,7 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/DownloadFile/DownloadFileFirefox.exe");
 			}
 			if (!filepresentlocation.equals("")) {
+				waitForPageToLoadWebdriver();
 				String ReadExportFile = Runtimedataread(filepresentlocation);
 				Reporter.log("Proceed to verify file in the Location["+ReadExportFile+"]");
 				writeConsole("Export File Name : "+ReadExportFile);

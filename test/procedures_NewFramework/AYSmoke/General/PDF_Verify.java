@@ -38,8 +38,10 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					Pdfwindows = selenium.getAllWindowNames();
 					int wintotal = Pdfwindows.length-1;
 					selenium.selectWindow("name=" + Pdfwindows[wintotal]);
+					waitForPageToLoadWebdriver();
 					Reporter.log("Window["+pdfname+"] was selected");
 					writeConsole("Window["+pdfname+"] was selected");
+					System.out.println("Malik");
 					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");				
 					try {
 						exceptionMsg = selenium.getBodyText();

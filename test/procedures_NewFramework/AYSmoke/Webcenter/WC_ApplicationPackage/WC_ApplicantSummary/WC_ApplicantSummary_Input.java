@@ -128,6 +128,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				for (int i = 0; i < Splitviwefullapp.length; i++) {
 					waitForElementPresentWebdriver(attributeName_linktext, Splitviwefullapp[i], viewfullapplication);
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
+					waitForPageToLoadWebdriver(); 
 				}
 				//recentPopupSelectWebdriver("Application Form3");
 //				int WindowCount = getWindowHandles();

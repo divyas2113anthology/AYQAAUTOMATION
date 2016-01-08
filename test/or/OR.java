@@ -2000,6 +2000,16 @@ public static final String ET_FieldName = "//select[@name='txtField0']";
 public static final String ET_Operator = "//select[@name='txtOperator0']";
 public static final String ET_Value = "//button[contains(@class,'ui-multiselect')]";
 public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_small')]";
+
+//#********************************************************************#
+//# Webcenter - Application - Configure Forms- Section/Subsection rules
+
+//#********************************************************************#
+
+public static final String PT_PageName="//form[@name='frm";
+public static final String PT_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
+public static final String PT_Instructions="//div[@id='AYInstructions']";
+
 }
 
 

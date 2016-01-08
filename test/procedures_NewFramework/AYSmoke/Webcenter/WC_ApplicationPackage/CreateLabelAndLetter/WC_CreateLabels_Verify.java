@@ -23,17 +23,20 @@ public class WC_CreateLabels_Verify extends CommonSeleniumActions implements OR 
 			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Create Label' page");
 			if (!message.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForText(message, "Not Present");
 				verifyTextPresent(message);
 			}
 			if (!pagename.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 //				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Run Import");
 				waitForText(pagename, "Not Present");
 				verifyTextPresent(pagename);
 			}
 			if (verifyui.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 3 - Verify the UI information in Create Label page");
 			}
 		} catch (Exception e) {

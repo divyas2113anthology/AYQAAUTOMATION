@@ -43,7 +43,7 @@ public class Processor {
 	    protected final static int SELENIUM_SERVER_PORT = 4444;
 	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "5000"; //milliseconds
 //	    public static DefaultSelenium selenium;
-	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 60; //second
+	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 120; //second
 	    public static int golbalProcedureOrder=0;
 	    public static ArrayList testData;
 		public static String[] datacontainer; 

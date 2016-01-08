@@ -25,10 +25,12 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 			Reporter.log("Input Test Data was retrieved for 'Essay and Attachment' page");
 			
 			if (!shortessay.equals("")) {
+				waitForPageToLoadWebdriver();
 				String shortessayID = getElementIDbyLabel("Short Essay", EA_ShortEssay);
 				type(shortessayID,shortessay);	
 			}
 			if (!essaywithattachment.equals("")) { 
+				waitForPageToLoadWebdriver();
 				String essaywithattachmentID = getElementIDbyLabel("Essay with Attachment", EA_EssaywithAttachment);
 				type(essaywithattachmentID,essaywithattachment);	
 			}

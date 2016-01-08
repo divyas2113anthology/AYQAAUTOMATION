@@ -19,6 +19,7 @@ public class WC_CreateLabelResults_Input extends CommonSeleniumActions implement
 			if (!button.equals("")) {
 				Reporter.log("Step 1 - Click the Button as ["+button+"]");
 				if (button.equalsIgnoreCase("View")) {
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, CL_ViewBtn, button);
 					clickWebdriver(attributeName_xpath, CL_ViewBtn);
 					waitForPageToLoadWebdriver();

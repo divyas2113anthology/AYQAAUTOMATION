@@ -34,9 +34,14 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 			}
 			if (!verifyvalues.equals("")) {
 				Reporter.log("Step 3 - Verify the list values as ["+verifyvalues+"]");
-				clickWebdriver(attributeName_xpath, MQ_ValueButton);
+				//clickWebdriver(attributeName_xpath, MQ_ValueButton);
+				
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath, "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']");
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues);
+			
 				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues, verifyvalues);
+				
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

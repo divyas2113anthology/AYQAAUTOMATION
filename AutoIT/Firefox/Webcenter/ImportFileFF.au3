@@ -1,5 +1,5 @@
 WinWait("File Upload")
 WinActivate("File Upload")
-ControlSetText("File Upload", "", "[CLASS:Edit;INSTANCE:1]", "C:\SeleniumScripts\AYQAAutomation\SourceFile\Webcenter\ImportFile\ImportForSmokeTest.txt")
+ControlSetText("File Upload", "", "[CLASS:Edit;INSTANCE:1]", "C:\SeleniumScripts\AYQAAutomation\SourceFile\Application\UploadDocument\ImportForSmokeTest.txt")
 ;ControlSetText("Choose File to Upload", "", "[CLASS:Edit;INSTANCE:1]", "T:\EMT\Quality Assurance\Selenium Scripts\AY\AY\AY_Source_File\Webcenter\ImportFile\ImportForSmokeTest.txt")
 ControlClick("File Upload", "", "[CLASS:Button;TEXT:&Open]")

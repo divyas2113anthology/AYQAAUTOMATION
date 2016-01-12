@@ -36,13 +36,40 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!section.equals("")) {
 			Reporter.log("Step 3 - Select the Section as ["+section+"]");
-			waitForElementPresentWebdriver(attributeName_xpath, ESR_Section, section);
-			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);
+			/*waitForElementPresentWebdriver(attributeName_xpath, ESR_Section, section);
+			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);*/
 			//select(ESR_Section, "regexp:"+section);
+			waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']","");
+			clickWebdriver(attributeName_xpath, "//input[@name='SectionInput']");
+			Reporter.log("Step 2 - Perform the operation to click the Package as ["+section+"]");
+//			waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
+			String [] SplitPackage = section.split(";");
+			System.out.println("Length : "+SplitPackage.length);
+			System.out.println("Package1"+SplitPackage[0]);
+			System.out.println("Package1"+SplitPackage[1]);
+			for (int i = 0; i < SplitPackage.length; i++) {
+				writeConsole("Tree Package"+i+":"+SplitPackage[i]);
+				if (i== SplitPackage.length-1) {
+					waitForPageToLoad();
+					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
+					
+				}else{
+					System.out.println(SplitPackage[i]);
+					//PackageSelection(SplitPackage[i], "1");
+					waitForPageToLoad();
+					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+					clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
+					
+				}
+			}
+			ClosePackageSelection();
 		}
+		switchToDefaultContentWebdriver();
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
-			waitForElementPresentWebdriver(attributeName_xpath, ESR_Field, field);
+			waitForPageToLoad();
+			//waitForElementPresentWebdriver(attributeName_xpath, ESR_Field, field);
 //			WebElement select = driver.findElement(By.xpath("//select[contains(@name,'txtField')]"));
 //			List<WebElement> options = select.findElements(By.tagName("option"));
 ////			writeConsole("List Option : "+options);

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
-public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements OR {
+public class WC_UQ_AddInputCriteria_Verify extends CommonSeleniumActions implements OR {
 	
 
 	@Test(description="This Procedure is to perform some Verification in 'Add Input Criteria' page")

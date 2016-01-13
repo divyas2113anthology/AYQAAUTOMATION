@@ -32,6 +32,7 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 				waitForElementPresentWebdriver(attributeName_xpath, FPV_PageName, page_title);
 //				verifyText(FPV_PageName, "Forgot UserName/Password.", "Popup Title");
 				verifyElementTextWebdriver(attributeName_xpath, FPV_PageName, page_title, "Popup Title");
+				waitForPageToLoadWebdriver();
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");

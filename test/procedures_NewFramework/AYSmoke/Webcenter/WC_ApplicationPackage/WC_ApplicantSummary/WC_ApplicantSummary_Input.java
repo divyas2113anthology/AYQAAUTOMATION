@@ -184,13 +184,16 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				if (buttons.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
 					waitForPageToLoad();
+					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+					recentPopupCloseWebdriver();
 //					selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close Window")) {
-					
+					System.out.println("Msdfsdfsf");
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+					System.out.println("out");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					driver.manage().deleteAllCookies();
-					//driver.switchTo().window(ApplicationPage);
+					driver.switchTo().window(ApplicationPage);
 					}
 				/*}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);

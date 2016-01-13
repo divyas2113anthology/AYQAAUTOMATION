@@ -51,9 +51,11 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Click on ("+enrollment+") Link");
 //				click(enrollpackage+enrollment+"']");
 //				recentPopupSelect("Enrollment");	
-				waitForElementPresentWebdriver(attributeName_xpath, enrollpackage+enrollment+"']", enrollment);
-				clickWebdriver(attributeName_xpath, enrollpackage+enrollment+"']");
+				waitForElementPresentWebdriver(attributeName_xpath, eventpackage+enrollment+"']", enrollment);
+				clickWebdriver(attributeName_xpath, eventpackage+enrollment+"']");
+				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Enrollment");
+				
 			}
 			if (!link_to_click.equalsIgnoreCase("")) {
 				

@@ -22,8 +22,10 @@ public class FileUpload_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Browser a Document From location["+browserfilelocation+"]");
 //				Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/Application/UploadFile.exe \""+browserfilelocation+"\"");
 //				click(EA_UploadBrowser);
+				System.out.println("aaa");
 				waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
 				attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(browserfilelocation);
+				
 			}
 			if (!buttons.equals("")) {
 				Reporter.log("Step 2 - Click on 'Upload Document' Button");

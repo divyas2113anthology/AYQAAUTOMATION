@@ -33,7 +33,7 @@ public static final String Browser_Safari = "safari";
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
 //public static final String Login = "//input[@value='login']";
-public static final String Login = "//input[@value='login']";
+public static final String Login = "//input[@alt='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";

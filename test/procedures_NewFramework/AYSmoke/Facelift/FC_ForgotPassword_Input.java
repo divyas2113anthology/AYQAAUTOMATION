@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,6 +24,7 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
 				waitForElementPresentWebdriver(attributeName_xpath, FPI_Pin, pin);
 //				type(FPI_Pin,pin);
+				clickWebdriver(attributeName_xpath, FPI_Pin);
 				sendKeys(attributeName_xpath, FPI_Pin, pin);
 			}
 			if (!emailaddress.equals("")) {
@@ -39,12 +41,14 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_id, "ay-forgotSubmit", fpsearch);
 					clickWebdriver(attributeName_xpath,"//input[@id='ay-forgotSubmit']");
+					waitForPageToLoadWebdriver();
 					
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
 					click(FPI_upaclosebtn);
 				}else if(fpsearch.equalsIgnoreCase("back"))
 				{
-					waitForElementPresentWebdriver(attributeName_xpath,CI_BackBtnFL, fpsearch);
+					waitForElementPresentWebdriverWait(attributeName_xpath,CI_BackBtnFL, fpsearch);
+					//waitForElementPresentWebdriver(attributeName_xpath,CI_BackBtnFL, fpsearch);
 					clickWebdriver(attributeName_xpath,CI_BackBtnFL);
 					waitForPageToLoad(); 
 				}

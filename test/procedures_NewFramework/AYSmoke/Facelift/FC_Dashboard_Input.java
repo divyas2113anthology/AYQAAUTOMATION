@@ -36,7 +36,7 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					recentPopupSelectWebdriver("Technical Support");
 				}else if (dashboard_button.equalsIgnoreCase("Log Out")) {
 					clickWebdriver(attributeName_xpath,DB_LogoutBtn);
-					waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ay-login-text']/h2", "Sucessfully Logout");
+					waitForPageToLoadWebdriver();
 				}			
 			}
 			if (!myapplications_button.equals("")) {

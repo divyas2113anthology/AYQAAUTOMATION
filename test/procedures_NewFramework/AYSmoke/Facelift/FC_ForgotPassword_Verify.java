@@ -37,6 +37,7 @@ public class FC_ForgotPassword_Verify extends CommonSeleniumActions implements O
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");
 				errormessage = errormessage.replace(";", "\n");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, FPV_ErrorMsg, errormessage);
 				verifyElementTextWebdriver(attributeName_xpath, FPV_ErrorMsg, errormessage, "System Message:");
 				}

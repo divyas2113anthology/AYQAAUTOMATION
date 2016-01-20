@@ -2006,9 +2006,10 @@ public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_sma
 
 //#********************************************************************#
 
-public static final String PT_PageName="//form[@name='frm";
-public static final String PT_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
-public static final String PT_Instructions="//div[@id='AYInstructions']";
+public static final String SR_PageName="//form[@name='frm";
+public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
+public static final String SR_Instructions="//div[@id='AYInstructions']";
+public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
 
 }
 

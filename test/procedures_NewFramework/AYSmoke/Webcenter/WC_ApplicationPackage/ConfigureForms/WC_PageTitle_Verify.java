@@ -20,8 +20,8 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 		switchToFrameNameIdWebdriver("frmContent");
 		if (!pagetitle.equals(""))
 		{
-			waitForElementPresentWebdriver(attributeName_xpath, PT_PageName+pagetitle+"Rules']//font", pagetitle);
-			verifyElementContainsTextWebdriver(attributeName_xpath, PT_PageName+pagetitle+"Rules']//font", pagetitle, pagetitle);
+			waitForElementPresentWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle);
+			verifyElementContainsTextWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle, pagetitle);
 			
 		}
 		
@@ -30,15 +30,15 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 		{
 			if(showhide.equalsIgnoreCase("show"))
 			{
-				waitForElementPresentWebdriver(attributeName_xpath, PT_ShowHide+showhide+"')]", showhide);
-				clickWebdriver(attributeName_xpath, PT_ShowHide+showhide+"')]");
+				waitForElementPresentWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]", showhide);
+				clickWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]");
 				
 			}
 			
 			else if(showhide.equalsIgnoreCase("hide"))
 			{
-				waitForElementPresentWebdriver(attributeName_xpath, PT_ShowHide+showhide+"')]", showhide);
-				clickWebdriver(attributeName_xpath, PT_ShowHide+showhide+"')]");
+				waitForElementPresentWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]", showhide);
+				clickWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]");
 				
 			}
 				
@@ -47,8 +47,8 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 		
 		if(!verifyui.equals(""))
 		{
-			waitForElementPresentWebdriver(attributeName_xpath, PT_Instructions,  verifyui);
-			verifyElementContainsTextWebdriver(attributeName_xpath, PT_Instructions, verifyui, verifyui);
+			waitForElementPresentWebdriver(attributeName_xpath, SR_Instructions,  verifyui);
+			verifyElementContainsTextWebdriver(attributeName_xpath, SR_Instructions, verifyui, verifyui);
 		}
 		
 		switchToDefaultContentWebdriver();

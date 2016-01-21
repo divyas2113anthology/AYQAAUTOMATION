@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+
 import or.OR;
 import processor.CommonSeleniumActions;
 
@@ -177,8 +179,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			if (!pin.equals("")) {
 				Reporter.log("Step 16 - Enter the PIN as ["+pin+"]");
 				clickWebdriver(attributeName_xpath, SAI_Pin);
-				String pinnumber = Runtimedataread(pin);
-				sendKeys(attributeName_xpath, SAI_Pin, pinnumber);
+				//String pinnumber = Runtimedataread(pin);
+				sendKeys(attributeName_xpath, SAI_Pin, pin);
 			}
 			if (!applicantid.equals("")) {
 				Reporter.log("Step 17 - Enter the Applicant ID as ["+applicantid+"]");
@@ -195,11 +197,14 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 //				waitForElementPresentWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
 //				selectByValueWebdriver(attributeName_xpath, SAI_UserQuries+userqueries+"')]", userqueries);
 				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
-				if(isElementPresentWebdriver(attributeName_xpath, SAI_UserQuries+"/option[contains(text(),'"+userqueries+"')]")) {
-					selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, "   "+userqueries);
-				} else {
+				if(isElementPresentWebdriver(attributeName_xpath, SAI_UserQuries)) {
+					//selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, "   "+userqueries);
+					clickWebdriver(attributeName_xpath, SAI_UserQuries);
+					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath, MQ_Queryselect+userqueries+"')]");
+				} /*else {
 					selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
-				}
+				}*/
 			}
 			
 			if (!search_using_query.equals("")) {
@@ -235,6 +240,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 25 - Click the submit button");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SubmitBtnBottom, submit);
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+				waitForPageToLoadWebdriver();
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

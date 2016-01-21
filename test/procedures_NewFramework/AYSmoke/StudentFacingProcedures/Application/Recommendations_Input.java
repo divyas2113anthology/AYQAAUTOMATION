@@ -61,7 +61,7 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rcfirstname.equals("")) {
 				Reporter.log("Step 5 - Enter First name as ("+rcfirstname +")");
-				waitForElementPresentWebdriver(attributeName_xpath, RC_fName, rcfirstname);
+				waitForElementPresentWebdriverWait(attributeName_xpath, RC_fName, rcfirstname);
 				String Fnamerc = getElementIDbyLabelContainsusingXpathWebdirver("First Name",RC_fName);				
 				type(Fnamerc,rcfirstname );
 			}

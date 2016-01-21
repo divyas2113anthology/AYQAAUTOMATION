@@ -45,7 +45,8 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 				type(upaLastName, lastname);
 			}
 			if (!emailaddress.equals("")) {
-				Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");		
+				Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");
+				waitForElementPresentWebdriverWait(attributeName_xpath, upaEmailAddress, emailaddress);
 				type(upaEmailAddress, emailaddress);
 			}
 			if (!birthdate.equals("")) {

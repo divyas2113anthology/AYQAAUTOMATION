@@ -21,8 +21,10 @@ public class MC_UploadImages_Verify extends CommonSeleniumActions implements OR{
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
 //				waitForElementPresentWebdriver(attributeName_id, "divAyConfirmation", message);
 //				verifyElementContainsTextWebdriver(attributeName_id, "divAyConfirmation", message, message);
+				
 				waitForText(message, message);
 				verifyTextPresent(message);
+				
 			}
 			if (!page.equals("")) {
 				Reporter.log("Step 2 - Verify Page Name As ["+page+"]");

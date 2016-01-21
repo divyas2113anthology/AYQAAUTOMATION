@@ -18,6 +18,7 @@ public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements 
 			Reporter.log("Check login to Maintenance center");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
+				waitForPageToLoadWebdriver();
 				verifyTextPresent(message);				
 			}
 			if (!closewindow.equals("")) {

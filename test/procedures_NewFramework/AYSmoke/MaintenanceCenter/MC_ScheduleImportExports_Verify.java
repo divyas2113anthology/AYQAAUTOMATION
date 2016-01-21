@@ -33,6 +33,8 @@ public class MC_ScheduleImportExports_Verify  extends CommonSeleniumActions impl
 					String Msg = Runtimedataread(SplitMsg[0]);
 					verifyTextPresent(Msg+SplitMsg[1]);
 				}else if (message.contains("Deleted")) {
+					alertAccept();
+					
 					verifyTextPresent(message);
 				}
 			}

@@ -220,7 +220,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdsave.equals("")) {
 				Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 				if(pdsave.equalsIgnoreCase("Save")){
-					waitForElementPresentWebdriver(attributeName_xpath, PSD_Save, pdsave);
+					waitForElementPresentWebdriverWait(attributeName_xpath, PSD_Save, pdsave);
 //					actionsClickWebdriver(attributeName_xpath, PSD_Save);
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);

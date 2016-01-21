@@ -260,8 +260,10 @@ public static final String EA_SectionName = "css=font[class='Section']";
 public static final String EA_ShortEssay = "//textarea[@id='q24515']";
 public static final String EA_EssaywithAttachment = "//textarea[@id='q24516']";
 public static final String EA_EssaywithoutAttachment = "//textarea[@id='q24517']";
-public static final String EA_EssaywithAttachment_UploadDocument = "xpath=(//img[@alt='Upload Attachment'][1])";
-public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])[1]";
+//public static final String EA_EssaywithAttachment_UploadDocument = "xpath=(//img[@alt='Upload Attachment'][1])";
+public static final String EA_EssaywithAttachment_UploadDocument = "//img[@alt='Upload Attachment'][1])";
+//public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])[1]";
+public static final String EA_EssaywithAttachment_ViewDocument = "//a[@alt='View Document'][1]";
 //public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//img[@alt='View Document'][1])";
 public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[1]";
 //public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'][1])";
@@ -871,7 +873,8 @@ public static final String SAI_Zip = "//input[@name='ZipCode']";
 public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "//select[@name='SysQuery']";
-public static final String SAI_UserQuries = "//select[@name='QueryID']";
+//public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
+public static final String SAI_UserQuries = "//input[@id='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";
@@ -1756,7 +1759,7 @@ public static final String CULP_Reset_Pwd = "//*[contains(text(),'Reset password
 public static final String WMMP_LastName = "//input[@id='txtLastName']";
 public static final String WMMP_Save = "//img[@alt='save']";
 public static final String WMMP_Cancel = "//img[@alt='cancel']";
-public static final String WMMP_CRM = "//*[contains(text(),'CRM')]";
+public static final String WMMP_CRM = "//a[contains(text(),'CRM')]";
 
 //#**********************************************************#
 //#	 Connect - Edit User Profile - CEUP 

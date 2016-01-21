@@ -27,6 +27,7 @@ public class AY_WC_ManageMyProfile_Input extends CommonSeleniumActions implement
 			
 			if (!lastname.equals("")) {
 				Reporter.log("Step 3 - Edit Last Name as ["+lastname+"]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, WMMP_LastName, lastname);
 				sendKeys(attributeName_xpath, WMMP_LastName, lastname);
 				waitForPageToLoadWebdriver();
 			}
@@ -35,6 +36,7 @@ public class AY_WC_ManageMyProfile_Input extends CommonSeleniumActions implement
 				Reporter.log("Step 6 - Click on Save or Cancel");
 				
 				if (savecancel.equalsIgnoreCase("save")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath, WMMP_Save, savecancel);
 					clickWebdriver(attributeName_xpath, WMMP_Save);
 					waitForPageToLoadWebdriver();
 				}else if (savecancel.equalsIgnoreCase("cancel")) {
@@ -44,6 +46,8 @@ public class AY_WC_ManageMyProfile_Input extends CommonSeleniumActions implement
 			}
 			if (!crm.equals("")) {
 				Reporter.log("Step 7 - Click on CRM to redirect to Connect Page");
+			
+				waitForElementPresentWebdriverWait(attributeName_xpath, WMMP_CRM, crm);
 				clickWebdriver(attributeName_xpath, WMMP_CRM);
 				waitForPageToLoadWebdriver();
 			}

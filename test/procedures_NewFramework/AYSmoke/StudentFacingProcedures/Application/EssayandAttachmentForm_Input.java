@@ -44,9 +44,11 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
 //					VerifyPDFOpen("ShowDocument", 1000);
 				recentPopupSelectWebdriver("view document");
+				waitForPageToLoadWebdriver();
 //					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
 //					waitForUniqueNameWindow();
 //					SelectPrintWindow("ShowDocument");
+				
 				}else if (essaywithattachmentuploaddocument.equals("delete")) {
 //					clickchooseokgetconfirmationpagepload(EA_EssaywithAttachment_DeleteDocument);
 //					chooseOkOnNextConfirmation();

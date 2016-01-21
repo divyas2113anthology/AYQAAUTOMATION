@@ -41,6 +41,7 @@ public class WC_InviteEvent_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Proceed to Click on ("+inviteback+") Button");
 				if (inviteback.equalsIgnoreCase("Invite")) {
 					clickWebdriver(attributeName_xpath, IE_InviteBtn);
+					waitForPageToLoadWebdriver();
 					alertAccept();
 					waitForPageToLoadWebdriver();
 				}else if (inviteback.equalsIgnoreCase("Back")) {

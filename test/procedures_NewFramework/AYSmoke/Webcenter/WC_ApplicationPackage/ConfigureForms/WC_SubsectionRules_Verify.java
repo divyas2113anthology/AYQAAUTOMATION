@@ -8,7 +8,7 @@ import processor.CommonSeleniumActions;
 
 public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements OR{
 
-	@Test(description="Verify page subsection rule in webcenter config forms")
+	@Test(description="Verify subsection rule page UI in webcenter config forms")
 	public void WC_SubsectionRules_Verify() throws Exception
 	{
 	

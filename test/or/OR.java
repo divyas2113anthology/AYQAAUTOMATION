@@ -2013,6 +2013,18 @@ public static final String SR_PageName="//form[@name='frm";
 public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
 public static final String SR_Instructions="//div[@id='AYInstructions']";
 public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
+public static final String SR_buton="//img[contains(@src,'";
+public static final String SR_name="//input[@name='txtName']";
+public static final String SR_description="//textarea[@name='txtDescription']";
+public static final String SR_subsection="//input[@name='txtName']";
+public static final String SR_field="//input[@name='txtName']";
+public static final String SR_operator="//input[@name='txtName']";
+public static final String SR_value="//input[@name='txtName']";
+
+
+
+
+
 
 }
 

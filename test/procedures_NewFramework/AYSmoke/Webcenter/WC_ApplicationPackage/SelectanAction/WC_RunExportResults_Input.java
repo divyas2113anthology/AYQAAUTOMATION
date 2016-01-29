@@ -28,11 +28,11 @@ public class WC_RunExportResults_Input extends CommonSeleniumActions implements 
 			if (!linktoclick.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click the Export File Link");
 				if (linktoclick.equalsIgnoreCase("Text File")) {
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]", "Export File Link");
+					waitForElementPresentWebdriverWait(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]", "Export File Link");
 					clickWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmDownload.submit();')]");
 					waitForPageToLoadWebdriver();
 				}else if (linktoclick.equalsIgnoreCase("Excel File")) {
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmExcelDownload.submit();')]", "Export File Link");
+					waitForElementPresentWebdriverWait(attributeName_xpath, "//a[contains(@href, 'javascript:frmExcelDownload.submit();')]", "Export File Link");
 					clickWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmExcelDownload.submit();')]");
 					waitForPageToLoadWebdriver();
 				}

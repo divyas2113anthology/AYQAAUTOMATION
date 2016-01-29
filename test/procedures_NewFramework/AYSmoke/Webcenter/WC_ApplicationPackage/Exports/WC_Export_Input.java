@@ -41,6 +41,7 @@ public class WC_Export_Input extends CommonSeleniumActions implements OR {
 			if (!button.equals("")) {
 				Reporter.log("Step 5 - Click button as ["+button+"]");
 				if (button.equalsIgnoreCase("Run")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath, RPT_RunBtn,button);
 					clickWebdriver(attributeName_xpath, RPT_RunBtn);
 				}
 //				clickWebdriver(attributeName_name, "Transferx");

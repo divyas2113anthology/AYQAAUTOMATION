@@ -261,7 +261,7 @@ public static final String EA_ShortEssay = "//textarea[@id='q24515']";
 public static final String EA_EssaywithAttachment = "//textarea[@id='q24516']";
 public static final String EA_EssaywithoutAttachment = "//textarea[@id='q24517']";
 //public static final String EA_EssaywithAttachment_UploadDocument = "xpath=(//img[@alt='Upload Attachment'][1])";
-public static final String EA_EssaywithAttachment_UploadDocument = "//img[@alt='Upload Attachment'][1])";
+public static final String EA_EssaywithAttachment_UploadDocument = "//img[@alt='Upload Attachment'][1]";
 //public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//a[@alt='View Document'])[1]";
 public static final String EA_EssaywithAttachment_ViewDocument = "//a[@alt='View Document'][1]";
 //public static final String EA_EssaywithAttachment_ViewDocument = "xpath=(//img[@alt='View Document'][1])";

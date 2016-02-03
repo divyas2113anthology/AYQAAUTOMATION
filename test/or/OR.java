@@ -150,7 +150,6 @@ public static final String BR_TargetEmail = "//select[@name='EmailId']";
 public static final String BR_Save = "//img[@name='imageAdd1']";
 public static final String BR_Add = "//img[@name='imageAdd1']";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
-public static final String BR_Buttons = "//img[contains(@src,'"; 
 public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
 public static final String BR_StatusGrey = "//select[@id='DocStatusID' and contains(@style,'Grey')]";
 public static final String BR_VerifyStatus = "//select[@id='DocStatusID']/option[contains(text(),'";  //Waived')]";
@@ -2014,16 +2013,15 @@ public static final String SR_PageName="//form[@name='frm";
 public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
 public static final String SR_Instructions="//div[@id='AYInstructions']";
 public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
-public static final String SR_buton="//img[contains(@src,'";
+public static final String SR_button="//img[contains(@src,'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[@name='txtName']";
 public static final String SR_field="//input[@name='txtName']";
 public static final String SR_operator="//input[@name='txtName']";
 public static final String SR_value="//input[@name='txtName']";
-
-
-
+public static final String SR_RuleName="//td[a[contains(text(),'";
+public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
 
 
 

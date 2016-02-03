@@ -17,14 +17,15 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		String message=testData[1];
 		String verifyUI=testData[2];
 		
+		
+		
 		if(!pageTitle.equalsIgnoreCase(""))
 		{
-		   Reporter.log("Verify page title");
+		  Reporter.log("Verify page title"+ pageTitle);
 		   waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
 		   verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
 		}
-		
-		
+				
 		if(!message.equalsIgnoreCase(""))
 		{
 		    Reporter.log("Verify confirmation/Error message");
@@ -39,6 +40,7 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		    verifyElementPresentWebdriver(attributeName_xpath, SR_LinkToClick,verifyUI);
 		    
 		}
+		 
 		
 	}
 	

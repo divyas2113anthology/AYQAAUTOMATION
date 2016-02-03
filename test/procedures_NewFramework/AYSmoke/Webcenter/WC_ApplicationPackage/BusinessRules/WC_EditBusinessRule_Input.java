@@ -127,16 +127,16 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			if (!savecancel.equals("")) {
 				Reporter.log("Step - Clicking on : ("+savecancel+")");
 				if(savecancel.equalsIgnoreCase("save")){
-					waitForElementPresentWebdriver(attributeName_xpath,BR_Save, savecancel);
-					clickWebdriver(attributeName_xpath,BR_Save);
+					waitForElementPresentWebdriver(attributeName_xpath,BR_Buttons+savecancel+"')]", savecancel);
+					clickWebdriver(attributeName_xpath,BR_Buttons+savecancel+"')]");
 				}
 				else if(savecancel.equalsIgnoreCase("plusfilter")){
 					clickWebdriver(attributeName_xpath, BR_PlusFilter);
 					waitForPageToLoadWebdriver();
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
-					waitForElementPresentWebdriver(attributeName_xpath, BR_Cancel, "Cancel");
-					clickWebdriver(attributeName_xpath, BR_Cancel);
+					waitForElementPresentWebdriver(attributeName_xpath, BR_Buttons+savecancel+"')]", "Cancel");
+					clickWebdriver(attributeName_xpath, BR_Buttons+savecancel+"')]");
 					waitForPageToLoadWebdriver();
 				}
 					

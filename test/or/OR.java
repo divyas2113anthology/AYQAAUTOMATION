@@ -2016,10 +2016,11 @@ public static final String SR_LinkToClick = "//a[contains(@href,'javascript:Edit
 public static final String SR_button="//img[contains(@src,'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
-public static final String SR_subsection="//input[@name='txtName']";
-public static final String SR_field="//input[@name='txtName']";
-public static final String SR_operator="//input[@name='txtName']";
-public static final String SR_value="//input[@name='txtName']";
+public static final String SR_subsection="//input[@id='SubSectionInput']";
+public static final String SR_field="//select[contains(@name,'txtField')]";
+public static final String SR_operator="txtOperator0";
+public static final String SR_value_No="//input[@value='N']";
+public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="//td[a[contains(text(),'";
 public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
 

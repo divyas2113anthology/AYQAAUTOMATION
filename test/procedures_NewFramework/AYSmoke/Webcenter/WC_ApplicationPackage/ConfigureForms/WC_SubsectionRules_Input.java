@@ -41,7 +41,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
 					waitForPageToLoadWebdriver();
 					alertAccept();
-					//switchToFrameNameIdWebdriver("frmContent");
+					
 				}
 				else if (button.equalsIgnoreCase("print")) {
 					Reporter.log("Verify PRINT Button");
@@ -52,7 +52,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 					 Reporter.log("Verify SAVE Button");						
 				     clickWebdriver(attributeName_xpath, SR_button+button+"')]");
 					waitForPageToLoadWebdriver();
-					//switchToFrameNameIdWebdriver("frmContent");
+					
 				
 			    }
 				else if (button.equalsIgnoreCase("cancel")) {
@@ -67,7 +67,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			{
 				Reporter.log("Enter Subsection name");
 				sendKeys(attributeName_xpath, SR_name, name);
-				
+								
 			}
 			
              if(!description.equalsIgnoreCase(""))
@@ -80,20 +80,35 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              
              if (!subsection.equalsIgnoreCase("")) {
  				Reporter.log("Select subsection" + subsection );
- 					select(SR_subsection, subsection);
+ 				clickWebdriver(attributeName_xpath, SR_subsection);
+ 				clickWebdriver(attributeName_linktext, subsection);
+ 					
+ 				
              }	
              if (!field.equalsIgnoreCase("")) {
   				Reporter.log("Select field " + field );
-  					select(SR_field, field);
+  				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SR_field, field);
+  					
               }	
              if (!operator.equalsIgnoreCase("")) {
   				Reporter.log("Select operator as" + operator );
-  					select(SR_operator, operator);
-              }	
+  				sendKeys(attributeName_name, SR_operator, operator);
+  				              }	
              if (!value.equalsIgnoreCase("")) {
-   				Reporter.log("Select value as" + value );
-   					select(SR_value, value);
-               }	
+            	 Reporter.log("Select value as" + value );
+            	  if(value.equalsIgnoreCase("Yes"))
+            		 {
+            		  clickWebdriver(attributeName_xpath, SR_value_Yes);
+            		  
+            		 }
+            	  if(value.equalsIgnoreCase("NO"))
+            	  {
+            		  clickWebdriver(attributeName_xpath, SR_value_No);  
+            	  }
+            	 }
+   				
+   				  					
+               	
               
              
 			if(!linkText.equalsIgnoreCase(""))

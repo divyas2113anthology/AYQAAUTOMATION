@@ -82,15 +82,16 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
 			waitForPageToLoadWebdriver();
-			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+			//Address Lookup not picking address list
+			/*if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
 				clickWebdriver(attributeName_xpath, AL_AddressLink);
 			}
 			waitForPageToLoadWebdriver();
 			clickWebdriver(attributeName_xpath, AL_AddressLink);
 		}
 		selectMainWindowWebdriver();
-		recentOpenedPopupSelectWebdriver("Select Previous Window");
-		
+		recentOpenedPopupSelectWebdriver("Select Previous Window");*/
+		}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

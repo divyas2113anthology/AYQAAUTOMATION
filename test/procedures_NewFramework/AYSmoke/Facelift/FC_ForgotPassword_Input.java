@@ -39,10 +39,11 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 					/*waitForElementPresentWebdriver(attributeName_xpath, FPI_Search, fpsearch);
 					clickWebdriver(attributeName_xpath,FPI_Search);*/
 					waitForPageToLoadWebdriver();
-					waitForElementPresentWebdriver(attributeName_id, "ay-forgotSubmit", fpsearch);
-					clickWebdriver(attributeName_xpath,"//input[@id='ay-forgotSubmit']");
 					waitForPageToLoadWebdriver();
-					
+					waitForElementPresentWebdriverWait(attributeName_id, "ay-forgotSubmit", fpsearch);
+					clickWebdriver(attributeName_id, "ay-forgotSubmit");
+					waitForPageToLoadWebdriver();
+										
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
 					click(FPI_upaclosebtn);
 				}else if(fpsearch.equalsIgnoreCase("back"))

@@ -59,21 +59,31 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 //					type(CA_LastName, lastname);
 					sendKeys(attributeName_cssselector, CA_LastName, lastname);
 				}	
-				String Email = emailaddress+Calendar.getInstance().getTimeInMillis()+"@Smoke.com";
+				String Email = emailaddress+Calendar.getInstance().getTimeInMillis()+"@connect.com";
 				if (!emailaddress.equals("")) {
 					Reporter.log("Step 4 - Enter 'Email Address' as ("+Email+")");
-					if (!emailaddress.contains("@")) {
+					if (emailaddress.contains("bridge")) {
 						sendKeys(attributeName_cssselector, CA_EmailAddress, Email);
 					} else {
 						sendKeys(attributeName_cssselector, CA_EmailAddress, emailaddress);
 					}
 				}
+				//String ConfirmEmail = emailaddress+Calendar.getInstance().getTimeInMillis()+"@connect.com";
+				if (!confirmemailaddress.equals("")) {
+					Reporter.log("Step 4 - Enter 'Email Address'");
+					if (confirmemailaddress.contains("bridge")) {
+						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, Email);
+					} else {
+						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, confirmemailaddress);
+					}
+				}
 				
+				/*String ConfirmEmail = confirmemailaddress+Calendar.getInstance().getTimeInMillis()+"@connect.com";
 				if (!confirmemailaddress.equals("")) {			
-					Reporter.log("Step 5 - Enter 'Confirm Email Address' as ("+Email+")");	
+					Reporter.log("Step 5 - Enter 'Confirm Email Address' as ("+ConfirmEmail+")");	
 //					type(CA_ConfirmEmailAddress, confirmemailaddress);
 					if (!confirmemailaddress.contains("@")) {
-						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, Email);
+						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, ConfirmEmail);
 						if (!confirmemaillabel.equalsIgnoreCase("")) {
 							Reporter.log("Step 6 - Proceed to Write Confirm Password as ("+confirmemaillabel+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 							Runtimedatawrite(Email,confirmemaillabel);			
@@ -81,7 +91,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					} else {
 						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, confirmemailaddress);
 					}
-				}	
+				}	*/
 				
 				if (!birthdate.equals("")) {
 					Reporter.log("Step 7 - Enter 'Birth date' as ("+birthdate+")");		
@@ -99,15 +109,15 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					Reporter.log("Step 9 - Enter 'Password' as ("+password+")");	
 					String Password = Runtimedataread(password);
 //					type(CA_Password, Password);
-					waitForElementPresentWebdriver(attributeName_xpath, CA_Password, password);
-					sendKeys(attributeName_xpath, CA_Password, password);
+					waitForElementPresentWebdriver(attributeName_xpath, CA_Password, Password);
+					sendKeys(attributeName_xpath, CA_Password, Password);
 				}		
 				
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");	
 					String ConfirmPassword = Runtimedataread(confirmpassword);
 //					type(CA_ConfirmPassword, ConfirmPassword);	
-					sendKeys(attributeName_xpath, CA_ConfirmPassword, confirmpassword);
+					sendKeys(attributeName_xpath, CA_ConfirmPassword, ConfirmPassword);
 //					if (!confirmyes.equalsIgnoreCase("")) {
 //						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 //						Runtimedatawrite(confirmpassword,confirmyes);			
@@ -140,15 +150,24 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 						Runtimedatawrite(UserName,pin);
 					}
 				}
-				String UserName = username+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();		
+				String UserName = username+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				if (!username.equals("")) {
+					Reporter.log("Step 14  - Proceed to enter the user name as ("+UserName+") ");
+					if (username.equals("Malik")) 
+						sendKeys(attributeName_id, CA_UserName, UserName);
+					else
+						sendKeys(attributeName_id, CA_UserName, username);
+					
+				}
+				/*if (!username.equals("")) {
 					Reporter.log("Step 14  - Proceed to enter the user name as ("+UserName+") ");
 					sendKeys(attributeName_id, CA_UserName, UserName);
 					if (!usernamelabel.equals("")) {
 						Reporter.log("Step 15 - Proceed to Write User Name as ("+UserName+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(UserName, usernamelabel);
 					}
-				}
+				}*/
+				
 				if (!button_to_click.equals("")) {
 					if (button_to_click.equalsIgnoreCase("create account")) {
 						Reporter.log("Step 16 - Click on 'Create Account' button");

@@ -222,9 +222,12 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				if(pdsave.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriverWait(attributeName_xpath, PSD_Save, pdsave);
 //					actionsClickWebdriver(attributeName_xpath, PSD_Save);
-					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
+					//clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
+					System.out.println("Malik");
+					clickWebdriver(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
-					waitForPageToLoadWebdriver();
+				waitForPageToLoadWebdriver();
+				
 				}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);
 					waitForPageToLoadWebdriver();

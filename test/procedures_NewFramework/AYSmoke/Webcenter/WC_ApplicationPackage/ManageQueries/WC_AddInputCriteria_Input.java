@@ -55,11 +55,11 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 //					selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='txtField0' and @class='FormFields']", "    --"+fieldname);
 //				}
 //				else{
-				clickWebdriver(attributeName_xpath, MQ_FieldName);
-				waitForElementPresentWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
+				//clickWebdriver(attributeName_xpath, MQ_FieldName);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
 				//clickWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]");
 				//selectByVisibleTextWithSpaceWebdriver(attributename, attributevalue, text);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]", fieldname);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName, fieldname);				
 				waitForPageToLoadWebdriver();
 //				Select sel = new Select(driver.findElement(By.xpath("//select[@name='txtField0']")));
 //				sel.selectByVisibleText("--Payment Status");
@@ -71,7 +71,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_Operator+operator+"')]", operator);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_Operator, operator);
 				waitForPageToLoadWebdriver();
 			}
 			if (!value.equals("")) {
@@ -102,6 +102,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_name, MQ_SaveAndRun);
 					waitForPageToLoadWebdriver();
 				}else if (buttonstoclick.equalsIgnoreCase("run")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath, RPT_RunBtn,buttonstoclick);
 					clickWebdriver(attributeName_xpath, RPT_RunBtn);
 					waitForPageToLoadWebdriver();
 				}

@@ -67,6 +67,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 
 			}
 			if(!viewsource.equals("")){
+				waitForPageToLoad();
 				String pagesource = driver.getPageSource();
 				System.out.println(pagesource);
 				if(pagesource.contains(viewsource))

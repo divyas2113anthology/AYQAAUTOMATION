@@ -24,13 +24,14 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 			Reporter.log("Verify Test Data was retrieved for 'Add Input Criteria' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
 				verifyElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, BP_PageName, pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, BP_PageName, pagename, "Page Name for Manage Users");
+				System.out.println("aaaaaMalikaaaaa"+pagename);
+				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
 			}
 			if (!verifyvalues.equals("")) {
 				Reporter.log("Step 3 - Verify the list values as ["+verifyvalues+"]");

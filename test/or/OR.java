@@ -1045,7 +1045,8 @@ public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
-public static final String AS_View = "//span[contains(text(),'";
+//public static final String AS_View = "//span[contains(text(),'";
+public static final String AS_View = "//font[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window')]";
 public static final String AS_ViewApplication = "";
 public static final String AS_ViewRecommendation = "";
@@ -1230,6 +1231,7 @@ public static final String SFE_CalDay = "//a[text()='";
 public static final String EVR_SelectAnAction = "//select[@name='EventActionTypeID']";
 public static final String AEV_SuccessMsg = "//div[@id='divAyConfirmation']";
 public static final String MU_SelectAnAction = "//select[@name='ActionTypeID']";
+public static final String SR_Page = "//font[contains(text(),'";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#

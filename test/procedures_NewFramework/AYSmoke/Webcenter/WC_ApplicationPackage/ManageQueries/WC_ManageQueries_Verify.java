@@ -26,8 +26,8 @@ public class WC_ManageQueries_Verify extends CommonSeleniumActions implements OR
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, BP_PageName, pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, BP_PageName, pagename, "Page Name for Manage Users");
+				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");

@@ -1011,8 +1011,7 @@ public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//tr[@class='FormText']/td/font";
-//public static final String PA_UsageQuestion = "//form[@id='Form1']//b";.
-public static final String PA_UsageQuestion = "//table[@id='Table1']/tbody/tr/td/font/b";
+public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
 //#**********************************************************#
@@ -1046,8 +1045,7 @@ public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
-//public static final String AS_View = "//span[contains(text(),'";
-public static final String AS_View = "//font[contains(text(),'";
+public static final String AS_View = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window')]";
 public static final String AS_ViewApplication = "";
 public static final String AS_ViewRecommendation = "";
@@ -1232,7 +1230,6 @@ public static final String SFE_CalDay = "//a[text()='";
 public static final String EVR_SelectAnAction = "//select[@name='EventActionTypeID']";
 public static final String AEV_SuccessMsg = "//div[@id='divAyConfirmation']";
 public static final String MU_SelectAnAction = "//select[@name='ActionTypeID']";
-public static final String SR_Page = "//font[contains(text(),'";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#
@@ -1672,8 +1669,7 @@ public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
 public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
-public static final String MQ_QueryCheck = "//td[a[contains(text(),'";
-public static final String MQ_QueryCheckbox = "')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
@@ -1973,7 +1969,7 @@ public static final String MS_NewPassword = "//input[@name='Password']";
 public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
 public static final String MS_Submit = "//input[contains(@src,'submit')]";
 public static final String MC_SR_SelectMenu = "//button[contains(@class,'ui-multiselect')]"; 
-public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span[contains(text(),'";
+public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span";
 //#**********************************************************#
 //# Webcenter - Add Recommendation - AR
 //#**********************************************************#
@@ -2023,7 +2019,7 @@ public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[@id='SubSectionInput']";
 public static final String SR_field="//select[contains(@name,'txtField')]";
-public static final String SR_operator="txtOperator0";
+public static final String SR_operator="//select[@name='txtOperator0']";
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="//td[a[contains(text(),'";

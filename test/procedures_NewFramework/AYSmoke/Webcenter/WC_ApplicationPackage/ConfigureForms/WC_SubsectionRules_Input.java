@@ -33,14 +33,15 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			   if (button.equalsIgnoreCase("add")) {
 				   Reporter.log("Verify ADD");
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
-					switchToFrameNameIdWebdriver("frmContent");
-					//selenium.keyPressNative("10");
+					
 					
 				}else if (button.equalsIgnoreCase("delete")) {
 					Reporter.log("Verify DELETE");
+					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')]",button);
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
 					waitForPageToLoadWebdriver();
 					alertAccept();
+					waitForPageToLoadWebdriver();
 					
 				}
 				else if (button.equalsIgnoreCase("print")) {
@@ -57,6 +58,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			    }
 				else if (button.equalsIgnoreCase("cancel")) {
 					Reporter.log("Verify Cancel Button");
+					waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')]",button);
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
 					waitForPageToLoadWebdriver();						
 			
@@ -66,7 +68,10 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				
 			{
 				Reporter.log("Enter Subsection name");
+				waitForElementPresentWebdriverWait(attributeName_xpath, SR_name, name);
+				waitForPageToLoad();
 				sendKeys(attributeName_xpath, SR_name, name);
+				waitForPageToLoad();
 								
 			}
 			
@@ -74,6 +79,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				
 			{
 				Reporter.log("Enter description");
+				waitForElementPresentWebdriverWait(attributeName_xpath, SR_description, description);
 				sendKeys(attributeName_xpath, SR_description, description);
 				
 			}
@@ -88,34 +94,44 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              if (!field.equalsIgnoreCase("")) {
   				Reporter.log("Select field " + field );
   				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SR_field, field);
+  				waitForPageToLoadWebdriver();
   					
               }	
-             if (!operator.equalsIgnoreCase("")) {
+             
+             if (!operator.equalsIgnoreCase(""))
+             {
   				Reporter.log("Select operator as" + operator );
-  				sendKeys(attributeName_name, SR_operator, operator);
-  				              }	
-             if (!value.equalsIgnoreCase("")) {
+  				waitForElementPresentWebdriverWait(attributeName_xpath, SR_operator, operator);
+  				selectByVisibleTextWebdriver(attributeName_xpath, SR_operator, operator);
+  				waitForPageToLoadWebdriver();
+  			  }
+             
+             if (!value.equalsIgnoreCase(""))
+             {
             	 Reporter.log("Select value as" + value );
+            	 waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_Yes,value);     		      
+         	 
             	  if(value.equalsIgnoreCase("Yes"))
+            		  
             		 {
+            		  
             		  clickWebdriver(attributeName_xpath, SR_value_Yes);
             		  
             		 }
-            	  if(value.equalsIgnoreCase("NO"))
+            	  else if(value.equalsIgnoreCase("No"))
             	  {
+            		 
             		  clickWebdriver(attributeName_xpath, SR_value_No);  
-            	  }
-            	 }
-   				
-   				  					
-               	
-              
-             
+            	  }	
+            	  waitForPageToLoadWebdriver();
+            	 }		
+ 
 			if(!linkText.equalsIgnoreCase(""))
 			{
 			    Reporter.log("Click on Rule Name");
 			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+linkText+"')]]",linkText);
 			    clickWebdriver(attributeName_xpath,SR_RuleName+linkText+"')]]");
+			    waitForPageToLoadWebdriver();
 			    
 			}
 			
@@ -124,17 +140,15 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			    Reporter.log("Select Check Box next to Rule");
 			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox,checkbox);
 			    clickWebdriver(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox);
-			   
-			    
+			    waitForPageToLoadWebdriver();
+			  			    
 			}
-			
-			
+						
 			switchToDefaultContentWebdriver();
 			
 		}
 			
-			
-			
+				
 		
 	}
 

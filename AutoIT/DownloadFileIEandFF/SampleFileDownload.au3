@@ -13,7 +13,7 @@ _Log("Unable to find "&$title)
 Else
 _Log($title&" activated")
 ;WinWait($CmdLine[2]);
-Sleep(1000)
+Sleep(10000)
 WinWait("Opening");
 
 

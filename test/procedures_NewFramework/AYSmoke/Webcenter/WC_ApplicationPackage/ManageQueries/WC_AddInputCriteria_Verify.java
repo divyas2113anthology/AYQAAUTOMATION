@@ -29,8 +29,7 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				System.out.println("aaaaaMalikaaaaa"+pagename);
-				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
+				waitForElementPresentWebdriverWait(attributeName_xpath, SR_Page+pagename+"')]", pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
 			}
 			if (!verifyvalues.equals("")) {
@@ -38,8 +37,9 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 				//clickWebdriver(attributeName_xpath, MQ_ValueButton);
 				
 				waitForPageToLoadWebdriver();
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']", verifyvalues);
 				clickWebdriver(attributeName_xpath, "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']");
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues);
+				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_ValuesDropdown, verifyvalues);
 			
 				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues, verifyvalues);
 				

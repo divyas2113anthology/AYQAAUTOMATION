@@ -35,6 +35,7 @@ public class WC_RunExportResults_Input extends CommonSeleniumActions implements 
 					waitForElementPresentWebdriverWait(attributeName_xpath, "//a[contains(@href, 'javascript:frmExcelDownload.submit();')]", "Export File Link");
 					clickWebdriver(attributeName_xpath, "//a[contains(@href, 'javascript:frmExcelDownload.submit();')]");
 					waitForPageToLoadWebdriver();
+					
 				}
 				
 			}

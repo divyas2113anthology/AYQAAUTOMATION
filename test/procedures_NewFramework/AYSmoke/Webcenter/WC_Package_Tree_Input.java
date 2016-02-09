@@ -42,7 +42,8 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
-						clickWebdriver(attributeName_linktext, SplitPackage[i]);
+						//clickWebdriver(attributeName_linktext, SplitPackage[i]);
+						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitPackage[i]+"')]");
 						waitForPageToLoad();
 					}else{
 						System.out.println(SplitPackage[i]);

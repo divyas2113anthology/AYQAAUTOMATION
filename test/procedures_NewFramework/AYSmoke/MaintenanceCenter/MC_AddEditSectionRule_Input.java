@@ -39,7 +39,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			/*waitForElementPresentWebdriver(attributeName_xpath, ESR_Section, section);
 			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Section, section);*/
 			//select(ESR_Section, "regexp:"+section);
-			waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']","");
+			waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']",section);
 			clickWebdriver(attributeName_xpath, "//input[@name='SectionInput']");
 			Reporter.log("Step 2 - Perform the operation to click the Package as ["+section+"]");
 //			waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
@@ -63,9 +63,11 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 					
 				}
 			}
-			ClosePackageSelection();
+			//ClosePackageSelection();
 		}
-		switchToDefaultContentWebdriver();
+		//switchToDefaultContentWebdriver();
+		waitForElementPresentWebdriverWait(attributeName_xpath, "//select[option[contains(text(),'Personal Data')]]", "Personal Data");
+		waitForPageToLoadWebdriver();
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
 			waitForPageToLoad();
@@ -91,13 +93,17 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			Reporter.log("Step 5  - Select the operator as ["+operator+"]");
 			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Operator, operator);
 		}
-		if (!value.equals("")) {
+		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
 			//waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueText, value))
-				selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
-			else
+			if(booleanElementPresentWebdriver(attributeName_xpath, MC_SR_SelectMenu, value))
+				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
 				sendKeys(attributeName_xpath, ESR_ValueText, value);
+			else{
+				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
+				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath, MC_SR_Values+value+"')]");
+			}
 		}
 		if (!button.equals("")) {
 			Reporter.log("Step 7 - Click the name of the button as ["+button+"]");

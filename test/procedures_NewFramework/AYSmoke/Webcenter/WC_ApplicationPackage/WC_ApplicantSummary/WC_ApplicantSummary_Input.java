@@ -181,28 +181,29 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			}
 			if (!buttons.equals("")) {
 				Reporter.log("Step 13 - Check the Name of the Button as ["+buttons+"]");
-				if (buttons.equalsIgnoreCase("Save")) {
+				if (buttons.equalsIgnoreCase("Save")) 
+				{
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
 					waitForPageToLoad();
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					recentPopupCloseWebdriver();
 //					selectMainWindowWebdriver();
-				}else if (buttons.equalsIgnoreCase("Close Window")) {
+				}else if (buttons.equalsIgnoreCase("Close Window")) 
+				{
 					System.out.println("Msdfsdfsf");
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					driver.manage().deleteAllCookies();
 					driver.switchTo().window(ApplicationPage);
-					}
-				/*}else if (buttons.equalsIgnoreCase("print")) {
+				}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
 					//recentPopupSelectWebdriver("Application Printing");
 				}else if (buttons.equalsIgnoreCase("Application Fee")) {
 					clickWebdriver(attributeName_xpath, AS_AppFee);
 					recentPopupSelectWebdriver("Application Printing");	
-				
-				}*/
+				}
+			
 			}
 			if(!view.equals("")){
 				waitForElementPresentWebdriver(attributeName_xpath, AS_View+view+"')]", "View");

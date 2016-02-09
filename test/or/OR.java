@@ -1011,7 +1011,8 @@ public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//tr[@class='FormText']/td/font";
-public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
+//public static final String PA_UsageQuestion = "//form[@id='Form1']//b";.
+public static final String PA_UsageQuestion = "//table[@id='Table1']/tbody/tr/td/font/b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
 //#**********************************************************#
@@ -1671,7 +1672,8 @@ public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
 public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
-public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+public static final String MQ_QueryCheck = "//td[a[contains(text(),'";
+public static final String MQ_QueryCheckbox = "')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
@@ -1971,7 +1973,7 @@ public static final String MS_NewPassword = "//input[@name='Password']";
 public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
 public static final String MS_Submit = "//input[contains(@src,'submit')]";
 public static final String MC_SR_SelectMenu = "//button[contains(@class,'ui-multiselect')]"; 
-public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span";
+public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span[contains(text(),'";
 //#**********************************************************#
 //# Webcenter - Add Recommendation - AR
 //#**********************************************************#

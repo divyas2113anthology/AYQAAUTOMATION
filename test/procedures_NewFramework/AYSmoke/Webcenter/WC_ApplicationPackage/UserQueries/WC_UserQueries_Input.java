@@ -25,6 +25,14 @@ public class WC_UserQueries_Input extends CommonSeleniumActions implements OR {
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_linktext, "Applicant Detail");
 			}
+			if(!delete.equals(""))
+			{
+				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QueryCheck+delete+MQ_QueryCheckbox, queryselection);
+				clickWebdriver(attributeName_xpath, MQ_QueryCheck+delete+MQ_QueryCheckbox);
+				clickWebdriver(attributeName_xpath, MQ_Delete);
+				alertAccept();
+				waitForPageToLoadWebdriver();
+			}
 			if (!queryselection.equals("")) {
 				Reporter.log("Click on the Query"+queryselection);
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_Queryselect+queryselection+"')]", queryselection);    //TestforUserQueries')]"

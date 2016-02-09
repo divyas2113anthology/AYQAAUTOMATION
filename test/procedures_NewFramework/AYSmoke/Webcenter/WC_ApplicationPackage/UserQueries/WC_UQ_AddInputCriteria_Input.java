@@ -24,27 +24,13 @@ public class WC_UQ_AddInputCriteria_Input extends CommonSeleniumActions implemen
 			String groups = applicantwelidatarepo[6];
 			
 			Reporter.log("Input Test Data was retrieved for 'Add Input Criteria' page");
-			if (!backsaverun.equals("")) {
-				Reporter.log("Step 3 - Click button as ["+backsaverun+"]");
-				if (backsaverun.equalsIgnoreCase("Back")) {
-					clickWebdriver(attributeName_xpath, ASR_BackBtn);
-					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("Save")) {
-					clickWebdriver(attributeName_xpath, AS_SaveBtn);
-					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("save and run")) {
-					clickWebdriver(attributeName_name, MQ_SaveAndRun);
-					waitForPageToLoadWebdriver();
-				}else if (backsaverun.equalsIgnoreCase("run")) {
-					clickWebdriver(attributeName_xpath, RPT_RunBtn);
-					waitForPageToLoadWebdriver();
-				}
+			
 			if (!appsubmitted.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to click ["+appsubmitted+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_AppSubmit, appsubmitted);
 				clickWebdriver(attributeName_xpath, MQ_AppSubmit);
 					waitForPageToLoadWebdriver();
-				}
+				
 			}
 			if (!appinprogress.equals("")) {
 				Reporter.log("Step 2 - Perform the operation to click ["+appinprogress+"]");
@@ -72,6 +58,23 @@ public class WC_UQ_AddInputCriteria_Input extends CommonSeleniumActions implemen
 			if (!groups.equals("")) {
 				Reporter.log("Step 4 - Enter the value as ["+groups+"]");
 				
+			}
+			if (!backsaverun.equals("")) {
+				
+				Reporter.log("Step 3 - Click button as ["+backsaverun+"]");
+				if (backsaverun.equalsIgnoreCase("Back")) {
+					clickWebdriver(attributeName_xpath, ASR_BackBtn);
+					waitForPageToLoadWebdriver();
+				}else if (backsaverun.equalsIgnoreCase("Save")) {
+					clickWebdriver(attributeName_xpath, AS_SaveBtn);
+					waitForPageToLoadWebdriver();
+				}else if (backsaverun.equalsIgnoreCase("save and run")) {
+					clickWebdriver(attributeName_name, MQ_SaveAndRun);
+					waitForPageToLoadWebdriver();
+				}else if (backsaverun.equalsIgnoreCase("run")) {
+					clickWebdriver(attributeName_xpath, RPT_RunBtn);
+					waitForPageToLoadWebdriver();
+				}
 			}
 						
 		} catch (Exception e) {

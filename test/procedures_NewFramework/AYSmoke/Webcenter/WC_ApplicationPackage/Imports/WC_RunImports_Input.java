@@ -35,7 +35,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			}			
 			if (!choosefile.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+choosefile+"]");
-				
+				waitForElementPresentWebdriverWait(attributeName_name, "attfile", choosefile);
 				clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
 				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
@@ -83,8 +83,12 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			if (!click.equals("")) {
 				Reporter.log("Step 8 - Click button as ["+click+"]");
 				
-				waitForElementPresentWebdriver(attributeName_name, "Transferx", click);
-				clickWebdriver(attributeName_name, "Transferx");
+				/*waitForElementPresentWebdriverWait(attributeName_name, "Transferx", click);
+				clickWebdriver(attributeName_name, "Transferx");*/
+				waitForElementPresentWebdriverWait(attributeName_xpath, RPT_RunBtn, click);
+				waitForPageToLoadWebdriver();
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath, RPT_RunBtn);
 				waitForPageToLoadWebdriver();
 				
 			}			

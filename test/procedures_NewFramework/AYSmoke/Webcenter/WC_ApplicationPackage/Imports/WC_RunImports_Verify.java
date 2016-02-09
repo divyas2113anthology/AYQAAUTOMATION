@@ -24,8 +24,9 @@ public class WC_RunImports_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Run Import' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, "Not Present");
-				verifyTextPresent(message);
+				waitForElementPresentWebdriverWait(attributeName_xpath, IR_MessageContent, message);
+				verifyElementContainsTextWebdriver(attributeName_xpath, IR_MessageContent, message, message);
+				
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

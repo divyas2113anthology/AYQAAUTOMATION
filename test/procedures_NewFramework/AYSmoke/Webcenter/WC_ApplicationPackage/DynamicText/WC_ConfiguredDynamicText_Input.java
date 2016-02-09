@@ -9,10 +9,10 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 
-public class WC_ConfigureDynamicText_Input extends CommonSeleniumActions implements OR {
+public class WC_ConfiguredDynamicText_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is to perform some Operation in 'Configure Dynamic Text' page")
-	public void WC_ConfigureDynamicText_Input () throws Exception{
+	public void WC_ConfiguredDynamicText_Input () throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Configure Dynamic Text' page");

@@ -109,18 +109,15 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              if (!value.equalsIgnoreCase(""))
              {
             	 Reporter.log("Select value as" + value );
-            	 waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_Yes,value);     		      
-         	 
-            	  if(value.equalsIgnoreCase("Yes"))
-            		  
-            		 {
-            		  
-            		  clickWebdriver(attributeName_xpath, SR_value_Yes);
+            	 if(value.equalsIgnoreCase("Yes"))
+            	  {
+            		 waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_Yes,value);   
+            		 clickWebdriver(attributeName_xpath, SR_value_Yes);
             		  
             		 }
             	  else if(value.equalsIgnoreCase("No"))
             	  {
-            		 
+            		  waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_No,value);
             		  clickWebdriver(attributeName_xpath, SR_value_No);  
             	  }	
             	  waitForPageToLoadWebdriver();

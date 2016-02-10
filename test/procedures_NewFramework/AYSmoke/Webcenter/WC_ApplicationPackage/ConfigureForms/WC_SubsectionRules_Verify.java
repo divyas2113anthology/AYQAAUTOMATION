@@ -22,7 +22,7 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		if(!pageTitle.equalsIgnoreCase(""))
 		{
 		  Reporter.log("Verify page title"+ pageTitle);
-		   waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
+		   waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
 		   verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
 		   waitForPageToLoadWebdriver();
 		}
@@ -30,7 +30,7 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		if(!message.equalsIgnoreCase(""))
 		{
 		    Reporter.log("Verify confirmation/Error message");
-		    waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
+		    waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 		    //waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 			verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 			 waitForPageToLoadWebdriver();

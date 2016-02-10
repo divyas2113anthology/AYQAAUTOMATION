@@ -31,6 +31,8 @@ public class WC_RunReportResults_Verify extends CommonSeleniumActions implements
 
 			if (verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the UI information in Add Import page");
+				verifyElementContainsTextWebdriver(attributeName_xpath, PA_Success+verifyui+"')]", verifyui, verifyui);
+				
 			}
 
 		} catch (Exception e) {

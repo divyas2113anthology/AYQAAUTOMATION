@@ -763,6 +763,7 @@ public static final String BU_PD_State = "//select[@id='s35033']";
 public static final String BU_PD_BRules = "//font[contains(text(),'Business Rules')]";
 public static final String BU_PD_DOB = "//input[@id='q35023']";
 public static final String BU_BR_Submit = "//font[contains(text(),'Congratulations')]";
+public static final String BU_MiddleName = "//input[contains(@name,'q35021')]";
 
 
 //#**********************************************************#
@@ -1014,6 +1015,7 @@ public static final String PA_PageName = "//tr[@class='FormText']/td/font";
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
+public static final String PA_Success = "//td[@id='contentCol']/table//td[contains(text(),'";
 //#**********************************************************#
 //# Webcenter Code Lookup - CL
 //#**********************************************************#
@@ -1230,6 +1232,7 @@ public static final String SFE_CalDay = "//a[text()='";
 public static final String EVR_SelectAnAction = "//select[@name='EventActionTypeID']";
 public static final String AEV_SuccessMsg = "//div[@id='divAyConfirmation']";
 public static final String MU_SelectAnAction = "//select[@name='ActionTypeID']";
+public static final String SR_Page = "//font[contains(text(),'";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#
@@ -1669,7 +1672,9 @@ public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
 public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
-public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+//public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+public static final String MQ_QueryCheck = "//td[a[contains(text(),'";
+public static final String MQ_QueryCheckbox = "')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";

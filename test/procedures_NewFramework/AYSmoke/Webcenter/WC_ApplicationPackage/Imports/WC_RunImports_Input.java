@@ -39,7 +39,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
 				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
-				//waitForPageToLoadWebdriver();
+				waitForPageToLoadWebdriver();
 				
 				//clickWebdriver(attributeName_name, "attfile");
 //				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");

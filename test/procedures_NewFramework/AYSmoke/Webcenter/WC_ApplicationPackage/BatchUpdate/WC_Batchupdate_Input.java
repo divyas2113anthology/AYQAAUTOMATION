@@ -57,6 +57,7 @@ public class WC_Batchupdate_Input extends CommonSeleniumActions implements OR
 		}
 		if (!Middlename.equals("")) {
 			Reporter.log("Step 6 - Verify its navigate to ("+Middlename+") page");
+			sendKeys(attributeName_xpath, BU_MiddleName, Middlename);
 			
 		}
 		if (!PMT_TYPE.equals("")) {

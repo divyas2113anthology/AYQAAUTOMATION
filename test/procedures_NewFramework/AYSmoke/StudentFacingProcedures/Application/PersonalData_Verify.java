@@ -28,6 +28,7 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			String pagename = fpvdatarepo[2];
 			String verifyui = fpvdatarepo[3];
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
+			switchToDefaultContentWebdriver();
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				//Removed wait time
@@ -112,11 +113,15 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 
 					}
 				}
-				else if(verifyui.equals("testing"))
-					verifyElementContainsTextWebdriver(attributeName_xpath, BU_MiddleName, verifyui,verifyui);
+				else if(verifyui.equals("testing")){
+					waitForElementPresentWebdriverWait(attributeName_xpath, BU_MiddleName, verifyui);
+					String middle = getTextWebdriver(attributeName_xpath, BU_MiddleName);
+					verifyElementContainsTextWebdriver(attributeName_xpath, BU_MiddleName, verifyui,middle);
+				} 
 				else
 					//verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
-				    verifyElementContainsTextWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui,verifyui);
+					waitForElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
+					verifySelectContainsOptionsWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui, verifyui);
 				
 			}
 			
@@ -128,3 +133,4 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 	}
 
 }
+

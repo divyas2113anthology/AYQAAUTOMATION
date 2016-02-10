@@ -46,7 +46,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			
 			AppSummaryWindowName = driver.getWindowHandle();
 			
-			driver.navigate().refresh();
+			//driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
 				Reporter.log("Step 1 - Click the subscription status as ["+subscribed+"]");
@@ -130,7 +130,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
 					waitForPageToLoadWebdriver(); 
 				}
-				//recentPopupSelectWebdriver("Application Form3");
+				recentPopupSelectWebdriver("Application Form3");
 //				int WindowCount = getWindowHandles();
 //				recentMultiplePopupSelectWebdriver("Application Form3", WindowCount);
 //				if (viewfullapplication.equalsIgnoreCase("Applicant Detail")) {

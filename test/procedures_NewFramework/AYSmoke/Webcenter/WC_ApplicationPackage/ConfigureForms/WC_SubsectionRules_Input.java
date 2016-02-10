@@ -68,10 +68,10 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				
 			{
 				Reporter.log("Enter Subsection name");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, SR_name, name);
-				waitForPageToLoad();
 				sendKeys(attributeName_xpath, SR_name, name);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 								
 			}
 			

@@ -21,7 +21,7 @@ public class WC_ApplicantSummary_Verify extends CommonSeleniumActions implements
 			String successmessage = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
-
+			recentPopupSelect_without_window_nameWebdriver();
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Summary' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");

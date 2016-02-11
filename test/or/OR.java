@@ -737,7 +737,8 @@ public static final String HC_Content_LinkContians = "css=a:contains('";
 public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
 //public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy']";
-public static final String WebMail_Body = "//div[@id='Item.MessageUniqueBody']/div/div";		//font/span[text()[contains(.,'SmokeTest')]]";
+//public static final String WebMail_Body = "//div[@id='Item.MessageUniqueBody']/div/div";		//font/span[text()[contains(.,'SmokeTest')]]";
+public static final String WebMail_Body = "//div[@class='BodyFragment']//div[contains(.,'";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#

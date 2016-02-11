@@ -41,7 +41,11 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		String firstname = FName+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
 		if (!FName.equals("")) {
 			Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");
-			type(FName_Manual, firstname);		
+			type(FName_Manual, firstname);	
+			String Fnamepd = getElementIDbyLabel("First Given Name",FName_Manual);	
+			String PDFirstName = FName+Calendar.getInstance().getTimeInMillis();
+			sendKeys(attributeName_xpath,Fnamepd,PDFirstName);
+			Runtimedatawrite(PDFirstName, Fnamepd);
 		
 		} 
 		String lastname = LName+Calendar.getInstance().getTimeInMillis();
@@ -77,9 +81,11 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		//driver.switchTo().window(winHandleBefore);
 		if (!Close.equals("")) {
 			Reporter.log("Step 8 - Click on 'Close Window'");
-			clickWebdriver(attributeName_xpath, Close_Window);
-			//driver.switchTo().window(winHandleBefore);
-			driver.switchTo().activeElement();
+			/*clickWebdriver(attributeName_xpath, Close_Window);
+			driver.switchTo().window(winHandleBefore);
+			driver.switchTo().activeElement();*/
+			recentPopupCloseWebdriver();
+			selectMainWindowWebdriver();
 		}
 		}catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -21,7 +21,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			String field=testData[5];
 			String operator=testData[6];
 			String value=testData[7];
-			String plusMinuse=testData[8];
+			String plusMinus=testData[8];
 			String button=testData[9];
 						
 			switchToFrameNameIdWebdriver("frmContent");
@@ -39,9 +39,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 					Reporter.log("Verify DELETE");
 					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')]",button);
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
-					waitForPageToLoadWebdriver();
 					alertAccept();
-					waitForPageToLoadWebdriver();
 					
 				}
 				else if (button.equalsIgnoreCase("print")) {
@@ -52,16 +50,13 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				else if (button.equalsIgnoreCase("save")) {
 					 Reporter.log("Verify SAVE Button");						
 				     clickWebdriver(attributeName_xpath, SR_button+button+"')]");
-					waitForPageToLoadWebdriver();
-					
-				
+			
 			    }
 				else if (button.equalsIgnoreCase("cancel")) {
 					Reporter.log("Verify Cancel Button");
-					waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')]",button);
+					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')]",button);
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
-					waitForPageToLoadWebdriver();						
-			
+					
 		        }
 			}
 			if(!name.equalsIgnoreCase(""))
@@ -71,8 +66,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, SR_name, name);
 				sendKeys(attributeName_xpath, SR_name, name);
-				waitForPageToLoadWebdriver();
-								
+											
 			}
 			
              if(!description.equalsIgnoreCase(""))
@@ -103,7 +97,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
   				Reporter.log("Select operator as" + operator );
   				waitForElementPresentWebdriverWait(attributeName_xpath, SR_operator, operator);
   				selectByVisibleTextWebdriver(attributeName_xpath, SR_operator, operator);
-  				waitForPageToLoadWebdriver();
+  				
   			  }
              
              if (!value.equalsIgnoreCase(""))
@@ -120,15 +114,13 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
             		  waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_No,value);
             		  clickWebdriver(attributeName_xpath, SR_value_No);  
             	  }	
-            	  waitForPageToLoadWebdriver();
-            	 }		
+            	}		
  
 			if(!linkText.equalsIgnoreCase(""))
 			{
 			    Reporter.log("Click on Rule Name");
 			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+linkText+"')]]",linkText);
 			    clickWebdriver(attributeName_xpath,SR_RuleName+linkText+"')]]");
-			    waitForPageToLoadWebdriver();
 			    
 			}
 			
@@ -137,7 +129,6 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			    Reporter.log("Select Check Box next to Rule");
 			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox,checkbox);
 			    clickWebdriver(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox);
-			    waitForPageToLoadWebdriver();
 			  			    
 			}
 						

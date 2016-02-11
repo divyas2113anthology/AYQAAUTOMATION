@@ -24,26 +24,22 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		  Reporter.log("Verify page title"+ pageTitle);
 		   waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
 		   verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
-		   waitForPageToLoadWebdriver();
 		}
 				
 		if(!message.equalsIgnoreCase(""))
 		{
 		    Reporter.log("Verify confirmation/Error message");
 		    waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+message+"')]", message);
-		    //waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
-			verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
-			 waitForPageToLoadWebdriver();
+		    verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 			
 		}
 		
 		if(!verifyUI.equalsIgnoreCase(""))
 		{
 		    Reporter.log("Verify List of Subsection Rules");
-		    waitForElementPresentWebdriver(attributeName_xpath, SR_LinkToClick,verifyUI);
+		    waitForElementPresentWebdriverWait(attributeName_xpath, SR_LinkToClick,verifyUI);
 		    verifyElementPresentWebdriver(attributeName_xpath, SR_LinkToClick,verifyUI);
-		    waitForPageToLoadWebdriver();
-		    
+		   		    
 		}
 		 
 		switchToDefaultContentWebdriver();

@@ -278,7 +278,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						{
 							if (second >= 300) writeFailure(" Timeout after 1 minute..");
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
-							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+							waitForElementPresentWebdriverWait(attributeName_xpath, HC_Inbox, "Inbox");
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
@@ -331,8 +331,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
 					//				String environment = Runtimedataread("Instance").toLowerCase();
 				
-					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
-					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
+					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body+verifycontents+"')]", verifycontents);
+					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body+verifycontents+"')]", verifycontents, verifycontents);
 					
 
 				}

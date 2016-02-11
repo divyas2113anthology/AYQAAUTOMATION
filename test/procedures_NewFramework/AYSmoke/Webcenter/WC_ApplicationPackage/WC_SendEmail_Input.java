@@ -5,7 +5,10 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.interactions.SendKeysAction;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -41,22 +44,21 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 			String datetobemaild = testdata[17];
 			String button = testdata[18];
 			Reporter.log("Input Test Data was retrieved for 'Send Email' Page");
-			System.out.println("aaaa");
-
 			
 			if (!selectatemplate.equals("")) {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
-				System.out.println("bbb");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForElementPresentWebdriver(attributeName_xpath, SE_TemplateName, selectatemplate);
 				select(SE_Template, "regexp:"+selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForPageToLoadWebdriver();
 				try {
-			        Alert alert = driver.switchTo().alert();
+					Thread.sleep(3000);
+					Alert alert = driver.switchTo().alert();
 			        String AlertText = alert.getText();
 			        System.out.println(AlertText);
-			        alert.accept();
+			        Thread.sleep(3000);
+			         alert.accept();
 			    } catch (Exception e) {
 			        System.out.println("no alert");
 			    }
@@ -147,6 +149,17 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				if (button.equalsIgnoreCase("Send")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SE_SendBtn, button);
 					clickWebdriver(attributeName_xpath, SE_SendBtn);
+					try {
+						 Thread.sleep(3000);
+				        Alert alert = driver.switchTo().alert();
+				        String AlertText = alert.getText();
+				        System.out.println(AlertText);
+				        Thread.sleep(3000);
+				        alert.accept();
+				    } catch (Exception e) {
+				        System.out.println("no alert");
+				    }
+					
 					selenium.keyPressNative("10");
 					//SendKeys(Keys.ENTER);
          //					waitForPageToLoadWebdriver();

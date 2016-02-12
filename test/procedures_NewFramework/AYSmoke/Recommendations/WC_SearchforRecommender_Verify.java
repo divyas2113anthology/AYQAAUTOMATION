@@ -26,8 +26,8 @@ public class WC_SearchforRecommender_Verify extends CommonSeleniumActions implem
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-			waitForElementPresentWebdriver(attributeName_xpath, Ad_PageName, pagename);
-			verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageName, pagename, pagename);
+			waitForElementPresentWebdriver(attributeName_xpath, En_PageName, pagename);
+			verifyElementContainsTextWebdriver(attributeName_xpath, En_PageName, pagename, pagename);
 		}
 		if (!verifyui.equals("")) {
 			

@@ -67,18 +67,18 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				//sendKeys(attributeName_xpath, AMET_MailMergeSection, mailmergesection);
 				selectByVisibleTextWebdriver(attributeName_xpath , AMET_MailMergeSection, mailmergesection);
+				waitForPageToLoadWebdriver();
 				//select(AMET_MailMergeSection, mailmergesection);
 			}
 			if (!mailmergetag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				//select(AMET_MailMergeTag, mailmergetag);
 				selectByVisibleTextWebdriver(attributeName_xpath, AMET_MailMergeTag, mailmergetag);
+				waitForPageToLoadWebdriver();
 				
 			}
 			if (!querytag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				wait(1000);
-				System.out.println("aaaaaaaaaaaaaaaaaaaaa");
 				String query=selenium.getValue(AMET_QueryTag);
 				System.out.println(query);
 				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");

@@ -2894,7 +2894,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				waitForPageToLoadWebdriver();
+				//waitForPageToLoadWebdriver();
 				driver.switchTo().window(window);
 			}
 		}

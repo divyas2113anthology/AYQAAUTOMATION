@@ -102,6 +102,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
 				waitForElementPresentWebdriver(attributeName_name, AE_ExportSaveBtn, click);
 				if (click.equalsIgnoreCase("Save")) {
+					waitForElementPresentWebdriverWait(attributeName_name, AE_ExportSaveBtn, click);
 					clickWebdriver(attributeName_name, AE_ExportSaveBtn);
 					waitForPageToLoadWebdriver();
 				} else if (click.equalsIgnoreCase("Cancel")) {

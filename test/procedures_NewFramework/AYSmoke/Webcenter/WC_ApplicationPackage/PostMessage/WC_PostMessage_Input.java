@@ -27,7 +27,7 @@ public class WC_PostMessage_Input extends CommonSeleniumActions implements OR{
 		}
 		if (!displayuntil.equals("")) {
 			Reporter.log("Step 1 - Type ("+displayuntil+") was displayed correctly");
-			String DisplayUntil = requiredDateAndFormat("dd/MM/yyyy", displayuntil);
+			String DisplayUntil = requiredDateAndFormat("MM/dd/yyyy", displayuntil);
 			sendKeys(attributeName_xpath, PM_DispUntil, DisplayUntil);
 			
 		}

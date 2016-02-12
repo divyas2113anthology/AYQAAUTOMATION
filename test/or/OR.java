@@ -738,7 +738,7 @@ public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
 //public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy']";
 //public static final String WebMail_Body = "//div[@id='Item.MessageUniqueBody']/div/div";		//font/span[text()[contains(.,'SmokeTest')]]";
-public static final String WebMail_Body = "//div[@class='BodyFragment']//div[contains(.,'";
+public static final String WebMail_Body = "//div[@class='conductorContent']//div[contains(.,'";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#
@@ -876,8 +876,8 @@ public static final String SAI_Zip = "//input[@name='ZipCode']";
 public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "//select[@name='SysQuery']";
-//public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
-public static final String SAI_UserQuries = "//input[@id='QueryID']";
+public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
+//public static final String SAI_UserQuries = "//input[@id='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";

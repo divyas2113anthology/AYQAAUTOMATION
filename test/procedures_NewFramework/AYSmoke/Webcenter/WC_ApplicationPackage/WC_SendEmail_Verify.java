@@ -32,8 +32,8 @@ public class WC_SendEmail_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForText(pagename, pagename);
-				verifyTextPresent(pagename);
+			waitForElementPresentWebdriverWait(attributeName_xpath, QAE_PageName, pagename);
+			verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PageName, pagename, pagename);
 			}
 			
 			//CheckingMails.check(host, mailStoreType, username, password);

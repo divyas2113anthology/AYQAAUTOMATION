@@ -48,17 +48,15 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 			if (!selectatemplate.equals("")) {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
-				waitForElementPresentWebdriver(attributeName_xpath, SE_TemplateName, selectatemplate);
+				waitForElementPresentWebdriverWait(attributeName_xpath, SE_TemplateName, selectatemplate);
 				select(SE_Template, "regexp:"+selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
-				waitForPageToLoadWebdriver();
+				//waitForPageToLoadWebdriver();
 				try {
-					Thread.sleep(3000);
 					Alert alert = driver.switchTo().alert();
 			        String AlertText = alert.getText();
 			        System.out.println(AlertText);
-			        Thread.sleep(3000);
-			         alert.accept();
+			        alert.accept();
 			    } catch (Exception e) {
 			        System.out.println("no alert");
 			    }
@@ -147,14 +145,13 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 			if (!button.equals("")) {
 				Reporter.log("Step 20 - Click the button as  ["+button+"] ");
 				if (button.equalsIgnoreCase("Send")) {
-					waitForElementPresentWebdriver(attributeName_xpath, SE_SendBtn, button);
+					waitForElementPresentWebdriverWait(attributeName_xpath, SE_SendBtn, button);
 					clickWebdriver(attributeName_xpath, SE_SendBtn);
 					try {
-						 Thread.sleep(3000);
+						 
 				        Alert alert = driver.switchTo().alert();
 				        String AlertText = alert.getText();
 				        System.out.println(AlertText);
-				        Thread.sleep(3000);
 				        alert.accept();
 				    } catch (Exception e) {
 				        System.out.println("no alert");

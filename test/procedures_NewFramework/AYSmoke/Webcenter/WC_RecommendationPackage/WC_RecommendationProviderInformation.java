@@ -27,7 +27,7 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			//recentPopupSelect_without_window_nameWebdriver();
 			if (!verifynotstatus.equals("")) {
 				Reporter.log("Verify the Element is not present as ["+verifynotstatus+"]");
-				verifyElementNotContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+recommendationstartdate+"')]",verifynotstatus,verifynotstatus);
+				verifyElementNotContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+verifynotstatus+"')]",verifynotstatus,verifynotstatus);
 			}
 			
 			if (!recommendationstartdate.equals("")) {
@@ -38,7 +38,7 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			if (!closewindow.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+closewindow+"]");
 				clickWebdriver(attributeName_xpath,RD_CloseWindow);
-				//selectMainWindowWebdriver();
+				selectMainWindowWebdriver();
 			}			
 			
 			//switchToDefaultContentWebdriver();

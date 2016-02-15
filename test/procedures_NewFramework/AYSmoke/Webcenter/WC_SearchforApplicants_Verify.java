@@ -26,7 +26,8 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			Reporter.log("Verify Test Data was retrieved for 'Search for Applicant' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				
+				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, successmessage);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SAV_PageName, successmessage, successmessage);
 			}
 			if (!sysmsgheading.equals("")) {
 				Reporter.log("Step 2 - Verify Message Heading ("+sysmsgheading+") was displayed correctly");
@@ -42,7 +43,6 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 5 - Verify its navigate to ("+pagename+") page");
-				waitForPageToLoad();
 				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
 			

@@ -876,8 +876,8 @@ public static final String SAI_Zip = "//input[@name='ZipCode']";
 public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "//select[@name='SysQuery']";
-public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
-//public static final String SAI_UserQuries = "//input[@id='QueryID']";
+//public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
+public static final String SAI_UserQuries = "//input[@id='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";

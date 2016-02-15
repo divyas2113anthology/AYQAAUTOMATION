@@ -191,6 +191,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 18 - Select the system quries as ["+systemqueries+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
 				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				waitForPageToLoadWebdriver();
 			}	
 			if (!userqueries.equals("")) {
 				Reporter.log("Step 19 - Select the user quries as ["+userqueries+"]");
@@ -238,7 +239,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!submit.equals("")) {
 				Reporter.log("Step 25 - Click the submit button");
-				waitForElementPresentWebdriver(attributeName_xpath, SAI_SubmitBtnBottom, submit);
+				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_SubmitBtnBottom, submit);
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
 				waitForPageToLoadWebdriver();
 			}

@@ -33,10 +33,9 @@ public class WC_ApplicantSummary_Verify extends CommonSeleniumActions implements
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 1 - Verify UI was displayed correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, APP_Status+verifyui+"')]", verifyui);
-				//verifyElementTextWebdriver(attributeName_xpath, APP_Status+verifyui+"')]", verifyui, verifyui);
-				//Remove wait time
 				driver.navigate().refresh();
+				waitForElementPresentWebdriverWait(attributeName_xpath, APP_Status+verifyui+"')]", verifyui);
+				//driver.navigate().refresh();
 				verifyElementContainsTextWebdriver(attributeName_xpath, APP_Status+verifyui+"')]", verifyui, verifyui);
 				
 			}

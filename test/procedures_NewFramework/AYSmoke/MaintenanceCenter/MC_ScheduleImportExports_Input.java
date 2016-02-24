@@ -39,7 +39,7 @@ public class MC_ScheduleImportExports_Input extends CommonSeleniumActions implem
 			}else if (addexpimpdelete.equalsIgnoreCase("Delete")) {
 				clickWebdriver(attributeName_xpath, SIE_DeleteBtn);
 				//alertAccept();
-				waitForPageToLoad();
+				
 			}
 		}
 		

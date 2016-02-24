@@ -48,7 +48,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");
 				clickWebdriver(attributeName_xpath, HM_WSignIn);
-				waitForElementPresentWebdriver(attributeName_xpath, "//button[@role='menuitem']", "Outlook Image");
+				waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
 			}
 			if (!emailsubject.equals("")) {
 				Reporter.log("Step 5 - Email Subject as'"+emailsubject+"'");
@@ -129,19 +129,23 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						if (selenium.isVisible("//div[@class='messageListContainer']")) {
+						//if (selenium.isVisible("//div[@class='messageListContainer']")) {
+						if (selenium.isVisible("//div[@class='conductorContent']"))
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
-								if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
+								//if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
+						if (selenium.isVisible("//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]]")){
 									writeConsole("2");
 									break;
 								}
 //								} catch (Exception e) {}
 //						}
 					}
-					selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]\")", "120000");
-					clickWebdriver(attributeName_xpath,"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]");
+					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]\")", "120000");
+				selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]]\")", "120000");
+					//clickWebdriver(attributeName_xpath,"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]");
+				clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]]");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {
 					writeFailure("Email Notification was not Recevied in Hotmail Inbox or Element Error message("+e.getMessage()+")");

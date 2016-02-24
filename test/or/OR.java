@@ -1031,6 +1031,7 @@ public static final String CL_Country = "//input[@name='prompt6field']";
 public static final String CL_BackSearch = "//img[contains(@src,'";
 public static final String CL_AddressList = "//table[@id='Table1']/tbody/tr[11]/td/a";
 public static final String CL_EnableAppreview = "//input[@name='chkReviewEnabled']";
+public static final String CL_Appreivew_Condition = "//form[@id='frmModifyPackage']//tr/td/font[contains(text(),'Application Review')]";
 //#**********************************************************#
 //# Webcenter Applicant Summary - AS
 //#**********************************************************#
@@ -1679,7 +1680,9 @@ public static final String MQ_QueryCheckbox = "')]]/preceding-sibling::td[input[
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
-public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
+//public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
+public static final String MQ_MultiSelectPaymentStatus = "//span[text()='TestApplicationPayment']";
+
 
 //#**********************************************************#
 //#	 Webcenter - Configure Downloadable Forms - Page
@@ -2023,7 +2026,7 @@ public static final String SR_LinkToClick = "//a[contains(@href,'javascript:Edit
 public static final String SR_button="//img[contains(@src,'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
-public static final String SR_subsection="//input[@id='SubSectionInput']";
+public static final String SR_subsection="//input[contains(@id,'SectionInput')]";
 public static final String SR_field="//select[contains(@name,'txtField')]";
 public static final String SR_operator="//select[@name='txtOperator0']";
 public static final String SR_value_No="//input[@value='N']";

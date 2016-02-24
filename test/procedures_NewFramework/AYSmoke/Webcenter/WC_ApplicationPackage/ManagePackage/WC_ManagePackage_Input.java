@@ -46,13 +46,15 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			}
 			if (!applicationreview.equals("")) {
 				Reporter.log("Perform the operation/verify Application Review");
-				verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+applicationreview+"')", applicationreview, applicationreview);
+				waitForElementPresentWebdriverWait(attributeName_xpath, CL_Appreivew_Condition, applicationreview);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+applicationreview+"')", applicationreview, applicationreview);
+				verifyElementContainsTextWebdriver(attributeName_xpath, CL_Appreivew_Condition, applicationreview, applicationreview);
 			}
 			if (!applicationfilter.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+includeofflinecheck+"]");
 				WebElement filtercondition = driver.findElement(By.xpath("//td[strong[contains(text(),'If')]]"));
 			    String readonly = filtercondition.getAttribute("readonly");
-			    Assert.assertNotNull(readonly);
+			    Assert.assertNull(readonly);
 			}
 			
 			if (!button.equals("")) {

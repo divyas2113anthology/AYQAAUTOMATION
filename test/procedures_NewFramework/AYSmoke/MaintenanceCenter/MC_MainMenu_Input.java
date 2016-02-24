@@ -27,6 +27,7 @@ public class MC_MainMenu_Input extends CommonSeleniumActions implements OR{
 				String [] splitPackage = menu.split(";");
 				for (int i = 0; i < splitPackage.length; i++) {
 					if (i == splitPackage.length-1) {
+						waitForElementPresentWebdriverWait(attributeName_xpath,"//div[text()='"+splitPackage[i]+"']", splitPackage[i]);
 						clickWebdriver(attributeName_xpath,"//div[text()='"+splitPackage[i]+"']");
 						waitForPageToLoad();
 					}else {

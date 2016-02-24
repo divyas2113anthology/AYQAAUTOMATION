@@ -241,7 +241,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 25 - Click the submit button");
 				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_SubmitBtnBottom, submit);
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
-				waitForPageToLoadWebdriver();
+				//waitForPageToLoadWebdriver();
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -3475,8 +3475,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
 		writeConsole("Element["+attributename+", "+attributevalue+"]");
 		
-		try {
-			
+		/*try {
+			*/
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
 			System.out.println("bbbbb");
@@ -3486,10 +3486,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} else {
 				writeFailure("Element["+elementname+"] not Contains Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
 			}			
-		} catch (Exception e) {
+		/*} catch (Exception e) {
 			writeFailure("Element ["+elementname+" ] was Not Present");
 		}
-		System.out.println("ccccc");
+		System.out.println("ccccc");*/
 	}
 
 	public void verifyElementVisibleTextWebdriver(String attributename,String attributevalue,String expectedtext,String elementname) throws Exception{

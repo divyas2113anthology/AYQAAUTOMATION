@@ -27,6 +27,9 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 		String startminute = testdata[10];
 		String enddate = testdata[11];
 		String testsavecancel = testdata[12];
+		String queryname = testdata[13];
+		String publickey = testdata[14];
+		String sftport = testdata[15];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!importdefinition.equals("")) {
 			Reporter.log("Step 1 - Select the Import Definition as ["+importdefinition+"]");
@@ -99,6 +102,10 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 				clickWebdriver(attributeName_name, "btnTestFTP");
 				recentPopupSelectWebdriver("FTP Test");
 			}
+		}
+		if(!sftport.equals("")){
+			Reporter.log("Step 15 - Enter SFTP Port as ["+sftport+"]");
+			sendKeys(attributeName_name, "txtSFTPPort", sftport);
 		}
 		
 	}catch(Exception e){

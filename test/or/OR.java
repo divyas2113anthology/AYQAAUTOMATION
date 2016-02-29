@@ -1399,6 +1399,7 @@ public static final String MC_ARF_SelectByValue2=")]/preceding-sibling::input";
 public static final String SIE_AddImpSched = "//img[contains(@src,'add_import')]";
 public static final String SIE_AddExpSched = "//img[contains(@src,'add_export')]";
 public static final String SIE_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
+public static final String SIE_Publickey = "//td[contains(@id,'colSFTP')]//input[@name='rdoLoginType']";
 //#**********************************************************#
 //#	 Maintanance - Schedule PDF Delivery - Page
 //#**********************************************************#
@@ -1978,7 +1979,7 @@ public static final String MS_NewPassword = "//input[@name='Password']";
 public static final String MS_ConfirmPassword = "//input[@name='ConPassword']";
 public static final String MS_Submit = "//input[contains(@src,'submit')]";
 public static final String MC_SR_SelectMenu = "//button[contains(@class,'ui-multiselect')]"; 
-public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span";
+public static final String MC_SR_Values = "//div[contains(@class,'ui-multiselect-menu')]//span[contains(text(),'";
 //#**********************************************************#
 //# Webcenter - Add Recommendation - AR
 //#**********************************************************#

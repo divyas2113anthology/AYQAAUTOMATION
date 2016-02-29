@@ -50,6 +50,8 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		}
 		if (!exportfilename.equals("")) {
 			Reporter.log("Step 11 - Enter the Export file name as ["+exportfilename+"]");
+			waitForElementPresentWebdriverWait(attributeName_id, "rdoFilenameGiven", exportfilename);
+			clickWebdriver(attributeName_id, "rdoFilenameGiven");
 			sendKeys(attributeName_name, "txtFilename", exportfilename);
 		}
 		if (!servernameip.equals("")) {
@@ -67,6 +69,7 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		if (!usesftp.equals("")) {
 			Reporter.log("Step 5  - Select the USE SFTP as ["+usesftp+"]");
 			if (usesftp.equalsIgnoreCase("Check")) {
+				waitForElementPresentWebdriverWait(attributeName_name, "chkUseSFTP", usesftp);
 				checkWebdriver(attributeName_name, "chkUseSFTP");
 			}else{
 				uncheckWebdriver(attributeName_name, "chkUseSFTP");
@@ -75,15 +78,6 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		if (!password.equals("")) {
 			Reporter.log("Step 6 - Enter the Password as ["+password+"]");
 			sendKeys(attributeName_name, "txtFTPPassword", password);
-		}
-		if (!publickey.equals("")) {
-			Reporter.log("Step 6A - Click on Radio button");
-			clickWebdriver(attributeName_id, "colSFTP0");
-		}
-		if (!sftpport.equals("")) {
-			Reporter.log("Step 6B - Enter the port as ["+sftpport+"]");
-			if(sftpport.equals("26"))
-				sendKeys(attributeName_name, "txtSFTPPort", sftpport);
 		}
 		
 		if (!startdate.equals("")) {
@@ -118,7 +112,16 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 				recentPopupSelectWebdriver("FTP Test");
 			}
 		}
-		
+		if (!publickey.equals("")) {
+			Reporter.log("Step 14 - Click on Radio button");
+			waitForElementPresentWebdriverWait(attributeName_xpath, SIE_Publickey, publickey);
+			clickWebdriver(attributeName_xpath, SIE_Publickey);
+		}
+		if(!sftpport.equals("")){
+			Reporter.log("Step 15 - Enter SFTP Port as ["+sftpport+"]");
+			waitForElementPresentWebdriverWait(attributeName_name, "txtSFTPPort", sftpport);
+			sendKeys(attributeName_name, "txtSFTPPort", sftpport);
+		}
 	}catch(Exception e){
 		writeFailure(e.getLocalizedMessage());}
 	}

@@ -25,7 +25,6 @@ public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements 
 				//closeWindowWebdriver();
 				recentPopupCloseWebdriver();
 			}
-			selectMainWindowWebdriver();
 			switchToDefaultContentWebdriver();
 					
 		}catch(Exception e){

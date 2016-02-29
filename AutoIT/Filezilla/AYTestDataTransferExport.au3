@@ -1,5 +1,5 @@
 #include <MsgBoxConstants.au3>
-Run("C:\\Selenium\\Web\\AYDataTransferWS_TestTool\\AYTestDataTransferWS.exe")
+Run("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Web\\AYTestDataTransferWS.exe")
 WinWaitActive("Test DataTransfer Web Service")
 ControlClick("Test DataTransfer Web Service", "","[CLASS:WindowsForms10.BUTTON.app.0.378734a; INSTANCE:3]")
 ControlFocus("Test DataTransfer Web Service","","[CLASS:WindowsForms10.EDIT.app.0.378734a; INSTANCE:2]")

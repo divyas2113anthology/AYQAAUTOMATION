@@ -129,7 +129,7 @@ public class WC_QuickAdd_ngu_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_xpath, NGU_Reset);
 				
 		}
-		waitForPageToLoadWebdriver();
+		//waitForPageToLoadWebdriver();
 		//recentPopupCloseWebdriver();
 		
 	} catch (Exception e) {

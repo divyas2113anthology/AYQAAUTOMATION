@@ -276,16 +276,16 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					try {
 						for (int second = 0;; second++)
 						{
-							if (second >= 300) writeFailure(" Timeout after 1 minute..");
+							if (second >= 60) writeFailure(" Timeout after 1 minute..");
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
-							waitForElementPresentWebdriverWait(attributeName_xpath, HC_Inbox, "Inbox");
+							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
 							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
 							//waitForPageToLoadWebdriver();
-							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+							//waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 							//waitForPageToLoad();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
 							try { 
 								System.out.println("Entered in try block");

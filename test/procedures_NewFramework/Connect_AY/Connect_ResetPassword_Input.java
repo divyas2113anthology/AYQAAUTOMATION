@@ -33,11 +33,20 @@ public class Connect_ResetPassword_Input extends CommonSeleniumActions implement
 			}
 			if (!okcancel.equals("")) {
 				Reporter.log("Step 3 - Click on ("+okcancel+") Button");
-				if (okcancel.equalsIgnoreCase("OK")) {
+//				if (okcancel.equalsIgnoreCase("OK")) {
 //					click(RPI_submit);
 					clickWebdriver(attributeName_name, "okButton");
+					if(BooleanverifyElementPresentWebdriver(attributeName_id, "messagePanel", okcancel))
+					{	
+						String error = getTextWebdriver(attributeName_id,"messagePanel");
+						if(okcancel.equalsIgnoreCase(error)){
+						sendKeys(attributeName_xpath,RP_password,"Aaaa111!");
+						sendKeys(attributeName_xpath,RP_ResetPwd,"Aaaa111!");
+						clickWebdriver(attributeName_name, "okButton");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//p", "Reset Password Page");
-				}
+						}
+					}
+//				}
 			}
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

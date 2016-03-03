@@ -76,7 +76,7 @@ public class BR_WCManualAdd extends CommonSeleniumActions implements OR {
 				
 				if (!createaccount.equals("")) {
 					Reporter.log("Step 7 - Click on 'Create Account' button");
-					click(CreateAccount);
+					clickWebdriver(attributeName_xpath, CreateAccount);
 					waitForPageToLoadWebdriver();	
 				}
 				

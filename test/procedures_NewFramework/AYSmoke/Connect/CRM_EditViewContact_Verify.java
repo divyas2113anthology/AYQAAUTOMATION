@@ -23,11 +23,12 @@ public class CRM_EditViewContact_Verify extends CommonSeleniumActions implements
 			String sourcecode = fpvdatarepo[4];
 			String editeddate = fpvdatarepo[5];
 			String editedby = fpvdatarepo[6];
+			String verifyui = fpvdatarepo[7];
 			Reporter.log("Verify Test Data was retrieved for 'Edit/View Contact' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify Navigate to ("+pagename+") page correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//h1[contains(text(),'View/Edit Contact')]", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, "//h1[contains(text(),'View/Edit Contact')]", pagename, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath, "//h1[contains(text(),'"+pagename+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, "//h1[contains(text(),'"+pagename+"')]", pagename, pagename);
 			}
 			if (!message.equals("")) {
 				Reporter.log("Step 2 - Verify message was displayed ("+message+") correctly");
@@ -36,28 +37,33 @@ public class CRM_EditViewContact_Verify extends CommonSeleniumActions implements
 			}
 			if (!contactedit.equals("")) {
 				Reporter.log("Step 3 - Verify the exact contact edit log ("+contactedit+") correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+contactedit+"']]", "Contact Edit");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+contactedit+"']]", "Contact Edit");
 				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(contactedit, "Contact Edit");
 			}
 			if (!datasource.equals("")) {
 				Reporter.log("Step 4 - Verify the exact datasource log ("+datasource+") correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+datasource+"']]", "Datasource");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+datasource+"']]", "Datasource");
 				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(datasource, "Datasource");
 			}
 			if (!sourcecode.equals("")) {
 				Reporter.log("Step 5 - Verify the exact sourcecode log ("+sourcecode+") correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+sourcecode+"']]", "Source Code");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+sourcecode+"']]", "Source Code");
 				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(sourcecode, "Source Code");
 			}
 			if (!editeddate.equals("")) {
 				Reporter.log("Step 6 - Verify the exact editeddate log ("+editeddate+") correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+editeddate+"']]", "Edited Date");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+editeddate+"']]", "Edited Date");
 				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(editeddate, "Edited Date");
 			}
 			if (!editedby.equals("")) {
 				Reporter.log("Step 7 - Verify the exact editedby log ("+editedby+") correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr[td[text()='"+editedby+"']]", "Edited By");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+editedby+"']]", "Edited By");
 				verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(editedby, "Edited By");
+			}
+			if (!verifyui.equals("")) {
+				Reporter.log("Step 1 - Verify Navigate to ("+verifyui+") page correctly");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//tr[td[text()='"+verifyui+"']]", verifyui);
+				verifyElementContainsTextWebdriver(attributeName_xpath, "//tr[td[text()='"+verifyui+"']]", verifyui, verifyui);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

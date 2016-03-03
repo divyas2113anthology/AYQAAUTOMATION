@@ -50,22 +50,25 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if (button_to_click.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
-					waitForPageToLoadWebdriver();
-					recentPopupCloseWebdriver();
+					//recentPopupCloseWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("close window")) {
-			
-				//clickWebdriver(attributeName_xpath, AS_CloseWindow);
-				driver.close();
-								
+					
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					deselectPopUp();
+					System.out.println("1st popup closed");
+					recentPopupSelect("Applicant Summary");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					deselectPopUp();	
+					System.out.println("2nd popup closed");
 				}else if (button_to_click.equalsIgnoreCase("add")) {
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 					waitForPageToLoadWebdriver();
 				}
 			}
-			switchToDefaultContentWebdriver();
+			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

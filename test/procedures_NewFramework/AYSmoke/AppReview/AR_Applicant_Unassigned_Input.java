@@ -43,9 +43,7 @@ public class AR_Applicant_Unassigned_Input extends CommonSeleniumActions impleme
 				waitForElementPresentWebdriver(attributeName_xpath, AR_AppSearchButton, "Search");
 				clickWebdriver(attributeName_xpath, AR_AppSearchButton);
 				waitForPageToLoad();
-				waitForPageToLoad();
-				
-				verifyElementNotContainsTextWebdriver(attributeName_xpath, AR_SearchAppLName+applicant_search_notpresent+"')]", applicant_search_notpresent, applicant_search_notpresent); 
+				verifyElementContainsTextWebdriver(attributeName_xpath, AR_SearhResult, applicant_search_notpresent, applicant_search_notpresent); 
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

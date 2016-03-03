@@ -1003,8 +1003,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifyAllUserTableCellValuePresentInColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Present in the Column Name ["+columnname+"]");
-		if (isElementPresent("//tr[td/div[text()='"+expectedcellvalue+"']]")) {	
-			String actualcellvalue = getText("//tr[td/div[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+1]");
+		if (isElementPresent("//tr[td[text()='"+expectedcellvalue+"']]")) {	
+			String actualcellvalue = getText("//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+6]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
 			} 
@@ -1018,7 +1018,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Present in the Column Name ["+columnname+"]");
 		if (isElementPresent("//tr[td[text()='"+expectedcellvalue+"']]")) {	
-			String actualcellvalue = getText("//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+1]");
+			String actualcellvalue = getText("//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+3]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
 			} 
@@ -2960,7 +2960,21 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 
 	}
-
+	//To close all the other windows except the main window.
+		public void closeAllOtherWindows()
+		{
+			driver.switchTo().window(mainwindow);
+			writeConsole("Webdriver Main Window["+mainwindow+"]");
+			Set<String> allWindowHandles = driver.getWindowHandles();
+			for (String currentWindowHandle : allWindowHandles) {
+				if (!currentWindowHandle.equals(mainwindow)) {
+					driver.switchTo().window(currentWindowHandle);
+					driver.close();
+				}
+			}
+			
+			driver.switchTo().window(mainwindow);
+		}
 	//				// This Function is used to Select Recently Opened Window or Popup.
 	//				public void recentPopupSelectWebdriver(String windowname) throws Exception {
 	//					mainwindow = driver.getWindowHandle();
@@ -3263,7 +3277,19 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Element ["+elementname+" ] was Not Present");						
 		}
 	}
-
+	public boolean BooleanverifyElementPresentWebdriver(String attributename,String attributevalue,String elementname) throws Exception{
+		Reporter.log("Proceed to verify Element("+elementname+") is Present correctly");
+		writeConsole("Element Present["+attributename+", "+attributevalue+"]");
+		try {						
+			attributeNameValue(attributename, attributevalue);
+			writeConsole("Webdriver Element Present");
+			Reporter.log("Element("+elementname+") was Present correctly");						
+		} catch (Exception e) {
+			writeConsole("Webdriver Element Not Present");
+			writeFailure("Element ["+elementname+" ] was Not Present");						
+		}
+		return jettyProxyWasStartedByATest;
+	}
 	public void verifyElementNotPresentWebdriver(String attributename,String attributevalue,String elementname) throws Exception{
 		Reporter.log("Proceed to verify Element("+elementname+") is Not Present correctly");
 		writeConsole("Element Not Present["+attributename+", "+attributevalue+"]");

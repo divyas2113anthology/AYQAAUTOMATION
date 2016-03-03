@@ -53,34 +53,39 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_partiallinktext, "Training", welmenulinks);
 					clickWebdriver(attributeName_partiallinktext, "Training");
 					waitForPageToLoad();
-				}
+				}else if (welmenulinks.equalsIgnoreCase("CRM")) 
+				{
+				clickWebdriver(attributeName_linktext, welmenulinks);
+				waitForPageToLoadWebdriver();
+				}	
 			}	
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 4 - Click the Name of the Link as ["+link_to_click+"]");				
-				if (link_to_click.equalsIgnoreCase("logout")) {
-					if(link_to_click.equalsIgnoreCase("logouttree")){
+				if (link_to_click.equalsIgnoreCase("logout")) 
+				{
+					if(link_to_click.equalsIgnoreCase("logouttree"))
+					{
 						driver.switchTo().frame("frmTreeMenu");
 					    clickWebdriver(attributeName_xpath, WClogoutLink);
-					    }
-					else{
-					clickWebdriver(attributeName_partiallinktext, link_to_click);
-													
 					}
-					waitForPageToLoadWebdriver();	
-				}else if (link_to_click.equalsIgnoreCase("online support top")) {
+					else
+					{
+						clickWebdriver(attributeName_partiallinktext, link_to_click);
+					}
+				}
+				}else if(link_to_click.equalsIgnoreCase("online support top"))
+					{
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportTop);
 					recentPopupSelectWebdriver("Online Support");
-				}else if (link_to_click.equalsIgnoreCase("online support bottom")) {
+					}else if (link_to_click.equalsIgnoreCase("online support bottom"))
+					{
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportBottom);
 					recentPopupSelectWebdriver("Online Support");
-				}else if (link_to_click.equalsIgnoreCase("Product Suggestions")) {
+					}else if (link_to_click.equalsIgnoreCase("Product Suggestions")) 
+					{
 					clickWebdriver(attributeName_xpath, WebcenteProdSug);
 					recentPopupSelectWebdriver("Product Suggestions");
-				}else if (link_to_click.equalsIgnoreCase("CRM")) {
-					clickWebdriver(attributeName_linktext, link_to_click);
-					waitForPageToLoadWebdriver();
-				}
-			}
+					}		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

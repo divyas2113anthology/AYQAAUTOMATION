@@ -17,6 +17,7 @@ public class Connect_ResetPassword_Verfiy extends CommonSeleniumActions implemen
 			Reporter.log("Proceed to verify Test Data in Reset password verify");
 			String[]  fpdatarepo = datacontainer;
 			String message = fpdatarepo[0];
+			String verifyui = fpdatarepo[1];
 			Reporter.log("Verify Test Data was retrieved for 'Reset Password' page");
 			String myWindowHandle = driver.getWindowHandle();
 //			Reporter.log("aaaa"+myWindowHandle);
@@ -27,6 +28,13 @@ public class Connect_ResetPassword_Verfiy extends CommonSeleniumActions implemen
 				//waitForElementPresentWebdriver(attributeName_xpath, "//p[contains(text(),'"+message+"')]", message);
 				waitForElementPresentWebdriver(attributeName_xpath, "//p[contains(text(),'Enter a new password in both fields below.')]",message);
 				verifyElementContainsTextWebdriver(attributeName_xpath, "//p[contains(text(),'"+message+"')]", message, "Success Message");
+			}
+			if (!verifyui.equals("")) {
+				Reporter.log("Proceed to Verify the '"+message+"' 'Reset Password' page");
+//				verifyTextPresent(message);
+				//waitForElementPresentWebdriver(attributeName_xpath, "//p[contains(text(),'"+message+"')]", message);
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//div[contains(text(),'"+verifyui+"')]", verifyui);
+				verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(text(),'"+verifyui+"')]", verifyui, "Success Message");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

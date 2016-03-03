@@ -19,14 +19,13 @@ public class CRM_EditViewContact_Input extends CommonSeleniumActions implements 
 			Reporter.log("Input Test Data was retrieved for 'Search for Contacts' page");
 			if (!tab_to_click.equals("")) {
 				Reporter.log("Step 1 - Click on the Tab as ("+tab_to_click+") ");
-				waitForElementPresentWebdriver(attributeName_linktext, tab_to_click, tab_to_click);
+				waitForElementPresentWebdriverWait(attributeName_linktext, tab_to_click, tab_to_click);
 				clickWebdriver(attributeName_linktext, tab_to_click);
 			}
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+button_to_click+") ");
-				waitForElementPresentWebdriver(attributeName_id, "newContactComm", button_to_click);
+				waitForElementPresentWebdriverWait(attributeName_id, "newContactComm", button_to_click);
 				clickWebdriver(attributeName_id, "newContactComm");
-				waitForPageToLoadWebdriver();
 			}
 			if (!comm_log_edit.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Edit ("+comm_log_edit+") Link");

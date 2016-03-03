@@ -66,7 +66,7 @@ public static final String ConfirmEmail_Manual = "//input[@name='AppVerification
 public static final String Birth_Manual = "//input[@name='AppBirthdt']";
 public static final String Postal_Manual = "//input[@name='AppZip']";
 public static final String CreateAccount_Manual= "//img[@alt='create account']";
-public static final String Close_Window = "//font[@class='Menu' and contains(text(),'Close Window')]";
+public static final String Close_Window_Manual = "//font[contains(text(),'Close Window')]";
 
 
 //#**********************************************************#
@@ -1516,6 +1516,12 @@ public static final String BR_PageTitle = "//span[@id='ctl00_LabelPageTitle']";
 public static final String BR_AuthSchemeSelect = "ctl00_ContentPlaceHolder1_DropDownListAuthAndMatchSchme";
 public static final String BR_BackBtn = "ClickBack";
 public static final String BRSM_SaveBtn = "ctl00$ContentPlaceHolder1$Button1";
+public static final String BR_CommType = "//select[contains(@id,'ddlType')]";
+public static final String BR_Manage = "//input[contains(@id,'btnManageTypes')]";
+public static final String BR_CommName = "//input[contains(@id,'txtName')]";
+public static final String BR_CommDesc = "//input[contains(@id,'txtDescription')]";
+public static final String BR_CommContent = "//textarea[contains(@id,'notesTextBox')]";
+public static final String BR_SaveCancel = "//input[contains(@id,'";
 //#**********************************************************#
 //#	 Connect - Login  - Page
 //#**********************************************************#
@@ -1862,7 +1868,8 @@ public static final String AR_Password = "//input[@id='Password']";
 public static final String AR_Login = "//button[@class='btn btn-primary']";
 public static final String AR_ForgotUsername = "//a[contains(@href,'Username')]";
 public static final String AR_ForgotPassword = "//a[contains(@href,'Password')]";
-public static final String AR_SuperuserLogin = "//a[contains(@class,'dropdown-toggle') and contains(text(),'ARSuperuser')]";
+//public static final String AR_SuperuserLogin = "//a[contains(@class,'dropdown-toggle') and contains(text(),'ARSuperuser')]";
+public static final String AR_SuperuserLogin = "//ul[contains(@class,'pull-right')]//li/a[contains(text(),'Welcome')]";
 public static final String AR_Logoff = "//a[contains(@href,'logoff')]";
 public static final String AR_MainSubmenu = "//a[contains(text(),'";
 public static final String AR_AppSearchBox = "//input[@id='searchPhraseField']";
@@ -1871,7 +1878,8 @@ public static final String AR_AppSearchButton = "//div[@id='simpleSearch']/butto
 public static final String AR_SearchAppLName = "//tr[@class='unread']/td[@class='sorted']/a[contains(text(),'";
 public static final String AR_ReviewPool = "//select[@id='reviewPoolToggler']";
 public static final String AR_AssignReadyforReviewStatusSubmit = "//img[@alt='print']";
-public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]"; 
+public static final String AR_AssignReadyforReviewStatusBack = "//img[contains(@src,'back')]";
+public static final String AR_SearhResult = "//div[contains(@class,'alert-info')]";
 
 //#**********************************************************#
 //# Webcenter - Manage Choice Groups - MCG

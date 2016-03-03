@@ -53,7 +53,7 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 			if (!closewindow.equals("")) {
 				Reporter.log("Proceed to Close the Popup Window");	
 				if (closewindow.equalsIgnoreCase("Close Window")) {
-					clickWebdriver(attributeName_xpath, CloseWindow);
+					clickWebdriver(attributeName_xpath, Close_Window_Manual);
 					recentOpenedPopupSelectWebdriver("Select Previous Window");
 //					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("Close")) {

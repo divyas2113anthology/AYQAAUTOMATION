@@ -25,6 +25,7 @@ public class AR_UserDashboard_Input extends CommonSeleniumActions implements OR 
 				clickWebdriver(attributeName_xpath, AR_SuperuserLogin);
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Logoff, logout);
 				clickWebdriver(attributeName_xpath, AR_Logoff);
+				waitForPageToLoadWebdriver();
 			}
 			if (!mainmenu.equals("")) {
 				Reporter.log("Step 2 - Click on ["+mainmenu+"]");
@@ -36,6 +37,7 @@ public class AR_UserDashboard_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!viewcreatebundleapplicant.equals("")) {
 				Reporter.log("Step 4 - Clicking on ["+viewcreatebundleapplicant+"]");
+				driver.navigate().refresh();
 				clickWebdriver(attributeName_xpath, AR_MainSubmenu+viewcreatebundleapplicant+"')]");
 			}
 			

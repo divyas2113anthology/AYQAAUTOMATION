@@ -23,6 +23,7 @@ public class WC_QuickAdd_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
 				verifyElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
+				
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

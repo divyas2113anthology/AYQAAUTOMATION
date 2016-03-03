@@ -21,8 +21,8 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			Reporter.log("Verify Test Data was retrieved for 'Application Fee' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='FormHeading']", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='FormHeading']", pagename, "Page Name for Application Fee");
+				waitForElementPresentWebdriver(attributeName_xpath,AS_AppReviewStatus+pagename+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, AS_AppReviewStatus+pagename+"')]", pagename, "Page Name for Application Fee");
 			}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
@@ -35,7 +35,7 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 				//verifyElementContainsTextWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
 				VerifyFirstSelectedOptionWebdriver(attributeName_xpath, QAE_PaymentType, verifyui, verifyui);
 			}
-			recentPopupCloseWebdriver();
+			//recentPopupCloseWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

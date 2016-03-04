@@ -20,21 +20,23 @@ public class MC_QuickViewResults_Input extends CommonSeleniumActions implements 
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!clientname.equals("")) {
 			Reporter.log("Step 1 - Click on client name ["+clientname+"]");
-			click(MCL_ClientName);					
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_ClientName, clientname);
+			clickWebdriver(attributeName_xpath, MCL_ClientName);				
 		}
 		if (!modulename.equals("")) {
 			Reporter.log("Step 2 - Click on module name ["+modulename+"]");
-			click(MCL_ModuleName);					
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_ModuleName, modulename);
+			clickWebdriver(attributeName_xpath, MCL_ModuleName);
 		}
 		if (!packagename.equals("")) {
 			Reporter.log("Step 2 - Click on package name ["+packagename+"]");
-//			click(MCL_PackageName);		
-			clickWebdriver(attributeName_partiallinktext, packagename);
+			waitForElementPresentWebdriver(attributeName_xpath, ER_linktoclick+packagename+"')]", packagename);
+			clickWebdriver(attributeName_xpath, ER_linktoclick+packagename+"')]");
 		}
 		if (!button.equals("")) {
-//			click(MCL_NewSearchbutton);
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_NewSearchbutton, button);
 			clickWebdriver(attributeName_xpath, MCL_NewSearchbutton);
-			waitForPageToLoad();
+			waitForPageToLoadWebdriver();
 		}
 	}catch(Exception e){
 		writeFailure(e.getLocalizedMessage());}

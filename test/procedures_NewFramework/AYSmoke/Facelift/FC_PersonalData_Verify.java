@@ -29,7 +29,8 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 //				verifyElementText(PSD_PageName, pagename, "Page Name");
-				waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath, PSD_PageName, pagename, "Page Name");
+				waitForElementPresentWebdriverWait(attributeName_xpath, PSD_PageName+pagename+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, PSD_PageName+pagename+"')]", pagename, pagename);
 			}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+successmessage+") was displayed correctly");

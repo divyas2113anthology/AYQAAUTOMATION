@@ -19,15 +19,18 @@ public class MC_ClientSearchResults_Input extends CommonSeleniumActions implemen
 		Reporter.log("Check user clicked on page icon in Maintenance center");
 		if (!clickpageicon.equals("")) {
 			Reporter.log("Step 1 - Click on page icon ["+clickpageicon+"]");
-			click(MCL_pageicon);					
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_pageicon, clickpageicon);
+			clickWebdriver(attributeName_xpath, MCL_pageicon);
 		}
 		if (!clickclientname.equals("")) {
 			Reporter.log("Step 2 - Click on client name ["+clickclientname+"]");
-			click(MCL_ClientName);					
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_ClientName, clickclientname);
+			clickWebdriver(attributeName_xpath, MCL_ClientName);			
 		}
 		if (button.equalsIgnoreCase("button")) {
-			click(MCL_NewSearchbutton);
-			waitForPageToLoad();
+			waitForElementPresentWebdriverWait(attributeName_xpath, MCL_NewSearchbutton, button);
+			clickWebdriver(attributeName_xpath, MCL_NewSearchbutton);	
+			waitForPageToLoadWebdriver();
 		}
 	}catch(Exception e){
 		writeFailure(e.getLocalizedMessage()); }

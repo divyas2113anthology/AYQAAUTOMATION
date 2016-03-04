@@ -29,6 +29,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 			
 			if (!logoutmain.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to click the link as ["+logoutmain+"]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, MCG_MainLogout+logoutmain+"')]", logoutmain);
 				clickWebdriver(attributeName_xpath, MCG_MainLogout+logoutmain+"')]");
 				waitForPageToLoadWebdriver();
 			}

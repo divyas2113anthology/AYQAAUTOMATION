@@ -66,7 +66,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 //				type(CA_FirstName, eventTitle);	
 				sendKeys(attributeName_name, "txtTitle", eventTitle);
 				if (!titlelabel.equals("")) {
-					Reporter.log("Proceed to Write Event Title as ("+titlelabel+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+					Reporter.log("Proceed to Write Event Title as ("+titlelabel+") in the Excel Sheet(C:/Seleniumscripts/lib/InputTestdata.xls)");
 					Runtimedatawrite(eventTitle, titlelabel);
 				}
 			}
@@ -181,7 +181,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath, AEE_Save);
 					waitForPageToLoad();
 				}else if (button.equalsIgnoreCase("publish to prod")) {
-					waitForElementPresentWebdriver(attributeName_xpath, AEE_PubToProd, button);
+					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Close Window")) {

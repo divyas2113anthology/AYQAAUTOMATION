@@ -38,10 +38,13 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				Reporter.log("Create a new row");
 				waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
 				clickWebdriver(attributeName_xpath, MCG_AddRow);
+				
 			}
 			if (!statuscategory.equals("")) {
 				Reporter.log("Select ("+statuscategory+")from Status Category");
-				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory, statuscategory);
+				String RowNumber = getTextWebdriver(attributeName_xpath, MCG_RowValue);
+				System.out.println("RowNumber is "+RowNumber);
+				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory+RowNumber+"')]", statuscategory);
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
 			

@@ -522,7 +522,8 @@ public static final String DB_PageTitle = "css=#appListHeader";
 //#**********************************************************#
 public static final String AW_StartAppBtn = "css=#StartApp";
 public static final String AW_AppInstBtn = "//a[contains(text(),'Application Instructions')]";
-public static final String AW_SubAppBtn = "css=input.ay-Submit";
+//public static final String AW_SubAppBtn = "css=input.ay-Submit"; //div/div[2]/div[1]/input[@class='ay-Submit']
+public static final String AW_SubAppBtn = "//div/div[2]/div[1]/input[@class='ay-Submit']";
 public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[contains(text(),'Family')]";
 public static final String AW_BussRulesBtn = "//font[contains(text(),'Business Rules')]";
@@ -581,7 +582,7 @@ public static final String PSD_Emailaddress = "//input[@id='q24319']";
 public static final String PSD_Aptnumber = "//input[@id='q24395']";
 public static final String PSD_EmailRecommended = "//input[@id='q24433']";
 //public static final String PSD_Save = "//img[@alt='Save']";
-public static final String PSD_Save = "//tr[3]/td/table/tbody/tr[1]/td/a[1]/img[@alt='Save']";
+public static final String PSD_Save = "//table/tbody/tr[8]/td/a[1]/img[@alt='Save']";
 public static final String PSD_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
 public static final String PSD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PSD_Reset = "//img[@alt='Reset']";
@@ -590,7 +591,7 @@ public static final String PSD_Reset = "//img[@alt='Reset']";
 //# Facelift Personal Data Verify
 //#**********************************************************#
 public static final String PSD_SuccessMsg = "//div[@class='span9']//tr/td/b";
-public static final String PSD_PageName = "//div[@class='span9']//tr/td/font";
+public static final String PSD_PageName = "//font[contains(text(),'";
 public static final String PSD_PageName1 = "//div[@class='span9']//font";
 public static final String PSD_ErrorMsg = "//div[@class='span9']/div[@id='divErrors']";
 //#**********************************************************#
@@ -1887,10 +1888,12 @@ public static final String AR_SearhResult = "//div[contains(@class,'alert-info')
 public static final String MCG_Package = "//img[contains(@src,'";   //publish_prod_large')]"
 public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
-public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'7')]";
+public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
-public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]";
+public static final String MCG_RowValue = "//td[input[@name='txtLabel' and @value='']]/preceding-sibling::td[@class='FormFields']";
+//public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]"; 
+public static final String MCG_MainLogout = "//a[contains(text(),'logout') or contains(@href,'";
 public static final String MCG_Active = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@type='checkbox']]";
 public static final String MCG_DeleteCheck = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@name='chkDelete']]";
 public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelectedNode') and contains(text(),'";   //Enrollment')]";

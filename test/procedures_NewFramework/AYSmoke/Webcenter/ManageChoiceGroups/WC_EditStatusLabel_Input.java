@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
+import java.util.Calendar;
+
 import or.OR;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,11 +23,12 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String groupname = testdata[0];
 			String groupdescription = testdata[1];
 			String statuscategory = testdata[2];
-			String label = testdata[3];
-			String active=testdata[4];
-			String delete=testdata[5];
-			String savecanceladdrow=testdata[6];
-			String addrow=testdata[7];
+			String labelName = testdata[3];
+			String label = testdata[4];
+			String active=testdata[5];
+			String delete=testdata[6];
+			String savecanceladdrow=testdata[7];
+			String addrow=testdata[8];
 			//switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmContent");
 			
@@ -48,18 +51,22 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
 			
-			if (!label.equals("")) {
+			if (!labelName.equals("")) {
 				Reporter.log("Enter Label");
-				sendKeys(attributeName_xpath, MCG_label, label);	
-			}
+				String Label = labelName+Calendar.getInstance().getTimeInMillis();
+				sendKeys(attributeName_xpath,MCG_label,Label);
+				Runtimedatawrite(Label, label);
+				}
 			
 			if(!active.equals("")){				
 				clickWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]");	
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
 			}
 			
-			if(!delete.equals("")){				
-				clickWebdriver(attributeName_xpath, MCG_DeleteCheck+delete+"']]/following-sibling::td[input[@name='chkDelete']]");	
+			if(!delete.equals("")){			
+				String Delete = Runtimedataread(delete);
+				waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck+delete+"']]/following-sibling::td[input[@name='chkDelete']]", delete);
+				clickWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]");	
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
 			}
 

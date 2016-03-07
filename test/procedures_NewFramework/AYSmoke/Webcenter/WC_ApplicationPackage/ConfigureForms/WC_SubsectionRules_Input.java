@@ -45,7 +45,6 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				else if (button.equalsIgnoreCase("print")) {
 					Reporter.log("Verify PRINT Button");
 					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
-					waitForPageToLoadWebdriver();
 				}
 				else if (button.equalsIgnoreCase("save")) {
 					 Reporter.log("Verify SAVE Button");						

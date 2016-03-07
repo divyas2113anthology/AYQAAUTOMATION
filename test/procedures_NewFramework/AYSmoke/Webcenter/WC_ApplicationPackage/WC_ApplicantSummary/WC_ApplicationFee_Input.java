@@ -34,8 +34,9 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			}
 			if (!payment_status.equals("")) {
 				Reporter.log("Select the payment status as ["+payment_status+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, AF_PaymentStatus , payment_status);
-				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus , payment_status);
+				String Payment = Runtimedataread(payment_status);
+				waitForElementPresentWebdriver(attributeName_xpath, AF_PaymentStatus , Payment);
+				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus , Payment);
 			}
 			if (!payment_amount_received.equals("")) {
 				Reporter.log("Enter the first name as ["+payment_amount_received+"]");

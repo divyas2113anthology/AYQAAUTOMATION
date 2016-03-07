@@ -31,13 +31,12 @@ public void AppInformation_QuestionDisplay_Verify() throws Exception{
 				writeConsole("Tree Package : "+SplitPackage[i]);
 				if (i== SplitPackage.length-1) {
 					clickWebdriver(attributeName_linktext, SplitPackage[i]);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else{
 					System.out.println(SplitPackage[i]);
 					waitForElementPresentWebdriver(attributeName_xpath, AID_RecPlus, "Tree");
-					
 					clickWebdriver(attributeName_xpath, AID_RecPlus);
-					
+					waitForPageToLoadWebdriver();
 				}
 			}
 		}

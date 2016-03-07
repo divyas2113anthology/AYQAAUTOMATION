@@ -1594,6 +1594,7 @@ public static final String Ad_PageHeading = "//tr[@class='FormText']/td/font";
 public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";  
 public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/td/font";
+public static final String Rec_PageName = "//td[@id='contentCol']//table/tbody/tr/td/font";
 //#**********************************************************#
 //#	 Webcenter - Configure Search Column - Page
 //#**********************************************************#

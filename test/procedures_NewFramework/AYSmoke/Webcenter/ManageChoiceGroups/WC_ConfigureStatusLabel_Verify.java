@@ -21,6 +21,7 @@ public class WC_ConfigureStatusLabel_Verify extends CommonSeleniumActions implem
 			String[] testdata = datacontainer;
 			String pagename = testdata[0];  
 			String message = testdata[1];
+			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmContent");
 			
 			if(!pagename.equals("")){
@@ -33,7 +34,7 @@ public class WC_ConfigureStatusLabel_Verify extends CommonSeleniumActions implem
 				waitForElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText+message+"')]", message);
 				verifyElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText+message+"')]", message);
 			}
-	
+			switchToDefaultContentWebdriver();
 			
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

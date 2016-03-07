@@ -23,6 +23,11 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 				waitForElementPresentWebdriver(attributeName_xpath, MCG_Package+Button_addprintdelete+"']", Button_addprintdelete);
 				clickWebdriver(attributeName_xpath, MCG_Package+Button_addprintdelete+"']");
 			}
+			if(!Checkbox.equals(""))
+			{
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
+				clickWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox);
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

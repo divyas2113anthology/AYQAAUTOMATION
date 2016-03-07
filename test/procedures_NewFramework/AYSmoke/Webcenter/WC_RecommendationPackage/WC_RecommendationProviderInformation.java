@@ -19,16 +19,30 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			String renotify = testdata[1];
 			String recommendationsystemurl = testdata[2];
 			String online = testdata[3];
-			String verifynotstatus = testdata[4];
+			String verifystatus = testdata[4];
 			String recommendationstartdate = testdata[5];
 			String closewindow = testdata[6];
 			
 			Reporter.log("Input Test Data was retrieved for 'Recommendation Provider Information' window");
 			recentPopupSelectWebdriver("Recommendation");
-			if (!verifynotstatus.equals("")) {
-				Reporter.log("Verify the Element is not present as ["+verifynotstatus+"]");
+			if (!Email.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+Email+"]");
+				
+			}
+			if (!renotify.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+renotify+"]");
+			}
+			if (!recommendationsystemurl.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+recommendationsystemurl+"]");
+				
+			}
+			if (!online.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+online+"]");
+			}
+			if (!verifystatus.equals("")) {
+				Reporter.log("Verify the Element is not present as ["+verifystatus+"]");
 				waitForElementPresentWebdriverWait(attributeName_xpath,RD_CloseWindow,closewindow);
-				verifyElementNotContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+verifynotstatus+"')]",verifynotstatus,verifynotstatus);
+				verifyElementContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+verifystatus+"')]",verifystatus,verifystatus);
 			}
 			
 			if (!recommendationstartdate.equals("")) {

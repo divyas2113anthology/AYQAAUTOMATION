@@ -37,9 +37,9 @@ public class MC_CopyPickList_Input extends CommonSeleniumActions implements OR{
 				for (int i = 0; i < CheckItem.length; i++) {
 					String[] SplitItem = CheckItem[i].split(".check");
 					if (CheckItem[i].contains("check")) {
-						checkWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+SplitItem[0]+"')]/input[@name='ChoiceGroupID']");
+						checkWebdriver(attributeName_xpath, "//td[contains(.,'"+SplitItem[0]+"')]/input[@name='ChoiceGroupID']");
 					}else if (CheckItem[i].contains("uncheck")) {
-						uncheckWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+SplitItem[0]+"')]/input[@name='ChoiceGroupID']");
+						uncheckWebdriver(attributeName_xpath, "//td[contains(.,'"+SplitItem[0]+"')]/input[@name='ChoiceGroupID']");
 					}
 				}
 			}

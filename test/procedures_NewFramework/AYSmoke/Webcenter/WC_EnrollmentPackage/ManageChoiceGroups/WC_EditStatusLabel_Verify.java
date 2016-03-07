@@ -19,14 +19,13 @@ public class WC_EditStatusLabel_Verify extends CommonSeleniumActions implements 
 			
 			String[] testdata = datacontainer;
 			String verifyui = testdata[0];
-			
+			switchToFrameNameIdWebdriver("frmContent");
 			if(!verifyui.equals("")){
 				Reporter.log("Verify its navigate to ("+verifyui+") page");
 				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, verifyui);
 				verifyElementPresentWebdriver(attributeName_xpath, SAV_PageName, verifyui);
 			}
-			
-			
+			switchToDefaultContentWebdriver();
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

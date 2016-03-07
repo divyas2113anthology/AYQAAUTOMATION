@@ -44,9 +44,9 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			Reporter.log("Retrieved Test Data in Recommendations input");
 			if (!rcrecommenderproviderlist .equals("")) {
 				Reporter.log("Step 1 - Click button("+rcrecommenderproviderlist +")");
-					waitForElementPresent(RC_RecProBtn, "Recommender Provider List");
-					click(RC_RecProBtn);
-					waitForPageToLoad();
+				waitForElementPresentWebdriverWait(attributeName_xpath, RC_RecProBtn,rcrecommenderproviderlist);
+				clickWebdriver(attributeName_xpath, RC_RecProBtn);
+				waitForPageToLoad();
 			}
 			if (!rcrecommendername .equals("")) {
 				Reporter.log("Step 2 - Click recommender name ("+rcrecommendername+")");

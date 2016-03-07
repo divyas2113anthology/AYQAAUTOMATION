@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 
 
+
 import or.OR;
 import processor.CommonSeleniumActions;
 
@@ -190,12 +191,21 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 //					selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close Window")) 
 				{
-					System.out.println("Msdfsdfsf");
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					driver.manage().deleteAllCookies();
 					driver.switchTo().window(ApplicationPage);
+				}else if (buttons.equalsIgnoreCase("Close")) 
+				{
+					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					deselectPopUp();
+					System.out.println("1st popup closed");
+					recentPopupSelect("Applicant Summary");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					deselectPopUp();	
+					System.out.println("2nd popup closed");
 				}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
 					//recentPopupSelectWebdriver("Application Printing");

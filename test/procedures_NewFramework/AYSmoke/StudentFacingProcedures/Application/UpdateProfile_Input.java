@@ -50,7 +50,7 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");
 				waitForElementPresentWebdriverWait(attributeName_xpath, upaEmailAddress, emailaddress);
 				//type(upaEmailAddress, emailaddress);
-				sendKeysType(attributeName_xpath, upaEmailAddress, emailaddress);
+				sendKeys(attributeName_xpath, upaEmailAddress, emailaddress);
 			}
 			if (!birthdate.equals("")) {
 				Reporter.log("Step 4 - Enter 'Birth date' as ("+birthdate+")");	
@@ -85,7 +85,9 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 9 - Click on ("+updateclose+") Button");
 				driver.switchTo().defaultContent();
 				if (updateclose.equalsIgnoreCase("update")) {
-					if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
+					waitForElementPresentWebdriverWait(attributeName_xpath,upaupdatebtn, updateclose);
+					clickWebdriver(attributeName_xpath,upaupdatebtn);
+					/*if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
 					{						
 						clickWebdriver(attributeName_xpath,upaupdatebtn);
 						waitForPageToLoad();
@@ -93,7 +95,7 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 					{
 						clickWebdriver(attributeName_xpath,upaupdatebtn1);
 						waitForPageToLoad();
-					}
+					}*/
 				}else if (updateclose.equalsIgnoreCase("close window")) {
 					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtnClassic, updateclose))
 						clickWebdriver(attributeName_xpath,upaclosebtn);

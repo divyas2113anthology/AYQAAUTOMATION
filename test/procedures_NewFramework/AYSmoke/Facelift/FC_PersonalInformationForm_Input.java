@@ -92,7 +92,8 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 					recentPopupSelectWebdriver("Address Lookup");
 				} else if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath,PII_SaveBottom, button_to_click);
-					clickWebdriver(attributeName_xpath,PII_SaveBottom);
+					//clickWebdriver(attributeName_xpath,PII_SaveBottom);
+					clickWebdriver(attributeName_xpath, PSD_Save);
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					click(PII_SaveContinue);

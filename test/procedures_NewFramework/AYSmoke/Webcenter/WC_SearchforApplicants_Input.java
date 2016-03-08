@@ -91,7 +91,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}			
 			if (!createddate.equals("")) {
 				Reporter.log("Step 5 - Select the creation date as ["+createddate+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, SAI_CreationDate, createddate);
+				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_CreationDate, createddate);
+				clickWebdriver(attributeName_xpath, SAI_CreationDate);
 			}
 			if (!submittedate.equals("")) {
 				Reporter.log("Step 6 - Select the submission date as ["+submittedate+"]");
@@ -231,7 +232,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!select_action.equals("")) {
 				Reporter.log("Step 22 - Select a action as ["+select_action+"]");
-				selectByValueWebdriver(attributeName_xpath, SAI_SearchbyActionSelect, select_action);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, SAI_SearchbyActionSelect, select_action);
 			}
 			if (!searchbyaction.equals("")) {
 				Reporter.log("Step 23 - Click the search by action submit button");

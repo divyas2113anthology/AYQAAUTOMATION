@@ -69,9 +69,11 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 					Reporter.log("Step 6 - Select the choice as ("+choice+")");		
 					String [] Choice = choice.split("_");
 					if (choice.contains("Check")) {
-						checkWebdriver(attributeName_xpath, "//input[@value='"+Choice[0]+"']");
+						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']", Choice[0]);
+						doubleClickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
 					}else if (choice.contains("UnCheck")) {
-						uncheckWebdriver(attributeName_xpath, "//input[@value='"+Choice[0]+"']");
+						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']", Choice[0]);
+						clickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
 					}
 				}
 				

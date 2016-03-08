@@ -863,7 +863,7 @@ public static final String SAI_BothtRadioBtn = "//input[@type='radio' and @value
 public static final String SAI_ViewRecords = "//input[@name='chkAgree']";
 public static final String SAI_CreationDateRadio = "//input[@name='SearchTypes' and @value='creationDate']";
 public static final String SAI_SubmissionDateRadio = "//input[@name='SearchTypes' and @value='submissionDate']";
-public static final String SAI_CreationDate = "//select[@name='Days']";
+public static final String SAI_CreationDate = "//td[contains(.,'Creation Date')]/input[@name='SearchTypes']";
 //public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
 public static final String SAI_SubmissionDate = "//select[@name='Days']";
 public static final String SAI_SpecificPeriod = "//select[@name='Days']";
@@ -885,7 +885,7 @@ public static final String SAI_UserQuries = "//input[@id='QueryID']";
  public static final String VerifySystemQueryLabel = "//font[contains(text(),'Queries')]";
 
 public static final String SAI_SearchGroupSelect = "//input[@value='group']";
-public static final String SAI_SearchbyActionSelect = "//input[@value='action']";
+public static final String SAI_SearchbyActionSelect = "ActionID";
 
 public static final String SAI_SubmitBtnBottom = "//input[contains(@src,'submit')]";
 public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[contains(@src,'admin_submit_small')])[3]";
@@ -997,7 +997,7 @@ public static final String ASR_NewSearchbtn = "//img[contains(@src,'new_search_l
 public static final String ASR_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String ASR_GoBtn = "//img[contains(@src,'go_small')]";
 public static final String ASR_Pagename = "//table[@id='ResultsTable']//td/font";
-public static final String ASR_SearchColumn = "//table[contains(@class,'dataTable')]";
+public static final String ASR_SearchColumn = "//div[@id='example_wrapper']//table[contains(@class,'dataTable')]";
 public static final String ASR_CheckBox = "']]/preceding-sibling::td/input[@type='checkbox']";
 //#**********************************************************#
 //# Webcenter Print Application - PA
@@ -1055,6 +1055,9 @@ public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_wi
 public static final String AS_ViewApplication = "";
 public static final String AS_ViewRecommendation = "";
 public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";
+public static final String AS_ViewCommentCheck = "//td[a[contains(text(),'";
+public static final String AS_ViewCommentCheck1 = "')]]/preceding-sibling::td[input[@name='CommentID']]";
+public static final String AS_ViewAddComment = "//textarea[@name='Comment']";
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
@@ -1607,7 +1610,8 @@ public static final String CSC_Field2 = "]/following-sibling::td/input[@name='tx
 public static final String CSC_Label = "//input[@name='txtLabel']";
 public static final String CSC_Order = "//input[@name='txtOrder']";
 public static final String CSC_ShowAfterDefault = "//input[@name='chkShowAfter']";
-public static final String CSC_Delete = "//input[@name='chkDelete']";
+public static final String CSC_Delete1 = "//td/input[contains(@value,'";
+public static final String CSC_Delete2 = "')]//following::td/input[@name='chkDelete']";
 public static final String CSC_AddRow = "//img[contains(@src,'addrow')]";
 public static final String CSC_Save = "//img[contains(@src,'admin_save')]";
 public static final String CSC_Select="//select[@name='Question']";

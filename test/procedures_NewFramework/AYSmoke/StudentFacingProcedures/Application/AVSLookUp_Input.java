@@ -55,9 +55,9 @@ public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 6 - Click on ("+avssearch+") Button");
 				if (avssearch.equalsIgnoreCase("search")) {
 					click(EL_searchclose+avssearch+"']");
-					waitForPageToLoad();
+					/*waitForPageToLoad();
 					Reporter.log(" Click on ("+avsname+") Link");
-					click(EL_hslink+avsname+"')]");
+					click(EL_hslink+avsname+"')]");*/
 					selectMainWindowWebdriver();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					click(EL_searchclose+avssearch+"']");

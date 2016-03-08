@@ -53,8 +53,8 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		}
 		if (!delete.equals("")) {
 			Reporter.log("Step 5 - Check the checkbox ("+delete+")");
-			waitForElementPresentWebdriver(attributeName_xpath, CSC_Delete, delete);
-			clickWebdriver(attributeName_xpath, CSC_Delete);
+			waitForElementPresentWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2, delete);
+			clickWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2);
 		}
 		if (!addrow.equals("")) {
 			Reporter.log("Step 6 - Check the checkbox ("+addrow+")");

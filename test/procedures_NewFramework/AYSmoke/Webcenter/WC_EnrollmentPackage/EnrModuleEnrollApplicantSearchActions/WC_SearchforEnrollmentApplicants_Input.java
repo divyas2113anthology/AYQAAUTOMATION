@@ -53,6 +53,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
 				System.out.println("aaaaaa");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
+				click(SAI_FirstName);
 				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
 				}
 			}

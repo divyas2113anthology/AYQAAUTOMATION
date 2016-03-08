@@ -33,13 +33,14 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				/*waitForElementPresentWebdriver(attributeName_xpath, ASR_Pagename, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, ASR_Pagename, pagename, "Page Name for Applicant Search Results");*/
-				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SAV_PageName, pagename, pagename);
 			
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify UI was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, ASR_SearchColumn, verifyui);
+				System.out.println(getTextWebdriver(attributeName_xpath, ASR_SearchColumn));
 				verifyElementContainsTextWebdriver(attributeName_xpath, ASR_SearchColumn, verifyui, "Page Name for Applicant Search Results");
 			}
 		} catch (Exception e) {

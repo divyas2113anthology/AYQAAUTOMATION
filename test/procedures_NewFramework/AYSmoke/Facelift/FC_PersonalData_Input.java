@@ -97,7 +97,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			if (!pdcellphone.equals("")) {
 				Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
 				String Cellphonepd = getElementIDbyLabelContains("Cell Phone",PSD_CellPhone);
-				waitForElementPresentWebdriver(attributeName_xpath, Cellphonepd, pdcellphone);
+				waitForElementPresentWebdriverWait(attributeName_xpath, Cellphonepd, pdcellphone);
 				if (pdcellphone.equalsIgnoreCase("Null")) {
 					attributeNameValue(attributeName_xpath, Cellphonepd).clear();
 				}else {
@@ -108,10 +108,10 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");
 				if (pdfulltimestudent.equalsIgnoreCase("Yes")){
 					waitForElementPresentWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes, pdfulltimestudent);
-					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes);
+					clickWebdriver(attributeName_xpath, PSD_Fulltimestudent_Yes);
 				}else if (pdfulltimestudent.equalsIgnoreCase("No")){
 					waitForElementPresentWebdriver(attributeName_xpath, PSD_Fulltimestudent_No, pdfulltimestudent);
-					actionsClickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
+					clickWebdriver(attributeName_xpath, PSD_Fulltimestudent_No);
 				}			
 			}
 			if(!pdtestdemo.equals(""))
@@ -225,7 +225,6 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					//clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
 					clickWebdriver(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
-				waitForPageToLoadWebdriver();
 				
 				}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);

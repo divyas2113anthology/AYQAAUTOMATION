@@ -65,8 +65,8 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 			
 			if(!buttons.equals("")){
 				Reporter.log("Click the button as ["+buttons+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, ED_Buttons, buttons);
-				clickWebdriverWithCoordinates(attributeName_xpath, ED_Buttons);
+				waitForElementPresentWebdriver(attributeName_xpath, SR_button+buttons+"')]", buttons);
+				clickWebdriverWithCoordinates(attributeName_xpath, SR_button+buttons+"')]");
 				
 			}
 			
@@ -79,7 +79,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
 //					waitForPageToLoad();
 				}else if (closeproceed.equalsIgnoreCase("Close Window")) {
-					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
+					recentPopupCloseWebdriver();
 					selectMainWindowWebdriver();
 				}
 			}

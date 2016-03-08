@@ -35,7 +35,8 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+successmessage+") was displayed correctly");
 //				verifyElementText(PSD_SuccessMsg, successmessage, "Sucesses Message");
-				waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath,PSD_SuccessMsg, successmessage, "Sucesses Message");
+				waitForElementPresentWebdriverWait(attributeName_xpath,PSD_SuccessMsg, successmessage);
+				verifyElementContainsTextWebdriver(attributeName_xpath,PSD_SuccessMsg, successmessage, "Sucesses Message");
 			}
 			if (!errormessage.equals("")) {
 				Reporter.log("Step 3 - Verify Success Message:("+errormessage+") was displayed correctl");

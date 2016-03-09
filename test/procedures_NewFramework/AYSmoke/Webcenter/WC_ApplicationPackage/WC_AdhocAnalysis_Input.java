@@ -9,7 +9,7 @@ import processor.CommonSeleniumActions;
 public class WC_AdhocAnalysis_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Adhoc Analysis' page")
-	public void WC_AdhocAnalysis_Input(){
+	public void WC_AdhocAnalysis_Input() throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Adhoc Analysis' Page");
@@ -30,7 +30,7 @@ public class WC_AdhocAnalysis_Input extends CommonSeleniumActions implements OR 
 			Reporter.log("Input Test Data was retrieved for 'Adhoc Analysis' Page");
 			if (!activityby.equals("")) {
 				Reporter.log("Step 1 - Select activity by as ["+activityby+"]");
-				waitForElementPresentWebdriver(attributeName_name, Ad_ActivatedBy, activityby);
+				waitForElementPresentWebdriverWait(attributeName_name, Ad_ActivatedBy, activityby);
 				selectByVisibleTextWebdriver(attributeName_name, Ad_ActivatedBy, activityby);
 			}
 			
@@ -46,12 +46,13 @@ public class WC_AdhocAnalysis_Input extends CommonSeleniumActions implements OR 
 			
 			if (!custom.equals("")) {
 				Reporter.log("Step 4 - Select custom as ["+custom+"]");
-				selectByValueWebdriver(attributeName_name, Ad_Customlist, custom);
+				selectByVisibleTextWebdriver(attributeName_name, Ad_Customlist, custom);
 			}
 			
 			if (!question.equals("")) {
 				Reporter.log("Step 5 - Select question as ["+question+"]");
-				selectByValueWebdriver(attributeName_name, Ad_QuestionList, question);
+				//selectByVisibleTextWebdriver(attributeName_name, Ad_QuestionList, question);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, Ad_QuestionList, question);
 			}
 			
 			if (!combinelikeresponses.equals("")) {
@@ -61,7 +62,7 @@ public class WC_AdhocAnalysis_Input extends CommonSeleniumActions implements OR 
 			
 			if (!systemqueries.equals("")) {
 				Reporter.log("Step 7 - Select system queries as ["+systemqueries+"]");
-				selectByValueWebdriver(attributeName_name, Ad_SysQueryList, systemqueries);
+				selectByVisibleTextWebdriver(attributeName_name, Ad_SysQueryList, systemqueries);
 			}
 			
 			if (!userqueries.equals("")) {
@@ -90,7 +91,7 @@ public class WC_AdhocAnalysis_Input extends CommonSeleniumActions implements OR 
 			
 			if (!charttype.equals("")) {
 				Reporter.log("Step 12 - Select chart type as ["+charttype+"]");
-				selectByValueWebdriver(attributeName_name, Ad_ChartType, charttype);
+				selectByVisibleTextWebdriver(attributeName_name, Ad_ChartType, charttype);
 			}
 			
 			if (!button.equals("")) {

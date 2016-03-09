@@ -32,7 +32,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			   
-			if (pin.equals("Pin Number")) {
+			if (pin.equals("Pin Number")||pin.equals("FaceliftPinNumber")) {
 				String generatepin = Runtimedataread(pin);
 				Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
 				type(PinField, generatepin);

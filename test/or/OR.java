@@ -43,7 +43,7 @@ public static final String freqa = "//font[text()='Frequently Asked Questions']"
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
 public static final String SecurityInformation = "//font[text()='Security Information']";
 public static final String CreateAcctLogin = "//img[@alt='login']";
-public static final String Message = "//td[contains(text(),'"; //Testing for Post Message"')]";
+public static final String Message = "//td[contains(.,'"; //Testing for Post Message"')]";
 //#**********************************************************#
 //#Account Profile Page
 //#**********************************************************#
@@ -884,7 +884,7 @@ public static final String SAI_UserQuries = "//input[@id='QueryID']";
  public static final String SAI_Action = "//select[@name='ActionID']";
  public static final String VerifySystemQueryLabel = "//font[contains(text(),'Queries')]";
 
-public static final String SAI_SearchGroupSelect = "//input[@value='group']";
+public static final String SAI_SearchGroupSelect = "GroupID";
 public static final String SAI_SearchbyActionSelect = "ActionID";
 
 public static final String SAI_SubmitBtnBottom = "//input[contains(@src,'submit')]";
@@ -999,6 +999,7 @@ public static final String ASR_GoBtn = "//img[contains(@src,'go_small')]";
 public static final String ASR_Pagename = "//table[@id='ResultsTable']//td/font";
 public static final String ASR_SearchColumn = "//div[@id='example_wrapper']//table[contains(@class,'dataTable')]";
 public static final String ASR_CheckBox = "']]/preceding-sibling::td/input[@type='checkbox']";
+public static final String ASR_Group = "//td[font[contains(text(),'Group')]]/preceding-sibling::td/input[@name='SearchTypes']";
 //#**********************************************************#
 //# Webcenter Print Application - PA
 //#**********************************************************#
@@ -1598,6 +1599,7 @@ public static final String Ad_PageName = "//td[div[@id='AYInstructions']]/font";
 public static final String Ad_MessageHeading = "//div[@id='divAyConfirmation']/font";  
 public static final String En_PageName = "//table[@id='ResultsTable']/tbody/tr/td/font";
 public static final String Rec_PageName = "//td[@id='contentCol']//table/tbody/tr/td/font";
+public static final String Ad_CustomReport = "//table[@id='TABLE1' and contains(.,'";
 //#**********************************************************#
 //#	 Webcenter - Configure Search Column - Page
 //#**********************************************************#

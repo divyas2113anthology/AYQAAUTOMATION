@@ -58,14 +58,16 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				Runtimedatawrite(Label, label);
 				}
 			
-			if(!active.equals("")){				
-				clickWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]");	
+			if(!active.equals("")){		
+				String Active = Runtimedataread(active);
+				waitForElementPresentWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]", Active);
+				clickWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]");	
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
 			}
 			
 			if(!delete.equals("")){			
 				String Delete = Runtimedataread(delete);
-				waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck+delete+"']]/following-sibling::td[input[@name='chkDelete']]", delete);
+				waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]", Delete);
 				clickWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]");	
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
 			}

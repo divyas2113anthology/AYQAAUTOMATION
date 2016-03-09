@@ -34,8 +34,10 @@ public class WC_AdhocAnalysis_Verify extends CommonSeleniumActions implements OR
 				waitForElementPresentWebdriver(attributeName_xpath, Ad_PageName, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, Ad_PageName, pagename, "Page Name for Package");
 			}
-			if (verifyui.equals("")) {
+			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the UI information in Add Import page");
+				waitForElementPresentWebdriverWait(attributeName_xpath, Ad_CustomReport+verifyui+"')]", verifyui);
+				verifyElementContainsTextWebdriver(attributeName_xpath, Ad_CustomReport+verifyui+"')]", verifyui, verifyui);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

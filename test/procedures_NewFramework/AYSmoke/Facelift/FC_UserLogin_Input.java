@@ -65,8 +65,8 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 5 - Click on 'Login' Button");
 			if (login.equalsIgnoreCase("login")) {
 				click(UL_Login);
-				waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "My Applications");	
-				waitForPageToLoad();
+				/*waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "My Applications");	
+				waitForPageToLoad();*/
 			}			
 		}
 		if (!forgotpin.equals("")) {

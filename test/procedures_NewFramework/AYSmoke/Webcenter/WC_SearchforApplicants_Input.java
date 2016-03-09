@@ -53,7 +53,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					
 			Reporter.log("Input Test Data was retrieved for 'Search For Applicants' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			waitForElementPresentWebdriver(attributeName_xpath, SAI_NoOFRecords, "Number of Records Display");
+			//waitForElementPresentWebdriver(attributeName_xpath, SAI_NoOFRecords, "Number of Records Display");
 			
 					
 			if (!numberofrecordsdisplay.equals("")) {
@@ -137,7 +137,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 					
-				}else if (firstname.equals("FaceliftAppFirstName")) {
+				}else if (firstname.equals("FaceliftAppFirstName") || firstname.equals("SMOKETEST")) {
 					String DataFirstName = Runtimedataread(firstname);
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
@@ -224,11 +224,13 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!selectagroup.equals("")) {
 				Reporter.log("Step 21 - Select a group as ["+selectagroup+"]");
-				selectByValueWebdriver(attributeName_xpath, SAI_SearchGroupSelect, selectagroup);
+				waitForElementPresentWebdriverWait(attributeName_xpath, ASR_Group, selectagroup);
+				doubleClickWebdriver(attributeName_xpath, ASR_Group);
 			}			
 			if (!search_by_group.equals("")) {
 				Reporter.log("Step 21 - Click the Search by using Submit Button");
-				
+				waitForElementPresentWebdriverWait(attributeName_name, SAI_SearchGroupSelect, search_by_group);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, SAI_SearchGroupSelect, search_by_group);
 			}
 			if (!select_action.equals("")) {
 				Reporter.log("Step 22 - Select a action as ["+select_action+"]");

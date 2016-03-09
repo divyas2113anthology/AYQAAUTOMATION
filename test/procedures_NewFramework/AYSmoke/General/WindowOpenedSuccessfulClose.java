@@ -58,7 +58,7 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 //					selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("Close")) {
 					recentPopupCloseWebdriver();
-					selectMainWindowWebdriver();
+					//selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("CloseWindow")) {
 					clickWebdriver(attributeName_xpath, ApplicantCloseWindow);
 					recentOpenedPopupSelectWebdriver("Select Previous Window");

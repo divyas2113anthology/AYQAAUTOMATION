@@ -22,7 +22,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			String payment_received_date = testdata[4];
 			String button_to_click = testdata[5];
 			Reporter.log("Input Test Data was retrieved for 'Application Fee' Page");
-			recentPopupSelect_without_window_nameWebdriver();
+			//recentPopupSelectWebdriver("ApplicationFee");
 			
 			if (!payment_type.equals("")) {
 				Reporter.log("Select the payment type as ["+payment_type+"]");
@@ -35,7 +35,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			if (!payment_status.equals("")) {
 				Reporter.log("Select the payment status as ["+payment_status+"]");
 				String Payment = Runtimedataread(payment_status);
-				waitForElementPresentWebdriver(attributeName_xpath, AF_PaymentStatus , Payment);
+				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , Payment);
 				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus , Payment);
 			}
 			if (!payment_amount_received.equals("")) {

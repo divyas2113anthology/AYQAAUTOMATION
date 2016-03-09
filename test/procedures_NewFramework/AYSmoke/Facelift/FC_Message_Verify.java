@@ -30,7 +30,7 @@ public class FC_Message_Verify extends CommonSeleniumActions implements OR {
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 2 - Verify UI having the Message("+verifyui+")");
 				//waitForElementPresentVerifyContainsTextWebdriver(attributename, attributevalue, expectedtext, elementname);
-				recentPopupSelectWebdriver("Message");
+				//recentPopupSelectWebdriver("Message");
 				waitForElementPresentWebdriverWait(attributeName_xpath, Message+verifyui+"')]", verifyui);
 				verifyElementContainsTextWebdriver(attributeName_xpath, Message+verifyui+"')]", verifyui, verifyui);
 			

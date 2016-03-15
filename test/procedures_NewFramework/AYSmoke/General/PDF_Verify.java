@@ -62,8 +62,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 								}
 							}
 							//verifyTextContains(splitpdftext, exceptionMsg, "Page");
-							//deselectPopUp();
-							recentPopupCloseWebdriver();
+							recentPopupCloseSelectSecondWebdriver();
 						}
 						if (wait.equals("")) {
 							

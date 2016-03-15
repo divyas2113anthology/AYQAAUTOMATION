@@ -80,7 +80,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 4 - Click the Link as ("+link_to_click+"):");
-				clickWebdriver(attributeName_linktext, link_to_click);
+				waitForElementPresentWebdriverWait(attributeName_xpath, Applpackage+link_to_click+"')]", link_to_click);
+				clickWebdriver(attributeName_xpath, Applpackage+link_to_click+"')]");
 				waitForPageToLoadWebdriver();
 			}
 	

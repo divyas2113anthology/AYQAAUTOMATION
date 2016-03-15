@@ -28,12 +28,12 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 				if (eventtitlecheck.equals("Event Title")) {
 					String EventTitleName = Runtimedataread(eventtitlecheck);
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+EventTitleName+ASR_CheckBox, eventtitlecheck);
-					checkWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+EventTitleName+ASR_CheckBox);
+					clickWebdriver(attributeName_xpath, "//td[a[text()='"+EventTitleName+ASR_CheckBox);
 				}else{
 				for (int i = 0; i < splitevent.length; i++) {
 					if (performOperation.equalsIgnoreCase("check")) {
 						waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox, eventtitlecheck);
-						checkWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox);
+						clickWebdriver(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox);
 					}else if (performOperation.equalsIgnoreCase("uncheck")) {
 						waitForElementPresentWebdriver(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox, eventtitlecheck);
 						uncheckWebdriverCheckbox(attributeName_xpath, "//td[a[text()='"+splitevent[i]+ASR_CheckBox);
@@ -43,10 +43,12 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 			}			
 			if (!eventtitleclick.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+eventtitleclick+"]");
-				if (eventtitleclick.equals("Event Title")) {
+				if (eventtitleclick.equals("Event Title") || eventtitleclick.equals("BridgeAppFirstName")) {
 					String Eventtitleclick = Runtimedataread(eventtitleclick);
-					waitForElementPresentWebdriver(attributeName_partiallinktext, Eventtitleclick, Eventtitleclick);
-					clickWebdriver(attributeName_partiallinktext, Eventtitleclick);
+					/*waitForElementPresentWebdriver(attributeName_partiallinktext, Eventtitleclick, Eventtitleclick);
+					clickWebdriver(attributeName_partiallinktext, Eventtitleclick);*/
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+Eventtitleclick+"')]]", eventtitlecheck);
+					clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+Eventtitleclick+"')]]");
 					recentPopupSelectWebdriver("EventRecurrence");
 				}else{
 				waitForElementPresentWebdriver(attributeName_partiallinktext, eventtitleclick, eventtitleclick);
@@ -56,7 +58,7 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 			}
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 4 - Select an action as ["+selectanaction+"]");
-				selectByValueWebdriver(attributeName_xpath, EVR_SelectAnAction, selectanaction);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, EVR_SelectAnAction, selectanaction);
 			}			
 			if (!apply.equals("")) {
 				Reporter.log("Step 5 - Select the Radio button as ["+apply+"]");

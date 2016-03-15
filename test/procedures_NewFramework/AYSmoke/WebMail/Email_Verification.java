@@ -234,7 +234,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 4 - Click Log-In Button");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
-					waitForPageToLoadWebdriver();	
+					waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']", "Inbox");	
 					//clickWebdriver(attributeName_xpath, HC_Login);
 					//checkWebdriver(attributeName_xpath, HC_Login);
 
@@ -254,18 +254,18 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 //							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");   
 							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoad();
-							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]")) break; } catch (Exception e) {}
+							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
 							waitForPageToLoadWebdriver();
 						}
-						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
-						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
+						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
+						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]");
 						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						waitForPageToLoad();
-						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
+						/*if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
 							waitForPageToLoadWebdriver();
-						}
+						}*/
 					} catch (Exception e) {
 						//System.out.println("Error message("+e.getMessage()+")");
 						writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");

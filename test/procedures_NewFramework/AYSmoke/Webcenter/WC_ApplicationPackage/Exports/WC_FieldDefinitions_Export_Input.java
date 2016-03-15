@@ -42,13 +42,14 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 //						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 //					}
 //				}
-				
-				for (int i = 0; i < SplitPackage.length; i++) {
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//b[font[text()='"+SplitPackage[0]+"']]/preceding-sibling::a[img[contains(@src,'plus')]][1]", SplitPackage[0]);
+				clickWebdriver(attributeName_xpath, "//b[font[text()='"+SplitPackage[0]+"']]/preceding-sibling::a[img[contains(@src,'plus')]][1]");
+				for (int i = 1; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package : "+SplitPackage[i]);
-					if(i==0){
+					if(i==1){
 						Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");   //b[a[font[text()='Applicant Detail']]]
-						selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+SplitPackage[i]+"']]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
-						String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+SplitPackage[i]+"']]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
+						selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
+						String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
 						writeConsole("Onclick Value for Section "+seconclickName);
 						String[] secNamespl =seconclickName.split("\\(");
 						String[] secnodespl = secNamespl[1].split("\\)");

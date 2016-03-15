@@ -76,8 +76,8 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 //			waitForElementPresentWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
 //			waitForPageToLoadWebdriver();
 		}
-		selectMainWindowWebdriver();		
-		recentOpenedPopupSelectWebdriver("Select Previous Window");
+		//selectMainWindowWebdriver();		
+		//recentOpenedPopupSelectWebdriver("Select Previous Window");
 		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

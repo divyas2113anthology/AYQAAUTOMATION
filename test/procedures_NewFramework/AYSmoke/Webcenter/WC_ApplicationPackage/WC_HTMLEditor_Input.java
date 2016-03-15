@@ -29,10 +29,10 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 			String lastname = textarea+Calendar.getInstance().getTimeInMillis();
 			if (!textarea.equals("")) {
 				Reporter.log("Step 1 - Enter the Dynamic Text  Area as ["+textarea+"]");
-				waitForPageToLoadWebdriver();
+				//waitForPageToLoadWebdriver();
 				 WebElement frame = driver.findElement(By.tagName("iframe"));
 				 driver.switchTo().frame(frame);
-				 WebElement elem = driver.findElement(By.xpath("//body//p"));
+				 WebElement elem = driver.findElement(By.xpath("//body"));
 		         elem.click();
 		         elem.sendKeys(lastname);
 		         Runtimedatawrite(lastname, textarea);

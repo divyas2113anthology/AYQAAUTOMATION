@@ -77,7 +77,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 						sendKeys(attributeName_cssselector, CA_ConfirmEmailAddress, confirmemailaddress);
 					}
 				}
-				
+				Runtimedatawrite(Email, confirmemaillabel);
 				/*String ConfirmEmail = confirmemailaddress+Calendar.getInstance().getTimeInMillis()+"@connect.com";
 				if (!confirmemailaddress.equals("")) {			
 					Reporter.log("Step 5 - Enter 'Confirm Email Address' as ("+ConfirmEmail+")");	
@@ -153,8 +153,10 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				String UserName = username+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				if (!username.equals("")) {
 					Reporter.log("Step 14  - Proceed to enter the user name as ("+UserName+") ");
-					if (username.equals("Malik")) 
+					if (username.contains("Br")) {
 						sendKeys(attributeName_id, CA_UserName, UserName);
+						Runtimedatawrite(UserName, usernamelabel);
+					}
 					else
 						sendKeys(attributeName_id, CA_UserName, username);
 					

@@ -928,7 +928,7 @@ public static final String SFR_ExportedTo = "//input[@name='ExportedTo']";
 public static final String SAV_FormHeading = "//td[@class='FormHeading']";
 public static final String SAV_FormMsg = "//td[@class='FormText']";
 public static final String SAV_FormLabel = "//table/tbody/tr/td[text()='";
-public static final String SAV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+public static final String SAV_PageName = "//font";
 public static final String PageName = "//div[@id='AYInstructions']/following-sibling::font";
 public static final String APP_Status = "//table/tbody/tr/td[contains(text(),'";
 
@@ -1479,7 +1479,7 @@ public static final String AER_Email = "//input[@id='q33689']";
 public static final String AER_Scode = "//input[@id='q33690']";
 public static final String AER_NotAttened = "//img[contains(@src,'will_not_attend')]";
 public static final String AER_Register = "//img[contains(@src,'register_large')]";
-public static final String AER_UpdateMyInformation = "//img[contains(@src,'update_my_information')]";
+public static final String AER_UpdateMyInformation = "//img[contains(@src,'";
 public static final String AER_RegisterOrNotAttened = "//img[contains(@src,'register_large') or contains(@src,'register_large') or contains(@src,'update_my_information')]";
 //#**********************************************************#
 //#	 Webcenter - Add/Edit Group  - Page

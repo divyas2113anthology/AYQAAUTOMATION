@@ -137,7 +137,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 					
-				}else if (firstname.equals("FaceliftAppFirstName") || firstname.equals("SMOKETEST")) {
+				}else if (firstname.equals("FaceliftAppFirstName") || firstname.equals("SMOKETEST") || firstname.equals("TESTAPPREVIEW") || firstname.equals("BridgeAppFirstName")){
 					String DataFirstName = Runtimedataread(firstname);
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);

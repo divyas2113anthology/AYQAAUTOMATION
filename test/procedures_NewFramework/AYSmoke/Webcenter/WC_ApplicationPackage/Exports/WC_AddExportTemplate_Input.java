@@ -43,6 +43,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 				else{
 				waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
 				sendKeys(attributeName_name, "txtName", ExportName);
+				Runtimedatawrite(ExportName,"ExportTemplate");
 				}
 			}
 			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();    

@@ -38,6 +38,7 @@ public class WC_ConfigureDynamicText_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Edit with HTML Editor")) {
+					waitForElementPresentWebdriverWait(attributeName_name, CDT_HtmlEditorBtn, button);
 					clickWebdriver(attributeName_name, CDT_HtmlEditorBtn);
 					recentPopupSelectWebdriver("HTML Editor");
 				}else if (button.equalsIgnoreCase("Save")) {

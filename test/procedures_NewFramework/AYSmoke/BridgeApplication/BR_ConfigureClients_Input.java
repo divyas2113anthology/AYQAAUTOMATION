@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 
-public class BR_ConfiguredClients_Input extends CommonSeleniumActions implements OR {
+public class BR_ConfigureClients_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is to perform some Operation in 'Configured Clients' page")
-	public void BR_ConfiguredClients_Input() throws Exception{
+	public void BR_ConfigureClients_Input() throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Configured Clients' page");

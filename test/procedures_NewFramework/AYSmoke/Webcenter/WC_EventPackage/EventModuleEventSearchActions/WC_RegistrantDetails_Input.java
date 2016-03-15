@@ -32,7 +32,7 @@ public class WC_RegistrantDetails_Input  extends CommonSeleniumActions implement
 			String phone5 = testdata[10];
 			String ssn = testdata[11];
 			String tfuppercase = testdata[12];
-			String location = testdata[13];
+			String button = testdata[13];
 			Reporter.log("Input Test Data was retrieved for 'Webcenter Registrant Details' Page");
 			if (!firstname.equals("")) {
 				Reporter.log("Step 1 - Enter the First Name as ["+firstname+"]");
@@ -102,17 +102,19 @@ public class WC_RegistrantDetails_Input  extends CommonSeleniumActions implement
 				Reporter.log("Step 13 - Enter the Text - TF Upper Case as ["+tfuppercase+"]");
 				
 			}
-			if (!location.equals("")) {
+			if (!button.equals("")) {
 				Reporter.log("Step 14 - Click on Button ");
-				if (location.equalsIgnoreCase("close window")) {
+				if (button.equalsIgnoreCase("close window")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_CloseWindow, button);
 					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
-					waitForPageToLoad();
-				}else if (location.equalsIgnoreCase("update my information")) {
-					waitForElementPresentWebdriver(attributeName_xpath, AER_UpdateMyInformation, location);
-					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation);
+					selectMainWindowWebdriver();
+				}else {
+					waitForElementPresentWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]", button);
+					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]");
 					waitForPageToLoadWebdriver();
 				}
 			}
+			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

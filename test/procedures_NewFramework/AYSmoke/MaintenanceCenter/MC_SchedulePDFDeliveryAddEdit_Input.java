@@ -115,10 +115,13 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 			if (!zipfilenamecheck.equals("")) {
 				Reporter.log("Check zipfilename ["+zipfilenamecheck+"]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, SPDF_ZipPdf, zipfilenamecheck);
 				clickWebdriver(attributeName_xpath, SPDF_ZipPdf);
 			}
 	  		  if (!zipfilename.equals("")) {
 				  Reporter.log("Enter the zip filename as ["+zipfilename+"]");
+				  waitForElementPresentWebdriverWait(attributeName_name, "txtZipFileName", zipfilename);
+				  System.out.println("File Name : "+zipfilename);
 				  sendKeys(attributeName_name, "txtZipFileName", zipfilename);
 			  }
 	  		if (!senddelivery.equals("")) {

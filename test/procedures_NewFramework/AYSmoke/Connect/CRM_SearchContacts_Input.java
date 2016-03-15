@@ -23,18 +23,19 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 				waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
 				sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
 			}
-			if (!button.equals("")) {
-				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");
-				waitForElementPresentWebdriver(attributeName_id, CNT_SearchTopBtn, button);
-				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
-				
-			}
+			
 			if (!editfirstname.equals("")) {
 				String EditFirstName = Runtimedataread(editfirstname);
 				Reporter.log("Step 3 - Proceed to Click on Edit ("+EditFirstName+") Link");
 				waitForElementPresentWebdriverWait(attributeName_xpath, "//td[text()='"+EditFirstName+"']/preceding-sibling::td/a[text()='Edit']", EditFirstName);
 				clickWebdriver(attributeName_xpath, "//td[text()='"+EditFirstName+"']/preceding-sibling::td/a[text()='Edit']");
 				waitForPageToLoadWebdriver();
+			}
+			if (!button.equals("")) {
+				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");
+				waitForElementPresentWebdriver(attributeName_id, CNT_SearchTopBtn, button);
+				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
+				
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

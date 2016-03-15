@@ -18,8 +18,8 @@ public class CRM_Welcome_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Show Matching' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
-				/*waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]", "CRM");
-				clickWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]");*/
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]", "CRM");
+				clickWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]");
 				waitForElementPresentWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename);
 				verifyElementTextWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename, pagename);
 			}

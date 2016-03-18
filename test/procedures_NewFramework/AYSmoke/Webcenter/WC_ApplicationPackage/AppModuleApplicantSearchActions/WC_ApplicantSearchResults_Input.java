@@ -59,7 +59,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				int SizeOfSplitFirstLastName = SplitFirstLastName.length;
 				writeConsole("Size: "+SizeOfSplitFirstLastName);
 				if (SizeOfSplitFirstLastName == 1) {
-					if (clickname.equalsIgnoreCase("Applicant First Name")) {
+					if (clickname.equalsIgnoreCase("Applicant First Name")||clickname.equalsIgnoreCase("ManualAdd")) {
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						recentPopupSelectWebdriver("Application Summary");

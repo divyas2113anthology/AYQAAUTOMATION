@@ -21,7 +21,7 @@ public class WC_EventList_Input extends CommonSeleniumActions implements OR {
 			if (!eventregister.equals("")) {
 				String EventRegister = Runtimedataread(eventregister);
 				Reporter.log("Step 1 - Click the Register button based on Group Name as ("+EventRegister+")");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+EventRegister+"')]/a/img[@alt='Click here to register']", "Register Button");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//td[contains(text()[2],'"+EventRegister+"')]/a/img[@alt='Click here to register']", "Register Button");
 				clickWebdriver(attributeName_xpath, "//td[contains(text()[2],'"+EventRegister+"')]/a/img[@alt='Click here to register']");
 				waitForPageToLoadWebdriver();
 			}

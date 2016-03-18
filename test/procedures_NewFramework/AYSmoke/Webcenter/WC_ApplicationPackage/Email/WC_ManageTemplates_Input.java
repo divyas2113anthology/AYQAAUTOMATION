@@ -27,23 +27,16 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 			String template_name = fpvdatarepo[2];
 			
 			Reporter.log("Verify Test Data was retrieved for ''Manage Template' page");
-			
-			if (!link_click.equals("")) {
-				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, Applpackage+link_click+"')]", link_click);
-				clickWebdriver(attributeName_xpath, Applpackage+link_click+"')]");
-				waitForPageToLoadWebdriver();
-			}
+			String template = Runtimedataread(template_name);
 			if (!add_delete_folder.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				if(add_delete_folder.equals("add")) {
 				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]", add_delete_folder);
 				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
 				}
-				else
-				{
+				else if(add_delete_folder.equals("delete")) 	{
 					//waitForElementPresentWebdriver(attributeName_xpath, AMET_CheckboxTemplate, "TestMail");
-					clickWebdriver(attributeName_xpath, AMET_CheckboxTemplate+template_name+"']]/preceding-sibling::td/input");
+					clickWebdriver(attributeName_xpath, AMET_CheckboxTemplate+template+"']]/preceding-sibling::td/input");
 					clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
 					try {
 				        Alert alert = driver.switchTo().alert();
@@ -55,8 +48,18 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 				    }
 				}
 			}
+			if (!link_click.equals("")) {
+				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, Applpackage+link_click+"')]", link_click);
+				clickWebdriver(attributeName_xpath, Applpackage+link_click+"')]");
+				waitForPageToLoadWebdriver();
+			}
 			
 			
+			if (!template_name.equals("")) {
+				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				
+			}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

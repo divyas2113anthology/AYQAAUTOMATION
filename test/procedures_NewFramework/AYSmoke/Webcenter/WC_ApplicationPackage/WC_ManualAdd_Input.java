@@ -41,11 +41,11 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		String firstname = FName+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
 		if (!FName.equals("")) {
 			Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");
-			type(FName_Manual, firstname);	
-			/*String Fnamepd = getElementIDbyLabel("First/Given Name",FName_Manual);	
+			//type(FName_Manual, firstname);	
+			//String Fnamepd = getElementIDbyLabel("First/Given Name",FName_Manual);	
 			String PDFirstName = FName+Calendar.getInstance().getTimeInMillis();
-			sendKeys(attributeName_xpath,Fnamepd,PDFirstName);
-			Runtimedatawrite(PDFirstName, Fnamepd);*/
+			sendKeys(attributeName_xpath,FName_Manual,PDFirstName);
+			Runtimedatawrite(PDFirstName, FName);
 		
 		} 
 		String lastname = LName+Calendar.getInstance().getTimeInMillis();

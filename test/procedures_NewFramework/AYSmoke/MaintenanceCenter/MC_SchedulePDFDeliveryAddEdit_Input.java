@@ -43,11 +43,14 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			String repeatcheck = testdata[26];
 			String repeat = testdata[27];
 			String button = testdata[28];
+			String publickey = testdata[29];
+			String sftpport = testdata[30];
 			
 			Reporter.log("Input Test Data was retrieved for 'Schedule PDF Delivery-Add' Page");
 
 			if (!description.equals("")) {
 					Reporter.log("Step 1 - Enter Description as ["+description+"]");
+					System.out.println("Description");
 					sendKeys(attributeName_xpath, QAE_Description, description);
 				}
 			
@@ -89,23 +92,34 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 			if (!servername.equals("")) {
 				Reporter.log("Enter the Server Name as ["+servername+"]");
+				System.out.println("servername");
 				sendKeys(attributeName_xpath, SPDF_ServerName, servername);
 			}
 			if (!serverdirectory.equals("")) {
 				Reporter.log("Enter the Server Directory as ["+serverdirectory+"]");
+				System.out.println("serverdirectory");
 				sendKeys(attributeName_name, "txtFTPDirectory", serverdirectory);
 			}
 			if (!username.equals("")) {
 				Reporter.log("Enter the User Name as ["+username+"]");
+				System.out.println("username");
 				sendKeys(attributeName_name, "txtFTPUsername", username);
 			}
 			if (!passwordauthentication.equals("")) {
 				Reporter.log("Enter the Password as ["+passwordauthentication+"]");
+				System.out.println("password");
 				sendKeys(attributeName_name, "txtFTPPassword", passwordauthentication);
 			}
 			if (!authentication.equals("")) {
 				Reporter.log("Enter the Password as ["+authentication+"]");
-				sendKeys(attributeName_name, "txtFTPPassword", authentication);
+				System.out.println("authentication");
+				clickWebdriver(attributeName_xpath, SPDF_Authentication+authentication+"')]/input[@name='rdoLoginType']");
+			}
+			
+			if (!sftpport.equals("")) {
+				Reporter.log("Click on Public key");
+				System.out.println("port");
+				sendKeys(attributeName_name, "txtSFTPPort", sftpport);
 			}
 			if (!testftpconnection.equals("")) {
 				Reporter.log("Click on Test FTP connection as["+testftpconnection+"]");
@@ -115,17 +129,20 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 			if (!zipfilenamecheck.equals("")) {
 				Reporter.log("Check zipfilename ["+zipfilenamecheck+"]");
+				System.out.println("checkzip");
 				waitForElementPresentWebdriverWait(attributeName_xpath, SPDF_ZipPdf, zipfilenamecheck);
 				clickWebdriver(attributeName_xpath, SPDF_ZipPdf);
 			}
 	  		  if (!zipfilename.equals("")) {
 				  Reporter.log("Enter the zip filename as ["+zipfilename+"]");
+				  System.out.println("zipname");
 				  waitForElementPresentWebdriverWait(attributeName_name, "txtZipFileName", zipfilename);
 				  System.out.println("File Name : "+zipfilename);
 				  sendKeys(attributeName_name, "txtZipFileName", zipfilename);
 			  }
 	  		if (!senddelivery.equals("")) {
 				Reporter.log("Check ["+senddelivery+"]");
+				System.out.println("senddelivery");
 				clickWebdriver(attributeName_xpath, SPDF_SendDelivery);
 			}
 	  		if (!senderrors.equals("")) {
@@ -134,6 +151,7 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 	  		if (!emailaddress.equals("")) {
 				Reporter.log("Enter the Email Address as ["+emailaddress+"]");
+				System.out.println("email");
 				sendKeys(attributeName_name, "txtConfirmEmail", emailaddress);
 			}
 	  		if (!deleiveryschedule.equals("")) {
@@ -142,21 +160,25 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 	  		if (!startdate.equals("")) {
 				Reporter.log("Enter the Start Date as ["+startdate+"]");
+				System.out.println("startdate");
 				String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
 				sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
 			}
 			if (!starthour.equals("")) {
 				Reporter.log("Enter the Start Hour as ["+starthour+"]");
+				System.out.println("starthour");
 				String StartHour = requiredHourAndMinute("hh", starthour);
 				selectByVisibleTextWebdriver(attributeName_name, "selHourStart", StartHour);
 			}
 			if (!startminute.equals("")) {
 				Reporter.log("Enter the Start Minute as ["+startminute+"]");
+				System.out.println("startminute");
 				String StartMinute = requiredHourAndMinute("mm", startminute);
 				selectByVisibleTextWebdriver(attributeName_name, "selMinutesStart", StartMinute);
 			}
 			if (!enddate.equals("")) {
 				Reporter.log("Enter the Start Date as ["+enddate+"]");
+				System.out.println("enddate");
 				String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", enddate);
 				sendKeys(attributeName_name, "txtEndDate", getcurrentdate+1);
 			}
@@ -170,6 +192,7 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 			if (!button.equals("")) {
 				Reporter.log("Click the name of the button as ["+button+"]");
+				System.out.println("button");
 				if (button.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_name, "imgSubmitBtnTop");
 				}else if (button.equalsIgnoreCase("Cancel")) {

@@ -87,7 +87,10 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				}else if (search_by_date.equalsIgnoreCase("Submission Date")) {
 //					clickWebdriver(attributeName_xpath, SAI_SubmissionDateRadio);
 					sendKeyStroke(attributeName_xpath, SAI_SubmissionDateRadio, Keys.SPACE);
-				}
+				}else if (search_by_date.equalsIgnoreCase("All")) {
+						selectByVisibleTextWithSpaceWebdriver(attributeName_name, "Days", search_by_date);			
+					}
+				
 			}			
 			if (!createddate.equals("")) {
 				Reporter.log("Step 5 - Select the creation date as ["+createddate+"]");
@@ -132,7 +135,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Step 11 - Enter the First Name as ["+firstname+"]");
-				if (firstname.equals("Applicant First Name")) {
+				if (firstname.equals("Applicant First Name") || firstname.equals("ManualAdd")) {
 					String DataFirstName = Runtimedataread(firstname);
 					click(SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
@@ -151,7 +154,6 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}
 				else{
-					System.out.println("Malik");
 					click(SAI_FirstName);
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
@@ -195,8 +197,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			
 			if (!systemqueries.equals("")) {
 				Reporter.log("Step 18 - Select the system quries as ["+systemqueries+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
-				selectByVisibleTextWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				waitForElementPresentWebdriverWait(attributeName_name, "SysQuery", systemqueries);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "SysQuery", systemqueries);
 				waitForPageToLoadWebdriver();
 			}	
 			if (!userqueries.equals("")) {

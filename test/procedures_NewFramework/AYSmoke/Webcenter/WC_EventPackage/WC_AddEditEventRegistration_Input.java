@@ -57,8 +57,8 @@ public class WC_AddEditEventRegistration_Input extends CommonSeleniumActions imp
 				}else if (updateregister.equalsIgnoreCase("Register")) {
 					clickWebdriver(attributeName_xpath, AER_Register);
 					waitForPageToLoadWebdriver();
-				}else if (updateregister.equalsIgnoreCase("update my information")) {
-					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation);
+				}else if (updateregister.equalsIgnoreCase("update_my_information")) {
+					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation+updateregister+"')]");
 					waitForPageToLoadWebdriver();
 				}
 			}

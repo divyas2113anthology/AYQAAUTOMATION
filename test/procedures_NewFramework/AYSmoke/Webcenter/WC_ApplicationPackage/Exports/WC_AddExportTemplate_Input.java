@@ -43,7 +43,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 				else{
 				waitForElementPresentWebdriver(attributeName_name, "txtName", exportname);
 				sendKeys(attributeName_name, "txtName", ExportName);
-				Runtimedatawrite(ExportName,"ExportTemplate");
+				Runtimedatawrite(ExportName,exportname);
 				}
 			}
 			String Description = description+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();    
@@ -101,10 +101,10 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			
 			if (!click.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
-				waitForElementPresentWebdriver(attributeName_name, AE_ExportSaveBtn, click);
+				//waitForElementPresentWebdriver(attributeName_name, AE_ExportSaveBtn, click);
 				if (click.equalsIgnoreCase("Save")) {
-					waitForElementPresentWebdriverWait(attributeName_name, AE_ExportSaveBtn, click);
-					clickWebdriver(attributeName_name, AE_ExportSaveBtn);
+					waitForElementPresentWebdriverWait(attributeName_name, FD_SaveBtn, click);
+					clickWebdriver(attributeName_name, FD_SaveBtn);
 					waitForPageToLoadWebdriver();
 				} else if (click.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, AE_ExportCancelBtn);

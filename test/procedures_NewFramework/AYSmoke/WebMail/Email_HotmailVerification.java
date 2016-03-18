@@ -235,15 +235,15 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step  8 - Proceed to click on Message contains Link");
 				//waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
 				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
-				waitForElementPresentWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]", clicklinkcontains);
-				clickWebdriver(attributeName_xpath, "//a[b[contains(text(),'"+clicklinkcontains+"')]]");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Update Information");
 				//recentPopupSelect("Update Information");
 			}
 			if (!logout.equals("")) {
 				Reporter.log("Step  9 - Proceed to click on Logout Link");
-				clickWebdriver(attributeName_xpath, "//span[@id='c_meun']");
+				clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
 				waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
 				clickWebdriver(attributeName_partiallinktext, "Sign out");
 				//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");

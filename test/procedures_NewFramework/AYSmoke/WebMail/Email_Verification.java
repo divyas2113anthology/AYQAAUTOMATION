@@ -2,6 +2,9 @@ package procedures_NewFramework.AYSmoke.WebMail;
 
 import static processor.CommonSeleniumActions.Runtimedataread;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Keyboard;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -234,6 +237,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 4 - Click Log-In Button");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					//assign key board object
+				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
+				       //enter a key
+				       keyboard.pressKey(Keys.ENTER);
 					waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']", "Inbox");	
 					//clickWebdriver(attributeName_xpath, HC_Login);
 					//checkWebdriver(attributeName_xpath, HC_Login);
@@ -331,8 +338,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
 					//				String environment = Runtimedataread("Instance").toLowerCase();
 				
-					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body+verifycontents+"')]", verifycontents);
-					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body+verifycontents+"')]", verifycontents, verifycontents);
+					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
+					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
 					
 
 				}
@@ -432,10 +439,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//waitForElementPresentWebdriver(attributeName_xpath, "//button[contains(@id,'MainLink_Help')]", "EMT QA Account");
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
 					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
-					clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account - Away menu with submenu']");
-					waitForPageToLoadWebdriver();
-					//clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
-					clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'EMT QA Account')]");
+					clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
+					//clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");
 					//waitForPageToLoad();
 					waitForPageToLoadWebdriver();
 				}

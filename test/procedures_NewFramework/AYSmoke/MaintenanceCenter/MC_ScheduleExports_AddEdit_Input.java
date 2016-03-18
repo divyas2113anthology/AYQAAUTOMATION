@@ -37,7 +37,12 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 //			selectByVisibleTextWebdriver(attributeName_name, "txtInterfaceId", "regexp:"+exportdefinition);
 //			WebElement SelectValue = attributeNameValue(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 //			SelectValue.click();
-			clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
+			System.out.println("aaaaaaaaaaaaaaa");
+			if(exportdefinition.equals("TestExprt")){
+				String export = Runtimedataread(exportdefinition);
+				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + export + "')]");
+			}else
+				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 		}
 		if(!searchoption.equals("")){ 
 			Reporter.log("Step 12 - Click on Search option as ["+searchoption+"]");

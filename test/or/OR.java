@@ -717,7 +717,7 @@ public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT 
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']"; 
-public static final String HC_Home = "//button[@aria-label='EMT QA Account - Away menu with submenu']";
+public static final String HC_Home = "//button[contains(@aria-label,'EMT QA Account')]";
 //button[@aria-label='EMT QA Account - Available menu with submenu']
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
@@ -739,7 +739,8 @@ public static final String HC_Content_Link = "css=a[innerHTML='";
 public static final String HC_CloseButton = "//button[text()='Close'";
 //public static final String WebMail_Body = "//div[@class='PlainText' or @class='bdy']";
 //public static final String WebMail_Body = "//div[@id='Item.MessageUniqueBody']/div/div";		//font/span[text()[contains(.,'SmokeTest')]]";
-public static final String WebMail_Body = "//div[@class='conductorContent']//div[contains(.,'";
+//public static final String WebMail_Body = "//div[@class='conductorContent']//div[contains(.,'";
+public static final String WebMail_Body = "//div[@aria-label='Reading Pane']";
 //#**********************************************************#
 //# Facelift Forgot Password Verify - FPV
 //#**********************************************************#
@@ -876,7 +877,7 @@ public static final String SAI_EmailAddress = "//input[@name='Email']";
 public static final String SAI_Zip = "//input[@name='ZipCode']";
 public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
-public static final String SAI_SysQuries = "//select[@name='SysQuery']";
+public static final String SAI_SysQuries = "SysQuery";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
 public static final String SAI_UserQuries = "//input[@id='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
@@ -1014,7 +1015,7 @@ public static final String PA_UncheckExclude = "//input[@name='PrintEssays']";
 public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs']";
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
-public static final String PA_PageName = "//tr[@class='FormText']/td/font";
+public static final String PA_PageName = "//tr[@class='FormText']/td/font";  //successfully Updated
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
@@ -1413,6 +1414,7 @@ public static final String SPDF_ScheduleBatch = "//select[@name='PrintScheduled'
 public static final String SPDF_ServerName = "//input[@name='txtFTPServer']";
 public static final String SPDF_ZipPdf = "//input[@name='chkZip']";
 public static final String SPDF_SendDelivery = "//input[@name='chkConfirmEmail']";
+public static final String SPDF_Authentication = "//td[contains(.,'";
 //#**********************************************************#
 //#	 Enrollment - Enrollment Personal Info - Page
 //#**********************************************************#
@@ -1473,7 +1475,7 @@ public static final String EL_LinkToClick = "//a[contains(@href,'javascript:popu
 //#	 Webcenter - Add/Edit Registration Event  - Page
 //#**********************************************************#
 public static final String AER_FirstName = "//input[@id='q33686']";
-public static final String AER_LastName = "//input[@id='q33687']";
+public static final String AER_LastName = "//input[@id='q38494']";
 public static final String AER_Birthdate = "//input[@id='q33688']";
 public static final String AER_Email = "//input[@id='q33689']";
 public static final String AER_Scode = "//input[@id='q33690']";

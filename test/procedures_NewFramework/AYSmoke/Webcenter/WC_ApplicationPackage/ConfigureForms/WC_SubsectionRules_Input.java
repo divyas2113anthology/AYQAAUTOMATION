@@ -112,7 +112,9 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
             	  {
             		  waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_No,value);
             		  clickWebdriver(attributeName_xpath, SR_value_No);  
-            	  }	
+            	  }	else
+            		  waitForElementPresentWebdriverWait(attributeName_xpath, MQ_Value, value);
+            	 	  sendKeys(attributeName_xpath, MQ_Value, value);
             	}		
  
 			if(!linkText.equalsIgnoreCase(""))

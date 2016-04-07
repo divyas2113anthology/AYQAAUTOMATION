@@ -33,7 +33,8 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			String edudateofgraduation = educationvdatarepo[13];
 			String edugpa = educationvdatarepo[14];
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
-			recentOpenedPopupSelectWebdriver("Education Background");
+			//recentOpenedPopupSelectWebdriver("Education Background");
+			selectMainWindowWebdriver();
 			if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
 				if (selenium.isTextPresent(edusuccessmessage)) {

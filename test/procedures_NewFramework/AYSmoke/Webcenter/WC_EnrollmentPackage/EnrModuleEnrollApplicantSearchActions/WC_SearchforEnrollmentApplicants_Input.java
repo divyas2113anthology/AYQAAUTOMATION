@@ -104,7 +104,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			if (!systemqueries.equals("")) {
 				Reporter.log("Step 12 - Select the system quries as ["+systemqueries+"]");
 				//selectByValueWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SAI_SysQuries, systemqueries);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name, SAI_SysQuries, systemqueries);
 			}	
 			if (!userqueries.equals("")) {
 				Reporter.log("Step 13 - Select the user quries as ["+userqueries+"]");

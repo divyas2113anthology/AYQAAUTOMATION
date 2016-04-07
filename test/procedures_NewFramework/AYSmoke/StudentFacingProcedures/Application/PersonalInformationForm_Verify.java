@@ -30,7 +30,8 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			String pivzip = personalinfovdatarepo[8];
 			String pivcountry = personalinfovdatarepo[9];
 			Reporter.log("Verify Test Data was retrieved for 'Personal Information' page");
-			recentOpenedPopupSelectWebdriver("View full Application");
+			//recentOpenedPopupSelectWebdriver("View full Application");
+			selectMainWindowWebdriver();
 			if (!pivsuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+pivsuccessmessage+") was displayed correctly");
 				waitForText(pivsuccessmessage, "Address Line 1");

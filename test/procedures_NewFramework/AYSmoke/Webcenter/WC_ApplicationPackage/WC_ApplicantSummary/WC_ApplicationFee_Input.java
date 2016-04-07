@@ -23,7 +23,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			String button_to_click = testdata[5];
 			Reporter.log("Input Test Data was retrieved for 'Application Fee' Page");
 			//recentPopupSelectWebdriver("ApplicationFee");
-			
+			recentOpenedPopupSelectWebdriver("ApplicationFee");
 			if (!payment_type.equals("")) {
 				Reporter.log("Select the payment type as ["+payment_type+"]");
 				selectByVisibleTextWebdriver(attributeName_name, "ChangePaymentType", payment_type);

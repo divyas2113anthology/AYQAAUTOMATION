@@ -24,11 +24,8 @@ public class UpdateProfile_Verify extends CommonSeleniumActions implements OR {
 		Reporter.log("Verify Test Data was retrieved for 'Update Profile' page");
 		if (!successmessage.equals("")) {
 			Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-			if (selenium.isTextPresent(successmessage)) {
-				Reporter.log("Message("+successmessage+") was displayed correctly");
-			} else {
-				writeFailure("Message("+successmessage+") was not displayed correctly");
-			}
+			waitForElementPresentWebdriverWait(attributeName_xpath, RC_Question+successmessage+"')]", successmessage);
+			verifyElementContainsTextWebdriver(attributeName_xpath, RC_Question+successmessage+"')]", successmessage, successmessage);
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

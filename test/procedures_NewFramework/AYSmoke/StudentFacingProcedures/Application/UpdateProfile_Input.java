@@ -85,8 +85,8 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 9 - Click on ("+updateclose+") Button");
 				driver.switchTo().defaultContent();
 				if (updateclose.equalsIgnoreCase("update")) {
-					waitForElementPresentWebdriverWait(attributeName_xpath,upaupdatebtn, updateclose);
-					clickWebdriver(attributeName_xpath,upaupdatebtn);
+					waitForElementPresentWebdriverWait(attributeName_xpath,upaupdatebtn1, updateclose);
+					clickWebdriver(attributeName_xpath,upaupdatebtn1);
 					/*if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
 					{						
 						clickWebdriver(attributeName_xpath,upaupdatebtn);
@@ -97,12 +97,12 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 						waitForPageToLoad();
 					}*/
 				}else if (updateclose.equalsIgnoreCase("close window")) {
-					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtnClassic, updateclose))
-						clickWebdriver(attributeName_xpath,upaclosebtn);
+					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtn, updateclose))
+						clickWebdriver(attributeName_xpath,upaclosebtnClassic);
 					else
-						clickWebdriver(attributeName_xpath, upaclosebtnClassic);
+						clickWebdriver(attributeName_xpath, upaclosebtn);
 //					writeFailure("Its Not Naviagted to Main Page");
-					selectMainWindowWebdriver();			
+					//selectMainWindowWebdriver();			
 	//				writeFailure("Its Not Naviagted to Main Page");
 				}
 			}

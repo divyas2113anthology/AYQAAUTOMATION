@@ -118,12 +118,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						verifycontents = verifycontents.replace("http://arqa.applyyourself.com/", "http://"+environment+".applyyourself.com/");
 					}else if (verifycontents.contains("http://ar.applyyourself.com/")) {
 						verifycontents = verifycontents.replace("http://ar.applyyourself.com/", "http://"+environment+".applyyourself.com/");
-					}
-
-					if (verifycontents.contains(";;")) {
+					}else if (verifycontents.contains(";;")) {
 						verifycontents = verifycontents.replace(";;", " \n\n");						
-					}					
-					if (verifycontents.contains(";")) {						
+					}else if (verifycontents.contains(";")) {						
 						verifycontents = verifycontents.replace(";", " \n");
 					}
 					System.out.println("Expected Text"+verifycontents);
@@ -339,7 +336,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//				String environment = Runtimedataread("Instance").toLowerCase();
 				
 					waitForElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
-					verifyElementContainsTextWebdriver(attributeName_xpath, WebMail_Body, verifycontents, verifycontents);
+					verifyElementPresentWebdriver(attributeName_xpath, WebMail_Body, verifycontents);
 					
 
 				}

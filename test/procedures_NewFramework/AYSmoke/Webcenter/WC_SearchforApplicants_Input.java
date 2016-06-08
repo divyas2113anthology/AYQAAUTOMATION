@@ -236,6 +236,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!select_action.equals("")) {
 				Reporter.log("Step 22 - Select a action as ["+select_action+"]");
+				clickWebdriver(attributeName_name, SAI_SearchbyActionSelect);
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name, SAI_SearchbyActionSelect, select_action);
 			}
 			if (!searchbyaction.equals("")) {

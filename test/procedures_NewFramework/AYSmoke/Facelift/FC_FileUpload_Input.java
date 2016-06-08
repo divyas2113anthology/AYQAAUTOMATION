@@ -24,7 +24,7 @@ public class FC_FileUpload_Input extends CommonSeleniumActions implements OR {
 //				click(EA_UploadBrowser);
 //				sendKeys(attributeName_xpath, EA_UploadBrowser, browserfilelocation);
 //				attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(browserfilelocation);
-				waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+				waitForElementPresentWebdriverWait(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
 				sendKeysType(attributeName_xpath, EA_UploadBrowser, browserfilelocation);
 			}
 			if (!buttons.equals("")) {

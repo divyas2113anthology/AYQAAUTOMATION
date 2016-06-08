@@ -667,7 +667,7 @@ public static final String FPV_ErrorMsg = "//div[@id='divErrMsg']";
 //# Facelift Forgot Password Input - FPV
 //#**********************************************************#
 //public static final String FPI_Pin = "css=#UserID";
-public static final String FPI_Pin = "//input[@id='UserName']";
+public static final String FPI_Pin = "//input[@id='UserName' or @id='UserID']";
 public static final String FPI_EmailAddr = "css=#Email";
 //public static final String FPI_Search = "css=#ay-forgotSubmit";
 public static final String FPI_Search = "//input[@id='ay-forgotSubmit']";
@@ -1902,7 +1902,7 @@ public static final String MCG_label = "//input[@name='txtLabel' and @value='']"
 public static final String MCG_AddRow = "//img[contains(@src,'addrow')]";
 public static final String MCG_RowValue = "//td[input[@name='txtLabel' and @value='']]/preceding-sibling::td[@class='FormFields']";
 //public static final String MCG_MainLogout = "//a[contains(text(),'";      //Main Menu')]"; 
-public static final String MCG_MainLogout = "//a[contains(text(),'logout') or contains(@href,'";
+public static final String MCG_MainLogout = "//a[contains(text(),'logout') or contains(text(),'Logout') or contains(@href,'";
 public static final String MCG_Active = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@type='checkbox']]";
 public static final String MCG_DeleteCheck = "//td[input[@value='";  //TestingSupport']]/following-sibling::td[input[@name='chkDelete']]";
 public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelectedNode') and contains(text(),'";   //Enrollment')]";

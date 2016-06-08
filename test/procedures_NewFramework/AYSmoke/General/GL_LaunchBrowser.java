@@ -219,6 +219,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "";
 				}
+				
 			}else if (url.contains("Admin")) {
 				if (environment.equalsIgnoreCase("USQA")) {
 					envirurl = "https://aybus.hobsonsemt.net/admin/Admin/login.aspx";

@@ -27,7 +27,7 @@ public class FC_Fairfax_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementText(PSD_PageName, pagename, "Page Name");
+				verifyElementText(PSD_PageName+pagename+"')]", pagename, "Page Name");
 			}
 			if (!verifyui.equals("")) {
 			

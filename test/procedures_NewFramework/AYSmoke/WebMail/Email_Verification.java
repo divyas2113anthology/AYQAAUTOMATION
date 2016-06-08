@@ -238,7 +238,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
 				       //enter a key
 				       keyboard.pressKey(Keys.ENTER);
-					waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']", "Inbox");	
+					//waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']", "Inbox");	
 					//clickWebdriver(attributeName_xpath, HC_Login);
 					//checkWebdriver(attributeName_xpath, HC_Login);
 
@@ -277,6 +277,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
+					System.out.println("Login");
 					try {
 						for (int second = 0;; second++)
 						{

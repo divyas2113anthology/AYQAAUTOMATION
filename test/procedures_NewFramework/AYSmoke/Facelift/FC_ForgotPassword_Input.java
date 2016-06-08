@@ -22,10 +22,10 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Enter Data in PIN if it is not empty");
 			if (!pin.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
-				waitForElementPresentWebdriver(attributeName_xpath, FPI_Pin, pin);
+				waitForElementPresentWebdriverWait(attributeName_xpath, FPI_Pin, pin);
 //				type(FPI_Pin,pin);
-				clickWebdriver(attributeName_xpath, FPI_Pin);
-				sendKeys(attributeName_xpath, FPI_Pin, pin);
+				String pinnumber = Runtimedataread(pin);
+				sendKeys(attributeName_xpath, FPI_Pin, pinnumber);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+emailaddress+")");
@@ -38,11 +38,11 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 				if (fpsearch.equalsIgnoreCase("search")) {
 					/*waitForElementPresentWebdriver(attributeName_xpath, FPI_Search, fpsearch);
 					clickWebdriver(attributeName_xpath,FPI_Search);*/
-					waitForPageToLoadWebdriver();
-					waitForPageToLoadWebdriver();
+					//removed
+					Thread.sleep(10000);
 					waitForElementPresentWebdriverWait(attributeName_id, "ay-forgotSubmit", fpsearch);
 					clickWebdriver(attributeName_id, "ay-forgotSubmit");
-					waitForPageToLoadWebdriver();
+					//waitForPageToLoadWebdriver();
 										
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
 					click(FPI_upaclosebtn);

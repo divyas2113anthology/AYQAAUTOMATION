@@ -64,9 +64,9 @@ public class TestSetRunner {
 			testToRun = tests.getRemoteTestCase().get(i);
 			Integer testId = testToRun.getTestCaseId().getValue();
 			String testName = testToRun.getName().getValue();
+			System.out.println("Jenkins Error to get Status " + testToRun.getExecutionStatusId().getValue());
+			Reporter.log("Jenkins Error to get Status " + testToRun.getExecutionStatusId().getValue());
 			Integer testStatus = testToRun.getExecutionStatusId().getValue();
-			System.out.println("Jenkins Error to get Status " + testStatus);
-			Reporter.log("Jenkins Error to get Status " + testStatus);
 			String strTestStatus = "Failed";
 			if(testStatus.equals(2)){
 				strTestStatus = "Passed";

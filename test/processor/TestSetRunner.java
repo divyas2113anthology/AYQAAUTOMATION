@@ -2,8 +2,6 @@ package processor;
 
 import java.io.IOException;
 
-import org.testng.Reporter;
-
 import com.inflectra.spirateam.mylyn.core.internal.services.soap.ArrayOfRemoteTestCase;
 import com.inflectra.spirateam.mylyn.core.internal.services.soap.IImportExport;
 import com.inflectra.spirateam.mylyn.core.internal.services.soap.IImportExportConnectionAuthenticateServiceFaultMessageFaultFaultMessage;
@@ -64,8 +62,6 @@ public class TestSetRunner {
 			testToRun = tests.getRemoteTestCase().get(i);
 			Integer testId = testToRun.getTestCaseId().getValue();
 			String testName = testToRun.getName().getValue();
-			System.out.println("Jenkins Error to get Status " + testToRun.getExecutionStatusId().getValue());
-			Reporter.log("Jenkins Error to get Status " + testToRun.getExecutionStatusId().getValue());
 			Integer testStatus = testToRun.getExecutionStatusId().getValue();
 			String strTestStatus = "Failed";
 			if(testStatus.equals(2)){

@@ -1494,6 +1494,7 @@ public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]"
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 public static final String WC_ViewBtn = "//img[contains(@src,'view')]";
 public static final String WC_AddDelMoveToFolder = "//img[contains(@src,'";
+public static final String WC_ErrorMsg = "//td[contains(text(),'";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#

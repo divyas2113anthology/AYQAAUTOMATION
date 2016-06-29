@@ -42,7 +42,7 @@ public class WC_AddEditGroup_Input extends CommonSeleniumActions implements OR {
 					String ScheduleURL = getTextWebdriver(attributeName_partiallinktext, linkcontains); 
 					String[] ScheduleURLSplit = ScheduleURL.split("http://");
 					writeConsole(ScheduleURLSplit[1]);
-					get("http://uat"+ScheduleURLSplit[1]);
+					get("http://qa"+ScheduleURLSplit[1]);
 				}else{				
 				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+linkcontains+"')]");
 				}

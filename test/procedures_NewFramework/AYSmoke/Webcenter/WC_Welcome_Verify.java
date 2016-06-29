@@ -38,9 +38,12 @@ public class WC_Welcome_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message as ("+message+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
-				verifyElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
+				/*waitForElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
+				verifyElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);*/
+				waitForElementPresentWebdriverWait(attributeName_xpath, WC_ErrorMsg+message+"')]", message);
+				verifyElementPresentWebdriver(attributeName_xpath, WC_ErrorMsg+message+"')]", message);
 			}
+			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

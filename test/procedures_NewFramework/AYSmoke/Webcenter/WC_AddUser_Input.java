@@ -43,9 +43,11 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			//String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 			if (!userid.equals("")) {
 				Reporter.log("Enter User ID");
-				String user_id = userid+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
+				String user_id = "SmokeTest"+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				waitForElementPresentWebdriver(attributeName_cssselector, WCL_userid, userid);
-				sendKeys(attributeName_cssselector, WCL_userid, user_id);			
+				sendKeys(attributeName_cssselector, WCL_userid, user_id);	
+				String user = getTextWebdriver(attributeName_cssselector, WCL_userid);
+				Runtimedatawrite(user, userid);
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Enter first name");
@@ -67,11 +69,13 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!password.equals("")) {
 				Reporter.log("Enter password");
-				sendKeys(attributeName_cssselector, WCL_password, password);	
+				//sendKeys(attributeName_cssselector, WCL_password, password);
+				sendKeys(attributeName_name, "Password", password);
 			}
 			if (!confrmpassword.equals("")) {
 				Reporter.log("Enter confirm password");
-				sendKeys(attributeName_cssselector, WCL_confrmpassword, confrmpassword);			
+				//sendKeys(attributeName_cssselector, WCL_confrmpassword, confrmpassword);
+				sendKeys(attributeName_name, "ConPassword", confrmpassword);
 			}
 			if (!changepassword.equals("")) {
 				Reporter.log("Change password");
@@ -124,6 +128,10 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);		
+					waitForPageToLoadWebdriver();
+				}
+				else if (button.equalsIgnoreCase("Submit")) {
+					clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);		
 					waitForPageToLoadWebdriver();
 				}
 			}

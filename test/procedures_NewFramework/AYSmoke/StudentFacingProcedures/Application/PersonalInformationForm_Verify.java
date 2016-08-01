@@ -31,7 +31,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			String pivcountry = personalinfovdatarepo[9];
 			Reporter.log("Verify Test Data was retrieved for 'Personal Information' page");
 			//recentOpenedPopupSelectWebdriver("View full Application");
-			selectMainWindowWebdriver();
+			//selectMainWindowWebdriver();
 			if (!pivsuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+pivsuccessmessage+") was displayed correctly");
 				waitForText(pivsuccessmessage, "Address Line 1");
@@ -54,9 +54,9 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			}
 			if (!pivaddressline1.equals("")) {
 				Reporter.log("Step 4 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
-//				String addrwaitID = getElementIDbyLabel("Address Line1", PI_AddressLine1_wait);
-//				waitForConditionisElementPresent(addrwaitID, "60000");
-//				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
+				String addrwaitID = getElementIDbyLabel("Address Line1", PI_AddressLine1_wait);
+				waitForConditionisElementPresent(addrwaitID, "60000");
+				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
 				String addrID1 = getElementIDbyLabel("Address Line1", PI_AddressLine1);			
 				String line1 = getValue(addrID1);
 				if (line1.equals(pivaddressline1)) {

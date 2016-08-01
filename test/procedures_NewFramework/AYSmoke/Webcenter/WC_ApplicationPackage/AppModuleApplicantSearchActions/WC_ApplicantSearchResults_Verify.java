@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions;
 
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -35,7 +36,7 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 				verifyElementContainsTextWebdriver(attributeName_xpath, ASR_Pagename, pagename, "Page Name for Applicant Search Results");*/
 				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, SAV_PageName, pagename, pagename);
-			
+				
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify UI was displayed correctly");
@@ -43,6 +44,7 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 				System.out.println(getTextWebdriver(attributeName_xpath, ASR_SearchColumn));
 				verifyElementContainsTextWebdriver(attributeName_xpath, ASR_SearchColumn, verifyui, "Page Name for Applicant Search Results");
 			}
+			deselectPopUp();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

@@ -3,9 +3,13 @@
  */
 package procedures_NewFramework.AYSmoke.General;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import com.sun.xml.internal.ws.wsdl.ActionBasedOperationSignature;
 
 import or.OR;
 import processor.CommonSeleniumActions;
@@ -38,7 +42,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					Pdfwindows = selenium.getAllWindowNames();
 					int wintotal = Pdfwindows.length-1;
 					selenium.selectWindow("name=" + Pdfwindows[wintotal]);
-					waitForPageToLoadWebdriver();
+					//waitForPageToLoadWebdriver();
 					Reporter.log("Window["+pdfname+"] was selected");
 					writeConsole("Window["+pdfname+"] was selected");
 					System.out.println("Malik");
@@ -61,8 +65,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //									writeConsole("PDF File :"+splitpdftext[i]);
 								}
 							}
-							//verifyTextContains(splitpdftext, exceptionMsg, "Page");
-							recentPopupCloseSelectSecondWebdriver();
+							
 						}
 						if (wait.equals("")) {
 							
@@ -78,8 +81,13 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //							writeFailure("PDF File["+pdfname+"] was not Opened Successfully");
 //						}
 					writeConsole("close PDF File :");
-					//closeWindowWebdriver();
-					//selectMainWindowWebdriver();
+					closeWindowWebdriver();
+					deselectPopUp();
+					System.out.println("Select Applicant summary popup");
+					recentPopupSelect("Applicant Summary");
+					deselectPopUp();
+					//recentPopupCloseWebdriver();
+					selectMainWindowWebdriver();
 				}
 			}else{
 				writeConsole("Inter Net "+browser);

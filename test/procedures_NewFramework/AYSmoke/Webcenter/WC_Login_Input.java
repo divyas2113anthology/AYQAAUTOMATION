@@ -59,9 +59,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 				}else if (needpasswordgo.equalsIgnoreCase("GO")) {
 					clickWebdriver(attributeName_xpath, WCL_Go);
 					waitForPageToLoadWebdriver();
-					
-				}
-				else {
+				}else {
 					writeFailure("Given Test Data["+needpasswordgo+"] either Incorrect or has not be Scripted ");
 				}
 

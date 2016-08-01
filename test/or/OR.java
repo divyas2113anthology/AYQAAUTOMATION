@@ -710,7 +710,7 @@ public static final String HC_UserName = "//input[@name='login']";
 //public static final String HC_Password = "//input[@name='password']";
 public static final String HC_Password = "//input[@name='passwd']";
 //public static final String HC_Login = "//input[@value='Log-In']";    
-public static final String HC_Login = "//span[contains(text(),'Sign in')]";
+public static final String HC_Login = "//button[contains(text(),'Sign in')]";
 //public static final String HC_Inbox = "//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']";
 public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']";
 //public static final String HC_Inbox = "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']";
@@ -1494,7 +1494,8 @@ public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]"
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 public static final String WC_ViewBtn = "//img[contains(@src,'view')]";
 public static final String WC_AddDelMoveToFolder = "//img[contains(@src,'";
-public static final String WC_ErrorMsg = "//td[contains(text(),'";
+public static final String WC_ErrorMsg = "//div[contains(text(),'";
+public static final String WC_ManageInfo = "//p[contains(text(),'";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#

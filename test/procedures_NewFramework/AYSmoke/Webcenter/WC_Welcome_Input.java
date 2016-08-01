@@ -72,20 +72,22 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 					{
 						clickWebdriver(attributeName_partiallinktext, link_to_click);
 					}
-				}
 				}else if(link_to_click.equalsIgnoreCase("online support top"))
 					{
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportTop);
 					recentPopupSelectWebdriver("Online Support");
-					}else if (link_to_click.equalsIgnoreCase("online support bottom"))
+					}
+				else if (link_to_click.equalsIgnoreCase("online support bottom"))
 					{
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportBottom);
 					recentPopupSelectWebdriver("Online Support");
-					}else if (link_to_click.equalsIgnoreCase("Product Suggestions")) 
+					}
+				else if (link_to_click.equalsIgnoreCase("Product Suggestions")) 
 					{
 					clickWebdriver(attributeName_xpath, WebcenteProdSug);
 					recentPopupSelectWebdriver("Product Suggestions");
-					}		
+					}	
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

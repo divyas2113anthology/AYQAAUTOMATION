@@ -70,9 +70,9 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
 //			waitForPageToLoadWebdriver();
-//			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
-//				clickWebdriver(attributeName_xpath, AL_AddressLink);
-//			}
+			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+				clickWebdriver(attributeName_xpath, AL_AddressLink);
+			}
 //			waitForElementPresentWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
 //			waitForPageToLoadWebdriver();
 		}

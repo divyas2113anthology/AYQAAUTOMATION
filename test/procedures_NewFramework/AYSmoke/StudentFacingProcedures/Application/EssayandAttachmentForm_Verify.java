@@ -83,12 +83,12 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_UploadDocument, "Essay with Attachment Upload Document");	
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("view document")) {
-						waitForPageToLoadWebdriver();
+						//waitForPageToLoadWebdriver();
 						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_ViewDocument, "Essay with Attachment View Document");
 						
 					}else if (essaywithattachmentuploaddocumentnotpresentarray[i].equalsIgnoreCase("delete")) {
-						waitForPageToLoadWebdriver();
+						//waitForPageToLoadWebdriver();
 						waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						verifyElementNotPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_DeleteDocument, "Essay with Attachment Delete Document");
 						

@@ -30,13 +30,15 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 			if (!textarea.equals("")) {
 				Reporter.log("Step 1 - Enter the Dynamic Text  Area as ["+textarea+"]");
 				//waitForPageToLoadWebdriver();
-				 WebElement frame = driver.findElement(By.tagName("iframe"));
-				 driver.switchTo().frame(frame);
-				 WebElement elem = driver.findElement(By.xpath("//body"));
+				/* WebElement frame = driver.findElement(By.tagName("iframe"));
+				 driver.switchTo().frame(frame);*/
+				//recentOpenedPopupSelectWebdriver("HTML");
+				 WebElement elem = driver.findElement(By.xpath("//body/h2"));
 		         elem.click();
+		         Thread.sleep(10000L);
 		         elem.sendKeys(lastname);
 		         Runtimedatawrite(lastname, textarea);
-	            switchToDefaultContentWebdriver();
+	            //switchToDefaultContentWebdriver();
 			}
 			if (!button.equals("")) {
 				if (button.equalsIgnoreCase("Back")) {

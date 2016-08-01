@@ -309,7 +309,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						//			    	waitForPageToLoad();
 //						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
-						waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']/span[contains(text(),'To:')]", "To");
+						//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']/span[contains(text(),'To:')]", "To");
+						waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']","EMT");
 						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
 							waitForPageToLoadWebdriver();

@@ -22,7 +22,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.server.SeleniumServer;
+//import org.openqa.selenium.server.SeleniumServer;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -35,7 +35,7 @@ import static processor.CommonSeleniumActions.writeConsole;
 
 public class Processor {
  //	    protected SeleniumServer jettyProxy;
-	 	public static SeleniumServer jettyProxy;
+	 	//public static SeleniumServer jettyProxy;
 	 	public static WebDriver driver;
 	 	public static WebDriverBackedSelenium selenium;
 	    protected boolean jettyProxyWasStartedByATest = false;
@@ -318,8 +318,8 @@ public class Processor {
 //			File file = new File("C:/IEDriver/IEDriverServer.exe");
 //			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 	    	
-	    	jettyProxy = new SeleniumServer();
-	    	jettyProxy.start();  
+	    //	jettyProxy = new SeleniumServer();
+	   // 	jettyProxy.start();  
 				
 
 	    }

@@ -208,8 +208,9 @@ public class Processor {
 //				File file1 = new File("C:\\Selenium\\FF");
 //				FirefoxProfile profile = new FirefoxProfile(file1);
 //				driver= new FirefoxDriver(profile);
+				System.setProperty("webdriver.gecko.driver", "C:/SeleniumScripts/AYQAAutomation/lib/geckodriver.exe");
 				driver =new FirefoxDriver();
-				
+
 				break;
 			case "googlechrome":
 				System.setProperty("webdriver.chrome.driver", "C:/SeleniumScripts/AYQAAutomation/lib/chromedriver.exe");

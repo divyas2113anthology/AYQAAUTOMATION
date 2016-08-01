@@ -11,19 +11,29 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 	@Test(description="This procedure is to Navigate URL")
 	public void GL_LaunchBrowser() throws Exception{
 		try {
+			environment = Runtimedataread("Instance");
 			System.out.println("environment:"+environment);
 			writeDetails();
 			String[]  instancedatarepo = datacontainer;
+			System.out.println("array size" + instancedatarepo.length);
+			int counter = 0;
+			for(String data:instancedatarepo){
+				System.out.println("data no: " + counter + "data : " +data);
+				counter++;
+			}
+			
 			Reporter.log("Proceed to retrieve Test Data for URL");		
 			String url = instancedatarepo[0];
 			String openurl = instancedatarepo[1];
 			Reporter.log("Test Data was retrieved for URL");
+			System.out.println("Input URL : "+url);
 			System.out.println("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
-			environment = Runtimedataread("Instance");
 			String envirurl = null;
-			if ((url.contains("app")) && (url.contains("ayauto&facelift"))) {			
-				if (environment.equalsIgnoreCase("USQA")) {
+			
+			if ((url.contains("app")) && (url.contains("facelift"))) {	
+				System.out.println("aaaaaa");
+					if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 					envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";
 					//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";

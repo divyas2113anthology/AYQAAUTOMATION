@@ -18,7 +18,7 @@
         <pathelement location="lib/smtp-1.4.5.jar"/>
         <pathelement location="lib/SpiraApi.jar"/>
         <pathelement location="lib/testng-6.9beta.jar"/>
-        <pathelement location="lib/selenium-server-standalone-3.0.0-beta1.jar"/>
+        <pathelement location="lib/selenium-server-standalone-2.46.0.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>

@@ -3,6 +3,7 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="lib" path="lib/SpiraApi.jar"/>
 	<classpathentry kind="lib" path="lib/testng-6.9beta.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.0.0-beta1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/activation.jar"/>
 	<classpathentry kind="lib" path="lib/javax.mail-1.4.5.jar"/>

@@ -216,8 +216,9 @@ public class Processor {
 				//String marionetteDriverLocation =  "C:\\SeleniumScripts\\AYQAAutomation\\lib\\geckodriver.exe";
 				System.setProperty("webdriver.gecko.driver", "C:/SeleniumScripts/AYQAAutomation/lib/geckodriver.exe");
 				driver = new MarionetteDriver();
-				//DesiredCapabilities capabilitiesff = DesiredCapabilities.firefox();
-				
+				DesiredCapabilities cap = DesiredCapabilities.firefox();
+				cap.setCapability("marionette", true);
+		        cap.setBrowserName("firefox");
 				break;
 			case "googlechrome":
 				System.setProperty("webdriver.chrome.driver", "C:/SeleniumScripts/AYQAAutomation/lib/chromedriver.exe");
@@ -237,8 +238,8 @@ public class Processor {
 			default:
 				writeFailure("Invalid Browser Name("+browser+")");				
 			}
-		   // selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
-			driver.get("https://qawebcenter.applyyourself.com/");
+		    selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
+			//driver.get("https://qawebcenter.applyyourself.com/");
 			driver.manage().window().maximize();
 			mainwindow = driver.getWindowHandle();
 			writeConsole("Webdriver Main Window["+mainwindow+"]");

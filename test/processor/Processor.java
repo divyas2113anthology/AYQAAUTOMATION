@@ -18,11 +18,14 @@ import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.GeckoDriverService;
+import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 //import org.openqa.selenium.server.SeleniumServer;
+import org.openqa.selenium.remote.server.SeleniumServer;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -34,8 +37,8 @@ import static processor.CommonSeleniumActions.writeFailure;
 import static processor.CommonSeleniumActions.writeConsole;
 
 public class Processor {
- //	    protected SeleniumServer jettyProxy;
-	 	//public static SeleniumServer jettyProxy;
+ 	  
+	 	public static SeleniumServer jettyProxy;
 	 	public static WebDriver driver;
 	 	public static WebDriverBackedSelenium selenium;
 	    protected boolean jettyProxyWasStartedByATest = false;
@@ -208,7 +211,12 @@ public class Processor {
 //				File file1 = new File("C:\\Selenium\\FF");
 //				FirefoxProfile profile = new FirefoxProfile(file1);
 //				driver= new FirefoxDriver(profile);
-				driver =new FirefoxDriver();
+				//driver =new FirefoxDriver();
+				
+				//String marionetteDriverLocation =  "C:\\SeleniumScripts\\AYQAAutomation\\lib\\geckodriver.exe";
+				System.setProperty("webdriver.gecko.driver", "C:/SeleniumScripts/AYQAAutomation/lib/geckodriver.exe");
+				driver = new MarionetteDriver();
+				//DesiredCapabilities capabilitiesff = DesiredCapabilities.firefox();
 				
 				break;
 			case "googlechrome":
@@ -229,7 +237,8 @@ public class Processor {
 			default:
 				writeFailure("Invalid Browser Name("+browser+")");				
 			}
-			selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
+		   // selenium  = new WebDriverBackedSelenium(driver, "https://uatwebcenter.applyyourself.com/");
+			driver.get("https://qawebcenter.applyyourself.com/");
 			driver.manage().window().maximize();
 			mainwindow = driver.getWindowHandle();
 			writeConsole("Webdriver Main Window["+mainwindow+"]");
@@ -318,8 +327,8 @@ public class Processor {
 //			File file = new File("C:/IEDriver/IEDriverServer.exe");
 //			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 	    	
-	    //	jettyProxy = new SeleniumServer();
-	   // 	jettyProxy.start();  
+	    	//jettyProxy = new SeleniumServer();
+	      	//jettyProxy.start();  
 				
 
 	    }

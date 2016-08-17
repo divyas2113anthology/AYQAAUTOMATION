@@ -36,13 +36,16 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 					if (i == splitPackage.length-1) {
 						waitForElementPresentWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "Page Name");
 						if (splitPackage[i].equals("Add a QuickAdd Application")) {
+							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
 							clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
 							recentPopupSelectWebdriver("Quick Add");
 						}else {
+							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");   
 						clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
 						waitForPageToLoad();
 						}
 					}else {
+						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
 						mouseOver("//*[text()='"+splitPackage[i]+"']");		
 					}
 				}

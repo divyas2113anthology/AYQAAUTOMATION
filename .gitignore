@@ -3,6 +3,7 @@
 *.com
 *.class
 *.dll
+*.exe
 *.o
 *.so
 
@@ -36,8 +37,24 @@ ehthumbs.db
 Thumbs.db
 
 # Unnecessary framework files #
-##############################
+###############################
+/Selenium
+/target/
+/test-output/
+.classpath
 .project
+/.idea
+*.iml
 
-/bin
-/Results
+# Exclusions to above #
+#######################
+!QAClean.exe
+!Aut2exe_x64.exe
+!phantomjs.exe
+!geckodriver.exe
+!IEDriverServer.exe
+!chromedriver.exe
+!ApplicationReview.Messaging.TestServer.SelfHostHttp.exe
+!ApplicationReview.Messaging.TestServer.SelfHostHttp.vshost.exe
+
+/bin/

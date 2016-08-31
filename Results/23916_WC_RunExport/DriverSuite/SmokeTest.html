@@ -1,0 +1,989 @@
+<html>
+<head>
+<title>TestNG:  SmokeTest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>SmokeTest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/11</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Aug 02 03:34:48 EDT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (40 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace702025003", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace702025003'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace352367347", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace352367347'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1473981203", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1473981203'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input@52feb982</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1551629761", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1551629761'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace403174823", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace403174823'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1304589447", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1304589447'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace629454893", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace629454893'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2101249621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2101249621'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace379303133", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace379303133'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace220454978", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace220454978'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify.datagenerator()'><b>datagenerator</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace575935098", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace575935098'><pre>java.lang.NullPointerException
+	at processor.Processor.datagenerator(Processor.java:448)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:585)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify@6f195bc3</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser<br>Parameters: [TestResult name=GL_LaunchBrowser status=SKIP method=GL_LaunchBrowser.GL_LaunchBrowser()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\GL_LaunchBrowser_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace684566052", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace684566052'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input<br>Parameters: [TestResult name=WC_ApplicantSearchResults_Input status=SKIP method=WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace308433917", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace308433917'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input<br>Parameters: [TestResult name=WC_Export_Input status=SKIP method=WC_Export_Input.WC_Export_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input@52feb982] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Export_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1552326679", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1552326679'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input@52feb982</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input<br>Parameters: [TestResult name=WC_RunExportResults_Input status=SKIP method=WC_RunExportResults_Input.WC_RunExportResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1902671237", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1902671237'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input<br>Parameters: [TestResult name=WC_RunExportResults_Input status=SKIP method=WC_RunExportResults_Input.WC_RunExportResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2142565033", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2142565033'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input<br>Parameters: [TestResult name=WC_Login_Input status=SKIP method=WC_Login_Input.WC_Login_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Login_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2113748097", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2113748097'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input<br>Parameters: [TestResult name=WC_SearchforApplicants_Input status=SKIP method=WC_SearchforApplicants_Input.WC_SearchforApplicants_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_SearchforApplicants_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1764996806", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1764996806'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Parameters: [TestResult name=WC_Welcome_Input status=SKIP method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1651162064", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1651162064'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Parameters: [TestResult name=WC_Welcome_Input status=SKIP method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace983595261", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace983595261'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Parameters: [TestResult name=WC_Welcome_Input status=SKIP method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace755210740", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace755210740'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify.failurescreenshot()'><b>failurescreenshot</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify<br>Parameters: [TestResult name=WC_RunExportResults_Verify status=SKIP method=WC_RunExportResults_Verify.WC_RunExportResults_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify@6f195bc3] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Verify_0.PNG], org.testng.TestRunner@1df8da7a</td>
+<td><div><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace798310141", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace798310141'><pre>java.lang.NullPointerException
+	at processor.Processor.failurescreenshot(Processor.java:509)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+</pre></div></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify@6f195bc3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.GL_LaunchBrowser()'><b>GL_LaunchBrowser</b><br>Test class: procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser<br>Test method: This procedure is to Navigate URL<br/>
+<a href="#Output-93199773" onClick='toggleBox("Output-93199773", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-93199773" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-93199773">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\GL_LaunchBrowser_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input()'><b>WC_ApplicantSearchResults_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input<br>Test method: This Procedure is used to perform some operation in 'Application search results' page<br/>
+<a href="#Output-2129442232" onClick='toggleBox("Output-2129442232", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2129442232" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2129442232">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_ApplicantSearchResults_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input.WC_Export_Input()'><b>WC_Export_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input<br>Test method: This Procedure is used to perform some operation in 'Exports' page<br/>
+<a href="#Output-1197251633" onClick='toggleBox("Output-1197251633", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1197251633" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1197251633">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Export_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports.WC_Export_Input@52feb982</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input.WC_Login_Input()'><b>WC_Login_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input<br>Test method: This Procedure is used to perform some operation in 'Webcenter Login' page<br/>
+<a href="#Output-1783568981" onClick='toggleBox("Output-1783568981", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1783568981" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1783568981">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Login_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.WC_RunExportResults_Input()'><b>WC_RunExportResults_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input<br>Test method: This Procedure is used to perform some operation in 'Run Export Results' page<br/>
+<a href="#Output-1383519982" onClick='toggleBox("Output-1383519982", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1383519982" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1383519982">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input.WC_RunExportResults_Input()'><b>WC_RunExportResults_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input<br>Test method: This Procedure is used to perform some operation in 'Run Export Results' page<br/>
+<a href="#Output-462526099" onClick='toggleBox("Output-462526099", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-462526099" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-462526099">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Input@7a187f14</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify.WC_RunExportResults_Verify()'><b>WC_RunExportResults_Verify</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify<br>Test method: This Procedure is to perform some Verification in 'Run Export Results' page<br/>
+<a href="#Output-1367937032" onClick='toggleBox("Output-1367937032", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1367937032" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1367937032">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_RunExportResults_Verify_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.SelectanAction.WC_RunExportResults_Verify@6f195bc3</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input.WC_SearchforApplicants_Input()'><b>WC_SearchforApplicants_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input<br>Test method: This Procedure is used to perform some operation in 'Search For Applicants' page<br/>
+<a href="#Output-2075952726" onClick='toggleBox("Output-2075952726", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2075952726" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2075952726">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_SearchforApplicants_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input()'><b>WC_Welcome_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Test method: This Procedure is used to perform some operation in 'Welcome' page<br/>
+<a href="#Output-2113604623" onClick='toggleBox("Output-2113604623", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2113604623" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2113604623">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input()'><b>WC_Welcome_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Test method: This Procedure is used to perform some operation in 'Welcome' page<br/>
+<a href="#Output-530486389" onClick='toggleBox("Output-530486389", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-530486389" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-530486389">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+<tr>
+<td title='procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input()'><b>WC_Welcome_Input</b><br>Test class: procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input<br>Test method: This Procedure is used to perform some operation in 'Welcome' page<br/>
+<a href="#Output-1188401255" onClick='toggleBox("Output-1188401255", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1188401255" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1188401255">
+Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23916_WC_RunExport\Failurescreenshot\WC_Welcome_Input_0.PNG<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207</td></tr>
+</table><p>
+</body>
+</html>

@@ -35,7 +35,7 @@ tdc.Connect qcDomain, qcProject
 'Create output file
 '------------------------------------------------------------------------------------
 'strDirectory = "\\Intranet\Teams\WebProducts\QA\Framework\csv\"
-strDirectory = "\\Intranet\Teams\WebProducts\QA\SeleniumScripts\AY\csv\"
+strDirectory = "\\Intranet\Teams\WebProducts\QA\SeleniumScripts\AR\csv\"
 strFile1 = GLTestId &"_"&GLTestCaseName
 strFile = GLTestId &"_"&GLTestCaseName&".csv"
 ' Create the File System Object
@@ -99,14 +99,11 @@ objTextFile.close
 Set WSHShell = CreateObject("WScript.Shell")
 'WSHShell.Exec("\\intranet\teams\WebProducts\QA\Framework\Processor.bat")
 'Wscript.Sleep 1000
-command = "cmd /C java -classpath \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AY\bin;C:\Selenium\*; org.testng.TestNG \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AY\Suite\DriverSuite.xml -d \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AY\Results\"&strFile1
-
+command = "cmd /C java -classpath \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AR\bin;C:\Selenium\*; org.testng.TestNG \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AR\Suite\DriverSuite.xml -d \\Intranet\Teams\WebProducts\QA\SeleniumScripts\AR\Results\"&strFile1
 'msgbox command
-
 'Set oExec = WSHShell.Exec(command)
 'WSHShell.run "cmd /K CD T:\WebProducts\QA\AutomationFramework"
 'WSHShell.run "java -classpath bin;C:/Selenium/*; org.testng.TestNG Suite/DriverSuite.xml -d Results/"&strFile1
-
 oExec = WSHShell.Run(command,1,true)
     'Do While oExec.Status = 0	'wait till process ends
      'Wscript.Sleep 100
@@ -119,7 +116,7 @@ oExec = WSHShell.Run(command,1,true)
 'Msgbox "Update CSV FILE"
 'Open csv file to read RUN_STATUS and RUN_REPORT path
 'strDirectory = "\\Intranet\Teams\WebProducts\QA\Framework\csv\"
-strDirectory = "\\Intranet\Teams\WebProducts\QA\SeleniumScripts\AY\csv\"
+strDirectory = "\\Intranet\Teams\WebProducts\QA\SeleniumScripts\AR\csv\"
 strFile = GLTestId &"_"&GLTestCaseName&".csv"
 'strFile = "old_1946_FrameworkTest.csv"
 'Msgbox "Opening csv file to read results: " & strDirectory & strFile

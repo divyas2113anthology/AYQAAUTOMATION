@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="3" failed="9" total="13" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m1"">Procedure Name - GL_LaunchBrowser</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 1</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00url</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01openurl</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>https://uatwebcenter.applyyourself.com/</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Test Data for URL]]>
+    </line>
+    <line>
+      <![CDATA[Test Data was retrieved for URL]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Proceed to Open URL(https://qawebcenter.applyyourself.com/)]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 4</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Product Suggestions</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Webcenter Login' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>4</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 5</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000page</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001message</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Compass Sign In</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 6</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000contents</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001closewindow</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>close</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 7</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>online support top</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[Step 4 - Click the Name of the Link as [online support top]]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>Unable to locate element: //tr[@valign='top']//a[contains(text(),'online support')] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 8 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+*** Element info: {Using=xpath, value=//tr[@valign='top']//a[contains(text(),'online support')]}</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 8</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000page</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001message</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Compass Sign In</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 9</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000contents</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001closewindow</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>close</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 10</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Main Menu</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Verify Test Data 'Welcome' page]]>
+    </line>
+    <line>
+      <![CDATA[Verify Test Data was retrieved for 'Welcome' page]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Verify message as (Main Menu) page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>Element [Main Menu ] was Not Present</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_10.PNG]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_11.PNG]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_12.PNG]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_13.PNG]]>
+    </line>
+  </reporter-output>
+  <suite name="DriverSuite" duration-ms="17293897" started-at="2016-08-02T10:20:31Z" finished-at="2016-08-02T15:08:45Z">
+    <groups>
+    </groups>
+    <test name="SmokeTest" duration-ms="17293897" started-at="2016-08-02T10:20:31Z" finished-at="2016-08-02T15:08:45Z">
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:44Z" finished-at="2016-08-02T06:20:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="WC_Welcome_Verify" duration-ms="17277203" started-at="2016-08-02T06:20:44Z" description="This Procedure is to perform some Verification in &#039;Welcome&#039; page" finished-at="2016-08-02T11:08:41Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Element [Main Menu ] was Not Present]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Element [Main Menu ] was Not Present
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at processor.CommonSeleniumActions.waitForElementPresentWebdriverWait(CommonSeleniumActions.java:3225)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify.WC_Welcome_Verify(WC_Welcome_Verify.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 10</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Main Menu</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Verify Test Data 'Welcome' page]]>
+            </line>
+            <line>
+              <![CDATA[Verify Test Data was retrieved for 'Welcome' page]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Verify message as (Main Menu) page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>Element [Main Menu ] was Not Present</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_10.PNG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Verify -->
+        <test-method status="FAIL" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:41Z" finished-at="2016-08-02T11:08:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Verify status=FAILURE method=WC_Welcome_Verify.WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d] output=<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.63 seconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.63 seconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:683)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:706)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:349)
+	at processor.Processor.failurescreenshot(Processor.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="SKIP" signature="WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="WC_Welcome_Verify" duration-ms="0" started-at="2016-08-02T11:08:44Z" description="This Procedure is to perform some Verification in &#039;Welcome&#039; page" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_11.PNG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Verify -->
+        <test-method status="FAIL" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Verify status=SKIP method=WC_Welcome_Verify.WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_11.PNG]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 186 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 186 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:683)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:706)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:349)
+	at processor.Processor.failurescreenshot(Processor.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Verify status=SKIP method=WC_Welcome_Verify.WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_12.PNG]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 451 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 451 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:683)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:706)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:349)
+	at processor.Processor.failurescreenshot(Processor.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="SKIP" signature="WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="WC_Welcome_Verify" duration-ms="0" started-at="2016-08-02T11:08:44Z" description="This Procedure is to perform some Verification in &#039;Welcome&#039; page" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_12.PNG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Verify -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="datagenerator" is-config="true" duration-ms="35" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:44Z" finished-at="2016-08-02T11:08:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Verify status=SKIP method=WC_Welcome_Verify.WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_13.PNG]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 117 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 117 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:683)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:706)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:349)
+	at processor.Processor.failurescreenshot(Processor.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:703)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="SKIP" signature="WC_Welcome_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify@1d371b2d]" name="WC_Welcome_Verify" duration-ms="0" started-at="2016-08-02T11:08:44Z" description="This Procedure is to perform some Verification in &#039;Welcome&#039; page" finished-at="2016-08-02T11:08:44Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Verify_13.PNG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Verify -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="1" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 2
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 5</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000page</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001message</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Compass Sign In</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_5.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="111" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="0" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 2
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 6</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000contents</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001closewindow</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>close</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_6.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="110" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="16" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Unable to locate element: //tr[@valign='top']//a[contains(text(),'online support')] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 8 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+*** Element info: {Using=xpath, value=//tr[@valign='top']//a[contains(text(),'online support')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Unable to locate element: //tr[@valign='top']//a[contains(text(),'online support')] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 8 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+*** Element info: {Using=xpath, value=//tr[@valign='top']//a[contains(text(),'online support')]}
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 7</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>online support top</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 - Click the Name of the Link as [online support top]]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>Unable to locate element: //tr[@valign='top']//a[contains(text(),'online support')] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 8 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+*** Element info: {Using=xpath, value=//tr[@valign='top']//a[contains(text(),'online support')]}</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_7.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="106" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-02T06:20:44Z" finished-at="2016-08-02T06:20:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="108" started-at="2016-08-02T06:20:44Z" finished-at="2016-08-02T06:20:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="0" started-at="2016-08-02T06:20:44Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-02T06:20:44Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 2
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_Welcome_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 8</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000page</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001message</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Compass Sign In</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_8.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="0" started-at="2016-08-02T06:20:44Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-02T06:20:44Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 2
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 9</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000contents</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001closewindow</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>close</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>2</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Welcome_Input_9.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:44Z" finished-at="2016-08-02T06:20:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="132" started-at="2016-08-02T06:20:44Z" finished-at="2016-08-02T06:20:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WindowOpenedSuccessfulClose</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input -->
+      <class name="procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WindowOpenedSuccessfulClose()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="WindowOpenedSuccessfulClose" duration-ms="13" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to Close the Window and select Application Main Window" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.util.NoSuchElementException">
+            <full-stacktrace>
+              <![CDATA[java.util.NoSuchElementException
+	at java.util.LinkedHashMap$LinkedHashIterator.nextNode(Unknown Source)
+	at java.util.LinkedHashMap$LinkedKeyIterator.next(Unknown Source)
+	at procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose.WindowOpenedSuccessfulClose(WindowOpenedSuccessfulClose.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.NoSuchElementException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WindowOpenedSuccessfulClose -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="failurescreenshot" is-config="true" duration-ms="146" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WindowOpenedSuccessfulClose status=FAILURE method=WindowOpenedSuccessfulClose.WindowOpenedSuccessfulClose()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_2.PNG]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WindowOpenedSuccessfulClose()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="WindowOpenedSuccessfulClose" duration-ms="6" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to Close the Window and select Application Main Window" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.util.NoSuchElementException">
+            <full-stacktrace>
+              <![CDATA[java.util.NoSuchElementException
+	at java.util.LinkedHashMap$LinkedHashIterator.nextNode(Unknown Source)
+	at java.util.LinkedHashMap$LinkedKeyIterator.next(Unknown Source)
+	at procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose.WindowOpenedSuccessfulClose(WindowOpenedSuccessfulClose.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.NoSuchElementException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WindowOpenedSuccessfulClose -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c]" name="failurescreenshot" is-config="true" duration-ms="114" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WindowOpenedSuccessfulClose status=FAILURE method=WindowOpenedSuccessfulClose.WindowOpenedSuccessfulClose()[pri:0, instance:procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose@6d7b4f4c] output=Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WindowOpenedSuccessfulClose_3.PNG]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.General.WindowOpenedSuccessfulClose -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_Login_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="WC_Login_Input" duration-ms="1" started-at="2016-08-02T06:20:43Z" description="This Procedure is used to perform some operation in &#039;Webcenter Login&#039; page" finished-at="2016-08-02T06:20:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 4
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input.WC_Login_Input(WC_Login_Input.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 4</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Product Suggestions</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Webcenter Login' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>4</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\23857_WC_ProductSuggestion\Failurescreenshot\WC_Login_Input_4.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Login_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="failurescreenshot" is-config="true" duration-ms="126" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Login_Input status=FAILURE method=WC_Login_Input.WC_Login_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f] output=<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input -->
+      <class name="procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-02T06:20:31Z" finished-at="2016-08-02T06:20:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="GL_LaunchBrowser()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="GL_LaunchBrowser" duration-ms="12118" started-at="2016-08-02T06:20:31Z" description="This procedure is to Navigate URL" finished-at="2016-08-02T06:20:43Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m1"">Procedure Name - GL_LaunchBrowser</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 1</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00url</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01openurl</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>https://uatwebcenter.applyyourself.com/</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Test Data for URL]]>
+            </line>
+            <line>
+              <![CDATA[Test Data was retrieved for URL]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Proceed to Open URL(https://qawebcenter.applyyourself.com/)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GL_LaunchBrowser -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-02T06:20:43Z" finished-at="2016-08-02T06:20:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GL_LaunchBrowser status=SUCCESS method=GL_LaunchBrowser.GL_LaunchBrowser()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31] output=Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser -->
+      <class name="procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input@5700d6b1]" name="startseleniumserver" is-config="true" duration-ms="4527" started-at="2016-08-02T06:20:26Z" finished-at="2016-08-02T06:20:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- startseleniumserver -->
+        <test-method status="FAIL" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input@5700d6b1]" name="shutdownseleniumserver" is-config="true" duration-ms="0" started-at="2016-08-02T11:08:46Z" finished-at="2016-08-02T11:08:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e6f3f28]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.121', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.firefox.MarionetteDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, appBuildId=20160623154057, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, browserVersion=47.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
+Session ID: 8400e30f-2e4a-4985-9e05-b4d1ee870c2a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:683)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:706)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:526)
+	at processor.Processor.shutdownseleniumserver(Processor.java:526)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutdownseleniumserver -->
+      </class> <!-- procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input -->
+    </test> <!-- SmokeTest -->
+  </suite> <!-- DriverSuite -->
+</testng-results>

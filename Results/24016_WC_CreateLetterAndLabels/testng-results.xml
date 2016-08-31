@@ -1,0 +1,2074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="12" total="18" passed="6">
+  <reporter-output>
+    <line>
+      <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m1"">Procedure Name - GL_LaunchBrowser</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 1</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00url</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01openurl</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>https://uatwebcenter.applyyourself.com/</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Test Data for URL]]>
+    </line>
+    <line>
+      <![CDATA[Test Data was retrieved for URL]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Proceed to Open URL(https://qawebcenter.applyyourself.com/)]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m2"">Procedure Name - WC_Login_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 2</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000clientid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001userid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002password</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003needpasswordgo</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004viewsource</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>ayauto</font></b></td><td><b><font size='4' align="left" color='Black'>WebcenterUserID</font></b></td><td><b><font size='4' align="left" color='Black'>WebcenterPassword</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Application search results' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>5</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m3"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 3</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Select a System;Application System;Application for QA Automation</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Application search results' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>4</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 4</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Search for Applicants</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Label Results' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Create Label Results' Page]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_SearchforApplicants_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 5</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00_numberofrecordsdisplay</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01_record_options</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>02_viewrecords_withdetails</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>03_search_by_date</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>04_createddate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>05_submittedate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>06_searchbydate_submit</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>07_firstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>08_lastname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>09_birthdate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>10_emailaddress</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>11_zip</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>12_pin</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>13_applicantid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>14_searchbyindividual</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>15_systemqueries</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>16_userqueries</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>17_search_using_query</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>18_selectagroup</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>19_search_by_group</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>20_select_action</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>21_searchbyaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>22_submit</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>23_pros_id</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>24_daterange_from</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>25_daterange_to</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Submitted</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Allen</font></b></td><td><b><font size='4' align="left" color='Black'>Mike</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Submit</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Label Results' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Create Label Results' Page]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WC_SearchforApplicants_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 6</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00_successmessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01_sysmsgheading</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>02_systemmessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>03_formlable</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>04_formlablemessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>05_pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>06_verifyui</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Search Results</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Webcenter Login' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Webcenter Login' Page]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 7</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000checkagainstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001clickname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002clickpdf</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003selectanaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004apply</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Mike;Allen;check</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Create Label</font></b></td><td><b><font size='4' align="left" color='Black'>Apply to Selected</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Search For Applicants' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>6</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 8</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Perform an Action :: Create Labels</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 9</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000avery</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001sort</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002startprinting</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003actionshistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004actionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005addtolabel</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006addchoicegroupcode</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007groupbyselectedfield</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Avery 5160/5260</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>print</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Click the link as [Avery 5160/5260]]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>Elements[partiallinktext] was Not Found after waiting for 1 Minute</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 10</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Perform an Action :: Create Labels Results</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m11"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 11</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>001button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>view</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Label' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>1</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m12"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 12</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>001button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>back</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Label' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>1</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m13"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 13</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000avery</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001sort</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002startprinting</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003actionshistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004actionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005addtolabel</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006addchoicegroupcode</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007groupbyselectedfield</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>back</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Verify Test Data 'Search for Applicant' page]]>
+    </line>
+    <line>
+      <![CDATA[Verify Test Data was retrieved for 'Search for Applicant' page]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m14"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 14</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000checkagainstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001clickname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002clickpdf</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003selectanaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004apply</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Mike;Allen;check</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Create Letter</font></b></td><td><b><font size='4' align="left" color='Black'>Apply to Selected</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Verify Test Data 'Create Label' page]]>
+    </line>
+    <line>
+      <![CDATA[Verify Test Data was retrieved for 'Create Label' page]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Verify Message(Mike;Allen;check) was displayed correctly]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>Not Present Timeout after 1 minute..</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m15"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 15</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000useemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001selectemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002donotcreateletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003usedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004selectadecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005onlineoffiline</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006printthedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007useofflineversion</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008recordactionhistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>009recordactionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>010button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Use Decision Letter</font></b></td><td><b><font size='4' align="left" color='Black'>Admitted isthe decision madeby CollageForApplicant</font></b></td><td><b><font size='4' align="left" color='Black'>online</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>create</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Verify Test Data 'Create Label' page]]>
+    </line>
+    <line>
+      <![CDATA[Verify Test Data was retrieved for 'Create Label' page]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 - Verify the UI information in Create Label page]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m16"">Procedure Name - WC_CreateLetter_Verify</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 16</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Your letter has been created.</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Letter' Page]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m17"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 17</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000useemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001selectemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002donotcreateletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003usedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004selectadecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005onlineoffiline</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006printthedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007useofflineversion</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008recordactionhistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>009recordactionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>010button</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>view</font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Input Test Data for 'Create Letter' Page]]>
+    </line>
+    <line>
+      <![CDATA[Input Test Data was retrieved for 'Create Letter' Page]]>
+    </line>
+    <line>
+      <![CDATA[Step 11 - Click the Button as [view]]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'admin_view')]"}
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.46', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\Indium\AppData\Local\Temp\scoped_dir6784_16144}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fcffc07d43bea19558945ac0e1d24b4b
+*** Element info: {Using=xpath, value=//img[contains(@src,'admin_view')]}</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG' height='200' width='200'></a>]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<hr noshade="noshade"/> ]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m18"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Green'>Procedure No. - 18</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>logout</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+    </line>
+    <line>
+      <![CDATA[</table>]]>
+    </line>
+    <line>
+      <![CDATA[Proceed to retrieve Verify Test Data 'Create Letter' page]]>
+    </line>
+    <line>
+      <![CDATA[Verify Test Data was retrieved for 'Create Letter' page]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 - Verify Message(logout) was displayed correctly]]>
+    </line>
+    <line>
+      <![CDATA[<b><font size='3' color='Red'><strong>Not Present Timeout after 1 minute..</strong></font></b>]]>
+    </line>
+    <line>
+      <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG]]>
+    </line>
+    <line>
+      <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG' height='200' width='200'></a>]]>
+    </line>
+  </reporter-output>
+  <suite name="DriverSuite" duration-ms="18583" started-at="2016-08-11T11:29:50Z" finished-at="2016-08-11T11:30:09Z">
+    <groups>
+    </groups>
+    <test name="SmokeTest" duration-ms="18583" started-at="2016-08-11T11:29:50Z" finished-at="2016-08-11T11:30:09Z">
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify@28ac3dc3]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:06Z" finished-at="2016-08-11T07:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="WC_SearchforApplicants_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify@28ac3dc3]" name="WC_SearchforApplicants_Verify" duration-ms="0" started-at="2016-08-11T07:30:06Z" description="This Procedure is to perform some Verification in &#039;Search for Applicant&#039; page" finished-at="2016-08-11T07:30:06Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m13"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 13</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000avery</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001sort</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002startprinting</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003actionshistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004actionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005addtolabel</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006addchoicegroupcode</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007groupbyselectedfield</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>back</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Verify Test Data 'Search for Applicant' page]]>
+            </line>
+            <line>
+              <![CDATA[Verify Test Data was retrieved for 'Search for Applicant' page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_SearchforApplicants_Verify -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify@28ac3dc3]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:06Z" finished-at="2016-08-11T07:30:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_SearchforApplicants_Verify status=SUCCESS method=WC_SearchforApplicants_Verify.WC_SearchforApplicants_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify@28ac3dc3] output=<tr><td><b><font size='4' color='Green'><a id="m13"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input">
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="1" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 3
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 8</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Perform an Action :: Create Labels</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_8.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="347" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m8"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="1299" started-at="2016-08-11T07:30:04Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-11T07:30:05Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Elements[partiallinktext] was Not Found after waiting for 1 Minute]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Elements[partiallinktext] was Not Found after waiting for 1 Minute
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at processor.CommonSeleniumActions.waitForElementPresentWebdriver(CommonSeleniumActions.java:3119)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 9</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000avery</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001sort</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002startprinting</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003actionshistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004actionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005addtolabel</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006addchoicegroupcode</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007groupbyselectedfield</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Avery 5160/5260</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>print</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Click the link as [Avery 5160/5260]]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>Elements[partiallinktext] was Not Found after waiting for 1 Minute</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_9.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:04Z" finished-at="2016-08-11T07:30:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="308" started-at="2016-08-11T07:30:05Z" finished-at="2016-08-11T07:30:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m9"">Procedure Name - WC_CreateLabels_Inputs</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-11T07:30:05Z" finished-at="2016-08-11T07:30:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="failurescreenshot" is-config="true" duration-ms="246" started-at="2016-08-11T07:30:05Z" finished-at="2016-08-11T07:30:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Welcome_Input status=FAILURE method=WC_Welcome_Input.WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207] output=<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_Welcome_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input@4e718207]" name="WC_Welcome_Input" duration-ms="0" started-at="2016-08-11T07:30:05Z" description="This Procedure is used to perform some operation in &#039;Welcome&#039; page" finished-at="2016-08-11T07:30:05Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 3
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input.WC_Welcome_Input(WC_Welcome_Input.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m10"">Procedure Name - WC_CreateLabels_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 10</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Perform an Action :: Create Labels Results</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Welcome' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_Welcome_Input_10.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Welcome_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input">
+        <test-method status="FAIL" signature="WC_SearchforApplicants_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71]" name="WC_SearchforApplicants_Input" duration-ms="1" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Search For Applicants&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 6
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input.WC_SearchforApplicants_Input(WC_SearchforApplicants_Input.java:258)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 7</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000checkagainstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001clickname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002clickpdf</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003selectanaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004apply</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Mike;Allen;check</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Create Label</font></b></td><td><b><font size='4' align="left" color='Black'>Apply to Selected</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Search For Applicants' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>6</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_SearchforApplicants_Input_7.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_SearchforApplicants_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71]" name="failurescreenshot" is-config="true" duration-ms="330" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_SearchforApplicants_Input status=FAILURE method=WC_SearchforApplicants_Input.WC_SearchforApplicants_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input@23fe1d71] output=<tr><td><b><font size='4' color='Green'><a id="m7"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input">
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabelResults_Input status=SUCCESS method=WC_CreateLabelResults_Input.WC_CreateLabelResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321] output=<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="WC_CreateLabelResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="WC_CreateLabelResults_Input" duration-ms="0" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Create Label Results&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m4"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 4</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Search for Applicants</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Label Results' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Create Label Results' Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabelResults_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabelResults_Input status=SUCCESS method=WC_CreateLabelResults_Input.WC_CreateLabelResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321] output=<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_SearchforApplicants_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="WC_CreateLabelResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input@458c1321]" name="WC_CreateLabelResults_Input" duration-ms="0" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Create Label Results&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m5"">Procedure Name - WC_SearchforApplicants_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 5</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00_numberofrecordsdisplay</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01_record_options</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>02_viewrecords_withdetails</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>03_search_by_date</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>04_createddate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>05_submittedate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>06_searchbydate_submit</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>07_firstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>08_lastname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>09_birthdate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>10_emailaddress</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>11_zip</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>12_pin</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>13_applicantid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>14_searchbyindividual</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>15_systemqueries</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>16_userqueries</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>17_search_using_query</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>18_selectagroup</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>19_search_by_group</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>20_select_action</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>21_searchbyaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>22_submit</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>23_pros_id</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>24_daterange_from</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>25_daterange_to</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Submitted</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Allen</font></b></td><td><b><font size='4' align="left" color='Black'>Mike</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Submit</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Label Results' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Create Label Results' Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabelResults_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input">
+        <test-method status="PASS" signature="WC_Login_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="WC_Login_Input" duration-ms="1" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Webcenter Login&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WC_SearchforApplicants_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 6</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00_successmessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01_sysmsgheading</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>02_systemmessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>03_formlable</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>04_formlablemessage</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>05_pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>06_verifyui</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Application Module :: Search Results</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Webcenter Login' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Webcenter Login' Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_Login_Input -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_Login_Input status=SUCCESS method=WC_Login_Input.WC_Login_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input@69b0fd6f] output=<tr><td><b><font size='4' color='Green'><a id="m6"">Procedure Name - WC_SearchforApplicants_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:02Z" finished-at="2016-08-11T07:30:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="WC_ApplicantSearchResults_Input" duration-ms="4" started-at="2016-08-11T07:30:02Z" description="This Procedure is used to perform some operation in &#039;Application search results&#039; page" finished-at="2016-08-11T07:30:02Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 5
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input(WC_ApplicantSearchResults_Input.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m2"">Procedure Name - WC_Login_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 2</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000clientid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001userid</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002password</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003needpasswordgo</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004viewsource</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>ayauto</font></b></td><td><b><font size='4' align="left" color='Black'>WebcenterUserID</font></b></td><td><b><font size='4' align="left" color='Black'>WebcenterPassword</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Application search results' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>5</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_2.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_ApplicantSearchResults_Input -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="failurescreenshot" is-config="true" duration-ms="481" started-at="2016-08-11T07:30:02Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_ApplicantSearchResults_Input status=FAILURE method=WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab] output=<tr><td><b><font size='4' color='Green'><a id="m2"">Procedure Name - WC_Login_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="failurescreenshot" is-config="true" duration-ms="328" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_ApplicantSearchResults_Input status=FAILURE method=WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab] output=<tr><td><b><font size='4' color='Green'><a id="m3"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:03Z" finished-at="2016-08-11T07:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_ApplicantSearchResults_Input()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input@33f88ab]" name="WC_ApplicantSearchResults_Input" duration-ms="0" started-at="2016-08-11T07:30:03Z" description="This Procedure is used to perform some operation in &#039;Application search results&#039; page" finished-at="2016-08-11T07:30:03Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 4
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input.WC_ApplicantSearchResults_Input(WC_ApplicantSearchResults_Input.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m3"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 3</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Select a System;Application System;Application for QA Automation</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Application search results' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>4</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_ApplicantSearchResults_Input_3.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_ApplicantSearchResults_Input -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input -->
+      <class name="procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:29:50Z" finished-at="2016-08-11T07:29:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="GL_LaunchBrowser()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="GL_LaunchBrowser" duration-ms="11655" started-at="2016-08-11T07:29:50Z" description="This procedure is to Navigate URL" finished-at="2016-08-11T07:30:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m1"">Procedure Name - GL_LaunchBrowser</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 1</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>00url</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>01openurl</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>https://uatwebcenter.applyyourself.com/</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Test Data for URL]]>
+            </line>
+            <line>
+              <![CDATA[Test Data was retrieved for URL]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Proceed to Open URL(https://qawebcenter.applyyourself.com/)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GL_LaunchBrowser -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31]" name="failurescreenshot" is-config="true" duration-ms="1" started-at="2016-08-11T07:30:02Z" finished-at="2016-08-11T07:30:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GL_LaunchBrowser status=SUCCESS method=GL_LaunchBrowser.GL_LaunchBrowser()[pri:0, instance:procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser@3632be31] output=Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:07Z" finished-at="2016-08-11T07:30:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_CreateLetter_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="WC_CreateLetter_Inputs" duration-ms="1" started-at="2016-08-11T07:30:07Z" description="This Procedure is used to perform some operation in &#039;Create Letter&#039; page" finished-at="2016-08-11T07:30:07Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 3
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs.WC_CreateLetter_Inputs(WC_CreateLetter_Inputs.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m16"">Procedure Name - WC_CreateLetter_Verify</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 16</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000message</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001pagename</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002verifyui</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Your letter has been created.</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Letter' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>3</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_16.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLetter_Inputs -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="failurescreenshot" is-config="true" duration-ms="326" started-at="2016-08-11T07:30:07Z" finished-at="2016-08-11T07:30:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLetter_Inputs status=FAILURE method=WC_CreateLetter_Inputs.WC_CreateLetter_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8] output=<tr><td><b><font size='4' color='Green'><a id="m16"">Procedure Name - WC_CreateLetter_Verify</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_CreateLetter_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="WC_CreateLetter_Inputs" duration-ms="84" started-at="2016-08-11T07:30:08Z" description="This Procedure is used to perform some operation in &#039;Create Letter&#039; page" finished-at="2016-08-11T07:30:08Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'admin_view')]"}
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.46', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\Indium\AppData\Local\Temp\scoped_dir6784_16144}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fcffc07d43bea19558945ac0e1d24b4b
+*** Element info: {Using=xpath, value=//img[contains(@src,'admin_view')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'admin_view')]"}
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.46', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\Indium\AppData\Local\Temp\scoped_dir6784_16144}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fcffc07d43bea19558945ac0e1d24b4b
+*** Element info: {Using=xpath, value=//img[contains(@src,'admin_view')]}
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs.WC_CreateLetter_Inputs(WC_CreateLetter_Inputs.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m17"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 17</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000useemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001selectemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002donotcreateletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003usedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004selectadecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005onlineoffiline</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006printthedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007useofflineversion</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008recordactionhistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>009recordactionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>010button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>view</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Letter' Page]]>
+            </line>
+            <line>
+              <![CDATA[Input Test Data was retrieved for 'Create Letter' Page]]>
+            </line>
+            <line>
+              <![CDATA[Step 11 - Click the Button as [view]]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>no such element: Unable to locate element: {"method":"xpath","selector":"//img[contains(@src,'admin_view')]"}
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'ISILDT10146', ip: '192.168.243.46', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_66'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\Indium\AppData\Local\Temp\scoped_dir6784_16144}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fcffc07d43bea19558945ac0e1d24b4b
+*** Element info: {Using=xpath, value=//img[contains(@src,'admin_view')]}</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Inputs_17.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLetter_Inputs -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:08Z" finished-at="2016-08-11T07:30:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8]" name="failurescreenshot" is-config="true" duration-ms="386" started-at="2016-08-11T07:30:08Z" finished-at="2016-08-11T07:30:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLetter_Inputs status=FAILURE method=WC_CreateLetter_Inputs.WC_CreateLetter_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs@7a1ebcd8] output=<tr><td><b><font size='4' color='Green'><a id="m17"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="datagenerator" is-config="true" duration-ms="1" started-at="2016-08-11T07:30:05Z" finished-at="2016-08-11T07:30:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="failurescreenshot" is-config="true" duration-ms="364" started-at="2016-08-11T07:30:05Z" finished-at="2016-08-11T07:30:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabels_Inputs status=FAILURE method=WC_CreateLabels_Inputs.WC_CreateLabels_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26] output=<tr><td><b><font size='4' color='Green'><a id="m11"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="FAIL" signature="WC_CreateLabels_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="WC_CreateLabels_Inputs" duration-ms="0" started-at="2016-08-11T07:30:05Z" description="This Procedure is used to perform some operation in &#039;Create Label&#039; page" finished-at="2016-08-11T07:30:05Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs.WC_CreateLabels_Inputs(WC_CreateLabels_Inputs.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m11"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 11</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>001button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>view</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Label' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>1</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_11.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabels_Inputs -->
+        <test-method status="FAIL" signature="WC_CreateLabels_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="WC_CreateLabels_Inputs" duration-ms="0" started-at="2016-08-11T07:30:06Z" description="This Procedure is used to perform some operation in &#039;Create Label&#039; page" finished-at="2016-08-11T07:30:06Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs.WC_CreateLabels_Inputs(WC_CreateLabels_Inputs.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m12"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 12</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>001button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>back</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Input Test Data for 'Create Label' Page]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>1</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Inputs_12.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabels_Inputs -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:06Z" finished-at="2016-08-11T07:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26]" name="failurescreenshot" is-config="true" duration-ms="317" started-at="2016-08-11T07:30:06Z" finished-at="2016-08-11T07:30:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabels_Inputs status=FAILURE method=WC_CreateLabels_Inputs.WC_CreateLabels_Inputs()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs@11438d26] output=<tr><td><b><font size='4' color='Green'><a id="m12"">Procedure Name - WC_CreateLabelResults_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify@5faeada1]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:08Z" finished-at="2016-08-11T07:30:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_CreateLetter_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify@5faeada1]" name="WC_CreateLetter_Verify" duration-ms="677" started-at="2016-08-11T07:30:08Z" description="This Procedure is to perform some Verification in &#039;Create Letter&#039; page" finished-at="2016-08-11T07:30:09Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Not Present Timeout after 1 minute..]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Not Present Timeout after 1 minute..
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at processor.CommonSeleniumActions.waitForText(CommonSeleniumActions.java:345)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify.WC_CreateLetter_Verify(WC_CreateLetter_Verify.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m18"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 18</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000topupdatelogout</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001package</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002menulinks</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003link_to_click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>logout</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Verify Test Data 'Create Letter' page]]>
+            </line>
+            <line>
+              <![CDATA[Verify Test Data was retrieved for 'Create Letter' page]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Verify Message(logout) was displayed correctly]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>Not Present Timeout after 1 minute..</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLetter_Verify_18.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLetter_Verify -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify@5faeada1]" name="failurescreenshot" is-config="true" duration-ms="216" started-at="2016-08-11T07:30:09Z" finished-at="2016-08-11T07:30:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLetter_Verify status=FAILURE method=WC_CreateLetter_Verify.WC_CreateLetter_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify@5faeada1] output=<tr><td><b><font size='4' color='Green'><a id="m18"">Procedure Name - WC_Welcome_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input">
+        <test-method status="PASS" signature="startseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input@5700d6b1]" name="startseleniumserver" is-config="true" duration-ms="15718" started-at="2016-08-11T07:29:35Z" finished-at="2016-08-11T07:29:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to Read Run time Data from Excel Sheet in the location (C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- startseleniumserver -->
+        <test-method status="PASS" signature="shutdownseleniumserver(org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input@5700d6b1]" name="shutdownseleniumserver" is-config="true" duration-ms="3924" started-at="2016-08-11T07:30:09Z" finished-at="2016-08-11T07:30:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutdownseleniumserver -->
+      </class> <!-- procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify">
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:06Z" finished-at="2016-08-11T07:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="FAIL" signature="WC_CreateLabels_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="WC_CreateLabels_Verify" duration-ms="789" started-at="2016-08-11T07:30:06Z" description="This Procedure is to perform some Verification in &#039;Create Label&#039; page" finished-at="2016-08-11T07:30:07Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Not Present Timeout after 1 minute..]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Not Present Timeout after 1 minute..
+	at org.testng.Assert.fail(Assert.java:94)
+	at processor.CommonSeleniumActions.writeFailure(CommonSeleniumActions.java:908)
+	at processor.CommonSeleniumActions.waitForText(CommonSeleniumActions.java:345)
+	at procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify.WC_CreateLabels_Verify(WC_CreateLabels_Verify.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.TestNG.privateMain(TestNG.java:1355)
+	at org.testng.TestNG.main(TestNG.java:1324)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m14"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 14</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000checkagainstname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001clickname</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002clickpdf</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003selectanaction</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004apply</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005click</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'>Mike;Allen;check</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Create Letter</font></b></td><td><b><font size='4' align="left" color='Black'>Apply to Selected</font></b></td><td><b><font size='4' align="left" color='Black'>go</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Verify Test Data 'Create Label' page]]>
+            </line>
+            <line>
+              <![CDATA[Verify Test Data was retrieved for 'Create Label' page]]>
+            </line>
+            <line>
+              <![CDATA[Step 1 - Verify Message(Mike;Allen;check) was displayed correctly]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Red'><strong>Not Present Timeout after 1 minute..</strong></font></b>]]>
+            </line>
+            <line>
+              <![CDATA[Failure Screenshot saved at C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG]]>
+            </line>
+            <line>
+              <![CDATA[<a href='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG'><img src='file:///C:\SeleniumScripts\AYQAAutomation\Results\24016_WC_CreateLetterAndLabels\Failurescreenshot\WC_CreateLabels_Verify_14.PNG' height='200' width='200'></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabels_Verify -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="failurescreenshot" is-config="true" duration-ms="357" started-at="2016-08-11T07:30:07Z" finished-at="2016-08-11T07:30:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabels_Verify status=FAILURE method=WC_CreateLabels_Verify.WC_CreateLabels_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c] output=<tr><td><b><font size='4' color='Green'><a id="m14"">Procedure Name - WC_ApplicantSearchResults_Input</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+        <test-method status="PASS" signature="WC_CreateLabels_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="WC_CreateLabels_Verify" duration-ms="3" started-at="2016-08-11T07:30:07Z" description="This Procedure is to perform some Verification in &#039;Create Label&#039; page" finished-at="2016-08-11T07:30:07Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' color='Green'><a id="m15"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]>
+            </line>
+            <line>
+              <![CDATA[<b><font size='3' color='Green'>Procedure No. - 15</font></b>]]>
+            </line>
+            <line>
+              <![CDATA[<table border="3" cellspacing="0"<tr><td><b><font size='4' align="left" color='Black'><Strong>000useemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>001selectemailtemplate</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>002donotcreateletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>003usedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>004selectadecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>005onlineoffiline</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>006printthedecisionletter</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>007useofflineversion</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>008recordactionhistory</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>009recordactionhistorytext</Strong></font></b></td><td><b><font size='4' align="left" color='Black'><Strong>010button</Strong></font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[<tr><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>Use Decision Letter</font></b></td><td><b><font size='4' align="left" color='Black'>Admitted isthe decision madeby CollageForApplicant</font></b></td><td><b><font size='4' align="left" color='Black'>online</font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'></font></b></td><td><b><font size='4' align="left" color='Black'>create</font></b></td>]]>
+            </line>
+            <line>
+              <![CDATA[</table>]]>
+            </line>
+            <line>
+              <![CDATA[Proceed to retrieve Verify Test Data 'Create Label' page]]>
+            </line>
+            <line>
+              <![CDATA[Verify Test Data was retrieved for 'Create Label' page]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 - Verify the UI information in Create Label page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WC_CreateLabels_Verify -->
+        <test-method status="PASS" signature="datagenerator()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="datagenerator" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:07Z" finished-at="2016-08-11T07:30:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datagenerator -->
+        <test-method status="PASS" signature="failurescreenshot(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c]" name="failurescreenshot" is-config="true" duration-ms="0" started-at="2016-08-11T07:30:07Z" finished-at="2016-08-11T07:30:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=WC_CreateLabels_Verify status=SUCCESS method=WC_CreateLabels_Verify.WC_CreateLabels_Verify()[pri:0, instance:procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify@34cd072c] output=<tr><td><b><font size='4' color='Green'><a id="m15"">Procedure Name - WC_CreateLetter_Inputs</a></font></b></td></tr>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f8f9349]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href="#Detail">back to details</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<hr noshade="noshade"/> ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- failurescreenshot -->
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify -->
+    </test> <!-- SmokeTest -->
+  </suite> <!-- DriverSuite -->
+</testng-results>

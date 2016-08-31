@@ -44,15 +44,15 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 
-public class CommonSeleniumActions extends Processor implements OR {	
-
+public class CommonSeleniumActions extends Processor implements OR {
+	public static String mainwindow;
 	//Declared AppSummaryWindowName as Global Variable for Window Handling in Applicant Summary_Input procedure
 	public static String AppSummaryWindowName;
 	//Declared ApplicationPage as Global Variable for Window Handling in Search For Applicants procedure
 	public static String ApplicationPage;
 	//Declared RecommendationDTwindow as Global Variable for Window Handling in Recommendation DT Page
 	public static String RecommendationDTwindow;
-	
+	public static int timeOutInSeconds = 60;
 	public void open(String url){
 		writeConsole("Open ["+url+"]");
 		selenium.open(url);
@@ -1896,7 +1896,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				//					String currentrowvalue = selenium.getTable(tablename+"."+k+"."+columnnumber.get(x));
 				String currentrowvalue = getTable(tablename,k,columnnumber.get(x));
 				if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
-					RowvaluesArray[x] = " ";
+					RowvaluesArray[x] = "ï¿½";
 				}
 				if (currentrowvalue.equals(RowvaluesArray[x])) {
 					data = "Found";								
@@ -2795,7 +2795,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return AlertMessage;
 	}
 
-	public void selectMainWindowWebdriver(){	
+	public void selectMainWindowWebdriver(){
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		driver.switchTo().window(mainwindow);
 	}
@@ -3832,7 +3832,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (int x = 0; x < columnnumber.size(); x++) {
 				String currentrowvalue = getTextWebdriver(attributenametable, attributevaluetable+">tbody>tr:nth-child("+k+")>td:nth-child("+columnnumber.get(x)+")");
 				if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
-					RowvaluesArray[x] = " ";
+					RowvaluesArray[x] = "ï¿½";
 				}
 				if (currentrowvalue.equals(RowvaluesArray[x])) {
 					data = "Found";								
@@ -3935,7 +3935,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (int x = 0; x < columnnumber.size(); x++) {
 				String currentrowvalue = getTextWebdriver(attributenametable, attributevaluetable+"/tbody/tr["+k+"]/td["+columnnumber.get(x)+"]");
 				if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
-					RowvaluesArray[x] = " ";
+					RowvaluesArray[x] = "ï¿½";
 				}
 				if (currentrowvalue.equals(RowvaluesArray[x])) {
 					data = "Found";								
@@ -3984,7 +3984,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (int x = 0; x < columnnumber.size(); x++) {
 				String currentrowvalue = getTextWebdriver(attributenametable, attributevaluetable+"/tbody/tr["+k+"]/td["+columnnumber.get(x)+"]");
 				if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
-					RowvaluesArray[x] = " ";
+					RowvaluesArray[x] = "ï¿½";
 				}
 				if (currentrowvalue.equals(RowvaluesArray[x])) {
 					data = "Found";								
@@ -4686,7 +4686,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (int x = 0; x < columnnumber.size(); x++) {
 				String currentrowvalue = getTextWebdriver(attributenametable, attributevaluetable+"/tbody/tr["+k+"]/*["+columnnumber.get(x)+"]");
 				if (RowvaluesArray[x].equalsIgnoreCase("Null")) { // Below code used to verify value is empty and make parameter value  'Null' to ""
-					RowvaluesArray[x] = " ";
+					RowvaluesArray[x] = "ï¿½";
 				}
 				if (currentrowvalue.equals(RowvaluesArray[x])) {
 					data = "Found";								

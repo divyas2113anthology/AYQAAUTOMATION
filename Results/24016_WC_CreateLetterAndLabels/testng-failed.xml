@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DriverSuite]">
+  <listeners>
+    <listener class-name="processor.ExecuteProcedure"/>
+    <listener class-name="processor.ReportGenerator"/>
+  </listeners>
+  <test name="SmokeTest(failed)">
+    <classes>
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabelResults_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input">
+        <methods>
+          <include name="WC_ApplicantSearchResults_Input"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions.WC_ApplicantSearchResults_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs">
+        <methods>
+          <include name="WC_CreateLabels_Inputs"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Inputs -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input">
+        <methods>
+          <include name="WC_SearchforApplicants_Input"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs">
+        <methods>
+          <include name="WC_CreateLetter_Inputs"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Inputs -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="WC_Welcome_Input"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Welcome_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_SearchforApplicants_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify">
+        <methods>
+          <include name="WC_CreateLabels_Verify"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLabels_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser -->
+      <class name="procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input">
+        <methods>
+          <include name="startseleniumserver"/>
+          <include name="shutdownseleniumserver"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.AppReview.AR_Applicant_Unassigned_Input -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify">
+        <methods>
+          <include name="WC_CreateLetter_Verify"/>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.CreateLabelAndLetter.WC_CreateLetter_Verify -->
+      <class name="procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input">
+        <methods>
+          <include name="datagenerator"/>
+          <include name="failurescreenshot"/>
+        </methods>
+      </class> <!-- procedures_NewFramework.AYSmoke.Webcenter.WC_Login_Input -->
+    </classes>
+  </test> <!-- SmokeTest(failed) -->
+</suite> <!-- Failed suite [DriverSuite] -->

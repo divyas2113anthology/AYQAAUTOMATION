@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,14 +19,15 @@ import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.GeckoDriverService;
+//import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.server.SeleniumServer;
 //import org.openqa.selenium.server.SeleniumServer;
-import org.openqa.selenium.remote.server.SeleniumServer;
+//import org.openqa.selenium.remote.server.SeleniumServer;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -211,14 +213,14 @@ public class Processor {
 //				File file1 = new File("C:\\Selenium\\FF");
 //				FirefoxProfile profile = new FirefoxProfile(file1);
 //				driver= new FirefoxDriver(profile);
-				//driver =new FirefoxDriver();
+				driver =new FirefoxDriver();
 				
 				//String marionetteDriverLocation =  "C:\\SeleniumScripts\\AYQAAutomation\\lib\\geckodriver.exe";
-				System.setProperty("webdriver.gecko.driver", "C:/SeleniumScripts/AYQAAutomation/lib/geckodriver.exe");
+				/*System.setProperty("webdriver.gecko.driver", "C:/SeleniumScripts/AYQAAutomation/lib/geckodriver.exe");
 				driver = new MarionetteDriver();
 				DesiredCapabilities cap = DesiredCapabilities.firefox();
 				cap.setCapability("marionette", true);
-		        cap.setBrowserName("firefox");
+		        cap.setBrowserName("firefox");*/
 				break;
 			case "googlechrome":
 				System.setProperty("webdriver.chrome.driver", "C:/SeleniumScripts/AYQAAutomation/lib/chromedriver.exe");

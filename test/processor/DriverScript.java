@@ -81,9 +81,9 @@ public class DriverScript {
 		TestListenerAdapter tla = new TestListenerAdapter();
 		TestNG testng = new TestNG();
 		List<String> suites = Lists.newArrayList();
-		suites.add("C:\\SeleniumScripts\\ARQAAutomation\\Suite\\DriverSuite.xml");
+		suites.add("C:\\SeleniumScripts\\AYQAAutomation\\Suite\\DriverSuite.xml");
 		testng.setTestSuites(suites);
-		testng.setOutputDirectory("C:\\SeleniumScripts\\ARQAAutomation\\Results\\"+testIdInput+"_"+testNameInput);
+		testng.setOutputDirectory("C:\\SeleniumScripts\\AYQAAutomation\\Results\\"+testIdInput+"_"+testNameInput);
 		testng.addListener(tla);
 		testng.setPreserveOrder(true);
 		testng.run();

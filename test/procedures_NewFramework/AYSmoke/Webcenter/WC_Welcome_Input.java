@@ -42,11 +42,11 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 						}else {
 							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");   
 						clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 						}
 					}else {
 						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
-						mouseOver("//*[text()='"+splitPackage[i]+"']");		
+						mouseOverWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
 					}
 				}
 			}			

@@ -42,7 +42,7 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 				Reporter.log("Step 3 - Click on ("+stacontinue+") Button ");
 //				click(AS_Continue);
 				clickWebdriver(attributeName_xpath, AS_Continue);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 		
 		} catch (Exception e) {

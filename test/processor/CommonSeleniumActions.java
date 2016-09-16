@@ -62,7 +62,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//		selenium.click(locator);
 	//	}
 
-	public void click(String locator) throws Exception{
+	/*public void click(String locator) throws Exception{
 		try {
 			writeConsole("click["+locator+"]");
 			selenium.click(locator);	
@@ -71,12 +71,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 			//Removed wait time
 			selenium.click(locator);
 		}
-	}
+	}*/
 
-	public void type(String locator,String value){
+	/*public void type(String locator,String value){
 		writeConsole("type["+locator+", "+value+"]");
 		selenium.type(locator, value);
-	}
+	}*/
 
 	public void doubleClick(String locator){
 		writeConsole("doubleClick["+locator+"]");
@@ -120,11 +120,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void select(String selectLocator,String optionLocator){
 		writeConsole("select["+selectLocator+", "+optionLocator+"]");	
 		selenium.select(selectLocator,optionLocator);
-	}
-
-	public void waitForPageToLoad(){
-		writeConsole("waitForPageToLoad["+STANDARD_PAGE_LOAD_WAIT_TIME+"]");	
-		selenium.waitForPageToLoad(STANDARD_PAGE_LOAD_WAIT_TIME);
 	}
 
 	protected void focus(String locator){
@@ -224,7 +219,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//
 	//	public void selectDefaultWindowAndWait() {
 	//		selenium.selectWindow("");
-	//		selenium.waitForPageToLoad(STANDARD_PAGE_LOAD_WAIT_TIME);
+	//		selenium.waitForPageToLoadWebdriver(STANDARD_PAGE_LOAD_WAIT_TIME);
 	//	}
 	//	
 	//	public void buttonDisabled(String locator){
@@ -278,7 +273,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}
 	}
 	public void waitForElementVisible(String elementLocater, String elementname)throws Exception{
@@ -293,7 +288,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 				writeConsole("Element["+elementLocater+"] Not Found");
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}		
 	}
 
@@ -309,7 +304,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -631,10 +626,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void clickchooseokgetconfirmationpagepload(String OR) throws Exception {
 		Reporter.log("Proceed to Click 'OK' button in Confirmation Popup");
 		selenium.chooseOkOnNextConfirmation();
-		click(OR);
+		clickWebdriver(attributeName_xpath,OR);
 		String confirmation = selenium.getConfirmation();
 		Reporter.log("["+confirmation+"] Confirmation Pop up has been handled");
-		waitForPageToLoad();	
+		waitForPageToLoadWebdriver();
 	}
 
 
@@ -1069,7 +1064,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void openAndWait(String url){
 		writeConsole("open["+url+"]");
 		selenium.open(url);
-		waitForPageToLoad();
+		waitForPageToLoadWebdriver();
 	}
 
 	public void verifyElementContainsText(String element,String expectedtext,String elementname) throws Exception{
@@ -1202,7 +1197,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}		
 	}
 
@@ -1221,7 +1216,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}
 	}
 
@@ -1239,7 +1234,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}
 
 
@@ -1267,7 +1262,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}		
 	}
 
@@ -1313,7 +1308,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} catch (Exception e) {
 
 			}
-			waitForPageToLoadWebdriver();			
+			waitForPageToLoadWebdriver();
 		}
 
 
@@ -2009,14 +2004,14 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return String.valueOf(i);
 	}
 
-	public void typeusingkeyboard(String locator,String value){
+	/*public void typeusingkeyboard(String locator,String value){
 		//			Reporter.log("Step 2 - Enter Label as ["+label+"]");
 		String valueSplit = value.substring(0, value.length()-1);
 		focus(locator);			
-		type(locator, valueSplit);	
+		type(locator, valueSplit);
 		int valueassic = value.toUpperCase().charAt(value.length()-1); // used to convert uppercase because Upper Case Letter ASSIC Code equal to Selenium ASCII			
 		selenium.keyDownNative(String.valueOf(valueassic));
-	}
+	}*/
 
 	public void showItemPerPage(String elementor,String elementoptions) throws Exception{
 		String options = "NotFound";

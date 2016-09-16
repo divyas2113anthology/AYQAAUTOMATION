@@ -36,7 +36,7 @@ public class Rec_Facelift_CreatePwd_Input extends CommonSeleniumActions implemen
 		if (!submit.equals("")) {
 			Reporter.log("Step 3 - Click the Submit Button");
 			clickWebdriver(attributeName_xpath, RF_Submit);
-			waitForPageToLoad();
+			waitForPageToLoadWebdriver();
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

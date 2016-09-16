@@ -50,14 +50,14 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			for (int i = 0; i < SplitPackage.length; i++) {
 				writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 				if (i== SplitPackage.length-1) {
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
 					
 				}else{
 					System.out.println(SplitPackage[i]);
 					//PackageSelection(SplitPackage[i], "1");
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
 					
@@ -70,7 +70,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		waitForPageToLoadWebdriver();
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");
-			waitForPageToLoad();
+			waitForPageToLoadWebdriver();
 			//waitForElementPresentWebdriver(attributeName_xpath, ESR_Field, field);
 //			WebElement select = driver.findElement(By.xpath("//select[contains(@name,'txtField')]"));
 //			List<WebElement> options = select.findElements(By.tagName("option"));
@@ -101,7 +101,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				sendKeys(attributeName_xpath, ESR_ValueText, value);
 			else{
 				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, MC_SR_Values+value+"')]");
 			}
 		}

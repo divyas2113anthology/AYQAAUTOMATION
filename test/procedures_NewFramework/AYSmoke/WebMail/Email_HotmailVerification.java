@@ -35,7 +35,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!url.equals("")) {						
 				Reporter.log("Step 1 - Opening the Hotmail Window");
 				get("http://www.hotmail.com/");
-				waitForPageToLoad(); 
+				waitForPageToLoadWebdriver();
 			}
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
@@ -164,7 +164,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				String recLink = recSplit[0]+"//uat"+recSplit[1];
 				//String recLink = recSplit[0]+"//uat"+recSplit[1];
 				get(recLink);
-				waitForPageToLoad();*/	
+				waitForPageToLoadWebdriver();*/
 				String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
 				System.out.println("Get Body Text: "+GetURL);
 				String urlmodify = null;

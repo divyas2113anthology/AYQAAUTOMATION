@@ -130,7 +130,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				    } catch (Exception e) {
 				        System.out.println("no alert");
 				    }
-					//waitForPageToLoad();
+					//waitForPageToLoadWebdriver();
 					
 					//driver.switchTo().alert().accept();
 				}

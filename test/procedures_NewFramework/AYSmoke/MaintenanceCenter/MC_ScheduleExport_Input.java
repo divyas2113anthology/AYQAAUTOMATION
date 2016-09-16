@@ -129,7 +129,7 @@ public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR
 				clickWebdriver(attributeName_name, "imgSubmitBtnTop");
 			}else if (save_cancel.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 				
 		}

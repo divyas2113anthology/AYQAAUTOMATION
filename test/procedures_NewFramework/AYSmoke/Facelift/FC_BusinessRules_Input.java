@@ -61,20 +61,20 @@ public class FC_BusinessRules_Input extends CommonSeleniumActions implements OR 
 			if (!brsavecontinue.equals("")) {
 				Reporter.log("Step 10 - Click on ("+brsavecontinue+")Button");
 				if(brsavecontinue.equalsIgnoreCase("Save")){
-					click(PSD_Save);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PSD_Save);
+					waitForPageToLoadWebdriver();
 				}else if (brsavecontinue.equalsIgnoreCase("Save & Continue")) {
-					click(PSD_SaveContinue);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PSD_SaveContinue);
+					waitForPageToLoadWebdriver();
 				}else if (brsavecontinue.equalsIgnoreCase("Reset")) {
-					click(PSD_Reset);
+					clickWebdriver(attributeName_xpath,PSD_Reset);
 				}
 			}
 			if (!brsubmitbutton.equals("")) {
 				Reporter.log("Step 11 - Click on ("+brsubmitbutton+")Button");
 				if (brsubmitbutton.equalsIgnoreCase("Submit Applicant")) {
-					click(AW_SubAppBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 

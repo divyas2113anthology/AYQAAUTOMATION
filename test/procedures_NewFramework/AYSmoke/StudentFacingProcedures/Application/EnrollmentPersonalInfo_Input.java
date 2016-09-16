@@ -81,7 +81,7 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 					Reporter.log("Step 7 - Click on '"+submissionreset+"' button");
 					if (submissionreset.equalsIgnoreCase("proceed to submission")) {
 						clickWebdriver(attributeName_xpath, EPI_ProToSubBtn);
-						waitForPageToLoad();	
+						waitForPageToLoadWebdriver();
 					}else if (submissionreset.equalsIgnoreCase("Reset")) {
 						clickWebdriver(attributeName_xpath, EPI_ResetBtn);
 					}

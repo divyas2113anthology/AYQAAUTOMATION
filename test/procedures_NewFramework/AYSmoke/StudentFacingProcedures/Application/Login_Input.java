@@ -35,12 +35,12 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			if (pin.equals("Pin Number")||pin.equals("FaceliftPinNumber")) {
 				String generatepin = Runtimedataread(pin);
 				Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
-				type(PinField, generatepin);
+				sendKeys(attributeName_xpath,PinField, generatepin);
 			}
 			else
 			{
 				Reporter.log("Proceed to Enter PIN as ("+pin+")");
-				type(PinField, pin);
+				sendKeys(attributeName_xpath,PinField, pin);
 			}
 						
 		}
@@ -48,8 +48,8 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		if (!password.equals("")) {
 			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword = Runtimedataread(password);
-			Reporter.log("Proceed to Enter PIN as ("+generatepassword+")");		
-			type(PasswordField, generatepassword);
+			Reporter.log("Proceed to Enter PIN as ("+generatepassword+")");
+			sendKeys(attributeName_xpath,PasswordField, generatepassword);
 			
 		}
 		if (!login.equals("")) {
@@ -57,7 +57,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			if (login.equalsIgnoreCase("login")) {
 				clickWebdriver(attributeName_xpath, Login);
 //				waitForElementPresentWebdriver(attributeName_xpath, MN_BaseTableFont, "Base Table Font");
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}			
 		}
 		if (!forgotpin.equals("")) {
@@ -68,10 +68,10 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			if(forgotpin.equals("User Name")){
 				waitForElementPresentWebdriver(attributeName_xpath, ForgotUserNamePassword, forgotpin);
 				clickWebdriver(attributeName_xpath,ForgotUserNamePassword);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else{
 					clickWebdriver(attributeName_xpath,ForgotPINPassword);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 			} 
 //				}else if (environment.equals("USPR")) {
 //					clickWebdriver(attributeName_xpath,ForgotPINPassword);
@@ -82,34 +82,34 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		if (!createaccount.equals("")) {
 			Reporter.log("Step 5 - Click on 'Create Account' button");
 			if (createaccount.equalsIgnoreCase("create account")) {
-				click(CreateAccount);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,CreateAccount);
+				waitForPageToLoadWebdriver();
 			}		
 		}
 		if (!contactus.equals("")) {
 			Reporter.log("Step 6 - Click on 'Contact Us' button");
 			if (contactus.equalsIgnoreCase("Contact Us")) {
-				click(ContactUs);				
+				clickWebdriver(attributeName_xpath,ContactUs);
 			}			
 		}
 		if (!fqa.equals("")) {
 			Reporter.log("Step 7 - Click on 'Frequently Asked Questions' button");
 			if (fqa.equalsIgnoreCase("Frequently Asked Questions")) {
-				click(freqa);
+				clickWebdriver(attributeName_xpath,freqa);
 				recentPopupSelect("Frequently Asked Questions");
 			}			
 		}
 		if (!technicalsupport.equals("")) {
 			Reporter.log("Step 8 - Click on 'Technical Support' button");
 			if (technicalsupport.equalsIgnoreCase("Technical Support")) {
-				click(TechnicalSupport);
+				clickWebdriver(attributeName_xpath,TechnicalSupport);
 				recentPopupSelect("Technical Support");
 			}			
 		}
 		if (!securityinformation.equals("")) {
 			Reporter.log("Step 9 - Click on 'Security Information' button");
 			if (securityinformation.equalsIgnoreCase("Security Information")) {
-				click(SecurityInformation);
+				clickWebdriver(attributeName_xpath,SecurityInformation);
 				recentPopupSelect("Security/Privacy Information");				
 			}			
 		}

@@ -31,11 +31,11 @@ public class EventSearchAll_Input extends CommonSeleniumActions implements	OR {
 			}
 			if (!fromdate.equals("")) {
 				Reporter.log("Step 2 - Enter the from date ("+fromdate+") 'Search All Event' page");
-				type(ESA_FromDate, fromdate);
+				sendKeys(attributeName_xpath,ESA_FromDate, fromdate);
 			}
 			if (!todate.equals("")) {
 				Reporter.log("Step 3 - Enter the to date ("+todate+")'Search All Event' page");
-				type(ESA_ToDate, fromdate);
+				sendKeys(attributeName_xpath,ESA_ToDate, fromdate);
 			}
 			if (!eventtype.equals("")) {
 				Reporter.log("Step 4 - Select the event type ("+eventtype+")'Search All Event' page");
@@ -55,7 +55,7 @@ public class EventSearchAll_Input extends CommonSeleniumActions implements	OR {
 			if (!search.equals("")) {
 				Reporter.log("Step 6 - Click the search button in the 'Search All Event' page");
 				clickWebdriver(attributeName_xpath, ESA_SearchByEvent);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 			
 		} catch (Exception e) {

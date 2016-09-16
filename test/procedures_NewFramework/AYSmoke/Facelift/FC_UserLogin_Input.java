@@ -28,7 +28,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			System.out.println("sdfsdfsdfs");
 			Reporter.log("Step 1 - Proceed to Enter PIN as ("+pin+")");
 			//(attributeName_xpath, UL_PinField, "Pin");
-			//waitForPageToLoad();
+			//waitForPageToLoadWebdriver();
 			waitForElementPresentWebdriver(attributeName_xpath, UL_PinField, "PIN");
 			//type(UL_PinField, pin);
 			System.out.println(pin);
@@ -48,7 +48,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin = Runtimedataread(pin);
 			Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");
-			type(UL_PinField, generatepin);			
+			sendKeys(attributeName_xpath,UL_PinField, generatepin);
 						
 		}
 		if (password.equals("Auto123+")) {
@@ -69,7 +69,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 				//click(UL_Login);
 				clickWebdriver(attributeName_cssselector,UL_Login);
 				/*waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "My Applications");	
-				waitForPageToLoad();*/
+				waitForPageToLoadWebdriver();*/
 			}			
 		}
 		if (!forgotpin.equals("")) {

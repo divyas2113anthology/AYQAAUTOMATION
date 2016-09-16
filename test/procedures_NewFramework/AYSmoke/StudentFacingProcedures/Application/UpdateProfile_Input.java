@@ -90,11 +90,11 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 					/*if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
 					{						
 						clickWebdriver(attributeName_xpath,upaupdatebtn);
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}else
 					{
 						clickWebdriver(attributeName_xpath,upaupdatebtn1);
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}*/
 				}else if (updateclose.equalsIgnoreCase("close window")) {
 					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtn, updateclose))

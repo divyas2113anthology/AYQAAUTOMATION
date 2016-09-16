@@ -75,7 +75,7 @@ public class REC_CreateResetPassword extends CommonSeleniumActions implements OR
 		if (!submit.equals("")) {
 			Reporter.log("Step 8 - Click the Submit Button");
 			clickWebdriver(attributeName_xpath, RL_SubmitBtn);
-			waitForPageToLoad();
+			waitForPageToLoadWebdriver();
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

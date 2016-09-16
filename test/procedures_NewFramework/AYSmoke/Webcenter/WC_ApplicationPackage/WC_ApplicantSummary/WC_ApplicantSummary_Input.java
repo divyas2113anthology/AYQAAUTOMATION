@@ -129,7 +129,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				for (int i = 0; i < Splitviwefullapp.length; i++) {
 					waitForElementPresentWebdriver(attributeName_linktext, Splitviwefullapp[i], viewfullapplication);
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
-					waitForPageToLoadWebdriver(); 
+					waitForPageToLoadWebdriver();
 				}
 				recentPopupSelectWebdriver("Application Form3");
 //				int WindowCount = getWindowHandles();
@@ -185,7 +185,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				if (buttons.equalsIgnoreCase("Save")) 
 				{
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					recentPopupCloseWebdriver();
 //					selectMainWindowWebdriver();

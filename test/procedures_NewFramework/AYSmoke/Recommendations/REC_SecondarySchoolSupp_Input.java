@@ -39,13 +39,13 @@ public class REC_SecondarySchoolSupp_Input extends CommonSeleniumActions impleme
 			Reporter.log("Step 1 -Click the button as '"+gobacksavenext+"'");
 			if (gobacksavenext.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (gobacksavenext.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_xpath, CI_SaveBtn);
 			}else if (gobacksavenext.equalsIgnoreCase("Next")) {
 				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, gobacksavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 		}
 		} catch (Exception e) {			

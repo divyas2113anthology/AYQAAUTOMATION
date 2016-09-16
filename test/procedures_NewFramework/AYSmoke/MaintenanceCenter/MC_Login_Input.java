@@ -44,7 +44,7 @@ public class MC_Login_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Click the Login Button");
 				if (btnlogin.equalsIgnoreCase("login")) {
 					clickWebdriver(attributeName_xpath,MCL_Loginbutton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}
 			

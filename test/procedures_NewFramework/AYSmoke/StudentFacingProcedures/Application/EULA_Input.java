@@ -40,8 +40,8 @@ public class EULA_Input extends CommonSeleniumActions implements OR {
 			if (!continuecreate.equals("")) {
 				Reporter.log("Proceed to Click on ("+continuecreate+") button");
 				if (continuecreate.equalsIgnoreCase("continue & create new account")) {
-					click(Continue);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,Continue);
+					waitForPageToLoadWebdriver();
 				}			
 			}
 			

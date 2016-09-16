@@ -197,7 +197,7 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 					clickWebdriver(attributeName_name, "imgSubmitBtnTop");
 				}else if (button.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, SAE_CancelButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}
 			}

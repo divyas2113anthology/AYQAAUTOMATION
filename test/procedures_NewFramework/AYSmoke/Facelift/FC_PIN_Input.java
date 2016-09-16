@@ -47,8 +47,8 @@ public class FC_PIN_Input extends CommonSeleniumActions implements OR {
 			if (!loginbutton.equals("")) {
 				Reporter.log("Proceed to Click on ("+loginbutton+")");
 				if (loginbutton.equalsIgnoreCase("login")) {
-					click(Login);
-					waitForPageToLoad();				
+					clickWebdriver(attributeName_xpath,Login);
+					waitForPageToLoadWebdriver();
 				}			
 			}
 		} catch (Exception e) {

@@ -103,9 +103,9 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdfulltimestudent.equals("")) {
 			Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");
 			if (pdfulltimestudent.equalsIgnoreCase("Yes")){
-				click(PD_Fulltimestudent_Yes);		
+				clickWebdriver(attributeName_xpath,PD_Fulltimestudent_Yes);
 			}else if  (pdfulltimestudent.equalsIgnoreCase("No")){
-				click(PD_Fulltimestudent_No);
+				clickWebdriver(attributeName_xpath,PD_Fulltimestudent_No);
 			}			
 		}
 		if (!pdextracircularactivities.equals("")) {
@@ -193,13 +193,13 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsave.equals("")) {
 			Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Save")){
-				click(PD_Save);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PD_Save);
+				waitForPageToLoadWebdriver();
 			}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
-				click(PD_SaveContinue);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PD_SaveContinue);
+				waitForPageToLoadWebdriver();
 			}else if (pdsave.equalsIgnoreCase("Reset")) {
-				click(PD_Reset);
+				clickWebdriver(attributeName_xpath,PD_Reset);
 			}
 		}
 	//endExecutionOrder(j);

@@ -175,7 +175,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 						Reporter.log("Step 16 - Click on 'Create Account' button");
 						clickWebdriver(attributeName_id, CA_CreateAccountBtn);	
 						waitForElementPresent(CA_LoginBtn, "Login button");
-//						waitForPageToLoad();	
+//						waitForPageToLoadWebdriver();
 					} else if (button_to_click.equalsIgnoreCase("Login")) {
 						Reporter.log("Step 17 - Click on 'Login' button if found");
 						waitForElementPresent(CA_LoginBtn, "Login button");

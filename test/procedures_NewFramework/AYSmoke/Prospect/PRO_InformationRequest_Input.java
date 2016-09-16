@@ -38,17 +38,17 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			if (!firstname.equals("")) {
 				Reporter.log("Step 1 - Enter First Name as ("+firstname+")");
 				String fNameID = getElementIDbyLabelContains("First Name",IR_PI_FirstName);				
-				type(fNameID, firstname+Calendar.getInstance().getTimeInMillis());
+				sendKeys(attributeName_xpath,fNameID, firstname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 2 - Enter Last Name as ("+lastname+")");
-				String LNameID = getElementIDbyLabelContains("Last Name",IR_PI_LastName);				
-				type(LNameID, lastname);
+				String LNameID = getElementIDbyLabelContains("Last Name",IR_PI_LastName);
+				sendKeys(attributeName_xpath,LNameID, lastname);
 			}
 			if (!email.equals("")) {
 				Reporter.log("Step 3 - Enter the Email as ("+email+")");
-				String Email = getElementIDbyLabelContains("Email Address",IR_PI_Email);				
-				type(Email, email);
+				String Email = getElementIDbyLabelContains("Email Address",IR_PI_Email);
+				sendKeys(attributeName_xpath,Email, email);
 			}
 
 			if (!dob.equals("")) {
@@ -68,37 +68,37 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			if (!ssn.equals("")) {
 				Reporter.log("Step 7 - Enter Favourite Sports as ("+ssn+")");
 				String SsnID = getElementIDbyLabelContains("SSN", IR_PI_Ssn);
-				type(SsnID,ssn);			
+				sendKeys(attributeName_xpath,SsnID,ssn);
 			}
 			if (!address.equals("")) {
 				Reporter.log("Step 8 - Enter the address as ("+address+")");
-				String Address = getElementIDbyLabelContains("Address",IR_AI_Address);				
-				type(Address, address);
+				String Address = getElementIDbyLabelContains("Address",IR_AI_Address);
+				sendKeys(attributeName_xpath,Address, address);
 			}
 			if (!suitenumber.equals("")) {
 				Reporter.log("Step 9 - Enter suitenumber as ("+suitenumber+")");
-				String Suitenumber = getElementIDbyLabelContains("Apt. or Suite Number",IR_AI_SuiteNumber);				
-				type(Suitenumber, suitenumber);
+				String Suitenumber = getElementIDbyLabelContains("Apt. or Suite Number",IR_AI_SuiteNumber);
+				sendKeys(attributeName_xpath,Suitenumber, suitenumber);
 			}
 			if (!city.equals("")) {
 				Reporter.log("Step 10 - Enter the city as ("+city+")");
-				String City = getElementIDbyLabelContains("City",IR_AI_City);				
-				type(City, city);
+				String City = getElementIDbyLabelContains("City",IR_AI_City);
+				sendKeys(attributeName_xpath,City, city);
 			}
 			if (!state.equals("")) {
 				Reporter.log("Step 11 - Enter the state as ("+state+")");
-				String State = getElementIDbyLabelContains("State",IR_AI_State);				
-				type(State, state);
+				String State = getElementIDbyLabelContains("State",IR_AI_State);
+				sendKeys(attributeName_xpath,State, state);
 			}
 			if (!zipcode.equals("")) {
 				Reporter.log("Step 12 - Enter the zipcode as ("+zipcode+")");
-				String Zipcode = getElementIDbyLabelContains("Zip Code",IR_AI_ZipCode);				
-				type(Zipcode, zipcode);
+				String Zipcode = getElementIDbyLabelContains("Zip Code",IR_AI_ZipCode);
+				sendKeys(attributeName_xpath,Zipcode, zipcode);
 			}
 			if (!country.equals("")) {
 				Reporter.log("Step 13 - Enter the country as ("+country+")");
-				String Country = getElementIDbyLabelContains("Country",IR_AI_Country);				
-				type(Country, country);
+				String Country = getElementIDbyLabelContains("Country",IR_AI_Country);
+				sendKeys(attributeName_xpath,Country, country);
 			}
 			if (!schoolinterest.equals("")) {
 				Reporter.log("Step 14 - Select the school of interest as ("+schoolinterest+")");

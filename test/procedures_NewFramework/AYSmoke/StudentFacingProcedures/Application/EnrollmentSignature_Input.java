@@ -46,7 +46,7 @@ public class EnrollmentSignature_Input extends CommonSeleniumActions implements 
 				if (!submit.equals("")) {
 					Reporter.log("Step 3 - Click on 'Submit' button");
 					clickWebdriver(attributeName_xpath, EFP_SubmitEnrollmentBtn);
-					waitForPageToLoad();	
+					waitForPageToLoadWebdriver();
 				}
 				
 		} catch (Exception e) {

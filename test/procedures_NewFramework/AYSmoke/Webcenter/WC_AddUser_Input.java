@@ -103,19 +103,19 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!rolesnotassigned.equals("")) {
 				Reporter.log("Check/uncheck ");
-				type(WCL_rolesnotassigned, rolesnotassigned);			
+				sendKeys(attributeName_cssselector,WCL_rolesnotassigned, rolesnotassigned);
 			}
 			if (!privilagesassigned.equals("")) {
 				Reporter.log("Check/uncheck ");
-				type(WCL_privilagesassigned, privilagesassigned);			
+				sendKeys(attributeName_cssselector,WCL_privilagesassigned, privilagesassigned);
 			}
 			if (!privilagesnotassigned.equals("")) {
 				Reporter.log("Check/uncheck ");
-				type(WCL_privilagesnotassigned, privilagesnotassigned);			
+				sendKeys(attributeName_cssselector,WCL_privilagesnotassigned, privilagesnotassigned);
 			}
 			if (!statusreportschedule.equals("")) {
 				Reporter.log("select Radio button");
-				type(WCL_statusreportschedule, statusreportschedule);			
+				sendKeys(attributeName_cssselector,WCL_statusreportschedule, statusreportschedule);
 			}
 			if (!raaccountassigned.equals("")) {
 				Reporter.log("Select RA account");

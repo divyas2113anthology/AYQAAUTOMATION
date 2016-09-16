@@ -24,21 +24,21 @@ public class FinalStep_Input extends CommonSeleniumActions implements OR {
 	//		selectMainWindow();
 			if (!fullname.equals("")) {
 				Reporter.log("Step 1 - Proceed to Enter on ("+fullname+")");
-					type(FS_FullName, fullname);
+					sendKeys(attributeName_cssselector,FS_FullName, fullname);
 			}
 			if (!date.equals("")) {
 				Reporter.log("Step 2 - Proceed to Enter on ("+date+")");
-					type(FS_Date, date);
+				sendKeys(attributeName_cssselector,FS_Date, date);
 			}
 
 			if (!button.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+button+") Button");
 				if (button.equalsIgnoreCase("Continue")) {
 					clickWebdriver(attributeName_xpath, SP_Submit);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Submit")) {
 					clickWebdriver(attributeName_xpath, FS_SubmitApp);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}
 			

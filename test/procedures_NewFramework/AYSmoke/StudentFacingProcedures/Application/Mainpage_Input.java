@@ -28,7 +28,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				writeConsole("I am in package level");
 //				waitForElementPresent(Applpackage+packagename+"']", packagename);
 				clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
-//				waitForPageToLoad();			
+//				waitForPageToLoadWebdriver();
 			}
 			if (!eventpackagename.equals("")) {
 				Reporter.log("Click on ("+eventpackagename+") Event Package");
@@ -36,11 +36,11 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				if (eventpackagename.equalsIgnoreCase("Search")) {
 					clickWebdriver(attributeName_linktext, eventpackagename);
 //					click(eventpackage+eventpackagename+"']");
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (eventpackagename.equalsIgnoreCase("List All")) {
 					clickWebdriver(attributeName_linktext, eventpackagename);
 //					click(eventpackage+eventpackagename+"']");
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (eventpackagename.equalsIgnoreCase("View mine")) {
 					clickWebdriver(attributeName_linktext, eventpackagename);
 //					click(eventpackage+eventpackagename+"']");
@@ -61,15 +61,15 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				
 				if (link_to_click.equalsIgnoreCase("Logout")) {
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
-					click(Logoutmain+link_to_click+"']");
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,Logoutmain+link_to_click+"']");
+					waitForPageToLoadWebdriver();
 				}
 				else
 				{
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
 					writeConsole("I am in Link text");
 					clickWebdriver(attributeName_xpath, MN_BaseTableFont);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 				
 			}

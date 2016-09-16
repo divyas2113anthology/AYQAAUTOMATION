@@ -54,7 +54,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 			if (!needpasswordgo.equals("")) {
 				Reporter.log("Step 4 - Click on ["+needpasswordgo+"] button or Link");
 				if (needpasswordgo.equalsIgnoreCase("Need Password or Login Help?")) {
-					click(WCL_NeedPasswordLogin);
+					clickWebdriver(attributeName_cssselector,WCL_NeedPasswordLogin);
 					recentPopupSelect("Forgot Password Search");
 				}else if (needpasswordgo.equalsIgnoreCase("GO")) {
 					clickWebdriver(attributeName_xpath, WCL_Go);
@@ -65,7 +65,7 @@ public class WC_Login_Input extends CommonSeleniumActions implements OR {
 
 			}
 			if(!viewsource.equals("")){
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				String pagesource = driver.getPageSource();
 				System.out.println(pagesource);
 				if(pagesource.contains(viewsource))

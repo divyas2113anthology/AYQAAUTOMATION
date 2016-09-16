@@ -18,8 +18,8 @@ public class MC_MainMenu_Input extends CommonSeleniumActions implements OR{
 			Reporter.log("Check user click on Manage client link in Maintenance center");
 			if (!logout.equals("")) {
 				if (logout.equalsIgnoreCase("logout")) {
-					click(MCL_Logoutbutton);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_linktext,MCL_Logoutbutton);
+					waitForPageToLoadWebdriver();
 				}
 			}
 			if (!menu.equals("")) {
@@ -29,13 +29,13 @@ public class MC_MainMenu_Input extends CommonSeleniumActions implements OR{
 					if (i == splitPackage.length-1) {
 						waitForElementPresentWebdriverWait(attributeName_xpath,"//div[text()='"+splitPackage[i]+"']", splitPackage[i]);
 						clickWebdriver(attributeName_xpath,"//div[text()='"+splitPackage[i]+"']");
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}else {
 						mouseOver("//div[text()='"+splitPackage[i]+"']");		
 					}
 				}
 //				clickWebdriver(attributeName_xpath, "//div[contains(text(),'"+menu+"')]");
-//				waitForPageToLoad();
+//				waitForPageToLoadWebdriver();
 			}
 		
 		}catch(Exception e){

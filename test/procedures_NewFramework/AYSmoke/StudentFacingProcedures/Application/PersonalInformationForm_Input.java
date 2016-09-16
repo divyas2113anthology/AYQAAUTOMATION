@@ -40,20 +40,20 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			}
 			if (!pifirstgivenname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");
-				String fNameID = getElementIDbyLabel("First Name",PI_FirstName);				
-				type(fNameID, pifirstgivenname+Calendar.getInstance().getTimeInMillis());
+				String fNameID = getElementIDbyLabel("First Name",PI_FirstName);
+				sendKeys(attributeName_xpath,fNameID, pifirstgivenname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!pilastname.equals("")) {
 				Reporter.log("Step 3 - Enter Last Name as ("+pilastname+")");
-				String LNameID = getElementIDbyLabel("Last Name",PI_LastName);				
-				type(LNameID, pilastname);
+				String LNameID = getElementIDbyLabel("Last Name",PI_LastName);
+				sendKeys(attributeName_xpath,LNameID, pilastname);
 			}
 			if (!pifulltimestudent.equals("")) {
 				Reporter.log("Step 4 - Check Full Time Student as ("+pifulltimestudent+")");
 				if (pifulltimestudent.equalsIgnoreCase("Yes")){
-					click(PI_FullTimeStudent_Yes);		
+					clickWebdriver(attributeName_xpath,PI_FullTimeStudent_Yes);
 				}else if  (pifulltimestudent.equalsIgnoreCase("No")){
-					click(PI_FullTimeStudent_No);
+					clickWebdriver(attributeName_xpath,PI_FullTimeStudent_No);
 				}			
 			}
 			if (!piethnicity.equals("")) {
@@ -64,12 +64,12 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			if (!pissn.equals("")) {
 				Reporter.log("Step 6 - Enter Social Security Number as ("+pissn+")");
 				String ssnID = getElementIDbyLabel("Social Security Number", PI_SSN);
-				type(ssnID, pissn);
+				sendKeys(attributeName_xpath,ssnID, pissn);
 			}
 			if (!piDateofBirth.equals("")) {
 				Reporter.log("Step 7 - Enter Date of Birth as ("+piDateofBirth+")");
 				String dobID = getElementIDbyLabel("Date of Birth", PI_DOB);
-				type(dobID, piDateofBirth);
+				sendKeys(attributeName_xpath,dobID, piDateofBirth);
 			}
 			if (!pisportsinterest.equals("")) {
 				Reporter.log("Step 8 - Enter Favourite Sports as ("+pisportsinterest+")");
@@ -84,17 +84,17 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			if (!pisavebutton.equals("")) {
 				Reporter.log("Step 10 - Click on ("+pisavebutton+")Button");
 				if (pisavebutton.equalsIgnoreCase("Address Lookup")) {
-					click(PI_AddressLookupBtn);
+					clickWebdriver(attributeName_xpath,PI_AddressLookupBtn);
 //					recentPopupSelect("Address Lookup");	
 					recentPopupSelectWebdriver("Address Lookup");
 				} else if(pisavebutton.equalsIgnoreCase("Save")){
 					clickWebdriverWithCoordinates(attributeName_xpath, PI_Save);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (pisavebutton.equalsIgnoreCase("Save & Continue")) {
-					click(PI_SaveContinue);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PI_SaveContinue);
+					waitForPageToLoadWebdriver();
 				}else if (pisavebutton.equalsIgnoreCase("Reset")) {
-					click(PI_Reset);
+					clickWebdriver(attributeName_xpath,PI_Reset);
 				}else if (pisavebutton.equalsIgnoreCase("close window")) {
 					closeWindowWebdriver();
 					//Removed wait time

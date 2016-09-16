@@ -88,7 +88,7 @@ public class WC_PrintApplications_Input extends CommonSeleniumActions implements
 //					recentPopupSelectWebdriver("PrintingApplication");
 				}else if (button.equalsIgnoreCase("Generate PDF")) {
 					clickWebdriver(attributeName_xpath, PA_PrintBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, PA_BackBtn);
 				}

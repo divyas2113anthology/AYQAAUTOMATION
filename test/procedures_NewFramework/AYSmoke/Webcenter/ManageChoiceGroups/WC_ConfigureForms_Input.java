@@ -36,7 +36,7 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 					//waitForElementPresentWebdriver(attributeName_xpath,"//*[text()='"+SplitPackage[i]+"']", "Page Name");
 					if (i<= SplitPackage.length-1) {
 						clickWebdriver(attributeName_xpath, MCG_PackageTree+SplitPackage[i]+"')]");
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}else{
 						System.out.println(SplitPackage[i]);
 						PackageSelection(SplitPackage[i], "1");

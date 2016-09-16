@@ -37,7 +37,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 //					if (i== SplitPackage.length-1) {
 //						System.out.println("Verification");
 //						clickWebdriver(attributeName_linktext, SplitPackage[i]);
-//						waitForPageToLoad();
+//						waitForPageToLoadWebdriver();
 //					}else{
 //						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 //					}
@@ -70,7 +70,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						clickWebdriver(attributeName_xpath, FD_AddItem);
 						switchToDefaultContentWebdriver();
 						
-						//waitForPageToLoad();
+						//waitForPageToLoadWebdriver();
 					}else{
 						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 					}

@@ -50,19 +50,19 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 
 //			selenium.getBodyText();
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Line1, addrline1);
-			type(AL_Line1,addrline1);
+			sendKeys(attributeName_xpath,AL_Line1,addrline1);
 		}
 		if (!addrline2.equals("")) {
 			Reporter.log("Step 2 - Enter Line 2 as ("+addrline2+")");
-			type(AL_Line2,addrline2);
+			sendKeys(attributeName_xpath,AL_Line2,addrline2);
 		}
 		if (!addrline3.equals("")) {
 			Reporter.log("Step 3 - Enter Line 3 as ("+addrline3+")");
-			type(AL_Line3,addrline3);
+			sendKeys(attributeName_xpath,AL_Line3,addrline3);
 		}
 		if (!addrcitytown.equals("")) {
 			Reporter.log("Step 4 - Enter City/Town as ("+addrcitytown+")");
-			type(AL_Town, addrcitytown);			
+			sendKeys(attributeName_xpath,AL_Town, addrcitytown);
 		}
 		if (!addrstateprovince.equals("")) {
 			Reporter.log("Step 5 - Select State/Province as ("+addrstateprovince+")");
@@ -70,7 +70,7 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!addrpostalcodezip.equals("")) {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");
-			type(AL_PostalCode, addrpostalcodezip);
+			sendKeys(attributeName_xpath,AL_PostalCode, addrpostalcodezip);
 		}
 		/*if (!addrcountry.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");

@@ -21,7 +21,7 @@ public class WC_ManageConfigureDynamicText_Input extends CommonSeleniumActions i
 				Reporter.log("Step 1 - Click the link as ["+dynamictext+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, "//*[text()='"+dynamictext+"']/following-sibling::td/a", dynamictext+clicklink);
 				clickWebdriver(attributeName_xpath, "//*[text()='"+dynamictext+"']/following-sibling::td/a");
-				waitForPageToLoadWebdriver(); 
+				waitForPageToLoadWebdriver();
 			}			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

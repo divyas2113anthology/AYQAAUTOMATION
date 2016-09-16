@@ -32,10 +32,10 @@ public class MC_ScheduleImportExports_Input extends CommonSeleniumActions implem
 			Reporter.log("Step 3 - Click the name of the button as ["+addexpimpdelete+"]");
 			if (addexpimpdelete.equalsIgnoreCase("add import sched")) {
 				clickWebdriver(attributeName_xpath, SIE_AddImpSched);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (addexpimpdelete.equalsIgnoreCase("add export sched")) {
 				clickWebdriver(attributeName_xpath, SIE_AddExpSched);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (addexpimpdelete.equalsIgnoreCase("Delete")) {
 				clickWebdriver(attributeName_xpath, SIE_DeleteBtn);
 				//alertAccept();

@@ -97,7 +97,7 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 				clickWebdriver(attributeName_name, "imgSubmitBtnTop");
 			}else if (testsavecancel.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (testsavecancel.equalsIgnoreCase("Test FTP Connection")) {
 				clickWebdriver(attributeName_name, "btnTestFTP");
 				recentPopupSelectWebdriver("FTP Test");

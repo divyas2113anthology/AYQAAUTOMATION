@@ -99,8 +99,8 @@ public class WC_Batchupdate_Input extends CommonSeleniumActions implements OR
 		if (!Submit.equals("")) {
 			Reporter.log("Step 15 - Verify its navigate to ("+Submit+") page");
 			if(Submit.equalsIgnoreCase("Submit")){
-				click(BU_Submit);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,BU_Submit);
+				waitForPageToLoadWebdriver();
 			}
 			
 		}

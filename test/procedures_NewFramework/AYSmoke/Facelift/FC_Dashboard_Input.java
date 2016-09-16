@@ -27,10 +27,10 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Messages")) {
 					clickWebdriver(attributeName_cssselector,DB_MsgBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Profile")) {
 					clickWebdriver(attributeName_cssselector,DB_ProfBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Technical Support")) {
 					clickWebdriver(attributeName_cssselector, DB_TecSupportBtn);
 					recentPopupSelectWebdriver("Technical Support");
@@ -56,8 +56,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application2_Edit")){
 					waitForElementPresent(DB_App2EditButton, "Edit Application");
-					click(DB_App2EditButton);	
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,DB_App2EditButton);
+					waitForPageToLoadWebdriver();
 				}
 			}
 //				if (myapplications_name.equalsIgnoreCase("Application for QA Automation")) {

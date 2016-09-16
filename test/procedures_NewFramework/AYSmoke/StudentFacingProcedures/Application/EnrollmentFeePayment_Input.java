@@ -35,11 +35,11 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 					Reporter.log("Step 2 - Click on '"+returnpaycontinue+"' button");
 					if (returnpaycontinue.equalsIgnoreCase("return to enrollment form")) {
 						clickWebdriver(attributeName_xpath, EFP_ReturnEnrollBtn);
-						waitForPageToLoad();	
+						waitForPageToLoadWebdriver();
 					}else if (returnpaycontinue.equalsIgnoreCase("pay & continue")) {
 						clickWebdriver(attributeName_xpath, EFP_PayAndContinue);
 						alertAccept();
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}
 				}
 				

@@ -51,16 +51,16 @@ public class WC_Section_AddEdit_Input extends CommonSeleniumActions implements O
 				Reporter.log("Step 6 - Click the Button as ["+savecanceleditdelete+"]");
 				if (savecanceleditdelete.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, SAE_SaveButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (savecanceleditdelete.equalsIgnoreCase("Delete")) {
 					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (savecanceleditdelete.equalsIgnoreCase("Edit")) {
 					clickWebdriver(attributeName_xpath, SAE_EditButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (savecanceleditdelete.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, SAE_CancelButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}
 			switchToDefaultContentWebdriver();

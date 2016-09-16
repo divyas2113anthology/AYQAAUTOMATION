@@ -55,7 +55,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				if (welmenulinks.equalsIgnoreCase("Training")) {
 					waitForElementPresentWebdriver(attributeName_partiallinktext, "Training", welmenulinks);
 					clickWebdriver(attributeName_partiallinktext, "Training");
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (welmenulinks.equalsIgnoreCase("CRM")) 
 				{
 				clickWebdriver(attributeName_linktext, welmenulinks);

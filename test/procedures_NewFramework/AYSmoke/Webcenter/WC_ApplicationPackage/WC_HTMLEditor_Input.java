@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+//import com.thoughtworks.selenium.webdriven.commands.waitForPageToLoadWebdriver;
 
 import or.OR;
 import processor.CommonSeleniumActions;

@@ -35,43 +35,43 @@ public class FC_EducationBackgroundForm_Input extends CommonSeleniumActions impl
 		Reporter.log("Input Test Data was retrieved for 'Education Background' page");
 		if (!highschoolname.equals("")) {
 			Reporter.log("Step 1 - Enter High School Name as ("+highschoolname+")");
-			String hsnameID = getElementIDbyLabel("High School Name",EB_HighSchoolName);				
-			type(hsnameID, highschoolname);
+			String hsnameID = getElementIDbyLabel("High School Name",EB_HighSchoolName);
+			sendKeys(attributeName_xpath,hsnameID, highschoolname);
 		}
 		if (!highschooltype.equals("")) {
 			Reporter.log("Step 2 - Select High School Type as ("+highschooltype+")");
-			String hstypeID = getElementIDbyLabel("High School Type",EB_HighSchoolType);				
-			type(hstypeID, highschooltype);
+			String hstypeID = getElementIDbyLabel("High School Type",EB_HighSchoolType);
+			sendKeys(attributeName_xpath,hstypeID, highschooltype);
 		}
 		if (!counselorname.equals("")) {
 			Reporter.log("Step 3 - Enter Counselor Name as ("+counselorname+")");
-			String counselorID = getElementIDbyLabel("Counselor Name",EB_CounselorName);				
-			type(counselorID, counselorname);
+			String counselorID = getElementIDbyLabel("Counselor Name",EB_CounselorName);
+			sendKeys(attributeName_xpath,counselorID, counselorname);
 		}
 		if (!streetaddress.equals("")) {
 			Reporter.log("Step 4 - Enter Street Address as ("+streetaddress+")");
-			String streetID = getElementIDbyLabel("Street Address",EB_StreetAddress);				
-			type(streetID, streetaddress);
+			String streetID = getElementIDbyLabel("Street Address",EB_StreetAddress);
+			sendKeys(attributeName_xpath,streetID, streetaddress);
 		}
 		if (!city.equals("")) {
 			Reporter.log("Step 5 - Enter City as ("+city+")");
-			String cityID = getElementIDbyLabel("City",EB_City);				
-			type(cityID, city);
+			String cityID = getElementIDbyLabel("City",EB_City);
+			sendKeys(attributeName_xpath,cityID, city);
 		}
 		if (!state.equals("")) {
 			Reporter.log("Step 6 - Enter State as ("+state+")");
-			String stateID = getElementIDbyLabel("State",EB_State);				
-			type(stateID, state);
+			String stateID = getElementIDbyLabel("State",EB_State);
+			sendKeys(attributeName_xpath,stateID, state);
 		}
 		if (!country.equals("")) {
 			Reporter.log("Step 7 - Enter Country as ("+country+")");
-			String countryID = getElementIDbyLabel("Country",EB_Country);				
-			type(countryID, country);
+			String countryID = getElementIDbyLabel("Country",EB_Country);
+			sendKeys(attributeName_xpath,countryID, country);
 		}
 		if (!postalcode.equals("")) {
 			Reporter.log("Step 8 - Enter Postal Code as ("+postalcode+")");
-			String postalID = getElementIDbyLabel("Postal Code",EB_PostalCode);				
-			type(postalID, postalcode);
+			String postalID = getElementIDbyLabel("Postal Code",EB_PostalCode);
+			sendKeys(attributeName_xpath,postalID, postalcode);
 		}
 		if (!lookupbutton.equals("")) {
 			Reporter.log("Step 9 - Click on ("+lookupbutton+") Button");
@@ -83,30 +83,30 @@ public class FC_EducationBackgroundForm_Input extends CommonSeleniumActions impl
 		}
 		if (!dateofentry.equals("")) {
 			Reporter.log("Step 10 - Enter Date of Entry as ("+dateofentry+")");
-			String doentryID = getElementIDbyLabel("Date of Entry",EB_DateofEntry);				
-			type(doentryID, dateofentry);
+			String doentryID = getElementIDbyLabel("Date of Entry",EB_DateofEntry);
+			sendKeys(attributeName_xpath,doentryID, dateofentry);
 		}
 		if (!dateofgraduation.equals("")) {
 			Reporter.log("Step 11 - Enter Date of Graduation as ("+dateofgraduation+")");
-			String dogradID = getElementIDbyLabel("Date of Graduation",EB_DateofGraduation);				
-			type(dogradID, dateofgraduation);
+			String dogradID = getElementIDbyLabel("Date of Graduation",EB_DateofGraduation);
+			sendKeys(attributeName_xpath,dogradID, dateofgraduation);
 		}
 		if (!gpa.equals("")) {
 			Reporter.log("Step 12 - Enter GPA as ("+gpa+")");
-			String gpaID = getElementIDbyLabel("GPA",EB_GPA);				
-			type(gpaID, gpa);
+			String gpaID = getElementIDbyLabel("GPA",EB_GPA);
+			sendKeys(attributeName_xpath,gpaID, gpa);
 		}
 		if (!savebutton.equals("")) {
 			Reporter.log("Step 13 - Click on ("+savebutton+") Button");
 			if (savebutton.equalsIgnoreCase("Save")) {
 				actionsClickWebdriver(attributeName_xpath, EB_SaveBottom);
 //				click(EB_Save);
-//				waitForPageToLoad();
+//				waitForPageToLoadWebdriver();
 			}else if (savebutton.equalsIgnoreCase("Save & Continue")) {
-				click(EB_SaveContinue);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,EB_SaveContinue);
+				waitForPageToLoadWebdriver();
 			}else if (savebutton.equalsIgnoreCase("Reset")) {
-				click(EB_Reset);				
+				clickWebdriver(attributeName_xpath,EB_Reset);
 			}
 		}
 		

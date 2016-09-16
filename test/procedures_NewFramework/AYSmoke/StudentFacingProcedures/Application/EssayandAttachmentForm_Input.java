@@ -27,12 +27,12 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 			if (!shortessay.equals("")) {
 				waitForPageToLoadWebdriver();
 				String shortessayID = getElementIDbyLabel("Short Essay", EA_ShortEssay);
-				type(shortessayID,shortessay);	
+				sendKeys(attributeName_xpath,shortessayID,shortessay);
 			}
 			if (!essaywithattachment.equals("")) { 
 				waitForPageToLoadWebdriver();
 				String essaywithattachmentID = getElementIDbyLabel("Essay with Attachment", EA_EssaywithAttachment);
-				type(essaywithattachmentID,essaywithattachment);	
+				sendKeys(attributeName_xpath,essaywithattachmentID,essaywithattachment);
 			}
 			if (!essaywithattachmentuploaddocument.equals("")) {
 				if (essaywithattachmentuploaddocument.equals("upload document")) {
@@ -57,13 +57,13 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					alertAccept();
 					//waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, essaywithattachmentuploaddocument);
 //					getConfirmation();
-//					waitForPageToLoad();
+//					waitForPageToLoadWebdriver();
 					waitForElementPresent(EA_EssaywithAttachment_UploadDocument, "Upload Document");
 				}
 			}
 			if (!essaywithoutattachment.equals("")) {
 				String essaywithoutattachmentID = getElementIDbyLabel("Essay without Attachment", EA_EssaywithoutAttachment);
-				type(essaywithoutattachmentID,essaywithoutattachment);	
+				sendKeys(attributeName_xpath,essaywithoutattachmentID,essaywithoutattachment);
 			}
 			if (!uploadattachmentonlydocument.equals("")) {
 				if (uploadattachmentonlydocument.equals("upload document")) {
@@ -108,10 +108,10 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 				if (save.equalsIgnoreCase("Save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_Save, save);
 					clickWebdriver(attributeName_xpath, EA_Save);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				} else if (save.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriver(attributeName_xpath, EA_SaveandContinue);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (save.equalsIgnoreCase("Reset")) {
 					clickWebdriver(attributeName_xpath, EA_Reset);
 				}else if (save.equalsIgnoreCase("close window")) {

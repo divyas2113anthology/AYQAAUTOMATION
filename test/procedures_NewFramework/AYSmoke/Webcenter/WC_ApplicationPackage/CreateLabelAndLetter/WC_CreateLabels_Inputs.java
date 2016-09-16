@@ -57,7 +57,7 @@ public class WC_CreateLabels_Inputs extends CommonSeleniumActions implements OR 
 					writeConsole("Tree Package : "+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 					}else{
 						PackageSelection(SplitPackage[i], "1");
 					}

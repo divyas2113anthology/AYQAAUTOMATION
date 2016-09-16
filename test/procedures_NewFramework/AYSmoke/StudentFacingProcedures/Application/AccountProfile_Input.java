@@ -47,7 +47,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
 				if (!firstgivenname.equals("")) {
 					Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");
-					type(FirstName, firstname);		
+					sendKeys(attributeName_xpath,FirstName, firstname);
 					if (!firstnameyes.equals("")) {
 						Reporter.log("Proceed to Write First Name as ("+firstname+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(firstname,firstnameyes);
@@ -57,28 +57,28 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				
 				String lastname = lastorfamilyname+Calendar.getInstance().getTimeInMillis();		
 				if (!lastorfamilyname.equals("")) {
-					Reporter.log("Step 2 - Enter 'Last or Family Name' as ("+lastname+")");		
-					type(LastName, lastname);
+					Reporter.log("Step 2 - Enter 'Last or Family Name' as ("+lastname+")");
+					sendKeys(attributeName_xpath,LastName, lastname);
 				}	
 				
 				if (!emailaddress.equals("")) {
-					Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");		
-					type(EmailAddress, emailaddress);
+					Reporter.log("Step 3 - Enter 'Email Address' as ("+emailaddress+")");
+					sendKeys(attributeName_xpath,EmailAddress, emailaddress);
 				}
 				
 				if (!confirmemailaddress.equals("")) {			
-					Reporter.log("Step 4 - Enter 'Confirm Email Address' as ("+confirmemailaddress+")");	
-					type(ConfirmEmailAddress, confirmemailaddress);
+					Reporter.log("Step 4 - Enter 'Confirm Email Address' as ("+confirmemailaddress+")");
+					sendKeys(attributeName_xpath,ConfirmEmailAddress, confirmemailaddress);
 				}	
 				
 				if (!birthdate.equals("")) {
-					Reporter.log("Step 5 - Enter 'Birth date' as ("+birthdate+")");		
-					type(BirthDate, birthdate);
+					Reporter.log("Step 5 - Enter 'Birth date' as ("+birthdate+")");
+					sendKeys(attributeName_xpath,BirthDate, birthdate);
 				}
 				
 				if (!zippostalcode.equals("")) {
-					Reporter.log("Step 6 - Enter 'Zip/Postal Code' as ("+zippostalcode+")");			
-					type(ZipCode, zippostalcode);
+					Reporter.log("Step 6 - Enter 'Zip/Postal Code' as ("+zippostalcode+")");
+					sendKeys(attributeName_xpath,ZipCode, zippostalcode);
 				}
 				
 				if (!username.equals("")) {
@@ -88,12 +88,12 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				if (!password.equals("")) {			
 					Reporter.log("Step 8 - Enter 'Password' as ("+password+")");	
 					AppPassword = Runtimedataread(password);
-					type(Password, AppPassword);
+					sendKeys(attributeName_xpath,Password, AppPassword);
 				}		
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 9 - Enter 'Confirm Password' as ("+confirmpassword+")");	
 					AppPassword = Runtimedataread(confirmpassword);
-					type(ConfirmPassword, AppPassword);			
+					sendKeys(attributeName_xpath,ConfirmPassword, AppPassword);
 					if (!confirmyes.equalsIgnoreCase("")) {
 						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(confirmpassword,confirmyes);			
@@ -103,12 +103,12 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				if (!createaccount.equals("")) {
 					Reporter.log("Step 10 - Click on 'Create Account' button");
 					if (createaccount.equalsIgnoreCase("create account")) {
-						click(CreateAccount);
-						waitForPageToLoad();	
+						clickWebdriver(attributeName_xpath,CreateAccount);
+						waitForPageToLoadWebdriver();
 					}
 					if(createaccount.equalsIgnoreCase("update account")){
-						click(CA_CreateAccountBtn);
-						waitForPageToLoad();
+						clickWebdriver(attributeName_name,CA_CreateAccountBtn);
+						waitForPageToLoadWebdriver();
 					}
 				}
 				

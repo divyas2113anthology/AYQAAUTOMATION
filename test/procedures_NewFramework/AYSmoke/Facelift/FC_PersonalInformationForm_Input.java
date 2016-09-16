@@ -42,13 +42,13 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			}
 			if (!pifirstgivenname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");
-				String fNameID = getElementIDbyLabel("First Name",PII_FirstName);				
-				type(fNameID, pifirstgivenname+Calendar.getInstance().getTimeInMillis());
+				String fNameID = getElementIDbyLabel("First Name",PII_FirstName);
+				sendKeys(attributeName_xpath,fNameID, pifirstgivenname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!pilastname.equals("")) {
 				Reporter.log("Step 3 - Enter Last Name as ("+pilastname+")");
-				String LNameID = getElementIDbyLabel("Last Name",PII_LastName);				
-				type(LNameID, pilastname);
+				String LNameID = getElementIDbyLabel("Last Name",PII_LastName);
+				sendKeys(attributeName_xpath,LNameID, pilastname);
 			}
 			if (!pifulltimestudent.equals("")) {
 				Reporter.log("Step 4 - Check Full Time Student as ("+pifulltimestudent+")");
@@ -68,12 +68,12 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			if (!pissn.equals("")) {
 				Reporter.log("Step 6 - Enter Social Security Number as ("+pissn+")");
 				String ssnID = getElementIDbyLabel("Social Security Number", PII_SSN);
-				type(ssnID, pissn);
+				sendKeys(attributeName_xpath,ssnID, pissn);
 			}
 			if (!piDateofBirth.equals("")) {
 				Reporter.log("Step 7 - Enter Date of Birth as ("+piDateofBirth+")");
 				String dobID = getElementIDbyLabel("Date of Birth", PII_DOB);
-				type(dobID, piDateofBirth);
+				sendKeys(attributeName_xpath,dobID, piDateofBirth);
 			}
 			if (!pisportsinterest.equals("")) {
 				Reporter.log("Step 8 - Enter Favourite Sports as ("+pisportsinterest+")");
@@ -96,15 +96,15 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 					clickWebdriver(attributeName_xpath, PSD_Save);
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
-					click(PII_SaveContinue);
+					clickWebdriver(attributeName_xpath,PII_SaveContinue);
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {
-					click(PII_Reset);
+					clickWebdriver(attributeName_xpath,PII_Reset);
 				}
 			}
 			if (!pisubmitappbtn.equals("")) {
 				Reporter.log("Step 11 - Click on ("+pisubmitappbtn+")Button");
 				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
-					click(AW_SubAppBtn);
+					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 				}
 			}
 		} catch (Exception e) {

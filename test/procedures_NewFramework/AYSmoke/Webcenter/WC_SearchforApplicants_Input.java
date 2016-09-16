@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
+//import com.thoughtworks.selenium.webdriven.commands.waitForPageToLoadWebdriver;
 
 import or.OR;
 import processor.CommonSeleniumActions;
@@ -117,7 +117,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			if (!searchbydate_submit.equals("")) {
 				Reporter.log("Step 9 - Click Submit in search by date");
 				clickWebdriver(attributeName_xpath, SAI_SearchByDateSubmit);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 			if (!searchbyindividual.equals("")) {
 				Reporter.log("Step 10 - Click Submit in search by Individual");
@@ -130,31 +130,31 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				sendKeyStroke(attributeName_xpath, SAI_SearchByIndividualsRadio, Keys.SPACE);
 			    //clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsSubmit);
 				clickWebdriver(attributeName_xpath, SAI_SearchByIndividualsRadio);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Step 11 - Enter the First Name as ["+firstname+"]");
 				if (firstname.equals("Applicant First Name") || firstname.equals("ManualAdd")) {
 					String DataFirstName = Runtimedataread(firstname);
-					click(SAI_FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 					
 				}else if (firstname.equals("FaceliftAppFirstName") || firstname.equals("SMOKETEST") || firstname.equals("TESTAPPREVIEW") || firstname.equals("BridgeAppFirstName")){
 					String DataFirstName = Runtimedataread(firstname);
-					click(SAI_FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}else if (firstname.equals("AppReview FirstName")) {
 					System.out.println("aaaa"+firstname);
 					String DataFirstName = Runtimedataread(firstname);
-					click(SAI_FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}else if (firstname.equals("OLIVE")) {
 					String DataFirstName = Runtimedataread(firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
 				}
 				else{
-					click(SAI_FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 				}
@@ -221,7 +221,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit, search_using_query);
 				sendKeyStroke(attributeName_xpath, SAI_SearchUsingQueryRadio, Keys.SPACE);
 				clickWebdriver(attributeName_xpath, SAI_SearchUsingQuerySubmit);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				
 			}
 			if (!selectagroup.equals("")) {

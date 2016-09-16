@@ -43,7 +43,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			if (!firstname.equals("")) {
 				if(firstname.equals("Rashi")){
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
-					click(SAI_FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 					
 				}
@@ -53,35 +53,35 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
 				System.out.println("aaaaaa");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
-				click(SAI_FirstName);
+				clickWebdriver(attributeName_xpath,SAI_FirstName);
 				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
 				}
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 4 - Enter the Last Name as ["+lastname+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
-				click(SAI_LastName);
+				clickWebdriver(attributeName_xpath,SAI_LastName);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
 			}
 			if (!birthdate.equals("")) {
 				Reporter.log("Step 5 - Enter the birth date as ["+birthdate+"]");
-				click(SAI_BirthDate);
+				clickWebdriver(attributeName_xpath,SAI_BirthDate);
 				sendKeys(attributeName_xpath, SAI_BirthDate, birthdate);
 			}	
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 6 - Enter the email address as ["+emailaddress+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_EmailAddress, emailaddress);
-				click(SAI_EmailAddress);
+				clickWebdriver(attributeName_xpath,SAI_EmailAddress);
 				sendKeys(attributeName_xpath, SAI_EmailAddress, emailaddress);
 			}
 			if (!zip.equals("")) {
 				Reporter.log("Step 7 - Enter the Zip as ["+zip+"]");
-				click(SAI_Zip);
+				clickWebdriver(attributeName_xpath,SAI_Zip);
 				sendKeys(attributeName_xpath, SAI_Zip, zip);
 			}
 			if (!createddatefrom.equals("")) {
 				Reporter.log("Step 8 - Enter the Created From date as ["+createddatefrom+"]");
-				click("CreatedFrom");
+				clickWebdriver(attributeName_name,"CreatedFrom");
 				sendKeys(attributeName_name, "CreatedFrom", createddatefrom);
 			}
 			if (!createddateto.equals("")) {
@@ -90,7 +90,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			}
 			if (!applicantid.equals("")) {
 				Reporter.log("Step 10 - Enter the Applicant ID as ["+applicantid+"]");
-				click(SAI_EnrollAppID);
+				clickWebdriver(attributeName_xpath,SAI_EnrollAppID);
 				sendKeys(attributeName_xpath, SAI_EnrollAppID, applicantid);
 			}
 			if (!searchindiquerygroupaction.equals("")) {
@@ -98,7 +98,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				sendKeyStroke(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/preceding-sibling::td/input[@type='radio']", Keys.SPACE);
 //				clickWebdriver(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/preceding-sibling::td/input[@type='radio']");
 				clickWebdriver(attributeName_xpath, "//td[font[contains(text(),'"+searchindiquerygroupaction+"')]]/following-sibling::td/input[contains(@src,'admin_submit_small')]");
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 
 			if (!systemqueries.equals("")) {

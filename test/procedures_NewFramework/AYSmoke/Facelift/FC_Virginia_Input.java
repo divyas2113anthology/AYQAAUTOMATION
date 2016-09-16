@@ -27,31 +27,31 @@ public class FC_Virginia_Input extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 1 - Perform the Operation of student do you live 'Yes'");
 //					String DoYouLiveY = getElementIDbyLabel("Do you live in there", AW_DoYouLiveYes);
 					waitForElementPresent(AW_DoYouLiveYes, "Do You Live radio Button");
-					click(AW_DoYouLiveYes);
+					clickWebdriver(attributeName_xpath,AW_DoYouLiveYes);
 				}else if (doyoulive.equalsIgnoreCase("No")) {
 					Reporter.log("Step 1 - Perform the Operation of student do you live 'No'");
 //					String DoYouLiveN = getElementIDbyLabel("Do you live in there", AW_DoYouLiveNo);
 					waitForElementPresent(AW_DoYouLiveNo, "Do You Live radio Button");
-					click(AW_DoYouLiveNo);
+					clickWebdriver(attributeName_xpath,AW_DoYouLiveNo);
 				}
 			}
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 2 - Click on ("+button_to_click+")Button");
 				if(button_to_click.equalsIgnoreCase("Save")){
-					click(PII_Save);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PII_Save);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
-					click(PII_SaveContinue);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PII_SaveContinue);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {
-					click(PII_Reset);
+					clickWebdriver(attributeName_xpath,PII_Reset);
 				}
 			}
 			if (!pisubmitappbtn.equals("")) {
 				Reporter.log("Step 3 - Click on ("+pisubmitappbtn+")Button");
 				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
-					click(AW_SubAppBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
+					waitForPageToLoadWebdriver();
 				}
 			}
 			

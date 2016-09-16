@@ -179,7 +179,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				Reporter.log("Step 23 - Click on Button ");
 				if (button.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AEE_Save);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("publish to prod")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);

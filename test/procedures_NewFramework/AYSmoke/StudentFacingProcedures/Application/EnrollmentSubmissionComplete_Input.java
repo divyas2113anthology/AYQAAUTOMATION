@@ -28,14 +28,14 @@ public class EnrollmentSubmissionComplete_Input extends CommonSeleniumActions im
 					Reporter.log("Step 1 - Click on '"+printclose+"' button");
 					if (printclose.equalsIgnoreCase("Print")) {
 						clickWebdriver(attributeName_xpath, EFP_PrintBtn);
-						waitForPageToLoad();	
+						waitForPageToLoadWebdriver();
 					}else if (printclose.equalsIgnoreCase("Close Window")) {
 						clickWebdriver(attributeName_xpath, EFP_CloseWindowBtn);
-//						waitForPageToLoad();
+//						waitForPageToLoadWebdriver();
 						selectMainWindowWebdriver();
 					}else if (printclose.equalsIgnoreCase("Close")) {
 						closeWindowWebdriver();
-//						waitForPageToLoad();
+//						waitForPageToLoadWebdriver();
 //						selectMainWindowWebdriver();
 					}
 				}

@@ -77,7 +77,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriver(attributeName_xpath, EPI_ProToSubBtn, "Proceed Submission");
 					clickWebdriverWithCoordinates(attributeName_xpath, EPI_ProToSubBtn);
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
-//					waitForPageToLoad();
+//					waitForPageToLoadWebdriver();
 				}else if (closeproceed.equalsIgnoreCase("Close Window")) {
 					recentPopupCloseWebdriver();
 					selectMainWindowWebdriver();

@@ -32,7 +32,7 @@ public class REC_TermsofUse_Input extends CommonSeleniumActions implements OR {
 		if (!continuebtn.equals("")) {
 			Reporter.log("Step 2 - Click on Continue Button in the Terms of Use Page");
 			clickWebdriver(attributeName_xpath, TOU_Continue);
-			waitForPageToLoad();
+			waitForPageToLoadWebdriver();
 		}
 		}
 		} catch (Exception e) {			

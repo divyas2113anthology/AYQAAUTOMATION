@@ -28,15 +28,15 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
-				click(Logoutmain+logout+"']");
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,Logoutmain+logout+"']");
+				waitForPageToLoadWebdriver();
 			}
 			if (!updatetechsupport.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+updatetechsupport+") Button");
 				if (updatetechsupport.equalsIgnoreCase("Home")) {
 					waitForElementPresentWebdriver(attributeName_xpath,AW_Home, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_Home);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_TecSupp, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_TecSupp);
@@ -59,7 +59,7 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				waitForElementPresentWebdriverWait(attributeName_xpath, Section+applicantsection+"')]", applicantsection);
 				clickWebdriver(attributeName_xpath, Section+applicantsection+"')]");
 				//click(Section+applicantsection+"')]");
-				waitForPageToLoad();			
+				waitForPageToLoadWebdriver();
 			}
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
@@ -70,30 +70,30 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!print.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+print+") Button");
 				if (print.equalsIgnoreCase("print")) {
-					click(PrintBtn+print+"']");
+					clickWebdriver(attributeName_xpath,PrintBtn+print+"']");
 					recentPopupSelect("Print");
 				}			
 			}
 			if (!applicationhome.equals("")) {
 				Reporter.log("Step 6 - Proceed to Click on ("+applicationhome+") Link");
 				if (applicationhome.equalsIgnoreCase("Application Home")) {
-					click(updatelink+applicationhome+"']");
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,updatelink+applicationhome+"']");
+					waitForPageToLoadWebdriver();
 				}else if (applicationhome.equalsIgnoreCase("Technical Support")) {
-					click(updatelink+applicationhome+"']");
+					clickWebdriver(attributeName_xpath,updatelink+applicationhome+"']");
 					recentPopupSelect("Technical Support");
 				}else if (applicationhome.equalsIgnoreCase("Update Profile")) {
-					click(updatelink+applicationhome+"']");
+					clickWebdriver(attributeName_xpath,updatelink+applicationhome+"']");
 					recentPopupSelect("Update Profile");
 				}else if (applicationhome.equalsIgnoreCase("Logout")) {
-					click(updatelink+applicationhome+"']");
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,updatelink+applicationhome+"']");
+					waitForPageToLoadWebdriver();
 				}
 			}
 			if (!resend.equals("")) {
 				Reporter.log("Step 6 - Proceed to Click on ("+logout+") Link");
 				clickWebdriver(attributeName_xpath, RC_Resend);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 		
 		} catch (Exception e) {

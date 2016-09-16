@@ -35,7 +35,7 @@ public class MC_ClientSearch_Input extends CommonSeleniumActions implements OR{
 			if (button.equalsIgnoreCase("search")) {
 //				click(MCL_Searchbutton);
 				clickWebdriver(attributeName_xpath, MCL_Searchbutton);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}		
 		}
 	}catch(Exception e){

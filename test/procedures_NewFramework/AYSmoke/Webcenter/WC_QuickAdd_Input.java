@@ -102,9 +102,9 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		if (!pdfulltimestudent.equals("")) {
 			Reporter.log("Step 10 - Check Full Time Student as ("+pdfulltimestudent+")");
 			if (pdfulltimestudent.equalsIgnoreCase("Yes")){
-				click(PD_Fulltimestudent_Yes);		
+				clickWebdriver(attributeName_xpath,PD_Fulltimestudent_Yes);
 			}else if  (pdfulltimestudent.equalsIgnoreCase("No")){
-				click(PD_Fulltimestudent_No);
+				clickWebdriver(attributeName_xpath,PD_Fulltimestudent_No);
 			}			
 		}
 		if (!pdcollegehousing.equals("")) {

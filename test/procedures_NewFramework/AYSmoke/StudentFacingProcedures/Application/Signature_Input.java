@@ -24,11 +24,11 @@ public class Signature_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Signature Page' ");
 			if (!sigfullname.equals("")) {
 				Reporter.log("Step 1 - Enter Full Name as ("+sigfullname+")");
-				type(SP_FullName,sigfullname);
+				sendKeys(attributeName_xpath,SP_FullName,sigfullname);
 			}
 			if (!sigdate.equals("")) {
 				Reporter.log("Step 2 - Enter Date as ("+sigfullname+")");
-				type(SP_Date,sigdate);
+				sendKeys(attributeName_xpath,SP_Date,sigdate);
 			}
 			if (!sigsubmit.equals("")) {
 				Reporter.log("Step 3 - Click on ("+sigsubmit+") Button");

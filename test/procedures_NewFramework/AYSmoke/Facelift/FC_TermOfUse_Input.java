@@ -51,7 +51,7 @@ public class FC_TermOfUse_Input extends CommonSeleniumActions implements OR {
 //					click(TOU_ContinuAndCreate);
 					clickWebdriver(attributeName_xpath, TOU_ContinuAndCreate);
 					waitForElementPresentWebdriver(attributeName_cssselector, DB_PageTitle, "Dashboard Page Title");
-//					waitForPageToLoad();
+//					waitForPageToLoadWebdriver();
 //					waitForConditionisElementPresent(DB_PageTitle, "5");
 					}
 				}			

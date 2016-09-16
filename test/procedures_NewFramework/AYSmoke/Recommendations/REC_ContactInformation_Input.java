@@ -93,13 +93,13 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 			Reporter.log("Step 13 -Click the button as '"+gobacksavenext+"'");
 			if (gobacksavenext.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (gobacksavenext.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_xpath, CI_SaveBtn);
 			}else if (gobacksavenext.equalsIgnoreCase("Next")) {
 				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, gobacksavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 		}
 		} catch (Exception e) {			

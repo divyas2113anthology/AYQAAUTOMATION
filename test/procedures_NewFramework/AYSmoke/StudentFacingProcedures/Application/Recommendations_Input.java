@@ -44,11 +44,11 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			if (!rcrecommenderproviderlist .equals("")) {
 				Reporter.log("Step 1 - Click button("+rcrecommenderproviderlist +")");
 				waitForElementPresentWebdriver(attributeName_xpath, RC_RecProviderlist, rcrecommenderproviderlist);
-					click(RC_RecProviderlist);
+					clickWebdriver(attributeName_xpath,RC_RecProviderlist);
 			}
 			if (!rcrecommendername .equals("")) {
 				Reporter.log("Step 2 - Click recommender name ("+rcrecommendername+")");
-				click(RC_RecProvidername);
+				clickWebdriver(attributeName_xpath,RC_RecProvidername);
 			}
 			if (!rcrecommendercheck .equals("")) {
 				Reporter.log("Step 3 - Check recommender as ("+rcrecommendercheck+")");
@@ -57,33 +57,33 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rcaddbutton.equals("")) {
 				Reporter.log("Step 4 - Click ("+rcaddbutton+")");
-				click(RC_Add);
+				clickWebdriver(attributeName_xpath,RC_Add);
 			}
 			if (!rcfirstname.equals("")) {
 				Reporter.log("Step 5 - Enter First name as ("+rcfirstname +")");
 				waitForElementPresentWebdriverWait(attributeName_xpath, RC_fName, rcfirstname);
-				String Fnamerc = getElementIDbyLabelContainsusingXpathWebdirver("First Name",RC_fName);				
-				type(Fnamerc,rcfirstname );
+				String Fnamerc = getElementIDbyLabelContainsusingXpathWebdirver("First Name",RC_fName);
+				sendKeys(attributeName_xpath,Fnamerc,rcfirstname );
 			}
 			if (!rclastname.equals("")) {
 				Reporter.log("Step 6 - Enter Last Name as ("+rclastname+")");
-				String Lnamerc = getElementIDbyLabelContainsusingXpathWebdirver("Last Name",RC_lName);				
-				type(Lnamerc,rclastname);
+				String Lnamerc = getElementIDbyLabelContainsusingXpathWebdirver("Last Name",RC_lName);
+				sendKeys(attributeName_xpath,Lnamerc,rclastname);
 			}
 			if (!rcstreetaddressline1.equals("")) {
 				Reporter.log("Step 7 - Enter Street Address (Lane 1) as ("+rcstreetaddressline1+")");
-				String Saddress1rc = getElementIDbyLabelContainsusingXpathWebdirver("Street Address (Line 1)",RC_Address1);				
-				type(Saddress1rc,rcstreetaddressline1);
+				String Saddress1rc = getElementIDbyLabelContainsusingXpathWebdirver("Street Address (Line 1)",RC_Address1);
+				sendKeys(attributeName_xpath,Saddress1rc,rcstreetaddressline1);
 			}
 			if (!rcstreetaddressline2.equals("")) {
 				Reporter.log("Step 8 - Enter Street Address (Lane 2) as ("+rcstreetaddressline2+")");
-				String Saddress2rc = getElementIDbyLabelContainsusingXpathWebdirver("Street Address (Line 2)",RC_Address2);				
-				type(Saddress2rc,rcstreetaddressline2);
+				String Saddress2rc = getElementIDbyLabelContainsusingXpathWebdirver("Street Address (Line 2)",RC_Address2);
+				sendKeys(attributeName_xpath,Saddress2rc,rcstreetaddressline2);
 			}
 			if (!rccity.equals("")) {
 				Reporter.log("Step 9 - Enter City as ("+rccity+")");
-				String Cityrc = getElementIDbyLabelContainsusingXpathWebdirver("City",RC_City);				
-				type(Cityrc, rccity);
+				String Cityrc = getElementIDbyLabelContainsusingXpathWebdirver("City",RC_City);
+				sendKeys(attributeName_xpath,Cityrc, rccity);
 			}
 			if (!rcstate.equals("")) {
 				Reporter.log("Step 10 - Select State as ("+rcstate+")");
@@ -92,8 +92,8 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rcpostalcode.equals("")) {
 				Reporter.log("Step 11 - Select Postal Code as ("+rcpostalcode+")");
-				String  Postalcoderc= getElementIDbyLabelContainsusingXpathWebdirver("Postal Code",RC_PostalCode);				
-				type(Postalcoderc,rcpostalcode);
+				String  Postalcoderc= getElementIDbyLabelContainsusingXpathWebdirver("Postal Code",RC_PostalCode);
+				sendKeys(attributeName_xpath,Postalcoderc,rcpostalcode);
 			}
 			if (!rccountry.equals("")) {
 				Reporter.log("Step 12 - Select Country as ("+rccountry+")");
@@ -102,28 +102,28 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rcphone.equals("")) {
 				Reporter.log("Step 13 - Enter Phone  as ("+rcphone+")");
-				String Phonerc = getElementIDbyLabelContainsusingXpathWebdirver("Phone",RC_Phone);				
-				type(Phonerc,rcphone);
+				String Phonerc = getElementIDbyLabelContainsusingXpathWebdirver("Phone",RC_Phone);
+				sendKeys(attributeName_xpath,Phonerc,rcphone);
 			}
 			if (!rcemailaddress.equals("")) {
 				Reporter.log("Step 14 - Enter Email Address as ("+rcemailaddress+")");
-				String Emailaddressrc = getElementIDbyLabelContainsusingXpathWebdirver("Email Address",RC_EmailAddress);				
-				type(Emailaddressrc,rcemailaddress);
+				String Emailaddressrc = getElementIDbyLabelContainsusingXpathWebdirver("Email Address",RC_EmailAddress);
+				sendKeys(attributeName_xpath,Emailaddressrc,rcemailaddress);
 			}
 			if (!rctitle.equals("")) {
 				Reporter.log("Step 15 - Enter Title as ("+rctitle+")");
-				String Titlerc = getElementIDbyLabelContainsusingXpathWebdirver("Title",RC_Title);				
-				type(Titlerc, rctitle);
+				String Titlerc = getElementIDbyLabelContainsusingXpathWebdirver("Title",RC_Title);
+				sendKeys(attributeName_xpath,Titlerc, rctitle);
 			}
 			if (!rcemployer.equals("")) {
 				Reporter.log("Step 16 - Enter Employer as ("+rcemployer+")");
-				String Employerrc = getElementIDbyLabelContainsusingXpathWebdirver("Employer",RC_Employer);				
-				type(Employerrc,rcemployer);
+				String Employerrc = getElementIDbyLabelContainsusingXpathWebdirver("Employer",RC_Employer);
+				sendKeys(attributeName_xpath,Employerrc,rcemployer);
 			}
 			if (!rcrelationshiptoyou.equals("")) {
 				Reporter.log("Step 17 - Enter Relationship to you ("+rcrelationshiptoyou+")");
 				String Relationshiptoyourc = getElementIDbyLabelContainsusingXpathWebdirver("Relationship to you", RC_Relationyou);
-				type(Relationshiptoyourc, rcrelationshiptoyou);
+				sendKeys(attributeName_xpath,Relationshiptoyourc, rcrelationshiptoyou);
 			}
 			if (!rcrectype.equals("")) {
 				Reporter.log("Step 18 - Select Recommendation type as ("+rcrectype+")");
@@ -133,28 +133,28 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			if (!rcwaiverighttoexamineletter.equals("")) {
 				Reporter.log("Step 18 - Check Waiver right examine letter as ("+rcwaiverighttoexamineletter+")");
 				if (rcwaiverighttoexamineletter.equalsIgnoreCase("Yes")){
-					click(RC_waiveright);		
+					clickWebdriver(attributeName_xpath,RC_waiveright);
 				}else if  (rcwaiverighttoexamineletter.equalsIgnoreCase("No")){
-					click(RC_waiveright_No);
+					clickWebdriver(attributeName_xpath,RC_waiveright_No);
 				}			
 			}
 			if (!rcproviderecommendationonline.equals("")) {
 				Reporter.log("Step 19 - Check Full Time Student as ("+rcproviderecommendationonline+")");
 				if (rcproviderecommendationonline.equalsIgnoreCase("Yes")){
-					click(RC_submitletterrecommend);		
+					clickWebdriver(attributeName_xpath,RC_submitletterrecommend);
 				}else if  (rcproviderecommendationonline.equalsIgnoreCase("No")){
-					click(RC_submitletterrecommend_No);
+					clickWebdriver(attributeName_xpath,RC_submitletterrecommend_No);
 				}			
 			}
 			if (!rcpersonalnote.equals("")) {
 				Reporter.log("Step 20 - Enter Relationship to you ("+rcpersonalnote+")");
 				String Personalnoterc = getElementIDbyLabelContainsusingXpathWebdirver("If you would like to include a personal note in the notification email that is delivered, please use the space below", RC_Notificationemail);
-				type(Personalnoterc, rcpersonalnote);
+				sendKeys(attributeName_xpath,Personalnoterc, rcpersonalnote);
 			}
 			if (!rcsave.equals("")) {
 				Reporter.log("Step 20 - Click on ("+rcsave+")Button");
-				click(RC_Save);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,RC_Save);
+				waitForPageToLoadWebdriver();
 			}
 
 		} catch (Exception e) {

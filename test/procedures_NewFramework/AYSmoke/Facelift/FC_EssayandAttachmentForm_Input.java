@@ -27,11 +27,11 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 			
 			if (!shortessay.equals("")) {
 				String shortessayID = getElementIDbyLabel("Short Essay", EAI_ShortEssay);
-				type(shortessayID,shortessay);	
+				sendKeys(attributeName_xpath,shortessayID,shortessay);
 			}
 			if (!essaywithattachment.equals("")) { 
 				String essaywithattachmentID = getElementIDbyLabel("Essay with Attachment", EAI_EssaywithAttachment);
-				type(essaywithattachmentID,essaywithattachment);	
+				sendKeys(attributeName_xpath,essaywithattachmentID,essaywithattachment);
 			}
 			if (!essaywithattachmentuploaddocument.equals("")) {
 				if (essaywithattachmentuploaddocument.equals("upload document")) {
@@ -49,7 +49,7 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 			}
 			if (!essaywithoutattachment.equals("")) {
 				String essaywithoutattachmentID = getElementIDbyLabel("Essay without Attachment", EAI_EssaywithoutAttachment);
-				type(essaywithoutattachmentID,essaywithoutattachment);	
+				sendKeys(attributeName_xpath,essaywithoutattachmentID,essaywithoutattachment);
 			}
 			if (!uploadattachmentonlydocument.equals("")) {
 				if (uploadattachmentonlydocument.equals("upload document")) {
@@ -62,7 +62,7 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 				}else if (uploadattachmentonlydocument.equals("delete")) {
 //					clickchooseokgetconfirmationpagepload(EAI_AttachmentOnly_DeleteDocument);
 //					chooseOkOnNextConfirmation();
-					click(EAI_AttachmentOnly_DeleteDocument);
+					clickWebdriver(attributeName_xpath,EAI_AttachmentOnly_DeleteDocument);
 					alertAccept();
 //					getConfirmation();
 				}
@@ -87,21 +87,21 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
 				if(button_to_click.equalsIgnoreCase("Save")){
-					click(PII_SaveBottom);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,PII_SaveBottom);
+					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
-					click(PII_SaveContinue);
+					clickWebdriver(attributeName_xpath,PII_SaveContinue);
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {
-					click(PII_Reset);
+					clickWebdriver(attributeName_xpath,PII_Reset);
 				}else if (button_to_click.equals("close window")) {
-					click(EAI_CloseButton);
+					clickWebdriver(attributeName_xpath,EAI_CloseButton);
 					selectMainWindow();	
 				}
 			}
 			if (!pisubmitappbtn.equals("")) {
 				Reporter.log("Step 11 - Click on ("+pisubmitappbtn+")Button");
 				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
-					click(AW_SubAppBtn);
+					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 				}
 			}
 	

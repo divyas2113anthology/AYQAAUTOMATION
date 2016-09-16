@@ -35,7 +35,7 @@ public class Email_GmailVerification extends CommonSeleniumActions implements OR
 			if (!url.equals("")) {						
 				Reporter.log("Step 1 - Opening the Gmail Window");
 				get("http://www.gmail.com/");
-				waitForPageToLoad(); 
+				waitForPageToLoadWebdriver();
 			}
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
@@ -158,7 +158,7 @@ public class Email_GmailVerification extends CommonSeleniumActions implements OR
 				String recLink = recSplit[0]+"//uat"+recSplit[1];
 				//String recLink = recSplit[0]+"//uat"+recSplit[1];
 				get(recLink);
-				waitForPageToLoad();*/	
+				waitForPageToLoadWebdriver();*/
 				String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
 				System.out.println("Get Body Text: "+GetURL);
 				String urlmodify = null;

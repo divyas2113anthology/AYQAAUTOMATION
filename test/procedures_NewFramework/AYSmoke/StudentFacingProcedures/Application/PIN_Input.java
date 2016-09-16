@@ -47,8 +47,8 @@ public class PIN_Input extends CommonSeleniumActions implements OR {
 			if (!loginbutton.equals("")) {
 				Reporter.log("Proceed to Click on ("+loginbutton+")");
 				if (loginbutton.equalsIgnoreCase("login")) {
-					click(CreateAcctLogin);
-					waitForPageToLoad();				
+					clickWebdriver(attributeName_xpath,CreateAcctLogin);
+					waitForPageToLoadWebdriver();
 				}			
 			}
 		} catch (Exception e) {

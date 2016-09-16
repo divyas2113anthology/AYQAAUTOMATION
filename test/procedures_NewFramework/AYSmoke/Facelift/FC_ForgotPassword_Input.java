@@ -45,13 +45,13 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 					//waitForPageToLoadWebdriver();
 										
 				}else if (fpsearch.equalsIgnoreCase("close window")) {
-					click(FPI_upaclosebtn);
+					clickWebdriver(attributeName_cssselector,FPI_upaclosebtn);
 				}else if(fpsearch.equalsIgnoreCase("back"))
 				{
 					waitForElementPresentWebdriverWait(attributeName_xpath,CI_BackBtnFL, fpsearch);
 					//waitForElementPresentWebdriver(attributeName_xpath,CI_BackBtnFL, fpsearch);
 					clickWebdriver(attributeName_xpath,CI_BackBtnFL);
-					waitForPageToLoad(); 
+					waitForPageToLoadWebdriver();
 				}
 			}
 			

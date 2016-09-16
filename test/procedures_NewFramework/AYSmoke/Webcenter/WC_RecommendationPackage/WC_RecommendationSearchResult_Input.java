@@ -76,7 +76,7 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 				    } catch (Exception e) {
 				        System.out.println("no alert");
 				    }
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 					
 					//driver.switchTo().alert().accept();
 				}

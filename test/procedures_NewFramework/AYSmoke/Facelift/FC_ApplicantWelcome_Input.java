@@ -33,41 +33,41 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
 				if (link_to_click.equalsIgnoreCase("Personal Data")) {
-					click(AW_personalDataLnk);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_personalDataLnk);
+					waitForPageToLoadWebdriver();
 //					waitForConditionisElementPresent(PSD_PageName1, "90000");
 				}else if (link_to_click.equalsIgnoreCase("Family")) {
-					click(AW_FamilyBtn);
+					clickWebdriver(attributeName_xpath,AW_FamilyBtn);
 //					waitForConditionisElementPresent(PSD_PageName1, "90000");
 				}else if (link_to_click.equalsIgnoreCase("Business Rules")) {
-					click(AW_BussRulesBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_BussRulesBtn);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Payment Processing")) {
-					click(AW_PaymentProBtn);
+					clickWebdriver(attributeName_xpath,AW_PaymentProBtn);
 				}else if (link_to_click.equalsIgnoreCase("Personal Information")) {
-					click(AW_PerInfoBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_PerInfoBtn);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Essay and Attachment")) {
 //					waitForConditionisElementPresent(AW_EssayAttBtn, "5000");
-					click(AW_EssayAttBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_EssayAttBtn);
+					waitForPageToLoadWebdriver();
 //					waitForElement(PSD_PageName1, "Essay And Attachment Page");
 //					waitForConditionisElementPresent(PSD_PageName1, "5000");
 				}else if (link_to_click.equalsIgnoreCase("Education Background")) {
-					click(AW_EduBackBtn);
-					waitForPageToLoad();
+					clickWebdriver(attributeName_xpath,AW_EduBackBtn);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Recommendations")) {
 //					sendKeyStroke(attributeName_xpath, AW_RecommendationBtn, Keys.SPACE);
 //					sendKeys(attributeName_xpath, AW_RecommendationBtn, " ");
 //					clickWebdriver(attributeName_xpath, AW_RecommendationBtn);
 					clickWebdriverWithCoordinates(attributeName_xpath, AW_RecommendationBtn);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Downloadable Forms")) {
-					click(AW_DownFormBtn);
+					clickWebdriver(attributeName_xpath,AW_DownFormBtn);
 				}else if (link_to_click.equalsIgnoreCase("Check Your Application")) {
-					click(AW_CheckAppBtn);
+					clickWebdriver(attributeName_xpath,AW_CheckAppBtn);
 				}else if (link_to_click.equalsIgnoreCase("Application Instructions")) {
-					click(AW_AppInstructionBtn);
+					clickWebdriver(attributeName_xpath,AW_AppInstructionBtn);
 				}
 			}
 			if (!conformation.equals("")) {
@@ -82,38 +82,38 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 			if (!reviewappfee.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Review Application Fee ("+reviewappfee+")");
 				if (reviewappfee.equalsIgnoreCase("Domestic")) {
-					click(AW_DomesticRadio);
+					clickWebdriver(attributeName_xpath,AW_DomesticRadio);
 				}else if (reviewappfee.equalsIgnoreCase("International")) {
-					click(AW_InternationalRadio);
+					clickWebdriver(attributeName_xpath,AW_InternationalRadio);
 				}
 			}
 			if (!selectpaymethod.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on Select Method ("+selectpaymethod+")");
 					if (selectpaymethod.equalsIgnoreCase("Check")) {
-						click(AW_CheckRadio);
+						clickWebdriver(attributeName_xpath,AW_CheckRadio);
 					}else if (selectpaymethod.equalsIgnoreCase("Fee Waiver")) {
-						click(AW_FeeWaiverRadio);
+						clickWebdriver(attributeName_xpath,AW_FeeWaiverRadio);
 					}else if (selectpaymethod.equalsIgnoreCase("Credit Card")) {
-						click(AW_CreditCardRadio);
+						clickWebdriver(attributeName_xpath,AW_CreditCardRadio);
 					}
 			}
 
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+button_to_click+") Button");
 					if (button_to_click.equalsIgnoreCase("Start Application")) {
-						click(AW_StartAppBtn);
+						clickWebdriver(attributeName_cssselector,AW_StartAppBtn);
 					}else if (button_to_click.equalsIgnoreCase("Messages")) {
-						click(AW_AppInstBtn);
+						clickWebdriver(attributeName_xpath,AW_AppInstBtn);
 					}else if (button_to_click.equalsIgnoreCase("Profile")) {
-						click(AW_SubAppBtn);
+						clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 					}else if (button_to_click.equalsIgnoreCase("Continue")) {
-						click(AW_ContinueBtn);
-						waitForPageToLoad();
+						clickWebdriver(attributeName_cssselector,AW_ContinueBtn);
+						waitForPageToLoadWebdriver();
 					}else if (button_to_click.equalsIgnoreCase("Pay and Continue")) {
 //						clickchooseokgetconfirmationpagepload(AW_PayContinueBtn);
 						clickWebdriver(attributeName_xpath, AW_PayContinueBtn);
 //						alertAccept();
-						waitForPageToLoad();
+						waitForPageToLoadWebdriver();
 						waitForPageToLoadWebdriver();
 					}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
 						waitForElementPresent(AW_PrintPreviewBtn, "Pdf Button");

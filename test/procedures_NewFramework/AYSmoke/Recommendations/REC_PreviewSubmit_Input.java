@@ -28,7 +28,7 @@ public class REC_PreviewSubmit_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Step 2 -Click the button as '"+gobacksubmit+"'");
 			if (gobacksubmit.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (gobacksubmit.equalsIgnoreCase("Submit")) {
 				clickWebdriver(attributeName_xpath, PAS_SubmitBtn);
 			}

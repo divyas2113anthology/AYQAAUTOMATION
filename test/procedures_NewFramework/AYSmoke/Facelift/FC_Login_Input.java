@@ -26,7 +26,7 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_cssselector, CA_FirstName, "First or Given Name");
 			}	else if (tab_to_select.equalsIgnoreCase("User Login")) {
 				Reporter.log("Select the Tab, '"+ tab_to_select +"'");
-				click(LI_UserLoginSelect);
+				clickWebdriver(attributeName_cssselector,LI_UserLoginSelect);
 			}
 			
 		}
@@ -35,23 +35,23 @@ public class FC_Login_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 2 - Click This Link, '"+ link_to_click +"'");
 			if (link_to_click.equalsIgnoreCase("Contact Us")) {
 				Reporter.log("Click the 'Contact Us' Link");
-				click(LI_contactUs);
+				clickWebdriver(attributeName_cssselector,LI_contactUs);
 			} else if (link_to_click.equalsIgnoreCase("Frequently Asked Questions")) {
 				Reporter.log("Click the 'Frequently Asked Questions' Link");
-				click(LI_frAskedQst);
+				clickWebdriver(attributeName_cssselector,LI_frAskedQst);
 			} else if (link_to_click.equalsIgnoreCase("Technical Support")) {
 				Reporter.log("Click the 'Technical Support' Link");
-				click(LI_technicalSupport);
+				clickWebdriver(attributeName_cssselector,LI_technicalSupport);
 			} else if (link_to_click.equalsIgnoreCase("Security Information")) {
 				Reporter.log("Click the 'Frequently Asked Questions' Link");
-				click(LI_securityInfo);
+				clickWebdriver(attributeName_cssselector,LI_securityInfo);
 			} else if (link_to_click.equalsIgnoreCase("System Requirements")) {
 				Reporter.log("Click the 'Technical Support' Link");
-				click(LI_systemRequirements);
+				clickWebdriver(attributeName_linktext,LI_systemRequirements);
 			}else if(!tab_to_select.equalsIgnoreCase("User Name")){
 				waitForElementPresentWebdriver(attributeName_xpath, ForgotUserNamePassword, tab_to_select);
 				clickWebdriver(attributeName_xpath,ForgotUserNamePassword);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 			
 		}

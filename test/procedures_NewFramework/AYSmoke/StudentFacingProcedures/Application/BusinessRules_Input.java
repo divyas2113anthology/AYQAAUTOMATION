@@ -60,13 +60,13 @@ public class BusinessRules_Input extends CommonSeleniumActions implements OR {
 		if (!savecontinue.equals("")) {
 			Reporter.log("Step 27 - Click on ("+savecontinue+")Button");
 			if(savecontinue.equalsIgnoreCase("Save")){
-				click(PD_Save);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PD_Save);
+				waitForPageToLoadWebdriver();
 			}else if (savecontinue.equalsIgnoreCase("Save & Continue")) {
-				click(PD_SaveContinue);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PD_SaveContinue);
+				waitForPageToLoadWebdriver();
 			}else if (savecontinue.equalsIgnoreCase("Reset")) {
-				click(PD_Reset);
+				clickWebdriver(attributeName_xpath,PD_Reset);
 			}
 		}
 	//endExecutionOrder(j);

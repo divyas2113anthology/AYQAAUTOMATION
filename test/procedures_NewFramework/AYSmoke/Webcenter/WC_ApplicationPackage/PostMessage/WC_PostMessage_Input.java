@@ -42,8 +42,8 @@ public class WC_PostMessage_Input extends CommonSeleniumActions implements OR{
 			Reporter.log("Step 4 - Verify its navigate to ("+submit+") page");
 			if(submit.equalsIgnoreCase("Submit"))
 			{
-				click(PM_Submit);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PM_Submit);
+				waitForPageToLoadWebdriver();
 			}
 		}
 		if (!back.equals("")) 
@@ -51,8 +51,8 @@ public class WC_PostMessage_Input extends CommonSeleniumActions implements OR{
 			Reporter.log("Step 4 - Verify its navigate to ("+back+") page");
 			if(submit.equalsIgnoreCase("Back"))
 			{
-				click(PM_Back);
-				waitForPageToLoad();
+				clickWebdriver(attributeName_xpath,PM_Back);
+				waitForPageToLoadWebdriver();
 			}
 		}
 		

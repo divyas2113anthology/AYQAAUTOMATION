@@ -25,10 +25,10 @@ public class MC_LookupTables_Input extends CommonSeleniumActions implements OR{
 			Reporter.log("Step 2 - Click on Button as ["+button+"]");
 			if (button.equalsIgnoreCase("Differences Across Servers")) {
 				clickWebdriver(attributeName_id,"btnViewDifferences");
-//				waitForPageToLoad();
+//				waitForPageToLoadWebdriver();
 			}else if (button.equalsIgnoreCase("Modify Data")) {
 				clickWebdriver(attributeName_id,"btnModifyData");
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}
 		}
 	}catch(Exception e){

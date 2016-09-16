@@ -34,7 +34,7 @@ public class AR_Applicant_Unassigned_Input extends CommonSeleniumActions impleme
 				sendKeys(attributeName_xpath, AR_AppSearchBox, applicant_search_present);
 				waitForElementPresentWebdriver(attributeName_xpath, AR_AppSearchButton, "Search");
 				clickWebdriver(attributeName_xpath, AR_AppSearchButton);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				verifyElementContainsTextWebdriver(attributeName_xpath, AR_SearchAppLName+applicant_search_present+"')]", applicant_search_present, applicant_search_present);
 			}
 			if(!applicant_search_notpresent.equals("")){
@@ -42,7 +42,7 @@ public class AR_Applicant_Unassigned_Input extends CommonSeleniumActions impleme
 				sendKeys(attributeName_xpath, AR_AppSearchBox, applicant_search_notpresent);
 				waitForElementPresentWebdriver(attributeName_xpath, AR_AppSearchButton, "Search");
 				clickWebdriver(attributeName_xpath, AR_AppSearchButton);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 				verifyElementContainsTextWebdriver(attributeName_xpath, AR_SearhResult, applicant_search_notpresent, applicant_search_notpresent); 
 			}
 		} catch (Exception e) {

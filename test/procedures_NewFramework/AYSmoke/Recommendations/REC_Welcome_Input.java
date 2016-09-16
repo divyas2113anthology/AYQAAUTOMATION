@@ -25,7 +25,7 @@ public class REC_Welcome_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_partiallinktext, logoutoverview);
 				waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='HelpBoxes']/b", "Successful Logout!");
 //				verifyTextPresent("Successful Logout!");
-//				waitForPageToLoad();
+//				waitForPageToLoadWebdriver();
 			}else if (logoutoverview.equalsIgnoreCase("More Info")) {
 				clickWebdriver(attributeName_partiallinktext, logoutoverview);
 				recentPopupSelectWebdriver("More Info");
@@ -35,7 +35,7 @@ public class REC_Welcome_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 2 - Click on '"+section+"' link in Welcome Page");
 			waitForElementPresentWebdriver(attributeName_partiallinktext, section, "Side Menu Section");
 			clickWebdriver(attributeName_partiallinktext, section);
-//			waitForPageToLoad();
+//			waitForPageToLoadWebdriver();
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

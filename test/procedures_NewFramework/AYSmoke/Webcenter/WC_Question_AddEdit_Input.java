@@ -69,14 +69,14 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 				if (usagesavedeletecancel.equalsIgnoreCase("Usage")) {
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_UsageButton,"Usage");
 					clickWebdriver(attributeName_xpath, QAE_UsageButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				} else
 				if (usagesavedeletecancel.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				} else if (usagesavedeletecancel.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
-					waitForPageToLoad();
+					waitForPageToLoadWebdriver();
 				}
 			}
 			switchToDefaultContentWebdriver();

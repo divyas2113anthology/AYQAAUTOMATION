@@ -58,7 +58,7 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 			Reporter.log("Step 4 - Click the Button as '"+update_goback+"' ");
 			if (update_goback.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CP_Goback);
-				waitForPageToLoad();
+				waitForPageToLoadWebdriver();
 			}else if (update_goback.equalsIgnoreCase("Update")) {
 				clickWebdriver(attributeName_xpath, CP_Update);
 			}

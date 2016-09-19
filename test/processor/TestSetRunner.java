@@ -53,8 +53,11 @@ public class TestSetRunner {
 			runParams[0] = projectIdInput.toString();
 			runParams[1] = testSetIdInput.toString();
 			runParams[2] = testId.toString();
+			System.out.println("Project ID " +runParams[0]);
+			System.out.println("Test set ID " +runParams[1]);
+			System.out.println("Test case ID " +runParams[2]);
 			processor.DriverScript.main(runParams);
-			//System.out.println("*************test "+testId+"status: "+testToRun.getExecutionStatusId().getValue());
+			System.out.println("*************Test "+testId+"status: "+testToRun.getExecutionStatusId().getValue());
 		}
 
 		for (int i = 0; i < numTests; i++) {

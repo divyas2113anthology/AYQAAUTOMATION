@@ -29,7 +29,8 @@ public class FC_Dashboard_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 2 - Verify Page Name as["+page_title+"]");
 			//			waitForElement(DB_PageTitle, "My Applications");
 			if(page_title.equalsIgnoreCase("My Application")){
-				//				verifyElementText(DB_PageTitle, page_title, "My Applications");	
+				//				verifyElementText(DB_PageTitle, page_title, "My Applications");
+				waitForElementPresentWebdriverWait(attributeName_cssselector, DB_PageTitle, page_title);
 				verifyElementContainsTextWebdriver(attributeName_cssselector, DB_PageTitle, page_title, page_title);
 			}
 		}

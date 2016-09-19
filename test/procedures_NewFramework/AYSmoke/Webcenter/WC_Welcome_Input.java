@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
+import java.time.Clock;
+
 public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Welcome' page")
@@ -18,12 +20,12 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			String welpackage = testdata[1];
 			String welmenulinks = testdata[2];
 			String link_to_click = testdata[3];
-			
+
 			Reporter.log("Input Test Data was retrieved for 'Welcome' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
 				Reporter.log("Step 1 - Click the link as ["+weltopupdatelogout+"]");
-				waitForElementPresentWebdriver(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
+				waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
 				clickWebdriver(attributeName_partiallinktext, weltopupdatelogout);
 				driver.manage().deleteAllCookies();
 				System.out.println("Cookies cleared");
@@ -34,7 +36,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				String [] splitPackage = welpackage.split(";");
 				for (int i = 0; i < splitPackage.length; i++) {
 					if (i == splitPackage.length-1) {
-						waitForElementPresentWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "Page Name");
+						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "Page Name");
 						if (splitPackage[i].equals("Add a QuickAdd Application")) {
 							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
 							clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");

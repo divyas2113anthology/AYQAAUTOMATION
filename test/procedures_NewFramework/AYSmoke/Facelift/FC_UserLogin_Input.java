@@ -85,7 +85,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 //			waitForPageToLoadWebdriver();
 			waitForElementPresentWebdriverWait(attributeName_id, "ay-forgotSubmit", "Search Button");
 		}
-	
+			waitForPageToLoadWebdriver();
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());
 		}

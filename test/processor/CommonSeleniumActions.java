@@ -239,10 +239,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//		Assert.assertEquals(actual,expected);
 	//	}
 
-	public void mouseOver(String locater) throws Exception{
-		writeConsole("mouseOver["+locater+"]");
-		selenium.mouseOver(locater);    	
-	}	
 
 	public void waitForElementPresent(String elementor,String elementname) throws Exception{
 		for (int second = 0;;second ++) {

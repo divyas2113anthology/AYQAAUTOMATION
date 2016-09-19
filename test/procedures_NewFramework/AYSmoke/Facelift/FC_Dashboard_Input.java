@@ -23,18 +23,23 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 			if (!dashboard_button.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+dashboard_button+") Button");
 				if (dashboard_button.equalsIgnoreCase("Dashboard")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath, DB_DbBtn,"Dashboard");
 					clickWebdriver(attributeName_xpath, DB_DbBtn);	//DB_DbBtn
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Messages")) {
+					waitForElementPresentWebdriverWait(attributeName_cssselector,DB_MsgBtn,"Messages");
 					clickWebdriver(attributeName_cssselector,DB_MsgBtn);
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Profile")) {
+					waitForElementPresentWebdriverWait(attributeName_cssselector,DB_ProfBtn,"Profile");
 					clickWebdriver(attributeName_cssselector,DB_ProfBtn);
 					waitForPageToLoadWebdriver();
 				}else if (dashboard_button.equalsIgnoreCase("Technical Support")) {
+					waitForElementPresentWebdriverWait(attributeName_cssselector, DB_TecSupportBtn,"Technical Support");
 					clickWebdriver(attributeName_cssselector, DB_TecSupportBtn);
 					recentPopupSelectWebdriver("Technical Support");
 				}else if (dashboard_button.equalsIgnoreCase("Log Out")) {
+					waitForElementPresentWebdriverWait(attributeName_xpath,DB_LogoutBtn,"Log Out");
 					clickWebdriver(attributeName_xpath,DB_LogoutBtn);
 					waitForPageToLoadWebdriver();
 				}			

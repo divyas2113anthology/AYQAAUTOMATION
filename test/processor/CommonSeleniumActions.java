@@ -55,7 +55,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public static int timeOutInSeconds = 60;
 	public void open(String url){
 		writeConsole("Open ["+url+"]");
-		selenium.open(url);
+		//selenium.open(url);
+        driver.get(url);
 	}
 
 	//	public void click(String locator){
@@ -76,51 +77,24 @@ public class CommonSeleniumActions extends Processor implements OR {
 	/*public void type(String locator,String value){
 		writeConsole("type["+locator+", "+value+"]");
 		selenium.type(locator, value);
-	}*/
-
-	public void doubleClick(String locator){
-		writeConsole("doubleClick["+locator+"]");
-		selenium.doubleClick(locator);
 	}
 
-	public void dragAndDrop(String locator,String movementsString){
-		writeConsole("dragAndDrop["+locator+", "+movementsString+"]");
-		selenium.dragAndDrop(locator, movementsString);
-	}
 	public void dragAndDropToObject(String locatorOfObjectToBeDragged,String locatorOfDragDestinationObject){
 		writeConsole("dragAndDropToObject["+locatorOfObjectToBeDragged+", "+locatorOfDragDestinationObject+"]");
 		selenium.dragAndDropToObject(locatorOfObjectToBeDragged, locatorOfDragDestinationObject);
 	}
+*/
 
 	public void selectWindow(String windowName) {
 		writeConsole("selectWindow["+windowName+"]");
-		selenium.selectWindow(windowName);
+		//selenium.selectWindow(windowName);
+		driver.switchTo().window(windowName);
 	}
 
-	public void selectMainWindow() {
-		Reporter.log("Proceed to Select Main Window");
-		writeConsole("selectWindow[null]");
-		selenium.selectWindow(null);
-	}
-
-	public String getText(String locator){
-		writeConsole("getText["+locator+"]");
-		String actualText  = selenium.getText(locator);
-		writeConsole("ActualText ["+actualText+"]");
-		return actualText;
-	}	
-
-	public String getValue(String locator){
-		writeConsole("getValue["+locator+"]");		
-		String actualValue  = selenium.getValue(locator);
-		writeConsole("ActualValue["+actualValue+"]");
-		return actualValue;
-	}
-
-	public void select(String selectLocator,String optionLocator){
+	/*public void select(String selectLocator,String optionLocator){
 		writeConsole("select["+selectLocator+", "+optionLocator+"]");	
 		selenium.select(selectLocator,optionLocator);
-	}
+	}*/
 
 	protected void focus(String locator){
 		writeConsole("focus["+locator+"]");
@@ -527,7 +501,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (int i = wintotal; i>0; i--) {				
 				selectWindow("name="+windowsOpen[i]);
 				close();				
-				selectMainWindow();
+				selectMainWindowWebdriver();
 			}
 		}
 	}
@@ -628,25 +602,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		waitForPageToLoadWebdriver();
 	}
 
-
-	public void verifyElementText(String element,String expectedtext,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
-		if (isElementPresent(element)) {
-			String actualtext = getText(element);
-			System.out.println("Actual Text: "+actualtext);
-			System.out.println("Expected Text: "+expectedtext);
-			if (expectedtext.equals(actualtext.trim())) {
-				//				if (expectedtext.equals(actualtext)) {
-				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
-				writeConsole("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
-			} else {
-				writeFailure("Element["+elementname+"] with Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
 	public void verifyText(String expectedtext,String actualtext, String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
 		if (actualtext.equals(expectedtext.trim())) {
@@ -814,21 +769,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	}
 
-	public void verifyElementValue(String element,String expectedvalue,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") with Value("+expectedvalue+")");
-		if (isElementPresent(element)) {
-			String actualvalue = getValue(element);
-			if (expectedvalue.equals(actualvalue)) {
-				Reporter.log("Element["+elementname+"] with ["+actualvalue+"]Value was displayed correctly ");
-			} else {
-				writeFailure("Element["+elementname+"] with Actuals Value - ["+actualvalue+"]did not match Expected Value - ["+expectedvalue+"]");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-
 	public void verifyElementChecked(String element,String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") is Checked");
 		if (isElementPresent(element)) {			
@@ -981,7 +921,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}	
 	}
 
-	//		This Method is used to Verify table Cell Value with respective to Coulumn Name and another Row Cell Data
+	/*//		This Method is used to Verify table Cell Value with respective to Coulumn Name and another Row Cell Data
 	public void verifyCellValuewithColumnName(String cellvalue,String columnname,String expectedcellvalue){
 		Reporter.log("Proceed to Verify Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] and  Row Data["+cellvalue+"] ");
 		String actualcellvalue = getText("//tr[td[text()='"+cellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+1]");
@@ -1035,7 +975,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
 		}			
 	}
-
+*/
 	public void verifyIsTextPresent(String text){
 		Reporter.log("Proceed to Verify Text["+text+"] was displaying Correctly");
 		if (isTextPresent(text)) {
@@ -1063,91 +1003,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		waitForPageToLoadWebdriver();
 	}
 
-	public void verifyElementContainsText(String element,String expectedtext,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
-		if (isElementPresent(element)) {
-			String actualtext = getText(element);
-			if (actualtext.contains(expectedtext)) {
-				Reporter.log("Element["+elementname+"] Contains ["+expectedtext+"]Text was displayed correctly ");
-			} else {
-				writeFailure("Element["+elementname+"] Contains Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-
-	public void verifyElementVisibleContainsText(String element,String expectedtext,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
-		if (isVisible(element)) {
-			String actualtext = getText(element);
-			if (actualtext.contains(expectedtext)) {
-				Reporter.log("Element["+elementname+"] Contains ["+expectedtext+"]Text was displayed correctly ");
-			} else {
-				writeFailure("Element["+elementname+"] Contains Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Visible");
-		}
-	}
-
-	public void verifyElementVisibleText(String element,String expectedtext,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
-		if (isVisible(element)) {
-			String actualtext = getText(element);
-			if (actualtext.equals(expectedtext)) {
-				Reporter.log("Element["+elementname+"] with its ["+expectedtext+"]Text was displayed correctly ");
-			} else {
-				writeFailure("Element["+elementname+"] with its Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Visible");
-		}
-	}
-
-	//		public void verifyElementVisibleContainsText(String element,String expectedtext,String elementname) throws Exception{
-	//			Reporter.log("Verify Element("+elementname+") Contains Text("+expectedtext+")");
-	//			if (isVisible(element)) {
-	//				String actualtext = getText(element);
-	//				if (actualtext.contains(expectedtext)) {
-	//					Reporter.log("Element["+elementname+"] contains ["+expectedtext+"]Text was displayed correctly ");
-	//				} else {
-	//					writeFailure("Element["+elementname+"] contains Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
-	//				}
-	//				
-	//			} else {
-	//				writeFailure("Element ["+elementname+" ] was Not Visible");
-	//			}
-	//		}
-
-	public void waitForElementVisibleVerifyText(String element,String expectedtext,String elementname)throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Visible and  its Text("+expectedtext+")");
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was not Visible");
-				}
-				if (isVisible(element)) {
-					String actualtext = getText(element);
-					if (actualtext.equals(expectedtext)) {
-						Reporter.log("Element["+elementname+"] with its ["+expectedtext+"]Text was Visibled correctly ");
-						break;
-					} else {
-						writeFailure("Element["+elementname+"] with its Actuals Text - ["+actualtext+"] did not match Expected Text - ["+expectedtext+"]");
-					}					
-
-				}
-			} catch (Exception e) {
-
-			}
-						
-		}		
-	}
-
-
 	public String waitForElementVisibleGetText(String element,String elementname)throws Exception{
 		Reporter.log("Verify Element("+elementname+") is Visible and Get Element Text");
 		String actualtext;			
@@ -1158,7 +1013,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				}
 				if (isElementPresent(element)) {
 					if (isVisible(element)) {
-						actualtext = getText(element);
+						actualtext = getTextWebdriver(element,elementname);
 						return actualtext;						
 					}
 				}
@@ -1170,31 +1025,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 
 
-	}
-
-
-	public void waitForElementPresentVerifyText(String element,String expectedtext,String elementname)throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Present and  its Text("+expectedtext+")");
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was not Present");
-				}
-				if (isElementPresent(element)) {
-					String actualtext = getText(element);
-					if (actualtext.equals(expectedtext)) {
-						Reporter.log("Element["+elementname+"] with its ["+expectedtext+"]Text was Present correctly ");
-						break;
-					} else {
-						writeFailure("Element["+elementname+"] with its Actuals Text - ["+actualtext+"] did not match Expected Text - ["+expectedtext+"]");
-					}					
-
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}		
 	}
 
 
@@ -1243,7 +1073,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
 
 				if (isVisible(element)) {
-					String actualtext = getText(element);
+					String actualtext = getTextWebdriver(attributeName_xpath,element);
 					if (actualtext.contains(expectedtext)) {
 						Reporter.log("Element["+elementname+"] Contains ["+expectedtext+"]Text was Visibled correctly ");
 						break;
@@ -1270,7 +1100,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				if (isVisible(element)) {
 					//						int csscount = getCssCount(element);
 					//						writeConsole("Message Count "+csscount);
-					String actualtext = getText(element);
+					String actualtext = getTextWebdriver(attributeName_xpath,element);
 					if (actualtext.contains(expectedtext)) {
 						Reporter.log("Element["+elementname+"] Contains ["+expectedtext+"]Text was Visibled correctly ");
 						break;
@@ -1345,7 +1175,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (int i = 0; i < columnNamesArray.length; i++) {
 			Reporter.log("Proceed to Verify All User Table Row Data["+expCellValuesArray[i]+"] is Present in the Column Name ["+columnNamesArray[i]+"]");
 			if (isElementPresent("//tr[td/div[text()='"+expCellValuesArray[i]+"']]")) {	
-				String actualcellvalue = getText("//tr[td/div[text()='"+expCellValuesArray[0]+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnNamesArray[i]+"')]/preceding-sibling::th)+1]");
+				String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td/div[text()='"+expCellValuesArray[0]+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnNamesArray[i]+"')]/preceding-sibling::th)+1]");
 				if (actualcellvalue.equals(expCellValuesArray[i])) {
 					Reporter.log("All User Table Row Data["+expCellValuesArray[i]+"] with respective to  Column Name ["+columnNamesArray[i]+"] was displayed Correctly");
 				} 
@@ -1791,7 +1621,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}			
 	}
 
-	public void verifypagenavigated(String elementor,String expectedpage){
+	/*public void verifypagenavigated(String elementor,String expectedpage){
 		Reporter.log("Verify its Navigated to Page Number["+expectedpage+"]");
 		String actualactivepage = getText(elementor);			
 		if (actualactivepage.equals(expectedpage)) {
@@ -1799,7 +1629,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		} else {
 			writeFailure("Its Navigated to Actual page Number["+actualactivepage+"] did not match with Expected Page Number["+expectedpage+"]");
 		}			
-	}
+	}*/
 
 	//		public void pagenumberenabled(String pageelement,String pagenumber,String pagetopbottom) throws Exception {
 	//			Reporter.log("Verify Pagination at ["+pagetopbottom+"] is Enabled or Selected with Page Number["+pagenumber+"]");
@@ -1987,7 +1817,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String rowcount = "NotFound";
 		int elementcount = getCssCount(element).intValue();
 		for (i = 0; i < elementcount; i++) {
-			String actualrowvalue = getText(element+":eq("+i+")");
+			String actualrowvalue = getTextWebdriver(attributeName_xpath,element+":eq("+i+")");
 			if (actualrowvalue.equals(rowvalue)) {
 				i = i+1;
 				rowcount = "Found";
@@ -2009,7 +1839,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		selenium.keyDownNative(String.valueOf(valueassic));
 	}*/
 
-	public void showItemPerPage(String elementor,String elementoptions) throws Exception{
+	/*public void showItemPerPage(String elementor,String elementoptions) throws Exception{
 		String options = "NotFound";
 		String[] ShowItemsOptionsArray = getSelectOptions(elementor);
 		for (int i = 0; i < ShowItemsOptionsArray.length; i++) {
@@ -2028,7 +1858,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		if (options.equals("NotFound")) {
 			writeFailure("Options["+elementoptions+"] was Not Found");
 		}
-	}
+	}*/
 
 	public void verifySelectContainsOptions(String elementor,String elementoptions,String elementname){
 		Reporter.log("Verify ["+elementname+"] Select has Option["+elementoptions+"]");
@@ -2280,7 +2110,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 					// xpath=("//div[@class='validation-summary-errors'//li)[2]
 					// etc.
 					individualLiElement = "xpath=(" + elementLocator + "//li)[" + i + "]";
-					writeMessageInBold(getText(individualLiElement));
+					writeMessageInBold(getTextWebdriver(attributeName_xpath,individualLiElement));
 				}
 
 				// In the above case, the number of expected error messages is '2' but the number of actual error messages is '3'

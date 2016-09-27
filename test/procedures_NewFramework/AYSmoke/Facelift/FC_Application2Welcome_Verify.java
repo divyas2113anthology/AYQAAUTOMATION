@@ -29,7 +29,7 @@ public class FC_Application2Welcome_Verify extends CommonSeleniumActions impleme
 		}
 		if (!page_title.equals("")) {
 			Reporter.log("Step 2 - Verify Page Name as["+page_title+"]");
-			verifyElementContainsText(AW_PageTitle, page_title, "Page Name");	
+			verifyElementContainsTextWebdriver(attributeName_xpath,AW_PageTitle, page_title, "Page Name");
 		}
 		if (!section_present.equals("")) {
 			Reporter.log("Step 3 - Verify section present as["+section_present+"]");

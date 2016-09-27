@@ -74,7 +74,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			if (!pisportsinterest.equals("")) {
 				Reporter.log("Step 8 - Enter Favourite Sports as ("+pisportsinterest+")");
 				String sportID = getElementIDbyLabel("Favourite Sports", PI_Sports);
-				select(sportID,pisportsinterest);			
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,sportID,pisportsinterest);
 			}
 			if (!piluckyno.equals("")) {
 				Reporter.log("Step 9 - Check Lucky Number as ("+piluckyno+")");

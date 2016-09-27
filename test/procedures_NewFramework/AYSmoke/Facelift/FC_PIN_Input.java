@@ -29,7 +29,7 @@ public class FC_PIN_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'PIN' page");
 			if (!pin.equals("")) {
 				Reporter.log("Proceed to Get 'PIN' number");
-				String Pin = getText(PinNumber);
+				String Pin = getTextWebdriver(attributeName_xpath,PinNumber);
 	//			System.out.println("1");
 				String[] PinSplit = Pin.split("  ");			
 	//			System.out.println("Length"+PinSplit.length);

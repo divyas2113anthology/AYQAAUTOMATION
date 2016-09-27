@@ -95,7 +95,7 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 					clickWebdriver(attributeName_xpath,PII_Reset);
 				}else if (button_to_click.equals("close window")) {
 					clickWebdriver(attributeName_xpath,EAI_CloseButton);
-					selectMainWindow();	
+					selectMainWindowWebdriver();
 				}
 			}
 			if (!pisubmitappbtn.equals("")) {

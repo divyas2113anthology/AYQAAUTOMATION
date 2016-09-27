@@ -39,7 +39,7 @@ public class BR_InviteToEvent_Inputs extends CommonSeleniumActions implements OR
 			}
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 3 - Select the Template as ("+selecttemplate+")");
-				select(IE_SelectTemplate, "regexp:"+selecttemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_SelectTemplate, "regexp:"+selecttemplate);
 			}
 			if (!subject.equals("")) {
 				Reporter.log("Step 4 -Enter the Subject as ("+subject+")");

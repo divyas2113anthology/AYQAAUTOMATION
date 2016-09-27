@@ -127,7 +127,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					Reporter.log("Step 11  - Proceed to Get 'PIN' number");
 					waitForElementPresentWebdriver(attributeName_xpath, CA_LoginBtn, "Login");
 					if (pin.contains("Pin")) {
-						String Pin = getText(FC_PinNumber);
+						String Pin = getTextWebdriver(attributeName_xpath,FC_PinNumber);
 						System.out.println("Pin : "+Pin);
 						String[] PinSplit = Pin.split("  ");			
 			//			System.out.println("Length"+PinSplit.length);
@@ -142,7 +142,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 						Runtimedatawrite(PinNumber,pin);
 			//			System.out.println("5");
 					}else if (pin.contains("User")) {
-						String Name = getText(FC_UserName);
+						String Name = getTextWebdriver(attributeName_xpath,FC_UserName);
 						System.out.println("User Name : "+Name);
 						String[] UserNameSplit = Name.split("  ");	
 						String UserName = UserNameSplit[1];

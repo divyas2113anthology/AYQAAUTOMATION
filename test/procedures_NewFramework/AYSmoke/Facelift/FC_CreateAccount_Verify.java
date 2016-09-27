@@ -22,12 +22,12 @@ public class FC_CreateAccount_Verify extends CommonSeleniumActions implements	OR
 			Reporter.log("Verify Test Data was retrieved for 'Application Status: Ready for Submission' page");
 			if (!confirmed_fstname.equals("")) {
 				Reporter.log("Step 1 - Verify Confirmation Applicant Name ");
-				String GetFstName = getText("CA_ConfirmedFstname");
+				String GetFstName = getTextWebdriver(attributeName_name,"CA_ConfirmedFstname");
 //				System.out.println("Veiryf Text:" +GetFstName);
 				String[] SplitedFstName = GetFstName.split(",");
 //				System.out.println("Veiryf Text:" +SplitedFstName);
 				if (confirmed_fstname.equals(SplitedFstName)) {
-					verifyElementContainsText(CA_ConfirmedFstname, "Applicant First Name", confirmed_fstname+",");
+					verifyElementContainsTextWebdriver(attributeName_cssselector,CA_ConfirmedFstname, "Applicant First Name", confirmed_fstname+",");
 				}
 			}
 			

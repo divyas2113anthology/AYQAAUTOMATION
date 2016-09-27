@@ -3,7 +3,7 @@ package procedures_NewFramework.AYSmoke.Connect;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.sun.corba.se.impl.io.FVDCodeBaseImpl;
+//import com.sun.corba.se.impl.io.FVDCodeBaseImpl;
 
 import or.OR;
 import processor.CommonSeleniumActions;

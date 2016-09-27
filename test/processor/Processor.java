@@ -79,7 +79,7 @@ public class Processor {
 	    
 	    @BeforeSuite
 	   	public void startseleniumserver(ITestContext context) throws Exception {
-			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/ARQAAutomation/SeleniumConfigFiles/InputTestdata.xls)");
+			Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			browser = Runtimedataread("Browser").toLowerCase().trim();
 			String outlocation =  context.getOutputDirectory();
 			String[] outfilename = outlocation.split("\\\\");

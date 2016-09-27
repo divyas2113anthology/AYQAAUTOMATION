@@ -74,7 +74,7 @@ public class WC_Batchupdate_Input extends CommonSeleniumActions implements OR
 			// String Sportsintrestpd = getElementIDbyLabel("Sports Interest", BU_SportsInterest);
 //			System.out.println(Sportsintrestpd);
 //			writeConsole(Sportsintrestpd);
-			select(BU_SportsInterest,SportsInterest);	
+			selectByVisibleTextWithSpaceWebdriver(attributeName_name,BU_SportsInterest,SportsInterest);
 		}
 		if (!SSN.equals("")) {
 			Reporter.log("Step 10 - Verify its navigate to ("+SSN+") page");

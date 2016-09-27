@@ -23,11 +23,11 @@ public class FC_Fairfax_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Fairfax' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				verifyElementText(PSD_SuccessMsg, successmessage, "Sucesses Message");
+				verifyElementTextWebdriver(attributeName_xpath,PSD_SuccessMsg, successmessage, "Sucesses Message");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementText(PSD_PageName+pagename+"')]", pagename, "Page Name");
+				verifyElementTextWebdriver(attributeName_xpath,PSD_PageName+pagename+"')]", pagename, "Page Name");
 			}
 			if (!verifyui.equals("")) {
 			

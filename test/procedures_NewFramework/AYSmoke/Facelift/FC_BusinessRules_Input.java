@@ -38,7 +38,7 @@ public class FC_BusinessRules_Input extends CommonSeleniumActions implements OR 
 			if (!brstudentstatus.equals("")) {
 				Reporter.log("Step 3 - Enter Student Status as ("+brstudentstatus+")");
 				String StudentStatus = getElementIDbyLabel("Student status", BR_StudentStatus);				
-				select(StudentStatus,brstudentstatus);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,StudentStatus,brstudentstatus);
 			}
 			if (!brgre.equals("")) {
 				

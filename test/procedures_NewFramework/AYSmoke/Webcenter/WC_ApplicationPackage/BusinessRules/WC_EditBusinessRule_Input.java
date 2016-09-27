@@ -61,35 +61,35 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!usertype.equals("")) {
 				Reporter.log("Step 4 - Select User type as("+usertype+")");
-					select(BR_UserType, usertype);
+					selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_UserType, usertype);
 			}
 			if (!action.equals("")) {
 				Reporter.log("Step 5 - Select action as : ("+action+")");
-				select(BR_Action, action);				
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_Action, action);
 			}
 			if (!appliestosection.equals("")) {
 				Reporter.log("Step 6 - Select applies to section as : ("+appliestosection+")");
-				select(BR_AppliesToSection, appliestosection);					
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_AppliesToSection, appliestosection);
 			}
 			if (!appliestoquestion.equals("")) {
 				Reporter.log("Step 7 - Select applies to question as : ("+appliestoquestion+")");
-				select(BR_AppliesToQuestion, appliestoquestion);					
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_AppliesToQuestion, appliestoquestion);
 			}
 			if (!eventtype.equals("")) {
 				Reporter.log("Step 8- Select Event type as : ("+eventtype+")");
-				select(BR_EventType, eventtype);					
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_EventType, eventtype);
 			}
 			if (!targetform.equals("")) {
 				Reporter.log("Step 9 - Select Target form as : ("+targetform+")");
-				select(BR_TargetForm, targetform);				
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetForm, targetform);
 			}
 			if (!targetsection.equals("")) {
 				Reporter.log("Step 10 - Select Target selection as : ("+targetsection+")");
-				select(BR_TargetSection, targetsection);			
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetSection, targetsection);
 			}
 			if (!targetquestion.equals("")) {
 				Reporter.log("Step 11 - Select Target question as : ("+targetquestion+")");
-				select(BR_TargetQuestion, targetquestion);					
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetQuestion, targetquestion);
 			}
 			if (!targetvalue.equals("")) {
 				Reporter.log("Step 12 - Select Target value as : ("+targetvalue+")");
@@ -98,7 +98,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targetdocument.equals("")) {
 				Reporter.log("Step 13 - Select Target document as : ("+targetdocument+")");
-				select(BR_TargetDocument, targetdocument);				
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetDocument, targetdocument);
 			}
 			if (!targetstatus.equals("")) {
 				Reporter.log("Step 14 - Select Target Status as : ("+targetstatus+")");
@@ -108,7 +108,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targettestscore.equals("")) {
 				Reporter.log("Step 15 - Select Target test score as : ("+targettestscore+")");
-				select(BR_TargetTestScore, targettestscore);					
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetTestScore, targettestscore);
 			}
 			if (!targetgroup.equals("")) {
 				Reporter.log("Step 16 - Select Target group as : ("+targetgroup+")");
@@ -122,7 +122,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targetemailtemplate.equals("")) {
 				Reporter.log("Step 18 - Select Target Email Template : ("+targetemailtemplate+")");
-				select(BR_TargetEmail, targetemailtemplate);				
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetEmail, targetemailtemplate);
 			}
 			if (!savecancel.equals("")) {
 				Reporter.log("Step - Clicking on : ("+savecancel+")");

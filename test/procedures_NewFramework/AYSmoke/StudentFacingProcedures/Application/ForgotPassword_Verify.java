@@ -38,12 +38,12 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 //					writeFailure("Message("+fpmessage+") was not displayed correctly");
 //				}			
 				fpmessage = fpmessage.replace(";", "\n\n");
-				verifyElementText("//td[@class='BasePageFont']", fpmessage, "System Message:");
+				verifyElementTextWebdriver(attributeName_xpath,"//td[@class='BasePageFont']", fpmessage, "System Message:");
 			}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 2 - Verify Success Message:("+successmessage+") was displayed correctly");
 				waitForElementPresent("//font[@class='BasePageFont']", successmessage);
-				verifyElementText("//font[@class='BasePageFont']", successmessage, "Forgot Password Reset Message");
+				verifyElementTextWebdriver(attributeName_xpath,"//font[@class='BasePageFont']", successmessage, "Forgot Password Reset Message");
 			}
 			if (!fppagename.equals("")) {
 				Reporter.log("Step 3 - Verify its navigate to ("+fppagename+") page");

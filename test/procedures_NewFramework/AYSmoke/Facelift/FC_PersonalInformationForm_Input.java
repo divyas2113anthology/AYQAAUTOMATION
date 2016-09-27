@@ -38,7 +38,7 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			if (!pisuffix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pisuffix+")");
 				String SufID = getElementIDbyLabel("Suffix",PII_Suffix);				
-				select(SufID, pisuffix);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,SufID, pisuffix);
 			}
 			if (!pifirstgivenname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");
@@ -78,7 +78,7 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			if (!pisportsinterest.equals("")) {
 				Reporter.log("Step 8 - Enter Favourite Sports as ("+pisportsinterest+")");
 				String sportID = getElementIDbyLabel("Favourite Sports", PII_Sports);
-				select(sportID,pisportsinterest);			
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,sportID,pisportsinterest);
 			}
 			if (!piluckyno.equals("")) {
 				Reporter.log("Step 9 - Check Lucky Number as ("+piluckyno+")");

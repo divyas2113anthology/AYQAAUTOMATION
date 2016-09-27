@@ -35,7 +35,7 @@ public class WC_InviteEvent_Input extends CommonSeleniumActions implements OR {
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 2 - Proceed to Select the Template as ("+selecttemplate+")");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, IE_TemplateSelect, selecttemplate);
-				select(IE_TemplateSelect, "regexp:"+selecttemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_TemplateSelect, "regexp:"+selecttemplate);
 			}
 			if (!inviteback.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+inviteback+") Button");

@@ -24,11 +24,11 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				verifyElementText(PSD_SuccessMsg, "Your answers were saved successfully to the database.", "Sucesses Message");
+				verifyElementTextWebdriver(attributeName_xpath,PSD_SuccessMsg, "Your answers were saved successfully to the database.", "Sucesses Message");
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementText(PSD_PageName, "Personal Data", "Page Name");
+				verifyElementTextWebdriver(attributeName_xpath,PSD_PageName, "Personal Data", "Page Name");
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the expected ("+verifyui+") text present");

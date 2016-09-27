@@ -27,7 +27,7 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
 				waitForElementPresent(MN_PageTitle, pagename);
-				verifyElementText(MN_PageTitle, pagename, "Page Name");
+				verifyElementTextWebdriver(attributeName_xpath,MN_PageTitle, pagename, "Page Name");
 			}
 			if (!message.equals("")) {
 				waitForText(message, "Successfully Submitted");

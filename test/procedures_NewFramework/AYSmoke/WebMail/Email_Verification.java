@@ -107,7 +107,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!subject.equals("")) {
 					Reporter.log("Step 9 - Verify 'Subject'");
-					verifyElementText(HC_Subject,subject, "Subject("+subject+")");
+					verifyElementTextWebdriver(attributeName_xpath,HC_Subject,subject, "Subject("+subject+")");
 				}
 				if (!verifycontents.equals("")) {
 					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
@@ -129,7 +129,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//					getText("css=iframe[id='ifBdy']");
 					//					getText("css=body[ocsi='1']");
 					//					waitForElementPresent(HC_MailBody_Content, "Email Body Content");
-					verifyElementText(HC_MailBody_Content, verifycontents, "Email Body");
+					verifyElementTextWebdriver(attributeName_cssselector,HC_MailBody_Content, verifycontents, "Email Body");
 
 				}
 				if (!contentcontains.equals("")) {
@@ -140,7 +140,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					String[] contentcontainsarray = contentcontains.split(";");
 					for (int i = 0; i < contentcontainsarray.length; i++) {
 						//						verifyIsTextPresent(contentcontainsarray[i]);						
-						verifyElementContainsText(HC_Body, contentcontainsarray[i], "EMail Body Content ");
+						verifyElementContainsTextWebdriver(attributeName_xpath,HC_Body, contentcontainsarray[i], "EMail Body Content ");
 					}
 
 				}
@@ -192,7 +192,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!getlinkopen.equals("")) {
 					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
-					String getLinkText = getText(HC_LinkContians+getlinkopen+"')]");
+					String getLinkText = getTextWebdriver(attributeName_xpath,HC_LinkContians+getlinkopen+"')]");
 					openAndWait(getLinkText);
 				}
 				if (!getinternallink.equals("")) {
@@ -331,7 +331,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!subject.equals("")) {
 					Reporter.log("Step 9 - Verify 'Subject'");
-					verifyElementText(HC_Subject,subject, "Subject("+subject+")");
+					verifyElementTextWebdriver(attributeName_xpath,HC_Subject,subject, "Subject("+subject+")");
 				}
 				if (!verifycontents.equals("")) {
 					Reporter.log("Step 10 - Verify Email Content["+verifycontents+"]");
@@ -350,7 +350,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					String[] contentcontainsarray = contentcontains.split(";");
 					for (int i = 0; i < contentcontainsarray.length; i++) {
 						//					verifyIsTextPresent(contentcontainsarray[i]);						
-						verifyElementContainsText(HC_Body, contentcontainsarray[i], "EMail Body Content ");
+						verifyElementContainsTextWebdriver(attributeName_xpath,HC_Body, contentcontainsarray[i], "EMail Body Content ");
 					}
 
 				}
@@ -417,7 +417,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!getlinkopen.equals("")) {
 					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
-					String getLinkText = getText(HC_LinkContians+getlinkopen+"')]");
+					String getLinkText = getTextWebdriver(attributeName_xpath,HC_LinkContians+getlinkopen+"')]");
 					openAndWait(getLinkText);
 				}
 				if (!getinternallink.equals("")) {

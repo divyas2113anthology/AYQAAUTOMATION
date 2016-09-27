@@ -28,7 +28,7 @@ public class REC_ChangePasswordConfirmation extends CommonSeleniumActions implem
 			}
 			if (!cppagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+cppagename+") page");
-				verifyElementText(PSD_PageName, cppagename, "Page Name");
+				verifyElementTextWebdriver(attributeName_xpath,PSD_PageName, cppagename, "Page Name");
 			}
 			if (!cpcontinue.equals("")) {
 				Reporter.log("Step 3 - Click on continue button");

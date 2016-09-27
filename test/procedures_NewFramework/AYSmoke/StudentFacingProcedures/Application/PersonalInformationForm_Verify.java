@@ -58,7 +58,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 				waitForConditionisElementPresent(addrwaitID, "60000");
 				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
 				String addrID1 = getElementIDbyLabel("Address Line1", PI_AddressLine1);			
-				String line1 = getValue(addrID1);
+				String line1 = getValueWebdriver(attributeName_xpath,addrID1);
 				if (line1.equals(pivaddressline1)) {
 					Reporter.log("Data("+line1+") was displayed correctly in the [Address Line1] Field");				
 				} else {
@@ -68,7 +68,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivaddressline2.equals("")) {
 				Reporter.log("Step 5 - Verify data("+pivaddressline2+") was displayed correctly in the 'Address Line2' Field");
 				String addrID2 = getElementIDbyLabel("Address Line2", PI_AddressLine2);
-				String line2 = getValue(addrID2);
+				String line2 = getValueWebdriver(attributeName_xpath,addrID2);
 				if (line2.equals(pivaddressline2)) {
 					Reporter.log("Data("+line2+") was displayed correctly in the [Address Line2] Field");				
 				} else {
@@ -78,7 +78,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivaddressline3.equals("")) {
 				Reporter.log("Step 6 - Verify data("+pivaddressline3+") was displayed correctly in the 'Address Line3' Field");
 				String addrID3 = getElementIDbyLabel("Address Line3", PI_AddressLine3);
-				String line3 = getValue(addrID3);
+				String line3 = getValueWebdriver(attributeName_xpath,addrID3);
 				if (line3.equals(pivaddressline3)) {
 					Reporter.log("Data("+line3+") was displayed correctly in the [Address Line3] Field");				
 				} else {
@@ -88,7 +88,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivcity.equals("")) {
 				Reporter.log("Step 7 - Verify data("+pivcity+") was displayed correctly in the 'City' Field");
 				String cityID = getElementIDbyLabel("City", PI_City);
-				String city = getValue(cityID);
+				String city = getValueWebdriver(attributeName_xpath,cityID);
 				if (city.equals(pivcity)) {
 					Reporter.log("Data("+city+") was displayed correctly in the [City] Field");				
 				} else {
@@ -98,7 +98,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivstate.equals("")) {
 				Reporter.log("Step 8 - Verify data("+pivstate+") was displayed correctly in the 'State' Field");
 				String stateID = getElementIDbyLabel("State", PI_State);
-				String state = getValue(stateID);
+				String state = getValueWebdriver(attributeName_xpath,stateID);
 				if (state.equals(pivstate)) {
 					Reporter.log("Data("+state+") was displayed correctly in the [State] Field");				
 				} else {
@@ -108,7 +108,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivzip.equals("")) {
 				Reporter.log("Step 9 - Verify data("+pivzip+") was displayed correctly in the 'Zip' Field");
 				String zipID = getElementIDbyLabel("Zip", PI_Zip);
-				String zip = getValue(zipID);
+				String zip = getValueWebdriver(attributeName_xpath,zipID);
 				if (zip.equals(pivzip)) {
 					Reporter.log("Data("+zip+") was displayed correctly in the [Zip] Field");				
 				} else {
@@ -118,7 +118,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivcountry.equals("")) {
 				Reporter.log("Step 10 - Verify data("+pivcountry+") was displayed correctly in the 'Country' Field");
 				String countryID = getElementIDbyLabel("Country", PI_Country);
-				String country = getValue(countryID);
+				String country = getValueWebdriver(attributeName_xpath,countryID);
 				if (country.equals(pivcountry)) {
 					Reporter.log("Data("+country+") was displayed correctly in the [Country] Field");				
 				} else {

@@ -49,7 +49,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForElementPresentWebdriverWait(attributeName_xpath, SE_TemplateName, selectatemplate);
-				select(SE_Template, "regexp:"+selectatemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, "regexp:"+selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
 				//waitForPageToLoadWebdriver();
 				try {

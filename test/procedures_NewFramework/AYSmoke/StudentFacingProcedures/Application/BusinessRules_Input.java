@@ -37,7 +37,7 @@ public class BusinessRules_Input extends CommonSeleniumActions implements OR {
 		if (!studentstatus.equals("")) {
 			Reporter.log("Step 3 - Select Student Status as ("+studentstatus+")");
 			String StudentStatus = getElementIDbyLabel("Student status",BR_StudentStatusApp);				
-			select(StudentStatus,studentstatus);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,StudentStatus,studentstatus);
 		}
 		if (!gre.equals("")) {
 			Reporter.log("Step 4 - Enter GRE as ("+gre+")");

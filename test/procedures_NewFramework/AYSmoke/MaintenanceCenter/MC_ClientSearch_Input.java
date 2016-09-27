@@ -24,7 +24,7 @@ public class MC_ClientSearch_Input extends CommonSeleniumActions implements OR{
 		}
 		if (!searchin.equals("")) {
 			Reporter.log("Step 2 - Select search in as ["+searchin+"]");
-			select(MCL_SearchIn, searchin);	
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,MCL_SearchIn, searchin);
 			if (searchfor.equalsIgnoreCase("Client ID")) {
 				clickWebdriver(attributeName_xpath, MCS_ClientID);
 			}else if (searchfor.equalsIgnoreCase("Client Name")) {

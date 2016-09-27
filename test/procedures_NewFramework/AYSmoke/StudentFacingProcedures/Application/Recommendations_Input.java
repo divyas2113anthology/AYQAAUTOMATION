@@ -88,7 +88,7 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			if (!rcstate.equals("")) {
 				Reporter.log("Step 10 - Select State as ("+rcstate+")");
 				String Staterc = getElementIDbyLabelContainsusingXpathWebdirver("State",RC_State);				
-				select(Staterc, rcstate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Staterc, rcstate);
 			}
 			if (!rcpostalcode.equals("")) {
 				Reporter.log("Step 11 - Select Postal Code as ("+rcpostalcode+")");
@@ -97,8 +97,8 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rccountry.equals("")) {
 				Reporter.log("Step 12 - Select Country as ("+rccountry+")");
-				String Countrypd = getElementIDbyLabelContainsusingXpathWebdirver("Country",PD_Country);				
-				select(Countrypd,rccountry);
+				String Countrypd = getElementIDbyLabelContainsusingXpathWebdirver("Country",PD_Country);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Countrypd,rccountry);
 			}
 			if (!rcphone.equals("")) {
 				Reporter.log("Step 13 - Enter Phone  as ("+rcphone+")");
@@ -128,7 +128,7 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			if (!rcrectype.equals("")) {
 				Reporter.log("Step 18 - Select Recommendation type as ("+rcrectype+")");
 				String Rectyperc = getElementIDbyLabelContainsusingXpathWebdirver("Recommendation type", RC_Recommendationtype);
-				select(Rectyperc,rcrectype);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Rectyperc,rcrectype);
 			}
 			if (!rcwaiverighttoexamineletter.equals("")) {
 				Reporter.log("Step 18 - Check Waiver right examine letter as ("+rcwaiverighttoexamineletter+")");

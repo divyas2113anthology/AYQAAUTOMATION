@@ -34,7 +34,7 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 			if (!selectemailtemplate.equals("")) {
 				Reporter.log("Step 2 - Select the Email Template as ["+selectemailtemplate+"]");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "TemplateList", selectemailtemplate);
-				select("TemplateList", "regexp:"+selectemailtemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,"TemplateList", "regexp:"+selectemailtemplate);
 			}
 			if (!donotcreateletter.equals("")) {
 				Reporter.log("Step 3 - Select Do Not create letter as ["+donotcreateletter+"]");
@@ -52,7 +52,7 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 			if (!selectadecisionletter.equals("")) {
 				Reporter.log("Step 5 - Enter the Action History text as ["+selectadecisionletter+"]");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "DecisionLetter", selectadecisionletter);
-				select("name=DecisionLetter", "regexp:"+selectadecisionletter);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,"DecisionLetter", "regexp:"+selectadecisionletter);
 			}
 			if (!onlineoffline.equals("")) {
 				Reporter.log("Step 6 - Select the Add to label as ["+onlineoffline+"]");

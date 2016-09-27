@@ -27,7 +27,7 @@ public class FC_TechnicalSupport_Input extends CommonSeleniumActions implements 
 				if (closewindow.equalsIgnoreCase("close window")) {
 //					selectWindow("name=TechSupport");
 					close();
-					selectMainWindow();
+					selectMainWindowWebdriver();
 				}
 			}
 			

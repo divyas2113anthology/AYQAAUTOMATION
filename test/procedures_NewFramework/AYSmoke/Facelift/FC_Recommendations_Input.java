@@ -85,7 +85,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			}
 			if (!rcstate.equals("")) {
 				Reporter.log("Step 10 - Select State as ("+rcstate+")");
-				select(RI_State, rcstate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_cssselector,RI_State, rcstate);
 			}
 			if (!rcpostalcode.equals("")) {
 				Reporter.log("Step 11 - Select Postal Code as ("+rcpostalcode+")");
@@ -93,7 +93,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			}
 			if (!rccountry.equals("")) {
 				Reporter.log("Step 12 - Select Country as ("+rccountry+")");
-				select(RI_Country,rccountry);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_cssselector,RI_Country,rccountry);
 			}
 			if (!rcphone.equals("")) {
 				Reporter.log("Step 13 - Enter Phone  as ("+rcphone+")");
@@ -117,7 +117,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			}
 			if (!rcrectype.equals("")) {
 				Reporter.log("Step 18 - Select Recommendation type as ("+rcrectype+")");
-				select(RI_Recommendationtype,rcrectype);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_cssselector,RI_Recommendationtype,rcrectype);
 				
 			}
 			if (!rcwaiverighttoexamineletter.equals("")) {

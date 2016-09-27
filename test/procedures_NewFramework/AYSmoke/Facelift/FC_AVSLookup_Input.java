@@ -66,7 +66,7 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!addrstateprovince.equals("")) {
 			Reporter.log("Step 5 - Select State/Province as ("+addrstateprovince+")");
-			select(AL_Province, addrstateprovince);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_id,AL_Province, addrstateprovince);
 		}
 		if (!addrpostalcodezip.equals("")) {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");

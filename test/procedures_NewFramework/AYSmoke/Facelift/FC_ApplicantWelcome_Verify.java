@@ -26,7 +26,7 @@ public class FC_ApplicantWelcome_Verify extends CommonSeleniumActions implements
 		}
 		if (!page_title.equals("")) {
 			Reporter.log("Step 2 - Verify Page Name as["+page_title+"]");
-			verifyElementContainsText(AW_PageTitle, page_title, "Welcome");	
+			verifyElementContainsTextWebdriver(attributeName_xpath,AW_PageTitle, page_title, "Welcome");
 		}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

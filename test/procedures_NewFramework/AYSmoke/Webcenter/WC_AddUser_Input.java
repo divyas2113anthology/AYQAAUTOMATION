@@ -119,7 +119,7 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!raaccountassigned.equals("")) {
 				Reporter.log("Select RA account");
-				select(WCL_raaccountassigned, raaccountassigned);			
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,WCL_raaccountassigned, raaccountassigned);
 			}
 			if (!button.equals("")) {
 				Reporter.log("Click on save or cancel Button as ["+button+"]");

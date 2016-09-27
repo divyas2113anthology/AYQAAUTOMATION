@@ -36,7 +36,7 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify Page Name as["+pagename+"]");
-				verifyElementText(EA_SectionName, pagename, "Section Name");	
+				verifyElementTextWebdriver(attributeName_cssselector,EA_SectionName, pagename, "Section Name");
 
 			}
 			if (!verifyui.equals("")) {
@@ -101,13 +101,13 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 			if (!essaywithattachment.equals("")) {
 				Reporter.log("Step 7 - Verify Essay With Attachment as ["+essaywithattachment+"]");
 				String essaywithattachmentID = getElementIDbyLabel("Essay with Attachment", EA_EssaywithAttachment);					
-				verifyElementText(essaywithattachmentID, essaywithattachment, "Essay with Attachment");
+				verifyElementTextWebdriver(attributeName_xpath,essaywithattachmentID, essaywithattachment, "Essay with Attachment");
 
 			}
 			if (!essaywithoutattachment.equals("")) {
 				Reporter.log("Step 8 - Verify Eassy without Attachement as ["+essaywithoutattachment+"]");
 				String essaywithoutattachmentID = getElementIDbyLabel("Essay without Attachment", EA_EssaywithoutAttachment);
-				verifyElementText(essaywithoutattachmentID, essaywithoutattachment, "Essay without Attachment");
+				verifyElementTextWebdriver(attributeName_xpath,essaywithoutattachmentID, essaywithoutattachment, "Essay without Attachment");
 
 			}
 			if (!uploadattachmentonlydocumentpresent.equals("")) {

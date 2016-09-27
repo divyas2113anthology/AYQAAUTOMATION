@@ -36,7 +36,7 @@ public class FC_Dashboard_Verify extends CommonSeleniumActions implements OR {
 		}
 		if (!submittedapplication.equals("")) {
 			Reporter.log("Step 3 - Verify Submitted Application Status as["+submittedapplication+"]");
-			verifyElementText(DB_SubmittedMsg, submittedapplication, "Application Submitted");
+			verifyElementTextWebdriver(attributeName_xpath,DB_SubmittedMsg, submittedapplication, "Application Submitted");
 		}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

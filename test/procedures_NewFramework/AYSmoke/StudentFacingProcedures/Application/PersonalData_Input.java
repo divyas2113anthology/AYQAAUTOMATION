@@ -49,7 +49,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsufix.equals("")) {
 			Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
 			String Sufixpd = getElementIDbyLabel("Suffix",PD_Suffix);				
-			select(Sufixpd,pdsufix);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Sufixpd,pdsufix);
 		}
 		if (!pdfirstname.equals("")) {
 			Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
@@ -84,7 +84,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdgender.equals("")) {
 			Reporter.log("Step 8 - Select Gender as ("+pdgender+")");
 			String Genderpd = getElementIDbyLabel("Gender",PD_Gender);				
-			select(Genderpd,pdgender);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Genderpd,pdgender);
 		}
 		if (!pdhomephone.equals("")) {
 			Reporter.log("Step 9 - Enter Home phone as ("+pdhomephone+")");
@@ -122,12 +122,12 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 //					pdcountry = pdcountry.replace("United States", "USA");
 //				}
 //			}
-			select(Countrypd,pdcountry);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Countrypd,pdcountry);
 		}
 		if (!pdstate.equals("")) {
 			Reporter.log("Step 14 - Select State / province as ("+pdstate+")");
-			String Statepd = getElementIDbyLabel("State / province",PD_Stateprovince);				
-			select(Statepd,pdstate);
+			String Statepd = getElementIDbyLabel("State / province",PD_Stateprovince);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Statepd,pdstate);
 		}
 		if (!pdgradelevel.equals("")) {
 			Reporter.log("Step 15 - Check Grade Level as ("+pdgradelevel+")");
@@ -141,8 +141,8 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdessay.equals("")) {
 			Reporter.log("Step 16 - Select Essay without attachment as ("+pdessay+")");
-			String Essaypd = getElementIDbyLabel("Essay without attachment",PD_Essaywithoutattachment);				
-			select(Essaypd,pdessay);
+			String Essaypd = getElementIDbyLabel("Essay without attachment",PD_Essaywithoutattachment);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Essaypd,pdessay);
 		}
 		if (!pdupload.equals("")) {
 			Reporter.log("Step 17 - Upload document ("+pdupload+")");
@@ -157,7 +157,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsportsintrest.equals("")) {
 			Reporter.log("Step 19 - Select Sports Interest as ("+pdsportsintrest+")");
 			String Sportsintrestpd = getElementIDbyLabel("Sports Interest", PD_SportsInterest);
-			select(Sportsintrestpd,pdsportsintrest);			
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Sportsintrestpd,pdsportsintrest);
 		}
 		if (!pdtestscore.equals("")) {
 			Reporter.log("Step 20 - Enter Test score as ("+pdtestscore+")");
@@ -167,7 +167,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdacademicintrest.equals("")) {
 			Reporter.log("Step 21 - Enter Academic Interest as ("+pdacademicintrest+")");
 			String Academicinterestpd = getElementIDbyLabel("Academic Interest",PD_AcademicInterest);
-			select(Academicinterestpd,pdacademicintrest);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Academicinterestpd,pdacademicintrest);
 		}
 		if (!pdschoolcode.equals("")) {
 			Reporter.log("Step 23 - Enter School code as ("+pdschoolcode+")");

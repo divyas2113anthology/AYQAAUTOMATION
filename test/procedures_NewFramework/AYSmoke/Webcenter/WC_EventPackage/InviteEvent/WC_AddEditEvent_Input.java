@@ -156,7 +156,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!waitlistemail.equals("")) {
 				Reporter.log("Step 18 - Enter the waitlist email as ["+waitlistemail+"]");
-				select(AEE_WaitlistEmail, "regexp:"+waitlistemail);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail, "regexp:"+waitlistemail);
 			}
 			if (!recurrencetype.equals("")) {
 				Reporter.log("Step 19 - Enter the Recurrent type as ["+recurrencetype+"]");
@@ -164,11 +164,11 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!registerdeclineemail.equals("")) {
 				Reporter.log("Step 20 - Enter the Registerm Decline Email as ["+registerdeclineemail+"]");
-				select(AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
 			}
 			if (!group.equals("")) {
 				Reporter.log("Step 21 - Enter the Group as ["+group+"]");
-				select(AEE_Group, "regexp:"+group);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_Group, "regexp:"+group);
 			}
 			if (!editeventurlcontains.equals("")) {
 				Reporter.log("Step 22 - Enter the Group as ["+editeventurlcontains+"]");

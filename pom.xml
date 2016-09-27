@@ -23,9 +23,7 @@
 
     <maven.build.timestamp.format>yyyy-MM-dd-HH-mm</maven.build.timestamp.format>
 
-    <phantomjs-maven-plugin.version>0.7</phantomjs-maven-plugin.version>
-
-</properties>
+ </properties>
 
     <dependencies>
         <dependency>
@@ -125,22 +123,9 @@
     </dependencies>
 
     <build>
-    <plugins>
-        <plugin>
-            <groupId>com.github.klieber</groupId>
-            <artifactId>phantomjs-maven-plugin</artifactId>
-            <version>${phantomjs-maven-plugin.version}</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>install</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <version>1.9.7</version>
-            </configuration>
-        </plugin>
+          <sourceDirectory>test</sourceDirectory>
+
+        <plugins>
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -154,7 +139,43 @@
             </configuration>
         </plugin>
 
-    </plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>fully.qualified.MainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
 
 </build>
 

@@ -26,8 +26,8 @@ public class BR_InviteToEvent_Verify extends CommonSeleniumActions implements OR
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 //				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
 //				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
-				waitForText(successmessage, "Success Message");
-				verifyTextPresent(successmessage);
+				waitForPageToLoadWebdriver();
+				writeConsole(successmessage);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

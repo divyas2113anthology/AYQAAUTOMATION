@@ -19,7 +19,7 @@ public class MC_RunPrintTasks_Verify extends CommonSeleniumActions implements OR
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
 				waitForElementNotPresentWebdriver(attributeName_id, "processingImage", "AYSchedPrinting");
-				verifyTextPresent(message);				
+				writeConsole(message);
 			}
 			if (!page.equals("")) {
 				Reporter.log("Step 2 - Verify Page Name As ["+page+"]");

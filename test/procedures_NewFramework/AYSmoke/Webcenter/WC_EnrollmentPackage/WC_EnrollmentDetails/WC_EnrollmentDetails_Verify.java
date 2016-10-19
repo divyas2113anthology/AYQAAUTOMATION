@@ -25,8 +25,9 @@ public class WC_EnrollmentDetails_Verify extends CommonSeleniumActions implement
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForText(pagename, "Page Name");
-				verifyTextPresent(pagename);
+				//waitForText(pagename, "Page Name");
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 			}
 			if (!ui.equals("")) {
 				Reporter.log("Step 3 - Verify UI in the 'Enrollment Details' page");

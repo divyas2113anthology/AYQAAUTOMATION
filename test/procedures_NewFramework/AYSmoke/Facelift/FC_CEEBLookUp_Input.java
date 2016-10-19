@@ -28,7 +28,7 @@ public class FC_CEEBLookUp_Input extends CommonSeleniumActions implements OR {
 			if (!avsname.equals("")) {
 				Reporter.log("Step 1 - Enter Name as ("+avsname+")");
 				String nameID = getElementIDbyLabel("Name:",EL_Name);	
-				waitForElementPresent(nameID, "Look Up Page 'Name' Element");
+				waitForElementPresentWebdriver(attributeName_xpath,nameID, "Look Up Page 'Name' Element");
 				sendKeys(attributeName_xpath,nameID, avsname);
 			}
 			if (!avsaddressline1.equals("")) {

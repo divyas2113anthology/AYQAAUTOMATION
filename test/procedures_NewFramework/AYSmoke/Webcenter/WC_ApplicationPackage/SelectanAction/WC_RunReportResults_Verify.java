@@ -21,8 +21,8 @@ public class WC_RunReportResults_Verify extends CommonSeleniumActions implements
 			Reporter.log("Verify Test Data was retrieved for 'Run Report Results' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, message);
-				verifyTextPresent(message);
+				waitForPageToLoadWebdriver();
+				writeConsole(message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

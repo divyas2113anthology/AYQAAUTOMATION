@@ -17,7 +17,7 @@ public class MC_QuickViewResults_Verify  extends CommonSeleniumActions implement
 			Reporter.log("Check navigate to Manage Clients :: Edit Package for ayauto screen Maintenance center");
 			if (!page.equals("")) {
 				Reporter.log("Step 1 - Verify page is ["+page+"]");
-				verifyTextPresent(page);				
+				writeConsole(page);
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage()); }

@@ -26,12 +26,12 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Main' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresent(MN_PageTitle, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath,MN_PageTitle, pagename);
 				verifyElementTextWebdriver(attributeName_xpath,MN_PageTitle, pagename, "Page Name");
 			}
 			if (!message.equals("")) {
-				waitForText(message, "Successfully Submitted");
-				verifyTextPresent(message);
+				waitForPageToLoadWebdriver();
+				//verifyTextPresent(message);
 			}
 			if (!applicationfee.equals("")) {
 				Reporter.log("Verify the element with text ("+applicationfee+")");

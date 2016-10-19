@@ -59,7 +59,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			if (!piethnicity.equals("")) {
 				Reporter.log("Step 5 - Check Ethnicity as ("+piethnicity+")");
 				String ethiID = getElementIDbyLabel(piethnicity,PI_EthniValue);
-				check(ethiID);
+				checkWebdriver(attributeName_xpath,ethiID);
 			}
 			if (!pissn.equals("")) {
 				Reporter.log("Step 6 - Enter Social Security Number as ("+pissn+")");
@@ -79,7 +79,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 			if (!piluckyno.equals("")) {
 				Reporter.log("Step 9 - Check Lucky Number as ("+piluckyno+")");
 				String LuckyID = getElementIDbyLabel(piluckyno,PI_Luckyno);
-				check(LuckyID);
+				checkWebdriver(attributeName_xpath,LuckyID);
 			}
 			if (!pisavebutton.equals("")) {
 				Reporter.log("Step 10 - Click on ("+pisavebutton+")Button");

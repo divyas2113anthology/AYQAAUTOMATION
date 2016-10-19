@@ -25,19 +25,19 @@ public class ApplicationFeePayment_Input extends CommonSeleniumActions	implement
 			if (!feereviewappfee.equals("")) {
 				Reporter.log("Step 1 - Proceed to Check ("+feereviewappfee+") Review Application Fee Radio");
 				if (feereviewappfee.equalsIgnoreCase("Domestic")) {
-					check(AF_Domestic);				
+					checkWebdriver(attributeName_xpath,AF_Domestic);
 				}else if (feereviewappfee.equalsIgnoreCase("International")) {
-					check(AF_International);
+					checkWebdriver(attributeName_xpath,AF_International);
 				}
 			}
 			if (!feepaymentmethod.equals("")) {
 				Reporter.log("Step 2 - Proceed to Check ("+feepaymentmethod+") Select Payment Method Radio");
 				if (feepaymentmethod.equalsIgnoreCase("Check")) {
-					check(AF_Check);
+					checkWebdriver(attributeName_xpath,AF_Check);
 				}else if (feepaymentmethod.equalsIgnoreCase("Fee Waiver")) {
-					check(AF_FeeWaiver);				
+					checkWebdriver(attributeName_xpath,AF_FeeWaiver);
 				}else if (feepaymentmethod.equalsIgnoreCase("Credit Card")) {
-					check(AF_CreditCard);
+					checkWebdriver(attributeName_xpath,AF_CreditCard);
 				}			
 			}
 			if (!feepaycontinue.equals("")) {

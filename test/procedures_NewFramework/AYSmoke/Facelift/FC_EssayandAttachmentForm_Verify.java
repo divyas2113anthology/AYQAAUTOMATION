@@ -37,7 +37,7 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForConditionisElementPresent(PSD_PageName, "5000");
+				isElementPresentWebdriver(attributeName_xpath,PSD_PageName+pagename+"')]");
 				verifyElementContainsTextWebdriver(attributeName_xpath, PSD_PageName+pagename+"')]", pagename, "Essay and Attachment Page Name");
 			}
 	

@@ -18,13 +18,13 @@ public class MC_CopySection_Verify extends CommonSeleniumActions implements OR{
 			Reporter.log("Check application Copy Section page is saved in  Maintenance center");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
-				waitForText(message, message);
-				verifyTextPresent(message);				
+				waitForPageToLoadWebdriver();
+				writeConsole(message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify page name is ["+pagename+"]");
-				waitForText(pagename, message);
-				verifyTextPresent(pagename);				
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage()); }

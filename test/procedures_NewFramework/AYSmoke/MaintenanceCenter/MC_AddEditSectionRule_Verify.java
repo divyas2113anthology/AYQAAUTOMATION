@@ -19,13 +19,13 @@ public class MC_AddEditSectionRule_Verify extends CommonSeleniumActions implemen
 			Reporter.log("Check application package is saved in  Maintenance center");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
-				waitForText(message, message);
-				verifyTextPresent(message);				
+				waitForPageToLoadWebdriver();
+				writeConsole(message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify page name is ["+pagename+"]");
-				waitForText(pagename, message);
-				verifyTextPresent(pagename);				
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 			}
 			if (!values.equals("")) {
 				Reporter.log("Step 3 - Verify the Presented values as ["+values+"]");

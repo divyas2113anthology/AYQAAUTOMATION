@@ -193,13 +193,14 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!getlinkopen.equals("")) {
 					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
 					String getLinkText = getTextWebdriver(attributeName_xpath,HC_LinkContians+getlinkopen+"')]");
-					openAndWait(getLinkText);
+					open(getLinkText);
+
 				}
 				if (!getinternallink.equals("")) {
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window");
-					String getLinkHref = getAttribute(HC_LinkContians+getinternallink+"')]", "href");
+					String getLinkHref = getAttributeWebdriver(attributeName_xpath,HC_LinkContians+getinternallink+"')]", "href");
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
-					openAndWait(getLinkHref);					
+					open(getLinkHref);
 				}
 				if (!openemailclose.equals("")) {
 					Reporter.log("Step 17 - Closing All Opened Pop Ups");
@@ -418,13 +419,13 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!getlinkopen.equals("")) {
 					Reporter.log("Step 15 - Get Link Entire Text and Open in Same Window");
 					String getLinkText = getTextWebdriver(attributeName_xpath,HC_LinkContians+getlinkopen+"')]");
-					openAndWait(getLinkText);
+					open(getLinkText);
 				}
 				if (!getinternallink.equals("")) {
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window");
-					String getLinkHref = getAttribute(HC_LinkContians+getinternallink+"')]", "href");
+					String getLinkHref = getAttributeWebdriver(attributeName_xpath,HC_LinkContians+getinternallink+"')]", "href");
 					Reporter.log("Step 16 - Get Link HREF Property(Entire URL) and Open in Same Window"+getLinkHref);
-					openAndWait(getLinkHref);					
+					open(getLinkHref);
 				}
 				if (!openemailclose.equals("")) {
 					Reporter.log("Step 17 - Closing All Opened Pop Ups");

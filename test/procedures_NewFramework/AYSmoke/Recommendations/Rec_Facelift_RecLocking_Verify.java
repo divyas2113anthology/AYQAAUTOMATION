@@ -20,8 +20,9 @@ public class Rec_Facelift_RecLocking_Verify extends CommonSeleniumActions implem
 		if (!system_msg.equals("")) {
 			Reporter.log("Step 1 - Verify the text as ["+system_msg+"]");
 			//String Password1 = Runtimedataread(password);
-			waitForText(system_msg, "Unfortunately, your account has been suspended due to multiple login failures.");
-			verifyTextPresent(system_msg);
+			//waitForText(system_msg, "Unfortunately, your account has been suspended due to multiple login failures.");
+			waitForPageToLoadWebdriver();
+			writeConsole(system_msg);
 					
 		}
 		

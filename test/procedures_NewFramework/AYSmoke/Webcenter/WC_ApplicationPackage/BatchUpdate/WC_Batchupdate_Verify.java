@@ -26,8 +26,9 @@ public class WC_Batchupdate_Verify extends CommonSeleniumActions implements OR{
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-			waitForText(pagename, pagename);
-			verifyTextPresent(pagename);
+			//waitForText(pagename, pagename);
+			waitForPageToLoadWebdriver();
+			writeConsole(pagename);
 		}
 		if (!verifyui.equals("")) {
 			

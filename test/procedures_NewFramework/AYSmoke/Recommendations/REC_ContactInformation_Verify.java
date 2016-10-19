@@ -18,8 +18,9 @@ public class REC_ContactInformation_Verify extends CommonSeleniumActions impleme
 			if(!Forgot_SysMsg.equals("")){
 				Reporter.log("Step 1 - Verify the text as ["+Forgot_SysMsg+"]");
 				//String Password1 = Runtimedataread(password);
-				waitForText(Forgot_SysMsg, "An email with a link to reset your password has been sent to your email address. Please click the link in the email to proceed.");
-				verifyTextPresent(Forgot_SysMsg);
+				//waitForText(Forgot_SysMsg, "An email with a link to reset your password has been sent to your email address. Please click the link in the email to proceed.");
+				waitForPageToLoadWebdriver();
+				waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath,RF_Forgot_Pwd,Forgot_SysMsg,Forgot_SysMsg);
 			}
 			
 		} catch (Exception e) {

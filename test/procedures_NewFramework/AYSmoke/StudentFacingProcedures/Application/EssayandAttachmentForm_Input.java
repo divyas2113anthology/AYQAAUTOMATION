@@ -58,7 +58,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					//waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, essaywithattachmentuploaddocument);
 //					getConfirmation();
 //					waitForPageToLoadWebdriver();
-					waitForElementPresent(EA_EssaywithAttachment_UploadDocument, "Upload Document");
+					waitForElementPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_UploadDocument, "Upload Document");
 				}
 			}
 			if (!essaywithoutattachment.equals("")) {

@@ -23,8 +23,8 @@ public class REC_Submitted_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Verify Message ("+message+") was displayed correctly");
 //				waitForElementPresentWebdriver(attributeName_xpath,"//td[@class='BasePageFont']", message);
 //				verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']", message, "System Message");
-				waitForText(message, "Thank You");
-				verifyTextPresent(message);
+				waitForPageToLoadWebdriver();
+				//verifyTextPresent(message);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

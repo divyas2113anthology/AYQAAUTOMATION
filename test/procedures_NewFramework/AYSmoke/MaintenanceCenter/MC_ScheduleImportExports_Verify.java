@@ -31,16 +31,16 @@ public class MC_ScheduleImportExports_Verify  extends CommonSeleniumActions impl
 					waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divAyConfirmation']/font", message);
 					String[] SplitMsg = message.split(":");
 					String Msg = Runtimedataread(SplitMsg[0]);
-					verifyTextPresent(Msg+SplitMsg[1]);
+					writeConsole(Msg+SplitMsg[1]);
 				}else if (message.contains("Deleted")) {
 					alertAccept();
-					
-					verifyTextPresent(message);
+
+					writeConsole(message);
 				}
 			}
 			if (!page.equals("")) {
 				Reporter.log("Step 1 - Verify page is ["+page+"]");
-				verifyTextPresent(page);				
+				writeConsole(page);
 			}
 			if (!jobname.equals("")) {
 				

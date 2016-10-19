@@ -27,8 +27,9 @@ public class WC_UserQueries_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 5 - Verify its navigate to ("+pagename+") page");
 //				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
 //				verifyElementTextWebdriver(attributeName_xpath, SAV_PageName, pagename, "Page Name for Search For Applicant");
-				waitForText(pagename, "User Queries");
-				verifyTextPresent(pagename);
+				//waitForText(pagename, "User Queries");
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");

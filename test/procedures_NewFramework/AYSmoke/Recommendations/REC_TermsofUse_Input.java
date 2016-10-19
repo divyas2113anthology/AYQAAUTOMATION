@@ -18,7 +18,7 @@ public class REC_TermsofUse_Input extends CommonSeleniumActions implements OR {
 		String eula = testdata[0];
 		String continuebtn = testdata[1];
 		Reporter.log("Input Test Data was retrieved for 'Terms of Use' page");
-		if (isElementPresent(TOU_Continue)) {
+		if (isElementPresentWebdriver(attributeName_xpath,TOU_Continue)) {
 			waitForElementPresentWebdriver(attributeName_xpath, TOU_Continue, "Continue Button");
 		if (!eula.equals("")) {
 			writeConsole("Step 1 - Chose the conformation as '"+eula+"' in 'Terms of Use' page");

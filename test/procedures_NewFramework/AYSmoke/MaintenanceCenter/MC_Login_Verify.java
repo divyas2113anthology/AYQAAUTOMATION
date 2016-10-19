@@ -18,11 +18,11 @@ public class MC_Login_Verify extends CommonSeleniumActions implements OR{
 			Reporter.log("Check login to Maintenance center");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
-				verifyTextPresent(message);				
+				writeConsole(message);
 			}
 			if (!page.equals("")) {
 				Reporter.log("Step 2 - Verify page name is  ["+page+"]");
-				verifyTextPresent(page);				
+				writeConsole(page);
 			}
 		
 		}catch(Exception e){

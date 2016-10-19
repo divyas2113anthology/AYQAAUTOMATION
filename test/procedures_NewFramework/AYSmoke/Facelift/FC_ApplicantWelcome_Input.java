@@ -35,7 +35,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				if (link_to_click.equalsIgnoreCase("Personal Data")) {
 					clickWebdriver(attributeName_xpath,AW_personalDataLnk);
 					waitForPageToLoadWebdriver();
-//					waitForConditionisElementPresent(PSD_PageName1, "90000");
+					//					waitForConditionisElementPresent(PSD_PageName1, "90000");
 				}else if (link_to_click.equalsIgnoreCase("Family")) {
 					clickWebdriver(attributeName_xpath,AW_FamilyBtn);
 //					waitForConditionisElementPresent(PSD_PageName1, "90000");
@@ -76,7 +76,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 //					check(AW_ConformationCheck);
 					clickWebdriver(attributeName_cssselector, AW_ConformationCheck);
 				} else if (conformation.equalsIgnoreCase("Uncheck")) {
-					uncheck(AW_ConformationCheck);
+					uncheckWebdriver(attributeName_cssselector,AW_ConformationCheck);
 				}
 			}
 			if (!reviewappfee.equals("")) {
@@ -116,14 +116,14 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 						waitForPageToLoadWebdriver();
 						waitForPageToLoadWebdriver();
 					}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
-						waitForElementPresent(AW_PrintPreviewBtn, "Pdf Button");
+						waitForElementPresentWebdriver(attributeName_xpath,AW_PrintPreviewBtn, "Pdf Button");
 						clickWebdriver(attributeName_xpath,AW_PrintPreviewBtn);
 //						SelectPrintWindow("PrintApplication");
 						recentPopupSelectWebdriver("Print Pdf");
 //						waitForUniqueNameWindow();
 					}
 					else if (button_to_click.equalsIgnoreCase("Preview Application")) {
-						waitForElementPresent(AW_PrintPreviewPdfBtn, "Pdf Button");
+						waitForElementPresentWebdriver(attributeName_xpath,AW_PrintPreviewPdfBtn, "Pdf Button");
 						clickWebdriver(attributeName_xpath,AW_PrintPreviewPdfBtn);
 //						SelectPrintWindow("PrintApplication");
 						recentPopupSelectWebdriver("Print Pdf");

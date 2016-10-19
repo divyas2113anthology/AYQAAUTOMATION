@@ -22,7 +22,7 @@ public class FC_TechnicalSupport_Verify extends CommonSeleniumActions implements
 			Reporter.log("Verify Test Data was retrieved for 'Technical Support' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 6 - Verify the '"+pagename+"' Page");
-				waitForElementPresent(TS_PageName, "Technical Support Page");
+				waitForElementPresentWebdriver(attributeName_xpath,TS_PageName, "Technical Support Page");
 				verifyElementTextWebdriver(attributeName_xpath,TS_PageName, pagename, "Page Name");
 			}
 			

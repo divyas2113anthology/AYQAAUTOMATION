@@ -59,310 +59,27 @@ public class CommonSeleniumActions extends Processor implements OR {
         driver.get(url);
 	}
 
-	//	public void click(String locator){
-	//		selenium.click(locator);
-	//	}
-
-	/*public void click(String locator) throws Exception{
-		try {
-			writeConsole("click["+locator+"]");
-			selenium.click(locator);	
-		} catch (Exception e) {
-			writeConsole("click["+locator+"]");
-			//Removed wait time
-			selenium.click(locator);
-		}
-	}*/
-
-	/*public void type(String locator,String value){
-		writeConsole("type["+locator+", "+value+"]");
-		selenium.type(locator, value);
-	}
-
-	public void dragAndDropToObject(String locatorOfObjectToBeDragged,String locatorOfDragDestinationObject){
-		writeConsole("dragAndDropToObject["+locatorOfObjectToBeDragged+", "+locatorOfDragDestinationObject+"]");
-		selenium.dragAndDropToObject(locatorOfObjectToBeDragged, locatorOfDragDestinationObject);
-	}
-*/
-
 	public void selectWindow(String windowName) {
 		writeConsole("selectWindow["+windowName+"]");
 		//selenium.selectWindow(windowName);
 		driver.switchTo().window(windowName);
 	}
 
-	/*public void select(String selectLocator,String optionLocator){
-		writeConsole("select["+selectLocator+", "+optionLocator+"]");	
-		selenium.select(selectLocator,optionLocator);
-	}*/
-
-	protected void focus(String locator){
-		writeConsole("focus["+locator+"]");
-		selenium.focus(locator);
-	}
-	protected void highlight(String locator) {
-		writeConsole("highlight["+locator+"]");
-		selenium.highlight(locator);
-	}
-
-	public void check(String locator){
-		writeConsole("check["+locator+"]");
-		selenium.check(locator);
-	}
-
-	public void uncheck(String locator){
-		writeConsole("uncheck["+locator+"]");
-		selenium.uncheck(locator);
-	}
-
-	public void chooseCancelOnNextConfirmation(){
-		writeConsole("chooseCancelOnNextConfirmation");
-		selenium.chooseCancelOnNextConfirmation();
-	}
-
-	public void chooseOkOnNextConfirmation(){
-		writeConsole("chooseOkOnNextConfirmation");
-		selenium.chooseOkOnNextConfirmation();
-	}
-
-	public void typeKeys(String locator,String value){
-		writeConsole("typeKeys["+locator+", "+value+"]");
-		selenium.typeKeys(locator, value);
-	}
-
-	public void clickAt(String locator,String coordString){
-		writeConsole("clickAt["+locator+", "+coordString+"]");
-		selenium.clickAt(locator, coordString);
-	}
-
-	public void fireEvent(String locator, String eventName){
-		writeConsole("fireEvent["+locator+", "+eventName+"]");
-		selenium.fireEvent(locator, eventName);
-	}
-
-	public void close() {
-		writeConsole("Window Close");
-		selenium.close();
-	}
-	public void keyPressNative(String keycode) {
-		writeConsole("keyPressNative["+keycode+"]");
-		selenium.keyPressNative(keycode);
-	}
-	public String[] getSelectOptions(String selectLocator) {	
-		writeConsole("getSelectOptions["+selectLocator+"]");
-		String[] getselectoptions = selenium.getSelectOptions(selectLocator);
-		writeConsole("Actual getSelectOptions["+getselectoptions+"]");
-		return getselectoptions;
-	}
-
-	public String getSelectedLabel(String selectLocator) {
-		writeConsole("getSelectedLabel["+selectLocator+"]");
-		String getselectedlabel = selenium.getSelectedLabel(selectLocator);
-		writeConsole("Actual getSelectedLabel["+getselectedlabel+"]");
-		return getselectedlabel;
-	}
-	//the numerical position of the cursor in the field; position should be 0 to move the position to the beginning of the field. You can also set the cursor to -1 to move it to the end of the field.
-	public void setCursorPosition(String locator, String position) {
-		writeConsole("setCursorPosition["+locator+", "+position+"]");
-		selenium.setCursorPosition(locator, position);
-	}
-
-	public String getLocation() {		
-		String getlocation = selenium.getLocation();
-		writeConsole("getLocation["+getlocation+"]");
-		return getlocation;
-	}
-
-
-
-	//	public void verifyTextPresent(String myString) {
-	//		Assert.assertTrue(selenium.isTextPresent(myString), "Expected text '" + myString + "' was not found");
-	//	}
-	//
-	//	public void verifyTextNotPresent(String myString) {
-	//		Assert.assertFalse(selenium.isTextPresent(myString), "Unexpected text '" + myString + "' was found");
-	//	}
-	//
-	//	public void verifyElementPresent(String elementLocator) {
-	//		Assert.assertTrue(selenium.isElementPresent(elementLocator), "Expected element '" + elementLocator + "' was not found");     
-	//	}
-	//
-	//	public void verifyElementNotPresent(String elementLocator) {
-	//		Assert.assertFalse(selenium.isElementPresent(elementLocator), "Unexpected element '" + elementLocator + "' was found");
-	//	}
-	//
-	//	public void selectDefaultWindowAndWait() {
-	//		selenium.selectWindow("");
-	//		selenium.waitForPageToLoadWebdriver(STANDARD_PAGE_LOAD_WAIT_TIME);
-	//	}
-	//	
-	//	public void buttonDisabled(String locator){
-	//		if(selenium.isElementPresent(locator))
-	//		{
-	//			System.out.println("Button is disabled");
-	//		}
-	//		else
-	//		{
-	//			System.out.println("Button is enabled");
-	//		}
-	//	}
-	//
-	//	
-	//
-	//	public void performAssertEqual(String actual,String expected){
-	//		Assert.assertEquals(actual,expected);
-	//	}
-
-
-	public void waitForElementPresent(String elementor,String elementname) throws Exception{
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was not found after waiting for 2 Minute");
-				}
-				if (isElementPresent(elementor)) {
-					break;
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}
-
-	}
-
-	public void waitForElementNotPresent(String elementor,String elementname)throws Exception{
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was found after waiting for 2 Minute");
-				}
-				if (!isElementPresent(elementor)) {
-					break;
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}
-	}
-	public void waitForElementVisible(String elementLocater, String elementname)throws Exception{
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was not found after waiting for 2 Minute");
-				}
-				if (isVisible(elementLocater)) {
-					break;
-				}
-			} catch (Exception e) {
-				writeConsole("Element["+elementLocater+"] Not Found");
-			}
-			waitForPageToLoadWebdriver();
-		}		
-	}
-
-	public void waitForElementNotVisible(String elementLocater, String elementname)throws Exception{
-		for (int second = 0;;second ++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=60) {
-					writeFailure("Element["+elementname+"] was found after waiting for 1 Minute");
-				}
-				if (!isVisible(elementLocater)) {
-					break;
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}
-	}
-
-	public boolean isChecked(String checkboxLocator) {
-		writeConsole("isChecked["+checkboxLocator+"]");
-		boolean ischecked = selenium.isChecked(checkboxLocator);
-		writeConsole("Actual isChecked["+ischecked+"]");
-		return ischecked;
-	}
-
-
-
-	//	public void verifyAttribute(String elementLocator, String attributeType, String expectedAttributeValue) {
-	//		Assert.assertEquals(selenium.getAttribute(elementLocator + "@" + attributeType), expectedAttributeValue,
-	//				"The attribute of type '" + attributeType + "' at element '" + elementLocator + "' did not equal expected value '"
-	//				+ expectedAttributeValue + "'");
-	//	}
-
-
-	public void waitForPopUp(){
-		writeConsole("waitForPopUp[galeChildWindow, 90000]");
-		selenium.waitForPopUp("galeChildWindow","90000");
-	}
-
 	public void goBack(){
 		writeConsole("goBack");
-		selenium.goBack();
-	}
-
-	public void waitForText(String pattern, String message)throws Exception{
-		for (int second = 0;; second++) {
-			writeConsole("waitForTextPresent : "+message+"");
-			if (second >= 60) writeFailure(message+" Timeout after 1 minute..");
-			try { if (selenium.isTextPresent(pattern)) break; } catch (Exception e) {}
-			waitForPageToLoadWebdriver();
-		}
-	}
-	public void waitForTextNotPresent(String pattern, String message)throws Exception{
-		for (int second = 0;; second++) {
-			if (second >= 60) writeFailure(message+" Timeout after 1 minute..");
-			try { if (!selenium.isTextPresent(pattern)) break; } catch (Exception e) {}
-			waitForPageToLoadWebdriver();
-		}
+		driver.navigate().back();
 	}
 
 	//	=================================22-06-2012
 
-	public boolean isElementPresent(String locator) throws Exception{
-		try {
-			writeConsole("isElementPresent["+locator+"]");
-			boolean iselementpresent = selenium.isElementPresent(locator);
-			writeConsole("Actual isElementPresent["+iselementpresent+"]");
-			return iselementpresent;			
-		} catch (Exception e) {
-			waitForPageToLoadWebdriver();
-			boolean iselementpresent = selenium.isElementPresent(locator);
-			writeConsole("Actual isElementPresent["+iselementpresent+"]");
-			return iselementpresent;			
-		}
 
-	}
-
-	public boolean isTextPresent(String pattern){
-		writeConsole("isTextPresent["+pattern+"]");
-		boolean istextpresent = selenium.isTextPresent(pattern);
-		writeConsole("Actual isTextPresent["+istextpresent+"]");
-		return istextpresent;
-	}
-
-	public boolean isVisible(String locator){
-		writeConsole("isVisible["+locator+"]");
-		boolean isvisible = selenium.isVisible(locator);		
-		writeConsole("Actual isvisible ["+isvisible+"]");
-		return isvisible;
-	}
-
-	public boolean isEditable(String locator){
-		writeConsole("isEditable["+locator+"]");
-		boolean iseditable = selenium.isEditable(locator);
-		writeConsole("Actual isEditable ["+iseditable+"]");
-		return iseditable;
-	}
 	public Integer getXpathCount(String xpath){
 		writeConsole("getXpathCount["+xpath+"]");
-		int getxpathcount = selenium.getXpathCount(xpath).intValue();
+		int getxpathcount = driver.findElements(By.xpath(xpath)).size();
 		writeConsole("Actaul getXpathCount["+getxpathcount+"]");
 		return getxpathcount;
 	}
+	/*
 	public Integer getCssCount(String css){
 		css = css.replace("css=", "");
 		writeConsole("getCssCount["+css+"]");
@@ -382,7 +99,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String gettable = selenium.getTable(tablename+"."+row+"."+column);
 		writeConsole("Actual getTable["+gettable+"]");
 		return gettable;
-	}
+	}*/
 
 
 	//==========================================================================================================================User Defined Functions	
@@ -500,7 +217,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		if (wintotal>0) {			
 			for (int i = wintotal; i>0; i--) {				
 				selectWindow("name="+windowsOpen[i]);
-				close();				
+				closeWindowWebdriver();
 				selectMainWindowWebdriver();
 			}
 		}
@@ -515,7 +232,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//		String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@htmlfor"); // Getting Dynamic ID
 		String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@for"); // Getting Dynamic ID
 		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
-		//		System.out.println("First ID "+elementID);		
+		//		System.out.println("First ID "+elementID);
 		String[] OrSplit = OR.split("'");
 		//		System.out.println("First part 0 "+OrSplit[0]);
 		//		System.out.println("First part 1 "+OrSplit[1]);
@@ -555,53 +272,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return FinaleleId;
 	}
 
-	//	This Method is used to wait till object is Present
-	public void waitForConditionisElementPresent(String OR,String wait){
-		try {
-			//			selenium.waitForCondition("selenium.isElementPresent("+OR+")", wait);
-			writeConsole("waitForCondition[selenium.isElementPresent["+OR+"], "+wait+"]");
-			selenium.waitForCondition("selenium.isElementPresent(\""+OR+"\")", wait);
-		} catch (Exception e) {
-			writeFailure("Element["+OR+"] was not Found after waiting for ("+wait+") Second'");
-		}
-
-	}
-
-	//	This Method is used to wait till object is Present
-	public void waitForConditionisElementNotPresent(String OR,String wait){
-		try {
-			//			selenium.waitForCondition("selenium.isElementPresent("+OR+")", wait);
-			writeConsole("waitForCondition[!selenium.isElementPresent["+OR+"], "+wait+"]");
-			selenium.waitForCondition("!selenium.isElementPresent(\""+OR+"\")", wait);
-		} catch (Exception e) {
-			writeFailure("Element["+OR+"] was not Found after waiting for ("+wait+") Second'");
-		}
-
-	}
-
-	//	This Method is used to wait till object is Present
-	public void waitForConditionisVisible(String OR,String elementname,String wait){
-		try {
-			//			selenium.waitForCondition("selenium.isElementPresent("+OR+")", wait);
-			writeConsole("waitForCondition[selenium.isVisible["+OR+"], "+wait+"]");
-			selenium.waitForCondition("selenium.isVisible(\""+OR+"\")", wait);			
-		} catch (Exception e) {
-			writeFailure("Element["+OR+"] was not Found after waiting for ("+wait+") Second'");
-		}
-
-	}
-
-
-	//	This Method is used to Click 'Ok' Button in the Confirmation Pop up
-	public void clickchooseokgetconfirmationpagepload(String OR) throws Exception {
-		Reporter.log("Proceed to Click 'OK' button in Confirmation Popup");
-		selenium.chooseOkOnNextConfirmation();
-		clickWebdriver(attributeName_xpath,OR);
-		String confirmation = selenium.getConfirmation();
-		Reporter.log("["+confirmation+"] Confirmation Pop up has been handled");
-		waitForPageToLoadWebdriver();
-	}
-
 	public void verifyText(String expectedtext,String actualtext, String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
 		if (actualtext.equals(expectedtext.trim())) {
@@ -625,7 +295,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifyElementPresent(String element,String elementname) throws Exception{
 		Reporter.log("Proceed to verify Element("+elementname+") was displayed correctly");
-		if (isElementPresent(element)) {				
+		if (isElementPresentWebdriver(attributeName_xpath,element)) {
 			Reporter.log("Element("+elementname+") was displayed correctly");
 		} else {
 			writeFailure("Element ["+elementname+" ] was Not displayed");
@@ -634,7 +304,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifyElementNotPresent(String element,String elementname) throws Exception{
 		Reporter.log("Proceed to verify Element("+elementname+") was Not displayed correctly");
-		if (!isElementPresent(element)) {				
+		if (!isElementPresentWebdriver(attributeName_xpath,element)) {
 			Reporter.log("Element("+elementname+") was Not displayed");
 		} else {
 			writeFailure("Element ["+elementname+" ] was displayed correctly");
@@ -646,11 +316,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (int second = 0;; second++) {
 			// try catch block is used handle 'Permission Denied Error' when waiting for element
 			try {											
-				if (isElementPresent(elementone)) {
+				if (isElementPresentWebdriver(attributeName_xpath,elementone)) {
 					break;					
-				} else if(isElementPresent(elementtwo)){
+				} else if(isElementPresentWebdriver(attributeName_xpath,elementtwo)){
 					break;
-				}else if (isElementPresent(elementthree)){
+				}else if (isElementPresentWebdriver(attributeName_xpath,elementthree)){
 					break;
 				}			
 				if (second>=60) {
@@ -669,9 +339,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (int second = 0;; second++) {
 			// try catch block is used handle 'Permission Denied Error' when waiting for element
 			try {											
-				if (isElementPresent(elementone)) {
+				if (isElementPresentWebdriver(attributeName_xpath,elementone)) {
 					break;					
-				} else if(isElementPresent(elementtwo)){
+				} else if(isElementPresentWebdriver(attributeName_xpath,elementtwo)){
 					break;
 				}			
 				if (second>=60) {
@@ -686,55 +356,13 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	}
 
-	public void waitForTwoElementVisible(String elementone,String elementonename,String elementtwo,String elementtwoname) throws Exception{
-		for (int second = 0;; second++) {
-			// try catch block is used handle 'Permission Denied Error' when waiting for element
-			try {											
-				if (isVisible(elementone)) {
-					break;					
-				} else if(isVisible(elementtwo)){
-					break;
-				}			
-				if (second>=60) {
-					writeFailure("Elements["+elementonename+" and "+elementtwoname+"] was Not Found after waiting for 1 Minute");
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}	
-
-	}
-
-	public void waitForThreeElementVisible(String elementone,String elementonename,String elementtwo,String elementtwoname,String elementthree,String elementthreename) throws Exception{
-		for (int second = 0;; second++) {
-			// try catch block is used handle 'Permission Denied Error' when waiting for element
-			try {											
-				if (isVisible(elementone)) {
-					break;					
-				} else if(isVisible(elementtwo)){
-					break;
-				}else if (isVisible(elementthree)){
-					break;
-				}			
-				if (second>=60) {
-					writeFailure("Elements["+elementonename+" and "+elementtwoname+" and "+elementthreename+"] was Not Visible after waiting for 1 Minute");
-				}
-			} catch (Exception e) {
-
-			}
-			waitForPageToLoadWebdriver();
-		}	
-
-	}
-
 	// This Method is used to wait for two element
 	public void waitForTwoElementNotPresent(String elementone,String elementonename,String elementtwo,String elementtwoname) throws Exception{
 		for (int second = 0;; second++) {
 			try {
-				if (!isElementPresent(elementone)) {
+				if (!isElementPresentWebdriver(attributeName_xpath,elementone)) {
 					break;					
-				} else if(!isElementPresent(elementtwo)){
+				} else if(!isElementPresentWebdriver(attributeName_xpath,elementtwo)){
 					break;
 				}				
 				if (second>=60) {
@@ -751,11 +379,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void waitForErrorLogin(String elementone,String elementtwo,String elementthree) throws Exception{		
 		for (int second = 0;; second++) {
 			try {
-				if (isElementPresent("//span[@class='help-inline field-validation-error']")){
+				if (isElementPresentWebdriver(attributeName_xpath,"//span[@class='help-inline field-validation-error']")){
 					break;					
-				} else if (isElementPresent("//div[@class='validation-summary-errors alert alert-error']")){
+				} else if (isElementPresentWebdriver(attributeName_xpath,"//div[@class='validation-summary-errors alert alert-error']")){
 					break;
-				} else if (isElementPresent("//a[text()='Log Off']")){
+				} else if (isElementPresentWebdriver(attributeName_xpath,"//a[text()='Log Off']")){
 					break;
 				}				
 				if (second>=60) {
@@ -769,62 +397,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	}
 
-	public void verifyElementChecked(String element,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Checked");
-		if (isElementPresent(element)) {			
-			if (isChecked(element) == true) {
-				Reporter.log("Element["+elementname+"] was Checked Correctly");
-			} else {
-				writeFailure("Element["+elementname+"] was Not Checked Correctly");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-
-	public void verifyElementNotChecked(String element,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Not Checked");
-		if (isElementPresent(element)) {			
-			if (isChecked(element) == false) {
-				Reporter.log("Element["+elementname+"] was Not Checked Correctly");
-			} else {
-				writeFailure("Element["+elementname+"] was Checked Correctly");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-
-	public void verifyElementEnabled(String element,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Editable");
-		if (isElementPresent(element)) {			
-			if (isEditable(element) == true) {
-				Reporter.log("Element["+elementname+"] was Editable Correctly");
-			} else {
-				writeFailure("Element["+elementname+"] was Not Editable Correctly");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-
-	public void verifyElementDisabled(String element,String elementname) throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Disabled");
-		if (isElementPresent(element)) {			
-			if (!isEditable(element) == true) {
-				Reporter.log("Element["+elementname+"] was Disabled Correctly");
-			} else {
-				writeFailure("Element["+elementname+"] was Not Disabled Correctly");
-			}
-
-		} else {
-			writeFailure("Element ["+elementname+" ] was Not Present");
-		}
-	}
-	//	This Method is used to Create 'back to detail' Link at end of the Summary
+		//	This Method is used to Create 'back to detail' Link at end of the Summary
 	public static void backtodetails(){
 		Reporter.log("<p><a href=\"#Detail\">back to details</a></p>");
 		Reporter.log("<hr noshade=\"noshade\"/> ");
@@ -893,34 +466,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//		}
 
 
-	//		Note: 'isElementPresent'- it will check to element if not present it will go to else part and failure statement.
-	//		'isVisible' - if element is not present it will throw exeception(Xpath Not Found) and not go else part and failure statement.  
-	public void verifyElementVisible(String element,String elementname) throws Exception{
-		Reporter.log("Proceed to verify Element("+elementname+") was displayed correctly");
-		if(isElementPresent(element)){
-			if (isVisible(element)) {				
-				Reporter.log("Element("+elementname+") was displayed correctly");
-			} else {
-				writeFailure("Element ["+elementname+"] was Not Visible");
-			}
-		} else {
-			writeFailure("Element ["+elementname+"] was Not Displayed");
-		}	
-	}
-
-	public void verifyElementNotVisible(String element,String elementname) throws Exception{
-		Reporter.log("Proceed to verify Element("+elementname+") is Not Visisbled");
-		if(isElementPresent(element)){
-			if (!isVisible(element)) {				
-				Reporter.log("Element("+elementname+") was Not Visisbled");
-			} else {
-				writeFailure("Element ["+elementname+"] was Visibled");
-			}
-		} else {
-			writeFailure("Element ["+elementname+"] was Not Displayed");
-		}	
-	}
-
 //		This Method is used to Verify table Cell Value with respective to Coulumn Name and another Row Cell Data
 	public void verifyCellValuewithColumnName(String cellvalue,String columnname,String expectedcellvalue){
 		Reporter.log("Proceed to Verify Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] and  Row Data["+cellvalue+"] ");
@@ -934,7 +479,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifyAllUserTableCellValuePresentInColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Present in the Column Name ["+columnname+"]");
-		if (isElementPresent("//tr[td[text()='"+expectedcellvalue+"']]")) {	
+		if (isElementPresentWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]")) {
 			String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+6]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
@@ -948,7 +493,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 	public void verifyAllUserTableCellValuePresentInConnectContactEditLogColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Present in the Column Name ["+columnname+"]");
-		if (isElementPresent("//tr[td[text()='"+expectedcellvalue+"']]")) {	
+		if (isElementPresentWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]")) {
 			String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+3]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
@@ -963,7 +508,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifyAllUserTableCellValueNotPresentInColumn(String expectedcellvalue,String columnname) throws Exception{
 		Reporter.log("Proceed to Verify All User Table Row Data["+expectedcellvalue+"] is Not Present in the Column Name ["+columnname+"]");
-		if (isElementPresent("//tr[td/div[text()='"+expectedcellvalue+"']]")) {			
+		if (isElementPresentWebdriver(attributeName_xpath,"//tr[td/div[text()='"+expectedcellvalue+"']]")) {
 			String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td/div[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+1]");
 			if (!actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
@@ -976,58 +521,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}			
 	}
 
-	public void verifyIsTextPresent(String text){
-		Reporter.log("Proceed to Verify Text["+text+"] was displaying Correctly");
-		if (isTextPresent(text)) {
-			Reporter.log("Text["+text+"] was displayed Correctly");
-		} else {
-			writeFailure("Text["+text+"] was Not displayed Correctly");
-		}
-	}
-
-	public String getAttribute(String element,String attribute){
-		writeConsole("getAttribute["+element+"/@"+attribute+"]");
-		String attributevalue = selenium.getAttribute(element+"/@"+attribute);
-		writeConsole(" Actual getAttribute["+attributevalue+"]");
-		return attributevalue;
-	}
-	public String getAttributeusingcss(String element,String attribute){
-		writeConsole("getAttribute["+element+"@"+attribute+"]");
-		String attributevalue = selenium.getAttribute(element+"@"+attribute);
-		writeConsole(" Actual getAttribute["+attributevalue+"]");
-		return attributevalue;
-	}
-	public void openAndWait(String url){
-		writeConsole("open["+url+"]");
-		selenium.open(url);
-		waitForPageToLoadWebdriver();
-	}
-
-	public String waitForElementVisibleGetText(String element,String elementname)throws Exception{
-		Reporter.log("Verify Element("+elementname+") is Visible and Get Element Text");
-		String actualtext;			
-		for (int second = 0;;second++) {
-			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
-				if (second>=120) {
-					writeFailure("Element["+elementname+"] was not Present");
-				}
-				if (isElementPresent(element)) {
-					if (isVisible(element)) {
-						actualtext = getTextWebdriver(element,elementname);
-						return actualtext;						
-					}
-				}
-			} catch (Exception e) {
-
-			}
-
-		}
-
-
-
-	}
-
-
 	public void waitVerifyForElementNotPresent(String element,String elementname)throws Exception{
 		Reporter.log("Wait and verify Element("+elementname+") was Not displayed correctly");
 		for (int second = 0;;second ++) {
@@ -1035,7 +528,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				if (second>=120) {
 					writeFailure("Element["+elementname+"] was displayed after waiting for 2 Minute");
 				}
-				if (!isElementPresent(element)) {
+				if (!isElementPresentWebdriver(attributeName_xpath,element)) {
 					Reporter.log("Element("+elementname+") was Not displayed");
 					break;
 				}
@@ -1053,7 +546,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				if (second>=120) {
 					writeFailure("Element["+elementname+"] was Not displayed after waiting for 2 Minute");
 				}
-				if (isElementPresent(element)) {
+				if (isElementPresentWebdriver(attributeName_xpath,element)) {
 					Reporter.log("Element("+elementname+") was displayed correctly");
 					break;
 				}
@@ -1072,7 +565,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (int second = 0;;second ++) {
 			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
 
-				if (isVisible(element)) {
+				if (isElementPresentWebdriver(attributeName_xpath,element)) {
 					String actualtext = getTextWebdriver(attributeName_xpath,element);
 					if (actualtext.contains(expectedtext)) {
 						Reporter.log("Element["+elementname+"] Contains ["+expectedtext+"]Text was Visibled correctly ");
@@ -1097,7 +590,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		for (int second = 0;;second ++) {
 			try {// try catch block is used handle 'Permission Denied Error' when waiting for element
 
-				if (isVisible(element)) {
+				if (isElementPresentWebdriver(attributeName_xpath,element)) {
 					//						int csscount = getCssCount(element);
 					//						writeConsole("Message Count "+csscount);
 					String actualtext = getTextWebdriver(attributeName_xpath,element);
@@ -1125,10 +618,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 				if (second>=120) {
 					writeFailure("Element["+elementonename+"] visible and Element["+elementtwoname+"] Not Visible was Not Occuring");
 				}
-				if (isVisible(elementone)) {
+				if (isElementPresentWebdriver(attributeName_xpath,elementone)) {
 					//						Reporter.log("Element("+elementname+") was displayed correctly");
 					break;
-				}else if (!isVisible(elementtwo)) {
+				}else if (!isElementPresentWebdriver(attributeName_xpath,elementtwo)) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1136,15 +629,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 			}
 			waitForPageToLoadWebdriver();
 		}
-
-
-
 	}
 
 	public void verifyElementWithTitle(String element,String expectedtitle,String elementname) throws Exception{
 		Reporter.log("Verify Element("+elementname+") With Title Text("+expectedtitle+")");
-		if (isElementPresent(element)) {
-			String actualtile = getAttribute(element, "title");
+		if (isElementPresentWebdriver(attributeName_xpath,element)) {
+			String actualtile = getAttributeWebdriver(attributeName_xpath,element, "title");
 			if (expectedtitle.equals(actualtile)) {
 				Reporter.log("Element["+elementname+"] With Title Text["+actualtile+"] was displayed correctly ");
 			} else {
@@ -1156,16 +646,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 	}
 
-	public void verifyPageTitle(String expectedpagetitle) throws Exception{
-		Reporter.log("Verify Page Title as ["+expectedpagetitle+"]");
-		String actualpagetile = getTitle();
-		if (actualpagetile.equals(expectedpagetitle)) {
-			Reporter.log("Page with Title["+actualpagetile+"] was displayed Correctly");
-		} else {
-			writeFailure("Page With Actual Title - ["+actualpagetile+"] did not Match Expected Title - ["+expectedpagetitle+"]");
-		}
-	}
-
 
 	//		This Method is Used number of columns and number of Values
 
@@ -1174,7 +654,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] columnNamesArray = columnnames.split(";");			
 		for (int i = 0; i < columnNamesArray.length; i++) {
 			Reporter.log("Proceed to Verify All User Table Row Data["+expCellValuesArray[i]+"] is Present in the Column Name ["+columnNamesArray[i]+"]");
-			if (isElementPresent("//tr[td/div[text()='"+expCellValuesArray[i]+"']]")) {	
+			if (isElementPresentWebdriver(attributeName_xpath,"//tr[td/div[text()='"+expCellValuesArray[i]+"']]")) {
 				String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td/div[text()='"+expCellValuesArray[0]+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnNamesArray[i]+"')]/preceding-sibling::th)+1]");
 				if (actualcellvalue.equals(expCellValuesArray[i])) {
 					Reporter.log("All User Table Row Data["+expCellValuesArray[i]+"] with respective to  Column Name ["+columnNamesArray[i]+"] was displayed Correctly");
@@ -1186,10 +666,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				writeFailure("All User Table Row Data["+expCellValuesArray[i]+"] with respective to  Column Name ["+columnNamesArray[i]+"] was Not displayed Correctly");
 			}	
 		}
-
-
 	}
-
 
 	public String requiredDateAndFormat(String dateFormat,String date) throws ParseException{ // MM/dd/yyyy - 9/10/2012
 		String returndate = null;
@@ -1242,7 +719,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	//		This Procedure is used to get row based on row value repective to column Names
 
-	public String getrownumberbasedonrowvaluecloumnname(String tablename,String ColumnNames,String Rowvalues){
+	/*public String getrownumberbasedonrowvaluecloumnname(String tablename,String ColumnNames,String Rowvalues){
 		String rownumber = null;
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
@@ -1305,8 +782,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementPresent(tablename+">thead>tr>th", "Table First Column");
-		waitForElementVisible(tablename+">thead>tr>th", "Table First Column");
+		waitForElementPresentWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
 		int columncount = getCssCount(tablename+">thead>tr>th");	
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1365,7 +842,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementVisible(tablename+"/thead/tr/th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+"/thead/tr/th", "Table First Column");
 		int columncount = getXpathCount(tablename+"/thead/tr/th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1414,7 +891,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementVisible(tablename+">thead/tr/th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead/tr/th", "Table First Column");
 		int columncount = getXpathCount(tablename+"/thead/tr/th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1463,7 +940,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementVisible(tablename+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
 		int columncount = getCssCount(tablename+">thead>tr>th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1506,9 +983,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		if (data.equals("Found")) {
 			//					rownumber = String.valueOf(k);
 			if (check.equalsIgnoreCase("Check")) {
-				verifyElementChecked(tablename+">tbody>tr:nth-child("+k+")>td>input[type='checkbox']", "Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"]");
+				verifyElementCheckedWebdriver(attributeName_xpath,tablename+">tbody>tr:nth-child("+k+")>td>input[type='checkbox']", "Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"]");
 			}else if (check.equalsIgnoreCase("Uncheck")) {
-				verifyElementNotChecked(tablename+">tbody>tr:nth-child("+k+")>td>input[type='checkbox']", "Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"]");
+				verifyElementNotCheckedWebdriver(attributeName_xpath,tablename+">tbody>tr:nth-child("+k+")>td>input[type='checkbox']", "Row Values["+Rowvalues+"] respect with Column["+ColumnNames+"]");
 			}
 
 		}
@@ -1526,7 +1003,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String column = "NotFound";
 		int columnnumber;
 		ArrayList<String> rowvalue = new ArrayList<String>();
-		waitForElementVisible(tablename+">thead>tr>th:nth-child(2)", "Table Second Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th:nth-child(2)", "Table Second Column");
 		int columncount = getCssCount(tablename+">thead>tr>th");
 		for (columnnumber= 0; columnnumber < columncount; columnnumber++) {					
 
@@ -1558,7 +1035,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String actualrowvaluestring = "";
 		String expectedrowvaluestring = "";
 		ArrayList<String> actualrowvalue = new ArrayList<String>();			
-		waitForElementVisible(tablenameor+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablenameor+">thead>tr>th", "Table First Column");
 		int columncount = getCssCount(tablenameor+">thead>tr>th");
 		for (columnnumber= 0; columnnumber < columncount; columnnumber++) {				
 			//				String currentcoulmnName = selenium.getTable(tablenameor+".0."+columnnumber);
@@ -1620,7 +1097,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Table ["+tablename+"] with Actual Record["+tablerowcount +"] did not match with Expected Record["+rowcount+"]");
 		}			
 	}
-
+*/
 	/*public void verifypagenavigated(String elementor,String expectedpage){
 		Reporter.log("Verify its Navigated to Page Number["+expectedpage+"]");
 		String actualactivepage = getText(elementor);			
@@ -1687,11 +1164,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//			}		
 	//		}
 
-	public void verifyrowvalueswithcolumnNamesusingCSS(String tablename,String ColumnNames,String Rowvalues) throws Exception{			
+	/*public void verifyrowvalueswithcolumnNamesusingCSS(String tablename,String ColumnNames,String Rowvalues) throws Exception{
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementVisible(tablename+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
 		int columncount = getCssCount(tablename+">thead>tr>th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1744,7 +1221,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc
 		String[] RowvaluesArray = Rowvalues.split(";"); //////expected record values
 		ArrayList<Integer> columnnumber = new ArrayList<Integer>();
-		waitForElementVisible(tablename+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
 		int columncount = getCssCount(tablename+">thead>tr>th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {		
 			String column = "NotFound";
@@ -1793,7 +1270,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	public void verifycolumnNamesSortedInOrderusingCSS(String tablename,String ColumnNames,int StartColumnPosition) throws Exception{			
 		String[] ColumnNamesArray = ColumnNames.split(";");  ///expected colmn names in a array from qc			
-		waitForElementVisible(tablename+">thead>tr>th", "Table First Column");
+		waitForElementVisibleWebdriver(attributeName_xpath,tablename+">thead>tr>th", "Table First Column");
 		//			int columncount = getCssCount(tablename+">thead>tr>th");			
 		for (int i = 0; i < ColumnNamesArray.length; i++) {
 			int columnOrder = i+StartColumnPosition-1; //  i - for Loop - StartColumnPosition - Parameter - '-1' for Table Start Column with 1 instead of '0'
@@ -1829,7 +1306,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 		return String.valueOf(i);
 	}
-
+*/
 	/*public void typeusingkeyboard(String locator,String value){
 		//			Reporter.log("Step 2 - Enter Label as ["+label+"]");
 		String valueSplit = value.substring(0, value.length()-1);
@@ -1860,28 +1337,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 	}*/
 
-	public void verifySelectContainsOptions(String elementor,String elementoptions,String elementname){
-		Reporter.log("Verify ["+elementname+"] Select has Option["+elementoptions+"]");
-		String[] elementoptionsarray = elementoptions.split(";");
-		for (int i = 0; i < elementoptionsarray.length; i++) {			
-			String options = "NotFound";
-			String[] OptionsArray = getSelectOptions(elementor);
-			for (int j = 0; j < OptionsArray.length; j++) {
-				if (elementoptionsarray[i].equals(OptionsArray[j])) {
-					Reporter.log("["+elementname+"] Select has option["+elementoptionsarray[i]+"]");
-					options = "Found";
-					break;
-				}
-			}
-			if (options.equals("NotFound")) {
-				writeFailure("["+elementname+"] Select has Actual Options["+OptionsArray+"] did not match with Expected option["+elementoptionsarray[i]+"]");
-			}
-		}
-	}
-
 	// This method is used to Type on Visible Element i.e WebPage having number of element(Visible and Invisible) having same property so we using
 	// element Index to type on Visble element.
-	public void typeOnVisibleElement(String locator,String value,String elementname){
+	/*public void typeOnVisibleElement(String locator,String value,String elementname){
 		int elementcount = getCssCount(locator);
 		String element = "Notvisible"; 
 		for(int i=0; i<elementcount;i++){
@@ -1894,7 +1352,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Element["+elementname+"] was Not Visible to Type");
 		}
 
-	}		
+	}
 	// This Method is used to Click on Visible Element i.e WebPage having number of element(Visible or Invisible) having same property so we using
 	// Element Index to Click on Visble element.
 	public void clickOnVisibleElement(String locator,String elementname){
@@ -1929,53 +1387,16 @@ public class CommonSeleniumActions extends Processor implements OR {
 			writeFailure("Element["+elementname+"] was Not Visible");
 		}
 		return elementindex;
-	}
+	}*/
 
-	public void SelectPrintWindow(String PrintWindow) throws Exception {
-		Reporter.log("Proceed to Select Print("+PrintWindow+") Window");			
-		String BrowName = Runtimedataread("Browser");
-		if (BrowName.equalsIgnoreCase("Internet Explore")) {	
-			selenium.selectWindow(PrintWindow);
-			try {
-				selenium.windowFocus();
-			} catch (Exception e) {
-				waitForPageToLoadWebdriver();
-				selenium.windowFocus();
-			}
-		} else if (BrowName.equalsIgnoreCase("Firefox"))  {
-			selenium.waitForPopUp(PrintWindow, "120000");
-			selenium.selectWindow(PrintWindow);
-		}
-		else if (BrowName.equalsIgnoreCase("Googlechrome"))  {
-			selenium.waitForPopUp(PrintWindow, "120000");
-			selenium.selectWindow(PrintWindow);
-		}
-
-
-	}
-
-	public void waitForUniqueNameWindow() throws Exception{
-		String popupID =selenium.getEval("{var windowId; for(var x in selenium.browserbot.openedWindows ) {windowId=x;} }"); //javascript to get last opened window
-		selenium.waitForPopUp(popupID, "90000");
-		selenium.selectWindow(popupID);
-	}
 
 	public void deselectPopUp() {
-		selenium.deselectPopUp();
+		//selenium.deselectPopUp();
+		    driver.switchTo().activeElement();
+		//driver.switchTo().window(mainwindow);
 	}
 
-	public void verifyTextPresent(String myString) {
-		Reporter.log("Verify Text["+myString+"] is Present");
-		writeConsole("Verify Text["+myString+"] is Present");
-		if (selenium.isTextPresent(myString)) {
-			Reporter.log("Text["+myString+"] was Present");
-			writeConsole("Text["+myString+"] was Present");
-		} else {
-			writeFailure("Text["+myString+"] was Not Present");
-		}
-	}
-
-	public void VerifyPDFOpen(String PDFName,int wait) throws Exception {
+	/*public void VerifyPDFOpen(String PDFName,int wait) throws Exception {
 		Reporter.log("Proceed to Verify PDF is Opend without Error ");
 		String BrowName = Runtimedataread("Browser");
 		String exceptionMsg = null;
@@ -2029,8 +1450,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 				Assert.fail("PDF File was not displayed");
 			}
 		} 
-	}
-	public void verifyMultiLineMessage(String elementLocator, String elementName, String expectedText, String LineSeparator)
+	}*/
+	/*public void verifyMultiLineMessage(String elementLocator, String elementName, String expectedText, String LineSeparator)
 	{
 		Reporter.log("Start of the 'verifyMultiLineMessage' function...");
 		if (selenium.isElementPresent(elementLocator)){       
@@ -2158,7 +1579,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	//				 }
 
 	// This function can be used to write a message in 'Bold' in the report
-	// The reason for writting in 'Bold' might be to prevent the message from being written again and again in the report
+	// The reason for writting in 'Bold' might be to prevent the message from being written again and again in the report*/
 	public void writeMessageInBold(String message){
 		Reporter.log("<b><font size='3'><strong>" + message + "</strong></font></b>");
 	}

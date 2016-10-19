@@ -83,7 +83,7 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!excludepasswordfromnewaccountemail.equals("")) {
 				Reporter.log("Check/uncheck User must change passageword at next login");
-				check(WCL_excludepasswordfromnewaccountemail);			
+				checkWebdriver(attributeName_xpath,WCL_excludepasswordfromnewaccountemail);
 			}
 			if (!status.equals("")) {
 				Reporter.log("Select status");
@@ -99,7 +99,7 @@ public class WC_AddUser_Input  extends CommonSeleniumActions implements OR {
 			}
 			if (!rolesassigned.equals("")) {
 				Reporter.log("Check/uncheck ");
-				check(WCL_rolesassigned);			
+				checkWebdriver(attributeName_xpath,WCL_rolesassigned);
 			}
 			if (!rolesnotassigned.equals("")) {
 				Reporter.log("Check/uncheck ");

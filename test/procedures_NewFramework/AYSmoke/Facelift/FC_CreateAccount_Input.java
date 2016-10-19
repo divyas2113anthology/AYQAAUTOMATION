@@ -174,13 +174,13 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					if (button_to_click.equalsIgnoreCase("create account")) {
 						Reporter.log("Step 16 - Click on 'Create Account' button");
 						clickWebdriver(attributeName_id, CA_CreateAccountBtn);	
-						waitForElementPresent(CA_LoginBtn, "Login button");
+						waitForElementPresentWebdriver(attributeName_xpath,CA_LoginBtn, "Login button");
 //						waitForPageToLoadWebdriver();
 					} else if (button_to_click.equalsIgnoreCase("Login")) {
 						Reporter.log("Step 17 - Click on 'Login' button if found");
-						waitForElementPresent(CA_LoginBtn, "Login button");
+						waitForElementPresentWebdriver(attributeName_xpath,CA_LoginBtn, "Login button");
 						clickWebdriver(attributeName_xpath, CA_LoginBtn);
-						waitForElementPresent(TOU_pageTitle, "Terms Of Use");			
+						waitForElementPresentWebdriver(attributeName_xpath,TOU_pageTitle, "Terms Of Use");
 					}
 				}
 

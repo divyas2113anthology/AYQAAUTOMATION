@@ -56,7 +56,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
 //								writeConsole("Pdf Contains Text was verified successfully");
 								if (exceptionMsg.contains(splitpdftext[i])) {
-									verifyTextPresent(splitpdftext[i]);
+									writeConsole(splitpdftext[i]);
 //									writeConsole("PDF File :"+splitpdftext[i]);
 								}
 							}

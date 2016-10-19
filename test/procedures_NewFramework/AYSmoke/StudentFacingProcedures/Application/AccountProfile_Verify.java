@@ -23,7 +23,7 @@ public class AccountProfile_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Account Profile' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresent(AP_PageTitle, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath,AP_PageTitle, pagename);
 				verifyElementTextWebdriver(attributeName_xpath,AP_PageTitle, pagename, "Page Name");
 			}
 			if (!verifyui.equals("")) {

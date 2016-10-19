@@ -54,7 +54,7 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			if (!dob.equals("")) {
 				Reporter.log("Step 4 - Enter the DOB as ("+dob+")");
 				String ethiID = getElementIDbyLabelContains("Date of Birth",IR_PI_Dob);
-				check(ethiID);
+				checkWebdriver(attributeName_xpath,ethiID);
 			}
 			if (!gender.equals("")) {
 				Reporter.log("Step 5 - Select the Gender as ("+gender+")");

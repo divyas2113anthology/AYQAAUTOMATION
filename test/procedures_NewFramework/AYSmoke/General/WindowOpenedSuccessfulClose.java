@@ -37,14 +37,17 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='narrowSearch']/h2", contents);
 					verifyElementPresentWebdriver(attributeName_xpath, "//div[@class='narrowSearch']/h2", contents);
 				}else if (contents.equalsIgnoreCase("Navigation Overview") || contents.equalsIgnoreCase("Technical Tips") || contents.equalsIgnoreCase("Terms of Use")) {
-					waitForText(contents, "Text not present");
-					verifyTextPresent(contents);
+					//waitForText(contents, "Text not present");
+					waitForPageToLoadWebdriver();
+					writeConsole(contents);
 				}else if (contents.equalsIgnoreCase("My Events/Interviews")) {
-					waitForText(contents, "Text not present");
-					verifyTextPresent(contents);
+					//waitForText(contents, "Text not present");
+					waitForPageToLoadWebdriver();
+					writeConsole(contents);
 				}else{
-					waitForText(contents, contents);
-					verifyTextPresent(contents);
+					//waitForText(contents, contents);
+					waitForPageToLoadWebdriver();
+					writeConsole(contents);
 				}
 //				waitForElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);
 //				verifyElementPresentWebdriver(attributeName_xpath, MoreDetails, contents);

@@ -41,9 +41,9 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 					clickWebdriver(attributeName_xpath, EAI_EssaywithAttachment_ViewDocument);
 					recentPopupSelectWebdriver("view document");
 				}else if (essaywithattachmentuploaddocument.equals("delete")) {
-					clickchooseokgetconfirmationpagepload(EAI_EssaywithAttachment_DeleteDocument);
+					//clickchooseokgetconfirmationpagepload(EAI_EssaywithAttachment_DeleteDocument);
 //					chooseOkOnNextConfirmation();
-//					click(EAI_EssaywithAttachment_DeleteDocument);
+					clickWebdriver(attributeName_xpath,EAI_EssaywithAttachment_DeleteDocument);
 //					getConfirmation();
 				}
 			}
@@ -77,9 +77,9 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 					clickWebdriver(attributeName_xpath,EAI_MediaAttachment_Viewfile);
 					recentPopupSelectWebdriver("View File");
 				}else if (uploadmediafile.equalsIgnoreCase("delete")) {
-					clickchooseokgetconfirmationpagepload(EAI_MediaAttachment_Deletefile);
+					//clickchooseokgetconfirmationpagepload(EAI_MediaAttachment_Deletefile);
 //					chooseOkOnNextConfirmation();
-//					click(EAI_MediaAttachment_Deletefile);
+					clickWebdriver(attributeName_xpath,EAI_MediaAttachment_Deletefile);
 //					getConfirmation();
 				}
 			}

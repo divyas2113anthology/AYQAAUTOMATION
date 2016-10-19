@@ -20,15 +20,15 @@ public class MC_AddEditPackageApplication_Verify extends CommonSeleniumActions i
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify message is ["+message+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divAyConfirmation']/font", message);
-				verifyTextPresent(message);				
+				writeConsole(message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify page name is ["+pagename+"]");
-				verifyTextPresent(pagename);				
+				writeConsole(pagename);
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify page is ["+verifyui+"]");
-				verifyTextPresent(verifyui);				
+				writeConsole(verifyui);
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage()); }

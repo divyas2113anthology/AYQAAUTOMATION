@@ -31,7 +31,7 @@ public class EssayandAttachmentForm_Verify extends CommonSeleniumActions impleme
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!success.equals("")) {
 				Reporter.log("Step 1 - Verify Success Message ["+success+"]");
-				verifyElementVisible(EA_SuccessMessage+success+"']","Success Message["+success+"]");
+				verifyElementVisibleWebdriver(attributeName_xpath,EA_SuccessMessage+success+"']","Success Message["+success+"]");
 
 			}
 			if (!pagename.equals("")) {

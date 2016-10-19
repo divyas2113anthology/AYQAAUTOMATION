@@ -24,17 +24,17 @@ public class EULA_Input extends CommonSeleniumActions implements OR {
 			if (!iagree.equals("")) {
 				Reporter.log("Proceed to  ("+iagree+") in the 'I agree' Checkbox");
 				if (iagree.equalsIgnoreCase("Check")) {
-					check(Iagree);
+					checkWebdriver(attributeName_xpath,Iagree);
 				}else if (iagree.equalsIgnoreCase("Uncheck")) {
-					uncheck(Iagree);
+					uncheckWebdriver(attributeName_xpath,Iagree);
 				}			
 			}
 			if (!privacypolicy.equals("")) {
 				Reporter.log("Proceed to check ("+privacypolicy+") in the 'Privacy Policy' Radio");
 				if (privacypolicy.equalsIgnoreCase("Check")) {
-					check(PrivacyPolicy);
+					checkWebdriver(attributeName_cssselector,PrivacyPolicy);
 				}else if (privacypolicy.equalsIgnoreCase("UnCheck")) {
-					uncheck(PrivacyPolicy);
+					uncheckWebdriver(attributeName_cssselector,PrivacyPolicy);
 				}			
 			}
 			if (!continuecreate.equals("")) {

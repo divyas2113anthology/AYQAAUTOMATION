@@ -26,7 +26,7 @@ public class FC_TechnicalSupport_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 6 - Click on ("+closewindow+") Button");
 				if (closewindow.equalsIgnoreCase("close window")) {
 //					selectWindow("name=TechSupport");
-					close();
+					closeWindowWebdriver();
 					selectMainWindowWebdriver();
 				}
 			}

@@ -18,8 +18,8 @@ public class MC_MainMenu_Verify extends CommonSeleniumActions implements OR{
 			if (!page.equals("")) {
 				Reporter.log("Step 1 - Verify page name is  ["+page+"]");
 				if (page.contains("Applicant Lookup")) {
-					waitForText(page, page);
-					verifyTextPresent(page);
+					waitForPageToLoadWebdriver();
+					writeConsole(page);
 //					waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Applicant Lookup')]", page, "Page Name");
 //					verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Applicant Lookup')]", page, "Page Name");
 //				}else if (page.contains("Manage")) {

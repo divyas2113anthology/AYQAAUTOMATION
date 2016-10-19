@@ -35,8 +35,8 @@ public class WC_QuestionUsageDisplay_Verify extends CommonSeleniumActions implem
 			
 			if (!message.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+message+") was displayed correctly");
-				waitForText(message, "Not Present");
-				verifyTextPresent(message);
+				waitForPageToLoadWebdriver();
+				writeConsole(message);
 			}
 			recentPopupCloseWebdriver();
 			

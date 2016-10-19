@@ -25,8 +25,8 @@ public class ApplicantWelcome_Verify extends CommonSeleniumActions implements OR
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Welcome' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
-				waitForText(pagename, "Application Alternate Name Status: Ready for Submission");
-				verifyTextPresent(pagename);
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 //				verifyElementText(PSD_PageName, pagename, "Page Name");
 			}
 			if (!verifyui.equals("")) {

@@ -53,7 +53,7 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 			if (!rcrecommendercheck .equals("")) {
 				Reporter.log("Step 3 - Check recommender as ("+rcrecommendercheck+")");
 				String Recommendercheckrc = getElementIDbyLabelContainsusingXpathWebdirver("recommenderchk",RC_RecProvidercheck);
-				check(Recommendercheckrc);
+				checkWebdriver(attributeName_xpath,Recommendercheckrc);
 			}
 			if (!rcaddbutton.equals("")) {
 				Reporter.log("Step 4 - Click ("+rcaddbutton+")");

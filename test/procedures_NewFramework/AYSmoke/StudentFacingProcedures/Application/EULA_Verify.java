@@ -23,7 +23,7 @@ public class EULA_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Terms of Use' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresent(EL_PageTitle, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath,EL_PageTitle, pagename);
 				verifyElementTextWebdriver(attributeName_cssselector,EL_PageTitle, pagename, "Page Name");
 			}
 			if (!verifyui.equals("")) {

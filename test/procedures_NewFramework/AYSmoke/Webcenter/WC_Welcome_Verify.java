@@ -32,8 +32,9 @@ public class WC_Welcome_Verify extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, PS_HobsonsLogo, pagename);
 					verifyElementPresentWebdriver(attributeName_xpath, PS_HobsonsLogo, pagename);
 				}else{
-					waitForText(pagename, "Page Name");
-					verifyTextPresent(pagename);
+					//waitForText(pagename, "Page Name");
+					waitForPageToLoadWebdriver();
+					writeConsole(pagename);
 				}
 			}
 			if (!message.equals("")) {

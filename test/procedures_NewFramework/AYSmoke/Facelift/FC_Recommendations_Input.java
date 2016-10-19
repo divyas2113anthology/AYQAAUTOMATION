@@ -55,11 +55,11 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcrecommendercheck .equals("")) {
 				Reporter.log("Step 3 - Check recommender as ("+rcrecommendercheck+")");
 				String Recommendercheckrc = getElementIDbyLabel("recommenderchk",RC_RecProvidercheck);
-				check(Recommendercheckrc);
+				checkWebdriver(attributeName_xpath,Recommendercheckrc);
 			}
 			if (!rcaddbutton.equals("")) {
 				Reporter.log("Step 4 - Click ("+rcaddbutton+")");
-				waitForElementPresent(RC_AddProBtn, "Add A Provider Button");
+				waitForElementPresentWebdriver(attributeName_xpath,RC_AddProBtn, "Add A Provider Button");
 				clickWebdriver(attributeName_xpath, RC_AddProBtn);
 				waitForPageToLoadWebdriver();
 			}

@@ -2,6 +2,7 @@ package procedures_NewFramework.AYSmoke.Facelift;
 
 import java.util.Calendar;
 
+import com.inflectra.spirateam.mylyn.core.internal.services.soap.SystemGetProductName;
 import or.OR;
 
 import org.testng.Reporter;
@@ -50,8 +51,9 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
 				String Sufixpd = getElementIDbyLabel("Suffix",PSD_Suffix);				
 //				select(Sufixpd,pdsufix);
-				waitForElementPresentWebdriver(attributeName_xpath, Sufixpd,pdsufix);
-				selectByValueWebdriver(attributeName_xpath, Sufixpd,pdsufix);
+				System.out.println("Suffix"+Sufixpd);
+				waitForElementPresentWebdriver(attributeName_linktext, Sufixpd,pdsufix);
+				selectByValueWebdriver(attributeName_linktext, Sufixpd,pdsufix);
 			}
 			if (!pdfirstname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");

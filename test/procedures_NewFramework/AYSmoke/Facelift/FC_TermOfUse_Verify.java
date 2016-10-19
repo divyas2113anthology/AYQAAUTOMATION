@@ -29,7 +29,7 @@ public class FC_TermOfUse_Verify extends CommonSeleniumActions implements OR {
 //			if (page_title.equalsIgnoreCase("Terms of Use")) {
 //				verifyElementText(TOU_pageTitle, page_title, "Terms of Use");	
 //			}
-			if (selenium.isElementPresent(TOU_pageTitle)) {
+			if (isElementPresentWebdriver(attributeName_xpath,TOU_pageTitle)) {
 				Reporter.log("Its navigate to ["+page_title+"]age");
 			} else {
 				writeFailure("Its not navigate to ["+page_title+"] page");

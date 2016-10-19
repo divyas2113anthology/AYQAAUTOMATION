@@ -25,12 +25,12 @@ public class SectionRule_Input extends CommonSeleniumActions implements OR {
 				if (doyoulive.equalsIgnoreCase("Yes")) {
 					Reporter.log("Step 1 - Perform the Operation of student do you live 'Yes'");
 //					String DoYouLiveY = getElementIDbyLabel("Do you live in there", AW_DoYouLiveYes);
-					waitForElementPresent(AW_DoYouLiveYes, "Do You Live radio Button");
+					waitForElementPresentWebdriver(attributeName_xpath,AW_DoYouLiveYes, "Do You Live radio Button");
 					clickWebdriver(attributeName_xpath,AW_DoYouLiveYes);
 				}else if (doyoulive.equalsIgnoreCase("No")) {
 					Reporter.log("Step 1 - Perform the Operation of student do you live 'No'");
 //					String DoYouLiveN = getElementIDbyLabel("Do you live in there", AW_DoYouLiveNo);
-					waitForElementPresent(AW_DoYouLiveNo, "Do You Live radio Button");
+					waitForElementPresentWebdriver(attributeName_xpath,AW_DoYouLiveNo, "Do You Live radio Button");
 					clickWebdriver(attributeName_xpath,AW_DoYouLiveNo);
 				}
 			}

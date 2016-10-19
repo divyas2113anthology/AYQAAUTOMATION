@@ -39,8 +39,9 @@ public class Rec_Facelift_Dashboard_Verify extends CommonSeleniumActions impleme
 		if (!verifytext.equals("")) {
 			Reporter.log("Step 1 - Verify the text as ["+verifytext+"]");
 			//String Password1 = Runtimedataread(password);
-			waitForText(verifytext, "Welcome");
-			verifyTextPresent(verifytext);
+			//waitForText(verifytext, "Welcome");
+			waitForPageToLoadWebdriver();
+			writeConsole(verifytext);
 					
 		}
 		

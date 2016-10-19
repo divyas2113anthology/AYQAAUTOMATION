@@ -25,10 +25,10 @@ public class WC_ApplicantSearchResults_Verify extends CommonSeleniumActions impl
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Search Results' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-//				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
+				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
 //				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
-				waitForText(successmessage, successmessage);
-				verifyTextPresent(successmessage);
+				//waitForText(successmessage, successmessage);
+				
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

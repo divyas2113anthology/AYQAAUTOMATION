@@ -21,8 +21,9 @@ public class EnrollmentSubmissionComplete_Verify extends CommonSeleniumActions i
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForText(pagename, "Submission Not Present");
-				verifyTextPresent(pagename);
+				//waitForText(pagename, "Submission Not Present");
+				waitForPageToLoadWebdriver();
+				writeConsole(pagename);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

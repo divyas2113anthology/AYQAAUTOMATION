@@ -33,9 +33,9 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 			if (!stasubmissioncomplete.equals("")) {
 				Reporter.log("Step 2 - Proceed to ("+stasubmissioncomplete+") Submission Complete! Checkbox");
 				if (stasubmissioncomplete.equalsIgnoreCase("Check")) {
-					check(AS_Submissioncomplete);
+					checkWebdriver(attributeName_xpath,AS_Submissioncomplete);
 				}else if (stasubmissioncomplete.equalsIgnoreCase("Uncheck")) {
-					uncheck(AS_Submissioncomplete);
+					uncheckWebdriver(attributeName_xpath,AS_Submissioncomplete);
 				}
 			}		
 			if (!stacontinue.equals("")) {

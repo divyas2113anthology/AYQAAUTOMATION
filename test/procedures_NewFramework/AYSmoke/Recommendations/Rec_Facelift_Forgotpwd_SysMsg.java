@@ -16,8 +16,9 @@ public class Rec_Facelift_Forgotpwd_SysMsg extends CommonSeleniumActions impleme
 		String[] testdata = datacontainer;
 		String Forgot_SysMsg = testdata[0];
 		
-		waitForText(Forgot_SysMsg, "Forgot your Personal Access Code or Password?");
-		verifyTextPresent(Forgot_SysMsg);
+		//waitForText(Forgot_SysMsg, "Forgot your Personal Access Code or Password?");
+			waitForPageToLoadWebdriver();
+		waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath,RF_Forgot_Pwd,Forgot_SysMsg,Forgot_SysMsg);
 		
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

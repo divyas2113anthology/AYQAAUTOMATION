@@ -21,8 +21,8 @@ public class WC_AddEditEventRegistration_Verify extends CommonSeleniumActions im
 			Reporter.log("Verify Test Data was retrieved for 'Add/Edit Event Registration' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				waitForText(successmessage, successmessage);
-				verifyTextPresent(successmessage);
+				waitForPageToLoadWebdriver();
+				//verifyTextPresent(successmessage);
 			}
 			if (!closewindow.equals("")) {
 				Reporter.log("Step 2 - Proceed to close the window");

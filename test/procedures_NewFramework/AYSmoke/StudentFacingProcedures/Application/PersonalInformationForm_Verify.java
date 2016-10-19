@@ -34,7 +34,8 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			//selectMainWindowWebdriver();
 			if (!pivsuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+pivsuccessmessage+") was displayed correctly");
-				waitForText(pivsuccessmessage, "Address Line 1");
+				//waitForText(pivsuccessmessage, "Address Line 1");
+				waitForPageToLoadWebdriver();
 				if (selenium.isTextPresent(pivsuccessmessage)) {
 					Reporter.log("Message("+pivsuccessmessage+") was displayed correctly");
 				} else {
@@ -55,7 +56,6 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivaddressline1.equals("")) {
 				Reporter.log("Step 4 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
 				String addrwaitID = getElementIDbyLabel("Address Line1", PI_AddressLine1_wait);
-				waitForConditionisElementPresent(addrwaitID, "60000");
 				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
 				String addrID1 = getElementIDbyLabel("Address Line1", PI_AddressLine1);			
 				String line1 = getValueWebdriver(attributeName_xpath,addrID1);

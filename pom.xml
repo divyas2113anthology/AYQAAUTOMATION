@@ -10,20 +10,20 @@
 
     <properties>
 
-    <!-- Expects a value to be pass if not it will default to the properties file -->
+        <!-- Expects a value to be pass if not it will default to the properties file -->
 
 
-    <browser/>
+        <browser/>
 
-    <build.number>${maven.build.timestamp}</build.number>
+        <build.number>${maven.build.timestamp}</build.number>
 
-    <folderFilePath>src/test/resources/Configurations</folderFilePath>
+        <folderFilePath>src/test/resources/Configurations</folderFilePath>
 
-    <configFilePath>${folderFilePath}/LocalConfiguration.properties</configFilePath>
+        <configFilePath>${folderFilePath}/LocalConfiguration.properties</configFilePath>
 
-    <maven.build.timestamp.format>yyyy-MM-dd-HH-mm</maven.build.timestamp.format>
+        <maven.build.timestamp.format>yyyy-MM-dd-HH-mm</maven.build.timestamp.format>
 
- </properties>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -55,13 +55,13 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.0.0-beta3</version>
+            <version>3.0.0-beta1</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>3.0.0-beta3</version>
+            <version>3.0.0-beta1</version>
         </dependency>
 
         <dependency>
@@ -123,21 +123,21 @@
     </dependencies>
 
     <build>
-          <sourceDirectory>test</sourceDirectory>
+        <sourceDirectory>test</sourceDirectory>
 
         <plugins>
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.2</version>
-            <configuration>
-                <encoding>UTF-8</encoding>
-                <source>1.8</source>
-                <target>1.8</target>
-                <compilerArgument>-Werror</compilerArgument>
-            </configuration>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Werror</compilerArgument>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -177,6 +177,6 @@
 
         </plugins>
 
-</build>
+    </build>
 
 </project>

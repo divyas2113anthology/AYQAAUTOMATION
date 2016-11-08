@@ -29,7 +29,10 @@ public class FC_AVSLookup_Input extends CommonSeleniumActions implements OR {
 		Reporter.log("Input Test Data was retrieved for 'Address Lookup' page");
 		
 		if (!addrcountry.equals("")) {
+
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
+			waitForPopupWebdriver();
+			waitForPageToLoadWebdriver();
 			selectByVisibleTextWebdriver(attributeName_xpath, AL_Country, addrcountry);
 //			select(AL_Country, addrcountry);
 		}

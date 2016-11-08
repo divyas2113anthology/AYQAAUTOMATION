@@ -31,14 +31,13 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			String envirurl = null;
 			
-			if ((url.contains("app")) && (url.contains("facelift"))) {	
-				System.out.println("aaaaaa");
+			if ((url.contains("app")) && (url.contains("facelift"))) {
 					if (environment.equalsIgnoreCase("USQA")) {
-					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
-					envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";
-					//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";
-					//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
-				}else if (environment.equalsIgnoreCase("UKQA")) {
+							//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
+							envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";
+							//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";
+							//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
+					}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "https://uatapp.hobsons.co.uk/?id=ayauto&facelift=true";
 					//envirurl = "https://qaapp.hobsons.co.uk/?id=ayauto&facelift=true";
 					//envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto&facelift=true";

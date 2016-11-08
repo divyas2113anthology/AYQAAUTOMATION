@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR {
@@ -24,8 +22,9 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
 				waitForElementPresentWebdriverWait(attributeName_xpath, FPI_Pin, pin);
 //				type(FPI_Pin,pin);
-				String pinnumber = Runtimedataread(pin);
-				sendKeys(attributeName_xpath, FPI_Pin, pinnumber);
+				waitForPageToLoadWebdriver();
+				//String pinnumber = Runtimedataread(pin);
+				sendKeys(attributeName_xpath, FPI_Pin, pin);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+emailaddress+")");

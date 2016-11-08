@@ -1,49 +1,37 @@
 package processor;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.server.SeleniumServer;
+import org.openqa.selenium.safari.SafariDriver;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.SkipException;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+import java.io.*;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import io.appium.java_client.remote.MobileCapabilityType;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.MarionetteDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.remote.server.SeleniumServer;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.SkipException;
-import org.testng.annotations.*;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.android.AndroidDriver;
-
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
-
-import static processor.CommonSeleniumActions.writeFailure;
-import static processor.CommonSeleniumActions.Runtimedataread;
-import static processor.CommonSeleniumActions.backtodetails;
+import static processor.CommonSeleniumActions.*;
 
 public class Processor {
 	 	public static SeleniumServer jettyProxy;
@@ -53,7 +41,7 @@ public class Processor {
 	    protected final static String SELENIUM_SERVER_HOST = "localhost";
 	    protected final static int SELENIUM_SERVER_PORT = 4444;
 	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "120000"; //milliseconds
-	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 240; //second
+	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 360; //second
 	    public static int golbalProcedureOrder=0;
 	    public static ArrayList testData;
 		public static String[] datacontainer; 

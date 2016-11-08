@@ -1,15 +1,12 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import java.util.Calendar;
-
+import or.OR;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class FC_PersonalInformationForm_Input extends CommonSeleniumActions implements OR {
 	
@@ -35,11 +32,12 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			String button_to_click = personalinfoidatarepo[9];
 			String pisubmitappbtn = personalinfoidatarepo[10];
 			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
-			if (!pisuffix.equals("")) {
+			/*if (!pisuffix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pisuffix+")");
-				String SufID = getElementIDbyLabel("Suffix",PII_Suffix);				
+
+				String SufID = getElementIDbyLabel("Suffix",PII_Suffix);
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,SufID, pisuffix);
-			}
+			}*/
 			if (!pifirstgivenname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pifirstgivenname+")");
 				String fNameID = getElementIDbyLabel("First Name",PII_FirstName);
@@ -89,11 +87,16 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
 				if (button_to_click.equalsIgnoreCase("Address Lookup")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PII_AddressLookupBtn);
-					recentPopupSelectWebdriver("Address Lookup");
+					waitForPopupWebdriver();
+					waitForPageToLoadWebdriver();
+					//recentPopupSelectWebdriver("Address Lookup");
+					recentPopupSelect_without_window_nameWebdriver();
+
 				} else if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath,PII_SaveBottom, button_to_click);
 					//clickWebdriver(attributeName_xpath,PII_SaveBottom);
 					clickWebdriver(attributeName_xpath, PSD_Save);
+					//waitForPopupWebdriver();
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriver(attributeName_xpath,PII_SaveContinue);

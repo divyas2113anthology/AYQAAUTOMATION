@@ -30,6 +30,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 			if (browser.equalsIgnoreCase("Firefox") || browser.equalsIgnoreCase("GoogleChrome")) {
 				writeConsole(browser);
 			if (!pdfname.equals("")) {
+				waitForPageToLoadWebdriver();
 				writeConsole("Step 1 - Verify PDF is Open Successfully");
 //				int waitforpdfint = Integer.parseInt(wait)*1000;
 				String exceptionMsg = null;

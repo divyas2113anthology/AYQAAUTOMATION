@@ -1,15 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.AppModuleApplicantSearchActions;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
+import or.OR;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions implements OR {

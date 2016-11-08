@@ -1,8 +1,6 @@
 package or;
 
-import org.testng.Reporter;
-
-public interface OR {	
+public interface OR {
 //*************************************************************************************
 //	
 //	 App Name   : Apply Yourself
@@ -543,6 +541,7 @@ public static final String AW_PaymentProBtn = "//font[text()='Payment Processing
 public static final String AW_PerInfoBtn = "//font[contains(text(),'Personal Information')]";
 public static final String AW_EssayAttBtn = "//font[contains(text(),'Essay and Attachment')]";
 public static final String AW_EduBackBtn = "//font[contains(text(),'Education Background')]";
+public static final String AW_EduBackSubBtn ="//font[text()='Education']";
 public static final String AW_RecommendationBtn = "//font[contains(text(),'Recommendations')]";
 public static final String AW_DownFormBtn = "//font[text()='Downloadable Forms']";
 public static final String AW_CheckAppBtn = "//font[text()='Check Your Application']";
@@ -635,7 +634,7 @@ public static final String PSI_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Facelift Personal Information Input - PII
 //#**********************************************************#
-public static final String PII_Suffix = "//select[@id='s24494']";
+public static final String PII_Suffix = ".//*[@id='s24494']/option[2]";
 public static final String PII_FirstName = "//input[@id='q24495']";
 public static final String PII_LastName = "//input[@id='q24496']";
 public static final String PII_FullTimeStudent_Yes = "//input[@value='Y']";

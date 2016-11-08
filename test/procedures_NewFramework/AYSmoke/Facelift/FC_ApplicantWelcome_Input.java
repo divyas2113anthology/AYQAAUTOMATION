@@ -1,14 +1,8 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
-
-import org.openqa.selenium.Keys;
-import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
 import processor.CommonSeleniumActions;
 
 
@@ -47,6 +41,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				}else if (link_to_click.equalsIgnoreCase("Personal Information")) {
 					clickWebdriver(attributeName_xpath,AW_PerInfoBtn);
 					waitForPageToLoadWebdriver();
+					System.out.println("Krishna");
 				}else if (link_to_click.equalsIgnoreCase("Essay and Attachment")) {
 //					waitForConditionisElementPresent(AW_EssayAttBtn, "5000");
 					clickWebdriver(attributeName_xpath,AW_EssayAttBtn);

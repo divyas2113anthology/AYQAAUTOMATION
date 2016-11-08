@@ -1,14 +1,11 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import java.util.Calendar;
-
-import com.inflectra.spirateam.mylyn.core.internal.services.soap.SystemGetProductName;
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 
@@ -47,14 +44,14 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			String pisubmitappbtn = fpdatarepo[26];
 			String pdsave = fpdatarepo[27];
 			Reporter.log("Retrieved Test Data in Personal Data input");
-			if (!pdsufix.equals("")) {
+			/*if (!pdsufix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
 				String Sufixpd = getElementIDbyLabel("Suffix",PSD_Suffix);				
 //				select(Sufixpd,pdsufix);
-				System.out.println("Suffix"+Sufixpd);
+				System.out.println("Suffix"    +Sufixpd);
 				waitForElementPresentWebdriver(attributeName_linktext, Sufixpd,pdsufix);
 				selectByValueWebdriver(attributeName_linktext, Sufixpd,pdsufix);
-			}
+			}*/
 			if (!pdfirstname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
 				String Fnamepd = getElementIDbyLabel("First Given Name", PSD_FirstGivenName);				

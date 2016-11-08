@@ -1,23 +1,5 @@
 package processor;
 
-import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -28,13 +10,8 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 import or.OR;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,6 +19,16 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 
 public class CommonSeleniumActions extends Processor implements OR {
@@ -230,8 +217,15 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String FinaleleId = null;
 		//		String eleText = selenium.getText("//label[contains]");
 		//		String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@htmlfor"); // Getting Dynamic ID
-		String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@for"); // Getting Dynamic ID
-		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
+
+		//String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@for"); // Getting Dynamic ID
+		//WebElement elementID =driver.findElementByXPath("//label[text()='"+Label+"']/@for").getAttribute("for");
+		WebElement ele=driver.findElementByXPath("//label[text()='"+Label+"']");
+		String elementID=ele.getAttribute("for");
+		System.out.println(elementID);
+
+
+				//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
 		//		System.out.println("First ID "+elementID);
 		String[] OrSplit = OR.split("'");
 		//		System.out.println("First part 0 "+OrSplit[0]);
@@ -254,15 +248,19 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String FinaleleId = null;
 		//		String eleText = selenium.getText("//label[contains]");
 		//		String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@htmlfor"); // Getting Dynamic ID
-		writeConsole("getAttribute[//label[contains(text(),\""+LabelContains+"\")]/@for]");
+		/*writeConsole("getAttribute[//label[contains(text(),\""+LabelContains+"\")]/@for]");
 		String elementID = selenium.getAttribute("//label[contains(text(),\""+LabelContains+"\")]/@for"); // Getting Dynamic ID
+*/
+		WebElement ele=driver.findElementByXPath("//label[text()='"+LabelContains+"']");
+		String elementID1=ele.getAttribute("for");
+		System.out.println(elementID1);
 		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
 		//		System.out.println("First ID "+elementID);		
 		String[] OrSplit = OR.split("'");
 		//		System.out.println("First part 0 "+OrSplit[0]);
 		//		System.out.println("First part 1 "+OrSplit[1]);
 		//		System.out.println("First part 2 "+OrSplit[2]);
-		FinaleleId = OrSplit[0]+"'"+elementID ; // replacing Element Static ID With Dynamic ID
+		FinaleleId = OrSplit[0]+"'"+elementID1 ; // replacing Element Static ID With Dynamic ID
 		for (int i = 2; i < OrSplit.length; i++) {
 			//			System.out.println("Array value  "+OrSplit[i]);
 			FinaleleId = FinaleleId+"'"+OrSplit[i];	
@@ -1864,8 +1862,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 	
 	public void mouseOverWebdriver(String attributename,String attributevalue){
 		writeConsole("Webdriver mouseOver["+attributename+", "+attributevalue+"]");
-		Actions actions = new Actions(driver);	
+		Actions actions = new Actions(driver);
+
 		actions.moveToElement(attributeNameValue(attributename, attributevalue)).build().perform();
+
 	}
 
 	public void sendKeys(String attributename,String attributevalue,String value){
@@ -1921,6 +1921,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void selectByVisibleTextWebdriver(String attributename,String attributevalue,String text){	
 		writeConsole("Webdriver selectByVisibleText["+attributename+", "+attributevalue+", "+text+"]");
 		Select select = new Select(attributeNameValue(attributename, attributevalue));
+		waitForPageToLoadWebdriver();
 		select.selectByVisibleText(text);
 
 
@@ -2129,8 +2130,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//					 Set<String> popwindow = driver.getWindowHandles();
 		//					 Iterator<String> it = popwindow.iterator();
 		waitForPopupWebdriver();
-		Iterator<String> popwindow = driver.getWindowHandles().iterator();
-		//String windiwscoun[] = selenium.getAllWindowTitles(); 
+		/*Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		//String windiwscoun[] = selenium.getAllWindowTitles();
 		//writeConsole("Webdriver Switch To Window["+windiwscoun+"]");
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
@@ -2139,7 +2140,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 				//waitForPageToLoadWebdriver();
 				driver.switchTo().window(window);
 			}
+		}*/
+
+		String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+		String subWindowHandler = null;
+
+		Set<String> handles = driver.getWindowHandles(); // get all window handles
+		Iterator<String> iterator = handles.iterator();
+		while (iterator.hasNext()){
+			subWindowHandler = iterator.next();
 		}
+		driver.switchTo().window(subWindowHandler); // switch to popup window
+
+		System.out.println("POP UP WINDOW");
+		// perform operations on popup
+
+		//driver.switchTo().window(parentWindowHandler);  // switch back to parent window
 	}
 	// This Function is used to Select Recently Opened Window or Popup without Window Name.
 	public void recentPopupSelect_without_window_nameWebdriver() throws Exception {
@@ -2174,6 +2190,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
 				driver.switchTo().window(window);
+
 			}
 		}
 	}

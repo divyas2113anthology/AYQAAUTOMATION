@@ -1,9 +1,9 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
+import or.OR;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class FC_EducationBackgroundForm_Verify extends CommonSeleniumActions implements OR {	
@@ -34,22 +34,30 @@ public class FC_EducationBackgroundForm_Verify extends CommonSeleniumActions imp
 			String edugpa = educationvdatarepo[14];
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
 			//waitForElementPresentWebdriver(attributeName_xpath, PSD_PageName, "Page Name");
-			if (!edusuccessmessage.equals("")) {
+			/*if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
 				if (selenium.isTextPresent(edusuccessmessage)) {
 					Reporter.log("Message("+edusuccessmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+edusuccessmessage+") was not displayed correctly");
 				}
-			}
-			if (!edupagename.equals("")) {
+			}*/
+			/*if (!edupagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+edupagename+") page");
 				if (selenium.isTextPresent(edupagename)) {
 					Reporter.log("Its navigate to ["+edupagename+"]age");
 				} else {
 					writeFailure("Its not navigate to ["+edupagename+"] page");
 				}
+			}*/
+			if (!edupagename.equals("")) {
+				Reporter.log("Step 2 - Verify its navigate to ("+edupagename+") page");
+				String navigatePagename=driver.findElementByXPath(AW_EduBackSubBtn).getText();
+				Reporter.log("Its is a  ["+navigatePagename+"] page");
+				Assert.assertEquals(navigatePagename.contains("Education"),edupagename.contains("Education"));
+			    Reporter.log("Its navigate to ["+edupagename+"]age");
 			}
+
 			if (!eduverifyui.equals("")) {
 				Reporter.log("Step 3 - Verify UI");
 			}

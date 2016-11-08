@@ -77,7 +77,8 @@ public class FC_EducationBackgroundForm_Input extends CommonSeleniumActions impl
 			Reporter.log("Step 9 - Click on ("+lookupbutton+") Button");
 			waitForElementPresentWebdriver(attributeName_xpath, EB_Lookup, lookupbutton);
 			clickWebdriver(attributeName_xpath, EB_Lookup);
-			recentPopupSelectWebdriver("CEEB Look Up");
+			//recentPopupSelectWebdriver("CEEB Look Up");
+			recentPopupSelect_without_window_nameWebdriver();
 //			waitForUniqueNameWindow();
 //			recentPopupSelect("");
 		}

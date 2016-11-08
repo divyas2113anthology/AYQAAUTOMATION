@@ -1,12 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
-
-import java.time.Clock;
 
 public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 	
@@ -48,7 +45,15 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 						}
 					}else {
 						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
+						waitForPageToLoadWebdriver();
 						mouseOverWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
+						/*Actions actions = new Actions(driver);
+						WebElement element = driver.findElement(By.xpath(".//div[contains(text(),'Select a System')]"));
+						actions.moveToElement(element).build().perform();
+						WebElement element1 = driver.findElement(By.xpath(".//div[contains(text(),'Application System')]"));
+						actions.moveToElement(element1).build().perform();
+						driver.findElement(By.linkText("Application for QA Automation")).click();*/
+
 					}
 				}
 			}			

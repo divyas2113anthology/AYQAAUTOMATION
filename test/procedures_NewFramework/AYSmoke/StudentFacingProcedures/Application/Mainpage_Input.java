@@ -27,7 +27,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Click on ("+packagename+") Package");
 				writeConsole("I am in package level");
 //				waitForElementPresent(Applpackage+packagename+"']", packagename);
-				clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
+				clickWebdriver(attributeName_xpath, Applpackage);
 //				waitForPageToLoadWebdriver();
 			}
 			if (!eventpackagename.equals("")) {
@@ -54,14 +54,15 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath, enrollpackage+enrollment+"']", enrollment);
 				clickWebdriver(attributeName_xpath, enrollpackage+enrollment+"']");
 				waitForPageToLoadWebdriver();
-				recentPopupSelectWebdriver("Enrollment");
+				//recentPopupSelectWebdriver("Enrollment");
 				
 			}
 			if (!link_to_click.equalsIgnoreCase("")) {
 				
-				if (link_to_click.equalsIgnoreCase("Logout")) {
+				if (link_to_click.equalsIgnoreCase("Log Out")) {
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
-					clickWebdriver(attributeName_xpath,Logoutmain+link_to_click+"']");
+					clickWebdriver(attributeName_xpath,Logoutmain);
+
 					waitForPageToLoadWebdriver();
 				}
 				else

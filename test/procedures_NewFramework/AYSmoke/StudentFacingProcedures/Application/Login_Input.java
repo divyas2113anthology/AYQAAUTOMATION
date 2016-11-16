@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Login_Input extends CommonSeleniumActions implements OR {
@@ -68,6 +65,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			if(forgotpin.equals("User Name")){
 				waitForElementPresentWebdriver(attributeName_xpath, ForgotUserNamePassword, forgotpin);
 				clickWebdriver(attributeName_xpath,ForgotUserNamePassword);
+				recentPopupSelect_without_window_nameWebdriver();
 				waitForPageToLoadWebdriver();
 			}else{
 					clickWebdriver(attributeName_xpath,ForgotPINPassword);

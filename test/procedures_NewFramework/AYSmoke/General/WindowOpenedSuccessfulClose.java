@@ -1,15 +1,12 @@
 package procedures_NewFramework.AYSmoke.General;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 import java.util.Iterator;
 import java.util.Set;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implements	OR {
 	
@@ -62,7 +59,22 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					deselectPopUp();	
 				}else if (closewindow.equalsIgnoreCase("Close")) {
-					recentPopupCloseWebdriver();
+					System.out.println("Closeeeeeeeeeeee window");
+					//recentPopupCloseWebdriver();
+					//closeAllOtherWindows();
+					Thread.sleep(9000);
+					String winHandleBefore = driver.getWindowHandle();
+                    //Switch to new window opened
+					for (String winHandle : driver.getWindowHandles()) {
+						driver.switchTo().window(winHandle);
+					}
+                    // Perform the actions on new window
+					driver.close(); //this will close new opened window
+                      //switch back to main window using this code
+					driver.switchTo().window(winHandleBefore);
+					//driver.findElementByXPath("//h3[text()='Update Profile']//preceding-sibling::button[@class='close']").click();
+					waitForPageToLoadWebdriver();
+					Thread.sleep(9000);
 					//selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("CloseWindow")) {
 					clickWebdriver(attributeName_xpath, ApplicantCloseWindow);

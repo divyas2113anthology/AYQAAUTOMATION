@@ -74,6 +74,8 @@ public class MC_UploadImages_Input extends CommonSeleniumActions implements OR {
 				String[] Splitselectimagecheckbox = selectimagecheckbox.split("_");
 				if (selectimagecheckbox.contains("check")) {
 					checkWebdriver(attributeName_xpath, "//td[a[text()='"+Splitselectimagecheckbox[0]+"']]/preceding-sibling::td/input[@type='CheckBox']");
+
+					waitForPageToLoadWebdriver();
 				}else if (selectimagecheckbox.contains("Uncheck")) {
 					uncheckWebdriver(attributeName_xpath, "//td[a[text()='"+Splitselectimagecheckbox[0]+"']]/preceding-sibling::td/input[@type='CheckBox']");
 				}
@@ -95,7 +97,8 @@ public class MC_UploadImages_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Delete")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SAE_DeleteButton, buttons);
-					clickWebdriver(attributeName_xpath, SAE_DeleteButton);	
+					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
+					Thread.sleep(20000);
 					alertAccept();
 					waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Cancel")) {

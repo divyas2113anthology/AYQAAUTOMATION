@@ -1,12 +1,11 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import java.util.Calendar;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class PersonalInformationForm_Input extends CommonSeleniumActions implements OR {
 	
@@ -86,7 +85,8 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 				if (pisavebutton.equalsIgnoreCase("Address Lookup")) {
 					clickWebdriver(attributeName_xpath,PI_AddressLookupBtn);
 //					recentPopupSelect("Address Lookup");	
-					recentPopupSelectWebdriver("Address Lookup");
+					//recentPopupSelectWebdriver("Address Lookup");
+					recentPopupSelect_without_window_nameWebdriver();
 				} else if(pisavebutton.equalsIgnoreCase("Save")){
 					clickWebdriverWithCoordinates(attributeName_xpath, PI_Save);
 					waitForPageToLoadWebdriver();

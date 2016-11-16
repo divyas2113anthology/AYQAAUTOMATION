@@ -18,7 +18,7 @@ public class MC_MainMenu_Input extends CommonSeleniumActions implements OR{
 			Reporter.log("Check user click on Manage client link in Maintenance center");
 			if (!logout.equals("")) {
 				if (logout.equalsIgnoreCase("logout")) {
-					clickWebdriver(attributeName_linktext,MCL_Logoutbutton);
+					clickWebdriver(attributeName_xpath,MCL_Logoutbutton);
 					waitForPageToLoadWebdriver();
 				}
 			}

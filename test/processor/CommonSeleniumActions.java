@@ -149,7 +149,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		int  Row,Col;
 		Row=tableStart.getRow();
 		Col=tableStart.getColumn();			 
-		String Rundata = sheet.getCell(Col, Row+1).getContents().trim();			
+		String Rundata = sheet.getCell(Col, Row+1).getContents().trim();
+		System.out.println("Data is " + Rundata);
 		workbook.close();
 		return Rundata;
 
@@ -2164,7 +2165,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		   writeConsole("Webdriver Main Window["+mainwindow+"]");
 		   //     Set<String> popwindow = driver.getWindowHandles();
 		   //     Iterator<String> it = popwindow.iterator();
-		   waitForPopupWebdriver();
+		   //waitForPopupWebdriver();
 		   Iterator<String> popwindow = driver.getWindowHandles().iterator();
 		   while (popwindow.hasNext()) {
 		    String window = popwindow.next();
@@ -2728,8 +2729,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 		try {
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
+			System.out.println("BBBBBBBBBfactualtext"  +actualtext);
 			writeConsole("Element Actual getText["+actualtext+"]");
-			if (expectedtext.equals(actualtext)) {
+			if (actualtext.contains(expectedtext)) {
 				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
 			} else {
 				writeFailure("Element["+elementname+"] with Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");
@@ -3992,5 +3994,16 @@ public class CommonSeleniumActions extends Processor implements OR {
 				
 	}			
 
+     public void closeRecentWindow() throws Exception{
+		 String winHandleBefore = driver.getWindowHandle();
 
+		 //Switch to new window opened
+		 for (String winHandle : driver.getWindowHandles()) {
+			 driver.switchTo().window(winHandle);
+		 }
+		 // Perform the actions on new window
+		 driver.close(); //this will close new opened window
+		 //switch back to main window using this code
+		 driver.switchTo().window(winHandleBefore);
+	 }
 }

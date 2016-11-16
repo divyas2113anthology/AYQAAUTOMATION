@@ -31,28 +31,29 @@ public static final String Browser_Safari = "safari";
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
 //public static final String Login = "//input[@value='login']";
-public static final String Login = "//input[@alt='login']";
-public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
+public static final String Login = "//*[@id='ay-loginSubmit']";
+public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
-public static final String CreateAccount = "//img[@alt='create account']";
+public static final String CreateAccount = "//a[contains(text(),'Create Account')]";
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
 public static final String SecurityInformation = "//font[text()='Security Information']";
-public static final String CreateAcctLogin = "//img[@alt='login']";
+public static final String CreateAcctLogin = ".//*[@id='ay-create-login']";
 public static final String Message = "//td[contains(.,'"; //Testing for Post Message"')]";
 //#**********************************************************#
 //#Account Profile Page
 //#**********************************************************#
-public static final String	FirstName = "//input[@id='AppFName']";
-public static final String	LastName = "//input[@id='AppLName']";
-public static final String EmailAddress = "//input[@id='AppEmail']";
-public static final String ConfirmEmailAddress = "//input[@id='AppConfirmationEmail']";
-public static final String BirthDate = "//input[@id='AppBirthdt']";
-public static final String ZipCode = "//input[@id='AppZip']";
-public static final String Password = "//input[@id='AppPassword']";
-public static final String ConfirmPassword = "//input[@id='AppConPassword']";
+public static final String	FirstName = "//*[@id='aycreateFN']";
+public static final String	LastName = "//*[@id='aycreateLN']";
+public static final String EmailAddress = "//*[@id='aycreateEMail']";
+public static final String ConfirmEmailAddress = "//*[@id='aycreateConfirmEMail']";
+public static final String BirthDate = "//*[@id='aycreateDOB']";
+public static final String ZipCode = "//*[@id='aycreatePC']";
+public static final String Password = "//*[@id='aycreatePassword']";
+public static final String ConfirmPassword = "//*[@id='aycreateConfirmPassword']";
+public static final String CreateAccountProfilePage = ".//*[@id='ay-createSubmit']";
 
 //#**********************************************************#
 //#Account Profile Page Manual Add
@@ -78,16 +79,16 @@ public static final String FC_UserName = "//form[@name='frmConfirmAppAcct']//*[c
 //#**********************************************************#
 //#ELUA Page
 //#**********************************************************#
-public static final String Iagree = "//input[@id='chkAcceptEULA']";
+public static final String Iagree = "//*[@id='chkAcceptEULA']";
 public static final String PrivacyPolicy_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String PrivacyPolicy_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String PrivacyPolicy = "css=#AllowViewPreSubmit";
-public static final String Continue = "//img[@alt='Continue']";
+public static final String PrivacyPolicy = ".//*[@id='Radio3']";
+public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#**********************************************************#
 //#**********************************************************#
 //#Applicant Welcome Page
 //#**********************************************************#
-public static final String Logoutmain ="//font[text()='";
+public static final String Logoutmain ="//*[text()='Log Out']";
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
 public static final String Section ="//font[contains(text(),'";
@@ -106,7 +107,7 @@ public static final String upaPassword = "//input[@id='AppPassword']";
 public static final String upaConfirmPassword = "//input[@id='AppConPassword']";
 public static final String upaappsubmission_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String upaappsubmission_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String upaupdatebtn1 = "//img[@alt='update']";
+public static final String upaupdatebtn1 = ".//*[@id='ay-createSubmit']";
 public static final String upaupdatebtn = "//input[@id='ay-createSubmit']";
 public static final String upaclosebtnClassic = "//img[@alt='close window']";
 public static final String upaclosebtn = "//button[@class='close']";
@@ -114,16 +115,16 @@ public static final String countinuebtn = "//img[contains(@src,'continue_small')
 //#**********************************************************#
 //#Applicant Main Page
 //#**********************************************************#
-public static final String Applpackage = "//a[contains(text(),'";
+public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Edit Application')]";
 public static final String eventpackage = "//a[text()='";
-public static final String enrollpackage = "//b[text()='";
+public static final String enrollpackage = "//a[text()='";
 //#**********************************************************#
 //# NetPay Page - NP
 //#*********************************************************#
 public static final String NP_Cancel = "//input[@id='PageTemplate_ctl00_GWContentPlaceHolder_CancelButton']";
 //#**********************************************************#
 //# Business Rules Page - BR
-//#**********************************************************#
+//#***************************n*******************************#
 public static final String BR_StudentStatus = "//select[@id='s24419']";
 public static final String BR_RuleName = "//a[contains(text(),'";
 public static final String BR_Name = "//input[@name='RuleName']";
@@ -180,7 +181,7 @@ public static final String PI_DOB = "//input[@id='q24500']";
 public static final String PI_Sports = "//select[@id='s24501']";
 public static final String PI_Luckyno = "//input[@id='rc24502_2']";
 public static final String PI_AddressLine1_Inactive = "//input[@id='q24503_hq']";
-public static final String PI_AddressLine1 = "//input[@id='q24503']";
+public static final String PI_AddressLine1 = ".//*[@value='13135 Lee Jackson Memorial']";
 public static final String PI_AddressLine1_wait = "//input[@id='q24503' and @value!='']";
 public static final String PI_AddressLine2 = "//input[@id='q24504']";
 public static final String PI_AddressLine3 = "//input[@id='q24505']";
@@ -201,7 +202,7 @@ public static final String AL_Line2 = "//input[@id='txtLine2']";
 public static final String AL_Line3 = "//input[@id='txtLine3']";
 public static final String AL_Town = "//input[@id='txtCityTown']";
 //public static final String AL_Province = "//select[@id='ddlStateProvince']";
-public static final String AL_Province = "ddlStateProvince";
+public static final String AL_Province = ".//*[@id='ddlStateProvince']";
 public static final String AL_PostalCode = "//input[@id='txtZip']";
 public static final String AL_Country = "//select[@id='ddlQasCountryCode']";
 public static final String AL_Submit = "//input[@id='btnValidate']";
@@ -313,7 +314,7 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //public static final String FRP_Pin = "//input[@id='UserID']";
 public static final String FRP_Pin = "//input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
-public static final String FRP_Search = "//input[@alt='search']";
+public static final String FRP_Search = ".//*[@id='Image1']";
 //#**********************************************************#
 //# Personal Data Page - PD
 //#**********************************************************#
@@ -345,18 +346,18 @@ public static final String PD_PullQuestion = "//input[@id='q26168']";
 public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
-public static final String PD_Save = "//img[@alt='Save']";
+public static final String PD_Save = "//table//tr[1]/td//a/img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//input[contains(@value,'Recommendation Provider List')]";
+public static final String RC_RecProviderlist = "//*[text()='Recommendation Provider List']";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
 public static final String RC_RecProvidercheck ="";
-public static final String RC_Add = "//img[@alt='add']";
+public static final String RC_Add = "//*[text()='add a provider']";
 public static final String RC_fName = "//input[@id='firstname']";
 public static final String RC_lName = "//input[@id='lastname']";
 public static final String RC_Address1 = "//input[@id='address1']";
@@ -420,7 +421,7 @@ public static final String MCL_Password = "css=input[name='Password']";
 public static final String MCL_Loginbutton = "//input[contains(@src,'admin_login_small')]";
 
 //#Logout and click menu in MC
-public static final String MCL_Logoutbutton = "link=logout";
+public static final String MCL_Logoutbutton = "//a[text()='logout']";
 public static final String MCL_ManageClientMenu = "//div[@id='oMenu_oMenu2']";
 
 //# Manage client
@@ -516,7 +517,8 @@ public static final String DB_QaAutomationStartButton = "//div[@class='appListSu
 public static final String DB_QaAutomationEditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application')]";
 //public static final String DB_App2StartButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text(),'Start Application')]";
 public static final String DB_App2StartButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
-public static final String DB_App2EditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application')]";
+//public static final String DB_App2EditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application')]";
+public static final String DB_App2EditButtonNew ="//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Edit Application')]";
 public static final String DB_App2StartEditButton = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application') or contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
 public static final String DB_SubmittedMsg = "//div[@class='span8']//h4";
 public static final String DB_ApplicationButton = "//ul[@id='appList']/li[2]/div/a";
@@ -957,11 +959,11 @@ public static final String MQ_QueryDescription = "//textarea[@name='txtDescripti
 //#**********************************************************#
 //# Account Profile Page - AP
 //#**********************************************************#
-public static final String AP_PageTitle = "//font[@class='Section']";
+public static final String AP_PageTitle = "//*[@id='ay-account']/h2";
 //#**********************************************************#
 //# EULA Page - EL
 //#**********************************************************#
-public static final String EL_PageTitle = "css=td.BasePageFont b:contains('Terms of Use')";
+public static final String EL_PageTitle = "//strong[text()='Terms Of Use']";
 //#**********************************************************#
 //# Main Page - MN
 //#**********************************************************#
@@ -1065,7 +1067,7 @@ public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//span[contains(text(),'";
-public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window')]";
+public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
 public static final String AS_ViewApplication = "";
 public static final String AS_ViewRecommendation = "";
 public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";
@@ -1346,7 +1348,7 @@ public static final String MoreDetails = "//font[@class='HelpBoxesFont']/b";
 
 //#**********************************************************#
 //#	 Recommendation - Remind Recommender action 
-//#**********************************************************#
+//#***************************n*******************************#
 public static final String RR_SelectTemplate = "//font[contains(text(),'Send a Reminder to Recommender')]";
 public static final String RR_ActionLabel = "//input[@name='ActionLabel']";
 public static final String RR_Comment = "//textarea[@id='CommentText']";
@@ -1515,9 +1517,9 @@ public static final String WC_ManageInfo = "//p[contains(text(),'";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#
-public static final String AW_TecSupp = "//a[contains(@href,'techSupportWindow')]";
+public static final String AW_TecSupp = "//*[@id='Techsupport']/li";
 public static final String AW_Home =  "//a[contains(@href,'goHome')]";
-public static final String AW_Profile = "//a[contains(@href,'goUpdateProfile')]";
+public static final String AW_Profile = "//*[@id='Profile']/li";
 public static final String AW_Submit = "//a[contains(@href,'doApplicationSubmit')]";
 //#**********************************************************#
 //#	 Application - Application Manage Email Template  - Page

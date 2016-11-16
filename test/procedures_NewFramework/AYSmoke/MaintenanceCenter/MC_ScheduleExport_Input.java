@@ -1,13 +1,8 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 import or.OR;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR{
@@ -86,7 +81,7 @@ public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR
 		if (!testsftp.equals("")) {
 			Reporter.log("Step 10 - Click on Test FTP connection as ["+testsftp+"]");
 			clickWebdriver(attributeName_name, "btnTestFTP");
-			recentPopupSelectWebdriver("FTP Test");
+			//recentPopupSelectWebdriver("FTP Test");
 		}
 		//runtime_options
 		if (!runtime_options.equals("")) {
@@ -107,6 +102,7 @@ public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Step 12 - Enter the Start Date as ["+startdate+"]");
 			String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
 			sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
+
 		}
 		if (!starthour.equals("")) {
 			Reporter.log("Step 13 - Enter the Start Hour as ["+starthour+"]");
@@ -127,6 +123,8 @@ public class MC_ScheduleExport_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Step 12 - Click the name of the button as ["+save_cancel+"]");
 			if (save_cancel.equalsIgnoreCase("Save")) {
 				clickWebdriver(attributeName_name, "imgSubmitBtnTop");
+				waitForPageToLoadWebdriver();
+				Thread.sleep(7000);
 			}else if (save_cancel.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
 				waitForPageToLoadWebdriver();

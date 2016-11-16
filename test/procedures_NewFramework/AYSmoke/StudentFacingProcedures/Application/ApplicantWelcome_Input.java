@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import org.openqa.selenium.Keys;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR {
@@ -28,7 +26,7 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
-				clickWebdriver(attributeName_xpath,Logoutmain+logout+"']");
+				clickWebdriver(attributeName_xpath,Logoutmain);
 				waitForPageToLoadWebdriver();
 			}
 			if (!updatetechsupport.equals("")) {
@@ -38,16 +36,23 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath, AW_Home);
 					waitForPageToLoadWebdriver();
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
+
 					waitForElementPresentWebdriver(attributeName_xpath, AW_TecSupp, updatetechsupport);
-					clickWebdriver(attributeName_xpath, AW_TecSupp);
-					recentPopupSelectWebdriver("Technical Support");
-					alertAccept();
+					clickWebdriver(attributeName_xpath, AW_TecSupp);;
+					waitForPageToLoadWebdriver();
+					//closeRecentWindow();
+					//recentPopupSelectWebdriver("Technical Support");
+					//alertAccept();
+					//closeAllOtherWindows();
 				}else if (updatetechsupport.equalsIgnoreCase("Update your Profile")) {
 //					sendKeyStroke(attributeName_xpath, UpdateProfileBtn, Keys.SPACE);
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Profile, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_Profile);
-					recentPopupSelectWebdriver("Update Profile");
+					waitForPageToLoadWebdriver();
+					//recentPopupSelectWebdriver("Account Profile");
+					recentPopupSelect_without_window_nameWebdriver();
+
 				}else if (updatetechsupport.equalsIgnoreCase("Submit")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Submit, updatetechsupport);
 					clickWebdriver(attributeName_xpath,AW_Submit);
@@ -64,7 +69,9 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
 //				click(helphint+helpfulhints+"']");
-				clickWebdriver(attributeName_linktext, helpfulhints);
+				clickWebdriver(attributeName_xpath, ".//*[@id='helpfulHints']/a");
+
+				mouseOverWebdriver(attributeName_xpath,".//*[@id='navOverview']");
 				recentPopupSelectWebdriver(helpfulhints);
 			}
 			if (!print.equals("")) {

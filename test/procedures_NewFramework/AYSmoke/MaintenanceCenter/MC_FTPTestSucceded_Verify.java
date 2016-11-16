@@ -1,11 +1,11 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
-import or.OR;
+		import or.OR;
 
-import org.testng.Reporter;
-import org.testng.annotations.Test;
+		import org.testng.Reporter;
+		import org.testng.annotations.Test;
 
-import processor.CommonSeleniumActions;
+		import processor.CommonSeleniumActions;
 
 public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements OR{
 	@Test(description="This Procedure is to perform some Operation in 'FTP Test Succeded' page")
@@ -26,11 +26,10 @@ public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements 
 				recentPopupCloseWebdriver();
 			}
 			switchToDefaultContentWebdriver();
-					
+
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());
 		}
 	}
 
 }
-

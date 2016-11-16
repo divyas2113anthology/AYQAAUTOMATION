@@ -37,6 +37,7 @@ public class FileUpload_Input extends CommonSeleniumActions implements OR {
 					//deselectPopUp();
 					//selectMainWindowWebdriver();
 					recentOpenedPopupSelectWebdriver("Window");
+					//recentPopupSelect_without_window_nameWebdriver();
 					//driver.switchTo().defaultContent();
 					//waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Upload File")) {

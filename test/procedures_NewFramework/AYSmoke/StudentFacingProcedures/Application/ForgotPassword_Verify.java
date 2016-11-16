@@ -23,13 +23,23 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 			String fppagename = fpverifydata[2];
 	//		String ui = fpverifydata[2];
 			String userpinpassword = fpverifydata[3];
+			String messagetoverify= fpverifydata[4];
 			Reporter.log("Email is sent to your account");
 			if (!userpinpassword.equals("")) {
 				Reporter.log("Step 4 - Verify ("+userpinpassword+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
 				verifyElementPresentWebdriver(attributeName_xpath, UserName+userpinpassword+"')]", userpinpassword);
+				//verifyElementContainsTextWebdriver(attributeName_xpath,"//font[@class='BasePageFont']",userpinpassword,"Element present");
 				
 			}
+			if (!messagetoverify.equals("")) {
+				Reporter.log("Step 5 - Verify ("+messagetoverify+") was displayed correctly");
+				waitForElementPresentWebdriver(attributeName_xpath, ".//*[@id='Table1']/tbody/tr[4]/td/font/font", messagetoverify);
+				verifyElementPresentWebdriver(attributeName_xpath, ".//*[@id='Table1']/tbody/tr[4]/td/font/font", messagetoverify);
+				//verifyElementContainsTextWebdriver(attributeName_xpath,"//font[@class='BasePageFont']",userpinpassword,"Element present");
+
+			}
+
 			if (!fpmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+fpmessage+") was displayed correctly");
 //				if (selenium.isTextPresent(fpmessage)) {
@@ -38,7 +48,7 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 //					writeFailure("Message("+fpmessage+") was not displayed correctly");
 //				}			
 				fpmessage = fpmessage.replace(";", "\n\n");
-				verifyElementTextWebdriver(attributeName_xpath,"//td[@class='BasePageFont']", fpmessage, "System Message:");
+				verifyElementTextWebdriver(attributeName_xpath,"//div[@id='divErrMsg']", fpmessage, "System Message:");
 			}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 2 - Verify Success Message:("+successmessage+") was displayed correctly");

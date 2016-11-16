@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class ForgotPassword_Input extends CommonSeleniumActions implements OR {

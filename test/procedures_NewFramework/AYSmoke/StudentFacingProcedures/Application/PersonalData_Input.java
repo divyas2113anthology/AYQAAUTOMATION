@@ -1,14 +1,13 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
-import java.util.Calendar;
-
+import or.OR;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
+import java.util.List;
 
 public class PersonalData_Input extends CommonSeleniumActions implements OR {
 	
@@ -193,8 +192,18 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsave.equals("")) {
 			Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Save")){
+				Thread.sleep(10000);
 				clickWebdriver(attributeName_xpath,PD_Save);
-				waitForPageToLoadWebdriver();
+
+				List<WebElement>  listele = driver.findElementsByXPath(PD_Save);
+				System.out.println(listele.size());
+				listele.get(0).click();
+
+				//actionsClickWebdriver(attributeName_xpath,PD_Save);
+				/*WebElement element = driver.findElement(By.xpath("//table//table//table//tr[1]/td//a/img[@alt='Save']"));
+				Actions actions = new Actions(driver);
+				actions.moveToElement(element).click().perform();*/
+
 			}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 				clickWebdriver(attributeName_xpath,PD_SaveContinue);
 				waitForPageToLoadWebdriver();

@@ -39,6 +39,7 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 					waitForElementPresentWebdriver(attributeName_xpath, EAI_EssaywithAttachment_UploadDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EAI_EssaywithAttachment_UploadDocument);
 					recentPopupSelectWebdriver("File Upload");
+					//recentPopupSelect_without_window_nameWebdriver();
 				}else if (essaywithattachmentuploaddocument.equals("view document")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);

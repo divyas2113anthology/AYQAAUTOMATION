@@ -41,7 +41,7 @@ public class Processor {
 	    protected final static String SELENIUM_SERVER_HOST = "localhost";
 	    protected final static int SELENIUM_SERVER_PORT = 4444;
 	    public static final String STANDARD_PAGE_LOAD_WAIT_TIME = "120000"; //milliseconds
-	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 360; //second
+	    public static final int STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER = 500; //second
 	    public static int golbalProcedureOrder=0;
 	    public static ArrayList testData;
 		public static String[] datacontainer; 

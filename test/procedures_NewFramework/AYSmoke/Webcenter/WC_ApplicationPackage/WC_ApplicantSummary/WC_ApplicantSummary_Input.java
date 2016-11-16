@@ -1,24 +1,11 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
-
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
-
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
 public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements OR {
 	
@@ -185,19 +172,23 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				if (buttons.equalsIgnoreCase("Save")) 
 				{
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
+
 					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
-					recentPopupCloseWebdriver();
-//					selectMainWindowWebdriver();
-				}else if (buttons.equalsIgnoreCase("Close Window")) 
+					Thread.sleep(10000);
+					//recentPopupCloseWebdriver();
+					//selectMainWindowWebdriver();
+
+				}else if (buttons.equalsIgnoreCase("Close Window"))
 				{
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");
-					/*clickWebdriver(attributeName_xpath, AS_CloseWindow);
-					driver.manage().deleteAllCookies();
-					driver.switchTo().window(ApplicationPage);*/
-					recentPopupCloseWebdriver();
-					selectMainWindowWebdriver();
+
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					//driver.manage().deleteAllCookies();
+					driver.switchTo().window(ApplicationPage);
+					//recentPopupCloseWebdriver();
+					//selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close")) 
 				{
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");

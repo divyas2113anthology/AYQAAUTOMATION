@@ -20,7 +20,7 @@ public class EnrollmentApplicantProcess_Input extends CommonSeleniumActions impl
 			Reporter.log("Input Test Data was retrieved for 'Enrollment Applicant Process' page");
 			if (!enrollment.equals("")) {
 				Reporter.log("Click on ("+enrollment+") Link");
-				waitForElementPresentWebdriver(attributeName_partiallinktext, enrollment, enrollment);
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='Click here for Enrollment']", enrollment);
 				clickWebdriver(attributeName_partiallinktext, enrollment);
 				waitForPageToLoadWebdriver();
 			}

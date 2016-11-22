@@ -1,21 +1,14 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
-
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
+
+import java.io.IOException;
 
 
 public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implements OR {
@@ -69,8 +62,11 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 					Reporter.log("Step 6 - Select the choice as ("+choice+")");		
 					String [] Choice = choice.split("_");
 					if (choice.contains("Check")) {
-						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']", Choice[0]);
-						clickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
+						//waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']", Choice[0]);
+						//clickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
+						waitForElementPresentWebdriverWait(attributeName_xpath, ".//*[@id='rc29465_2']", Choice[0]);
+						clickWebdriver(attributeName_xpath, ".//*[@id='rc29465_2']");
+
 					}else if (choice.contains("UnCheck")) {
 						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']", Choice[0]);
 						doubleClickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");

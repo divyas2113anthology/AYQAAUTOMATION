@@ -53,7 +53,7 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!forgotpacpassword.equals("")) {
 			Reporter.log("Step 4 - Click on 'Forgot your PIN or Password?' Button");
-			clickWebdriver(attributeName_partiallinktext, "Forgot your access code and/or password?");	
+			clickWebdriver(attributeName_partiallinktext, "Forgot your access code and/or password?");
 			recentPopupSelectWebdriver("Forgot/Reset Password");
 		}
 		} catch (Exception e) {			

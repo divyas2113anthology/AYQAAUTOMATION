@@ -47,6 +47,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 				Reporter.log("Step 4 - Enter the Last Name as ["+lastname+"]");
 				String LastName = getElementIDbyLabel("Last Name", "//input[@id='q24475']");
 				sendKeys(attributeName_xpath, LastName, lastname);
+
 			}
 			if (!sayno.equals("")) {
 				Reporter.log("Step 5 - Enter the details as ["+sayno+"]");
@@ -67,6 +68,9 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 				Reporter.log("Click the button as ["+buttons+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SR_button+buttons+"')]", buttons);
 				clickWebdriverWithCoordinates(attributeName_xpath, SR_button+buttons+"')]");
+				waitForPageToLoadWebdriver();
+				alertAccept();
+				waitForPageToLoadWebdriver();
 				
 			}
 			
@@ -79,8 +83,12 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
 //					waitForPageToLoadWebdriver();
 				}else if (closeproceed.equalsIgnoreCase("Close Window")) {
-					recentPopupCloseWebdriver();
-					selectMainWindowWebdriver();
+
+					clickWebdriver(attributeName_xpath, "//img[@src='../Images/common_images/admin_close_window_large.gif']");
+					System.out.println("CLicked on Close button");
+
+					//recentPopupCloseWebdriver();
+					//selectMainWindowWebdriver();
 				}
 			}
 		} catch (Exception e) {

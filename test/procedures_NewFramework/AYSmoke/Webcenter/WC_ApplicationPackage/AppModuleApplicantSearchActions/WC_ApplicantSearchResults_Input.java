@@ -61,8 +61,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						String ReadClickName = Runtimedataread(clickname);
 //						sendKeyStroke(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]", Keys.SPACE);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
-						System.out.println("BBBBBBBBBBBB");
-						//recentPopupSelectWebdriver("Application Summary");
+						recentPopupSelectWebdriver("Application Summary");
 
 						//selectMainWindowWebdriver();
 					}else if (clickname.equalsIgnoreCase("OLIVE")) {

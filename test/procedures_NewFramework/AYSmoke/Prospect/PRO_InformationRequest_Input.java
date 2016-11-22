@@ -1,12 +1,11 @@
 package procedures_NewFramework.AYSmoke.Prospect;
 
-import java.util.Calendar;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class PRO_InformationRequest_Input extends CommonSeleniumActions implements OR {
 	
@@ -37,7 +36,7 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
 			if (!firstname.equals("")) {
 				Reporter.log("Step 1 - Enter First Name as ("+firstname+")");
-				String fNameID = getElementIDbyLabelContains("First Name",IR_PI_FirstName);				
+				String fNameID = getElementIDbyLabelContains("First Name",IR_PI_FirstName);
 				sendKeys(attributeName_xpath,fNameID, firstname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!lastname.equals("")) {

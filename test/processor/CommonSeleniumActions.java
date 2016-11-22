@@ -252,7 +252,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		/*writeConsole("getAttribute[//label[contains(text(),\""+LabelContains+"\")]/@for]");
 		String elementID = selenium.getAttribute("//label[contains(text(),\""+LabelContains+"\")]/@for"); // Getting Dynamic ID
 */
-		WebElement ele=driver.findElementByXPath("//label[text()='"+LabelContains+"']");
+		WebElement ele=driver.findElementByXPath("//label[contains(text(),'"+LabelContains+"')]");
 		String elementID1=ele.getAttribute("for");
 		System.out.println(elementID1);
 		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
@@ -2042,6 +2042,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void selectMainWindowWebdriver(){
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		driver.switchTo().window(mainwindow);
+
 	}
 
 	// This Function is used to Wait till Window or Popup opens.

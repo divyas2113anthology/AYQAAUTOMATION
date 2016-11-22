@@ -1,17 +1,18 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import or.OR;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some Operation on 'Add/Edit Event' Page")
@@ -153,10 +154,13 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			if (!closeeventtext.equals("")) {
 				Reporter.log("Step 17 - Enter the close event text as ["+closeeventtext+"]");
 				sendKeys(attributeName_xpath, AEE_CloseEventText, closeeventtext);
+
 			}
 			if (!waitlistemail.equals("")) {
 				Reporter.log("Step 18 - Enter the waitlist email as ["+waitlistemail+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail, "regexp:"+waitlistemail);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail, "regexp:"+waitlistemail);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,AEE_WaitlistEmailnew, "   Event Confirmation Email");
+				clickWebdriver(attributeName_xpath,".//*[@name='chkAllowWaitList']");
 			}
 			if (!recurrencetype.equals("")) {
 				Reporter.log("Step 19 - Enter the Recurrent type as ["+recurrencetype+"]");
@@ -164,7 +168,10 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!registerdeclineemail.equals("")) {
 				Reporter.log("Step 20 - Enter the Registerm Decline Email as ["+registerdeclineemail+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
+				Select dropdown = new Select(driver.findElement(By.name("selRegOrDecEmail")));
+				dropdown.selectByVisibleText("   Event Confirmation Email");
+
 			}
 			if (!group.equals("")) {
 				Reporter.log("Step 21 - Enter the Group as ["+group+"]");
@@ -180,13 +187,14 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				if (button.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AEE_Save);
 					waitForPageToLoadWebdriver();
+					Thread.sleep(10000);
 				}else if (button.equalsIgnoreCase("publish to prod")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);
-//					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
+					//clickWebdriver(attributeName_xpath, AEE_CloseWindow);
 					selectMainWindowWebdriver();
 				}
 			}

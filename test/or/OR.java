@@ -1211,7 +1211,7 @@ public static final String AEE_DeclineMinute = "//select[@name='selMinutesDeclin
 public static final String AEE_CloseEventText = "//input[@name='txtCloseText']";
 public static final String AEE_MaxNoOfReg = "//input[@name='txtMaxRegistrants']";
 public static final String AEE_IncGuestReg = "//input[@name='chkIncludeGuests']";
-//public static final String AEE_WaitlistEmail = "//select[@name='selWaitListEmail']";
+public static final String AEE_WaitlistEmailnew = "//select[@name='selWaitListEmail']";
 public static final String AEE_WaitlistEmail = "selWaitListEmail";
 public static final String AEE_RecurrenceType = "//select[@name='selRecurrenceType']";
 //public static final String AEE_RegDeclineEmail = "//select[@name='selRegOrDecEmail']";
@@ -1261,7 +1261,7 @@ public static final String SR_Page = "//font[contains(text(),'";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#
-public static final String RL_PerAccessCode = "//input[@id='Pin']";
+public static final String RL_PerAccessCode = "//*[@id='rec-login']";
 public static final String RL_Password = "//input[@name='Password']";
 public static final String RL_ConfirmPass = "//input[@id='ConPassword']";
 public static final String RL_LoginBtn = "//input[@value='Login' or @alt='Login']";
@@ -1455,7 +1455,7 @@ public static final String EFP_ReturnEnrollBtn = "//img[@alt='return to enrollme
 public static final String EFP_PayAndContinue = "//*[@alt='pay and continue' or @name='PayButton']";
 //public static final String EFP_SubmitEnrollmentBtn = "//img[@alt='submit enrollment']";
 public static final String EFP_SubmitEnrollmentBtn = "//*[@alt='submit enrollment' or @id='ay-recSubmit']";
-public static final String EFP_PrintBtn = "//img[@alt='print this paget']";
+public static final String EFP_PrintBtn = "//i[@class='icon icon-print icon-white']";
 public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 //#**********************************************************#
 //#	 Webcenter - Add Import Template - Page

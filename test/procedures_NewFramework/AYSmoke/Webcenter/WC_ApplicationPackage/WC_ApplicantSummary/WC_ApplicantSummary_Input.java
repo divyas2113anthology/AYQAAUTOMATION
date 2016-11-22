@@ -30,6 +30,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String enrollment = testdata[12];
 			String buttons = testdata[13];
 			String view = testdata[14];
+			String closewindow = testdata[15];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
 			AppSummaryWindowName = driver.getWindowHandle();
@@ -44,7 +45,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			if (!inprocessstatus.equals("")) {
 				Reporter.log("Step 2 - Select the Inprocess status as ["+inprocessstatus+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, AS_InprocessStatus, "In Process Status");
-				selectByValueWebdriver(attributeName_xpath, AS_InprocessStatus, inprocessstatus);
+				//selectByValueWebdriver(attributeName_xpath, AS_InprocessStatus, inprocessstatus);
+				selectByVisibleTextWebdriver(attributeName_xpath, AS_InprocessStatus, inprocessstatus);
 			}
 			if (!inprocessstatuspublishdate.equals("")) {
 				Reporter.log("Step 3 - Select the Inprocess status Publish Date as ["+inprocessstatuspublishdate+"]");
@@ -213,6 +215,21 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				clickWebdriver(attributeName_xpath, AS_View+view+"')]");
 				recentPopupSelectWebdriver("View");
 			}
+			if (!closewindow.equals("")){
+				Reporter.log("Step 15 - Check the Name of the Button as ["+closewindow+"]");
+				if (closewindow.equalsIgnoreCase("closewindow")) {
+
+					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+					System.out.println("out");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					//driver.manage().deleteAllCookies();
+					driver.switchTo().window(ApplicationPage);
+					//recentPopupCloseWebdriver();
+					//selectMainWindowWebdriver();
+				}
+			}
+
+
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

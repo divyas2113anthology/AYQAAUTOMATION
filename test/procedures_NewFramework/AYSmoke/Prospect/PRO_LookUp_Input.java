@@ -53,12 +53,14 @@ public class PRO_LookUp_Input extends CommonSeleniumActions implements OR {
 				if (avssearch.equalsIgnoreCase("search")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
 					waitForPageToLoadWebdriver();
+					Thread.sleep(6000);
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
-					selectMainWindowWebdriver();
+
+					//selectMainWindowWebdriver();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
-					selectMainWindowWebdriver();
+					//selectMainWindowWebdriver();
 				}
 			}
 			

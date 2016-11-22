@@ -38,7 +38,7 @@ public class WC_Welcome_Verify extends CommonSeleniumActions implements OR {
 				}
 			}
 			if (!message.equals("")) {
-				Reporter.log("Step 1 - Verify message as ("+message+") page");
+				Reporter.log("Step 2 - Verify message as ("+message+") page");
 				/*waitForElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);
 				verifyElementPresentWebdriver(attributeName_xpath, PS_HobsonsAuthMessage, pagename);*/
 				if(message.equals("Welcome!")){

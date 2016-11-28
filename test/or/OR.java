@@ -324,7 +324,7 @@ public static final String PD_Lastname = "//input[@id='q24299']";
 public static final String PD_Dateofbirth = "//input[@id='q24300']";
 public static final String PD_SSN = "//input[@id='q24301']";
 public static final String PD_ParentSSN = "//input[@id='q24302']"; 
-public static final String PD_Gender = "//select[@id='s24303']";
+public static final String PD_Gender = "//select[@id='s35026']";
 public static final String PD_HomePhone = "//input[@id='q24305']";
 public static final String PD_CellPhone = "//input[@id='q24306']";
 public static final String PD_Fulltimestudent_Yes = "//input[@value='Y']";
@@ -336,7 +336,7 @@ public static final String PD_GradeLevel = "//input[@id='rc24311_1']";
 public static final String PD_Essaywithoutattachment = "//textarea[@id='q24312']";
 public static final String PD_uploaddocument = "//img[@alt='Upload Attachment']";
 public static final String PD_Collegehousing = "//select[@id='s24314']";
-public static final String PD_SportsInterest = "//select[@id='s24315']"; 
+public static final String PD_SportsInterest = "//select[@id='s35038']";
 public static final String PD_Testscore = "//input[@id='q24316']";
 public static final String PD_AcademicInterest = "//select[@id='s24317']";
 public static final String PD_SchoolCode = "//input[@id='q24318']";
@@ -420,7 +420,7 @@ public static final String MCL_Password = "css=input[name='Password']";
 public static final String MCL_Loginbutton = "//input[contains(@src,'admin_login_small')]";
 
 //#Logout and click menu in MC
-public static final String MCL_Logoutbutton = "link=logout";
+public static final String MCL_Logoutbutton = "logout";
 public static final String MCL_ManageClientMenu = "//div[@id='oMenu_oMenu2']";
 
 //# Manage client
@@ -743,6 +743,7 @@ public static final String HC_Body = "//html/body";
 public static final String HC_LinkContians = "//a[contains (text(),'"; 
 public static final String HC_EmailSubject = "xpath=(//table[@id='tblIL'])[2]/tbody/tr[td[img[@alt='Message: Unread']]]/td[text()='";
 public static final String HC_EmailSubjectContains = "xpath=(//table[@id='tblIL'])[2]/tbody/tr[td[img[@alt='Message: Unread']]]/td[contains(text(),'";
+   // public static final String HC_EmailSubjectContains ="xpath=(//div[@tabindex='0']//div[@aria-label='Mail list']//div//div[2]//div[2]//div[2]//span[contains(text(),'Connect')])";
 public static final String HC_Content_LinkContians = "css=a:contains('";
 //public static final String HC_Content_Link = "css=a[innerHTML=']";
 //public static final String HC_CloseButton = "//button[text()='Close']";

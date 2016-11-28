@@ -88,7 +88,7 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		if (!pdgender.equals("")) {
 			Reporter.log("Step 8 - Select Gender as ("+pdgender+")");
 			String Genderpd = getElementIDbyLabel("Gender",PD_Gender);				
-			selectByVisibleTextWithSpaceWebdriver(attributeName_name,Genderpd,pdgender);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Genderpd,pdgender);
 		}
 		if (!pdcellphone.equals("")) {
 			Reporter.log("Step 9 - Enter Cell Phone as ("+pdcellphone+")");
@@ -116,7 +116,7 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		if (!pdsportsintrest.equals("")) {
 			Reporter.log("Step 12 - Select Sports Interest as ("+pdsportsintrest+")");
 			String Sportsintrestpd = getElementIDbyLabel("Sports Interest", PD_SportsInterest);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_name,Sportsintrestpd,pdsportsintrest);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Sportsintrestpd,pdsportsintrest);
 		}
 		if (!pdschoolcode.equals("")) {
 			Reporter.log("Step 13 - Enter School code as ("+pdschoolcode+")");

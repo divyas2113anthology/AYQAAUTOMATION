@@ -10,6 +10,9 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+import java.util.Set;
+
 
 public class WC_InviteEvent_Input extends CommonSeleniumActions implements OR {
 	
@@ -30,12 +33,15 @@ public class WC_InviteEvent_Input extends CommonSeleniumActions implements OR {
 			if (!eventlookup.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+eventlookup+") Link");
 				clickWebdriver(attributeName_xpath, IE_EventLookup);
-				recentPopupSelectWebdriver("Lookup");
+				//recentPopupSelectWebdriver("Lookup");
+				Set<String> mainWindow = driver.getWindowHandles();
+				String parent = mainWindow.iterator().next();
+				recentOpenedPopupSelectWebdriver(parent);
 			}
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 2 - Proceed to Select the Template as ("+selecttemplate+")");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, IE_TemplateSelect, selecttemplate);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_TemplateSelect, "regexp:"+selecttemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_TemplateSelect,selecttemplate);
 			}
 			if (!inviteback.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+inviteback+") Button");

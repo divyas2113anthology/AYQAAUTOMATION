@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,8 @@ public class WC_AddUser_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Display Added User Message");
 //				verifyElementPresentWebdriver(attributeName_xpath, QAE_Message, "Display Added User Message");
-				String Text=selenium.getText(QAE_Message);
+				//String Text=selenium.getText(QAE_Message);
+				String Text = driver.findElement(By.xpath(QAE_Message)).getText();
 				writeConsole(Text);
 //				String[] part = Text.split("(?<=\\D)(?=\\d)");
 //				System.out.println(part[0]);

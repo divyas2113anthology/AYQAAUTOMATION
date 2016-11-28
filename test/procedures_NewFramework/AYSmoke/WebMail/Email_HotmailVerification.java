@@ -4,6 +4,7 @@ import com.thoughtworks.selenium.webdriven.commands.OpenWindow;
 
 import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -40,6 +41,11 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
 				sendKeys(attributeName_xpath, HM_WLogin, username);
+				if(!isDisplayedWebdriver(attributeName_xpath,HM_WPassword)) {
+					driver.findElement(By.xpath("//input[@type='submit']")).click();
+					System.out.println("====Click Next Button");
+					waitForPageToLoadWebdriver();
+				}
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
@@ -90,11 +96,13 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						if (selenium.isVisible("//div[@class='conductorContent']")) {
+						//if (selenium.isVisible("//div[@class='conductorContent']")) {
+						if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']")){
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
-								if (selenium.isVisible("//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]"))
+								//if (selenium.isVisible("//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]"))
+								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]"))
 									writeConsole("2");
 									break;
 								}
@@ -102,7 +110,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 
 //						}
 					}
-					selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
+					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
+					waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]","MailSubject");
 					clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {

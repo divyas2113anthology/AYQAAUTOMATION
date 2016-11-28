@@ -85,7 +85,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				}else if(link_to_click.equalsIgnoreCase("online support top"))
 					{
 					clickWebdriver(attributeName_xpath, WebcenteOnlineSupportTop);
-					recentPopupSelectWebdriver("Online Support");
+					//recentPopupSelectWebdriver("Online Support");
 					}
 				else if (link_to_click.equalsIgnoreCase("online support bottom"))
 					{
@@ -95,7 +95,8 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				else if (link_to_click.equalsIgnoreCase("Product Suggestions")) 
 					{
 					clickWebdriver(attributeName_xpath, WebcenteProdSug);
-					recentPopupSelectWebdriver("Product Suggestions");
+					//recentPopupSelectWebdriver("Product Suggestions");
+
 					}	
 			}
 		} catch (Exception e) {

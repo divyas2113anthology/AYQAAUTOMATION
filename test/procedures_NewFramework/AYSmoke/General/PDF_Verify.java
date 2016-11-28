@@ -3,11 +3,16 @@
  */
 package procedures_NewFramework.AYSmoke.General;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.io.BufferedInputStream;
+import java.util.Set;
 
 public class PDF_Verify extends CommonSeleniumActions implements OR {
 	
@@ -34,18 +39,34 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 				writeConsole("Step 1 - Verify PDF is Open Successfully");
 //				int waitforpdfint = Integer.parseInt(wait)*1000;
 				String exceptionMsg = null;
-				String[] Pdfwindows = new String[0];								
-					Pdfwindows = selenium.getAllWindowNames();
-					int wintotal = Pdfwindows.length-1;
-					selenium.selectWindow("name=" + Pdfwindows[wintotal]);
+				//String[] Pdfwindows = new String[0];
+				Set<String> PdfWindows = driver.getWindowHandles();
+				int wintotal = PdfWindows.size();
+				wintotal = wintotal -1;
+				System.out.println("+++++++++++"+wintotal);
+				String[] Pdfwindows = PdfWindows.toArray(new String[PdfWindows.size()]);
+                System.out.print("==============="+Pdfwindows[wintotal]);
+				    //Pdfwindows = selenium.getAllWindowNames();
+					//int wintotal = Pdfwindows.length-1;
+					//selenium.selectWindow("name=" + Pdfwindows[wintotal]);
+				selectWindow(Pdfwindows[wintotal]);
+				String temp = driver.getTitle();
 					//waitForPageToLoadWebdriver();
 					Reporter.log("Window["+pdfname+"] was selected");
 					writeConsole("Window["+pdfname+"] was selected");
 					System.out.println("Malik");
-					waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");				
+					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");
 					try {
-						exceptionMsg = selenium.getBodyText();
-						writeConsole("Pdf Getbody Text : "+exceptionMsg);
+						//exceptionMsg = selenium.getBodyText();
+						//String  exceptionmsg = driver.findElement(By.xpath("//div[contains(@id,'pageContainer1')]//div[contains(@class,'textLayer')]//div[4]")).getText();
+						String exceptionmsg = driver.findElement(By.xpath("//div[contains(@class,'textLayer')]")).getText();
+						
+
+						//switchToDefaultContentWebdriver();
+						//String exceptionmsg = driver.findElement(By.xpath("//div[@class='textLayer']//div[2]")).getText();
+						System.out.println("Exception is " + exceptionmsg);
+						//exceptionMsg = exceptionmsg.getText();
+						writeConsole("Pdf Getbody Text : "+exceptionmsg);
 						if (!pdfcontainstext.equalsIgnoreCase("")) {
 							System.out.println("aaaa");
 							Reporter.log("Step 1 - Verify PDF Contains text");
@@ -56,7 +77,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 								//verifyTextContains(splitpdftext[i], exceptionMsg, "Contains PDF Text");Page:
 //								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
 //								writeConsole("Pdf Contains Text was verified successfully");
-								if (exceptionMsg.contains(splitpdftext[i])) {
+								if (exceptionmsg.contains(splitpdftext[i])) {
 									writeConsole(splitpdftext[i]);
 //									writeConsole("PDF File :"+splitpdftext[i]);
 								}

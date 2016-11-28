@@ -53,7 +53,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 						
 					}
 				}
-				ClosePackageSelection();
+				//ClosePackageSelection();
 				
 			}
 			switchToDefaultContentWebdriver();

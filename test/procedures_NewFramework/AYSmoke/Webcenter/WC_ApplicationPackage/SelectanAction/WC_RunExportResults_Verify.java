@@ -21,7 +21,7 @@ public class WC_RunExportResults_Verify extends CommonSeleniumActions implements
 			String successmessage = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
-			selenium.windowFocus();
+			//selenium.windowFocus();
 			Reporter.log("Verify Test Data was retrieved for 'Run Export Results' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");

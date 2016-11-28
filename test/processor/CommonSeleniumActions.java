@@ -495,7 +495,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+3]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
-			} 
+			}
 			else {
 				writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
 			}
@@ -1943,7 +1943,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		List<WebElement> options = select.findElements(By.tagName("option"));
 		for (WebElement option : options) {
 			String optionvalue = option.getText();
-			if(optionvalue.contains(text)) {
+			String leftRemoved = optionvalue.replaceAll("^\\s+", "");
+			if(leftRemoved.contains(text)) {
 				option.click();  
 				break;
 			}
@@ -2149,10 +2150,15 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Iterator<String> iterator = handles.iterator();
 		while (iterator.hasNext()){
 			subWindowHandler = iterator.next();
+			String temp1 = driver.switchTo().window(subWindowHandler).getTitle();
 		}
-		driver.switchTo().window(subWindowHandler); // switch to popup window
+		String temp = driver.switchTo().window(subWindowHandler).getTitle(); // switch to popup window
+		driver.manage().window().maximize();
 
 		System.out.println("POP UP WINDOW");
+
+
+
 		// perform operations on popup
 
 		//driver.switchTo().window(parentWindowHandler);  // switch back to parent window
@@ -2177,7 +2183,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 		 
 	// This Function is used to Select Recently Opened Window or Popup.
-	public void recentOpenedPopupSelectWebdriver(String windowname) throws Exception {
+	public void recentOpenedPopupSelectWebdriver(String mainwindow) throws Exception {
 		//					 int windownull = 0;
 		//					String currentwindow = driver.getWindowHandle();
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
@@ -2189,29 +2195,28 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(window);
-
+				String temp =driver.switchTo().window(window).getTitle();
+				System.out.println("==============="+temp);
 			}
 		}
 	}
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupCloseWebdriver() throws Exception {
 		Reporter.log("Proceed to Close All Opened Pop Ups");	
-
-		//					 String mainwindow = driver.getWindowHandle();
+		//String mainwindow = driver.getWindowHandle();
 		driver.switchTo().window(mainwindow);
-		writeConsole("Webdriver Main Window["+mainwindow+"]");
+		//writeConsole("Webdriver Main Window["+mainwindow+"]");
 		//					 Set<String> popwindow = driver.getWindowHandles();	
 		//					 Iterator<String> it = popwindow.iterator();
-		Iterator<String> popwindow = driver.getWindowHandles().iterator();	
+		Iterator<String> popwindow = driver.getWindowHandles().iterator();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
 			//					 writeConsole("Webdriver Switch To Window["+window+"]");
 			//					 driver.switchTo().window(window);
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(window);	
-				closeWindowWebdriver();	
+				driver.switchTo().window(popwindow.next().toString());
+				closeWindowWebdriver();
 				driver.switchTo().window(mainwindow);	
 			}
 
@@ -3826,7 +3831,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
 		System.out.println(section);
 		waitForElementPresentWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]", section);
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		clickWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]");
 //		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
 //		writeConsole("Onclick Value for Section "+seconclickName);
@@ -3866,8 +3871,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//selenium.selectFrame("relative=up");
 		//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 		//					SelectTreeFrame();
-		selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
-		int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		//selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
+		//int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		String minuscount =driver.findElement(By.xpath("//img[contains(@src,'minus')]")).getSize().toString();
+		int minusCount = Integer.parseInt(minuscount);
 		writeConsole("Minus Count "+minusCount);
 		for (int i = minusCount; i > 0; i--) {
 			clickWebdriver(attributeName_xpath, "xpath=(//img[contains(@src,'minus')])["+i+"]");
@@ -3990,7 +3997,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} 	
 		}		
 				
-	}			
+	}
 
+//By Gokul
+	public void switchToWindowByTitle(String title){
+		String currentWindow = driver.getWindowHandle();
+		driver.switchTo().window(currentWindow).getTitle();
+		Set<String> availableWindows = driver.getWindowHandles();
+		if (!availableWindows.isEmpty()) {
+			for (String windowId : availableWindows) {
+				//String switchedWindowTitle = driver.switchTo().window(windowId);
+				driver.switchTo().window(windowId);
+			}
+			driver.close();
+			//driver.switchTo().window(currentWindow);
+				}
+
+		}
 
 }

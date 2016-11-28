@@ -6,11 +6,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import or.OR;
+import org.testng.util.Strings;
 import processor.CommonSeleniumActions;
 public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR {
 	
@@ -60,7 +63,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				sendKeys(attributeName_xpath, AEE_IntName, internalname);
 			}
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String eventTitle = title+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
+			String eventTitle = title+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();
 			if (!title.equals("")) {
 				Reporter.log("Step 3 - Enter 'Event Title' as ("+eventTitle+")");
 //				type(CA_FirstName, eventTitle);	
@@ -156,7 +159,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!waitlistemail.equals("")) {
 				Reporter.log("Step 18 - Enter the waitlist email as ["+waitlistemail+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail, "regexp:"+waitlistemail);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail,waitlistemail);
 			}
 			if (!recurrencetype.equals("")) {
 				Reporter.log("Step 19 - Enter the Recurrent type as ["+recurrencetype+"]");
@@ -164,11 +167,11 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!registerdeclineemail.equals("")) {
 				Reporter.log("Step 20 - Enter the Registerm Decline Email as ["+registerdeclineemail+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail,registerdeclineemail);
 			}
 			if (!group.equals("")) {
 				Reporter.log("Step 21 - Enter the Group as ["+group+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_Group, "regexp:"+group);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_Group,group);
 			}
 			if (!editeventurlcontains.equals("")) {
 				Reporter.log("Step 22 - Enter the Group as ["+editeventurlcontains+"]");
@@ -186,8 +189,19 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);
-//					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
-					selectMainWindowWebdriver();
+					//clickWebdriver(attributeName_xpath, AEE_CloseWindow);
+					//String mainwindow = driver.getWindowHandle();
+					//driver.switchTo().window(mainwindow);
+					//driver.switchTo().defaultContent();
+				//	selectMainWindowWebdriver();
+					//recentPopupCloseWebdriver();
+					//Iterator<String> popwindow = driver.getWindowHandles().iterator();
+					Set<String> mainWindow = driver.getWindowHandles();
+					String parent = mainWindow.iterator().next();
+					//String child = mainWindow.iterator().next();
+					recentOpenedPopupSelectWebdriver(parent);
+					driver.close();
+					driver.switchTo().window(parent);
 				}
 			}
 		} catch (Exception e) {

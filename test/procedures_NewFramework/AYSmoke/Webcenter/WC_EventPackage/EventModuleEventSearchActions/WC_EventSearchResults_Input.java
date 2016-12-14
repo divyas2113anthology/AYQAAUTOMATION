@@ -49,11 +49,11 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 					clickWebdriver(attributeName_partiallinktext, Eventtitleclick);*/
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+Eventtitleclick+"')]]", eventtitlecheck);
 					clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+Eventtitleclick+"')]]");
-					recentPopupSelectWebdriver("EventRecurrence");
+					recentPopupSelectWebdriver("HTML Editor");
 				}else{
 				waitForElementPresentWebdriver(attributeName_partiallinktext, eventtitleclick, eventtitleclick);
 				clickWebdriver(attributeName_partiallinktext, eventtitleclick);
-				recentPopupSelectWebdriver("EventRecurrence");
+				recentPopupSelectWebdriver("HTML Editor");
 				}
 			}
 			if (!selectanaction.equals("")) {

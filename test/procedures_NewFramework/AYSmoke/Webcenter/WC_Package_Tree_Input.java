@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import com.thoughtworks.selenium.webdriven.commands.SelectFrame;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
@@ -50,10 +48,12 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
 						PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+						clickWebdriver(attributeName_xpath,"//img[@src='../Images/tree_icons/plus.gif']");
+						Thread.sleep(10000);
 						
 					}
 				}
-				ClosePackageSelection();
+				//ClosePackageSelection();
 				
 			}
 			switchToDefaultContentWebdriver();

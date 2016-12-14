@@ -59,7 +59,6 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					deselectPopUp();	
 				}else if (closewindow.equalsIgnoreCase("Close")) {
-					System.out.println("Closeeeeeeeeeeee window");
 					//recentPopupCloseWebdriver();
 					//closeAllOtherWindows();
 					Thread.sleep(9000);
@@ -69,7 +68,8 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 						driver.switchTo().window(winHandle);
 					}
                     // Perform the actions on new window
-					driver.close(); //this will close new opened window
+					//driver.close(); //this will close new opened window
+					Thread.sleep(9000);
                       //switch back to main window using this code
 					driver.switchTo().window(winHandleBefore);
 					//driver.findElementByXPath("//h3[text()='Update Profile']//preceding-sibling::button[@class='close']").click();

@@ -86,6 +86,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcstate.equals("")) {
 				Reporter.log("Step 10 - Select State as ("+rcstate+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_cssselector,RI_State, rcstate);
+				//selectByVisibleTextWebdriver(attributeName_xpath,"//select[@name='state']",rcstate);
 			}
 			if (!rcpostalcode.equals("")) {
 				Reporter.log("Step 11 - Select Postal Code as ("+rcpostalcode+")");

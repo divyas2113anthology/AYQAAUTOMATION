@@ -192,10 +192,14 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
 					waitForPageToLoadWebdriver();
+
 				}else if (button.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);
-					//clickWebdriver(attributeName_xpath, AEE_CloseWindow);
-					selectMainWindowWebdriver();
+				//	clickWebdriver(attributeName_xpath, AEE_CloseWindow);
+					//clickWebdriver(attributeName_xpath, ".//a[text()='logout']");
+					//driver.close();
+					//selectMainWindowWebdriver();
+					switchToOldWindow();
 				}
 			}
 		} catch (Exception e) {

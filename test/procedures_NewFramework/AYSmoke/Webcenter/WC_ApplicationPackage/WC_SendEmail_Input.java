@@ -1,19 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
+import or.OR;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
-import org.openqa.selenium.interactions.SendKeysAction;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
@@ -49,9 +39,10 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForElementPresentWebdriverWait(attributeName_xpath, SE_TemplateName, selectatemplate);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, "regexp:"+selectatemplate);
-				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
-				//waitForPageToLoadWebdriver();
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, "regexp:"+selectatemplate);
+				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, "regexp:"+selectatemplate);
+				selectByValueWebdriver(attributeName_name,SE_Template,"93");
+				waitForPageToLoadWebdriver();
 				try {
 					Alert alert = driver.switchTo().alert();
 			        String AlertText = alert.getText();
@@ -147,6 +138,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				if (button.equalsIgnoreCase("Send")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, SE_SendBtn, button);
 					clickWebdriver(attributeName_xpath, SE_SendBtn);
+					Thread.sleep(5000);
 					try {
 						 
 				        Alert alert = driver.switchTo().alert();
@@ -157,7 +149,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				        System.out.println("no alert");
 				    }
 					
-					selenium.keyPressNative("10");
+					//selenium.keyPressNative("10");
 					//SendKeys(Keys.ENTER);
          //					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Back")) {

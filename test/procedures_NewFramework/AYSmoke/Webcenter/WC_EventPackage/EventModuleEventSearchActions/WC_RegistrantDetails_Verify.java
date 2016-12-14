@@ -16,7 +16,7 @@ public class WC_RegistrantDetails_Verify extends CommonSeleniumActions implement
 			String verifyui = fpvdatarepo[0];
 			String verifypagename = fpvdatarepo[1];
 			Reporter.log("Verify Test Data was retrieved for 'Registrant Details' page");
-			recentOpenedPopupSelectWebdriver("Registrant");
+			//recentOpenedPopupSelectWebdriver("Registrant");
 			if (!verifyui.equals("")) {
 				
 			}

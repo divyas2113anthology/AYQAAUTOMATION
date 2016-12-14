@@ -23,9 +23,10 @@ public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements 
 			if (!closewindow.equals("")) {
 				Reporter.log("Step 2 - Close the Window");
 				//closeWindowWebdriver();
-				recentPopupCloseWebdriver();
+				//recentPopupCloseWebdriver();
+				switchToOldWindow();
 			}
-			switchToDefaultContentWebdriver();
+			//switchToDefaultContentWebdriver();
 
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());

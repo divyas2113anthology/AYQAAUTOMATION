@@ -1,16 +1,12 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import java.util.ArrayList;
-
+import or.OR;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 //import com.thoughtworks.selenium.webdriven.commands.waitForPageToLoadWebdriver;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class WC_SearchforApplicants_Input extends CommonSeleniumActions implements OR {
 	
@@ -165,6 +161,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_LastName, lastname);
 				clickWebdriver(attributeName_xpath, SAI_LastName);
 				sendKeys(attributeName_xpath, SAI_LastName, lastname);
+
 			}
 			if (!birthdate.equals("")) {
 				Reporter.log("Step 13 - Enter the birth date as ["+birthdate+"]");
@@ -252,6 +249,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 25 - Click the submit button");
 				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_SubmitBtnBottom, submit);
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+				Thread.sleep(10000);
 				//waitForPageToLoadWebdriver();
 			}
 		} catch (Exception e) {

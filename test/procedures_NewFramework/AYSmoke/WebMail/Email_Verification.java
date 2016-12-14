@@ -1,14 +1,11 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
-import static processor.CommonSeleniumActions.Runtimedataread;
-
+import or.OR;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.HasInputDevices;
 import org.openqa.selenium.interactions.Keyboard;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Email_Verification extends CommonSeleniumActions implements OR {
@@ -235,7 +232,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 4 - Click Log-In Button");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					Thread.sleep(10000);
+					waitForPageToLoadWebdriver();
 					//assign key board object
+
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
 				       //enter a key
 				       keyboard.pressKey(Keys.ENTER);

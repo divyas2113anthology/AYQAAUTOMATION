@@ -38,6 +38,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
 							clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
 							recentPopupSelectWebdriver("Quick Add");
+
 						}else {
 							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");   
 						clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");

@@ -67,6 +67,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					}else if (clickname.equalsIgnoreCase("OLIVE")) {
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						//clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
+
 						recentPopupSelectWebdriver("Application Summary");
 					}else{
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");

@@ -25,6 +25,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
 			if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
+
 				if (selenium.isTextPresent(edusuccessmessage)) {
 					Reporter.log("Message("+edusuccessmessage+") was displayed correctly");
 				} else {

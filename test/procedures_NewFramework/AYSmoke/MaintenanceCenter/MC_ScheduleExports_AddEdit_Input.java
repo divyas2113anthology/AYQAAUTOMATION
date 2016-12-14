@@ -34,7 +34,6 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 //			selectByVisibleTextWebdriver(attributeName_name, "txtInterfaceId", "regexp:"+exportdefinition);
 //			WebElement SelectValue = attributeNameValue(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 //			SelectValue.click();
-			System.out.println("aaaaaaaaaaaaaaa");
 			if(exportdefinition.equals("TestExprt")){
 				String export = Runtimedataread(exportdefinition);
 				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + export + "')]");

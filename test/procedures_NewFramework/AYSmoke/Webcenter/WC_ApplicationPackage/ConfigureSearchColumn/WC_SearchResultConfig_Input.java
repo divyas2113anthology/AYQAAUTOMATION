@@ -1,12 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ConfigureSearchColumn;
 
 import or.OR;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_SearchResultConfig_Input extends CommonSeleniumActions implements OR{
@@ -53,8 +49,10 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		}
 		if (!delete.equals("")) {
 			Reporter.log("Step 5 - Check the checkbox ("+delete+")");
-			waitForElementPresentWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2, delete);
-			clickWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2);
+			//waitForElementPresentWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2, delete);
+			waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='chkDelete']", delete);
+			//clickWebdriver(attributeName_xpath,"//input[@name='chkDelete']");
+			//clickWebdriver(attributeName_xpath, CSC_Delete1+delete+CSC_Delete2);
 		}
 		if (!addrow.equals("")) {
 			Reporter.log("Step 6 - Check the checkbox ("+addrow+")");
@@ -66,7 +64,10 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		if (!save.equals("")) {
 			Reporter.log("Step 7 - Check the checkbox ("+delete+")");
 			waitForElementPresentWebdriver(attributeName_xpath, CSC_Save, delete);
+			clickWebdriver(attributeName_xpath,"//input[@name='chkDelete']");
 			clickWebdriver(attributeName_xpath, CSC_Save);
+			Thread.sleep(10000);
+
 		}
 		
 	} catch (Exception e) {

@@ -1,19 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries;
 
 import or.OR;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
-
-
-
-
 import processor.CommonSeleniumActions;
 
 
@@ -73,6 +62,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_Operator, operator);
 				waitForPageToLoadWebdriver();
+				Thread.sleep(6000);
 			}
 			if (!value.equals("")) {
 				if (value.equalsIgnoreCase("List")) {

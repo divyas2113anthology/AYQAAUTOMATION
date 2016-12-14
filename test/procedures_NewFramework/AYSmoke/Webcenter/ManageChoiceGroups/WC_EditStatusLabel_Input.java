@@ -1,15 +1,11 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
-import java.util.Calendar;
-
 import or.OR;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
 	
@@ -29,7 +25,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String delete=testdata[6];
 			String savecanceladdrow=testdata[7];
 			String addrow=testdata[8];
-			//switchToDefaultContentWebdriver();
+			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmContent");
 			
 			if (!groupdescription.equals("")) {
@@ -80,7 +76,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					waitForPageToLoadWebdriver();
 					}
 			}
-			switchToDefaultContentWebdriver();	
+		     switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

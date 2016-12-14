@@ -1,15 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.EventModuleEventSearchActions;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 public class WC_RegistrantDetails_Input  extends CommonSeleniumActions implements OR {
 	
@@ -108,7 +101,12 @@ public class WC_RegistrantDetails_Input  extends CommonSeleniumActions implement
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_CloseWindow, button);
 					clickWebdriver(attributeName_xpath, AEE_CloseWindow);
 					selectMainWindowWebdriver();
-				}else {
+				}else if(button.equalsIgnoreCase("will_not")){
+					waitForElementPresentWebdriverWait(attributeName_xpath, "//img[contains(@src,'will_not')]", button);
+					clickWebdriver(attributeName_xpath, "//img[contains(@src,'will_not')]");
+					switchToOldWindow();
+					}
+				else {
 					waitForElementPresentWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]", button);
 					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]");
 					waitForPageToLoadWebdriver();

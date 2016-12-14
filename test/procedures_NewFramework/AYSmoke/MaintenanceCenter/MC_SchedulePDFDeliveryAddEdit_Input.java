@@ -111,9 +111,11 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				sendKeys(attributeName_name, "txtFTPPassword", passwordauthentication);
 			}
 			if (!authentication.equals("")) {
-				Reporter.log("Enter the Password as ["+authentication+"]");
+				Reporter.log("Click on Test FTP Connection Button ["+authentication+"]");
 				System.out.println("authentication");
-				clickWebdriver(attributeName_xpath, SPDF_Authentication+authentication+"')]/input[@name='rdoLoginType']");
+				clickWebdriver(attributeName_xpath, "//*[@name='btnTestFTP']");
+
+				switchToOldWindow();
 			}
 			
 			if (!sftpport.equals("")) {
@@ -160,9 +162,10 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 	  		if (!startdate.equals("")) {
 				Reporter.log("Enter the Start Date as ["+startdate+"]");
-				System.out.println("startdate");
 				String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
+				System.out.println("Start Date is " + getcurrentdate );
 				sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
+
 			}
 			if (!starthour.equals("")) {
 				Reporter.log("Enter the Start Hour as ["+starthour+"]");

@@ -1,14 +1,8 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
-import java.util.List;
-
 import or.OR;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implements OR{
@@ -41,6 +35,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			//select(ESR_Section, "regexp:"+section);
 			waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']",section);
 			clickWebdriver(attributeName_xpath, "//input[@name='SectionInput']");
+			waitForPageToLoadWebdriver();
 			Reporter.log("Step 2 - Perform the operation to click the Package as ["+section+"]");
 //			waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
 			String [] SplitPackage = section.split(";");
@@ -52,8 +47,13 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				if (i== SplitPackage.length-1) {
 					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+					waitForPageToLoadWebdriver();
+					mouseOverWebdriver(attributeName_xpath,"//a[text()='"+SplitPackage[i]+"']");
+					Thread.sleep(9000);
+
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
-					
+
+
 				}else{
 					System.out.println(SplitPackage[i]);
 					//PackageSelection(SplitPackage[i], "1");
@@ -66,7 +66,9 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			//ClosePackageSelection();
 		}
 		//switchToDefaultContentWebdriver();
-		waitForElementPresentWebdriverWait(attributeName_xpath, "//select[option[contains(text(),'Personal Data')]]", "Personal Data");
+		//waitForElementPresentWebdriverWait(attributeName_xpath, "//select[option[contains(text(),'Personal Data')]]", "Personal Data");
+		isSelectedWebdriver(attributeName_xpath,"//span[text()='Applicant Detail']");
+		Thread.sleep(6000);
 		waitForPageToLoadWebdriver();
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");

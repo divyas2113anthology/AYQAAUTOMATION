@@ -56,7 +56,8 @@ public class PRO_LookUp_Input extends CommonSeleniumActions implements OR {
 					Thread.sleep(6000);
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
-
+					switchToOldWindow();
+                    System.out.println("Mainwindow Switched Suss");
 					//selectMainWindowWebdriver();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");

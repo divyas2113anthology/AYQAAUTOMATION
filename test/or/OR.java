@@ -35,7 +35,7 @@ public static final String Login = "//*[@id='ay-loginSubmit']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
-public static final String CreateAccount = "//a[contains(text(),'Create Account')]";
+public static final String CreateAccount = "//img[@alt='create account']";
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
@@ -115,7 +115,7 @@ public static final String countinuebtn = "//img[contains(@src,'continue_small')
 //#**********************************************************#
 //#Applicant Main Page
 //#**********************************************************#
-public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='Application2']]/a[contains(text()[2],'Edit Application')]";
+public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application')]";
 public static final String eventpackage = "//a[text()='";
 public static final String enrollpackage = "//a[text()='";
 //#**********************************************************#
@@ -158,7 +158,7 @@ public static final String BR_TargetUrl = "//input[@name='TargetURL']";
 //public static final String BR_TargetEmail = "//select[@name='EmailId']";
 public static final String BR_TargetEmail = "EmailId";
 public static final String BR_Save = "//img[@name='imageAdd1']";
-public static final String BR_Add = "//img[@name='imageAdd1']";
+public static final String BR_Add = "//img[@name='imageSave1']";
 public static final String BR_Buttons = "//img[contains(@src,'";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
 public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
@@ -603,7 +603,7 @@ public static final String PSD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Facelift Personal Data Verify
 //#**********************************************************#
-public static final String PSD_SuccessMsg = "//div[@class='span9']//tr/td/b";
+public static final String PSD_SuccessMsg = "//table//tr//td/b[text()='Your answers were saved successfully to the database.']";
 public static final String PSD_PageName = "//font[contains(text(),'";
 public static final String PSD_PageName1 = "//div[@class='span9']//font";
 public static final String PSD_ErrorMsg = "//div[@class='span9']/div[@id='divErrors']";

@@ -1,13 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 
 import or.OR;
-
-import org.openqa.selenium.Keys;
-import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
 import processor.CommonSeleniumActions;
 
 
@@ -34,13 +29,18 @@ public class WC_InviteEvent_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 2 - Proceed to Select the Template as ("+selecttemplate+")");
-//				selectByVisibleTextWithSpaceWebdriver(attributeName_name, IE_TemplateSelect, selecttemplate);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_TemplateSelect, "regexp:"+selecttemplate);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_name, IE_TemplateSelect, selecttemplate);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_TemplateSelect, "regexp:"+selecttemplate);
+				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath, "//select[@name='TemplateList']", "Invitation email");
+				selectByValueWebdriver(attributeName_xpath, "//select[@name='TemplateList']", "118");
+				Thread.sleep(9000);
+				waitForPageToLoadWebdriver();
 			}
 			if (!inviteback.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+inviteback+") Button");
 				if (inviteback.equalsIgnoreCase("Invite")) {
 					clickWebdriver(attributeName_xpath, IE_InviteBtn);
+					Thread.sleep(12000);
 					alertAccept();
 					}else if (inviteback.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, IE_BackBtn);

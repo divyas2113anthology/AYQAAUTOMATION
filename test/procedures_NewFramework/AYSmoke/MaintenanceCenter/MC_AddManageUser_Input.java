@@ -1,14 +1,9 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class MC_AddManageUser_Input extends CommonSeleniumActions implements OR {
@@ -62,7 +57,8 @@ public class MC_AddManageUser_Input extends CommonSeleniumActions implements OR 
 			if(!checkprivilegesnotassigned.equals("")){
 				Reporter.log("Check"+title);
 				//clickWebdriver(attributeName_xpath, MS_CheckPrivilege+privilegesname+"']//preceding-sibling::input[@type='checkbox']");
-				clickWebdriver(attributeName_xpath, "//font[contains(.,'"+checkprivilegesnotassigned+"')]/input[contains(@name,'cbPrivID')]");
+				//clickWebdriver(attributeName_xpath, "//font[contains(.,'"+checkprivilegesnotassigned+"')]/input[contains(@name,'cbPrivID')]");
+				clickWebdriver(attributeName_xpath,"//input[@name='cbPrivID1']");
 			}	
 		
 			if(!savecancel.equals("")){

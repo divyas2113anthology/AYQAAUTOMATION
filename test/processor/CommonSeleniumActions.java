@@ -2145,6 +2145,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}*/
 
 		String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+		System.out.println("Store your parent window is " +parentWindowHandler );
 		String subWindowHandler = null;
 
 		Set<String> handles = driver.getWindowHandles(); // get all window handles
@@ -2159,6 +2160,30 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		//driver.switchTo().window(parentWindowHandler);  // switch back to parent window
 	}
+	//This method will helps us to switch to a Old window
+	//Created by Krishna
+	public  void switchToOldWindow() {
+		Set s = driver.getWindowHandles();
+		Iterator itr = s.iterator();
+		String w1 = (String) itr.next();
+		String w2 = (String) itr.next();
+		driver.switchTo().window(w1);
+	}
+	public  void switchToSecondPopupWindow() {
+
+		//Get all the window handles in a set
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();
+         //iterate through your windows
+		while (it.hasNext()) {
+			String parent = it.next();
+			String newwin = it.next();
+			driver.switchTo().window(newwin);
+			//perform actions on new window
+
+		}
+	}
+
 	// This Function is used to Select Recently Opened Window or Popup without Window Name.
 	public void recentPopupSelect_without_window_nameWebdriver() throws Exception {
 		   //     int windownull = 0;
@@ -2730,7 +2755,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		try {
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
-			System.out.println("BBBBBBBBBfactualtext"  +actualtext);
 			writeConsole("Element Actual getText["+actualtext+"]");
 			if (actualtext.contains(expectedtext)) {
 				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
@@ -3829,7 +3853,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
 		System.out.println(section);
 		waitForElementPresentWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]", section);
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		clickWebdriver(attribut_name, "//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]");
 //		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
 //		writeConsole("Onclick Value for Section "+seconclickName);
@@ -3869,6 +3893,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//selenium.selectFrame("relative=up");
 		//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 		//					SelectTreeFrame();
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
 		int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
 		writeConsole("Minus Count "+minusCount);

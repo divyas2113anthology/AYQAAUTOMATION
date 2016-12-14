@@ -36,7 +36,7 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 				Reporter.log("Click on the Link"+linktoclick);
 				clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
 			}
-			switchToDefaultContentWebdriver();	
+			//switchToDefaultContentWebdriver();
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

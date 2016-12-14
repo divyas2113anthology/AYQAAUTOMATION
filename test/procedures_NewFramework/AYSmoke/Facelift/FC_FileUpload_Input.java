@@ -32,16 +32,19 @@ public class FC_FileUpload_Input extends CommonSeleniumActions implements OR {
 				if (buttons.equalsIgnoreCase("Upload Document")) {
 					waitForElementVisibleWebdriver(attributeName_xpath, EA_UploadDoc, buttons);
 //					waitForElementVisible(EA_UploadDoc, buttons);
-					clickWebdriver(attributeName_xpath, EA_UploadDoc);				
-					deselectPopUp();
-					selectMainWindowWebdriver();
-					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath, EA_UploadDoc);
+					//switchToOldWindow();
+					//deselectPopUp();
+					//selectMainWindowWebdriver();
+					//waitForPageToLoadWebdriver();
+					Thread.sleep(10000);
+
 				}else if (buttons.equalsIgnoreCase("Upload File")) {
 					waitForElementVisibleWebdriver(attributeName_xpath, EA_UploadMedia, buttons);
 //					waitForElementVisible(EA_UploadMedia, buttons);
 					clickWebdriver(attributeName_xpath, EA_UploadMedia);				
-					deselectPopUp();
-					selectMainWindowWebdriver();
+					//deselectPopUp();
+					//selectMainWindowWebdriver();
 					waitForPageToLoadWebdriver();
 				}
 			}

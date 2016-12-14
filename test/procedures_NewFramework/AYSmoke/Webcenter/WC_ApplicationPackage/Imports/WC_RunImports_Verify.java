@@ -30,6 +30,7 @@ public class WC_RunImports_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForPageToLoadWebdriver();
 				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Run Import");
 			}
 //			if (verifyui.equals("")) {

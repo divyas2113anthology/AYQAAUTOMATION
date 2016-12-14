@@ -34,6 +34,7 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			}
 			if(!linktoclick.equals("")){
 				Reporter.log("Click on the Link"+linktoclick);
+				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
 			}
 			switchToDefaultContentWebdriver();	

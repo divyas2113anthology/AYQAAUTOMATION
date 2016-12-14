@@ -37,7 +37,7 @@ public class ResetPassword_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Click on ("+submit+") Button");
 				if (submit.equalsIgnoreCase("submit")) {
 //					click(RPI_submit);
-					clickWebdriver(attributeName_xpath, "//input[@alt='search']");
+					clickWebdriver(attributeName_xpath, "//input[@type='submit']");
 					waitForElementPresentWebdriver(attributeName_xpath, "//p", "Reset Password Page");
 				}else if (submit.equalsIgnoreCase("close window")) {
 					recentPopupClose();

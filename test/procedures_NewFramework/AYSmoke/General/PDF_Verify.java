@@ -45,11 +45,13 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 				wintotal = wintotal -1;
 				System.out.println("+++++++++++"+wintotal);
 				String[] Pdfwindows = PdfWindows.toArray(new String[PdfWindows.size()]);
-                System.out.print("==============="+Pdfwindows[wintotal]);
+                System.out.print("==============="+driver.getTitle()+""+Pdfwindows[wintotal]);
 				    //Pdfwindows = selenium.getAllWindowNames();
 					//int wintotal = Pdfwindows.length-1;
 					//selenium.selectWindow("name=" + Pdfwindows[wintotal]);
-				selectWindow(Pdfwindows[wintotal]);
+				//selectWindow(Pdfwindows[wintotal]);
+				driver.switchTo().window(Pdfwindows[wintotal]);
+				System.out.print("==============="+driver.getTitle()+"=="+Pdfwindows[wintotal]);
 				String temp = driver.getTitle();
 					//waitForPageToLoadWebdriver();
 					Reporter.log("Window["+pdfname+"] was selected");
@@ -57,9 +59,9 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					System.out.println("Malik");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");
 					try {
-						//exceptionMsg = selenium.getBodyText();
-						//String  exceptionmsg = driver.findElement(By.xpath("//div[contains(@id,'pageContainer1')]//div[contains(@class,'textLayer')]//div[4]")).getText();
-						String exceptionmsg = driver.findElement(By.xpath("//div[contains(@class,'textLayer')]")).getText();
+						//exceptionMsg = selenium.getBodyText();//Issue in taking the content from PFD file opened
+						String  exceptionmsg = driver.findElement(By.xpath("//div[contains(@id,'pageContainer1')]//div[contains(@class,'textLayer')]//div[4]")).getText();
+						//String exceptionmsg = driver.findElement(By.xpath("//div[contains(@class,'textLayer')]")).getText();
 						
 
 						//switchToDefaultContentWebdriver();

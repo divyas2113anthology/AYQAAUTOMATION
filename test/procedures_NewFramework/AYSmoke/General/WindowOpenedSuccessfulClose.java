@@ -63,8 +63,9 @@ public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implement
 					deselectPopUp();	
 				}else if (closewindow.equalsIgnoreCase("Close")) {
 					//recentPopupCloseWebdriver();
-					String windowname = driver.getWindowHandle();
-					recentOpenedPopupSelectWebdriver(windowname);
+					Iterator<String> windowsname = driver.getWindowHandles().iterator();
+					String parentWindow =windowsname.next();
+					recentOpenedPopupSelectWebdriver(parentWindow);
 					driver.close();
 					//selectMainWindowWebdriver();
 				}else if (closewindow.equalsIgnoreCase("CloseWindow")) {

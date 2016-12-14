@@ -33,10 +33,18 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 				verifyElementContainsTextWebdriver(attributeName_xpath, RUS_Status, status, verifystatus);
 			}
 			if(!status.equals("")){
+				try{
 				Reporter.log("Select the Status("+status+")");
 				waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, status);
 				selectByVisibleTextWebdriver(attributeName_xpath, RUS_Status, status);
-			}	
+			}catch(Exception e){
+					Reporter.log("Select the Status("+status+")");
+					String Status = Runtimedataread(status);
+					waitForElementPresentWebdriver(attributeName_xpath, RUS_Status, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, RUS_Status, Status);
+				}
+			}
+
 			
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);

@@ -27,8 +27,13 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Click on ("+packagename+") Package");
 				writeConsole("I am in package level");
 //				waitForElementPresent(Applpackage+packagename+"']", packagename);
-				clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
-//				waitForPageToLoadWebdriver();
+				if(isDisplayedWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../../ul//h4[contains(text(),'Application Status: No')]")){
+				 clickWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../a");
+				}
+				else{
+				 clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
+				}
+// waitForPageToLoadWebdriver();
 			}
 			if (!eventpackagename.equals("")) {
 				Reporter.log("Click on ("+eventpackagename+") Event Package");

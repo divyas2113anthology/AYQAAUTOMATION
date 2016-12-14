@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class WC_RecommendationDT_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Recommendation DT' page")
@@ -52,11 +54,14 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				clickWebdriver(attributeName_xpath, RD_CloseWindow);
 				//recentPopupClose();
 				
-			}	
-			driver.switchTo().window(AppSummaryWindowName);
+			}
+
+			//driver.switchTo().window(AppSummaryWindowName);
+			recentPopupSelectWebdriver("Popup Window");
 			
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}
 	}	
 }
+

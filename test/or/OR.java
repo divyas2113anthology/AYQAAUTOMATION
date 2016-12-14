@@ -31,7 +31,7 @@ public static final String Browser_Safari = "safari";
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
 //public static final String Login = "//input[@value='login']";
-public static final String Login = "//input[@alt='login']";
+public static final String Login = "//input[@id='ay-loginSubmit']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or Password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
@@ -181,7 +181,7 @@ public static final String PI_Sports = "//select[@id='s24501']";
 public static final String PI_Luckyno = "//input[@id='rc24502_2']";
 public static final String PI_AddressLine1_Inactive = "//input[@id='q24503_hq']";
 public static final String PI_AddressLine1 = "//input[@id='q24503']";
-public static final String PI_AddressLine1_wait = "//input[@id='q24503' and @value!='']";
+public static final String PI_AddressLine1_wait = "//input[@id='q24503_hq' and @value!='']";
 public static final String PI_AddressLine2 = "//input[@id='q24504']";
 public static final String PI_AddressLine3 = "//input[@id='q24505']";
 public static final String PI_City = "//input[@id='q24506']";
@@ -321,7 +321,7 @@ public static final String PD_Suffix = "//select[@id='s24304']";
 public static final String PD_FirstGivenName = "//input[@id='q24297']";
 public static final String PD_Middlename = "//input[@id='q24298']";
 public static final String PD_Lastname = "//input[@id='q24299']";
-public static final String PD_Dateofbirth = "//input[@id='q24300']";
+public static final String PD_Dateofbirth = "//input[@id='q35023']";
 public static final String PD_SSN = "//input[@id='q24301']";
 public static final String PD_ParentSSN = "//input[@id='q24302']"; 
 public static final String PD_Gender = "//select[@id='s35026']";
@@ -345,7 +345,7 @@ public static final String PD_PullQuestion = "//input[@id='q26168']";
 public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
-public static final String PD_Save = "//img[@alt='Save']";
+public static final String PD_Save = "//tr[8]//img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
@@ -356,7 +356,7 @@ public static final String RC_RecProviderlist = "//input[contains(@value,'Recomm
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
 public static final String RC_RecProvidercheck ="";
-public static final String RC_Add = "//img[@alt='add']";
+public static final String RC_Add = "//a[contains(text(),'add a provider')]";
 public static final String RC_fName = "//input[@id='firstname']";
 public static final String RC_lName = "//input[@id='lastname']";
 public static final String RC_Address1 = "//input[@id='address1']";
@@ -378,7 +378,7 @@ public static final String RC_submitletterrecommend_No = "//input[@name='online'
 //#public static final String RC_waiveright= "//input[@id='rbY1']";
 //#public static final String RC_submitletterrecommend = "//input[@id='rbY2']"; 
 public static final String RC_Notificationemail= "//textarea[@id='Textarea1']";
-public static final String RC_Save = "//img[@alt='save']";
+public static final String RC_Save = "//div[@align='right']//input[@value='Add Provider' and @type='submit']";
 //#**********************************************************#
 //#Webcenter Login - WCL
 //#*********************************************************#
@@ -775,8 +775,8 @@ public static final String AW_PageTitle = "//div[@id='ay-landing-text']/b";
 public static final String BU_SportsInterest = "q35038";
 public static final String BU_Submit = "//img[contains(@src,'admin_submit_small')]";
 public static final String BU_PD_AD_SportsInterest = "//select[@id='s35038']";
-public static final String BU_PD_State = "//select[@id='s35033']";
-public static final String BU_PD_BRules = "//font[contains(text(),'Business Rules')]";
+public static final String BU_PD_State = "//select[@id='s35033']//option[@value='";
+public static final String BU_PD_BRules = "//td[@class='Color1']//font[contains(text(),'Business Rules')]";
 public static final String BU_PD_DOB = "//input[@id='q35023']";
 public static final String BU_BR_Submit = "//font[contains(text(),'Congratulations')]";
 public static final String BU_MiddleName = "//input[contains(@name,'q35021')]";
@@ -847,7 +847,7 @@ public static final String SRI_PageTitle = "//td/font[text()='Virginia']";
 public static final String SRI_Fa1rfaxLnk = "//a/font[text()='Fa1rfax']";
 public static final String SRI_SportsLnk = "//a/font[text()='Sports']";
 //public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//td[@class='BasePageFont']";
-public static final String PD_ErrorMsg = "//td[@class='BasePageFont']";
+public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//font";
 public static final String ALI_FirstLnk = "//div[@id='pnlPickList']/ul/li[1]";
 public static final String DF_FormName = "//font[@class='BasePageFont' ]/a[contains(text(),'";
 //#**********************************************************#
@@ -877,7 +877,7 @@ public static final String SAI_BothtRadioBtn = "//input[@type='radio' and @value
 public static final String SAI_ViewRecords = "//input[@name='chkAgree']";
 public static final String SAI_CreationDateRadio = "//input[@name='SearchTypes' and @value='creationDate']";
 public static final String SAI_SubmissionDateRadio = "//input[@name='SearchTypes' and @value='submissionDate']";
-public static final String SAI_CreationDate = "//td[contains(.,'Creation Date')]/input[@name='SearchTypes']";
+public static final String SAI_CreationDate = "//td[@class='FormFields' and @valign='bottom']//select[@name='Days']";
 //public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
 public static final String SAI_SubmissionDate = "//select[@name='Days']";
 public static final String SAI_SpecificPeriod = "//select[@name='Days']";
@@ -892,7 +892,7 @@ public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "SysQuery";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
-public static final String SAI_UserQuries = "//input[@id='QueryID']";
+public static final String SAI_UserQuries = "//input[@name='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";
@@ -1508,6 +1508,7 @@ public static final String AEG_Description = "Description";
 public static final String AEG_Folder = "Group";
 public static final String CL_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String CL_CreateBtn = "//img[contains(@src,'create_small')]";
+//public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 public static final String CL_ViewBtn = "//img[contains(@src,'admin_view')]";
 public static final String WC_ViewBtn = "//img[contains(@src,'view')]";
 public static final String WC_AddDelMoveToFolder = "//img[contains(@src,'";
@@ -1516,10 +1517,11 @@ public static final String WC_ManageInfo = "//p[contains(text(),'";
 //#**********************************************************#
 //#	 Application - Application Welcome Input  - Page
 //#**********************************************************#
-public static final String AW_TecSupp = "//a[contains(@href,'techSupportWindow')]";
+public static final String AW_TecSupp = "//li[@class='footerTopLi']//a[contains(@href,'TechSupport')]";
 public static final String AW_Home =  "//a[contains(@href,'goHome')]";
 public static final String AW_Profile = "//a[contains(@href,'goUpdateProfile')]";
-public static final String AW_Submit = "//a[contains(@href,'doApplicationSubmit')]";
+//public static final String AW_Submit = "//input[contains(@onclick,'doApplicationSubmit')]";
+public static final String AW_Submit = "//tr[@valign='top']//a[contains(@href,'doApplicationSubmit')]";
 //#**********************************************************#
 //#	 Application - Application Manage Email Template  - Page
 //#**********************************************************#
@@ -1936,10 +1938,10 @@ public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divA
 //# Webcenter - Enrollment DT Fee - ER
 //#**********************************************************#
 public static final String EDT_Page = "//font[contains(text(),'Search Results')]";
-public static final String EDT_PaymentStatus = "//select[@id='pmtstatus']";
+public static final String EDT_PaymentStatus = "//select[@name='syspmtStatus']";
 public static final String EDT_VerifyPaymentStatus = "//select[@id='pmtstatus']//option[contains(text(),'";   //ManageQueries')]";
 public static final String EDT_ButtontoClick = "//img[contains(@src,'"; //close_window')]";
-public static final String EDT_PageName = "//td[@class='FormHeading']/font";
+public static final String EDT_PageName = "//td/font";
 
 
 //#**********************************************************#
@@ -1955,7 +1957,8 @@ public static final String RD_Pagename = "//font[contains(text(),'Recommendation
 //# Webcenter Search For Recommendation Verify - SRV
 //#**********************************************************#
 
-public static final String SRV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+//public static final String SRV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+    public static final String SRV_PageName = "//td//font";
 //#**********************************************************#
 //# Webcenter - Recommendation Update Status - RUS
 //#**********************************************************#

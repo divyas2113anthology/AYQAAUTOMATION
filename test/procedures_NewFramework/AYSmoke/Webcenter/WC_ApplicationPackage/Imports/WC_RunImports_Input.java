@@ -38,6 +38,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriverWait(attributeName_name, "attfile", choosefile);
 				clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
+				Thread.sleep(1000);
 				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 				waitForPageToLoadWebdriver();
 				

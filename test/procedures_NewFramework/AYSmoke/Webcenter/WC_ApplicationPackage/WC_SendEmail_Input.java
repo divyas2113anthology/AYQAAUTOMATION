@@ -49,7 +49,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForElementPresentWebdriverWait(attributeName_xpath, SE_TemplateName, selectatemplate);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, "regexp:"+selectatemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, selectatemplate);
 				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
 				//waitForPageToLoadWebdriver();
 				try {
@@ -157,7 +157,7 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				        System.out.println("no alert");
 				    }
 					
-					selenium.keyPressNative("10");
+					//selenium.keyPressNative("10");
 					//SendKeys(Keys.ENTER);
          //					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Back")) {

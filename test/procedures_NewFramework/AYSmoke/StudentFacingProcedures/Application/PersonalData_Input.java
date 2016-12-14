@@ -4,6 +4,8 @@ import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environme
 
 import java.util.Calendar;
 
+import com.sun.istack.internal.NotNull;
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -93,13 +95,13 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdcellphone.equals("")) {
 			Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
-			String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);				
+			String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);
 			if (pdcellphone.equalsIgnoreCase("Null")) {
 				attributeNameValue(attributeName_xpath, Cellphonepd).clear();
-			}else {
-				sendKeys(attributeName_xpath,Cellphonepd, pdcellphone);
+			} else {
+				sendKeys(attributeName_xpath, Cellphonepd, pdcellphone);
 			}
-		}
+			}
 		if (!pdfulltimestudent.equals("")) {
 			Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");
 			if (pdfulltimestudent.equalsIgnoreCase("Yes")){

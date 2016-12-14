@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -28,8 +29,13 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
-				clickWebdriver(attributeName_xpath,Logoutmain+logout+"']");
-				waitForPageToLoadWebdriver();
+				if(logout.equalsIgnoreCase("Dashboard")){
+					clickWebdriver(attributeName_xpath,"//li/i[@class='icon-home icon-white']");
+					waitForPageToLoadWebdriver();
+				}else {
+					clickWebdriver(attributeName_xpath, Logoutmain + logout + "']");
+					waitForPageToLoadWebdriver();
+				}
 			}
 			if (!updatetechsupport.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+updatetechsupport+") Button");
@@ -40,8 +46,8 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_TecSupp, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_TecSupp);
-					recentPopupSelectWebdriver("Technical Support");
-					alertAccept();
+					//recentPopupSelectWebdriver("Technical Support");
+					//alertAccept();
 				}else if (updatetechsupport.equalsIgnoreCase("Update your Profile")) {
 //					sendKeyStroke(attributeName_xpath, UpdateProfileBtn, Keys.SPACE);
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
@@ -64,8 +70,13 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
 //				click(helphint+helpfulhints+"']");
-				clickWebdriver(attributeName_linktext, helpfulhints);
-				recentPopupSelectWebdriver(helpfulhints);
+				//clickWebdriver(attributeName_linktext, helpfulhints);
+				clickWebdriver(attributeName_xpath,"//li[contains(@id,'helpfulHints')]/a");
+				clickWebdriver(attributeName_xpath,"//li/a[contains(text(),'"+helpfulhints+"')]");
+				//recentPopupSelectWebdriver(helpfulhints);
+				switchToDefaultContentWebdriver();
+				String temp = driver.getTitle();
+				driver.findElement(By.xpath("//div[@class='modal-header']/h3")).getText();
 			}
 			if (!print.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+print+") Button");

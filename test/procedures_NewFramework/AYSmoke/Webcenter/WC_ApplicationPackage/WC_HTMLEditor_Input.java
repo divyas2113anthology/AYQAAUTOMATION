@@ -33,6 +33,7 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 				/* WebElement frame = driver.findElement(By.tagName("iframe"));
 				 driver.switchTo().frame(frame);*/
 				//recentOpenedPopupSelectWebdriver("HTML");
+				switchToDefaultContentWebdriver();
 				 WebElement elem = driver.findElement(By.xpath("//body/h2"));
 		         elem.click();
 		         Thread.sleep(10000L);

@@ -52,7 +52,7 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 			if (!selectadecisionletter.equals("")) {
 				Reporter.log("Step 5 - Enter the Action History text as ["+selectadecisionletter+"]");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "DecisionLetter", selectadecisionletter);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,"DecisionLetter", "regexp:"+selectadecisionletter);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,"DecisionLetter", selectadecisionletter);
 			}
 			if (!onlineoffline.equals("")) {
 				Reporter.log("Step 6 - Select the Add to label as ["+onlineoffline+"]");

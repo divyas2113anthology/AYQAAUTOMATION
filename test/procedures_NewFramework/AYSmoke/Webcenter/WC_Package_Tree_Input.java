@@ -28,9 +28,12 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 			switchToFrameNameIdWebdriver("frmTreeMenu");
 			
 			if (!logoutmain.equals("")) {
-				Reporter.log("Step 1 - Perform the operation to click the link as ["+logoutmain+"]");
-				waitForElementPresentWebdriverWait(attributeName_xpath, MCG_MainLogout+logoutmain+"')]", logoutmain);
-				clickWebdriver(attributeName_xpath, MCG_MainLogout+logoutmain+"')]");
+				if(logoutmain.equalsIgnoreCase("Main Menu")){
+					logoutmain = "ClientMain";
+				}
+				Reporter.log("Step 1 - Perform the operation to click the link as [" + logoutmain + "]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, MCG_MainLogout + logoutmain + "')]", logoutmain);
+				clickWebdriver(attributeName_xpath, MCG_MainLogout + logoutmain + "')]");
 				waitForPageToLoadWebdriver();
 			}
 			if (!treepackage.equals("")) {
@@ -44,12 +47,14 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
 						//clickWebdriver(attributeName_linktext, SplitPackage[i]);
+						waitForPageToLoadWebdriver();
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitPackage[i]+"')]");
 						waitForPageToLoadWebdriver();
 					}else{
 						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
 						PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+						waitForPageToLoadWebdriver();
 						
 					}
 				}

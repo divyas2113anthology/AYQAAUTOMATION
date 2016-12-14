@@ -31,13 +31,18 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus, verifypaymentstatus+verifypaymentstatus+"')]", verifypaymentstatus);
 			}
 			if (!paymentstatus.equals("")) {
-				Reporter.log("Select the payment status as ["+paymentstatus+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus , paymentstatus);
+				Reporter.log("Select the payment status as [" + paymentstatus + "]");
+				try {
+					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, paymentstatus);
+				}catch(Exception e){
+					String PaymentStatus = Runtimedataread(paymentstatus);
+					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, PaymentStatus);
+				}
 			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				recentPopupCloseWebdriver();
+				//recentPopupCloseWebdriver();
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

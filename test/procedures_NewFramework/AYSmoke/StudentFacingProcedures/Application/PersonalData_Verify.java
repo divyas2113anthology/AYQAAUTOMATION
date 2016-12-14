@@ -4,7 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -90,39 +93,60 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify Message("+verifyui+") was displayed correctly");
-				if(verifyui.equals("Virginia"))
-					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_State, verifyui);
-				else if(verifyui.equals("Business Rules"))
+				if(verifyui.equals("Virginia")) {
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_State + verifyui + "']", verifyui);
+				}else if(verifyui.equals("Business Rules")) {
 					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_BRules, verifyui);
-				else if(verifyui.equals("09/23/2014")){
+				}else if(verifyui.equals("09/23/2014") || verifyui.equals("01/01/1987")){
 					Date date = new Date();  
 					DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 					String sysdate = dateFormat.format(date);
 					System.out.println(sysdate);
 					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, sysdate);
 					}
-				else if(verifyui.equals("F"))
-						verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, verifyui);
-				else if(verifyui.equals("BR Required Form")){
-					int rowcount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr");
-					for(int i=0; i < rowcount; i++) {
-						int columncount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr["+i+"]/td");
-						for(int j = 0; j < columncount; j++) {
-							verifyElementContainsTextWebdriver(attributeName_xpath,"//div[@id='linksMouseOver']//tr/td/table/tbody/tr[["+i+"]/td[["+j+"]", verifyui, verifyui);
-						}
+				else if(verifyui.equals("F")) {
+					verifyElementPresentWebdriver(attributeName_xpath, BU_PD_DOB, verifyui);
+				}else if(verifyui.equals("BR Required Form")){
+					List<WebElement> cnt  = driver.findElements(By.xpath("//div[@id='linksMouseOver']//tr/td/table/tbody/tr"));
+					int count = cnt.size();
+					outerloop:
+					for(int i=0;i<count;i++){
+						for(int j=1;j<3;j++) {
+							String xapthforcheck = "//div[@id='linksMouseOver']//tr/td/table/tbody/tr[" + i + "]/td[" + j + "]";
+							try {
+								String ActCustName = driver.findElement(By.xpath(xapthforcheck)).getText();
+								if (ActCustName.contains(verifyui)) {
+									verifyElementContainsTextWebdriver(attributeName_xpath,"//div[@id='linksMouseOver']//tr/td/table/tbody/tr["+i+"]/td["+j+"]", verifyui, verifyui);
+									break outerloop;
+								}
+							}catch(Exception e){
 
+							}
+							Thread.sleep(1000);
+
+						}
 					}
+
+//					int rowcount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr");
+//					WebElement xpathcount = driver.findElement(By.xpath("//div[@id='linksMouseOver']//tr/td/table/tbody/tr"));
+//					for(int i=0; i < rowcount; i++) {
+//						int columncount = getXpathCount("//div[@id='linksMouseOver']//tr/td/table/tbody/tr["+i+"]/td");
+//						for(int j = 0; j < columncount; j++) {
+//							verifyElementContainsTextWebdriver(attributeName_xpath,"//div[@id='linksMouseOver']//tr/td/table/tbody/tr["+i+"]/td["+j+"]", verifyui, verifyui);
+//						}
+//
+//					}
 				}
 				else if(verifyui.equals("testing")){
 					waitForElementPresentWebdriverWait(attributeName_xpath, BU_MiddleName, verifyui);
 					String middle = getTextWebdriver(attributeName_xpath, BU_MiddleName);
 					verifyElementContainsTextWebdriver(attributeName_xpath, BU_MiddleName, verifyui,middle);
 				} 
-				else
+				else {
 					//verifyElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
 					waitForElementPresentWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui);
 					verifySelectContainsOptionsWebdriver(attributeName_xpath, BU_PD_AD_SportsInterest, verifyui, verifyui);
-				
+				}
 			}
 			
 		} catch (Exception e) {

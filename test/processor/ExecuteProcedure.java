@@ -118,7 +118,7 @@ public class ExecuteProcedure implements IMethodInterceptor {
 			
 			
 			}catch(IOException e) {
-
+				System.out.println("Exception thrown from Execute Procedure - " + e.getMessage());
 		}
 		}
 //		else{

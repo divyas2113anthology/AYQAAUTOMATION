@@ -239,8 +239,11 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					Thread.sleep(1000);
+					waitForPageToLoadWebdriver();
 					if(!isDisplayedWebdriver(attributeName_xpath, HC_Inbox)){
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
+						waitForPageToLoadWebdriver();
 					}
 					//assign key board object
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
@@ -266,10 +269,13 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 //							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");   
 							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoadWebdriver();
-							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
+							try {
+								//if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
+								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
 							waitForPageToLoadWebdriver();
 						}
-						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
+						//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
+						waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'" + emailsubject + "')]",emailsubject);
 						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]");
 						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");

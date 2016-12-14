@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -48,14 +50,19 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 					writeConsole("Tree Package : "+SplitPackage[i]);
 					if(i==1){
 						Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");   //b[a[font[text()='Applicant Detail']]]
-						selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
-						String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
+						//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
+						waitForElementPresentWebdriver(attributeName_xpath,"//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1]","Wait For Package ");
+						//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
+						WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+SplitPackage[i]+"']/../../preceding-sibling::a[@onclick][1]"));
+						String seconclickName = SeconclickName.getAttribute("onclick");
 						writeConsole("Onclick Value for Section "+seconclickName);
 						String[] secNamespl =seconclickName.split("\\(");
 						String[] secnodespl = secNamespl[1].split("\\)");
 						String secnode = secnodespl[0];
 						writeConsole("Node Value for Section "+secnode);
-						String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+						//String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+						WebElement NodePlus = driver.findElement(By.xpath("//a[contains(@onclick,'toggle("+secnode+")')]"));
+						String nodePlus = NodePlus.getAttribute("onmouseover");
 						writeConsole("Plus OuterHTML Value "+nodePlus);
 						if (nodePlus.contains("Click to expand")) {
 						clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
@@ -75,7 +82,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 					}
 				}
-				ClosePackageSelection();
+				//ClosePackageSelection();
 			}
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frameIntfFieldDef");

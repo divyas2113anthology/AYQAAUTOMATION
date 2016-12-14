@@ -47,11 +47,12 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			}
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
-				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
+				String valuedata = Runtimedataread(value);
+				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, valuedata);
 				clickWebdriver(attributeName_xpath, ET_Value);
-				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
+				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+valuedata+"']", valuedata);
 				//clickWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
-				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				checkWebdriver(attributeName_xpath, MCL_CheckValue+valuedata+"']");
 				
 			}
 			if(!savecancel.equals("")){

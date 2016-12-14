@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 	
 
@@ -54,7 +57,7 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!addrstateprovince.equals("")) {
 			Reporter.log("Step 5 - Select State/Province as ("+addrstateprovince+")");
-			selectByVisibleTextWebdriver(attributeName_xpath, AL_Province, addrstateprovince);
+			selectByVisibleTextWebdriver(attributeName_id, AL_Province, addrstateprovince);
 		}
 		if (!addrpostalcodezip.equals("")) {
 			Reporter.log("Step 6 - Enter Postal Code/Zip as ("+addrpostalcodezip+")");
@@ -64,19 +67,24 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 7 - Enter Country as ("+addrcountry+")");
 			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);
 		}*/
-		if (!addrsubmit.equals("")) {
+
+			if (!addrsubmit.equals("")) {
 			Reporter.log("Step 8 - Click on ("+addrsubmit+") Button");
 			waitForElementPresentWebdriver(attributeName_xpath, AL_Submit, addrsubmit);
+			Iterator<String> popwindow = driver.getWindowHandles().iterator();
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
 //			waitForPageToLoadWebdriver();
-			if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
-				clickWebdriver(attributeName_xpath, AL_AddressLink);
-			}
+			//if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
+			//	clickWebdriver(attributeName_xpath, AL_AddressLink);
+			//}
 //			waitForElementPresentWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
 //			waitForPageToLoadWebdriver();
+			String parentWindow = popwindow.next();
+			driver.switchTo().window(parentWindow);
 		}
-		//selectMainWindowWebdriver();		
+
+		//selectMainWindowWebdriver();
 		//recentOpenedPopupSelectWebdriver("Select Previous Window");
 		
 		} catch (Exception e) {

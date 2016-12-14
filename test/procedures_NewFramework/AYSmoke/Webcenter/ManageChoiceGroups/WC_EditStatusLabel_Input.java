@@ -57,6 +57,13 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				sendKeys(attributeName_xpath,MCG_label,Label);
 				Runtimedatawrite(Label, label);
 				}
+
+			if (!label.equals("")) {
+				Reporter.log("Enter Label");
+				String Label = labelName+Calendar.getInstance().getTimeInMillis();
+				sendKeys(attributeName_xpath,MCG_label,Label);
+				Runtimedatawrite(Label, label);
+			}
 			
 			if(!active.equals("")){		
 				String Active = Runtimedataread(active);

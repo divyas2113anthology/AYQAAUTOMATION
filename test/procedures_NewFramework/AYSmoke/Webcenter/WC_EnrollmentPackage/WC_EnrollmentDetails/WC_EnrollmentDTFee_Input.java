@@ -32,11 +32,24 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			}
 			if (!paymentstatus.equals("")) {
 				Reporter.log("Select the payment status as [" + paymentstatus + "]");
-				try {
-					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, paymentstatus);
-				}catch(Exception e){
+				if(paymentstatus.equalsIgnoreCase("Waived")){
+					waitForPageToLoadWebdriver();
+					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatusWaived, paymentstatus);
+				}
+				if(paymentstatus.contains("EnrollmentPaymentStatus")||paymentstatus.contains("ManageQueries")){
+					waitForPageToLoadWebdriver();
 					String PaymentStatus = Runtimedataread(paymentstatus);
-					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, PaymentStatus);
+					selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatusWaived, PaymentStatus);
+				}
+				else{
+					try {
+						waitForPageToLoadWebdriver();
+						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, paymentstatus);
+					}catch(Exception e){
+						waitForPageToLoadWebdriver();
+						String PaymentStatus = Runtimedataread(paymentstatus);
+						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus, PaymentStatus);
+					}
 				}
 			}
 			if(!backcloseprintsave.equals("")){

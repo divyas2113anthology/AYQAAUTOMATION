@@ -22,6 +22,7 @@ public class WC_Export_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Run Imports' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!selectname.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+selectname+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+selectname+"')]/preceding-sibling::td/input[@type='radio']", "Export Page");
 				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+selectname+"')]/preceding-sibling::td/input[@type='radio']");

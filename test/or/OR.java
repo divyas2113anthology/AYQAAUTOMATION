@@ -1028,7 +1028,8 @@ public static final String PA_UncheckExclude = "//input[@name='PrintEssays']";
 public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs']";
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
-public static final String PA_PageName = "//tr[@class='FormText']/td/font";  //successfully Updated
+//public static final String PA_PageName = "//tr[@class='FormText']/td/font[contains(text(),'";//successfully Updated
+public static final String PA_PageName = "//font[contains(text(),'";
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
@@ -1719,7 +1720,7 @@ public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
 //public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
-public static final String MQ_MultiSelectPaymentStatus = "//span[text()='TestApplicationPayment']";
+public static final String MQ_MultiSelectPaymentStatus = "//span[text()='Check all']";
 
 
 //#**********************************************************#
@@ -1939,6 +1940,7 @@ public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divA
 //#**********************************************************#
 public static final String EDT_Page = "//font[contains(text(),'Search Results')]";
 public static final String EDT_PaymentStatus = "//select[@name='syspmtStatus']";
+    public static final String EDT_PaymentStatusWaived = "//select[@name='pmtstatus']";
 public static final String EDT_VerifyPaymentStatus = "//select[@id='pmtstatus']//option[contains(text(),'";   //ManageQueries')]";
 public static final String EDT_ButtontoClick = "//img[contains(@src,'"; //close_window')]";
 public static final String EDT_PageName = "//td/font";

@@ -64,12 +64,16 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 			}
 			
 			if(!buttons.equals("")){
-				Reporter.log("Click the button as ["+buttons+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, SR_button+buttons+"')]", buttons);
-				clickWebdriverWithCoordinates(attributeName_xpath, SR_button+buttons+"')]");
-				
+				if(buttons.equalsIgnoreCase("Enrollments-DT fee")){
+					Reporter.log("Click the button as [" + buttons + "]");
+					waitForElementPresentWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']", buttons);
+					clickWebdriverWithCoordinates(attributeName_xpath, "//span[text()='Enrollments-DT fee']");
+				}else{
+					Reporter.log("Click the button as [" + buttons + "]");
+					waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
+					clickWebdriverWithCoordinates(attributeName_xpath, SR_button + buttons + "')]");
+				}
 			}
-			
 			if (!closeproceed.equals("")) {
 				Reporter.log("Click the button as ["+closeproceed+"]");				
 				if (closeproceed.equalsIgnoreCase("proceed to submission")) {

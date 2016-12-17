@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import or.OR;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -55,14 +56,25 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				Reporter.log("Enter Label");
 				String Label = labelName+Calendar.getInstance().getTimeInMillis();
 				sendKeys(attributeName_xpath,MCG_label,Label);
-				Runtimedatawrite(Label, label);
+				Runtimedatawrite(Label, labelName);
 				}
 
 			if (!label.equals("")) {
-				Reporter.log("Enter Label");
-				String Label = labelName+Calendar.getInstance().getTimeInMillis();
-				sendKeys(attributeName_xpath,MCG_label,Label);
-				Runtimedatawrite(Label, label);
+				try {
+					Reporter.log("Enter Label");
+					String Label = labelName + Calendar.getInstance().getTimeInMillis();
+					sendKeys(attributeName_xpath, MCG_label, Label);
+					Runtimedatawrite(Label, label);
+				}catch(Exception e){
+					Reporter.log("Rename Label");
+					System.out.println("Enter in edit label");
+					String LabelEdit =labelName + Calendar.getInstance().getTimeInMillis();
+					String label1 = Runtimedataread(label);
+					driver.findElement(By.xpath("//input[@value='"+label1+"']")).clear();
+					driver.findElement(By.xpath("//input[@value='"+label1+"']")).sendKeys(LabelEdit);
+					Runtimedatawrite(LabelEdit, label);
+					System.out.println("Write value in Excel sheet");
+				}
 			}
 			
 			if(!active.equals("")){		
@@ -71,12 +83,21 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				clickWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]");	
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
 			}
-			
-			if(!delete.equals("")){			
-				String Delete = Runtimedataread(delete);
-				waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]", Delete);
-				clickWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]");	
-				//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
+			if(!delete.equals("")) {
+				String[] data = delete.split(";");
+				String statusName = Runtimedataread(data[0]);
+				if (data[0].equalsIgnoreCase(data[0])) {
+					System.out.println("==");
+					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='"+statusName+"']/../..//input[@name='chkDelete']", data[1]);
+					clickWebdriver(attributeName_xpath, "//input[@value='"+statusName+"']/../..//input[@name='chkDelete']");
+
+				} else {
+					String Delete = Runtimedataread(data[1]);
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]", Delete);
+					clickWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]");
+					//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
+				}
 			}
 
 			if (!savecanceladdrow.equals("")) {

@@ -47,12 +47,21 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
 						//clickWebdriver(attributeName_linktext, SplitPackage[i]);
-						waitForPageToLoadWebdriver();
-						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitPackage[i]+"')]");
-						waitForPageToLoadWebdriver();
+						try {
+							waitForPageToLoadWebdriver();
+							clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + SplitPackage[i] + "')]");
+							waitForPageToLoadWebdriver();
+
+						}catch(Exception e){
+							clickWebdriver(attributeName_xpath,"//img[contains(@src,'plus')]");
+							waitForPageToLoadWebdriver();
+							clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + SplitPackage[i] + "')]");
+							waitForPageToLoadWebdriver();
+						}
 					}else{
 						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
+						waitForPageToLoadWebdriver();
 						PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
 						waitForPageToLoadWebdriver();
 						

@@ -1721,6 +1721,7 @@ public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
 //public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
 public static final String MQ_MultiSelectPaymentStatus = "//span[text()='Check all']";
+public static final String MQ1_MultiSelectPaymentStatus = "//input[@title='";
 
 
 //#**********************************************************#

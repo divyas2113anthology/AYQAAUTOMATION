@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Enrollment DT Fee' page")
@@ -25,10 +27,18 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			String paymentreceiveddate = testdata[4];
 			String backcloseprintsave = testdata[5];
 						
-			if(!verifypaymentstatus.equals("")){
-				Reporter.log("Verify("+verifypaymentstatus+")is present");
-				waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus);
-				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus, verifypaymentstatus+verifypaymentstatus+"')]", verifypaymentstatus);
+			if(!verifypaymentstatus.equals("")) {
+				if (verifypaymentstatus.equalsIgnoreCase("ManageQueries")) {
+					Reporter.log("Verify(" + verifypaymentstatus + ")is present");
+					String status = Runtimedataread("ManageQueries");
+					waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus + status + "')]", verifypaymentstatus);
+					verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+ status + "')]",status, verifypaymentstatus);
+
+				} else {
+					Reporter.log("Verify(" + verifypaymentstatus + ")is present");
+					waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus + verifypaymentstatus + "')]", verifypaymentstatus);
+					verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus, verifypaymentstatus + verifypaymentstatus + "')]", verifypaymentstatus);
+				}
 			}
 			if (!paymentstatus.equals("")) {
 				Reporter.log("Select the payment status as [" + paymentstatus + "]");
@@ -54,8 +64,11 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
+				Iterator<String> windowsname = driver.getWindowHandles().iterator();
+				String parentWindow =windowsname.next();
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
 				//recentPopupCloseWebdriver();
+				driver.switchTo().window(parentWindow);
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

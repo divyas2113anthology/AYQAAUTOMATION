@@ -26,10 +26,12 @@ public class WC_QueryDetails_Input extends CommonSeleniumActions implements OR {
 			*/
 			if(!queryname.equals("")){
 				Reporter.log("Enter the Query Name");
+				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, MQ_QueryName, queryname);
 				
 				
 			if(!description.equals("")){
+				waitForPageToLoadWebdriver();
 				Reporter.log("Enter the Description");
 				sendKeys(attributeName_xpath, MQ_QueryDescription, description);
 				

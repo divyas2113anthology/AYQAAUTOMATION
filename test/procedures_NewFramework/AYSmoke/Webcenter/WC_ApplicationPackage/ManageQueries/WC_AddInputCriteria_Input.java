@@ -75,11 +75,20 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 				waitForPageToLoadWebdriver();
 			}
 			if (!value.equals("")) {
+
 				if (value.equalsIgnoreCase("List")) {
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					System.out.println("Select the value");
 					waitForElementPresentWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus, "Value");
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus);
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				}
+				if(value.equalsIgnoreCase("ManageQueries")){
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
+					System.out.println("Select the value");
+					String managequery = Runtimedataread("ManageQueries");
+					waitForElementPresentWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']", "Value");
+					clickWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']");
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
 				else

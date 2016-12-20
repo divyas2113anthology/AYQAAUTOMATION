@@ -1,7 +1,11 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
+import java.io.IOException;
 import java.util.Calendar;
 
+import jxl.read.biff.BiffException;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 import or.OR;
 
 import org.openqa.selenium.By;
@@ -13,10 +17,10 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
-	
-	@Test(description="This Procedure is used to perform some operation in 'Manage Choice Groups' page")
-	
-	public void WC_EditStatusLabel_Input(){
+
+	@Test(description = "This Procedure is used to perform some operation in 'Manage Choice Groups' page")
+
+	public void WC_EditStatusLabel_Input() {
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Manage Choice Groups");
@@ -26,38 +30,38 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String statuscategory = testdata[2];
 			String labelName = testdata[3];
 			String label = testdata[4];
-			String active=testdata[5];
-			String delete=testdata[6];
-			String savecanceladdrow=testdata[7];
-			String addrow=testdata[8];
+			String active = testdata[5];
+			String delete = testdata[6];
+			String savecanceladdrow = testdata[7];
+			String addrow = testdata[8];
 			//switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmContent");
-			
+
 			if (!groupdescription.equals("")) {
 				Reporter.log("Enter Group Description");
-				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);	
+				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);
 			}
-			
+
 			if (!addrow.equals("")) {
 				Reporter.log("Create a new row");
 				waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
 				clickWebdriver(attributeName_xpath, MCG_AddRow);
-				
+
 			}
 			if (!statuscategory.equals("")) {
-				Reporter.log("Select ("+statuscategory+")from Status Category");
+				Reporter.log("Select (" + statuscategory + ")from Status Category");
 				String RowNumber = getTextWebdriver(attributeName_xpath, MCG_RowValue);
-				System.out.println("RowNumber is "+RowNumber);
-				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory+RowNumber+"')]", statuscategory);
+				System.out.println("RowNumber is " + RowNumber);
+				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory + RowNumber + "')]", statuscategory);
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
-			
+
 			if (!labelName.equals("")) {
 				Reporter.log("Enter Label");
-				String Label = labelName+Calendar.getInstance().getTimeInMillis();
-				sendKeys(attributeName_xpath,MCG_label,Label);
+				String Label = labelName + Calendar.getInstance().getTimeInMillis();
+				sendKeys(attributeName_xpath, MCG_label, Label);
 				Runtimedatawrite(Label, labelName);
-				}
+			}
 
 			if (!label.equals("")) {
 				try {
@@ -65,32 +69,43 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					String Label = labelName + Calendar.getInstance().getTimeInMillis();
 					sendKeys(attributeName_xpath, MCG_label, Label);
 					Runtimedatawrite(Label, label);
-				}catch(Exception e){
+				} catch (Exception e) {
 					Reporter.log("Rename Label");
 					System.out.println("Enter in edit label");
-					String LabelEdit =labelName + Calendar.getInstance().getTimeInMillis();
+					String LabelEdit = labelName + Calendar.getInstance().getTimeInMillis();
 					String label1 = Runtimedataread(label);
-					driver.findElement(By.xpath("//input[@value='"+label1+"']")).clear();
-					driver.findElement(By.xpath("//input[@value='"+label1+"']")).sendKeys(LabelEdit);
+					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
+					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
 					Runtimedatawrite(LabelEdit, label);
 					System.out.println("Write value in Excel sheet");
 				}
 			}
-			
-			if(!active.equals("")){		
-				String Active = Runtimedataread(active);
-				waitForElementPresentWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]", Active);
-				clickWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]");	
-				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
+
+			if (!active.equals("")) {
+				if (active.contains("Unactive")) {
+					String[] data = active.split(";");
+					String statusName = Runtimedataread(data[0]);
+					System.out.println("==");
+					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
+					clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
+					//input[@value='1482150971328']/../..//input[@name='chkActive']
+
+				} else {
+					String Active = Runtimedataread(active);
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_Active + Active + "']]/following-sibling::td[input[@type='checkbox']]", Active);
+					clickWebdriver(attributeName_xpath, MCG_Active + Active + "']]/following-sibling::td[input[@type='checkbox']]");
+					//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
+				}
 			}
-			if(!delete.equals("")) {
+			if (!delete.equals("")) {
 				String[] data = delete.split(";");
 				String statusName = Runtimedataread(data[0]);
 				if (data[0].equalsIgnoreCase(data[0])) {
 					System.out.println("==");
 					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
-					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='"+statusName+"']/../..//input[@name='chkDelete']", data[1]);
-					clickWebdriver(attributeName_xpath, "//input[@value='"+statusName+"']/../..//input[@name='chkDelete']");
+					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
+					clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']");
 
 				} else {
 					String Delete = Runtimedataread(data[1]);
@@ -101,19 +116,24 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			}
 
 			if (!savecanceladdrow.equals("")) {
-				Reporter.log("Check the Name of the Button as ["+savecanceladdrow+"]");
+				Reporter.log("Check the Name of the Button as [" + savecanceladdrow + "]");
 				if (savecanceladdrow.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
 					clickWebdriver(attributeName_xpath, AID_save_button);
 					waitForPageToLoadWebdriver();
-					}
+				}
 			}
-			switchToDefaultContentWebdriver();	
+			switchToDefaultContentWebdriver();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (RowsExceededException e) {
+			e.printStackTrace();
+		} catch (BiffException e) {
+			e.printStackTrace();
+		} catch (WriteException e) {
+			e.printStackTrace();
 		} catch (Exception e) {
-			writeFailure(e.getLocalizedMessage());
+			e.printStackTrace();
 		}
-		
 	}
-			
-			
 }

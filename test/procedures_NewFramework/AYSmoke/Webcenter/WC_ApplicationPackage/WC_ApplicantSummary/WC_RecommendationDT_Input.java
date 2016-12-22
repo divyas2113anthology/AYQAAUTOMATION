@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 import java.util.Iterator;
+import java.util.Set;
 
 public class WC_RecommendationDT_Input extends CommonSeleniumActions implements OR {
 	
@@ -58,7 +59,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 
 			//driver.switchTo().window(AppSummaryWindowName);
 			recentPopupSelectWebdriver("Popup Window");
-			
+
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

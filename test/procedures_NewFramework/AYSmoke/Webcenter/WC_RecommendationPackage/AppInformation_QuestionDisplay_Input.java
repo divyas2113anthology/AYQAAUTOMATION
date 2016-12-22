@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_RecommendationPackage;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,14 +24,15 @@ public class AppInformation_QuestionDisplay_Input extends CommonSeleniumActions 
 			if (!display_check.equals("")){
 				
 				waitForElementPresentWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]", display_check);
-				//clickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");	
-				doubleClickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");
+				clickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");
+				//doubleClickWebdriver(attributeName_xpath, AID_Display_Check+display_check+"')]]/following-sibling::td/font/input[contains(@type,'checkbox')]");
 
 			}
 
 			if (!label_text.equals("")){
 				
-				waitForElementPresentWebdriver(attributeName_xpath, AID_label_text, label_text);	
+				waitForElementPresentWebdriver(attributeName_xpath, AID_label_text, label_text);
+				driver.findElement(By.xpath(AID_label_text)).click();
 				sendKeys(attributeName_xpath, AID_label_text, label_text);		
 
 			}

@@ -156,7 +156,7 @@ public static final String BR_TargetValue = "//select[@name='TargetValue']";
 public static final String BR_TargetUrl = "//input[@name='TargetURL']";
 //public static final String BR_TargetEmail = "//select[@name='EmailId']";
 public static final String BR_TargetEmail = "EmailId";
-public static final String BR_Save = "//img[@name='imageAdd1']";
+public static final String BR_Save = "//img[@name='imageSave1']" ;//img[@name='imageAdd1']"//img[@name='imageAdd1']
 public static final String BR_Add = "//img[@name='imageAdd1']";
 public static final String BR_Buttons = "//img[contains(@src,'";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";

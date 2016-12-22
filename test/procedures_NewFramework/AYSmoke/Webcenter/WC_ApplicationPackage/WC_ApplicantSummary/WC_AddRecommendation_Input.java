@@ -106,7 +106,7 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Save , saveclose);   
 				clickWebdriver(attributeName_xpath, AR_Save);
 				recentPopupCloseWebdriver();
-								
+
 			}
 			
 			switchToDefaultContentWebdriver();

@@ -19,7 +19,7 @@ public class WC_RecommendationBatchUpdate_Verify extends CommonSeleniumActions i
 			
 			String[] testdata = datacontainer;
 			String pagename = testdata[0];
-						
+			System.out.println("=========="+pagename);
 			if(!pagename.equals("")){
 				Reporter.log("Verify its navigate to ("+pagename+") page");
 				waitForElementPresentWebdriver(attributeName_xpath, RSFBU_Pagename, pagename);

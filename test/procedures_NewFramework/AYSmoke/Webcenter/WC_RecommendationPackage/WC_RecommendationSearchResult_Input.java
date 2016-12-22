@@ -77,7 +77,6 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 				        System.out.println("no alert");
 				    }
 					waitForPageToLoadWebdriver();
-					
 					//driver.switchTo().alert().accept();
 				}
 			}

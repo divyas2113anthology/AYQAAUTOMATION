@@ -20,7 +20,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 
 	@Test(description = "This Procedure is used to perform some operation in 'Manage Choice Groups' page")
 
-	public void WC_EditStatusLabel_Input() {
+	public void WC_EditStatusLabel_Input() throws Exception {
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Manage Choice Groups");
@@ -84,13 +84,25 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			if (!active.equals("")) {
 				if (active.contains("Unactive")) {
 					String[] data = active.split(";");
-					String statusName = Runtimedataread(data[0]);
-					System.out.println("==");
-					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
-					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
-					clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
-					//input[@value='1482150971328']/../..//input[@name='chkActive']
-
+					try {
+						String statusName = Runtimedataread(data[0]);
+						System.out.println("==");
+						String check = driver.findElement(By.xpath("//input[@value='" + statusName + "']/../..//input[@name='chkActive']")).getAttribute("value");
+						if (check.equalsIgnoreCase("true")) {
+							//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+							waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
+							clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
+							//input[@value='1482150971328']/../..//input[@name='chkActive']
+						}
+					}catch(Exception e) {
+						String check = driver.findElement(By.xpath("//input[@value='" + active + "']/../..//input[@name='chkActive']")).getAttribute("value");
+						if (check.equalsIgnoreCase("true")) {
+							//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+							waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + active + "']/../..//input[@name='chkActive']", data[1]);
+							clickWebdriver(attributeName_xpath, "//input[@value='" + active + "']/../..//input[@name='chkActive']");
+							//input[@value='1482150971328']/../..//input[@name='chkActive']
+						}
+					}
 				} else {
 					String Active = Runtimedataread(active);
 					waitForElementPresentWebdriver(attributeName_xpath, MCG_Active + Active + "']]/following-sibling::td[input[@type='checkbox']]", Active);
@@ -101,17 +113,17 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			if (!delete.equals("")) {
 				String[] data = delete.split(";");
 				String statusName = Runtimedataread(data[0]);
-				if (data[0].equalsIgnoreCase(data[0])) {
+				if(data[0].equalsIgnoreCase("check")){
+					String Delete = Runtimedataread(data[1]);
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]", Delete);
+					clickWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]");
+					//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
+				}else{
 					System.out.println("==");
 					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
 					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
 					clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']");
 
-				} else {
-					String Delete = Runtimedataread(data[1]);
-					waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]", Delete);
-					clickWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]");
-					//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
 				}
 			}
 

@@ -43,8 +43,10 @@ public class WC_SearchforApplicants_Verify extends CommonSeleniumActions impleme
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 5 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+pagename+"')]", pagename, pagename);
+				//String Pagename = pagename.replaceAll("^\\s+|\\s+$", "");
+				String []splitname = pagename.split(":");
+				waitForElementPresentWebdriver(attributeName_xpath, SR_Page+splitname[0]+"')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SR_Page+splitname[0]+"')]", splitname[0], pagename);
 			
 				//waitForText(pagename, "Search Results");
 				/*waitForPageToLoadWebdriver();

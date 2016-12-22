@@ -29,6 +29,7 @@ public class WC_RecommendationSummary_Verify extends CommonSeleniumActions imple
 			if(!status.equals("")){
 				Reporter.log("Verify the status as ("+status+")");
 				waitForElementPresentWebdriver(attributeName_xpath, RS_Status, status);
+
 				verifyElementPresentWebdriver(attributeName_xpath, RS_Status, status);
 			}
 			} catch (Exception e) {

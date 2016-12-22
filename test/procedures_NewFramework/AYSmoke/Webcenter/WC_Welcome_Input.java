@@ -71,7 +71,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			}	
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 4 - Click the Name of the Link as ["+link_to_click+"]");				
-				if (link_to_click.equalsIgnoreCase("logout")) 
+				if (link_to_click.contains("logout"))
 				{
 					if(link_to_click.equalsIgnoreCase("logouttree"))
 					{

@@ -2203,20 +2203,23 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void recentPopupCloseWebdriver() throws Exception {
 		Reporter.log("Proceed to Close All Opened Pop Ups");	
 		//String mainwindow = driver.getWindowHandle();
-		driver.switchTo().window(mainwindow);
+
+		//	driver.switchTo().window(mainwindow);
+
 		//writeConsole("Webdriver Main Window["+mainwindow+"]");
 		//					 Set<String> popwindow = driver.getWindowHandles();	
 		//					 Iterator<String> it = popwindow.iterator();
 		Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		String parent = popwindow.next();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
 			//					 writeConsole("Webdriver Switch To Window["+window+"]");
 			//					 driver.switchTo().window(window);
-			if (!mainwindow.equals(window)) {
+			if (!parent.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
 				driver.switchTo().window(popwindow.next().toString());
 				closeWindowWebdriver();
-				driver.switchTo().window(mainwindow);	
+				driver.switchTo().window(parent);
 			}
 
 

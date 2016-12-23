@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -27,9 +28,17 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Click on ("+packagename+") Package");
 				writeConsole("I am in package level");
 //				waitForElementPresent(Applpackage+packagename+"']", packagename);
-				if(isDisplayedWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../../ul//h4[contains(text(),'Application Status: No')]")){
-				 clickWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../a");
+				if(isDisplayedWebdriver(attributeName_xpath,"//div/h3[contains(text(),'"+packagename+"')]/../a")){
+					clickWebdriver(attributeName_xpath,"//h3[text()='"+packagename+"']/parent::div/a");
+					//clickWebdriver(attributeName_xpath,".//*[@id='appList']/li[1]/div/a");
+					//driver.findElement(By.xpath("//h3[text()='"+packagename+"']/parent::div/a[text()=' View Application']")).click();
+					//ul[@id='appList']//li//div/h3[contains(text(),'Application for QA Automation')]/../a
 				}
+
+
+				/*if(isDisplayedWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../../ul//h4[contains(text(),'Application Status: No')]")){
+				 clickWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../a");
+				}*/
 				else{
 				 clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
 				}

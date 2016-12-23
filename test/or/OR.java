@@ -87,7 +87,7 @@ public static final String Continue = "//img[@alt='Continue']";
 //#**********************************************************#
 //#Applicant Welcome Page
 //#**********************************************************#
-public static final String Logoutmain ="//font[text()='";
+public static final String Logoutmain ="//a/li[text()='";
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
 public static final String Section ="//font[contains(text(),'";
@@ -351,7 +351,7 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//input[contains(@value,'Recommendation Provider List')]";
+public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List-DT')]";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";

@@ -49,10 +49,12 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
+				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, HM_WPassword, password);
 			}
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");
+				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, HM_WSignIn);
 				waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
 			}
@@ -121,6 +123,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			}
 			
 			if (!emailsubjectcontains.equals("")) {
+				waitForPageToLoadWebdriver();
 				String emailsubjectcontainsread = Runtimedataread(emailsubjectcontains);
 				writeConsole("Email Subject Contains:"+emailsubjectcontainsread);
 				writeConsole("aaaa");
@@ -128,7 +131,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				//public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
 				//selenium.waitForCondition("selenium.isElementPresent(\"//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]\")", "120000");
 				//selenium.waitForCondition("selenium.isElementPresent(\"//li[contains(@class,'leftnavitem')]//span[text()='Inbox']\")", "120000");
-				selenium.waitForCondition("selenium.isElementPresent(\"//div[@role='treeitem']//span[text()='Inbox']\")","120000");
+				//selenium.waitForCondition("selenium.isElementPresent(\"//div[@role='treeitem']//span[text()='Inbox']\")","120000");
+				waitForElementPresentWebdriver(attributeName_xpath,"//div[@role='treeitem']//span[text()='Inbox']","Wait For Inbox to display");
 				Reporter.log("Click on Inbox");
 				writeConsole("Click on Inbox");
 				//clickWebdriver(attributeName_partiallinktext, HM_Inbox);
@@ -139,12 +143,14 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
 						//if (selenium.isVisible("//div[@class='messageListContainer']")) {
-						if (selenium.isVisible("//div[@class='conductorContent']"))
+						//if (selenium.isVisible("//div[@class='conductorContent']"))
+						if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']"))
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								//if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
-						if (selenium.isVisible("//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]")){
+						//if (selenium.isVisible("//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]")){
+						if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]")){
 									writeConsole("2");
 									break;
 								}
@@ -152,8 +158,9 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 //						}
 					}
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]\")", "120000");
-				selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]\")", "120000");
-					//clickWebdriver(attributeName_xpath,"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]");
+				//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]\")", "120000");
+				waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]","Wait For Mali Subject");
+						//clickWebdriver(attributeName_xpath,"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]");
 				clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {
@@ -174,7 +181,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				//String recLink = recSplit[0]+"//uat"+recSplit[1];
 				get(recLink);
 				waitForPageToLoadWebdriver();*/
-				String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
+				//String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
+				String GetURL = driver.findElement(By.xpath("//div[@class='ReadMsgBody']")).getText();
 				System.out.println("Get Body Text: "+GetURL);
 				String urlmodify = null;
 				environment = Runtimedataread("Instance");
@@ -234,6 +242,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					}
 					urlmodify= OpenURL;
 					System.out.println("Get Url 7: "+urlmodify);
+					//click of URL
 					selenium.openWindow(urlmodify, "Recommendation Page");
 					//				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+urlcontainslink+"')]");
 					recentPopupSelectWebdriver("Create/Reset Password");
@@ -249,9 +258,15 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					//clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(.,'"+clicklinkcontains+"')]", clicklinkcontains, clicklinkcontains);
 					waitForPageToLoadWebdriver();
-				}else{
-				waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
-				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
+				}if(clicklinkcontains.contains("Unlock")){
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Update Information");
+				}
+				else{
+				waitForElementPresentWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+				clickWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Update Information");
 				//recentPopupSelect("Update Information");

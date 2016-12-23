@@ -105,6 +105,11 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				Reporter.log("Step 6 - Proceed to Click on ("+logout+") Link");
 				clickWebdriver(attributeName_xpath, RC_Resend);
 				waitForPageToLoadWebdriver();
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 			}
 		
 		} catch (Exception e) {

@@ -241,9 +241,12 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
 					Thread.sleep(1000);
 					waitForPageToLoadWebdriver();
+					try{
 					if(!isDisplayedWebdriver(attributeName_xpath, HC_Inbox)){
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
 						waitForPageToLoadWebdriver();
+					}}catch(Exception e){
+
 					}
 					//assign key board object
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();

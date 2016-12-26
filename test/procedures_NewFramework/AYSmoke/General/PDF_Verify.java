@@ -12,6 +12,7 @@ import or.OR;
 import processor.CommonSeleniumActions;
 
 import java.io.BufferedInputStream;
+import java.util.List;
 import java.util.Set;
 
 public class PDF_Verify extends CommonSeleniumActions implements OR {
@@ -42,6 +43,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 				//String[] Pdfwindows = new String[0];
 				Set<String> PdfWindows = driver.getWindowHandles();
 				int wintotal = PdfWindows.size();
+
 				wintotal = wintotal -1;
 				System.out.println("+++++++++++"+wintotal);
 				String[] Pdfwindows = PdfWindows.toArray(new String[PdfWindows.size()]);
@@ -59,8 +61,11 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 					System.out.println("Malik");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@class='textLayer']/div", "Wait for PDF Loading...");
 					try {
-						//exceptionMsg = selenium.getBodyText();//Issue in taking the content from PFD file opened
-						String  exceptionmsg = driver.findElement(By.xpath("//div[contains(@id,'pageContainer1')]//div[contains(@class,'textLayer')]//div[4]")).getText();
+				/*		//exceptionMsg = selenium.getBodyText();//Issue in taking the content from PFD file opened
+					//	String  exceptionmsg = driver.findElement(By.xpath("//div[@id='pageContainer1']/div[2]")).getAttribute("innerHTML");
+						String  exceptionmsg = driver.getPageSource("");
+						System.out.println("Page Source text  "+exceptionmsg);
+					//	String  exceptionmsg = driver.findElement(By.xpath("//div[contains(@id,'pageContainer1')]//div[contains(@class,'textLayer')]//div[4]")).getText();
 						//String exceptionmsg = driver.findElement(By.xpath("//div[contains(@class,'textLayer')]")).getText();
 						
 
@@ -68,7 +73,17 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 						//String exceptionmsg = driver.findElement(By.xpath("//div[@class='textLayer']//div[2]")).getText();
 						System.out.println("Exception is " + exceptionmsg);
 						//exceptionMsg = exceptionmsg.getText();
-						writeConsole("Pdf Getbody Text : "+exceptionmsg);
+						writeConsole("Pdf Getbody Text : "+exceptionmsg);*/
+						/*List<WebElement> pdfContent = driver.findElements(By.xpath("//html[@dir='ltr']//div[@id='viewerContainer']//div[@id='pageContainer1']//div[@class='textLayer']//div"));
+
+						for(WebElement eachDiv : pdfContent){
+							exceptionmsg += eachDiv.getText();
+						}*/
+
+						WebElement elementLocator = driver.findElement(By.xpath("//div[@id='viewerContainer']//div[@class='textLayer']"));
+
+						String exceptionmsg = elementLocator.getText();
+						System.out.println("====="+exceptionmsg);
 						if (!pdfcontainstext.equalsIgnoreCase("")) {
 							System.out.println("aaaa");
 							Reporter.log("Step 1 - Verify PDF Contains text");

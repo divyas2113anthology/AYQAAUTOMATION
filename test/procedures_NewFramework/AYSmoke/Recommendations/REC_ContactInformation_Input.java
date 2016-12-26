@@ -85,8 +85,10 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 			selectByValueWebdriver(attributeName_xpath, Country, country);
 		}
 		if (!uploaddocument.equals("")) {
+			waitForPageToLoadWebdriver();
 			Reporter.log("Step 12 -Click the Upload Doc button");
 			clickWebdriver(attributeName_xpath, CI_UploadDocBtn);
+			waitForPageToLoadWebdriver();
 			recentPopupSelectWebdriver("File Upload");
 		}
 		if (!gobacksavenext.equals("")) {

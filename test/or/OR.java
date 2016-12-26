@@ -1261,7 +1261,7 @@ public static final String SR_Page = "//font[contains(text(),'";
 //#**********************************************************#
 //# Recommendation Login Page
 //#**********************************************************#
-public static final String RL_PerAccessCode = "//input[@id='Pin']";
+public static final String RL_PerAccessCode = "//input[@id='ay-login']";
 public static final String RL_Password = "//input[@name='Password']";
 public static final String RL_ConfirmPass = "//input[@id='ConPassword']";
 public static final String RL_LoginBtn = "//input[@value='Login' or @alt='Login']";
@@ -1281,15 +1281,16 @@ public static final String CP_ConfirmPass = "//input[@id='conNewPassword']";
 //# Recommendation Facelift Page
 //#**********************************************************#
 
-public static final String RF_Password = "//input[@id='rec-password']";
+public static final String RF_Password = "//input[@id='Password']";
 public static final String RF_Cnf_Password = "//input[@id='ConPassword']";
-public static final String RF_Submit = "//input[@id='rec-loginSubmit']";
+public static final String RF_Submit = "//input[@id='rec-createSubmit']";
 public static final String RF_Welcome = "//div[@id='home']/h2[contains(text(),'";
 public static final String RF_Start_Rec = "//a[contains(text(),'Recommendations')]";
 public static final String RF_PAC = "//input[@id='rec-login']";
 public static final String RF_Rec_Password = "//input[@name='Password']";
 public static final String RF_Rec_Submit = "//input[@id='rec-loginSubmit']";
 public static final String RF_Forgot_Pwd = "//a[@id='forgotPass']";
+public static final String RF_Forgot_Msg = "//form[@name='frmSendPINs']//font";
 public static final String RF_Forgot_PAC = "//input[@id='recforgotPAC']";
 public static final String RF_Forgot_Email = "//input[@id='recforgotEmail']";
 public static final String RF_Forgot_Lname = "//input[@id='recforgotAppLN']";
@@ -1587,7 +1588,7 @@ public static final String IR_MessageContent = "//font[@class='FormHeading']";
 //#**********************************************************#
 public static final String FD_AddItem = "//img[@name='BtnAddField']";
 public static final String FD_InsertItem = "BtnInsertField";
-public static final String FD_RemoveItem = "BtnRemoveField";
+public static final String FD_RemoveItem = "BtnRemoveAll";
 public static final String FD_MoveUp = "BtnMoveUpField";
 public static final String FD_MoveDown = "BtnMoveDownField";
 public static final String FD_RemoveAll = "BtnRemoveAll";

@@ -264,6 +264,12 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					waitForPageToLoadWebdriver();
 					recentPopupSelectWebdriver("Update Information");
 				}
+				if(clicklinkcontains.contains("Click here to reset your password")){
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Update Information");
+				}
 				else{
 				waitForElementPresentWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 				clickWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]");
@@ -273,13 +279,21 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				}
 			}
 			if (!logout.equals("")) {
-				Reporter.log("Step  9 - Proceed to click on Logout Link");
-				clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
-				waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
-				clickWebdriver(attributeName_partiallinktext, "Sign out");
-				//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
-				driver.close();
+				if (logout.equalsIgnoreCase("Log out")) {
+					Reporter.log("Step  9 - Proceed to click on Logout Link");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
+					waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
+					clickWebdriver(attributeName_partiallinktext, "Sign out");
+				} else {
+					Reporter.log("Step  9 - Proceed to click on Logout Link");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
+					waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
+					clickWebdriver(attributeName_partiallinktext, "Sign out");
+					//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
+					driver.close();
+				}
 			}
+
 			} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
  			

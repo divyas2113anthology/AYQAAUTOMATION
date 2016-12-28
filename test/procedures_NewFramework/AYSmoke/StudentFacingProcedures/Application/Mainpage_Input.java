@@ -34,8 +34,6 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 					//driver.findElement(By.xpath("//h3[text()='"+packagename+"']/parent::div/a[text()=' View Application']")).click();
 					//ul[@id='appList']//li//div/h3[contains(text(),'Application for QA Automation')]/../a
 				}
-
-
 				/*if(isDisplayedWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../../ul//h4[contains(text(),'Application Status: No')]")){
 				 clickWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../a");
 				}*/

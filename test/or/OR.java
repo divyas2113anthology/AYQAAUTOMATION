@@ -210,7 +210,7 @@ public static final String HC_BodyFrame = "iframe";
 //#**********************************************************#
 //# Education Background Page - EB
 //#**********************************************************#
-public static final String EB_HighSchoolName = "//input[@id='q24552']";
+public static final String EB_HighSchoolName = "//input[@id='q24560']";
 public static final String EB_HighSchoolName_wait = "//input[@id='q24552' and @value!='']";
 public static final String EB_HighSchoolType = "//select[@id='s24553']";
 public static final String EB_CounselorName = "//input[@id='q24554']";
@@ -236,7 +236,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-public static final String EL_searchclose = "//img[@alt='";
+public static final String EL_searchclose = "//input[@value='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 
@@ -509,7 +509,7 @@ public static final String DB_MsgBtn = "css=#message";
 public static final String DB_DbBtn = "//a[contains(@class,'inverse')]";
 public static final String DB_ProfBtn = "css=#Profile";
 public static final String DB_TecSupportBtn = "#Techsupport.btn";
-public static final String DB_LogoutBtn = "//a[contains(text(),'Log Out')]";
+public static final String DB_LogoutBtn = "//a/li[contains(text(),'Log Out')]";
 //public static final String DB_QaAutomationStartButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text(),'Start Application')]";
 public static final String DB_QaAutomationStartButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
 //public static final String DB_QaAutomationEditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text(),'Edit Application')]";

@@ -28,6 +28,11 @@ public class Rec_Facelift_HomePage_Input extends CommonSeleniumActions implement
 				Reporter.log("Step 2 - Click on the link ["+start_Rec+"]");
 				clickWebdriver(attributeName_xpath, RF_Start_Rec);
 				waitForPageToLoadWebdriver();
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 			}
 		}catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

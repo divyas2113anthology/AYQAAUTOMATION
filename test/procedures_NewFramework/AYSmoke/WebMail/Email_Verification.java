@@ -2,6 +2,7 @@ package procedures_NewFramework.AYSmoke.WebMail;
 
 import static processor.CommonSeleniumActions.Runtimedataread;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.HasInputDevices;
 import org.openqa.selenium.interactions.Keyboard;
@@ -299,10 +300,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						for (int second = 0;; second++) {
 							if (second >= 60) writeFailure(" Timeout after 1 minute..");
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
-							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+							waitForElementPresentWebdriver(attributeName_xpath,"//span[text()='Inbox']" , "Inbox"); //HC_Inbox
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
-							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
+							clickWebdriver(attributeName_xpath, "//span[text()='Inbox']");//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']
 							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
 							//waitForPageToLoadWebdriver();
@@ -311,8 +312,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							int mail;
 							for (mail = 2; mail < 7; mail++) {
 								try {
-									String xpathForMailSubject = "//div[@tabindex='0']//div[@aria-label='Mail list']//div//div[2]//div[" + mail + "]//div[2]//span[contains(text(),'" + emailsubjectcontains + "')]";
+									String xpathForMailSubject = "//div[@aria-label='Mail list']//div//div[2]//div[" + mail + "]//div[2]//span[contains(text(),'" + emailsubjectcontains + "')]";
 									//waitForElementPresentWebdriver(attributeName_xpath, xpathForMailSubject,"Send Email");
+								//	String subjectName = driver.findElement(By.xpath("xpathForMailSubject")).getText();
+									//System.out.println("===="+subjectName);
 									if (isDisplayedWebdriver(attributeName_xpath, xpathForMailSubject)) {
 										//doubleClickWebdriver(attributeName_xpath, xpathForMailSubject);
 										clickWebdriver(attributeName_xpath, xpathForMailSubject);

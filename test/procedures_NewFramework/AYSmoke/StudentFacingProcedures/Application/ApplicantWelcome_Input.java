@@ -62,6 +62,8 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!applicantsection.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Applicant Section ("+applicantsection+") Link");
+				waitForPageToLoadWebdriver();
+				switchToDefaultContentWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, Section+applicantsection+"')]", applicantsection);
 				clickWebdriver(attributeName_xpath, Section+applicantsection+"')]");
 				//click(Section+applicantsection+"')]");
@@ -74,8 +76,8 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				clickWebdriver(attributeName_xpath,"//li[contains(@id,'helpfulHints')]/a");
 				clickWebdriver(attributeName_xpath,"//li/a[contains(text(),'"+helpfulhints+"')]");
 				//recentPopupSelectWebdriver(helpfulhints);
-				switchToDefaultContentWebdriver();
-				String temp = driver.getTitle();
+				//switchToDefaultContentWebdriver();
+				//String temp = driver.getTitle();
 				driver.findElement(By.xpath("//div[@class='modal-header']/h3")).getText();
 			}
 			if (!print.equals("")) {

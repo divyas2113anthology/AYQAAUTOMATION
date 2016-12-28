@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -46,9 +47,12 @@ public class FC_PersonalInformationForm_Verify extends CommonSeleniumActions	imp
 				Reporter.log("Step 3 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
 //				String addrwaitID = getElementIDbyLabel("Address Line1", PII_AddressLine1_wait);
 //				waitForConditionisElementPresent(addrwaitID, "60000");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, PII_AddressLine1, "Address Lookup");
-				String addrID1 = getElementIDbyLabel("Address Line1", PII_AddressLine1);			
-				String line1 = getValueWebdriver(attributeName_xpath,addrID1);
+			//	String addrID1 = getElementIDbyLabel("Address Line1", PII_AddressLine1);
+				String addrID1 =driver.findElement(By.xpath("//input[@id='q24503_hq' and @type='hidden']")).getAttribute("value");
+				String line1 = addrID1;
+			//	String line1 = getValueWebdriver(attributeName_xpath,addrID1);
 				if (line1.equals(pivaddressline1)) {
 					Reporter.log("Data("+line1+") was displayed correctly in the [Address Line1] Field");				
 				} else {

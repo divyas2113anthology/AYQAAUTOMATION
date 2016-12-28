@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 	
 
@@ -54,9 +56,12 @@ public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 			if (!avssearch.equals("")) {
 				Reporter.log("Step 6 - Click on ("+avssearch+") Button");
 				if (avssearch.equalsIgnoreCase("search")) {
+					Iterator<String> popwindow = driver.getWindowHandles().iterator();
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
+					String parentWindow = popwindow.next();
+					driver.switchTo().window(parentWindow);
 					//selectMainWindowWebdriver();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");

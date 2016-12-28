@@ -80,10 +80,21 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 							exceptionmsg += eachDiv.getText();
 						}*/
 
-						WebElement elementLocator = driver.findElement(By.xpath("//div[@id='viewerContainer']//div[@class='textLayer']"));
+						List<WebElement> elementLocator = driver.findElements(By.xpath("//div[@id='viewerContainer']//div[@class='textLayer']//div"));
+						String exceptionmsg = ""; //= elementLocator.getText();
 
-						String exceptionmsg = elementLocator.getText();
+						for(int i =1;i<elementLocator.size();i++){
+							String element = elementLocator.get(i).getText();
+							Reporter.log("Actual text = "+element);
+							System.out.println(""+element);
+							String actualmessage[]=null;
+							actualmessage[i] = element;
+						}
+
+
+
 						System.out.println("====="+exceptionmsg);
+
 						if (!pdfcontainstext.equalsIgnoreCase("")) {
 							System.out.println("aaaa");
 							Reporter.log("Step 1 - Verify PDF Contains text");

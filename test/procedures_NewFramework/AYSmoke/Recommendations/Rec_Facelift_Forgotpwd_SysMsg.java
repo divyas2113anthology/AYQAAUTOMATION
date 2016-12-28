@@ -29,7 +29,8 @@ public class Rec_Facelift_Forgotpwd_SysMsg extends CommonSeleniumActions impleme
 			waitForElementPresentVerifyContainsTextWebdriver(attributeName_xpath, RF_Forgot_Msg, Forgot_SysMsg, Forgot_SysMsg);
 		}
 		if(!CloseMsg.equals("")){
-			recentPopupClose();
+			driver.findElement(By.xpath("//button[@id='modalClose']")).click();
+			driver.close();
 			driver.switchTo().window(parent);
 		}
 		} catch (Exception e) {			

@@ -2042,6 +2042,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		driver.switchTo().window(mainwindow);
 	}
+	public void selectMainWindowWebdriver(String parent){
+		writeConsole("Webdriver Main Window["+parent+"]");
+		driver.switchTo().window(parent);
+	}
 
 	// This Function is used to Wait till Window or Popup opens.
 	public void waitForPopupWebdriver() throws Exception {
@@ -2217,7 +2221,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			//					 driver.switchTo().window(window);
 			if (!parent.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(popwindow.next().toString());
+				driver.switchTo().window(window);
 				closeWindowWebdriver();
 				driver.switchTo().window(parent);
 			}

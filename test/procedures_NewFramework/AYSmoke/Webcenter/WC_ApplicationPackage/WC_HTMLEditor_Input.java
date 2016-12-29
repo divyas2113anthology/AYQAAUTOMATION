@@ -1,6 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
 import java.util.Calendar;
+import java.util.Iterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,11 +16,12 @@ import processor.CommonSeleniumActions;
 public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 	public static String GetHTML;
 
-
 	@Test(description="This Procedure is used to perform some operation in 'HTML Editor' page")
 	public void WC_HTMLEditor_Input(){
 		try {
 			writeDetails();
+			Iterator<String> windows = driver.getWindowHandles().iterator();
+			String parent = windows.next();
 			Reporter.log("Proceed to retrieve Input Test Data for 'HTML Editor' Page");
 			String[] testdata = datacontainer;
 			String textarea = testdata[0];
@@ -33,11 +35,16 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 				/* WebElement frame = driver.findElement(By.tagName("iframe"));
 				 driver.switchTo().frame(frame);*/
 				//recentOpenedPopupSelectWebdriver("HTML");
-				switchToDefaultContentWebdriver();
-				 WebElement elem = driver.findElement(By.xpath("//body/h2"));
-		         elem.click();
-		         Thread.sleep(10000L);
-		         elem.sendKeys(lastname);
+				System.out.println("==="+parent);
+				System.out.println("====Main window"+mainwindow);
+				recentOpenedPopupSelectWebdriver(parent);
+			//	recentOpenedPopupSelectWebdriver(mainwindow);
+				//switchToDefaultContentWebdriver();
+				clickWebdriver(attributeName_xpath,"//span[text()='HTML']");
+				//driver.switchTo().frame("ctlRAD_contentIframe");
+				 WebElement elem = driver.findElement(By.xpath("//td/textarea[2]"));
+		     //    elem.click();
+		         elem.sendKeys("<h3>"+lastname+"</h3>");
 		         Runtimedatawrite(lastname, textarea);
 	            //switchToDefaultContentWebdriver();
 			}
@@ -59,7 +66,7 @@ public class WC_HTMLEditor_Input extends CommonSeleniumActions implements OR {
 				}else if (button.equalsIgnoreCase("Update")) {
 					clickWebdriver(attributeName_id, "btnSubmit");
 //					waitForPageToLoadWebdriver();
-					selectMainWindowWebdriver();
+					selectMainWindowWebdriver(parent);
 				}
 			}
 		} catch (Exception e) {

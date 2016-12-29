@@ -116,7 +116,7 @@ public static final String countinuebtn = "//img[contains(@src,'continue_small')
 //#**********************************************************#
 public static final String Applpackage = "//a[contains(text(),'";
 public static final String eventpackage = "//a[text()='";
-public static final String enrollpackage = "//b[text()='";
+public static final String enrollpackage = "//a[text()='";
 //#**********************************************************#
 //# NetPay Page - NP
 //#*********************************************************#
@@ -1442,7 +1442,7 @@ public static final String EPI_FstName = "//input[@id='q24474']";
 public static final String EPI_LstName = "//input[@id='q24475']";
 public static final String EPI_SayNo = "//input[@id='q24476']";
 public static final String EPI_LiveIn = "//select[@id='s29464']";
-public static final String EPI_ProToSubBtn = "//img[@alt='proceed to submission']";
+public static final String EPI_ProToSubBtn = "//a[text()='Proceed to Submission']";
 public static final String EPI_ResetBtn = "//img[@alt='Reset']";
 
 //Enrollment - Search or Students
@@ -1456,7 +1456,7 @@ public static final String EFP_ReturnEnrollBtn = "//img[@alt='return to enrollme
 public static final String EFP_PayAndContinue = "//*[@alt='pay and continue' or @name='PayButton']";
 //public static final String EFP_SubmitEnrollmentBtn = "//img[@alt='submit enrollment']";
 public static final String EFP_SubmitEnrollmentBtn = "//*[@alt='submit enrollment' or @id='ay-recSubmit']";
-public static final String EFP_PrintBtn = "//img[@alt='print this paget']";
+public static final String EFP_PrintBtn = "//a[contains(text(),'Print')]";
 public static final String EFP_CloseWindowBtn = "//img[@alt='close window']";
 //#**********************************************************#
 //#	 Webcenter - Add Import Template - Page

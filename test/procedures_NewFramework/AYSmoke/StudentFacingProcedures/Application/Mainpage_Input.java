@@ -66,7 +66,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath, enrollpackage+enrollment+"']", enrollment);
 				clickWebdriver(attributeName_xpath, enrollpackage+enrollment+"']");
 				waitForPageToLoadWebdriver();
-				recentPopupSelectWebdriver("Enrollment");
+			//	recentPopupSelectWebdriver("Enrollment");
 				
 			}
 			if (!link_to_click.equalsIgnoreCase("")) {

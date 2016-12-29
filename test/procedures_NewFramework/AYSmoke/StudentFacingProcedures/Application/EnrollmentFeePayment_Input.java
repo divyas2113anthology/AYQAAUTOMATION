@@ -28,6 +28,7 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 				
 				if (!paymentmethod.equals("")) {
 					Reporter.log("Step 1 - Select the Payment Method as ("+paymentmethod+")");
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']", paymentmethod);
 					clickWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']");
 				}	

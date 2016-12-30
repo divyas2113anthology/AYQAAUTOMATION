@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import com.google.common.collect.Iterators;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -74,14 +75,14 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 			Iterator<String> popwindow = driver.getWindowHandles().iterator();
 			clickWebdriver(attributeName_xpath, AL_Submit);
 			writeConsole("Submit");
+			String parent = popwindow.next();
+			driver.switchTo().window(parent);
 //			waitForPageToLoadWebdriver();
 			//if (isElementPresentWebdriver(attributeName_xpath,AL_AddressLink)) {
 			//	clickWebdriver(attributeName_xpath, AL_AddressLink);
 			//}
 //			waitForElementPresentWebdriver(attributeName_xpath, "//img[@alt='Processing']", "Processing");
 //			waitForPageToLoadWebdriver();
-			String parentWindow = popwindow.next();
-			driver.switchTo().window(parentWindow);
 		}
 
 		//selectMainWindowWebdriver();

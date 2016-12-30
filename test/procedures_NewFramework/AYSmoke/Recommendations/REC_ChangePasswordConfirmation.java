@@ -24,15 +24,20 @@ public class REC_ChangePasswordConfirmation extends CommonSeleniumActions implem
 			if (!cpmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+cpmessage+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, CP_Message, cpmessage);
-				verifyElementContainsTextWebdriver(attributeName_xpath, CP_Message, cpmessage, "Confirmation Message");
+ 				verifyElementContainsTextWebdriver(attributeName_xpath, CP_Message, cpmessage, "Confirmation Message");
 			}
 			if (!cppagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+cppagename+") page");
 				verifyElementTextWebdriver(attributeName_xpath,PSD_PageName, cppagename, "Page Name");
 			}
 			if (!cpcontinue.equals("")) {
-				Reporter.log("Step 3 - Click on continue button");
-				clickWebdriver(attributeName_xpath, CP_Continue);
+				if(cpcontinue.equalsIgnoreCase("Close")){
+					Reporter.log("Step 3 - Click on close button");
+					clickWebdriver(attributeName_xpath,"//button[@id='modalClose']");
+				}else {
+					Reporter.log("Step 3 - Click on continue button");
+					clickWebdriver(attributeName_xpath, CP_Continue);
+				}
 			}
 			
 		} catch (Exception e) {

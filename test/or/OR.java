@@ -236,7 +236,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-public static final String EL_searchclose = "//input[@value='";
+public static final String EL_searchclose = "//img[@alt='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 
@@ -1272,7 +1272,8 @@ public static final String GS_NextBtn = "//img[@alt='next']";
 public static final String CP_Goback = "//img[@alt='Bo Back']";
 public static final String CP_Update = "//input[@alt='update']";
 public static final String CP_Continue = "//img[@alt='Continue']";
-public static final String CP_Message = "//table[not(@id)]//td[@class='BasePageFont']";
+public static final String CP_Message = "//h4[contains(text(),'Password Confirmation')]//following-sibling::p";
+    // div[@id='rec-create-box']//p";
 public static final String CP_CurrentPass = "//input[@id='oldPassword']";
 public static final String CP_NewPass = "//input[@id='newPassword']";
 public static final String CP_ConfirmPass = "//input[@id='conNewPassword']";

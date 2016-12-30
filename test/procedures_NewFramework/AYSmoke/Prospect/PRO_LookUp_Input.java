@@ -6,12 +6,16 @@ import org.testng.annotations.Test;
 import or.OR;
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class PRO_LookUp_Input extends CommonSeleniumActions implements OR {
 	
 
 	@Test(description="This Procedure is to perform some Operation in 'LookUp' page")
 	public void PRO_LookUp_Input() throws Exception{
 		try {
+			Iterator<String> window = driver.getWindowHandles().iterator();
+			String parent = window.next();
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'LookUp' page");
 			String[]  lookupidatarepo = datacontainer;
@@ -55,10 +59,10 @@ public class PRO_LookUp_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
-					selectMainWindowWebdriver();
+					selectMainWindowWebdriver(parent);
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
-					selectMainWindowWebdriver();
+					selectMainWindowWebdriver(parent);
 				}
 			}
 			

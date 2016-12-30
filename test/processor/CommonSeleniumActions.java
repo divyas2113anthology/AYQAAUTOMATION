@@ -220,7 +220,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		//String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@for"); // Getting Dynamic ID
 		//WebElement elementID =driver.findElementByXPath("//label[text()='"+Label+"']/@for").getAttribute("for");
-		WebElement ele=driver.findElementByXPath("//label[text()='"+Label+"']");
+		//WebElement ele=driver.findElementByXPath("//label[text()='"+Label+"']");
+		WebElement ele = driver.findElement(By.xpath("//label[text()='"+Label+"']"));
 		String elementID=ele.getAttribute("for");
 		System.out.println(elementID);
 
@@ -251,7 +252,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		/*writeConsole("getAttribute[//label[contains(text(),\""+LabelContains+"\")]/@for]");
 		String elementID = selenium.getAttribute("//label[contains(text(),\""+LabelContains+"\")]/@for"); // Getting Dynamic ID
 */
-		WebElement ele=driver.findElementByXPath("//label[text()='"+LabelContains+"']");
+		//WebElement ele=driver.findElementByXPath("//label[text()='"+LabelContains+"']");
+		WebElement ele = driver.findElement(By.xpath("//label[contains(text(),'"+LabelContains+"')]"));
 		String elementID1=ele.getAttribute("for");
 		System.out.println(elementID1);
 		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID

@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -36,10 +37,11 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			if (!choosefile.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+choosefile+"]");
 				waitForElementPresentWebdriverWait(attributeName_name, "attfile", choosefile);
-				clickWebdriver(attributeName_name, "attfile");
+				//clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
 				Thread.sleep(1000);
-				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
+				driver.findElement(By.name("attfile")).sendKeys("C:/SeleniumScripts/AYQAAutomation/SourceFile/Application/UploadDocument/ImportForSmokeTest.txt");
+				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 				waitForPageToLoadWebdriver();
 				
 				//clickWebdriver(attributeName_name, "attfile");

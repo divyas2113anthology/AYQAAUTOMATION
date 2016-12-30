@@ -36,8 +36,9 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 			String lookupsubmitreset = personalinfoidatarepo[16];
 			Reporter.log("Input Test Data was retrieved for 'Personal Information' page");
 			if (!firstname.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Enter First Name as ("+firstname+")");
-				String fNameID = getElementIDbyLabelContains("First Name",IR_PI_FirstName);				
+				String fNameID = getElementIDbyLabelContains("First Name",IR_PI_FirstName);
 				sendKeys(attributeName_xpath,fNameID, firstname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!lastname.equals("")) {
@@ -122,6 +123,7 @@ public class PRO_InformationRequest_Input extends CommonSeleniumActions implemen
 					clickWebdriver(attributeName_name, IR_LookupBtn);
 					recentPopupSelectWebdriver("Address Lookup");
 				}else if (lookupsubmitreset.equalsIgnoreCase("Submit")) {
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, IR_SubmitBtn, lookupsubmitreset);
 					clickWebdriver(attributeName_xpath, IR_SubmitBtn);
 					waitForPageToLoadWebdriver();

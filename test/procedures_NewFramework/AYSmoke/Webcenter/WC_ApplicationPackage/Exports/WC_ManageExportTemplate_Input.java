@@ -30,7 +30,7 @@ public class WC_ManageExportTemplate_Input extends CommonSeleniumActions impleme
 			}			
 			if (!clicktemplatename.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clicktemplatename+"]");
-				clicktemplatename = Runtimedataread("ExportTemplate");
+				clicktemplatename = Runtimedataread("Expt");
 				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicktemplatename+"')]");
 			}
 			if (!button.equals("")) {

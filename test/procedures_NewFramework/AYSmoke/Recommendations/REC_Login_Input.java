@@ -28,9 +28,14 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 			} else {
 				generatepin = pac;					
 			}
+			waitForPageToLoadWebdriver();
 			Reporter.log("Proceed to Enter PAC as ("+generatepin+")");
+			try{
 			sendKeys(attributeName_xpath, RL_PerAccessCode, generatepin);	
-//			String generatepin = Runtimedataread(pac);
+			}catch(Exception e){
+				sendKeys(attributeName_xpath,"//input[@id='rec-login']",generatepin);
+			}
+// String generatepin = Runtimedataread(pac);
 //			Reporter.log("Proceed to Enter PIN as ("+pac+")");
 //			sendKeys(attributeName_xpath, RL_PerAccessCode, generatepin);			
 		}

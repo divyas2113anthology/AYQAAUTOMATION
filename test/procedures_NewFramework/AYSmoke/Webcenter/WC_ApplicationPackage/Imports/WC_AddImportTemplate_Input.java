@@ -1,15 +1,14 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements OR {
 	
@@ -107,7 +106,13 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 				} else if (click.equals("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
 				}else if (click.equalsIgnoreCase("Field Definitions")) {
+
 					clickWebdriver(attributeName_xpath, AE_FieldDefBtn);
+					waitForPageToLoadWebdriver();
+					//switchToFrameNameIdWebdriver("//iframe[@name='frameActions']");
+					switchToFrameIndexWebdriver(1);
+					clickWebdriver(attributeName_xpath,"//img[@name='BtnRemoveAll']");
+					switchToDefaultContentWebdriver();
 					waitForPageToLoadWebdriver();
 				}
 			}

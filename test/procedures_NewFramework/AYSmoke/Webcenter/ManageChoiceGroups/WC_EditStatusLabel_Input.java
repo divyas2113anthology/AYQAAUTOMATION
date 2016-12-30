@@ -25,8 +25,8 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String delete=testdata[6];
 			String savecanceladdrow=testdata[7];
 			String addrow=testdata[8];
-			switchToDefaultContentWebdriver();
-			switchToFrameNameIdWebdriver("frmContent");
+			//switchToDefaultContentWebdriver();
+			//switchToFrameNameIdWebdriver("frmContent");
 			
 			if (!groupdescription.equals("")) {
 				Reporter.log("Enter Group Description");
@@ -41,7 +41,9 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			}
 			if (!statuscategory.equals("")) {
 				Reporter.log("Select ("+statuscategory+")from Status Category");
-				String RowNumber = getTextWebdriver(attributeName_xpath, MCG_RowValue);
+				//String RowNumber = getTextWebdriver(attributeName_xpath, MCG_RowValue);
+
+				String RowNumber = getTextWebdriver(attributeName_xpath, "//td[input[@name='txtStatusCategory' and @value='']]/preceding-sibling::td");
 				System.out.println("RowNumber is "+RowNumber);
 				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory+RowNumber+"')]", statuscategory);
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
@@ -55,9 +57,12 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				}
 			
 			if(!active.equals("")){		
-				String Active = Runtimedataread(active);
-				waitForElementPresentWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]", Active);
-				clickWebdriver(attributeName_xpath, MCG_Active+Active+"']]/following-sibling::td[input[@type='checkbox']]");	
+				//String Active = Runtimedataread(active);
+				/*waitForElementPresentWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]", active);
+				clickWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]");*/
+				waitForElementPresentWebdriver(attributeName_xpath, "//input[contains(@onclick,'16')]", active);
+				clickWebdriver(attributeName_xpath, "//input[contains(@onclick,'16')]");
+
 				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
 			}
 			
@@ -74,9 +79,11 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
 					clickWebdriver(attributeName_xpath, AID_save_button);
 					waitForPageToLoadWebdriver();
+					Thread.sleep(5000);
+					//driver.switchTo().frame(0);
 					}
 			}
-		     switchToDefaultContentWebdriver();
+		     //switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

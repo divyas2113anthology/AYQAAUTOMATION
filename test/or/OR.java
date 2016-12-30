@@ -35,7 +35,7 @@ public static final String Login = "//*[@id='ay-loginSubmit']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
-public static final String CreateAccount = "//img[@alt='create account']";
+public static final String CreateAccount = "//a[@id='CreateAccountLink']";
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
@@ -162,7 +162,7 @@ public static final String BR_Add = "//img[@name='imageSave1']";
 public static final String BR_Buttons = "//img[contains(@src,'";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
 public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
-public static final String BR_StatusGrey = "//select[@id='DocStatusID' and contains(@style,'Grey')]";
+public static final String BR_StatusGrey = "//select[@id='DocStatusID']";
 public static final String BR_VerifyStatus = "//select[@id='DocStatusID']/option[contains(text(),'";  //Waived')]";
 public static final String BR_FilterName = "//a[contains(text(),'";    //TestFilter')]";
 //public static final String BR_VerifyStatus = "//option[contains(@style,'Grey') and [not(contains(text(),'"; 
@@ -407,7 +407,7 @@ public static final String WCL_privilagesassigned = "";
 public static final String WCL_privilagesnotassigned = "";
 public static final String WCL_statusreportschedule = "";
 public static final String WCL_raaccountassigned = "";
-public static final String WCL_Savebutton = "//img[contains(@src,'admin_save_small')]";
+public static final String WCL_Savebutton = "//img[contains(@src,'save')]";
 public static final String WCL_Cancelbutton = "//img[@alt,'cancel']";
 //public static final String WCL_userid = "";
 //public static final String WCL_userid = "";
@@ -550,11 +550,11 @@ public static final String AW_CheckAppBtn = "//font[text()='Check Your Applicati
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
 public static final String AW_ConformationCheck = "css=#checkbox";
 public static final String AW_ContinueBtn = "css=#ay-recSubmit";
-public static final String AW_DomesticRadio = "css=#AppFeeAmount1";
+public static final String AW_DomesticRadio = "//*[@id='AppFeeAmount1']";
 public static final String AW_InternationalRadio = "css=#AppFeeAmount2";
 public static final String AW_CheckRadio = "//input[@id='ptCheck1']";
-public static final String AW_FeeWaiverRadio = "css=#ptWaiver1";
-public static final String AW_CreditCardRadio = "css=#ptCreditCard";
+public static final String AW_FeeWaiverRadio = "//*[@id='ptWaiver1']";
+public static final String AW_CreditCardRadio = "//*[@id='ptCreditCard']";
 public static final String AW_PayContinueBtn = "//input[@name='PayButton']";
 public static final String FS_FullName = "css=#eSignName";
 public static final String FS_Date = "css=#esignDate";
@@ -1068,8 +1068,8 @@ public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
-public static final String AS_ViewApplication = "";
-public static final String AS_ViewRecommendation = "";
+public static final String AS_ViewApplication = "//span[text()='view application']";
+public static final String AS_ViewRecommendation = "//span[text()='view Recommendation-']";
 public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";
 public static final String AS_ViewCommentCheck = "//td[a[contains(text(),'";
 public static final String AS_ViewCommentCheck1 = "')]]/preceding-sibling::td[input[@name='CommentID']]";
@@ -1718,7 +1718,7 @@ public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
 //public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
-public static final String MQ_MultiSelectPaymentStatus = "//span[text()='TestApplicationPayment']";
+public static final String MQ_MultiSelectPaymentStatus = "//span[text()='ManageQueries']";
 
 
 //#**********************************************************#
@@ -1915,7 +1915,7 @@ public static final String AR_SearhResult = "//div[contains(@class,'alert-info')
 //# Webcenter - Manage Choice Groups - MCG
 //#**********************************************************#
 public static final String MCG_Package = "//img[contains(@src,'";   //publish_prod_large')]"
-public static final String MCG_ConfigureStatusLabel = "//a[contains(text(),'";   //'Enrollment-DT')]";
+public static final String MCG_ConfigureStatusLabel = "//td/font/a[contains(text(),'";   //'Enrollment-DT')]"
 public static final String MCG_groupdescription = "//textarea[@name='txtSplChoiceGroupDescription']";
 public static final String MCG_StatusCategory= "//select[@name='StatusCategory' and contains(@onchange,'";
 public static final String MCG_label = "//input[@name='txtLabel' and @value='']";
@@ -1931,7 +1931,8 @@ public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelected
 //# Webcenter - Enrollment - ER
 //#**********************************************************#
 public static final String ER_linktoclick = "//a[contains(text(),'"; //Enrollment-DT Module Home')]";
-public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divAyConfirmation']/font[contains(text(),'";
+//public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divAyConfirmation']/font[contains(text(),'";
+public static final String AY_ConfigureStatusConfirmationText = "//*[@id='divAyConfirmation']/font";
 
 //#**********************************************************#
 //# Webcenter - Enrollment DT Fee - ER
@@ -2064,14 +2065,14 @@ public static final String SR_PageName="//form[@name='frm";
 public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
 public static final String SR_Instructions="//div[@id='AYInstructions']";
 public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
-public static final String SR_button="//img[contains(@src,'";
+public static final String SR_button="//span[contains(text(),'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[contains(@id,'SectionInput')]";
 public static final String SR_field="//select[contains(@name,'txtField')]";
 public static final String SR_operator="//select[@name='txtOperator0']";
 public static final String SR_value_No="//input[@value='N']";
-public static final String SR_value_Yes="//input[@value='Y']";
+public static final String SR_value_Yes="//font[text()='Yes']";
 public static final String SR_RuleName="//td[a[contains(text(),'";
 public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
 

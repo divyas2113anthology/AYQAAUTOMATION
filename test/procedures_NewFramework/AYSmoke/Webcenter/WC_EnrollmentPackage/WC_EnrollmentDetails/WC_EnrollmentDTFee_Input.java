@@ -28,7 +28,7 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			if(!verifypaymentstatus.equals("")){
 				Reporter.log("Verify("+verifypaymentstatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus);
-				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus, verifypaymentstatus+verifypaymentstatus+"')]", verifypaymentstatus);
+				verifyElementContainsTextWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus, verifypaymentstatus);
 			}
 			if (!paymentstatus.equals("")) {
 				Reporter.log("Select the payment status as ["+paymentstatus+"]");
@@ -36,8 +36,9 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
-				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				recentPopupCloseWebdriver();
+				//clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
+				switchToOldWindow();
+
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

@@ -139,6 +139,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				for (int i = 0; i < splitsupport.length; i++) {
 					//waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
 					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
+					//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
+					Thread.sleep(10000);
 					recentPopupSelectWebdriver("Application Fee");
 					waitForPageToLoadWebdriver();
 
@@ -177,21 +179,21 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				if (buttons.equalsIgnoreCase("Save")) 
 				{
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
-
+					switchToOldWindow();
 					waitForPageToLoadWebdriver();
-					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
-					Thread.sleep(10000);
+					//waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 
 				}else if (buttons.equalsIgnoreCase("Close Window"))
 				{
-					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+					//waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");
 
-					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					//clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//driver.manage().deleteAllCookies();
-					driver.switchTo().window(ApplicationPage);
+					switchToOldWindow();
+					//driver.switchTo().window(ApplicationPage);
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close")) 

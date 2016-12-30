@@ -78,6 +78,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]","Send Email");
 					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
 						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");                                     
@@ -232,8 +233,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 4 - Click Log-In Button");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
-					Thread.sleep(10000);
 					waitForPageToLoadWebdriver();
+					Thread.sleep(10000);
 					//assign key board object
 
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
@@ -256,13 +257,19 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						for (int second = 0;; second++)
 						{
 							if (second >= 300) writeFailure(" Timeout after 1 minute..");
-//							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");   
+//							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
+
+							clickWebdriver(attributeName_xpath,".//span[text()='Folders ']");
+
 							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoadWebdriver();
-							try { if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
-							waitForPageToLoadWebdriver();
+							try {
+								//if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
+								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
+								waitForPageToLoadWebdriver();
 						}
-						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
+						//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
+						waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'" + emailsubject + "')]",emailsubject);
 						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]");
 						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");

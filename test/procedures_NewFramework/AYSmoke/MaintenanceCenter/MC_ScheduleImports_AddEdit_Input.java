@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 import or.OR;
-
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions implements OR{
@@ -62,6 +59,12 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 		if (!password.equals("")) {
 			Reporter.log("Step 6 - Enter the Password as ["+password+"]");
 			sendKeys(attributeName_name, "txtFTPPassword", password);
+
+			clickWebdriver(attributeName_xpath,"//td[@id='contentCol']/form/table//tr//td[@id='colSFTP0']/input[@type='radio']");
+			sendKeys(attributeName_name, "txtSFTPPort", sftport);
+			clickWebdriver(attributeName_xpath,"//td[@id='contentCol']/form/table//tr//input[@type='radio']");
+
+
 		}
 		if (!importfilename.equals("")) {
 			Reporter.log("Step 7 - Enter the Import file name as ["+importfilename+"]");
@@ -105,7 +108,9 @@ public class MC_ScheduleImports_AddEdit_Input extends CommonSeleniumActions impl
 		}
 		if(!sftport.equals("")){
 			Reporter.log("Step 15 - Enter SFTP Port as ["+sftport+"]");
-			sendKeys(attributeName_name, "txtSFTPPort", sftport);
+			//sendKeys(attributeName_name, "txtSFTPPort", sftport);
+			//clickWebdriver(attributeName_xpath,"//td[@id='contentCol']/form/table//tr//input[@type='radio']");
+
 		}
 		
 	}catch(Exception e){

@@ -50,7 +50,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				}else if (link_to_click.equalsIgnoreCase("Education Background")) {
 					clickWebdriver(attributeName_xpath,AW_EduBackBtn);
 					waitForPageToLoadWebdriver();
-				}else if (link_to_click.equalsIgnoreCase("Recommendations")) {
+				}else if (link_to_click.equalsIgnoreCase("Recommendations-DT")) {
 //					sendKeyStroke(attributeName_xpath, AW_RecommendationBtn, Keys.SPACE);
 //					sendKeys(attributeName_xpath, AW_RecommendationBtn, " ");
 //					clickWebdriver(attributeName_xpath, AW_RecommendationBtn);
@@ -58,6 +58,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Downloadable Forms")) {
 					clickWebdriver(attributeName_xpath,AW_DownFormBtn);
+
 				}else if (link_to_click.equalsIgnoreCase("Check Your Application")) {
 					clickWebdriver(attributeName_xpath,AW_CheckAppBtn);
 				}else if (link_to_click.equalsIgnoreCase("Application Instructions")) {
@@ -106,9 +107,10 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 					}else if (button_to_click.equalsIgnoreCase("Pay and Continue")) {
 //						clickchooseokgetconfirmationpagepload(AW_PayContinueBtn);
 						clickWebdriver(attributeName_xpath, AW_PayContinueBtn);
-//						alertAccept();
+					    alertAccept();
 						waitForPageToLoadWebdriver();
 						waitForPageToLoadWebdriver();
+
 					}else if (button_to_click.equalsIgnoreCase("Preview Application in PDF Format")) {
 						waitForElementPresentWebdriver(attributeName_xpath,AW_PrintPreviewBtn, "Pdf Button");
 						clickWebdriver(attributeName_xpath,AW_PrintPreviewBtn);

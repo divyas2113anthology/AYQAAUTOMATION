@@ -29,17 +29,25 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+clickradioagainstname+"]");
 //				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']", clickradioagainstname);
 //				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input", clickradioagainstname);
-				clickWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[text()='"+clickradioagainstname+"']/parent::tr/td/input", clickradioagainstname);
+				clickWebdriver(attributeName_xpath, "//td[text()='"+clickradioagainstname+"']/parent::tr/td/input");
 
-			}			
+
+
+			}
+
+
 			if (!choosefile.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+choosefile+"]");
 				waitForElementPresentWebdriverWait(attributeName_name, "attfile", choosefile);
 				clickWebdriver(attributeName_name, "attfile");
+				Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
 				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
+				Thread.sleep(8000);
+				System.out.print("AAAAAAAAAAAA");
 				waitForPageToLoadWebdriver();
+				Thread.sleep(8000);
 				
 				//clickWebdriver(attributeName_name, "attfile");
 //				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");
@@ -90,7 +98,8 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, RPT_RunBtn);
 				waitForPageToLoadWebdriver();
-				
+				Thread.sleep(8000);
+
 			}			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

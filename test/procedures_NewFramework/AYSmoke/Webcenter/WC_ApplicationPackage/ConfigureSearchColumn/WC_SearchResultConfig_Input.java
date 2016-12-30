@@ -64,7 +64,7 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 		if (!save.equals("")) {
 			Reporter.log("Step 7 - Check the checkbox ("+delete+")");
 			waitForElementPresentWebdriver(attributeName_xpath, CSC_Save, delete);
-			clickWebdriver(attributeName_xpath,"//input[@name='chkDelete']");
+			//clickWebdriver(attributeName_xpath,"//input[@name='chkDelete']");
 			clickWebdriver(attributeName_xpath, CSC_Save);
 			Thread.sleep(10000);
 

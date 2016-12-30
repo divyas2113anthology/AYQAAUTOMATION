@@ -21,8 +21,11 @@ public class WC_SearchResultConfig_Verify extends CommonSeleniumActions implemen
 		Reporter.log("Verify Test Data was retrieved for 'SearchResultConfig' page");
 		if (!message.equals("")) {
 			Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-			waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+"')]", message);
-			verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+"')]", message, message);
+			//waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
+			isElementPresentWebdriver(attributeName_xpath,"//font[contains(text(),'Search Result Config was successfully Updated')]");
+			//verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Search Result Config was successfully Updated')]", message, message);
+
+			//Search Result Config was successfully Updated
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

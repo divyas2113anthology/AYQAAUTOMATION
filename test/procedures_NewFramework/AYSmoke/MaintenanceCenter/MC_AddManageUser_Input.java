@@ -59,6 +59,10 @@ public class MC_AddManageUser_Input extends CommonSeleniumActions implements OR 
 				//clickWebdriver(attributeName_xpath, MS_CheckPrivilege+privilegesname+"']//preceding-sibling::input[@type='checkbox']");
 				//clickWebdriver(attributeName_xpath, "//font[contains(.,'"+checkprivilegesnotassigned+"')]/input[contains(@name,'cbPrivID')]");
 				clickWebdriver(attributeName_xpath,"//input[@name='cbPrivID1']");
+				clickWebdriver(attributeName_xpath,"//input[@name='cbPrivID3']");
+				clickWebdriver(attributeName_xpath,".//input[@name='cbRoleID5']");
+				clickWebdriver(attributeName_xpath,"//input[@name='cbPrivID6']");
+				Thread.sleep(5000);
 			}	
 		
 			if(!savecancel.equals("")){

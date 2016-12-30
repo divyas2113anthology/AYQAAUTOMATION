@@ -22,6 +22,7 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!applicantcheck.equals("") && !operationtoperform.equals("")) {
 			String ApplicantFirstNameCheck = Runtimedataread(applicantcheck);
+			System.out.println("AAAAAAAAAAAAA");
 			Reporter.log("Step 1 - Check the checkbox against ["+ApplicantFirstNameCheck+"]");
 			if (operationtoperform.equalsIgnoreCase("Check")) {
 				checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
@@ -30,10 +31,10 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 			}
 		}
 		if (!applicantclick.equals("")) {
-			String ApplicantFirstName = Runtimedataread(applicantclick);
+			//String ApplicantFirstName = Runtimedataread(applicantclick);
 			Reporter.log("Step 2 - Click on Rule name ["+applicantclick+"]");
-			waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+ApplicantFirstName+"')]", ApplicantFirstName);
-			clickWebdriver(attributeName_xpath,ES_ApplicantClick+ApplicantFirstName+"')]" );
+			waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
+			clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
 			recentPopupSelectWebdriver("Enrollment");
 		}
 		if (!selectaction.equals("")) {

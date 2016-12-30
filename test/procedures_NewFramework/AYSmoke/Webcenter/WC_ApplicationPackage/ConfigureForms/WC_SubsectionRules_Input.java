@@ -78,10 +78,13 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			}
              
              if (!subsection.equalsIgnoreCase("")) {
- 				Reporter.log("Select subsection" + subsection );
- 				clickWebdriver(attributeName_xpath, SR_subsection);
- 				sendKeys(attributeName_xpath, SR_subsection, subsection);
- 				clickWebdriver(attributeName_linktext, subsection);
+ 				 Reporter.log("Select subsection" + subsection );
+ 				 clickWebdriver(attributeName_xpath, SR_subsection);
+ 				//sendKeys(attributeName_xpath, SR_subsection, subsection);
+
+				 mouseOverWebdriver(attributeName_xpath,"//a[text()='HideSection']");
+				 clickWebdriver(attributeName_xpath,"//a[text()='HideSection']");
+ 				// clickWebdriver(attributeName_linktext, subsection);
  					
  				
              }	

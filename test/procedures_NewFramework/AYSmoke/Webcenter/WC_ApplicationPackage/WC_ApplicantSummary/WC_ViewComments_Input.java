@@ -33,6 +33,7 @@ public class WC_ViewComments_Input extends CommonSeleniumActions implements OR {
 			if (!Comments.equals("")) {
 				waitForElementPresentWebdriverWait(attributeName_xpath, AS_ViewAddComment, Comments);
 				sendKeys(attributeName_xpath, AS_ViewAddComment, Comments);
+
 			}
 			if (!ConfidentialCheckbox.equals("")) {
 	
@@ -43,6 +44,7 @@ public class WC_ViewComments_Input extends CommonSeleniumActions implements OR {
 			if (!button.equals("")) {
 				waitForElementPresentWebdriverWait(attributeName_xpath, BR_Buttons+button+"')]", button);
 				clickWebdriver(attributeName_xpath, BR_Buttons+button+"')]");
+
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

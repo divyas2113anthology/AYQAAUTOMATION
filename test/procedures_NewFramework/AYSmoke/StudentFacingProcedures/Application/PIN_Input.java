@@ -1,16 +1,14 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import java.io.IOException;
-
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.io.IOException;
 
 public class PIN_Input extends CommonSeleniumActions implements OR {
 	
@@ -30,8 +28,9 @@ public class PIN_Input extends CommonSeleniumActions implements OR {
 			if (!pin.equals("")) {
 				Reporter.log("Proceed to Get 'PIN' number");
 				String Pin = getTextWebdriver(attributeName_xpath,PinNumber);
+				System.out.println("PIN IS  "+Pin);
 	//			System.out.println("1");
-				String[] PinSplit = Pin.split("  ");			
+				String[] PinSplit = Pin.split("  ");
 	//			System.out.println("Length"+PinSplit.length);
 	//			for (int i = 0; i < PinSplit.length; i++) {
 	//				System.out.println("Value"+PinSplit[i]);
@@ -40,6 +39,7 @@ public class PIN_Input extends CommonSeleniumActions implements OR {
 				String PinNumber = PinSplit[1];
 	//			System.out.println("3");
 				Reporter.log("Proceed to Write PIN Number as ("+PinNumber+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+
 	//			System.out.println("4");
 				Runtimedatawrite(PinNumber,pin);
 	//			System.out.println("5");

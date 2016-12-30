@@ -67,13 +67,24 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 			if (!value.equals("")) {
 				if (value.equalsIgnoreCase("List")) {
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
+					Thread.sleep(8000);
 					System.out.println("Select the value");
 					waitForElementPresentWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus, "Value");
+					Thread.sleep(8000);
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectPaymentStatus);
+					Thread.sleep(8000);
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+					Thread.sleep(8000);
 				}
 				else
-					sendKeys(attributeName_xpath, MQ_Value, value);
+					System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+					//sendKeys(attributeName_xpath, MQ_Value, value);
+				    clickWebdriver(attributeName_xpath," //button [contains(@class,'multiselect ui-widget')]");
+				    mouseOverWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
+				    clickWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
+
+
+
 			}
 //			if (!fieldname.equals("")) {
 //				Reporter.log("Verify the value ["+fieldname+"]");

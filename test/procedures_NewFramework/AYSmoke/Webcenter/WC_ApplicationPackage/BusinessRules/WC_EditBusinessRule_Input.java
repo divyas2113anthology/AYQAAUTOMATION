@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules;
 
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements OR {
@@ -144,8 +142,15 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			
 			if (!verifygreystatus.equals("")) {
-					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
-					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
+					//waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
+				//	verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
+				String style_COLOR= getAttributeWebdriver(attributeName_xpath,BR_StatusGrey,"Style");
+				System.out.println("Color is "+  style_COLOR);
+				if (style_COLOR.contains("grey")){
+					Reporter.log("Grey colour is persent for the option "+verifygreystatus);
+				}else{
+					Reporter.log("Grey colour is not persent for the option "+verifygreystatus);
+				}
 					//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 					//verifyElementContainsTextWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 				}
@@ -153,7 +158,10 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			if (!verifystatus.equals("")) {
 				Reporter.log("Verify the status is present or not");
 				clickWebdriver(attributeName_xpath, BR_TargetStatus);
-				verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
+				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
+				verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus,verifystatus,"verifystatus");
+
+
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
 				//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"'))]", verifystatus, verifystatus);
 				

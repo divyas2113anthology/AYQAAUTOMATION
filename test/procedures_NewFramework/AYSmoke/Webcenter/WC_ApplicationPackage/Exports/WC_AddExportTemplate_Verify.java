@@ -1,15 +1,13 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Exports;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class WC_AddExportTemplate_Verify extends CommonSeleniumActions implements OR {
 	
@@ -36,7 +34,7 @@ public class WC_AddExportTemplate_Verify extends CommonSeleniumActions implement
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Package");
+				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Enrollments-DT Module :: Add Export");
 			}
 			if (verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the UI information in Add Import page");

@@ -113,6 +113,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}
 			}else if (url.contains("webcenter")) {
 				if (environment.equalsIgnoreCase("USQA")) {
+					System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 					//envirurl = "https://uatwebcenter.applyyourself.com/";
 					envirurl = "https://qawebcenter.applyyourself.com/";
 					//envirurl = "http://IAD1PW001:8088";
@@ -142,6 +143,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "http://uatmanage.applyyourself.com";
 					envirurl = "http://qamanage.applyyourself.com";
+
 					//envirurl = "http://IAD1PW001:8092";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "http://uatmanage.hobsons.co.uk";

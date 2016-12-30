@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR {
@@ -21,12 +19,16 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 			String linktoclick = testdata[0];
 			String printdatatree = testdata[1];
 			String menulink = testdata[2];
-			switchToFrameNameIdWebdriver("frmTreeMenu");
+			//switchToFrameNameIdWebdriver("frmTreeMenu");
 			
 			if(!linktoclick.equals("")){
 				Reporter.log("Click on the Link"+linktoclick);
-				clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
-						
+				//clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
+				switchToDefaultContentWebdriver();
+				switchToFrameNameIdWebdriver("frmTreeMenu");
+
+				clickWebdriver(attributeName_xpath, "//a[contains(text(),'Enrollments-DT Module Home')]");
+
 			}
 			if (!menulink.equals("")) {
 				Reporter.log("Perform the operation to click the Package as ["+menulink+"]");

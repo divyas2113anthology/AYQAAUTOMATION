@@ -1,14 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
@@ -51,6 +46,8 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 			if(!nextclosewindow.equals("")){
 				Reporter.log("Click on the Button"+nextclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+nextclosewindow+"')]");
+				recentPopupSelectWebdriver("TestScoreACT");
+				waitForPageToLoadWebdriver();
 			}	
 			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {

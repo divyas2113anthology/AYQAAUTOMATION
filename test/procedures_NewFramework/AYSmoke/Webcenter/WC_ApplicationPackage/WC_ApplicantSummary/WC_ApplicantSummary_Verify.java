@@ -28,8 +28,9 @@ public class WC_ApplicantSummary_Verify extends CommonSeleniumActions implements
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
-				verifyElementTextWebdriver(attributeName_xpath, SAV_PageName, pagename, "Page Name for Applicant Summary");
+				waitForElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'Application System :: ')]", pagename);
+				//verifyElementTextWebdriver(attributeName_xpath, "//font[contains(text(),'Application System :: ')]", pagename, pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Application System :: ')]", pagename, pagename);
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 1 - Verify UI was displayed correctly");

@@ -51,8 +51,9 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 				Reporter.log("Select ("+value+")");
 				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
 				clickWebdriver(attributeName_xpath, ET_Value);
-				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
-				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				//waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
+				//checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				checkWebdriver(attributeName_xpath, "//label[contains(@for,'28')]");
 				clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 			}
 			if(!verifyvalue.equals("")){

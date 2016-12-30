@@ -1,13 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implements OR {
@@ -43,9 +38,11 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+saveclosewindow+"')]");
 				waitForPageToLoadWebdriver();
-				recentPopupCloseWebdriver();
+				//recentPopupCloseWebdriver();
+				switchToOldWindow();
+
 			}	
-			switchToDefaultContentWebdriver();
+			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

@@ -146,6 +146,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 //				click(RI_AddProvBtn);
 				clickWebdriverWithCoordinates(attributeName_xpath, RI_AddProvBtnBottom);
 //				clickWebdriverWithCoordinates(attributeName_xpath, "//input[@value='Add Provider']");
+				alertAccept();
 				waitForPageToLoadWebdriver();
 				
 			}

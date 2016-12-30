@@ -18,7 +18,7 @@ public class WC_ConfigureDynamicText_Input extends CommonSeleniumActions impleme
 			String dynamictext = testdata[1];
 			String button = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Configure Dynamic Text' Page");
-			
+
 			waitForElementPresentWebdriver(attributeName_name, CDT_HtmlEditorBtn, "HTML Edit Button");
 			if (!displayformattype.equals("")) {
 				Reporter.log("Step 1 - Select formate type as ["+displayformattype+"]");

@@ -56,11 +56,13 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					if (clickname.equalsIgnoreCase("Applicant First Name")||clickname.equalsIgnoreCase("ManualAdd")) {
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						waitForPageToLoadWebdriver();
 						recentPopupSelectWebdriver("Application Summary");
 					}else if (clickname.equalsIgnoreCase("FaceliftAppFirstName")) {
 						String ReadClickName = Runtimedataread(clickname);
 //						sendKeyStroke(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]", Keys.SPACE);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						waitForPageToLoadWebdriver();
 						recentPopupSelectWebdriver("Application Summary");
 
 						//selectMainWindowWebdriver();
@@ -78,7 +80,9 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					}
 				}else{
 				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]");
-				recentPopupSelectWebdriver("Application Summary");
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Application Summary");
+
 				}
 			}
 			if (!clickpdf.equals("")) {
@@ -86,8 +90,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				String ClickPDF = clickpdf.replace(";", ",");
 				String[] SplitFirstLastName = ClickPDF.split(",");
 				clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
-				recentPopupSelectWebdriver("Application Summary");
 				waitForPageToLoadWebdriver();
+				recentPopupSelectWebdriver("Application Summary");
 			}
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 4 - Select an action as ["+selectanaction+"]");

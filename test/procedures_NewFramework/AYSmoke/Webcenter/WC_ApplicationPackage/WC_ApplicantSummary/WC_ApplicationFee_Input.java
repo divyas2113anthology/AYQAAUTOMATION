@@ -18,7 +18,9 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			String payment_status = testdata[2];
 			String payment_amount_received = testdata[3];
 			String payment_received_date = testdata[4];
-			String button_to_click = testdata[5];
+			String verify_Status = testdata[5];
+			String button_to_click = testdata[6];
+
 			Reporter.log("Input Test Data was retrieved for 'Application Fee' Page");
 			//recentPopupSelectWebdriver("ApplicationFee");
 			//recentOpenedPopupSelectWebdriver("ApplicationFee");
@@ -32,9 +34,16 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			}
 			if (!payment_status.equals("")) {
 				Reporter.log("Select the payment status as ["+payment_status+"]");
-				String Payment = Runtimedataread(payment_status);
-				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , Payment);
-				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus , Payment);
+				//String Payment = Runtimedataread(payment_status);
+				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , payment_status);
+				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus ,payment_status);
+				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus ,payment_status);
+			}
+			if (!verify_Status.equals("")) {
+				Reporter.log("Select the payment status as ["+verify_Status+"]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , payment_status);
+				Thread.sleep(3000);
+				switchToOldWindow();
 			}
 			if (!payment_amount_received.equals("")) {
 				Reporter.log("Enter the first name as ["+payment_amount_received+"]");
@@ -49,7 +58,11 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if (button_to_click.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					Thread.sleep(5000);
+					System.out.println("Clicked Save Button");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//recentPopupCloseWebdriver();
+					switchToSecondPopupWindow();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();

@@ -68,9 +68,9 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 				Reporter.log("Click the button as ["+buttons+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SR_button+buttons+"')]", buttons);
 				clickWebdriverWithCoordinates(attributeName_xpath, SR_button+buttons+"')]");
+				recentPopupSelectWebdriver("Enrollment-DT Fee Status");
 				waitForPageToLoadWebdriver();
-				alertAccept();
-				waitForPageToLoadWebdriver();
+
 				
 			}
 			
@@ -86,7 +86,6 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 
 					clickWebdriver(attributeName_xpath, "//img[@src='../Images/common_images/admin_close_window_large.gif']");
 					System.out.println("CLicked on Close button");
-
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}

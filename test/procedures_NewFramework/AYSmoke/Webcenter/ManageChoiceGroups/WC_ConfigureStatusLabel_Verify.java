@@ -31,8 +31,8 @@ public class WC_ConfigureStatusLabel_Verify extends CommonSeleniumActions implem
 			}
 			if(!message.equals("")){
 				Reporter.log("Verify its navigate to ("+message+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText+message+"')]", message);
-				verifyElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText+message+"')]", message);
+				waitForElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText, message);
+				verifyElementPresentWebdriver(attributeName_xpath, AY_ConfigureStatusConfirmationText, message);
 			}
 			switchToDefaultContentWebdriver();
 			

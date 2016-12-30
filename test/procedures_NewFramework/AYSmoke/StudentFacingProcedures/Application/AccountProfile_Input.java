@@ -85,13 +85,15 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				
 				if (!password.equals("")) {			
 					Reporter.log("Step 8 - Enter 'Password' as ("+password+")");	
-					AppPassword = Runtimedataread(password);
-					sendKeys(attributeName_xpath,Password, AppPassword);
+					//AppPassword = Runtimedataread(password);
+					//sendKeys(attributeName_xpath,Password, AppPassword);
+					sendKeys(attributeName_xpath,Password, password);
 				}		
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 9 - Enter 'Confirm Password' as ("+confirmpassword+")");	
-					AppPassword = Runtimedataread(confirmpassword);
-					sendKeys(attributeName_xpath,ConfirmPassword, AppPassword);
+					//AppPassword = Runtimedataread(confirmpassword);
+				//	sendKeys(attributeName_xpath,ConfirmPassword, AppPassword);
+					sendKeys(attributeName_xpath,ConfirmPassword, confirmpassword);
 					if (!confirmyes.equalsIgnoreCase("")) {
 						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(confirmpassword,confirmyes);			
@@ -102,6 +104,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 10 - Click on 'Create Account' button");
 					if (createaccount.equalsIgnoreCase("create account")) {
 						clickWebdriver(attributeName_xpath,CreateAccountProfilePage);
+						Thread.sleep(10000);
 						waitForPageToLoadWebdriver();
 					}
 					if(createaccount.equalsIgnoreCase("update account")){

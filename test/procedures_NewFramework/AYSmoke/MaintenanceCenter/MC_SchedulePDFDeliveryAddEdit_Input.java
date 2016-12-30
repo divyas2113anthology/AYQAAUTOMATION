@@ -104,11 +104,18 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Reporter.log("Enter the User Name as ["+username+"]");
 				System.out.println("username");
 				sendKeys(attributeName_name, "txtFTPUsername", username);
+				Thread.sleep(10000);
 			}
 			if (!passwordauthentication.equals("")) {
 				Reporter.log("Enter the Password as ["+passwordauthentication+"]");
 				System.out.println("password");
-				sendKeys(attributeName_name, "txtFTPPassword", passwordauthentication);
+				//sendKeys(attributeName_name, "txtFTPPassword", passwordauthentication);
+				sendKeys(attributeName_xpath, "//input[@name='txtFTPPassword']", passwordauthentication);
+				/*clickWebdriver(attributeName_xpath,"//td[@id='contentCol']/form/table//tr//td[@id='colSFTP0']/input[@type='radio']");
+				isElementPresentWebdriver(attributeName_xpath, "//input[@name='txtSFTPPort']");
+				//sendKeys(attributeName_xpath, "//input[@name='txtSFTPPort']", sftpport);
+				clickWebdriver(attributeName_xpath,"//td[@id='contentCol']/form/table//tr//input[@value='0']");
+				Thread.sleep(10000);*/
 			}
 			if (!authentication.equals("")) {
 				Reporter.log("Click on Test FTP Connection Button ["+authentication+"]");
@@ -121,7 +128,10 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			if (!sftpport.equals("")) {
 				Reporter.log("Click on Public key");
 				System.out.println("port");
-				sendKeys(attributeName_name, "txtSFTPPort", sftpport);
+				Boolean check = driver.findElementByXPath("//*[@value='22']").isEnabled();
+				System.out.println("Element is visible"  + check);
+				//sendKeys(attributeName_name, "txtSFTPPort", sftpport);
+				sendKeys(attributeName_xpath, "//*[@value='22']", sftpport);
 			}
 			if (!testftpconnection.equals("")) {
 				Reporter.log("Click on Test FTP connection as["+testftpconnection+"]");
@@ -138,9 +148,9 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 	  		  if (!zipfilename.equals("")) {
 				  Reporter.log("Enter the zip filename as ["+zipfilename+"]");
 				  System.out.println("zipname");
-				  waitForElementPresentWebdriverWait(attributeName_name, "txtZipFileName", zipfilename);
+				  waitForElementPresentWebdriverWait(attributeName_xpath, ".//*[@name='txtZipFileName']", zipfilename);
 				  System.out.println("File Name : "+zipfilename);
-				  sendKeys(attributeName_name, "txtZipFileName", zipfilename);
+				  sendKeys(attributeName_xpath, ".//*[@name='txtZipFileName']", zipfilename);
 			  }
 	  		if (!senddelivery.equals("")) {
 				Reporter.log("Check ["+senddelivery+"]");
@@ -171,6 +181,7 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Reporter.log("Enter the Start Hour as ["+starthour+"]");
 				System.out.println("starthour");
 				String StartHour = requiredHourAndMinute("hh", starthour);
+				System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCC"  +StartHour);
 				selectByVisibleTextWebdriver(attributeName_name, "selHourStart", StartHour);
 			}
 			if (!startminute.equals("")) {

@@ -27,6 +27,7 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 			String savecancelclose = testdata[5];
 						
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score ACT' Page");
+			waitForPageToLoadWebdriver();
 			//recentPopupSelect_without_window_nameWebdriver();
 			if (!english.equals("")) {
 				Reporter.log("Enter the First Name");

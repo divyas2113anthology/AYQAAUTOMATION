@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.BusinessRules;
 
+import gherkin.lexer.Ru;
 import or.OR;
 
 import org.testng.Reporter;
@@ -102,8 +103,15 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!targetstatus.equals("")) {
 				Reporter.log("Step 14 - Select Target Status as : ("+targetstatus+")");
-				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
-				selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
+				try{
+					String Status = Runtimedataread(targetstatus);
+					waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, Status);
+				}catch(Exception e){
+					waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
+					selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, targetstatus);
+				}
+
 				//select(BR_TargetStatus, targetstatus);			
 			}
 			if (!targettestscore.equals("")) {
@@ -144,8 +152,16 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			
 			if (!verifygreystatus.equals("")) {
+				try{
+					waitForPageToLoadWebdriver();
+					String Status = Runtimedataread(verifygreystatus);
+					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, Status);
+					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, Status);
+				}catch(Exception e){
 					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
 					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);
+				}
+
 					//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 					//verifyElementContainsTextWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 				}

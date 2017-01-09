@@ -40,7 +40,11 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				//clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
 				Thread.sleep(1000);
-				driver.findElement(By.name("attfile")).sendKeys("C:/SeleniumScripts/AYQAAutomation/SourceFile/Application/UploadDocument/ImportForSmokeTest.txt");
+				if(choosefile.contains("ImportForSmokeTestdata")){
+					driver.findElement(By.name("attfile")).sendKeys(choosefile);
+				}else {
+					driver.findElement(By.name("attfile")).sendKeys("C:/SeleniumScripts/AYQAAutomation/SourceFile/Application/UploadDocument/ImportForSmokeTest.txt");
+				}
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 				waitForPageToLoadWebdriver();
 				

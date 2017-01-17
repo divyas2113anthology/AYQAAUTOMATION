@@ -20,7 +20,8 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			String payment_status = testdata[2];
 			String payment_amount_received = testdata[3];
 			String payment_received_date = testdata[4];
-			String button_to_click = testdata[5];
+			String VerifyStatus = testdata[5];
+			String button_to_click = testdata[6];
 			Reporter.log("Input Test Data was retrieved for 'Application Fee' Page");
 			//recentPopupSelectWebdriver("ApplicationFee");
 			recentOpenedPopupSelectWebdriver("ApplicationFee");
@@ -56,7 +57,6 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("close window")) {
-					
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					deselectPopUp();
 					System.out.println("1st popup closed");
@@ -64,9 +64,18 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					deselectPopUp();	
 					System.out.println("2nd popup closed");
-				}else if (button_to_click.equalsIgnoreCase("add")) {
+				}else if(button_to_click.equalsIgnoreCase("closeWindow")){
+					Reporter.log("Click on the button");
+					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath,CloseWindow);
+					driver.switchTo().window(AppSummaryWindowName);
+				}
+				else if (button_to_click.equalsIgnoreCase("add")) {
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 					waitForPageToLoadWebdriver();
+				}
+				else{
+					Reporter.log("Not Click");
 				}
 			}
 			//switchToDefaultContentWebdriver();

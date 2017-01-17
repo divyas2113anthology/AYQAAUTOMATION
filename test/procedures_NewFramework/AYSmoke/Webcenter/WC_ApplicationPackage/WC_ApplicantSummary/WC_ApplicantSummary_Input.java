@@ -148,6 +148,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				System.out.println("String1"+splitsupport[0]);
 				//System.out.println("String1"+splitsupport[1]);
 				for (int i = 0; i < splitsupport.length; i++) {
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
 					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 				}

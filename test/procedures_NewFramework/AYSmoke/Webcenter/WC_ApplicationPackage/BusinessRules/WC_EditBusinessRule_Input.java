@@ -155,7 +155,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				try{
 					waitForPageToLoadWebdriver();
 					String Status = Runtimedataread(verifygreystatus);
-					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, Status);
+					waitForElementVisibleWebdriver(attributeName_xpath, BR_StatusGrey, Status);
+					//waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, Status);
 					verifyElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, Status);
 				}catch(Exception e){
 					waitForElementPresentWebdriver(attributeName_xpath, BR_StatusGrey, verifygreystatus);

@@ -2739,10 +2739,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
 		writeConsole("Element ["+attributename+", "+attributevalue+"]");
 		try {
+			String expectedText = expectedtext.replaceAll("\\s","");
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
+			String ActualText = element.getText().replaceAll("\\s","");
 			writeConsole("Element Actual getText["+actualtext+"]");
-			if (expectedtext.equals(actualtext)) {
+			if (expectedText.equals(ActualText)) {
 				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
 			} else {
 				writeFailure("Element["+elementname+"] with Actuals Text - ["+actualtext+"]Text did not match Expected Text - ["+expectedtext+"]");

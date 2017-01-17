@@ -135,6 +135,10 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					clickWebdriver(attributeName_xpath, AID_save_button);
 					waitForPageToLoadWebdriver();
 				}
+				if(savecanceladdrow.equalsIgnoreCase("addrow")){
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
+					clickWebdriver(attributeName_xpath, MCG_AddRow);
+				}
 			}
 			switchToDefaultContentWebdriver();
 		} catch (IOException e) {

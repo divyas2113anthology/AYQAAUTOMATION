@@ -161,7 +161,7 @@ public static final String BR_Add = "//img[@name='imageAdd1']";
 public static final String BR_Buttons = "//img[contains(@src,'";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
 public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
-public static final String BR_StatusGrey = "//select[@id='TestStatusID' and contains(@style,'Grey')]";
+public static final String BR_StatusGrey = "//select[@id='TestStatusID']"; //  and contains(@style,'Grey')]";
 public static final String BR_VerifyStatus = "//select[@id='DocStatusID']/option[contains(text(),'";  //Waived')]";
 public static final String BR_FilterName = "//a[contains(text(),'";    //TestFilter')]";
 //public static final String BR_VerifyStatus = "//option[contains(@style,'Grey') and [not(contains(text(),'"; 
@@ -1077,7 +1077,7 @@ public static final String AS_ViewAddComment = "//textarea[@name='Comment']";
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
-public static final String AS_AppReviewStatus = "//font[contains(text(),'";
+public static final String AS_AppReviewStatus = "//a[contains(text(),'";    //"//font[contains(text(),'"
 public static final String AS_StatusSubmit = "//a[contains(@href,'Submit')]";
 public static final String AS_StatusBack = "//a[contains(@href,'SubmitSearch')]";
 //#**********************************************************#
@@ -1993,7 +1993,7 @@ public static final String RS_Status = "//a[contains(@onclick,'Status')]";
 //#**********************************************************#
 //# Webcenter - Application - Applicant Summary AS
 //#**********************************************************#
-public static final String AS_pagename = "//font[contains(text(),'Transcripts')]";
+public static final String AS_pagename = "//a[contains(text(),'Transcripts')]";  ////font[contains(text(),'Transcripts')]
 public static final String AS_TestScoreStatus = "//select[@name='TestStatus']";
 public static final String AS_TestType = "//select[@name='PackageTestId']";
 public static final String AS_SupportingDocCloseWindow = "//img[contains(@src,'"; 

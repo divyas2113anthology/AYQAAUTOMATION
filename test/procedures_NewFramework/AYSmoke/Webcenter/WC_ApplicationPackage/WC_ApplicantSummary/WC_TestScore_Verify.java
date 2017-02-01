@@ -22,7 +22,7 @@ public class WC_TestScore_Verify extends CommonSeleniumActions implements OR{
 		String verifyui = fpvdatarepo[2];
 		
 		Reporter.log("Verify Test Data was retrieved for 'TestScore' page");
-		
+		recentPopupSelectWebdriver("Parent");
 		if (!pagename.equals("")) {
 			Reporter.log("Verify its navigate to ("+pagename+") page");
 			waitForElementPresentWebdriver(attributeName_xpath, AS_TestScorepagename, pagename);

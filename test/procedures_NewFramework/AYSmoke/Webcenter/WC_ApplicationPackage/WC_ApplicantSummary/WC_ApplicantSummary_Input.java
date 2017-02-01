@@ -190,7 +190,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					recentPopupCloseWebdriver();
 //					selectMainWindowWebdriver();
-				}else if (buttons.equalsIgnoreCase("Close Window")) 
+				}else if (buttons.equalsIgnoreCase("Close Window") ||buttons.equalsIgnoreCase("Close_window") )
 				{
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");

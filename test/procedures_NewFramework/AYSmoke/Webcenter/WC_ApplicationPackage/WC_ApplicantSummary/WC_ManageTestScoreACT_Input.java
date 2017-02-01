@@ -28,6 +28,7 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 						
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score ACT' Page");
 			waitForPageToLoadWebdriver();
+			recentPopupSelectWebdriver("Parent");
 			//recentPopupSelect_without_window_nameWebdriver();
 			if (!english.equals("")) {
 				Reporter.log("Enter the First Name");

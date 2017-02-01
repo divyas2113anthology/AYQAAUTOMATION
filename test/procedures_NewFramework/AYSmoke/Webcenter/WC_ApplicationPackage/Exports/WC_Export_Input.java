@@ -22,11 +22,11 @@ public class WC_Export_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Run Imports' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!selectname.equals("")) {
-				waitForPageToLoadWebdriver();
-				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+selectname+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+selectname+"')]/preceding-sibling::td/input[@type='radio']", "Export Page");
-				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+selectname+"')]/preceding-sibling::td/input[@type='radio']");
-			}			
+					waitForPageToLoadWebdriver();
+					Reporter.log("Step 1 - Perform the operation to click the Radio Button as [" + selectname + "]");
+					waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'" + selectname + "')]/preceding-sibling::td/input[@type='radio']", "Export Page");
+					clickWebdriver(attributeName_xpath, "//td[contains(text(),'" + selectname + "')]/preceding-sibling::td/input[@type='radio']");
+			}
 			if (!checkbox.equals("")) {
 				Reporter.log("Step 2 - Select the column header as ["+checkbox+"]");
 				clickWebdriver(attributeName_xpath, RPT_CheckBox+checkbox+"')]");

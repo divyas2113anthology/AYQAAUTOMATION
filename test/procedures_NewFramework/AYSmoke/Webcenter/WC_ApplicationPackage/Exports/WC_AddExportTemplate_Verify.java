@@ -34,11 +34,10 @@ public class WC_AddExportTemplate_Verify extends CommonSeleniumActions implement
 			if (!message.equals("")) {
 				waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Message, message);
 				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
-				
 			}
 			if (!pagename.equals("")) {
 					Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-					String []PageName = pagename.split(":");
+					String []PageName = pagename.split(" ");
 					verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName+PageName[0]+"')]", PageName[0], "Page Name for Package");
 			}
 			if (verifyui.equals("")) {

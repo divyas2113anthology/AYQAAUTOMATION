@@ -56,6 +56,7 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 			if(!nextclosewindow.equals("")){
 				Reporter.log("Click on the Button"+nextclosewindow);
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+nextclosewindow+"')]");
+				driver.switchTo().window(AppSummaryWindowName);
 			}	
 			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {

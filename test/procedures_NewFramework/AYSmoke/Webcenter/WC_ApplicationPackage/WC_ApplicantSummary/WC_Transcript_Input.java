@@ -64,7 +64,8 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 					Reporter.log("Click on the Button" + saveclosewindow);
 					clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow + saveclosewindow + "')]");
 					waitForPageToLoadWebdriver();
-					recentPopupCloseWebdriver();
+					driver.switchTo().window(AppSummaryWindowName);
+					//recentPopupCloseWebdriver();
 				}
 			}	
 			switchToDefaultContentWebdriver();

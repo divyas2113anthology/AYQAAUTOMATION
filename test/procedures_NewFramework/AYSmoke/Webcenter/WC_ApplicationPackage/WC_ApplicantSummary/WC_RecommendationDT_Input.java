@@ -39,6 +39,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				verifyElementContainsTextWebdriver(attributeName_xpath, RD_Online,online,online);
 			}
 			if(!verifystatus.equals("")){
+				waitForPageToLoadWebdriver();
 				System.out.println("Verification");
 				Reporter.log("Verify("+verifystatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, RD_VerifyStatus+verifystatus+"')]", verifystatus);

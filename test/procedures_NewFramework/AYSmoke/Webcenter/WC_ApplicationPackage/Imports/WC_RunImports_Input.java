@@ -30,8 +30,8 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+clickradioagainstname+"]");
 //				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']", clickradioagainstname);
 //				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']");
-				waitForElementPresentWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input", clickradioagainstname);
-				clickWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][text()='"+clickradioagainstname+"']/preceding-sibling::td/input");
+				waitForElementPresentWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][contains(text(),'"+clickradioagainstname+"')]/preceding-sibling::td/input", clickradioagainstname);
+				clickWebdriver(attributeName_xpath, "//tr/td[input[@type='radio']]/following-sibling::td[1][contains(text(),'"+clickradioagainstname+"')]/preceding-sibling::td/input");
 
 			}			
 			if (!choosefile.equals("")) {
@@ -40,9 +40,11 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				//clickWebdriver(attributeName_name, "attfile");
 				waitForPageToLoadWebdriver();
 				Thread.sleep(1000);
-				if(choosefile.contains("ImportForSmokeTestdata")){
+				if(choosefile.contains("ImportForSmokeTest")){
 					driver.findElement(By.name("attfile")).sendKeys(choosefile);
-				}else {
+				}
+				else
+				 {
 					driver.findElement(By.name("attfile")).sendKeys("C:/SeleniumScripts/AYQAAutomation/SourceFile/Application/UploadDocument/ImportForSmokeTest.txt");
 				}
 				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");

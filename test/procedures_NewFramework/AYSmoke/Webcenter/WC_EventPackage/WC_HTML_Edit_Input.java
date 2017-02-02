@@ -42,6 +42,11 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 				if (build.equalsIgnoreCase("Build")) {
 					clickWebdriver(attributeName_xpath, HTML_Build);
 				}
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 			}			
 			if (!publishproddev.equals("")) {
 				Reporter.log("Step 3 - Click the Button as ["+publishproddev+"]");
@@ -54,7 +59,8 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
 					waitForPageToLoadWebdriver();
 				}
-			}		
+			}
+			waitForPageToLoadWebdriver();
 			switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

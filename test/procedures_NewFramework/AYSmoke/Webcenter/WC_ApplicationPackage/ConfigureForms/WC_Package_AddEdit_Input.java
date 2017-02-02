@@ -22,19 +22,24 @@ public class WC_Package_AddEdit_Input extends CommonSeleniumActions implements O
 			String publishprodevcancel = testdata[0];
 								
 			Reporter.log("Input Test Data was retrieved for 'Configure Forms-Package' Page");
-			
+			switchToFrameNameIdWebdriver("frmContent");
 			if(!publishprodevcancel.equals("")){
 				Reporter.log("Click on the Button"+publishprodevcancel);
 				clickWebdriver(attributeName_xpath, MCG_Package+publishprodevcancel+"')]");
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 				
 			}	
 			
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
 		
 	}
-
 }
 
 

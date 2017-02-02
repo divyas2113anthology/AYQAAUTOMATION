@@ -30,18 +30,12 @@ public class WC_AddImportTemplate_Verify extends CommonSeleniumActions implement
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			if (!message.equals("")) {
-				if (message.contains("TestingCustomLabelImport")) {
-					waitForPageToLoadWebdriver();
-					verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Package");
-					System.out.print(message + "was successfully Added. Please proceed to add the Field Definitions");
-				} else {
 //				String[] Message = message.split(" ");
 					String SplitMessage = message + Calendar.getInstance().getTimeInMillis();
 					Reporter.log("Step 1 - Verify Message(" + message + ") was displayed correctly");
 					//waitForText(SplitMessage+"was successfully Added. Please proceed to add the Field Definitions", "Not Present");
 					waitForPageToLoadWebdriver();
 					System.out.print(SplitMessage + "was successfully Added. Please proceed to add the Field Definitions");
-				}
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

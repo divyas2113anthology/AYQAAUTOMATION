@@ -124,7 +124,7 @@
 
     <build>
         <sourceDirectory>test</sourceDirectory>
-        <outputDirectory>C:\seleniumScripts\AYQAAutomation\bin</outputDirectory>
+        <outputDirectory>C:\SeleniumScripts\AYQAAutomation\bin</outputDirectory>
 
         <plugins>
 

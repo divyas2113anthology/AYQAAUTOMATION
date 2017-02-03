@@ -181,6 +181,7 @@ public class DriverScript {
 
 				while (linkedFullParamCounter < linkedFullParamsNum)
 				{
+
 					String fullParamName = linkedFullParams.getRemoteTestCaseParameter().get(linkedFullParamCounter).getName().getValue();
 					//add param name and value to csv
 					csvContents=csvContents+","+fullParamName;

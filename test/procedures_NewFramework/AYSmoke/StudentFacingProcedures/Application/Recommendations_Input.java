@@ -155,6 +155,9 @@ public class Recommendations_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 20 - Click on ("+rcsave+")Button");
 				clickWebdriver(attributeName_xpath,RC_Save);
 				waitForPageToLoadWebdriver();
+				//alertMessage();
+				alertAccept();
+
 			}
 
 		} catch (Exception e) {

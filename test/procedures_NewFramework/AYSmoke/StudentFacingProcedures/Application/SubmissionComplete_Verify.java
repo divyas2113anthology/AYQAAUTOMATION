@@ -1,8 +1,9 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class SubmissionComplete_Verify extends CommonSeleniumActions implements	OR {
@@ -18,21 +19,12 @@ public class SubmissionComplete_Verify extends CommonSeleniumActions implements	
 			Reporter.log("Verify Test Data was retrieved for 'Submission Complete!' page");
 			if (!subpagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+subpagename+") page");
-
-				/*if (selenium.isTextPresent(subpagename)) {
-					Reporter.log("Its navigate to ["+subpagename+"]age");*/ //RC Code
-					//String pagename = driver.findElement(By.xpath("//b[contains(text(),'Submission Complete!')]")).getText();
-					//Assert.assertEquals(subpagename,pagename.equalsIgnoreCase("Submission Complete!"));
-				     verifyElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'Submission Complete!')]", subpagename);
-				     Reporter.log("Its navigate to ["+subpagename+"]age");
-				    // clickWebdriver(attributeName_xpath,"//font[text()='Close Window']");
-
-
-
+				if (selenium.isTextPresent(subpagename)) {
+					Reporter.log("Its navigate to ["+subpagename+"]age");
 				} else {
 					writeFailure("Its not navigate to ["+subpagename+"] page");
 				}
-
+			}
 		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

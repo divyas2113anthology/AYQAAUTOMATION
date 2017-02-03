@@ -1,8 +1,10 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import or.OR;
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR {
@@ -23,7 +25,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 
 			Reporter.log("Input Test Data was retrieved for 'Application Fee' Page");
 			//recentPopupSelectWebdriver("ApplicationFee");
-			//recentOpenedPopupSelectWebdriver("ApplicationFee");
+			recentOpenedPopupSelectWebdriver("ApplicationFee");
 			if (!payment_type.equals("")) {
 				Reporter.log("Select the payment type as ["+payment_type+"]");
 				selectByVisibleTextWebdriver(attributeName_name, "ChangePaymentType", payment_type);

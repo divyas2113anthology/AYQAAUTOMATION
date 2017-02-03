@@ -1,8 +1,11 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import or.OR;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR {
@@ -26,8 +29,13 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
-				clickWebdriver(attributeName_xpath,Logoutmain);
-				waitForPageToLoadWebdriver();
+				if(logout.equalsIgnoreCase("Dashboard")){
+					clickWebdriver(attributeName_xpath,"//li/i[@class='icon-home icon-white']");
+					waitForPageToLoadWebdriver();
+				}else {
+					clickWebdriver(attributeName_xpath, Logoutmain + logout + "']");
+					waitForPageToLoadWebdriver();
+				}
 			}
 			if (!updatetechsupport.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+updatetechsupport+") Button");
@@ -36,23 +44,16 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath, AW_Home);
 					waitForPageToLoadWebdriver();
 				}else if (updatetechsupport.equalsIgnoreCase("Technical Support")) {
-
 					waitForElementPresentWebdriver(attributeName_xpath, AW_TecSupp, updatetechsupport);
-					clickWebdriver(attributeName_xpath, AW_TecSupp);;
-					waitForPageToLoadWebdriver();
-					//closeRecentWindow();
+					clickWebdriver(attributeName_xpath, AW_TecSupp);
 					//recentPopupSelectWebdriver("Technical Support");
 					//alertAccept();
-					//closeAllOtherWindows();
 				}else if (updatetechsupport.equalsIgnoreCase("Update your Profile")) {
 //					sendKeyStroke(attributeName_xpath, UpdateProfileBtn, Keys.SPACE);
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Profile, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_Profile);
-					waitForPageToLoadWebdriver();
-					//recentPopupSelectWebdriver("Account Profile");
-					recentPopupSelect_without_window_nameWebdriver();
-
+					recentPopupSelectWebdriver("Update Profile");
 				}else if (updatetechsupport.equalsIgnoreCase("Submit")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Submit, updatetechsupport);
 					clickWebdriver(attributeName_xpath,AW_Submit);
@@ -61,6 +62,8 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!applicantsection.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on Applicant Section ("+applicantsection+") Link");
+				waitForPageToLoadWebdriver();
+				switchToDefaultContentWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, Section+applicantsection+"')]", applicantsection);
 				clickWebdriver(attributeName_xpath, Section+applicantsection+"')]");
 				//click(Section+applicantsection+"')]");
@@ -69,10 +72,13 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
 //				click(helphint+helpfulhints+"']");
-				clickWebdriver(attributeName_xpath, ".//*[@id='helpfulHints']/a");
-
-				mouseOverWebdriver(attributeName_xpath,".//*[@id='navOverview']");
-				recentPopupSelectWebdriver(helpfulhints);
+				//clickWebdriver(attributeName_linktext, helpfulhints);
+				clickWebdriver(attributeName_xpath,"//li[contains(@id,'helpfulHints')]/a");
+				clickWebdriver(attributeName_xpath,"//li/a[contains(text(),'"+helpfulhints+"')]");
+				//recentPopupSelectWebdriver(helpfulhints);
+				//switchToDefaultContentWebdriver();
+				//String temp = driver.getTitle();
+				driver.findElement(By.xpath("//div[@class='modal-header']/h3")).getText();
 			}
 			if (!print.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+print+") Button");
@@ -101,6 +107,11 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				Reporter.log("Step 6 - Proceed to Click on ("+logout+") Link");
 				clickWebdriver(attributeName_xpath, RC_Resend);
 				waitForPageToLoadWebdriver();
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 			}
 		
 		} catch (Exception e) {

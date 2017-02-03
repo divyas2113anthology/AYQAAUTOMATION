@@ -1,8 +1,11 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 import or.OR;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import processor.CommonSeleniumActions;
 
 public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions implements OR{
@@ -34,6 +37,7 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 //			selectByVisibleTextWebdriver(attributeName_name, "txtInterfaceId", "regexp:"+exportdefinition);
 //			WebElement SelectValue = attributeNameValue(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 //			SelectValue.click();
+			System.out.println("aaaaaaaaaaaaaaa");
 			if(exportdefinition.equals("TestExprt")){
 				String export = Runtimedataread(exportdefinition);
 				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + export + "')]");
@@ -85,7 +89,6 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 			Reporter.log("Step 8 - Enter the Start Date as ["+startdate+"]");
 			String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
 			sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
-			System.out.print("Entered Start date in Main window");
 		}
 		if (!starthour.equals("")) {
 			Reporter.log("Step 9 - Enter the Start Hour as ["+starthour+"]");

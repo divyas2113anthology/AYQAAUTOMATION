@@ -150,7 +150,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Row=tableStart.getRow();
 		Col=tableStart.getColumn();			 
 		String Rundata = sheet.getCell(Col, Row+1).getContents().trim();
-		System.out.println("Data is " + Rundata);
 		workbook.close();
 		return Rundata;
 
@@ -2203,8 +2202,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		  
 	}
 		 
-	// This Function is used to Select Recently Opened Window or Popup.
-	public void recentOpenedPopupSelectWebdriver(String windowname) throws Exception {
+	// This Function is used to Select Recently Opened Window or Popup.(Working properly)
+	public void recentOpenedPopupSelectWebdriver(String mainwindow) throws Exception {
 		//					 int windownull = 0;
 		//					String currentwindow = driver.getWindowHandle();
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
@@ -2216,30 +2215,32 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String window = popwindow.next();
 			if (!mainwindow.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(window);
-
+				String temp =driver.switchTo().window(window).getTitle();
+				System.out.println("==============="+temp);
 			}
 		}
 	}
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupCloseWebdriver() throws Exception {
 		Reporter.log("Proceed to Close All Opened Pop Ups");	
+		//String mainwindow = driver.getWindowHandle();
 
-		//					 String mainwindow = driver.getWindowHandle();
-		driver.switchTo().window(mainwindow);
-		writeConsole("Webdriver Main Window["+mainwindow+"]");
+		//	driver.switchTo().window(mainwindow);
+
+		//writeConsole("Webdriver Main Window["+mainwindow+"]");
 		//					 Set<String> popwindow = driver.getWindowHandles();	
 		//					 Iterator<String> it = popwindow.iterator();
-		Iterator<String> popwindow = driver.getWindowHandles().iterator();	
+		Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		String parent = popwindow.next();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
 			//					 writeConsole("Webdriver Switch To Window["+window+"]");
 			//					 driver.switchTo().window(window);
-			if (!mainwindow.equals(window)) {
+			if (!parent.equals(window)) {
 				writeConsole("Webdriver Switch To Window["+window+"]");
-				driver.switchTo().window(window);	
-				closeWindowWebdriver();	
-				driver.switchTo().window(mainwindow);	
+				driver.switchTo().window(window);
+				closeWindowWebdriver();
+				driver.switchTo().window(parent);
 			}
 
 
@@ -3868,30 +3869,24 @@ public class CommonSeleniumActions extends Processor implements OR {
 //			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 //		}
 	}
-	public void PackageSelectionFieldDefinition(String section,String index) throws Exception {
+	public void PackageSelectionFieldDefinition(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
-		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
-		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
-		waitForPageToLoadWebdriver();
-		waitForElementPresentWebdriver(attributeName_xpath,"//font[text()='"+section+"']/../../preceding-sibling::a[@onclick]["+index+"]",section);
-		//  selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
-		//     selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
-		//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
-		WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+section+"']/../../preceding-sibling::a[@onclick][1]"));
-		String seconclickName = SeconclickName.getAttribute("onclick");
-		//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
+  //selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
+		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
+		//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+	//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
+		String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");
 		String secnode = secnodespl[0];
 		writeConsole("Node Value for Section "+secnode);
-		//String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
-		WebElement NodePlus = driver.findElement(By.xpath("//a[contains(@onclick,'toggle("+secnode+")')]"));
-		String nodePlus = NodePlus.getAttribute("onmouseover");
+		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
 		writeConsole("Plus OuterHTML Value "+nodePlus);
 		if (nodePlus.contains("Click to expand")) {
 			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
-			//      selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
+			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 		}
 	}
 	public void ClosePackageSelection() throws Exception {
@@ -3900,16 +3895,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 		//					SelectTreeFrame();
 		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        //written by Krishna
-		waitForElementPresentWebdriver(attributeName_xpath,"//img[contains(@src,'minus')]","minus element");
-		List<WebElement> minusCount = driver.findElementsByXPath("//img[contains(@src,'minus')]");
-		int minus_Count= minusCount.size();
-
-
-		//selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
-		//int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
-		writeConsole("Minus Count "+minus_Count);
-		for (int i = minus_Count; i > 0; i--) {
+		selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
+		int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		writeConsole("Minus Count "+minusCount);
+		for (int i = minusCount; i > 0; i--) {
 			clickWebdriver(attributeName_xpath, "xpath=(//img[contains(@src,'minus')])["+i+"]");
 			//						selenium.click("xpath=(//img[contains(@src,'minus')])["+i+"]");			
 		}

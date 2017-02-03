@@ -1,8 +1,12 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ConfigureSearchColumn;
 
 import or.OR;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import processor.CommonSeleniumActions;
 
 public class WC_SearchResultConfig_Input extends CommonSeleniumActions implements OR{
@@ -66,8 +70,6 @@ public class WC_SearchResultConfig_Input extends CommonSeleniumActions implement
 			waitForElementPresentWebdriver(attributeName_xpath, CSC_Save, delete);
 			//clickWebdriver(attributeName_xpath,"//input[@name='chkDelete']");
 			clickWebdriver(attributeName_xpath, CSC_Save);
-			Thread.sleep(10000);
-
 		}
 		
 	} catch (Exception e) {

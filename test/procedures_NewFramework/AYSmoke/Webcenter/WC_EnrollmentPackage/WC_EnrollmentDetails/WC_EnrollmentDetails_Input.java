@@ -72,8 +72,16 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 				waitForPageToLoadWebdriver();
 
 				
+				if(buttons.equalsIgnoreCase("Enrollments-DT fee")){
+					Reporter.log("Click the button as [" + buttons + "]");
+					waitForElementPresentWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']", buttons);
+					clickWebdriverWithCoordinates(attributeName_xpath, "//span[text()='Enrollments-DT fee']");
+				}else{
+					Reporter.log("Click the button as [" + buttons + "]");
+					waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
+					clickWebdriverWithCoordinates(attributeName_xpath, SR_button + buttons + "')]");
+				}
 			}
-			
 			if (!closeproceed.equals("")) {
 				Reporter.log("Click the button as ["+closeproceed+"]");				
 				if (closeproceed.equalsIgnoreCase("proceed to submission")) {
@@ -86,6 +94,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 
 					clickWebdriver(attributeName_xpath, "//img[@src='../Images/common_images/admin_close_window_large.gif']");
 					System.out.println("CLicked on Close button");
+
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}

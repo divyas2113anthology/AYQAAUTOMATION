@@ -1,11 +1,19 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import or.OR;
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.SwitchToWindow;
+
+import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
-
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
 public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements OR {
 	
@@ -137,7 +145,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				System.out.println("String1"+splitsupport[0]);
 				//System.out.println("String1"+splitsupport[1]);
 				for (int i = 0; i < splitsupport.length; i++) {
-					//waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
+					waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
 					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 					//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
 					Thread.sleep(10000);

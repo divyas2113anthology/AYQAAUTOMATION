@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Enrollment DT Fee' page")

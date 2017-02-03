@@ -7,6 +7,8 @@ package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 		import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+
 public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements OR{
 	@Test(description="This Procedure is to perform some Operation in 'FTP Test Succeded' page")
 	public void MC_FTPTestSucceded_Verify()throws Exception{
@@ -40,3 +42,4 @@ public class MC_FTPTestSucceded_Verify extends CommonSeleniumActions implements 
 	}
 
 }
+

@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -34,7 +35,7 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			String edugpa = educationvdatarepo[14];
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
 			//recentOpenedPopupSelectWebdriver("Education Background");
-			selectMainWindowWebdriver();
+			//selectMainWindowWebdriver();
 			if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
 				if (selenium.isTextPresent(edusuccessmessage)) {
@@ -59,9 +60,11 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 //				String hsnamewaitID = getElementIDbyLabel("High School Name", EB_HighSchoolName_wait);
 //				waitForConditionisElementPresent(hsnamewaitID, "60000");
 	//			selenium.waitForCondition("selenium.isElementPresent(\"//input[@id='q24552' and @value!='']\")", "60000");
-				String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
-				waitForElementPresentWebdriver(attributeName_xpath, hsnameID, eduhighschoolname);
-				String vhsname = getValueWebdriver(attributeName_xpath,hsnameID);
+				//String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
+				//waitForElementPresentWebdriver(attributeName_xpath, hsnameID, eduhighschoolname);
+				//String vhsname = getValueWebdriver(attributeName_xpath,hsnameID);
+				String hsnameID =driver.findElement(By.xpath("//input[@id='q24552']")).getAttribute("value");
+				String vhsname = hsnameID;
 				if (vhsname.equals(eduhighschoolname)) {
 					Reporter.log("Data("+vhsname+") was displayed correctly in the [High School Name] Field");				
 				} else {

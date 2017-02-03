@@ -22,9 +22,9 @@ public class WC_RecommendationBatchUpdate_Input extends CommonSeleniumActions im
 			String submitback = testdata[1];
 						
 			if(!status.equals("")){
-				Reporter.log("Select Status as ("+status+")");
-				waitForElementPresentWebdriver(attributeName_xpath, RSFBU_Status, status);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, RSFBU_Status, status);
+					Reporter.log("Select Status as (" + status + ")");
+					waitForElementPresentWebdriver(attributeName_xpath, RSFBU_Status, status);
+					selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, RSFBU_Status, status);
 			}
 			if(!submitback.equals("")){
 				Reporter.log("Clicking on ("+submitback+")");

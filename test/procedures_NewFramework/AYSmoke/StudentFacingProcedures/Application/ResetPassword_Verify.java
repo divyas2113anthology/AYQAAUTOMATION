@@ -21,7 +21,7 @@ public class ResetPassword_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Proceed to Verify the '"+message+"' 'Reset Password' page");
 //				verifyTextPresent(message);
 				waitForElementPresentWebdriver(attributeName_xpath, "//p", message);
-				verifyElementContainsTextWebdriver(attributeName_xpath, "//font[@class='BasePageFont']/p", message, "Success Message");
+				verifyElementContainsTextWebdriver(attributeName_xpath, "//div[@id='Resetpassword']//p", message, "Success Message");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

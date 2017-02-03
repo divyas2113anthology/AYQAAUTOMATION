@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -43,12 +44,12 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_name, "attfile");
 				Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
-				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
-				Thread.sleep(8000);
-				System.out.print("AAAAAAAAAAAA");
+				Thread.sleep(1000);
+				driver.findElement(By.name("attfile")).sendKeys("C:/SeleniumScripts/AYQAAutomation/SourceFile/Application/UploadDocument/ImportForSmokeTest.txt");
+				//Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 				waitForPageToLoadWebdriver();
 				Thread.sleep(8000);
-				
+
 				//clickWebdriver(attributeName_name, "attfile");
 //				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");
 				//Removed wait time

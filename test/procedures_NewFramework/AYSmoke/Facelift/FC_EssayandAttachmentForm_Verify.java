@@ -1,8 +1,10 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.w3c.dom.ls.LSException;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions implements OR {
@@ -27,11 +29,10 @@ public class FC_EssayandAttachmentForm_Verify extends CommonSeleniumActions impl
 			String uploadmediafilenotpresent = testdata[11];			
 			Reporter.log("Verify Test Data was retrieved for 'Essay and Attachment' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			//waitForElementPresentWebdriver(attributeName_xpath, PSD_SuccessMsg, successmessage);
+			waitForElementPresentWebdriver(attributeName_xpath, PSD_SuccessMsg, successmessage);
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 //				waitForConditionisElementPresent(PSD_SuccessMsg, "5000");
-				//switchToOldWindow();
 				verifyElementTextWebdriver(attributeName_xpath, PSD_SuccessMsg, successmessage, "Sucesses Message");
 			}
 			if (!pagename.equals("")) {

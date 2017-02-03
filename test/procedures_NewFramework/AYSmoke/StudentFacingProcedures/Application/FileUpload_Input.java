@@ -30,6 +30,7 @@ public class FileUpload_Input extends CommonSeleniumActions implements OR {
 			if (!buttons.equals("")) {
 				Reporter.log("Step 2 - Click on 'Upload Document' Button");
 				if (buttons.equalsIgnoreCase("Upload Document")) {
+					waitForPageToLoadWebdriver();
 //					waitForElementVisible(EA_UploadDoc, "Upload Document");
 //					waitForElementVisibleWebdriver(attributeName_xpath, EA_UploadDoc, buttons);
 					waitForElementPresentWebdriver(attributeName_xpath, EA_UploadDoc, buttons);
@@ -37,7 +38,6 @@ public class FileUpload_Input extends CommonSeleniumActions implements OR {
 					//deselectPopUp();
 					//selectMainWindowWebdriver();
 					recentOpenedPopupSelectWebdriver("Window");
-					//recentPopupSelect_without_window_nameWebdriver();
 					//driver.switchTo().defaultContent();
 					//waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Upload File")) {

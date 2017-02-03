@@ -55,13 +55,51 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 				//checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
 				checkWebdriver(attributeName_xpath, "//label[contains(@for,'28')]");
 				clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				Reporter.log("Select (" + value + ")");
+				try{
+					String status = Runtimedataread(value);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + status + "']", status);
+					checkWebdriver(attributeName_xpath, MCL_CheckValue + status + "']");
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+
+				}catch(Exception e){
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + value + "']", value);
+					checkWebdriver(attributeName_xpath, MCL_CheckValue + value + "']");
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				}
+				/*if(value.equalsIgnoreCase("TestingEnrollmentStatus")){
+					String status = Runtimedataread(value);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + status + "']", status);
+					checkWebdriver(attributeName_xpath, MCL_CheckValue + status + "']");
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				}else {
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + value + "']", value);
+					checkWebdriver(attributeName_xpath, MCL_CheckValue + value + "']");
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				}*/
 			}
 			if(!verifyvalue.equals("")){
-				Reporter.log("Verify"+verifyvalue);
-				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
-				clickWebdriver(attributeName_xpath, ET_Value);
-				verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+verifyvalue+"')]", verifyvalue, verifyvalue);
-			}	
+				if(verifyvalue.equalsIgnoreCase("TestingEnrollmentStatus")) {
+					String status = Runtimedataread(verifyvalue);
+					Reporter.log("Verify" + verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + status + "')]", status, verifyvalue);
+				}else {
+					Reporter.log("Verify" + verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
+					clickWebdriver(attributeName_xpath, ET_Value);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + verifyvalue + "')]", verifyvalue, verifyvalue);
+				}
+			}
 			if (!savecancel.equals("")) {
 				Reporter.log("Clicking on : ("+savecancel+")");
 				if(savecancel.equalsIgnoreCase("add")){

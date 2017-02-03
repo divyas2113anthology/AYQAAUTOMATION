@@ -1,11 +1,18 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
+
+import org.openqa.selenium.Keys;
+import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+
 import processor.CommonSeleniumActions;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import java.util.Iterator;
+import java.util.Set;
 
 
 public class WC_EventLookUp_Input extends CommonSeleniumActions implements OR {
@@ -84,10 +91,11 @@ public class WC_EventLookUp_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 					if (isElementPresentWebdriver(attributeName_xpath, EL_LinkToClick)) {
 						waitForElementPresentWebdriver(attributeName_xpath, EL_LinkToClick, "Lookup Title");
+						Set<String> mainWindow = driver.getWindowHandles();
+						String parent = mainWindow.iterator().next();
 						clickWebdriver(attributeName_xpath, EL_LinkToClick);
+						driver.switchTo().window(parent);
 						//selectMainWindowWebdriver();
-						switchToOldWindow();
-
 					}
 				}else if (searchclose.equalsIgnoreCase("Close Window")) {
 					clickWebdriver(attributeName_xpath, EL_CloseWindowBtn);

@@ -2,6 +2,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email;
 
 import or.OR;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -73,13 +74,15 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			if (!mailmergetag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				//select(AMET_MailMergeTag, mailmergetag);
+				waitForPageToLoadWebdriver();
 				selectByVisibleTextWebdriver(attributeName_xpath, AMET_MailMergeTag, mailmergetag);
 				waitForPageToLoadWebdriver();
 				
 			}
 			if (!querytag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				String query=selenium.getValue(AMET_QueryTag);
+				//String query=selenium.getValue(AMET_QueryTag);
+				String query = driver.findElement(By.xpath(AMET_QueryTag)).getText();
 				System.out.println(query);
 				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");
 				

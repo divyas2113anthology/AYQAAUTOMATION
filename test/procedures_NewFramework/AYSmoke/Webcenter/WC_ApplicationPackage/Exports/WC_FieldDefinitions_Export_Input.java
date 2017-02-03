@@ -49,6 +49,11 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
 						waitForElementPresentWebdriverWait(attributeName_xpath,"//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1]","value");
 						// /String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
+					///	WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+SplitPackage[i]+"']/../../preceding-sibling::a[@onclick][1]"));
+						//String seconclickName = SeconclickName.getAttribute("onclick");
+						//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
+						waitForElementPresentWebdriver(attributeName_xpath,"//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1]","Wait For Package ");
+						//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
 						WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+SplitPackage[i]+"']/../../preceding-sibling::a[@onclick][1]"));
 						String seconclickName = SeconclickName.getAttribute("onclick");
 						writeConsole("Onclick Value for Section "+seconclickName);
@@ -83,6 +88,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 				System.out.println("Sample test");
 				ClosePackageSelection();
 
+				//ClosePackageSelection();
 			}
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frameIntfFieldDef");

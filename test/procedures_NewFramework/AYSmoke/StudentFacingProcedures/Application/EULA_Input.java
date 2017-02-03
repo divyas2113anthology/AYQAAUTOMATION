@@ -32,9 +32,9 @@ public class EULA_Input extends CommonSeleniumActions implements OR {
 			if (!privacypolicy.equals("")) {
 				Reporter.log("Proceed to check ("+privacypolicy+") in the 'Privacy Policy' Radio");
 				if (privacypolicy.equalsIgnoreCase("Check")) {
-					checkWebdriver(attributeName_xpath,PrivacyPolicy);
+					checkWebdriver(attributeName_cssselector,PrivacyPolicy);
 				}else if (privacypolicy.equalsIgnoreCase("UnCheck")) {
-					uncheckWebdriver(attributeName_xpath,PrivacyPolicy);
+					uncheckWebdriver(attributeName_cssselector,PrivacyPolicy);
 				}			
 			}
 			if (!continuecreate.equals("")) {

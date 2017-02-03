@@ -28,9 +28,14 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 			} else {
 				generatepin = pac;					
 			}
+			waitForPageToLoadWebdriver();
 			Reporter.log("Proceed to Enter PAC as ("+generatepin+")");
+			try{
 			sendKeys(attributeName_xpath, RL_PerAccessCode, generatepin);	
-//			String generatepin = Runtimedataread(pac);
+			}catch(Exception e){
+				sendKeys(attributeName_xpath,"//input[@id='rec-login']",generatepin);
+			}
+// String generatepin = Runtimedataread(pac);
 //			Reporter.log("Proceed to Enter PIN as ("+pac+")");
 //			sendKeys(attributeName_xpath, RL_PerAccessCode, generatepin);			
 		}
@@ -53,7 +58,7 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!forgotpacpassword.equals("")) {
 			Reporter.log("Step 4 - Click on 'Forgot your PIN or Password?' Button");
-			clickWebdriver(attributeName_partiallinktext, "Forgot your access code and/or password?");
+			clickWebdriver(attributeName_partiallinktext, "Forgot your access code and/or password?");	
 			recentPopupSelectWebdriver("Forgot/Reset Password");
 		}
 		} catch (Exception e) {			

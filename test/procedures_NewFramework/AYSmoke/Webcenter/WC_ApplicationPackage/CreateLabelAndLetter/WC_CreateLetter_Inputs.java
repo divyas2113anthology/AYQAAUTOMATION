@@ -52,7 +52,7 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 			if (!selectadecisionletter.equals("")) {
 				Reporter.log("Step 5 - Enter the Action History text as ["+selectadecisionletter+"]");
 //				selectByVisibleTextWithSpaceWebdriver(attributeName_name, "DecisionLetter", selectadecisionletter);
-				selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name,"DecisionLetter", selectadecisionletter);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,"DecisionLetter", selectadecisionletter);
 			}
 			if (!onlineoffline.equals("")) {
 				Reporter.log("Step 6 - Select the Add to label as ["+onlineoffline+"]");
@@ -90,7 +90,6 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 				Reporter.log("Step 11 - Click the Button as ["+button+"]");
 				if (button.equalsIgnoreCase("Create")) {
 					clickWebdriver(attributeName_xpath, CL_CreateBtn);
-					Thread.sleep(10000);
 					waitForPageToLoadWebdriver();
 				} else if (button.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, ASR_BackBtn);

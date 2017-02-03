@@ -22,15 +22,11 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 				Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
 				waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
 				sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
-				Thread.sleep(10000);
-				System.out.println("First name entered suss");
-
 			}
 			if (!button.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");
 				waitForElementPresentWebdriverWait(attributeName_id, CNT_SearchTopBtn, button);
 				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
-				Thread.sleep(10000);
 				
 			}
 			if (!editfirstname.equals("")) {

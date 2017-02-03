@@ -28,6 +28,11 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				//driver.manage().deleteAllCookies();
 				//System.out.println("Cookies cleared");
 				//waitForPageToLoadWebdriver();
+				waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
+				clickWebdriver(attributeName_partiallinktext, weltopupdatelogout);
+				driver.manage().deleteAllCookies();
+				System.out.println("Cookies cleared");
+				waitForPageToLoadWebdriver();
 			}
 			if (!welpackage.equals("")) {
 				Reporter.log("Step 2 - Select the Name of the Package as ["+welpackage+"]");

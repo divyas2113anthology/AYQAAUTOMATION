@@ -39,8 +39,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_cssselector, DB_TecSupportBtn);
 					recentPopupSelectWebdriver("Technical Support");
 				}else if (dashboard_button.equalsIgnoreCase("Log Out")) {
-					waitForElementPresentWebdriverWait(attributeName_xpath,Logoutmain,"Log Out");
-					clickWebdriver(attributeName_xpath,Logoutmain);
+					waitForElementPresentWebdriverWait(attributeName_xpath,DB_LogoutBtn,"Log Out");
+					clickWebdriver(attributeName_xpath,DB_LogoutBtn);
 					waitForPageToLoadWebdriver();
 				}			
 			}
@@ -60,8 +60,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 					clickWebdriver(attributeName_xpath,DB_App2StartEditButton);	
 					waitForElementPresentWebdriver(attributeName_xpath, AW_PageTitle, "Page Title");
 				}else if (myapplications_button.equalsIgnoreCase("Application2_Edit")){
-					waitForElementPresentWebdriver(attributeName_xpath,DB_App2EditButtonNew, "Edit Application");
-					clickWebdriver(attributeName_xpath,DB_App2EditButtonNew);
+					waitForElementPresentWebdriver(attributeName_xpath,DB_App2EditButton, "Edit Application");
+					clickWebdriver(attributeName_xpath,DB_App2EditButton);
 					waitForPageToLoadWebdriver();
 				}
 			}
@@ -85,8 +85,8 @@ public class FC_Dashboard_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!link_to_click.equals("")) {
 				Reporter.log("Step 4 - Click the Link as ("+link_to_click+"):");
-				waitForElementPresentWebdriverWait(attributeName_xpath, "//a[contains(text(),'Your application decision is now available online')]", link_to_click);
-				clickWebdriver(attributeName_xpath, "//a[contains(text(),'Your application decision is now available online')]");
+				waitForElementPresentWebdriverWait(attributeName_xpath, Applpackage+link_to_click+"')]", link_to_click);
+				clickWebdriver(attributeName_xpath, Applpackage+link_to_click+"')]");
 				waitForPageToLoadWebdriver();
 			}
 	

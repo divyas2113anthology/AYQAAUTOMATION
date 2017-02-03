@@ -26,8 +26,14 @@ public class WC_SearchforEnrollmentApplicants_Verify extends CommonSeleniumActio
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+			if(pagename.contains("Enrollments-DT")){
+				waitForElementPresentWebdriverWait(attributeName_xpath,"//table//td/font", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath,"//table//td/font", pagename, pagename);
+			}
+			else{
 			waitForElementPresentWebdriverWait(attributeName_xpath, ASR_Pagename, pagename);
-			verifyElementContainsTextWebdriver(attributeName_xpath, ASR_Pagename, pagename, pagename);
+		   	verifyElementContainsTextWebdriver(attributeName_xpath, ASR_Pagename, pagename, pagename);
+			}
 		}
 		if (!verifyui.equals("")) {
 			

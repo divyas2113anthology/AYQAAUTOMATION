@@ -6,6 +6,9 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class WC_RecommendationDT_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Recommendation DT' page")
@@ -53,7 +56,7 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				//recentPopupClose();
 				switchToOldWindow();
 				Thread.sleep(5000);
-			}	
+			}
 			//driver.switchTo().window(AppSummaryWindowName);
 			
 			} catch (Exception e) {

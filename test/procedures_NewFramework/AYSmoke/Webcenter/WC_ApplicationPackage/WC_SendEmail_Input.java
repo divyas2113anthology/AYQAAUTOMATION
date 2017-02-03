@@ -1,9 +1,19 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
-import or.OR;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
+import org.openqa.selenium.interactions.SendKeysAction;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
@@ -39,10 +49,9 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Select at Template as  ["+selectatemplate+"] ");
 				//waitForElementPresentWebdriver(attributeName_name, SE_Template, selectatemplate);
 				waitForElementPresentWebdriverWait(attributeName_xpath, SE_TemplateName, selectatemplate);
-				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, "regexp:"+selectatemplate);
-				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, "regexp:"+selectatemplate);
-				selectByValueWebdriver(attributeName_name,SE_Template,"93");
-				waitForPageToLoadWebdriver();
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,SE_Template, selectatemplate);
+				//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_name, SE_Template, selectatemplate);
+				//waitForPageToLoadWebdriver();
 				try {
 					Alert alert = driver.switchTo().alert();
 			        String AlertText = alert.getText();
@@ -138,7 +147,6 @@ public class WC_SendEmail_Input extends CommonSeleniumActions implements OR {
 				if (button.equalsIgnoreCase("Send")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, SE_SendBtn, button);
 					clickWebdriver(attributeName_xpath, SE_SendBtn);
-					Thread.sleep(5000);
 					try {
 						 
 				        Alert alert = driver.switchTo().alert();

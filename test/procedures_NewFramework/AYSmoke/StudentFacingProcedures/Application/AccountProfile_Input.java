@@ -1,11 +1,19 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
-import or.OR;
+
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 import java.io.IOException;
@@ -85,15 +93,13 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				
 				if (!password.equals("")) {			
 					Reporter.log("Step 8 - Enter 'Password' as ("+password+")");	
-					//AppPassword = Runtimedataread(password);
-					//sendKeys(attributeName_xpath,Password, AppPassword);
-					sendKeys(attributeName_xpath,Password, password);
+					AppPassword = Runtimedataread(password);
+					sendKeys(attributeName_xpath,Password, AppPassword);
 				}		
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 9 - Enter 'Confirm Password' as ("+confirmpassword+")");	
-					//AppPassword = Runtimedataread(confirmpassword);
-				//	sendKeys(attributeName_xpath,ConfirmPassword, AppPassword);
-					sendKeys(attributeName_xpath,ConfirmPassword, confirmpassword);
+					AppPassword = Runtimedataread(confirmpassword);
+					sendKeys(attributeName_xpath,ConfirmPassword, AppPassword);
 					if (!confirmyes.equalsIgnoreCase("")) {
 						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 						Runtimedatawrite(confirmpassword,confirmyes);			
@@ -105,6 +111,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 					if (createaccount.equalsIgnoreCase("create account")) {
 						clickWebdriver(attributeName_xpath,CreateAccountProfilePage);
 						Thread.sleep(10000);
+						clickWebdriver(attributeName_xpath,CreateAccount);
 						waitForPageToLoadWebdriver();
 					}
 					if(createaccount.equalsIgnoreCase("update account")){

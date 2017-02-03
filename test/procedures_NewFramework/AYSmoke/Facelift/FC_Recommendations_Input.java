@@ -86,7 +86,6 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcstate.equals("")) {
 				Reporter.log("Step 10 - Select State as ("+rcstate+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_cssselector,RI_State, rcstate);
-				//selectByVisibleTextWebdriver(attributeName_xpath,"//select[@name='state']",rcstate);
 			}
 			if (!rcpostalcode.equals("")) {
 				Reporter.log("Step 11 - Select Postal Code as ("+rcpostalcode+")");
@@ -148,6 +147,11 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 //				clickWebdriverWithCoordinates(attributeName_xpath, "//input[@value='Add Provider']");
 				alertAccept();
 				waitForPageToLoadWebdriver();
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("no laer");
+				}
 				
 			}
 			if (!submitapplication.equals("")) {
@@ -155,6 +159,11 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 				waitForElementPresentWebdriver(attributeName_xpath,AW_SubAppBtn, submitapplication);
 				clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 				waitForPageToLoadWebdriver();
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("no laer");
+				}
 			}
 
 		} catch (Exception e) {

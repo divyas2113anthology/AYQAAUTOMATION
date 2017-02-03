@@ -1,18 +1,20 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 
-import or.OR;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-import processor.CommonSeleniumActions;
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import or.OR;
+import org.testng.util.Strings;
+import processor.CommonSeleniumActions;
 public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some Operation on 'Add/Edit Event' Page")
@@ -61,7 +63,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				sendKeys(attributeName_xpath, AEE_IntName, internalname);
 			}
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String eventTitle = title+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
+			String eventTitle = title+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();
 			if (!title.equals("")) {
 				Reporter.log("Step 3 - Enter 'Event Title' as ("+eventTitle+")");
 //				type(CA_FirstName, eventTitle);	
@@ -154,13 +156,10 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			if (!closeeventtext.equals("")) {
 				Reporter.log("Step 17 - Enter the close event text as ["+closeeventtext+"]");
 				sendKeys(attributeName_xpath, AEE_CloseEventText, closeeventtext);
-
 			}
 			if (!waitlistemail.equals("")) {
 				Reporter.log("Step 18 - Enter the waitlist email as ["+waitlistemail+"]");
-				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail, "regexp:"+waitlistemail);
-				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,AEE_WaitlistEmailnew, "   Event Confirmation Email");
-				clickWebdriver(attributeName_xpath,".//*[@name='chkAllowWaitList']");
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_WaitlistEmail,waitlistemail);
 			}
 			if (!recurrencetype.equals("")) {
 				Reporter.log("Step 19 - Enter the Recurrent type as ["+recurrencetype+"]");
@@ -168,14 +167,11 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 			}
 			if (!registerdeclineemail.equals("")) {
 				Reporter.log("Step 20 - Enter the Registerm Decline Email as ["+registerdeclineemail+"]");
-				//selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail, "regexp:"+registerdeclineemail);
-				Select dropdown = new Select(driver.findElement(By.name("selRegOrDecEmail")));
-				dropdown.selectByVisibleText("   Event Confirmation Email");
-
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_RegDeclineEmail,registerdeclineemail);
 			}
 			if (!group.equals("")) {
 				Reporter.log("Step 21 - Enter the Group as ["+group+"]");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_Group, "regexp:"+group);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,AEE_Group,group);
 			}
 			if (!editeventurlcontains.equals("")) {
 				Reporter.log("Step 22 - Enter the Group as ["+editeventurlcontains+"]");
@@ -187,19 +183,25 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				if (button.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_xpath, AEE_Save);
 					waitForPageToLoadWebdriver();
-					Thread.sleep(10000);
 				}else if (button.equalsIgnoreCase("publish to prod")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
 					waitForPageToLoadWebdriver();
-
 				}else if (button.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);
-				//	clickWebdriver(attributeName_xpath, AEE_CloseWindow);
-					//clickWebdriver(attributeName_xpath, ".//a[text()='logout']");
-					//driver.close();
-					//selectMainWindowWebdriver();
-					switchToOldWindow();
+					//clickWebdriver(attributeName_xpath, AEE_CloseWindow);
+					//String mainwindow = driver.getWindowHandle();
+					//driver.switchTo().window(mainwindow);
+					//driver.switchTo().defaultContent();
+				//	selectMainWindowWebdriver();
+					//recentPopupCloseWebdriver();
+					//Iterator<String> popwindow = driver.getWindowHandles().iterator();
+					Set<String> mainWindow = driver.getWindowHandles();
+					String parent = mainWindow.iterator().next();
+					//String child = mainWindow.iterator().next();
+					recentOpenedPopupSelectWebdriver(parent);
+					driver.close();
+					driver.switchTo().window(parent);
 				}
 			}
 		} catch (Exception e) {

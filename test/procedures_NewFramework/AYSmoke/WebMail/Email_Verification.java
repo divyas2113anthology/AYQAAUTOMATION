@@ -1,11 +1,15 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
-import or.OR;
+import static processor.CommonSeleniumActions.Runtimedataread;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.HasInputDevices;
 import org.openqa.selenium.interactions.Keyboard;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Email_Verification extends CommonSeleniumActions implements OR {
@@ -50,10 +54,12 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!username.equals("")) {
 					Reporter.log("Step 2 - Enter UserName");
 					sendKeys(attributeName_xpath,HC_UserName,username);
+					waitForPageToLoadWebdriver();
 				}
 				if (!password.equals("")) {
 					Reporter.log("Step 3 - Enter Password");
 					sendKeys(attributeName_xpath,HC_Password,password);
+					waitForPageToLoadWebdriver();
 				}
 				
 				if (!emailsubject.equals("")) {
@@ -78,11 +84,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
-					System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
 					waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]","Send Email");
 					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
-						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");                                     
-						recentPopupSelectWebdriver("Open Email");                                   
+						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");
+						recentPopupSelectWebdriver("Open Email");
 					} else {
 						writeFailure("Email Notification Subject["+emailsubjectcontains+"] was not Recevied in Hobsons WebMail Inbox ");
 					}
@@ -231,12 +236,20 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!login.equals("")) {
 					Reporter.log("Step 4 - Click Log-In Button");
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Login, login);
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
+					Thread.sleep(1000);
 					waitForPageToLoadWebdriver();
 					Thread.sleep(10000);
-					//assign key board object
+					try{
+					if(!isDisplayedWebdriver(attributeName_xpath, HC_Inbox)){
+						doubleClickWebdriver(attributeName_xpath, HC_Login);
+						waitForPageToLoadWebdriver();
+					}}catch(Exception e){
 
+					}
+					//assign key board object
 				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
 				       //enter a key
 				       keyboard.pressKey(Keys.ENTER);
@@ -266,6 +279,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							try {
 								//if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
 								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
+							waitForPageToLoadWebdriver();
+							try {
+								//if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
+								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
 								waitForPageToLoadWebdriver();
 						}
 						//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
@@ -287,8 +304,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
 					System.out.println("Login");
 					try {
-						for (int second = 0;; second++)
-						{
+						for (int second = 0;; second++) {
 							if (second >= 60) writeFailure(" Timeout after 1 minute..");
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
 							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
@@ -300,29 +316,65 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							//waitForPageToLoadWebdriver();
 							//waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
 							//waitForPageToLoadWebdriver();  //table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),
-							try { 
-								System.out.println("Entered in try block");
-								if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]"))
-									writeConsole("I am in try block");
-									break; 
-							} catch (Exception e) {}
+							int mail;
+							for (mail = 2; mail < 7; mail++) {
+								try {
+									String xpathForMailSubject = "//div[@aria-label='Mail list']//div//div[2]//div[" + mail + "]//div[2]//span[contains(text(),'" + emailsubjectcontains + "')]";
+									//waitForElementPresentWebdriver(attributeName_xpath, xpathForMailSubject,"Send Email");
+								//	String subjectName = driver.findElement(By.xpath("xpathForMailSubject")).getText();
+									//System.out.println("===="+subjectName);
+									if (isDisplayedWebdriver(attributeName_xpath, xpathForMailSubject)) {
+										//doubleClickWebdriver(attributeName_xpath, xpathForMailSubject);
+										clickWebdriver(attributeName_xpath, xpathForMailSubject);
+										//recentPopupSelectWebdriver("Open Email");
+										break;
+									} else {
+										writeFailure("Email Notification Subject[" + emailsubjectcontains + "] was not Recevied in Hobsons WebMail Inbox ");
+									}
+
+									/*System.out.println("Entered in try block");
+									if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'" + emailsubjectcontains + "')]"))
+										writeConsole("I am in try block");
+									break;*/
+								} catch (Exception e) {
+								}
+								waitForPageToLoadWebdriver();
+							}
 							waitForPageToLoadWebdriver();
-						}
+							waitForElementPresentWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']","EMT");
+							if(isDisplayedWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']")){
+								break;
+							}
+							//if(isDisplayedWebdriver(attributeName_xpath,"xpath=//a[contains(text(),'click here.')]")){
+							/*if(isDisplayedWebdriver(attributeName_xpath,"xpath=//a[contains(text(),'trainingaccount')]")){
+									clickWebdriver(attributeName_xpath,"//a[contains(text(),'trainingaccount')]");
+									waitForPageToLoadWebdriver();
+									break;
+								}*/
+							}
+
+						/*waitForElementPresentWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']","EMT");
+						if(isDisplayedWebdriver(attributeName_xpath,"xpath=//a[contains(text(),'click here.')]")){
+							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
+							waitForPageToLoadWebdriver();
+						}*/
+
 						//selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						//clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
 						
-						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
-						waitForPageToLoadWebdriver();
+						//clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
+						//waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						//			    	waitForPageToLoadWebdriver();
 //						waitForElementPresentWebdriver(attributeName_id, "lnkHdrclose", "Close Mail");
 						//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']/span[contains(text(),'To:')]", "To");
-						waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']","EMT");
+
+						/*waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ItemHeader.ToContainer']","EMT");
 						if(selenium.isElementPresent("//a[contains(text(),'click here.')]")){
 							clickWebdriver(attributeName_xpath,"//a[contains(text(),'click here.')]");
 							waitForPageToLoadWebdriver();
-						}
+						}*/
 					} catch (Exception e) {
 						//System.out.println("Error message("+e.getMessage()+")");
 						writeFailure("Email Notification was not Recevied in emtqaaccount Inbox or Element Error message("+e.getMessage()+")");

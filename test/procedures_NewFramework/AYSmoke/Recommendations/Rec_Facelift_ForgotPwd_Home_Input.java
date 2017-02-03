@@ -24,7 +24,7 @@ public class Rec_Facelift_ForgotPwd_Home_Input extends CommonSeleniumActions imp
 		if (!paccode.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PAC from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepin;
-			if (paccode.equalsIgnoreCase("Recommender Personal Access Code")) {
+			if (paccode.contains("Recommender Personal Access Code")) {
 				generatepin = Runtimedataread(paccode);				
 			} else {
 				generatepin = paccode;					

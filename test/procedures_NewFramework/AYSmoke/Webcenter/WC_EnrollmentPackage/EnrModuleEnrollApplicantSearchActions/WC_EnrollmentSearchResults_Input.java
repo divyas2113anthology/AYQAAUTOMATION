@@ -25,7 +25,8 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 			System.out.println("AAAAAAAAAAAAA");
 			Reporter.log("Step 1 - Check the checkbox against ["+ApplicantFirstNameCheck+"]");
 			if (operationtoperform.equalsIgnoreCase("Check")) {
-				checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				checkWebdriver(attributeName_xpath,"//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				//checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
 			}else if (operationtoperform.equalsIgnoreCase("UnCheck")) {
 				checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
 			}
@@ -57,6 +58,9 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 				clickWebdriver(attributeName_xpath, MSR_BackBtn);
 			}else if (button.equalsIgnoreCase("Delete")) {
 				clickWebdriver(attributeName_xpath, MSR_DeleteBtn);
+			}else if (button.equalsIgnoreCase("Go")) {
+				//clickWebdriver(attributeName_xpath, "//img[contains(@src,'go_small')]");
+				clickWebdriver(attributeName_xpath, ASR_GoBtn);
 			}
 		}
 	}catch(Exception e){

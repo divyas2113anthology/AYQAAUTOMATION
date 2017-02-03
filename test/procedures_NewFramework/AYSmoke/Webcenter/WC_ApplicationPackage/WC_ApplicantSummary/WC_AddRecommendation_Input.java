@@ -105,10 +105,12 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				Reporter.log("Click on Save");
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Save , saveclose);   
 				clickWebdriver(attributeName_xpath, AR_Save);
+				recentPopupCloseWebdriver();
+
 				//recentPopupCloseWebdriver();
 				clickWebdriver(attributeName_xpath,"//img[@src='../Images/common_images/admin_close_window_large.gif']");
 				Thread.sleep(5000);
-								
+
 			}
 			//switchToDefaultContentWebdriver();
 			switchToOldWindow();

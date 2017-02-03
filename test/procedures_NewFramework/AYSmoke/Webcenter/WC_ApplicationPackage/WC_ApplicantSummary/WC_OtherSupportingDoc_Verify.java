@@ -27,8 +27,9 @@ public class WC_OtherSupportingDoc_Verify extends CommonSeleniumActions implemen
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pagename+"')]", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+pagename+"')]", pagename, "Page Name for Package");
+				String PageName[] = pagename.split(":");
+				waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0]);
+				verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0], "Page Name for Package");
 			}
 			if (verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the UI information in Application page");

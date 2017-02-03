@@ -1,8 +1,14 @@
 package procedures_NewFramework.AYSmoke.BridgeEvent;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
+
+import org.openqa.selenium.Keys;
+import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+
 import processor.CommonSeleniumActions;
 
 
@@ -29,13 +35,11 @@ public class BR_InviteToEvent_Inputs extends CommonSeleniumActions implements OR
 				Reporter.log("Step 2 - Select the Filter as ("+selectfilter+") ");
 				waitForElementPresentWebdriver(attributeName_partiallinktext, selectfilter, "Select Filter Link");
 				clickWebdriver(attributeName_partiallinktext, selectfilter);
-				//selectMainWindowWebdriver();
-				switchToOldWindow();
+				selectMainWindowWebdriver();
 			}
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 3 - Select the Template as ("+selecttemplate+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_SelectTemplate, "regexp:"+selecttemplate);
-				selectByValueWebdriver(attributeName_xpath, "//select[@name='TemplateList']", "117");
 			}
 			if (!subject.equals("")) {
 				Reporter.log("Step 4 -Enter the Subject as ("+subject+")");

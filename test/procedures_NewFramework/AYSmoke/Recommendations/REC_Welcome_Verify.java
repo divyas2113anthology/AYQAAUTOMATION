@@ -27,14 +27,14 @@ public class REC_Welcome_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!sectionpresent.equals("")) {
 				Reporter.log("Step 2 - Verify the Presented section as ("+sectionpresent+")");
-				waitForElementVisibleWebdriver(attributeName_partiallinktext, "Evaluations", sectionpresent);
+				waitForElementVisibleWebdriver(attributeName_partiallinktext, sectionpresent, sectionpresent);
 				verifyElementContainsTextWebdriver(attributeName_partiallinktext, "Evaluations", sectionpresent, sectionpresent);
 //				verifyElementVisibleContainsTextWebdriver(attributeName_xpath, CI_SectionMenu, sectionpresent, "Section Menu Link");
 			}
 			if (!sectionnotpresent.equals("")) {
 				Reporter.log("Step 3 - Verify the Not Presented section as ("+sectionnotpresent+")");
-				waitForElementNotPresentWebdriver(attributeName_partiallinktext, "Evaluations", sectionnotpresent);
-				verifyElementNotPresentWebdriver(attributeName_partiallinktext, "Evaluations", sectionnotpresent);
+				waitForElementNotPresentWebdriver(attributeName_partiallinktext, sectionnotpresent, sectionnotpresent);
+				verifyElementNotPresentWebdriver(attributeName_partiallinktext, sectionnotpresent, sectionnotpresent);
 //				verifyElementNotVisibleContainsTextWebdriver(attributeName_xpath, CI_SectionMenu, sectionnotpresent, "Section Menu Link");
 			}
 			

@@ -1,17 +1,25 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
+import java.io.IOException;
+import java.util.Calendar;
+
+import jxl.read.biff.BiffException;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 import or.OR;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
-import java.util.Calendar;
-
 public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
-	
-	@Test(description="This Procedure is used to perform some operation in 'Manage Choice Groups' page")
-	
-	public void WC_EditStatusLabel_Input(){
+
+	@Test(description = "This Procedure is used to perform some operation in 'Manage Choice Groups' page")
+
+	public void WC_EditStatusLabel_Input() throws Exception {
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Manage Choice Groups");
@@ -27,17 +35,19 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String addrow=testdata[8];
 			//switchToDefaultContentWebdriver();
 			//switchToFrameNameIdWebdriver("frmContent");
-			
+			//switchToDefaultContentWebdriver();
+			switchToFrameNameIdWebdriver("frmContent");
+
 			if (!groupdescription.equals("")) {
 				Reporter.log("Enter Group Description");
-				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);	
+				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);
 			}
-			
+
 			if (!addrow.equals("")) {
 				Reporter.log("Create a new row");
 				waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
 				clickWebdriver(attributeName_xpath, MCG_AddRow);
-				
+
 			}
 			if (!statuscategory.equals("")) {
 				Reporter.log("Select ("+statuscategory+")from Status Category");
@@ -46,35 +56,83 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 				String RowNumber = getTextWebdriver(attributeName_xpath, "//td[input[@name='txtStatusCategory' and @value='']]/preceding-sibling::td");
 				System.out.println("RowNumber is "+RowNumber);
 				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory+RowNumber+"')]", statuscategory);
+				Reporter.log("Select (" + statuscategory + ")from Status Category");
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
-			
+
 			if (!labelName.equals("")) {
 				Reporter.log("Enter Label");
-				String Label = labelName+Calendar.getInstance().getTimeInMillis();
-				sendKeys(attributeName_xpath,MCG_label,Label);
-				Runtimedatawrite(Label, label);
-				}
-			
-			if(!active.equals("")){		
-				//String Active = Runtimedataread(active);
-				/*waitForElementPresentWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]", active);
-				clickWebdriver(attributeName_xpath, MCG_Active+active+"']]/following-sibling::td[input[@type='checkbox']]");*/
-				waitForElementPresentWebdriver(attributeName_xpath, "//input[contains(@onclick,'16')]", active);
-				clickWebdriver(attributeName_xpath, "//input[contains(@onclick,'16')]");
-
-				//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
+				String Label = labelName + Calendar.getInstance().getTimeInMillis();
+				sendKeys(attributeName_xpath, MCG_label, Label);
+				Runtimedatawrite(Label, labelName);
 			}
-			
-			if(!delete.equals("")){			
-				String Delete = Runtimedataread(delete);
-				waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]", Delete);
-				clickWebdriver(attributeName_xpath, MCG_DeleteCheck+Delete+"']]/following-sibling::td[input[@name='chkDelete']]");	
-				//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
+
+			if (!label.equals("")) {
+				try {
+					Reporter.log("Enter Label");
+					String Label = labelName + Calendar.getInstance().getTimeInMillis();
+					sendKeys(attributeName_xpath, MCG_label, Label);
+					Runtimedatawrite(Label, label);
+				} catch (Exception e) {
+					Reporter.log("Rename Label");
+					System.out.println("Enter in edit label");
+					String LabelEdit = labelName + Calendar.getInstance().getTimeInMillis();
+					String label1 = Runtimedataread(label);
+					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
+					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
+					Runtimedatawrite(LabelEdit, label);
+					System.out.println("Write value in Excel sheet");
+				}
+			}
+
+			if (!active.equals("")) {
+				if (active.contains("Unactive")) {
+					String[] data = active.split(";");
+					try {
+						String statusName = Runtimedataread(data[0]);
+						System.out.println("==");
+						String check = driver.findElement(By.xpath("//input[@value='" + statusName + "']/../..//input[@name='chkActive']")).getAttribute("value");
+						if (check.equalsIgnoreCase("true")) {
+							//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+							waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
+							clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
+							//input[@value='1482150971328']/../..//input[@name='chkActive']
+						}
+					}catch(Exception e) {
+						String check = driver.findElement(By.xpath("//input[@value='" + active + "']/../..//input[@name='chkActive']")).getAttribute("value");
+						if (check.equalsIgnoreCase("true")) {
+							//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+							waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + active + "']/../..//input[@name='chkActive']", data[1]);
+							clickWebdriver(attributeName_xpath, "//input[@value='" + active + "']/../..//input[@name='chkActive']");
+							//input[@value='1482150971328']/../..//input[@name='chkActive']
+						}
+					}
+				} else {
+					String Active = Runtimedataread(active);
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_Active + Active + "']]/following-sibling::td[input[@type='checkbox']]", Active);
+					clickWebdriver(attributeName_xpath, MCG_Active + Active + "']]/following-sibling::td[input[@type='checkbox']]");
+					//td[input[@value='TestingSupport']]/following-sibling::td[input[@type='checkbox']]
+				}
+			}
+			if (!delete.equals("")) {
+				String[] data = delete.split(";");
+				String statusName = Runtimedataread(data[0]);
+				if(data[0].equalsIgnoreCase("check")){
+					String Delete = Runtimedataread(data[1]);
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]", Delete);
+					clickWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]");
+					//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
+				}else{
+					System.out.println("==");
+					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
+					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
+					clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']");
+
+				}
 			}
 
 			if (!savecanceladdrow.equals("")) {
-				Reporter.log("Check the Name of the Button as ["+savecanceladdrow+"]");
+				Reporter.log("Check the Name of the Button as [" + savecanceladdrow + "]");
 				if (savecanceladdrow.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
 					clickWebdriver(attributeName_xpath, AID_save_button);
@@ -87,8 +145,8 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
-		
+
 	}
-			
-			
+
+
 }

@@ -1,8 +1,19 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries;
 
 import or.OR;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
+
+
+
+
+
 import processor.CommonSeleniumActions;
 
 
@@ -62,9 +73,9 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_Operator, operator);
 				waitForPageToLoadWebdriver();
-				Thread.sleep(6000);
 			}
 			if (!value.equals("")) {
+
 				if (value.equalsIgnoreCase("List")) {
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					Thread.sleep(8000);
@@ -75,6 +86,14 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					Thread.sleep(8000);
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 					Thread.sleep(8000);
+				}
+				if(value.equalsIgnoreCase("ManageQueries")){
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
+					System.out.println("Select the value");
+					String managequery = Runtimedataread("ManageQueries");
+					waitForElementPresentWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']", "Value");
+					clickWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']");
+					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
 				else
 					//sendKeys(attributeName_xpath, MQ_Value, value);

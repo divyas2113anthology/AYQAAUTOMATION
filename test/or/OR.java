@@ -1338,7 +1338,7 @@ public static final String CI_City = "//input[@id='q24571']";
 public static final String CI_State = "//select[@id='s24572']";
 public static final String CI_PostalCode = "//input[@id='q24573']";
 public static final String CI_Country = "//select[@id='s24574']";
-public static final String CI_NextBtn = "//a[contains(text(),'Save and Continue')]";
+public static final String CI_NextBtn = "//img[@alt='next']";
 public static final String CI_SaveBtn = "//img[@alt='save']";
 public static final String CI_BackBtn = "//img[@alt='back']";
 public static final String CI_BackBtnFL = "//input[@id='ay-ForgotPassword']";
@@ -1441,7 +1441,7 @@ public static final String EPI_FstName = "//input[@id='q24474']";
 public static final String EPI_LstName = "//input[@id='q24475']";
 public static final String EPI_SayNo = "//input[@id='q24476']";
 public static final String EPI_LiveIn = "//select[@id='s29464']";
-public static final String EPI_ProToSubBtn = "//img[@alt='proceed to submission']";
+public static final String EPI_ProToSubBtn = "//a[text()='Proceed to Submission']";
 public static final String EPI_ResetBtn = "//img[@alt='Reset']";
 
 //Enrollment - Search or Students

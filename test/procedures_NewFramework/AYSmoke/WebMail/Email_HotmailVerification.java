@@ -1,6 +1,11 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
 import or.OR;
+import com.thoughtworks.selenium.webdriven.commands.OpenWindow;
+
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
@@ -37,16 +42,23 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
 				sendKeys(attributeName_xpath, HM_WLogin, username);
+				if(!isDisplayedWebdriver(attributeName_xpath,HM_WPassword)) {
+					driver.findElement(By.xpath("//input[@type='submit']")).click();
+					System.out.println("====Click Next Button");
+					waitForPageToLoadWebdriver();
+				}
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
                 clickWebdriver(attributeName_xpath,"//input[@value='Next']");
 				waitForPageToLoadWebdriver();
 				Thread.sleep(9000);
+				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, HM_WPassword, password);
 			}
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");
+				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, HM_WSignIn);
 				waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
 			}
@@ -92,8 +104,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
 						if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']")) {
 							waitForPageToLoadWebdriver();
-
-
+							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								if (isDisplayedWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]"))
 									writeConsole("2");
@@ -115,6 +126,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			}
 			
 			if (!emailsubjectcontains.equals("")) {
+				waitForPageToLoadWebdriver();
 				String emailsubjectcontainsread = Runtimedataread(emailsubjectcontains);
 				writeConsole("Email Subject Contains:"+emailsubjectcontainsread);
 				writeConsole("aaaa");
@@ -137,6 +149,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 						//if (selenium.isVisible("//div[@class='messageListContainer']")) {
 						//if (selenium.isVisible("//div[@class='conductorContent']"))
 							waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='conductorContent']","Elememt");
+						//if (selenium.isVisible("//div[@class='conductorContent']"))
+						if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']"))
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
@@ -175,6 +189,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				waitForPageToLoadWebdriver();*/
 				//String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
 				String GetURL = driver.findElementByXPath("//div[@class='ReadMsgBody']").getText();
+				//String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
+				String GetURL = driver.findElement(By.xpath("//div[@class='ReadMsgBody']")).getText();
 				System.out.println("Get Body Text: "+GetURL);
 				String urlmodify = null;
 				environment = Runtimedataread("Instance");
@@ -234,6 +250,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					}
 					urlmodify= OpenURL;
 					System.out.println("Get Url 7: "+urlmodify);
+					//click of URL
 					selenium.openWindow(urlmodify, "Recommendation Page");
 					//				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+urlcontainslink+"')]");
 					recentPopupSelectWebdriver("Create/Reset Password");
@@ -252,19 +269,44 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				}else{
 				waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 				clickWebdriver(attributeName_xpath, "//b[contains(text(),'"+clicklinkcontains+"')]");
+				}else if(clicklinkcontains.contains("Unlock")){
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Update Information");
+				}
+				else if(clicklinkcontains.contains("Click here to reset your password")){
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Update Information");
+				}
+				else{
+				waitForElementPresentWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
+				clickWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Update Information");
 				//recentPopupSelect("Update Information");
 				}
 			}
 			if (!logout.equals("")) {
-				Reporter.log("Step  9 - Proceed to click on Logout Link");
-				clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
-				waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
-				clickWebdriver(attributeName_partiallinktext, "Sign out");
-				//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
-				driver.close();
+				if (logout.equalsIgnoreCase("Log out")) {
+					Reporter.log("Step  9 - Proceed to click on Logout Link");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
+					waitForPageToLoadWebdriver();
+					waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
+					clickWebdriver(attributeName_partiallinktext, "Sign out");
+					driver.navigate().refresh();
+				} else {
+					Reporter.log("Step  9 - Proceed to click on Logout Link");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'Open menu')]");
+					waitForElementPresentWebdriver(attributeName_partiallinktext, "Sign out", "Log Out link");
+					clickWebdriver(attributeName_partiallinktext, "Sign out");
+					//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
+					driver.close();
+				}
 			}
+
 			} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
  			

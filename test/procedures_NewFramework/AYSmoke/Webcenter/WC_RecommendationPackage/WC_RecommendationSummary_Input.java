@@ -19,6 +19,7 @@ public class WC_RecommendationSummary_Input extends CommonSeleniumActions implem
 			
 			String[] testdata = datacontainer;
 			String status = testdata[0];
+
 						
 			if(!status.equals("")){
 				Reporter.log("Clicking on the status as ("+status+")");

@@ -1,13 +1,16 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures.Application;
 
-import or.OR;
-import org.openqa.selenium.WebElement;
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-import processor.CommonSeleniumActions;
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
 import java.util.Calendar;
-import java.util.List;
+
+import com.sun.istack.internal.NotNull;
+import org.openqa.selenium.By;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import or.OR;
+import processor.CommonSeleniumActions;
 
 public class PersonalData_Input extends CommonSeleniumActions implements OR {
 	
@@ -92,13 +95,13 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdcellphone.equals("")) {
 			Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
-			String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);				
+			String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);
 			if (pdcellphone.equalsIgnoreCase("Null")) {
 				attributeNameValue(attributeName_xpath, Cellphonepd).clear();
-			}else {
-				sendKeys(attributeName_xpath,Cellphonepd, pdcellphone);
+			} else {
+				sendKeys(attributeName_xpath, Cellphonepd, pdcellphone);
 			}
-		}
+			}
 		if (!pdfulltimestudent.equals("")) {
 			Reporter.log("Step 11 - Check Full Time Student as ("+pdfulltimestudent+")");
 			if (pdfulltimestudent.equalsIgnoreCase("Yes")){
@@ -192,18 +195,8 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsave.equals("")) {
 			Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Save")){
-				Thread.sleep(10000);
 				clickWebdriver(attributeName_xpath,PD_Save);
-
-				List<WebElement>  listele = driver.findElementsByXPath(PD_Save);
-				System.out.println(listele.size());
-				listele.get(0).click();
-
-				//actionsClickWebdriver(attributeName_xpath,PD_Save);
-				/*WebElement element = driver.findElement(By.xpath("//table//table//table//tr[1]/td//a/img[@alt='Save']"));
-				Actions actions = new Actions(driver);
-				actions.moveToElement(element).click().perform();*/
-
+				waitForPageToLoadWebdriver();
 			}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 				clickWebdriver(attributeName_xpath,PD_SaveContinue);
 				waitForPageToLoadWebdriver();

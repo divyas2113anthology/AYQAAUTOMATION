@@ -33,8 +33,8 @@ public class GL_LaunchBrowser_Verify extends CommonSeleniumActions implements OR
 				Reporter.log("Step 3 - Verify UI in present as ("+pagename+") Home page");
 				if (verifyui.equalsIgnoreCase("Auto")) {
 					String VerifyRAD = Runtimedataread(verifyui);
-					waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='BasePageFont']", VerifyRAD);
-					verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']", VerifyRAD, VerifyRAD);
+					waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='ay-login-text']//h3", VerifyRAD);
+					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[@id='ay-login-text']//h3", VerifyRAD, VerifyRAD);
 				}else if (verifyui.equalsIgnoreCase("Application System Requirements")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'"+verifyui+"')]", verifyui);
 					verifyElementContainsTextWebdriver(attributeName_xpath, "//b[contains(text(),'"+verifyui+"')]", verifyui, verifyui);

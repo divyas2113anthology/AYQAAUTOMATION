@@ -19,7 +19,7 @@ public class WC_ManageExportTemplate_Input extends CommonSeleniumActions impleme
 			String button = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Manage Export Template' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-			waitForElementPresentWebdriver(attributeName_xpath, MCL_MoveToFolderBtn, "Move to folder Button");
+			//waitForElementPresentWebdriver(attributeName_xpath, MCL_MoveToFolderBtn, "Move to folder Button");
 			if (!checktemplatenamecheckbox.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checktemplatenamecheckbox+"]");
 				if (checktemplatenamecheckbox.equalsIgnoreCase("check")) {
@@ -30,7 +30,7 @@ public class WC_ManageExportTemplate_Input extends CommonSeleniumActions impleme
 			}			
 			if (!clicktemplatename.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clicktemplatename+"]");
-				clicktemplatename = Runtimedataread("ExportTemplate");
+				clicktemplatename = Runtimedataread("Expt");
 				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicktemplatename+"')]");
 			}
 			if (!button.equals("")) {

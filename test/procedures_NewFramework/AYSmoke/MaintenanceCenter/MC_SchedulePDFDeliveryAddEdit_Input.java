@@ -117,8 +117,9 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Thread.sleep(10000);*/
 			}
 			if (!authentication.equals("")) {
-				Reporter.log("Click on Test FTP Connection Button ["+authentication+"]");
+				Reporter.log("Enter the Password as ["+authentication+"]");
 				System.out.println("authentication");
+				clickWebdriver(attributeName_xpath, SPDF_Authentication+authentication+"')]/input[@name='rdoLoginType']");
 				clickWebdriver(attributeName_xpath, "//*[@name='btnTestFTP']");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Test FTP Connection");
@@ -176,10 +177,9 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 	  		if (!startdate.equals("")) {
 				Reporter.log("Enter the Start Date as ["+startdate+"]");
+				System.out.println("startdate");
 				String getcurrentdate = requiredDateAndFormat("MM/dd/yyyy", startdate);
-				System.out.println("Start Date is " + getcurrentdate );
 				sendKeys(attributeName_name, "txtStartDate", getcurrentdate);
-
 			}
 			if (!starthour.equals("")) {
 				Reporter.log("Enter the Start Hour as ["+starthour+"]");

@@ -60,7 +60,11 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 				clickWebdriver(attributeName_xpath, CP_Goback);
 				waitForPageToLoadWebdriver();
 			}else if (update_goback.equalsIgnoreCase("Update")) {
-				clickWebdriver(attributeName_xpath, CP_Update);
+				try {
+					clickWebdriver(attributeName_xpath, CP_Update);
+				}catch(Exception e){
+					clickWebdriver(attributeName_xpath,"//input[@id='updateAccount']");
+				}
 			}
 		}
 		} catch (Exception e) {			

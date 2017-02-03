@@ -21,9 +21,9 @@ public class REC_Welcome_Input extends CommonSeleniumActions implements OR {
 		if (!logoutoverview.equals("")) {
 			Reporter.log("Step 1 - Click on '"+logoutoverview+"' link in Welcome Page");
 			if (logoutoverview.equalsIgnoreCase("Log Out")) {
-				waitForElementPresentWebdriver(attributeName_partiallinktext, logoutoverview, "Log Out");
-				clickWebdriver(attributeName_partiallinktext, logoutoverview);
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='HelpBoxes']/b", "Successful Logout!");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='Log Out']", "Log Out");
+				clickWebdriver(attributeName_xpath, "//a[text()='Log Out']");
+				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='rec-logout-text']/h3", "Successful Logout!");
 //				verifyTextPresent("Successful Logout!");
 //				waitForPageToLoadWebdriver();
 			}else if (logoutoverview.equalsIgnoreCase("More Info")) {

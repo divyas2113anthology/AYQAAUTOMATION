@@ -25,7 +25,6 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
 			if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
-
 				if (selenium.isTextPresent(edusuccessmessage)) {
 					Reporter.log("Message("+edusuccessmessage+") was displayed correctly");
 				} else {
@@ -34,7 +33,7 @@ public class PRO_InformationRequest_Verify extends CommonSeleniumActions impleme
 			}
 			if (!edupagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+edupagename+") page");
-				if (selenium.isTextPresent(edupagename)) {
+				if (isDisplayedWebdriver(attributeName_xpath,"//font[text()='Information Request']")) {
 					Reporter.log("Its navigate to ["+edupagename+"]age");
 				} else {
 					writeFailure("Its not navigate to ["+edupagename+"] page");

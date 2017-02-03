@@ -27,7 +27,8 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 		String zippostalcode = testdata[9];
 		String country = testdata[10];
 		String uploaddocument = testdata[11];
-		String gobacksavenext = testdata[12];
+		String numbertest = testdata[12];
+		String gobacksavenext = testdata[13];
 		Reporter.log("Input Test Data was retrieved for 'Contact Information' page");
 		if (!lastname.equals("")) {
 			Reporter.log("Step 1 - Enter the Last Name as '"+lastname+"' Page");
@@ -83,6 +84,7 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 			Reporter.log("Step 11 -Select the Country as '"+country+"' Page");
 			String Country = getElementIDbyLabel("Country",CI_Country);
 			selectByValueWebdriver(attributeName_xpath, Country, country);
+
 		}
 		if (!uploaddocument.equals("")) {
 			Reporter.log("Step 12 -Click the Upload Doc button");

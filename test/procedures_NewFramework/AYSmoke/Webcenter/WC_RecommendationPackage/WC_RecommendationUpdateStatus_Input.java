@@ -2,11 +2,8 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_RecommendationPackage;
 
 
 import or.OR;
-
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions implements OR {
@@ -41,9 +38,15 @@ public class WC_RecommendationUpdateStatus_Input extends CommonSeleniumActions i
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
 				clickWebdriver(attributeName_xpath, RUS_CloseWindow+saveclosewindow+"')]");
+				Thread.sleep(5000);
+				System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+				switchToOldWindow();
+               // switchToSecondPopupWindow();
+				System.out.println("BBBBBBBBBBBBBBBBBBBBB");
+				Thread.sleep(5000);
 			}
 			
-			driver.switchTo().window(RecommendationDTwindow);
+			//driver.switchTo().window(RecommendationDTwindow);
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

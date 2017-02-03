@@ -27,8 +27,17 @@ public class WC_RecommendationDetails_Input extends CommonSeleniumActions implem
 			
 			if (!status.equals("")) {
 				Reporter.log("Click on Status");
-				clickWebdriver(attributeName_xpath, RSR_ApplicantClick+status+"')]");	
+				clickWebdriver(attributeName_xpath, RSR_ApplicantClick+status+"')]");
+				recentPopupSelectWebdriver("Update status");
 				
+			}
+			if(!closewindow.equals("")){
+				Reporter.log("Click on the Button"+closewindow);
+				System.out.println("DDDDDDDDDDDDDDDDDD");
+				clickWebdriver(attributeName_xpath, RUS_CloseWindow+closewindow+"')]");
+
+
+
 			}
 			
 			

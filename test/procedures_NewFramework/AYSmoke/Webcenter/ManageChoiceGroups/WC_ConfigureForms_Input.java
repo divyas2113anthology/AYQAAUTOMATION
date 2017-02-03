@@ -27,7 +27,7 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 				switchToDefaultContentWebdriver();
 				switchToFrameNameIdWebdriver("frmTreeMenu");
 
-				clickWebdriver(attributeName_xpath, "//a[contains(text(),'Enrollments-DT Module Home')]");
+				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linktoclick+"')]");
 
 			}
 			if (!menulink.equals("")) {

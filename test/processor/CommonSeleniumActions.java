@@ -3868,24 +3868,30 @@ public class CommonSeleniumActions extends Processor implements OR {
 //			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 //		}
 	}
-	public void PackageSelectionFieldDefinition(String section,String index) {
+	public void PackageSelectionFieldDefinition(String section,String index) throws Exception {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
-  //selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
-		//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
-		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
-	//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
-		String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
+		waitForPageToLoadWebdriver();
+		waitForElementPresentWebdriver(attributeName_xpath,"//font[text()='"+section+"']/../../preceding-sibling::a[@onclick]["+index+"]",section);
+		//  selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//     selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
+		WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+section+"']/../../preceding-sibling::a[@onclick][1]"));
+		String seconclickName = SeconclickName.getAttribute("onclick");
+		//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");
 		String secnode = secnodespl[0];
 		writeConsole("Node Value for Section "+secnode);
-		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+		//String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+		WebElement NodePlus = driver.findElement(By.xpath("//a[contains(@onclick,'toggle("+secnode+")')]"));
+		String nodePlus = NodePlus.getAttribute("onmouseover");
 		writeConsole("Plus OuterHTML Value "+nodePlus);
 		if (nodePlus.contains("Click to expand")) {
 			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
-			//						selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
+			//      selenium.click("//a[contains(@onclick,'toggle("+secnode+")')]");
 		}
 	}
 	public void ClosePackageSelection() throws Exception {
@@ -3894,10 +3900,16 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 		//					SelectTreeFrame();
 		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-		selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
-		int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
-		writeConsole("Minus Count "+minusCount);
-		for (int i = minusCount; i > 0; i--) {
+        //written by Krishna
+		waitForElementPresentWebdriver(attributeName_xpath,"//img[contains(@src,'minus')]","minus element");
+		List<WebElement> minusCount = driver.findElementsByXPath("//img[contains(@src,'minus')]");
+		int minus_Count= minusCount.size();
+
+
+		//selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
+		//int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		writeConsole("Minus Count "+minus_Count);
+		for (int i = minus_Count; i > 0; i--) {
 			clickWebdriver(attributeName_xpath, "xpath=(//img[contains(@src,'minus')])["+i+"]");
 			//						selenium.click("xpath=(//img[contains(@src,'minus')])["+i+"]");			
 		}

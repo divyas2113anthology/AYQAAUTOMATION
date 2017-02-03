@@ -1338,7 +1338,7 @@ public static final String CI_City = "//input[@id='q24571']";
 public static final String CI_State = "//select[@id='s24572']";
 public static final String CI_PostalCode = "//input[@id='q24573']";
 public static final String CI_Country = "//select[@id='s24574']";
-public static final String CI_NextBtn = "//img[@alt='next']";
+public static final String CI_NextBtn = "//a[contains(text(),'Save and Continue')]";
 public static final String CI_SaveBtn = "//img[@alt='save']";
 public static final String CI_BackBtn = "//img[@alt='back']";
 public static final String CI_BackBtnFL = "//input[@id='ay-ForgotPassword']";

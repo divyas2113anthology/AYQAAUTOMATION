@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage;
 
-import org.openqa.selenium.remote.server.handler.AcceptAlert;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
@@ -41,18 +39,21 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 2 - Click the Build Button");
 				if (build.equalsIgnoreCase("Build")) {
 					clickWebdriver(attributeName_xpath, HTML_Build);
+					alertAccept();
 				}
 			}			
 			if (!publishproddev.equals("")) {
 				Reporter.log("Step 3 - Click the Button as ["+publishproddev+"]");
 				if (publishproddev.equalsIgnoreCase("Publish To Prod")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToProd);
+					Thread.sleep(10000);
 //					switchToDefaultContentWebdriver();
 					alertAccept();
 					waitForPageToLoadWebdriver();
 				} else if (publishproddev.equalsIgnoreCase("Publish To Dev")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
 					waitForPageToLoadWebdriver();
+					Thread.sleep(20000);
 				}
 			}		
 			switchToDefaultContentWebdriver();

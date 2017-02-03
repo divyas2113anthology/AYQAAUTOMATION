@@ -2,11 +2,8 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_Appli
 
 
 import or.OR;
-
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_RecommendationDT_Input extends CommonSeleniumActions implements OR {
@@ -48,12 +45,16 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				clickWebdriver(attributeName_xpath, RD_VerifyStatus+status+"')]");
 			}
 			if(!closewindow.equals("")){
+
 				Reporter.log("Click on the Button"+closewindow);
-				clickWebdriver(attributeName_xpath, RD_CloseWindow);
+				//clickWebdriver(attributeName_xpath, RD_CloseWindow);
+				System.out.println("Old Window");
+
 				//recentPopupClose();
-				
+				switchToOldWindow();
+				Thread.sleep(5000);
 			}	
-			driver.switchTo().window(AppSummaryWindowName);
+			//driver.switchTo().window(AppSummaryWindowName);
 			
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

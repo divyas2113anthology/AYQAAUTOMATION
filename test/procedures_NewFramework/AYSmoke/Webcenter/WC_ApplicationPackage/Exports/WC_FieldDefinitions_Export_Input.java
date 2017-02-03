@@ -24,6 +24,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			Reporter.log("Input Test Data was retrieved for 'Field Definition Export' Page");
 			waitForElementPresentWebdriver(attributeName_name, FD_SaveBtn, saveback);
 			switchToDefaultContentWebdriver();
+			Thread.sleep(10000);
 			switchToFrameNameIdWebdriver("frameQuestionsTree");
 			if (!fieldquestion.equals("")) {
 				Reporter.log("Select the field question as ["+fieldquestion+"]");
@@ -77,8 +78,9 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						PackageSelectionFieldDefinition(SplitPackage[i], "1");
 					}
 				}
-
+                Thread.sleep(10000);
 				switchToFrameNameIdWebdriver("frameQuestionsTree");
+				System.out.println("Sample test");
 				ClosePackageSelection();
 
 			}

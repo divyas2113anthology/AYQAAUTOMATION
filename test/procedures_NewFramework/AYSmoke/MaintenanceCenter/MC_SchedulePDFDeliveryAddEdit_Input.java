@@ -60,11 +60,11 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			}
 			if (!alternatepdf.equals("")) {
 				Reporter.log("Step 3 - Enter PDF name as ["+alternatepdf+"]");
-				
+
 			}
 			if (!duplexprinting.equals("")) {
 				Reporter.log("Enter value as ["+duplexprinting+"]");
-				
+
 			}
 			if (!printbookmarks.equals("")) {
 				Reporter.log("Enter value as ["+printbookmarks+"]");
@@ -104,7 +104,6 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Reporter.log("Enter the User Name as ["+username+"]");
 				System.out.println("username");
 				sendKeys(attributeName_name, "txtFTPUsername", username);
-				Thread.sleep(10000);
 			}
 			if (!passwordauthentication.equals("")) {
 				Reporter.log("Enter the Password as ["+passwordauthentication+"]");
@@ -121,17 +120,22 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Reporter.log("Click on Test FTP Connection Button ["+authentication+"]");
 				System.out.println("authentication");
 				clickWebdriver(attributeName_xpath, "//*[@name='btnTestFTP']");
+				waitForPageToLoadWebdriver();
+				recentPopupSelectWebdriver("Test FTP Connection");
 
-				switchToOldWindow();
 			}
 			
 			if (!sftpport.equals("")) {
 				Reporter.log("Click on Public key");
 				System.out.println("port");
+
 				Boolean check = driver.findElementByXPath("//*[@value='22']").isEnabled();
-				System.out.println("Element is visible"  + check);
+				System.out.println("Element is visible  :"  + check);
 				//sendKeys(attributeName_name, "txtSFTPPort", sftpport);
-				sendKeys(attributeName_xpath, "//*[@value='22']", sftpport);
+				clickWebdriver(attributeName_xpath,"//input[@name='rdoLoginType' and @value='2']");
+				sendKeys(attributeName_xpath, "//*[@value='22']", "26");
+				clickWebdriver(attributeName_xpath,"//input[@name='rdoLoginType' and @value='1']");
+
 			}
 			if (!testftpconnection.equals("")) {
 				Reporter.log("Click on Test FTP connection as["+testftpconnection+"]");
@@ -148,9 +152,9 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 	  		  if (!zipfilename.equals("")) {
 				  Reporter.log("Enter the zip filename as ["+zipfilename+"]");
 				  System.out.println("zipname");
-				  waitForElementPresentWebdriverWait(attributeName_xpath, ".//*[@name='txtZipFileName']", zipfilename);
+				  waitForElementPresentWebdriverWait(attributeName_xpath, "//*[@name='txtZipFileName']", zipfilename);
 				  System.out.println("File Name : "+zipfilename);
-				  sendKeys(attributeName_xpath, ".//*[@name='txtZipFileName']", zipfilename);
+				  sendKeys(attributeName_xpath, "//*[@name='txtZipFileName']", zipfilename);
 			  }
 	  		if (!senddelivery.equals("")) {
 				Reporter.log("Check ["+senddelivery+"]");
@@ -181,8 +185,7 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 				Reporter.log("Enter the Start Hour as ["+starthour+"]");
 				System.out.println("starthour");
 				String StartHour = requiredHourAndMinute("hh", starthour);
-				System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCC"  +StartHour);
-				selectByVisibleTextWebdriver(attributeName_name, "selHourStart", StartHour);
+				 selectByVisibleTextWebdriver(attributeName_name, "selHourStart", StartHour);
 			}
 			if (!startminute.equals("")) {
 				Reporter.log("Enter the Start Minute as ["+startminute+"]");
@@ -203,6 +206,13 @@ public class MC_SchedulePDFDeliveryAddEdit_Input extends CommonSeleniumActions i
 			if (!repeat.equals("")) {
 				Reporter.log("Enter value as ["+repeat+"]");
 				
+			}
+			if (!publickey.equals("")) {
+				Reporter.log("Enter value as ["+publickey+"]");
+				clickWebdriver(attributeName_xpath,"//input[@name='rdoLoginType' and @value='2']");
+				Thread.sleep(10000);
+
+
 			}
 			if (!button.equals("")) {
 				Reporter.log("Click the name of the button as ["+button+"]");

@@ -16,6 +16,8 @@ public class MC_SchedulePDFDelivery_Input extends CommonSeleniumActions implemen
 			Reporter.log("Proceed to retrieve Input Test Data for 'Schedule PDF Delivery' Page");
 			String[] testdata = datacontainer;
 			String addpdf = testdata[0];
+			String checkbox = testdata[1];
+			String jobname = testdata[2];
 			
 			Reporter.log("Input Test Data was retrieved for 'Schedule PDF Delivery' Page");
 
@@ -23,8 +25,17 @@ public class MC_SchedulePDFDelivery_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 1 - Perform the operation to click the  Button as ["+addpdf+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, SPDF_AddPdf, addpdf);
 				clickWebdriver(attributeName_xpath,SPDF_AddPdf);
-			}			
-			
+			}
+			if (!checkbox.equals("")) {
+
+			}
+			if (!jobname.equals("")) {
+				Reporter.log("Step 1 - Perform the operation to click the  job name as ["+jobname+"]");
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+jobname+"')]/parent::tr/td/a", jobname);
+				clickWebdriver(attributeName_xpath,"//td[contains(text(),'"+jobname+"')]/parent::tr/td/a");
+
+			}
+
 //			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

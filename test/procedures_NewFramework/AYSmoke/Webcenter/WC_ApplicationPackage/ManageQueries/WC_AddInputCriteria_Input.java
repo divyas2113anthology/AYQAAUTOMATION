@@ -77,7 +77,6 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					Thread.sleep(8000);
 				}
 				else
-					System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 					//sendKeys(attributeName_xpath, MQ_Value, value);
 				    clickWebdriver(attributeName_xpath," //button [contains(@class,'multiselect ui-widget')]");
 				    mouseOverWebdriver(attributeName_xpath,"//input[@title='"+value+"']");

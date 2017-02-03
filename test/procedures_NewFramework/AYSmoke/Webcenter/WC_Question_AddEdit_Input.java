@@ -62,7 +62,8 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			}
 			if (!questioncategory.equals("")) {
 				Reporter.log("Step 9 - Select the Question Category as ["+questioncategory+"]");
-				selectByValueWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
+				//selectByValueWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
+				selectByVisibleTextWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
 			}
 			if (!usagesavedeletecancel.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+usagesavedeletecancel+"]");

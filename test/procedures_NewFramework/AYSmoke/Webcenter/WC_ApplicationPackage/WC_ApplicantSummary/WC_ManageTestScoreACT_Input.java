@@ -44,15 +44,16 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 			if (!composite.equals("")) {
 				Reporter.log("Enter the First Name");
 				sendKeys(attributeName_xpath, AS_TestScoreComposite, composite);
-				System.out.println("CCCCCC");
 				Thread.sleep(5000);
 			}
 							
 			if(!savecancelclose.equals("")){
 				Reporter.log("Click on the button");
 				clickWebdriver(attributeName_xpath, AS_TestScoreSave);
-				Thread.sleep(10000);
-				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath, AS_CloseWindow);
+				//recentPopupCloseWebdriver();
+				switchToSecondPopupWindow();
+				//waitForPageToLoadWebdriver();
 			}
 			//switchToDefaultContentWebdriver();
 			

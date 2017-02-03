@@ -75,6 +75,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					String LabelEdit = labelName + Calendar.getInstance().getTimeInMillis();
 					String label1 = Runtimedataread(label);
 					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
+					
 					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
 					Runtimedatawrite(LabelEdit, label);
 					System.out.println("Write value in Excel sheet");

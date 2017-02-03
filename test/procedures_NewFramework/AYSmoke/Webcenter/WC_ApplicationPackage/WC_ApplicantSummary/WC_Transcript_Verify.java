@@ -21,9 +21,11 @@ public class WC_Transcript_Verify extends CommonSeleniumActions implements OR{
 		Reporter.log("Verify Test Data was retrieved for 'Transcript' page");
 		
 		if (!pagename.equals("")) {
+			waitForPageToLoadWebdriver();
 			Reporter.log("Verify its navigate to ("+pagename+") page");
 			waitForElementPresentWebdriver(attributeName_xpath, AS_pagename, pagename);
-			verifyElementPresentWebdriver(attributeName_xpath, AS_pagename, pagename);	}
+			verifyElementPresentWebdriver(attributeName_xpath, AS_pagename, pagename);
+		}
 		
 	} catch (Exception e) {
 		writeFailure(e.getLocalizedMessage());

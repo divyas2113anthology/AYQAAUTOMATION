@@ -18,10 +18,17 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 			String editfirstname = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Search for Contacts' page");
 			if (!firstname.equals("")) {
-				String FirstName = Runtimedataread(firstname);
-				Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
-				waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
-				sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
+				try {
+					String FirstName = Runtimedataread(firstname);
+					Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
+					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
+					sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
+				}catch(Exception e){
+					Reporter.log("Step 1 - Enter the First Name as ("+firstname+") ");
+					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, firstname);
+					sendKeys(attributeName_id, CNT_SearchFrstName, firstname);
+				}
+
 			}
 			if (!button.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");

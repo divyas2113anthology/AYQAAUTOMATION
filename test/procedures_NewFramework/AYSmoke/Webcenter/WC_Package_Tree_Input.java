@@ -1,6 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
 import com.thoughtworks.selenium.webdriven.commands.SelectFrame;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -26,7 +28,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 //			switchToFrameNameIdWebdriver("relative=up");
 			switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmTreeMenu");
-			
+
 			if (!logoutmain.equals("")) {
 				if(logoutmain.equalsIgnoreCase("Main Menu")){
 					logoutmain = "ClientMain";
@@ -42,7 +44,6 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 				String [] SplitPackage = treepackage.split(";");
 				System.out.println("Length : "+SplitPackage.length);
 				System.out.println("Package1"+SplitPackage[0]);
-				System.out.println("Package1"+SplitPackage[1]);
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
@@ -61,10 +62,16 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 					}else{
 						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
-						waitForPageToLoadWebdriver();
-						PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
-						waitForPageToLoadWebdriver();
-						
+							waitForPageToLoadWebdriver();
+							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+							waitForPageToLoadWebdriver();
+							if(SplitPackage[i].equalsIgnoreCase("Application for QA Automation")){
+                                WebElement SeconclickName = driver.findElement(By.xpath("//a[contains(text(),'"+SplitPackage[i]+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]"));
+                                String seconclickName = SeconclickName.getAttribute("onmouseover");
+                                if(seconclickName.contains("Click to expand")){
+                                    PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+                                }
+                            }
 					}
 				}
 				//ClosePackageSelection();

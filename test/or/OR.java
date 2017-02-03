@@ -337,7 +337,7 @@ public static final String PD_GradeLevel = "//input[@id='rc24311_1']";
 public static final String PD_Essaywithoutattachment = "//textarea[@id='q24312']";
 public static final String PD_uploaddocument = "//img[@alt='Upload Attachment']";
 public static final String PD_Collegehousing = "//select[@id='s24314']";
-public static final String PD_SportsInterest = "//select[@id='s24315']"; 
+public static final String PD_SportsInterest = "//select[@id='s24315']";
 public static final String PD_Testscore = "//input[@id='q24316']";
 public static final String PD_AcademicInterest = "//select[@id='s24317']";
 public static final String PD_SchoolCode = "//input[@id='q24318']";
@@ -2072,7 +2072,7 @@ public static final String SR_subsection="//input[contains(@id,'SectionInput')]"
 public static final String SR_field="//select[contains(@name,'txtField')]";
 public static final String SR_operator="//select[@name='txtOperator0']";
 public static final String SR_value_No="//input[@value='N']";
-public static final String SR_value_Yes="//font[text()='Yes']";
+public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="//td[a[contains(text(),'";
 public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
 

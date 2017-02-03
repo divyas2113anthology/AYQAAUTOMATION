@@ -79,6 +79,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					String LabelEdit = labelName + Calendar.getInstance().getTimeInMillis();
 					String label1 = Runtimedataread(label);
 					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
+
 					driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
 					Runtimedatawrite(LabelEdit, label);
 					System.out.println("Write value in Excel sheet");
@@ -140,8 +141,21 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					Thread.sleep(5000);
 					//driver.switchTo().frame(0);
 					}
+				}
+				if(savecanceladdrow.equalsIgnoreCase("addrow")){
+					waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
+					clickWebdriver(attributeName_xpath, MCG_AddRow);
+				}
 			}
-		     //switchToDefaultContentWebdriver();
+			switchToDefaultContentWebdriver();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (RowsExceededException e) {
+			e.printStackTrace();
+		} catch (BiffException e) {
+			e.printStackTrace();
+		} catch (WriteException e) {
+			e.printStackTrace();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

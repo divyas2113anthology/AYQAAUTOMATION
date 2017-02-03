@@ -39,8 +39,14 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 			}
 			if(!status.equals("")){
 				Reporter.log("Verify("+status+")is present");
-				waitForElementPresentWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
-				selectByVisibleTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
+				try{
+					String Status = Runtimedataread(status);
+					waitForElementPresentWebdriver(attributeName_xpath, AS_TranscriptStatus, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, AS_TranscriptStatus, Status);
+				}catch(Exception e){
+					waitForElementPresentWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
+					selectByVisibleTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status);
+				}
 				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_TranscriptStatus, status, status);
 			}
 			if(!saveclosewindow.equals("")){
@@ -51,7 +57,19 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 				switchToSecondPopupWindow();
 				waitForPageToLoadWebdriver();
 				//recentPopupCloseWebdriver();
-			}	
+				if(saveclosewindow.equalsIgnoreCase("closeWindow")){
+					Reporter.log("Click on the button");
+					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath,CloseWindow);
+					driver.switchTo().window(AppSummaryWindowName);
+				}else {
+					Reporter.log("Click on the Button" + saveclosewindow);
+					clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow + saveclosewindow + "')]");
+					waitForPageToLoadWebdriver();
+					driver.switchTo().window(AppSummaryWindowName);
+					//recentPopupCloseWebdriver();
+				}
+			}
 			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

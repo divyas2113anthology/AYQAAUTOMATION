@@ -17,9 +17,18 @@ public class CRM_Welcome_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Welcome' page");
 			if (!tab_to_click.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+tab_to_click+") Link");
-				waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='tabs-main']/ul/li/a[text()='"+tab_to_click+"']", tab_to_click);
-				clickWebdriver(attributeName_xpath, "//div[@id='tabs-main']/ul/li/a[text()='"+tab_to_click+"']");
-				waitForPageToLoadWebdriver();
+				if(tab_to_click.equals("CRM")) {
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@title,'" + tab_to_click + "')]", tab_to_click);
+					clickWebdriver(attributeName_xpath, "//a[contains(@title,'" + tab_to_click + "')]");
+					waitForPageToLoadWebdriver();
+				}
+				else if(tab_to_click.equalsIgnoreCase("contacts") || tab_to_click.equals("Application") ){
+					waitForPageToLoadWebdriver();
+					waitForElementPresentWebdriver(attributeName_xpath, "//div[contains(@id,'tabs')]//a[text()='" + tab_to_click + "']", tab_to_click);
+					clickWebdriver(attributeName_xpath, "//div[contains(@id,'tabs')]//a[text()='" + tab_to_click + "']");
+					waitForPageToLoadWebdriver();
+
+				}
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

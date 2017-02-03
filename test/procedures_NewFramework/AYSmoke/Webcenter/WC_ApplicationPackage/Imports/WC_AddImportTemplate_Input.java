@@ -100,7 +100,7 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 			}
 			if (!click.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+click+"]");
-				if (click.equals("Save")) {
+				if (click.equalsIgnoreCase("Save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_SaveButton, click);
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
 				} else if (click.equals("Cancel")) {

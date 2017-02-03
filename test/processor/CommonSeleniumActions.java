@@ -149,7 +149,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		int  Row,Col;
 		Row=tableStart.getRow();
 		Col=tableStart.getColumn();			 
-		String Rundata = sheet.getCell(Col, Row+1).getContents().trim();
+		String Rundata = sheet.getCell(Col, Row+1).getContents().trim();			
 		workbook.close();
 		return Rundata;
 
@@ -220,7 +220,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		//String elementID = selenium.getAttribute("//label[text()=\""+Label+"\"]/@for"); // Getting Dynamic ID
 		//WebElement elementID =driver.findElementByXPath("//label[text()='"+Label+"']/@for").getAttribute("for");
-		WebElement ele=driver.findElementByXPath("//label[text()='"+Label+"']");
+		//WebElement ele=driver.findElementByXPath("//label[text()='"+Label+"']");
+		WebElement ele = driver.findElement(By.xpath("//label[text()='"+Label+"']"));
 		String elementID=ele.getAttribute("for");
 		System.out.println(elementID);
 
@@ -251,7 +252,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		/*writeConsole("getAttribute[//label[contains(text(),\""+LabelContains+"\")]/@for]");
 		String elementID = selenium.getAttribute("//label[contains(text(),\""+LabelContains+"\")]/@for"); // Getting Dynamic ID
 */
-		WebElement ele=driver.findElementByXPath("//label[contains(text(),'"+LabelContains+"')]");
+		//WebElement ele=driver.findElementByXPath("//label[text()='"+LabelContains+"']");
+		WebElement ele = driver.findElement(By.xpath("//label[contains(text(),'"+LabelContains+"')]"));
 		String elementID1=ele.getAttribute("for");
 		System.out.println(elementID1);
 		//		String elementID = selenium.getAttribute("//label[text()='"+Label+"']/@for"); // Getting Dynamic ID
@@ -495,7 +497,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 			String actualcellvalue = getTextWebdriver(attributeName_xpath,"//tr[td[text()='"+expectedcellvalue+"']]/td[count(ancestor::table/thead/tr/th[contains(text(),'"+columnname+"')]/preceding-sibling::th)+3]");
 			if (actualcellvalue.equals(expectedcellvalue)) {
 				Reporter.log("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was displayed Correctly");
-			} 
+			}
 			else {
 				writeFailure("All User Table Row Data["+expectedcellvalue+"] with respective to  Column Name ["+columnname+"] was Not displayed Correctly");
 			}
@@ -1924,7 +1926,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		waitForPageToLoadWebdriver();
 		select.selectByVisibleText(text);
 
-
 	}
 	public void selectByValueWebdriver(String attributename,String attributevalue,String value){
 		writeConsole("Webdriver selectByValue["+attributename+", "+attributevalue+", "+value+"]");
@@ -1943,7 +1944,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		List<WebElement> options = select.findElements(By.tagName("option"));
 		for (WebElement option : options) {
 			String optionvalue = option.getText();
-			if(optionvalue.contains(text)) {
+			String leftRemoved = optionvalue.replaceAll("^\\s+", "");
+			if(leftRemoved.contains(text)) {
 				option.click();  
 				break;
 			}
@@ -2041,7 +2043,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void selectMainWindowWebdriver(){
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		driver.switchTo().window(mainwindow);
-
+	}
+	public void selectMainWindowWebdriver(String parent){
+		writeConsole("Webdriver Main Window["+parent+"]");
+		driver.switchTo().window(parent);
 	}
 
 	// This Function is used to Wait till Window or Popup opens.
@@ -2144,7 +2149,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}*/
 
 		String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
-		System.out.println("Store your parent window is " +parentWindowHandler );
 		String subWindowHandler = null;
 
 		Set<String> handles = driver.getWindowHandles(); // get all window handles
@@ -2754,8 +2758,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Reporter.log("Verify Element("+elementname+") with Text("+expectedtext+")");
 		writeConsole("Element ["+attributename+", "+attributevalue+"]");
 		try {
+			String expectedText = expectedtext.replaceAll("\\s","");
 			WebElement element = attributeNameValue(attributename, attributevalue);
 			String actualtext = element.getText().trim();
+			String ActualText = element.getText().replaceAll("\\s","");
 			writeConsole("Element Actual getText["+actualtext+"]");
 			if (actualtext.contains(expectedtext)) {
 				Reporter.log("Element["+elementname+"] with ["+actualtext+"]Text was displayed correctly ");
@@ -4019,18 +4025,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 			} 	
 		}		
 				
-	}			
+	}
 
-     public void closeRecentWindow() throws Exception{
-		 String winHandleBefore = driver.getWindowHandle();
+//By Gokul
+	public void switchToWindowByTitle(String title){
+		String currentWindow = driver.getWindowHandle();
+		driver.switchTo().window(currentWindow).getTitle();
+		Set<String> availableWindows = driver.getWindowHandles();
+		if (!availableWindows.isEmpty()) {
+			for (String windowId : availableWindows) {
+				//String switchedWindowTitle = driver.switchTo().window(windowId);
+				driver.switchTo().window(windowId);
+			}
+			driver.close();
+			//driver.switchTo().window(currentWindow);
+				}
 
-		 //Switch to new window opened
-		 for (String winHandle : driver.getWindowHandles()) {
-			 driver.switchTo().window(winHandle);
-		 }
-		 // Perform the actions on new window
-		 driver.close(); //this will close new opened window
-		 //switch back to main window using this code
-		 driver.switchTo().window(winHandleBefore);
-	 }
+		}
+
 }

@@ -34,9 +34,14 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 			}	
 			if(!status.equals("")){
 				Reporter.log("Select the Status("+status+")");
-				waitForElementPresentWebdriver(attributeName_xpath, AS_TestScoreStatus, status);
-				selectByVisibleTextWebdriver(attributeName_xpath, AS_TestScoreStatus, status);
-
+				try{
+					String Status = Runtimedataread(status);
+					waitForElementPresentWebdriver(attributeName_xpath, AS_TestScoreStatus, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, AS_TestScoreStatus, Status);
+				}catch(Exception e){
+					waitForElementPresentWebdriver(attributeName_xpath, AS_TestScoreStatus, status);
+					selectByVisibleTextWebdriver(attributeName_xpath, AS_TestScoreStatus, status);
+				}
 			}
 			if(!verifystatus.equals("")){
 				Reporter.log("Verify("+verifystatus+")is present");
@@ -48,7 +53,8 @@ public class WC_TestScore_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+nextclosewindow+"')]");
 				//recentPopupSelectWebdriver("TestScoreACT");
 				waitForPageToLoadWebdriver();
-			}	
+				driver.switchTo().window(AppSummaryWindowName);
+			}
 			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -1,10 +1,6 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
 import or.OR;
-import com.thoughtworks.selenium.webdriven.commands.OpenWindow;
-
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -188,8 +184,6 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				get(recLink);
 				waitForPageToLoadWebdriver();*/
 				//String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
-				String GetURL = driver.findElementByXPath("//div[@class='ReadMsgBody']").getText();
-				//String GetURL = selenium.getText("//div[@class='ReadMsgBody']"); //UK
 				String GetURL = driver.findElement(By.xpath("//div[@class='ReadMsgBody']")).getText();
 				System.out.println("Get Body Text: "+GetURL);
 				String urlmodify = null;
@@ -261,15 +255,15 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step  8 - Proceed to click on Message contains Link");
 				//waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
 				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
-				if(clicklinkcontains.contains("Remind")){
-					waitForElementPresentWebdriver(attributeName_xpath, "//div[contains(.,'"+clicklinkcontains+"')]", clicklinkcontains);
+				if (clicklinkcontains.contains("Remind")) {
+					waitForElementPresentWebdriver(attributeName_xpath, "//div[contains(.,'" + clicklinkcontains + "')]", clicklinkcontains);
 					//clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
-					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(.,'"+clicklinkcontains+"')]", clicklinkcontains, clicklinkcontains);
+					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(.,'" + clicklinkcontains + "')]", clicklinkcontains, clicklinkcontains);
 					waitForPageToLoadWebdriver();
-				}else{
-				waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
-				clickWebdriver(attributeName_xpath, "//b[contains(text(),'"+clicklinkcontains+"')]");
-				}else if(clicklinkcontains.contains("Unlock")){
+				} else {
+					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]");
+				}  if(clicklinkcontains.contains("Unlock")){
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					waitForPageToLoadWebdriver();

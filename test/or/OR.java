@@ -523,6 +523,7 @@ public static final String DB_App2StartEditButton = "//div[@class='appListSubHea
 public static final String DB_SubmittedMsg = "//div[@class='span8']//h4";
 public static final String DB_ApplicationButton = "//ul[@id='appList']/li[2]/div/a";
 public static final String DB_TestButton = "//ul[@id='appList']/li[3]/div/a";
+public static final String DB_App2EditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application') or contains(text(),'Edit Application')]";
 //#**********************************************************#
 //# Facelift Dashboard Input
 //#**********************************************************#
@@ -1294,7 +1295,7 @@ public static final String RF_Forgot_PAC = "//input[@id='recforgotPAC']";
 public static final String RF_Forgot_Email = "//input[@id='recforgotEmail']";
 public static final String RF_Forgot_Lname = "//input[@id='recforgotAppLN']";
 public static final String RF_Forgot_Search = "//input[@id='rec-forgotSubmit']";
-
+public static final String RF_Forgot_Msg = "//form[@name='frmSendPINs']//font";
 //#**********************************************************#
 //#	 WebMail Login Page - Hotmail
 //#**********************************************************#
@@ -1719,7 +1720,7 @@ public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
 //public static final String MQ_MultiSelectPaymentStatus = "//input[@title='ManageQueries']";
 public static final String MQ_MultiSelectPaymentStatus = "//span[text()='ManageQueries']";
-
+public static final String MQ1_MultiSelectPaymentStatus = "//input[@title='";
 
 //#**********************************************************#
 //#	 Webcenter - Configure Downloadable Forms - Page

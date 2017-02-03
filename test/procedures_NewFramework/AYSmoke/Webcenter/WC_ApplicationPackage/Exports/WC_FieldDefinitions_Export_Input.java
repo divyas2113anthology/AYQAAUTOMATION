@@ -5,13 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Field Definition Export' page")
-	public void WC_FieldDefinitions_Export_Input(){
+	public void WC_FieldDefinitions_Export_Input()throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Field Definition Export' Page");
@@ -23,10 +22,8 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			String fieldnamelabel = testdata[4];
 			String saveback = testdata[5];
 			Reporter.log("Input Test Data was retrieved for 'Field Definition Export' Page");
-			waitForElementPresentWebdriver(attributeName_name, FD_SaveBtn, saveback);
+			waitForElementPresentWebdriverWait(attributeName_name, FD_SaveBtn, saveback);
 			switchToDefaultContentWebdriver();
-			Thread.sleep(10000);
-			switchToFrameNameIdWebdriver("frameQuestionsTree");
 			if (!fieldquestion.equals("")) {
 				Reporter.log("Select the field question as ["+fieldquestion+"]");
 				System.out.println(fieldquestion);
@@ -54,7 +51,8 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 					///	WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+SplitPackage[i]+"']/../../preceding-sibling::a[@onclick][1]"));
 						//String seconclickName = SeconclickName.getAttribute("onclick");
 						//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
-						waitForElementPresentWebdriver(attributeName_xpath,"//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1]","Wait For Package ");
+						waitForElementPresentWebdriverWait(attributeName_xpath,"//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1]","Wait For Package ");
+
 						//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])/@onclick");
 						WebElement SeconclickName = driver.findElement(By.xpath("//font[text()='"+SplitPackage[i]+"']/../../preceding-sibling::a[@onclick][1]"));
 						String seconclickName = SeconclickName.getAttribute("onclick");
@@ -75,7 +73,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						System.out.println("Verification");
 						clickWebdriver(attributeName_linktext, SplitPackage[i]);
 						switchToDefaultContentWebdriver();
-						
+
 						switchToFrameNameIdWebdriver("frameActions");
 						clickWebdriver(attributeName_xpath, FD_AddItem);
 						switchToDefaultContentWebdriver();
@@ -182,18 +180,18 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 			}
 			
 			if (!saveback.equals("")) {
-				Reporter.log("Click the button as ["+saveback+"]");
+				Reporter.log("Click the button as [" + saveback + "]");
 				if (saveback.equalsIgnoreCase("Save")) {
 					clickWebdriver(attributeName_name, FD_SaveBtn);
 					Thread.sleep(5000);
 					waitForPageToLoadWebdriver();
-				}else if (saveback.equalsIgnoreCase("Back")) {
+				} else if (saveback.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_name, FD_BackBtn);
 					waitForPageToLoadWebdriver();
 				}
 			}
 			
-		} catch (Exception e) {
+		} }catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
 		

@@ -297,9 +297,11 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				writeConsole("Entering URL : " + envirurl);
 				get(envirurl);
 				waitForPageToLoadWebdriver();
-			}catch(Exception e){
+			}
+		}catch(Exception e){
 				writeFailure(e.getLocalizedMessage());
 			}
 		}
+
 	}
-}
+

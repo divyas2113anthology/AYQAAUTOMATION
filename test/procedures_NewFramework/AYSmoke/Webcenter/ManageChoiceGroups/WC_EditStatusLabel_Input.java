@@ -1,19 +1,16 @@
 package procedures_NewFramework.AYSmoke.Webcenter.ManageChoiceGroups;
 
-import java.io.IOException;
-import java.util.Calendar;
-
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 import or.OR;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
+
+import java.io.IOException;
+import java.util.Calendar;
 
 public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
 
@@ -29,10 +26,10 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String statuscategory = testdata[2];
 			String labelName = testdata[3];
 			String label = testdata[4];
-			String active=testdata[5];
-			String delete=testdata[6];
-			String savecanceladdrow=testdata[7];
-			String addrow=testdata[8];
+			String active = testdata[5];
+			String delete = testdata[6];
+			String savecanceladdrow = testdata[7];
+			String addrow = testdata[8];
 			//switchToDefaultContentWebdriver();
 			//switchToFrameNameIdWebdriver("frmContent");
 			//switchToDefaultContentWebdriver();
@@ -50,12 +47,12 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 
 			}
 			if (!statuscategory.equals("")) {
-				Reporter.log("Select ("+statuscategory+")from Status Category");
+				Reporter.log("Select (" + statuscategory + ")from Status Category");
 				//String RowNumber = getTextWebdriver(attributeName_xpath, MCG_RowValue);
 
 				String RowNumber = getTextWebdriver(attributeName_xpath, "//td[input[@name='txtStatusCategory' and @value='']]/preceding-sibling::td");
-				System.out.println("RowNumber is "+RowNumber);
-				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory+RowNumber+"')]", statuscategory);
+				System.out.println("RowNumber is " + RowNumber);
+				selectByVisibleTextWebdriver(attributeName_xpath, MCG_StatusCategory + RowNumber + "')]", statuscategory);
 				Reporter.log("Select (" + statuscategory + ")from Status Category");
 				//selectByValueWebdriver(attributeName_xpath, MCG_StatusCategory, "4");
 			}
@@ -99,7 +96,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 							clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
 							//input[@value='1482150971328']/../..//input[@name='chkActive']
 						}
-					}catch(Exception e) {
+					} catch (Exception e) {
 						String check = driver.findElement(By.xpath("//input[@value='" + active + "']/../..//input[@name='chkActive']")).getAttribute("value");
 						if (check.equalsIgnoreCase("true")) {
 							//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
@@ -118,12 +115,12 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			if (!delete.equals("")) {
 				String[] data = delete.split(";");
 				String statusName = Runtimedataread(data[0]);
-				if(data[0].equalsIgnoreCase("check")){
+				if (data[0].equalsIgnoreCase("check")) {
 					String Delete = Runtimedataread(data[1]);
 					waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]", Delete);
 					clickWebdriver(attributeName_xpath, MCG_DeleteCheck + Delete + "']]/following-sibling::td[input[@name='chkDelete']]");
 					//td[input[@value='TestingSupport']]/following-sibling::td[input[@name='chkDelete']]
-				}else{
+				} else {
 					System.out.println("==");
 					//driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
 					waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
@@ -140,14 +137,14 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 					waitForPageToLoadWebdriver();
 					Thread.sleep(5000);
 					//driver.switchTo().frame(0);
-					}
-				}
-				if(savecanceladdrow.equalsIgnoreCase("addrow")){
-					waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
-					clickWebdriver(attributeName_xpath, MCG_AddRow);
 				}
 			}
-			switchToDefaultContentWebdriver();
+			if (savecanceladdrow.equalsIgnoreCase("addrow")) {
+				waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
+				clickWebdriver(attributeName_xpath, MCG_AddRow);
+			}
+
+		switchToDefaultContentWebdriver();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (RowsExceededException e) {

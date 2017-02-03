@@ -1,24 +1,16 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
-
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+
 public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Applicant Summary' page")
-	public void WC_ApplicantSummary_Input(){
+	public void WC_ApplicantSummary_Input()throws Exception{
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Applicant Summary' Page");

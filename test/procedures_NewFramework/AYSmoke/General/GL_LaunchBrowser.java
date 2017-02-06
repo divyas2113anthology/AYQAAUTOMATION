@@ -116,7 +116,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 						envirurl = "http://iad1pw084app.emt.hobsons.local/?id=ayauto";
 					} else if (environment.equalsIgnoreCase("IAD1PW085")) {
 						envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto";
-					}
+					}}
 				} else if (url.contains("webcenter")) {
 					if (environment.equalsIgnoreCase("USQA")) {
 						//envirurl = "https://uatwebcenter.applyyourself.com/";
@@ -297,9 +297,10 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				writeConsole("Entering URL : " + envirurl);
 				get(envirurl);
 				waitForPageToLoadWebdriver();
-			}
+
 		}catch(Exception e){
 				writeFailure(e.getLocalizedMessage());
+
 			}
 		}
 

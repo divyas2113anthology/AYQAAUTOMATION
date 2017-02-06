@@ -1030,7 +1030,7 @@ public static final String PA_UncheckExclude = "//input[@name='PrintEssays']";
 public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs']";
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
-public static final String PA_PageName = "//tr[@class='FormText']/td/font";  //successfully Updated
+public static final String PA_PageName = "//font[contains(text(),'";  //successfully Updated
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";

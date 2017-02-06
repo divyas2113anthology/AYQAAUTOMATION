@@ -65,13 +65,6 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 			}
 			
 			if(!buttons.equals("")){
-				Reporter.log("Click the button as ["+buttons+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, SR_button+buttons+"')]", buttons);
-				clickWebdriverWithCoordinates(attributeName_xpath, SR_button+buttons+"')]");
-				recentPopupSelectWebdriver("Enrollment-DT Fee Status");
-				waitForPageToLoadWebdriver();
-
-				
 				if(buttons.equalsIgnoreCase("Enrollments-DT fee")){
 					Reporter.log("Click the button as [" + buttons + "]");
 					waitForElementPresentWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']", buttons);
@@ -81,6 +74,8 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
 					clickWebdriverWithCoordinates(attributeName_xpath, SR_button + buttons + "')]");
 				}
+				recentPopupSelectWebdriver("Enrollment-DT Fee Status");
+				waitForPageToLoadWebdriver();
 			}
 			if (!closeproceed.equals("")) {
 				Reporter.log("Click the button as ["+closeproceed+"]");				

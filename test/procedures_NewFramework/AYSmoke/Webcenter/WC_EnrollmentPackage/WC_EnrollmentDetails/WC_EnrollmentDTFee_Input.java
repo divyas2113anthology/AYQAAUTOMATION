@@ -40,7 +40,6 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 				Reporter.log("Click on the Button"+backcloseprintsave);
 				//clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
 				switchToOldWindow();
-
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

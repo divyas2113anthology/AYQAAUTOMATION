@@ -510,7 +510,7 @@ public static final String DB_MsgBtn = "css=#message";
 public static final String DB_DbBtn = "//a[contains(@class,'inverse')]";
 public static final String DB_ProfBtn = "css=#Profile";
 public static final String DB_TecSupportBtn = "#Techsupport.btn";
-public static final String DB_LogoutBtn = "//a[contains(text(),'Log Out')]";
+public static final String DB_LogoutBtn = "//li[contains(text(),'Log Out')]";
 //public static final String DB_QaAutomationStartButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text(),'Start Application')]";
 public static final String DB_QaAutomationStartButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Start Application') or contains(text(),'Start Application')]";
 //public static final String DB_QaAutomationEditButton = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text(),'Edit Application')]";

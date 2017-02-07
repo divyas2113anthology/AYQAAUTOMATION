@@ -1125,7 +1125,7 @@ public static final String QAE_FieldLength = "//input[@name='txtResponseLength']
 public static final String QAE_FieldFormat = "//select[@name='txtFormat']";
 public static final String QAE_QuestionBefor = "//select[@name='selorderquestion']";
 public static final String QAE_PageName = "//div[@id='AYInstructions']/following-sibling::font";
-public static final String QAE_Message = "//div[@id='divAyConfirmation']/font";
+public static final String QAE_Message = "//font";//div[@id='divAyConfirmation']/font";
 public static final String QAE_PaymentType = "//select[@name='ChangePaymentType']";
 //#**********************************************************#
 //# Webcenter Section Add/Edit Page - SAE

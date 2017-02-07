@@ -21,7 +21,12 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 		String button = testdata[5];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!applicantcheck.equals("") && !operationtoperform.equals("")) {
-			String ApplicantFirstNameCheck = Runtimedataread(applicantcheck);
+			String ApplicantFirstNameCheck = "";
+			try {
+				 ApplicantFirstNameCheck = Runtimedataread(applicantcheck);
+			}catch(Exception e){
+				ApplicantFirstNameCheck = applicantcheck;
+			}
 			System.out.println("AAAAAAAAAAAAA");
 			Reporter.log("Step 1 - Check the checkbox against ["+ApplicantFirstNameCheck+"]");
 			if (operationtoperform.equalsIgnoreCase("Check")) {

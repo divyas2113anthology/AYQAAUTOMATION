@@ -3878,17 +3878,22 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void PackageSelectionFieldDefinition(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
   //selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]\")", "60000");
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
-		//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])\")", "60000");
+	waitForElementPresentWebdriverWait(attributeName_xpath,"//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"]","wait For Element");
+			//		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//font[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 	//String seconclickName = selenium.getAttribute("xpath=(//b[font[text()='"+section+"']]/preceding-sibling::a[img[contains(@src,'plus')]])["+index+"]]/@onclick");
-		String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
+		//String seconclickName = selenium.getAttribute("xpath=(//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"])/@onclick");
+		WebElement SeconclickName = driver.findElement(By.xpath("//b[a[font[text()='"+section+"']]]/preceding-sibling::a[img[contains(@src,'plus')]]["+index+"]"));
+		String seconclickName = SeconclickName.getAttribute("onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");
 		String secnode = secnodespl[0];
 		writeConsole("Node Value for Section "+secnode);
-		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+		//String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle("+secnode+")')]/@onmouseover");
+		WebElement NodePlus = driver.findElement(By.xpath("//a[contains(@onclick,'toggle(" + secnode + ")')]"));
+		String nodePlus = NodePlus.getAttribute("onmouseover");
 		writeConsole("Plus OuterHTML Value "+nodePlus);
 		if (nodePlus.contains("Click to expand")) {
 			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");

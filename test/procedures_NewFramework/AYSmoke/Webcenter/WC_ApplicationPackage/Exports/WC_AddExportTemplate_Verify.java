@@ -35,8 +35,9 @@ public class WC_AddExportTemplate_Verify extends CommonSeleniumActions implement
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
 			if (!message.equals("")) {
-				waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Message, message);
-				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
+				String Message[] = message.split(" ");
+				waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Message, Message[0]);
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, Message[0], message);
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");

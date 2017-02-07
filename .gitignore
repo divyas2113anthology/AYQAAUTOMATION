@@ -39,6 +39,7 @@ Thumbs.db
 # Unnecessary framework files #
 ###############################
 /Selenium
+/Results
 /target/
 /test-output/
 .classpath

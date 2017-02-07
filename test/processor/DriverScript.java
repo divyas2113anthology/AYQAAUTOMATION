@@ -1,39 +1,27 @@
 package processor;
 
-import java.io.BufferedReader;
-//import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Map;
-import java.util.TimeZone;
-
-import javax.xml.bind.JAXBElement;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
-import javax.xml.ws.BindingProvider;
-
+import com.inflectra.spirateam.mylyn.core.internal.services.soap.*;
 import org.apache.commons.io.FileUtils;
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
 import org.testng.collections.Lists;
-import org.testng.xml.XmlSuite;
-import org.testng.xml.XmlTest;
 
-import processor.GenerateCsv;
+import javax.xml.bind.JAXBElement;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
+import javax.xml.ws.BindingProvider;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.*;
 
-import com.inflectra.spirateam.mylyn.core.internal.services.soap.*;
+//import java.io.ByteArrayOutputStream;
 
 public class DriverScript {
 	public static void main (String[] args) throws IImportExportConnectionAuthenticateServiceFaultMessageFaultFaultMessage, IImportExportConnectionConnectToProjectServiceFaultMessageFaultFaultMessage, IImportExportTestCaseRetrieveByIdServiceFaultMessageFaultFaultMessage, IImportExportSystemGetProductNameServiceFaultMessageFaultFaultMessage, IImportExportProjectRetrieveServiceFaultMessageFaultFaultMessage, IImportExportTestCaseRetrieveStepParametersServiceFaultMessageFaultFaultMessage, IImportExportTestCaseRetrieveParametersServiceFaultMessageFaultFaultMessage, IOException, InterruptedException, IImportExportTestCaseAddUpdateAutomationScriptServiceFaultMessageFaultFaultMessage, IImportExportTestCaseRetrieveServiceFaultMessageFaultFaultMessage, IImportExportTestRunRecordAutomated1ServiceFaultMessageFaultFaultMessage, IImportExportTestRunRecordAutomated1ValidationFaultMessageFaultFaultMessage, IImportExportDocumentAddFileServiceFaultMessageFaultFaultMessage, IImportExportConnectionDisconnectServiceFaultMessageFaultFaultMessage, IImportExportTestSetRetrieveByIdServiceFaultMessageFaultFaultMessage{
@@ -155,6 +143,7 @@ public class DriverScript {
 		System.out.println("Test id = "+testID);
 		System.out.println("Test Name = "+testname);
 		System.out.println("Number of steps = "+numOfSteps);
+
 
 		//Loop through steps
 		System.out.println("Getting test data...");

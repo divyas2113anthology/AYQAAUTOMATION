@@ -4048,4 +4048,15 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		}
 
+	protected boolean isAttribtuePresent(String attributename, String attributevalue, String attributeName) {
+		Boolean result = false;
+		try {
+			WebElement element = attributeNameValue(attributename, attributevalue);
+			String value = element.getAttribute(attributeName);
+			if (value != null){
+				result = true;
+			}
+		} catch (Exception e) {}
+		return result;
+	}
 }

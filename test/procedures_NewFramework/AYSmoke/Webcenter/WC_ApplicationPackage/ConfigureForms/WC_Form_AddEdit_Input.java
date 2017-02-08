@@ -21,7 +21,7 @@ public class WC_Form_AddEdit_Input extends CommonSeleniumActions implements OR {
 			String required = testdata[3];
 			String order = testdata[4];
 			String savedeletecancel = testdata[5];
-			
+			switchToFrameNameIdWebdriver("frmContent");
 			if (!name.equals("")) {
 				Reporter.log("Step 1 - Form Name as ["+name+"]");
 				
@@ -38,8 +38,18 @@ public class WC_Form_AddEdit_Input extends CommonSeleniumActions implements OR {
 			}
 			if(!required.equals("")){
 				Reporter.log("Step 4 - Check the check box for Required");
-				waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
-				clickWebdriver(attributeName_xpath, QAE_Required);				
+				if(required.equalsIgnoreCase("Yes")) {
+					if (isAttribtuePresent(attributeName_xpath, QAE_Required, "unchecked")) {
+						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
+						clickWebdriver(attributeName_xpath, QAE_Required);
+					}
+				}
+				if(required.equalsIgnoreCase("No")){
+					 if(isAttribtuePresent(attributeName_xpath, QAE_Required,"checked")){
+						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
+						clickWebdriver(attributeName_xpath, QAE_Required);
+					}
+				}
 			}
 			if(!order.equals("")){
 				Reporter.log("Step 5 - Enter the order number");//CSC_Order

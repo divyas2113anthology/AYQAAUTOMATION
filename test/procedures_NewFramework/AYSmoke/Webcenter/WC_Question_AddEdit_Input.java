@@ -24,7 +24,9 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			String order = testdata[7];
 			String questioncategory = testdata[8];
 			String assigntranscriptstatus = testdata[9];
-			String usagesavedeletecancel = testdata[10];
+			String required = testdata[10];
+			String usagesavedeletecancel = testdata[11];
+
 			Reporter.log("Input Test Data was retrieved for 'Question Add/Edit Input' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			switchToFrameNameIdWebdriver("frmContent");
@@ -65,6 +67,22 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 9 - Select the Question Category as ["+questioncategory+"]");
 				//selectByValueWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
 				selectByVisibleTextWebdriver(attributeName_xpath, QAE_QuestionCategory, questioncategory);
+			}
+			if(!required.equals("")){
+				Reporter.log("Step 4 - Check the check box for Required");
+				if(required.equalsIgnoreCase("Yes") || required.equalsIgnoreCase("Check")) {
+					String trueOrFlase = new String(String.valueOf(isAttribtuePresent(attributeName_xpath, QAE_Required, "unchecked")));
+					if (trueOrFlase.equalsIgnoreCase("flase")) {
+						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
+						clickWebdriver(attributeName_xpath, QAE_Required);
+					}
+				}
+				if(required.equalsIgnoreCase("No") || required.equalsIgnoreCase("Uncheck")){
+					if(isAttribtuePresent(attributeName_xpath, QAE_Required,"checked")){
+						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
+						clickWebdriver(attributeName_xpath, QAE_Required);
+					}
+				}
 			}
 			if (!usagesavedeletecancel.equals("")) {
 				Reporter.log("Step 10 - Click the Button as ["+usagesavedeletecancel+"]");

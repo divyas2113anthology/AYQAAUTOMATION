@@ -1,20 +1,14 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import java.io.IOException;
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import jxl.read.biff.BiffException;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR {
 	
@@ -108,6 +102,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				if (!password.equals("")) {			
 					Reporter.log("Step 9 - Enter 'Password' as ("+password+")");	
 					String Password = Runtimedataread(password);
+					System.out.println("The Password is  "+Password);
 //					type(CA_Password, Password);
 					waitForElementPresentWebdriver(attributeName_xpath, CA_Password, Password);
 					sendKeys(attributeName_xpath, CA_Password, Password);
@@ -116,6 +111,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");	
 					String ConfirmPassword = Runtimedataread(confirmpassword);
+					System.out.println("The Password is  "+ConfirmPassword);
 //					type(CA_ConfirmPassword, ConfirmPassword);	
 					sendKeys(attributeName_xpath, CA_ConfirmPassword, ConfirmPassword);
 //					if (!confirmyes.equalsIgnoreCase("")) {

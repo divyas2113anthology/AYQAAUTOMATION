@@ -1,12 +1,10 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import com.thoughtworks.selenium.webdriven.commands.SelectFrame;
+import or.OR;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
@@ -74,8 +72,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
                             }
 					}
 				}
-				//ClosePackageSelection();
-				
+				ClosePackageSelection();
 			}
 			switchToDefaultContentWebdriver();
 		} catch (Exception e) {

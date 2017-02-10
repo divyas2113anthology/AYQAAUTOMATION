@@ -3906,8 +3906,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//					selenium.selectFrame("//frame[@name='frmTreeMenu']");
 		//					SelectTreeFrame();
 		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-		selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
-		int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		//selenium.waitForCondition("selenium.isElementPresent(\"//img[contains(@src,'minus')]\")", "60000");
+		waitForElementPresentWebdriver(attributeName_xpath,"//img[contains(@src,'minus')]","Wait For Element");
+		//int minusCount = selenium.getXpathCount("//img[contains(@src,'minus')]").intValue();
+		int minusCount = driver.findElements(By.xpath("//img[contains(@src,'minus')]")).size();
 		writeConsole("Minus Count "+minusCount);
 		for (int i = minusCount; i > 0; i--) {
 			clickWebdriver(attributeName_xpath, "xpath=(//img[contains(@src,'minus')])["+i+"]");

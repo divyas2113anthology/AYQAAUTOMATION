@@ -801,7 +801,7 @@ public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete 
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
-public static final String RC_Question = "//p[contains(text(),'";
+public static final String RC_Question = "//p/strong[contains(text(),'";
 //#**********************************************************#
 //# Facelift Recommendation Input - RI
 //#**********************************************************#

@@ -71,7 +71,7 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 			if(!required.equals("")){
 				Reporter.log("Step 4 - Check the check box for Required");
 				if(required.equalsIgnoreCase("Yes") || required.equalsIgnoreCase("Check")) {
-					String trueOrFlase = new String(String.valueOf(isAttribtuePresent(attributeName_xpath, QAE_Required, "unchecked")));
+					String trueOrFlase = new String(String.valueOf(isAttribtuePresent(attributeName_xpath, QAE_Required, "checked")));
 					if (trueOrFlase.equalsIgnoreCase("flase")) {
 						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
 						clickWebdriver(attributeName_xpath, QAE_Required);

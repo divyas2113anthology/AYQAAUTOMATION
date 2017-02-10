@@ -115,7 +115,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				
 				if (!confirmpassword.equals("")) {
 					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");
-					if(confirmpassword.equals("Auto123+")){
+					if(!confirmpassword.equals("Auto123+")){
 						String ConfirmPassword = Runtimedataread(confirmpassword);
 //						type(CA_ConfirmPassword, ConfirmPassword);
 						sendKeys(attributeName_xpath, CA_ConfirmPassword, ConfirmPassword);

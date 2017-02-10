@@ -106,18 +106,28 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				}
 				
 				if (!password.equals("")) {			
-					Reporter.log("Step 9 - Enter 'Password' as ("+password+")");	
-					String Password = Runtimedataread(password);
-//					type(CA_Password, Password);
-					waitForElementPresentWebdriver(attributeName_xpath, CA_Password, Password);
-					sendKeys(attributeName_xpath, CA_Password, Password);
-				}		
+					Reporter.log("Step 9 - Enter 'Password' as ("+password+")");
+					if(!password.equals("Auto123+")){
+						String Password = Runtimedataread(password);
+//						type(CA_Password, Password);
+						waitForElementPresentWebdriver(attributeName_xpath, CA_Password, Password);
+						sendKeys(attributeName_xpath, CA_Password, Password);
+					}else{
+						waitForElementPresentWebdriver(attributeName_xpath, CA_Password, password);
+						sendKeys(attributeName_xpath, CA_Password, password);
+					}
+				}
 				
 				if (!confirmpassword.equals("")) {
-					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");	
-					String ConfirmPassword = Runtimedataread(confirmpassword);
-//					type(CA_ConfirmPassword, ConfirmPassword);	
-					sendKeys(attributeName_xpath, CA_ConfirmPassword, ConfirmPassword);
+					Reporter.log("Step 10 - Enter 'Confirm Password' as ("+confirmpassword+")");
+					if(confirmpassword.equals("Auto123+")){
+						String ConfirmPassword = Runtimedataread(confirmpassword);
+//						type(CA_ConfirmPassword, ConfirmPassword);
+						sendKeys(attributeName_xpath, CA_ConfirmPassword, ConfirmPassword);
+					}else{
+						sendKeys(attributeName_xpath, CA_ConfirmPassword, confirmpassword);
+					}
+//					type(CA_ConfirmPassword, ConfirmPassword);
 //					if (!confirmyes.equalsIgnoreCase("")) {
 //						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 //						Runtimedatawrite(confirmpassword,confirmyes);			

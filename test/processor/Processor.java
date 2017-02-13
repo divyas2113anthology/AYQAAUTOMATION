@@ -75,13 +75,13 @@ public class Processor {
 
 			switch(browser){
 			case "internetexplorer":
-				File file = new File("lib\\IEDriverServer.exe");
+				File file = new File("C:\\SeleniumScripts\\AYQAAutomation\\lib\\IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 				driver = new InternetExplorerDriver();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				break;
 			case "firefox":
-				String marionetteDriverLocation = "lib\\geckodriver.exe";
+				String marionetteDriverLocation = "C:\\SeleniumScripts\\AYQAAutomation\\lib\\geckodriver.exe";
 				System.setProperty("webdriver.gecko.driver", marionetteDriverLocation);
 				//WebDriver driver = new MarionetteDriver();
 				DesiredCapabilities capabilitiesff = DesiredCapabilities.firefox();
@@ -90,7 +90,7 @@ public class Processor {
 				driver = new FirefoxDriver(capabilitiesff);
 				break;
 			case "googlechrome":
-				System.setProperty("webdriver.chrome.driver", "lib\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "C:\\SeleniumScripts\\AYQAAutomation\\lib\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("test-type");
 				options.addArguments("disable-popup-blocking");

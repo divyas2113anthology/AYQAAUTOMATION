@@ -3840,10 +3840,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void PackageSelection(String section,String index) {
 		Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");
 		System.out.println(section);
-		selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
+		//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 		//					selenium.waitForCondition("selenium.isVisible(\"xpath=(//a[contains(text(),'"+section+"')])["+index+"]\")", "60000");
 //		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')])["+index+"]/@onclick");
-		String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
+		//String seconclickName = selenium.getAttribute("xpath=(//a[contains(text(),'"+section+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])");
+		String seconclickName = driver.findElement(By.xpath("//a[contains(text(),'\"+section+\"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')])")).getAttribute("onclick");
 		writeConsole("Onclick Value for Section "+seconclickName);
 		String[] secNamespl =seconclickName.split("\\(");
 		String[] secnodespl = secNamespl[1].split("\\)");

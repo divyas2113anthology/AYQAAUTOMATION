@@ -23,24 +23,30 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 			String fppin = fpdatarepo[0];
 			String fpemaiaddress = fpdatarepo[1];
 			String fpsearch = fpdatarepo[2];
+			waitForPageToLoadWebdriver();
 			Reporter.log("Enter Data in PIN if it is not empty");
 			if (!fppin.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Enter PIN as ("+fppin+")");
 				sendKeys(attributeName_xpath, FRP_Pin,fppin);
 			}
 			if (!fpemaiaddress.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 2 - Enter Email Address as ("+fpemaiaddress+")");
 				waitForElementPresentWebdriver(attributeName_xpath, FRP_EmailAddre,"Email");
 				//type(FRP_EmailAddre,fpemaiaddress);
 				sendKeys(attributeName_xpath, FRP_EmailAddre,fpemaiaddress);
 			}
 			if (!fpsearch.equals("")) {
+				waitForPageToLoadWebdriver();
 				Reporter.log("Step 3 - Click on ("+fpsearch+") Button");
 				if (fpsearch.equalsIgnoreCase("search")) {
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath,FRP_Search, "Submit Button Present");
 					clickWebdriver(attributeName_xpath,FRP_Search);
 					waitForPageToLoadWebdriver();
 				}else if(fpsearch.equalsIgnoreCase("back")) {
+					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath,CI_BackBtn, fpsearch);
 					clickWebdriver(attributeName_xpath,CI_BackBtn);
 					waitForPageToLoadWebdriver();

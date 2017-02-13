@@ -56,7 +56,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "http://lhr1pw003app.emt.hobsons.local/?id=ayauto";
 				}
 
-				if ((url.contains("app")) && (url.contains("facelift"))) {
+				else if ((url.contains("app")) && (url.contains("facelift"))) {
 					if (environment.equalsIgnoreCase("USQA")) {
 						//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 						envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";
@@ -90,7 +90,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 						//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";
 						//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
 					}
-				} else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {
+				}}
+
+				else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {
 					if (environment.equalsIgnoreCase("USQA")) {
 						//envirurl = "https://uatapp.applyyourself.com/?id=ayauto";
 						//System.out.println("aaa");
@@ -117,7 +119,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					} else if (environment.equalsIgnoreCase("IAD1PW085")) {
 						envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto";
 					}}
-				} else if (url.contains("webcenter")) {
+				 else if (url.contains("webcenter")) {
 					if (environment.equalsIgnoreCase("USQA")) {
 						//envirurl = "https://uatwebcenter.applyyourself.com/";
 						envirurl = "https://qawebcenter.applyyourself.com/";

@@ -360,7 +360,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						}*/
 
 						//selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
-						selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+					// selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						//clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
 						
 						//clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");

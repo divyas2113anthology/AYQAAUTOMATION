@@ -41,12 +41,13 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 			if (!choosefile.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+choosefile+"]");
 				waitForElementPresentWebdriverWait(attributeName_name, "attfile", choosefile);
-				clickWebdriver(attributeName_name, "attfile");
+				//clickWebdriver(attributeName_name, "attfile");
 				Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
 				Thread.sleep(1000);
 				if(choosefile.contains("ImportForSmokeTest")){
 					driver.findElement(By.name("attfile")).sendKeys(choosefile);
+					//C:\SeleniumScripts\AYQAAutomation\SourceFile\Webcenter\ImportFile
 				}
 				else
 				 {
@@ -60,7 +61,7 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 //				Runtime.getRuntime().exec("C:\\SeleniumScripts\\AYQAAutomation\\AutoIT\\Firefox\\Webcenterr\\ImportFileFF.exe");
 				//Removed wait time
 			}
-			if (!columnheader.equals("")) {
+				if (!columnheader.equals("")) {
 				Reporter.log("Step 3 - Select the column header as ["+columnheader+"]");
 				if (columnheader.contains("check")) {
 					checkWebdriverCheckbox(attributeName_name, "IncludeHeader");

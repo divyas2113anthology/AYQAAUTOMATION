@@ -82,7 +82,7 @@ public static final String FC_UserName = "//form[@name='frmConfirmAppAcct']//*[c
 public static final String Iagree = "//*[@id='chkAcceptEULA']";
 public static final String PrivacyPolicy_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String PrivacyPolicy_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String PrivacyPolicy = ".//*[@id='Radio3']";
+public static final String PrivacyPolicy = "//*[@id='Radio3']";
 public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#**********************************************************#
 //#**********************************************************#
@@ -314,7 +314,7 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //public static final String FRP_Pin = "//input[@id='UserID']";
 public static final String FRP_Pin = "//input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
-public static final String FRP_Search = ".//*[@id='Image1']";
+public static final String FRP_Search = "//*[@id='ay-forgotSubmit']";
 //#**********************************************************#
 //# Personal Data Page - PD
 //#**********************************************************#
@@ -802,6 +802,7 @@ public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
 public static final String RC_Question = "//p/strong[contains(text(),'";
+public static final String RC_Question1 = "//p[contains(text(),'";
 //#**********************************************************#
 //# Facelift Recommendation Input - RI
 //#**********************************************************#

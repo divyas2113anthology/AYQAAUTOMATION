@@ -71,9 +71,9 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!link_to_click.equalsIgnoreCase("")) {
 				
-				if (link_to_click.equalsIgnoreCase("Logout")) {
+				if (link_to_click.equalsIgnoreCase("Logout") || link_to_click.equalsIgnoreCase("Log Out")) {
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
-					clickWebdriver(attributeName_xpath,Logoutmain+link_to_click+"']");
+					clickWebdriver(attributeName_xpath,Logoutmain);
 					waitForPageToLoadWebdriver();
 				}
 				else

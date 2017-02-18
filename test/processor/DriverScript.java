@@ -94,7 +94,6 @@ public class DriverScript {
 		LogAutomatedRun(projectIdInput,testSetIdInput,testIdInput,testNameInput,testStatus,soap,testDir,testTextOut,startDate);
 		soap.connectionDisconnect();
 		System.out.println("**************Test Complete***************");
-		Runtime.getRuntime().exec("taskkill /F /IM java.exe");
 
 	}
 

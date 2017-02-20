@@ -251,7 +251,10 @@ public class Processor {
 	    	driver.quit();
 	            
 	        }*/
-	    	
+
+	    	Thread.sleep(2000);
+			driver.quit();
+
 	    	System.out.println("comes to after suite");
 	    	
 	 	    	

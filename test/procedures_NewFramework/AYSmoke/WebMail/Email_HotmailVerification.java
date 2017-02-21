@@ -46,9 +46,9 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
-                clickWebdriver(attributeName_xpath,"//input[@value='Next']");
+               // clickWebdriver(attributeName_xpath,"//input[@value='Next']");
 				waitForPageToLoadWebdriver();
-				Thread.sleep(9000);
+				//Thread.sleep(9000);
 				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, HM_WPassword, password);
 			}
@@ -102,7 +102,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
-								if (isDisplayedWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]"))
+								if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]"))
 									writeConsole("2");
 									break;
 								}
@@ -111,8 +111,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 //						}
 					}
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
-					waitForElementVisibleWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]","");
-					clickWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]");
+					waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]","");
+					clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]");
 					Thread.sleep(10000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {
@@ -131,7 +131,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				//selenium.waitForCondition("selenium.isElementPresent(\"//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]\")", "120000");
 				//selenium.waitForCondition("selenium.isElementPresent(\"//li[contains(@class,'leftnavitem')]//span[text()='Inbox']\")", "120000");
 				//selenium.waitForCondition("selenium.isElementPresent(\"//div[@role='treeitem']//span[text()='Inbox']\")","120000");
-				waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@role='treeitem']//span[text()='Inbox'])","Inbox button");
+				waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@role='treeitem']//span[text()='Inbox']","Inbox button");
 
 				Reporter.log("Click on Inbox");
 				writeConsole("Click on Inbox");
@@ -151,7 +151,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
 								//if (selenium.isVisible("//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]"))
-						if (isDisplayedWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]")){
+						if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]")){
 									writeConsole("2");
 									break;
 								}
@@ -160,9 +160,10 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					}
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]\")", "120000");
 				//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]\")", "120000");
-				waitForElementPresentWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]","Elememt");
+				//waitForElementPresentWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]","Elememt");
+					waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]","Wait For Element");
 					//clickWebdriver(attributeName_xpath,"//div[@class='c-MessageGroup mailListPane InboxTable']//li[contains(@class,'c-MessageRow')]/span[@class='Sb']/a[text()[contains(.,'"+emailsubjectcontainsread+"')]]");
-				clickWebdriver(attributeName_xpath,"//div//span[contains(text(),'Test Smoke') and contains(text(),'Test Automation')]");
+				clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubjectcontainsread+"')]");
 					Thread.sleep(10000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {

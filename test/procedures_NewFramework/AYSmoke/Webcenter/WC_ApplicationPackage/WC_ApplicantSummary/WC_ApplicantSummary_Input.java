@@ -179,8 +179,6 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				if (buttons.equalsIgnoreCase("Save")) 
 				{
 					clickWebdriver(attributeName_xpath, AS_SaveBtn);
-					switchToOldWindow();
-					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					recentPopupCloseWebdriver();
 //					selectMainWindowWebdriver();
@@ -191,9 +189,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 
 					//clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//driver.manage().deleteAllCookies();
-					switchToOldWindow();
 					//driver.switchTo().window(ApplicationPage);
-					//recentPopupCloseWebdriver();
+					recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}else if (buttons.equalsIgnoreCase("Close")) 
 				{
@@ -225,10 +222,10 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 
 					waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
 					System.out.println("out");
-					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					//clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//driver.manage().deleteAllCookies();
-					driver.switchTo().window(ApplicationPage);
-					//recentPopupCloseWebdriver();
+					//driver.switchTo().window(ApplicationPage);
+					recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}
 			}

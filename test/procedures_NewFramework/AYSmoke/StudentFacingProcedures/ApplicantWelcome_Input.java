@@ -33,7 +33,7 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 					clickWebdriver(attributeName_xpath,"//li/i[@class='icon-home icon-white']");
 					waitForPageToLoadWebdriver();
 				}else {
-					clickWebdriver(attributeName_xpath, Logoutmain);
+					clickWebdriver(attributeName_xpath, Logoutmain + logout + "']");
 					waitForPageToLoadWebdriver();
 				}
 			}

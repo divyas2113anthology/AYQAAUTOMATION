@@ -88,7 +88,7 @@ public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#**********************************************************#
 //#Applicant Welcome Page
 //#**********************************************************#
-public static final String Logoutmain ="//*[text()='Log Out']";
+public static final String Logoutmain ="//*[text()='";
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
 public static final String Section ="//font[contains(text(),'";
@@ -795,9 +795,9 @@ public static final String AW_Fa1rfaxLnk = "//div[@id='menu']//font[text()='Fa1r
 public static final String TS_PageName = "//div[@id='mainnav']//a[contains(text(),'Support Center')]";
 public static final String EA_MediaAttach_UploadMedia = "xpath=(//img[@alt='Upload Attachment'])[3]";
 //public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
-public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])[3]";
+public static final String EA_MediaAttach_Viewfile = "xpath=(//a[@alt='View Document'])";//[3]";
 //public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
-public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])[3]";
+public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete Attachment'])";//[3]";
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
@@ -880,7 +880,7 @@ public static final String SAI_BothtRadioBtn = "//input[@type='radio' and @value
 public static final String SAI_ViewRecords = "//input[@name='chkAgree']";
 public static final String SAI_CreationDateRadio = "//input[@name='SearchTypes' and @value='creationDate']";
 public static final String SAI_SubmissionDateRadio = "//input[@name='SearchTypes' and @value='submissionDate']";
-public static final String SAI_CreationDate = "//td[contains(.,'Creation Date')]/input[@name='SearchTypes']";
+public static final String SAI_CreationDate = "//td[@class='FormFields' and @valign='bottom']//select[@name='Days']";
 //public static final String SAI_SubmissionDate = "//select[@name='SubmitDays']";
 public static final String SAI_SubmissionDate = "//select[@name='Days']";
 public static final String SAI_SpecificPeriod = "//select[@name='Days']";
@@ -1274,7 +1274,7 @@ public static final String GS_NextBtn = "//img[@alt='next']";
 public static final String CP_Goback = "//img[@alt='Bo Back']";
 public static final String CP_Update = "//input[@alt='update']";
 public static final String CP_Continue = "//img[@alt='Continue']";
-public static final String CP_Message = "//table[not(@id)]//td[@class='BasePageFont']";
+public static final String CP_Message = "//div[@id='rec-create-box']//p";
 public static final String CP_CurrentPass = "//input[@id='oldPassword']";
 public static final String CP_NewPass = "//input[@id='newPassword']";
 public static final String CP_ConfirmPass = "//input[@id='conNewPassword']";
@@ -2067,7 +2067,7 @@ public static final String SR_PageName="//form[@name='frm";
 public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
 public static final String SR_Instructions="//div[@id='AYInstructions']";
 public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
-public static final String SR_button="//span[contains(text(),'";
+public static final String SR_button="//img[contains(@src,'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[contains(@id,'SectionInput')]";

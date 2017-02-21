@@ -69,13 +69,20 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					Reporter.log("Click the button as [" + buttons + "]");
 					waitForElementPresentWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']", buttons);
 					clickWebdriverWithCoordinates(attributeName_xpath, "//span[text()='Enrollments-DT fee']");
-				}else{
+				}
+				else{
 					Reporter.log("Click the button as [" + buttons + "]");
 					waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
 					clickWebdriverWithCoordinates(attributeName_xpath, SR_button + buttons + "')]");
+					try{
+						alertAccept();
+					}
+					catch(Exception e){
+						System.out.println("No alert");
+					}
 				}
-				recentPopupSelectWebdriver("Enrollment-DT Fee Status");
-				waitForPageToLoadWebdriver();
+				//recentPopupSelectWebdriver("Enrollment-DT Fee Status");
+				//waitForPageToLoadWebdriver();
 			}
 			if (!closeproceed.equals("")) {
 				Reporter.log("Click the button as ["+closeproceed+"]");				
@@ -86,10 +93,10 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
 //					waitForPageToLoadWebdriver();
 				}else if (closeproceed.equalsIgnoreCase("Close Window")) {
-
-					clickWebdriver(attributeName_xpath, "//img[@src='../Images/common_images/admin_close_window_large.gif']");
-					System.out.println("CLicked on Close button");
-
+					recentPopupCloseWebdriver();
+				//	selectMainWindowWebdriver();
+					//clickWebdriver(attributeName_xpath, "//img[contains(@src,'close_window_large')]");
+					//System.out.println("CLicked on Close button");
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}

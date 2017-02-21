@@ -34,6 +34,7 @@ public class Signature_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 3 - Click on ("+sigsubmit+") Button");
 				if (sigsubmit.equalsIgnoreCase("submit")) {
 					clickWebdriver(attributeName_xpath, SP_Submit);
+					Thread.sleep(8000);
 					
 				}
 			}

@@ -1,15 +1,12 @@
 package procedures_NewFramework.AYSmoke.General;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 import java.util.Iterator;
 import java.util.Set;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class WindowOpenedSuccessfulClose extends CommonSeleniumActions implements	OR {
 	

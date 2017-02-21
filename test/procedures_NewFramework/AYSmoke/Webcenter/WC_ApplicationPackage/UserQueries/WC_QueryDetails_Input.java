@@ -39,12 +39,14 @@ public class WC_QueryDetails_Input extends CommonSeleniumActions implements OR {
 			if (!save.equals("")) {
 				Reporter.log("Click on Save");
 				if(save.equals("Save")){					
-				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave1 , save);   
+				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave1 , save);
+					Thread.sleep(8000);
 				clickWebdriver(attributeName_xpath, MQ_QuerySave1);
 				}
 				else
 				{
-					waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave , save);   
+					waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave , save);
+					Thread.sleep(8000);
 					clickWebdriver(attributeName_xpath, MQ_QuerySave);
 				}
 				

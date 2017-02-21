@@ -27,7 +27,7 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);
-				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, successmessage, "Sucessful message for Application Fee");
+				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, successmessage, "Successfully Updated");
 				switchToOldWindow();
 
 			}

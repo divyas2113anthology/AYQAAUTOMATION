@@ -1,14 +1,8 @@
 package procedures_NewFramework.AYSmoke.BridgeEvent;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
-
-import org.openqa.selenium.Keys;
-import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
 import processor.CommonSeleniumActions;
 
 

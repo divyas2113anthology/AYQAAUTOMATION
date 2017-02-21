@@ -57,6 +57,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						waitForPageToLoadWebdriver();
+						Thread.sleep(5000);
 						recentPopupSelectWebdriver("Application Summary");
 					}else if (clickname.equalsIgnoreCase("FaceliftAppFirstName")) {
 						String ReadClickName = Runtimedataread(clickname);

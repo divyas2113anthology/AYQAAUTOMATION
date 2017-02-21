@@ -57,6 +57,7 @@ public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 6 - Click on ("+avssearch+") Button");
 				if (avssearch.equalsIgnoreCase("search")) {
 					Iterator<String> popwindow = driver.getWindowHandles().iterator();
+					Thread.sleep(5000);
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
@@ -65,6 +66,7 @@ public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 					//selectMainWindowWebdriver();
 				}else if (avssearch.equalsIgnoreCase("close window")) {
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
+					Thread.sleep(500);
 					selectMainWindowWebdriver();
 				}
 			}

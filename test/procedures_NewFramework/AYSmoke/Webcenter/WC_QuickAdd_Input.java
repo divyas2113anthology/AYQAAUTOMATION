@@ -1,14 +1,11 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
-import java.util.Calendar;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 	

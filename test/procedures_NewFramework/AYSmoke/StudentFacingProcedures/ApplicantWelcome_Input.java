@@ -1,11 +1,9 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
+import or.OR;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR {
@@ -74,7 +72,9 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 //				click(helphint+helpfulhints+"']");
 				//clickWebdriver(attributeName_linktext, helpfulhints);
 				clickWebdriver(attributeName_xpath,"//li[contains(@id,'helpfulHints')]/a");
+				Thread.sleep(5000);
 				clickWebdriver(attributeName_xpath,"//li/a[contains(text(),'"+helpfulhints+"')]");
+				Thread.sleep(5000);
 				//recentPopupSelectWebdriver(helpfulhints);
 				//switchToDefaultContentWebdriver();
 				//String temp = driver.getTitle();

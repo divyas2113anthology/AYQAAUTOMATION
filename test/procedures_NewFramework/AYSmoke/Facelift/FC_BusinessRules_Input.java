@@ -1,12 +1,8 @@
 package procedures_NewFramework.AYSmoke.Facelift;
 
-import java.util.Calendar;
-
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class FC_BusinessRules_Input extends CommonSeleniumActions implements OR {
@@ -30,6 +26,9 @@ public class FC_BusinessRules_Input extends CommonSeleniumActions implements OR 
 			String brsubmitbutton = brdatarepo[10];
 			Reporter.log("Retrieved Test Data in Business Rules input");
 			if (!brstartdate1.equals("")) {
+				Reporter.log("Step 1 - Enter the First Name as ("+brstartdate1+") ");
+				sendKeys(attributeName_xpath, "//input[@id='q24411']", brstartdate1);
+
 				
 			}
 			if (!brrecruitmentprogramdate1.equals("")) {
@@ -73,6 +72,7 @@ public class FC_BusinessRules_Input extends CommonSeleniumActions implements OR 
 			if (!brsubmitbutton.equals("")) {
 				Reporter.log("Step 11 - Click on ("+brsubmitbutton+")Button");
 				if (brsubmitbutton.equalsIgnoreCase("Submit Applicant")) {
+					Thread.sleep(5000);
 					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 					waitForPageToLoadWebdriver();
 				}

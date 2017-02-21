@@ -21,6 +21,7 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 				try {
 					String FirstName = Runtimedataread(firstname);
 					Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
+					Thread.sleep(8000);
 					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
 					sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
 				}catch(Exception e){
@@ -39,6 +40,7 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 			if (!editfirstname.equals("")) {
 				String EditFirstName = Runtimedataread(editfirstname);
 				Reporter.log("Step 3 - Proceed to Click on Edit ("+EditFirstName+") Link");
+				Thread.sleep(8000);
 				waitForElementPresentWebdriverWait(attributeName_xpath, "//td[text()='"+EditFirstName+"']/preceding-sibling::td/a[text()='Edit']", EditFirstName);
 				clickWebdriver(attributeName_xpath, "//td[text()='"+EditFirstName+"']/preceding-sibling::td/a[text()='Edit']");
 				waitForPageToLoadWebdriver();

@@ -34,6 +34,7 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			String edudateofgraduation = educationvdatarepo[13];
 			String edugpa = educationvdatarepo[14];
 			Reporter.log("Verify Test Data was retrieved for 'Education Background' page");
+			recentPopupSelectWebdriver("View full Application");
 			//recentOpenedPopupSelectWebdriver("Education Background");
 			//selectMainWindowWebdriver();
 			if (!edusuccessmessage.equals("")) {
@@ -63,6 +64,14 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 				//String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
 				//waitForElementPresentWebdriver(attributeName_xpath, hsnameID, eduhighschoolname);
 				//String vhsname = getValueWebdriver(attributeName_xpath,hsnameID);
+
+				// Save the form before verify .
+				clickWebdriver(attributeName_xpath,"//img[contains(@src,'save_small')]");
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
 				String hsnameID =driver.findElement(By.xpath("//input[@id='q24552']")).getAttribute("value");
 				String vhsname = hsnameID;
 				if (vhsname.equals(eduhighschoolname)) {

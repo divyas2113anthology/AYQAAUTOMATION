@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -30,6 +31,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			String pivzip = personalinfovdatarepo[8];
 			String pivcountry = personalinfovdatarepo[9];
 			Reporter.log("Verify Test Data was retrieved for 'Personal Information' page");
+			recentPopupSelectWebdriver("View full Application");
 			//recentOpenedPopupSelectWebdriver("View full Application");
 			//selectMainWindowWebdriver();
 			if (!pivsuccessmessage.equals("")) {
@@ -57,10 +59,18 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 				Reporter.log("Step 4 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
 				String addrwaitID = getElementIDbyLabel("Address Line1", PI_AddressLine1_wait);
 				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
-				String addrID1 = getElementIDbyLabel("Address Line1", PI_AddressLine1);			
-				String line1 = getValueWebdriver(attributeName_xpath,addrID1);
+				// Save the form before verify .
+				clickWebdriver(attributeName_xpath,"//img[contains(@src,'save_small')]");
+				try{
+					alertAccept();
+				}catch(Exception e){
+					System.out.println("No Alert");
+				}
+				//String address1 = driver.findElement(By.xpath("//*[@id='q24503']")).getAttribute("value");
+				//String addrID1 = getElementIDbyLabel("Address Line1", PI_AddressLine1);
+				String line1 = getValueWebdriver(attributeName_xpath, "//*[@id='q24503']");
 				if (line1.equals(pivaddressline1)) {
-					Reporter.log("Data("+line1+") was displayed correctly in the [Address Line1] Field");				
+					Reporter.log("Data("+line1+") was displayed correctly in the [Address Line1] Field");
 				} else {
 					writeFailure("Data("+line1+") was not displayed correctly in the [Address Line1] Field");
 				}

@@ -181,7 +181,7 @@ public static final String PI_DOB = "//input[@id='q24500']";
 public static final String PI_Sports = "//select[@id='s24501']";
 public static final String PI_Luckyno = "//input[@id='rc24502_2']";
 public static final String PI_AddressLine1_Inactive = "//input[@id='q24503_hq']";
-public static final String PI_AddressLine1 = ".//*[@value='13135 Lee Jackson Memorial']";
+public static final String PI_AddressLine1 = "//*[contains(@value,'13135 Lee')]";
 public static final String PI_AddressLine1_wait = "//input[@id='q24503' and @value!='']";
 public static final String PI_AddressLine2 = "//input[@id='q24504']";
 public static final String PI_AddressLine3 = "//input[@id='q24505']";

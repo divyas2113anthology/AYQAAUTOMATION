@@ -251,10 +251,9 @@ public class Processor {
 	    	driver.quit();
 	            
 	        }*/
-	    	
-	    	System.out.println("comes to after suite");
-	    	
-	 	    	
+
+	    	  	System.out.println("comes to after suite");
+
 	    		driver.quit();// Close all opened 	browser by webdriver.
 
 	    	    String Status = null;

@@ -44,6 +44,7 @@ public class WC_BatchPrint_Input extends CommonSeleniumActions implements OR {
 						waitForPageToLoadWebdriver();
 						if (isElementPresentWebdriver(attributeName_xpath, BP_ViewBtn)) {
 							writeConsole("Refresh Ideration Ended"+i);
+							waitForPageToLoadWebdriver();
 							break;
 						}
 						waitForPageToLoadWebdriver();

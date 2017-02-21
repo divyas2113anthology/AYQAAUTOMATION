@@ -61,7 +61,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 				}*/
 				//waitForElementPresentWebdriverWait(attributeName_xpath, "//b[font[text()='" + SplitPackage[0] + "']]/preceding-sibling::a[img[contains(@src,'plus')]][1]", SplitPackage[0]);
 				//	clickWebdriver(attributeName_xpath, "//b[font[text()='" + SplitPackage[0] + "']]/preceding-sibling::a[img[contains(@src,'plus')]][1]");
-				for (int i = 1; i < SplitPackage.length; i++) {
+				for (int i=0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package : "+SplitPackage[i]);
 					/*if(i==0){
 						WebElement SeconclickName1 = driver.findElement(By.xpath("//b[font[text()='" + SplitPackage[0] + "']]/preceding-sibling::a[@onclick][1]"));
@@ -78,11 +78,12 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						if (nodePlus1.contains("Click to expand")) {
 							//clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle("+secnode+")')]");
 							clickWebdriver(attributeName_xpath, "//b[font[text()='" + SplitPackage[0] + "']]/preceding-sibling::a[img[contains(@src,'plus')]][1]");
+							waitForPageToLoadWebdriver();
 						}else{
  							System.out.println("Already Expand");
 						}
 					}*/
-					 if(i==1){
+					 if(i==0){
 						Reporter.log("Proceed to Click on Plus Buton With its respective Package Name");   //b[a[font[text()='Applicant Detail']]]
 						//selenium.waitForCondition("selenium.isElementPresent(\"xpath=(//b[a[font[text()='"+SplitPackage[i]+"']]]/preceding-sibling::a[img[contains(@src,'plus')]][1])\")", "60000");
 						//waitForElementPresentWebdriver(attributeName_xpath,"//b[font[text()='"+SplitPackage[i]+"']]/preceding-sibling::a[img[contains(@src,'plus')]][1]","Wait For Package ");

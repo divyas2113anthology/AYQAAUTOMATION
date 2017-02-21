@@ -1,5 +1,7 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -23,7 +25,8 @@ public class Login_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Application Login' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				if (selenium.isTextPresent(message)) {
+				String Message = driver.findElement(By.xpath("//font/u[contains(text(),'Welcome')]")).getText();
+				if (Message.equals(message)) {
 					Reporter.log("Message("+message+") was displayed correctly");
 				}else {
 					writeFailure("Message("+message+") was not displayed correctly");

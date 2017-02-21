@@ -51,7 +51,8 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 //					sendKeyStroke(attributeName_xpath, "xpath=(//img[@alt='Update your Profile' and contains(@src,'update_profile_o.gif')])[1]", Keys.SPACE);
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Profile, updatetechsupport);
 					clickWebdriver(attributeName_xpath, AW_Profile);
-					recentPopupSelectWebdriver("Update Profile");
+					//recentPopupSelectWebdriver("Update Profile");
+					waitForPageToLoadWebdriver();
 				}else if (updatetechsupport.equalsIgnoreCase("Submit")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AW_Submit, updatetechsupport);
 					clickWebdriver(attributeName_xpath,AW_Submit);

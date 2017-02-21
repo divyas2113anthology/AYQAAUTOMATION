@@ -72,7 +72,9 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
                             }
 					}
 				}
-				ClosePackageSelection();
+				if(isDisplayedWebdriver(attributeName_xpath,"//img[contains(@src,'minus')]")) {
+					ClosePackageSelection();
+				}
 			}
 			switchToDefaultContentWebdriver();
 		} catch (Exception e) {

@@ -29,7 +29,8 @@ public class WC_ConfigureBR_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, "Page Name for Business Rule");
+				String PageName[] = pagename.split(" ");
+				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName+PageName[0].trim()+"')]", pagename, "Page Name for Business Rule");
 			}
 			
 			

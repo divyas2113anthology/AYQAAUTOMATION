@@ -1,15 +1,11 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
-import static processor.CommonSeleniumActions.Runtimedataread;
-
-import org.openqa.selenium.By;
+import or.OR;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.HasInputDevices;
 import org.openqa.selenium.interactions.Keyboard;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Email_Verification extends CommonSeleniumActions implements OR {
@@ -84,8 +80,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				if (!emailsubjectcontains.equals("")) {
 					Reporter.log("Step 6 - Click on Email Subject Contains");
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					Thread.sleep(5000);
 					waitForElementPresentWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]","Send Email");
 					if (isDisplayedWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]")) {
+						Thread.sleep(5000);
 						doubleClickWebdriver(attributeName_xpath, HC_EmailSubjectContains+emailsubjectcontains+"')]");
 						recentPopupSelectWebdriver("Open Email");
 					} else {
@@ -189,6 +187,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//					waitForElementPresentWebdriver(attributeName_partiallinktext, linkcontains, linkcontains);
 					//					clickWebdriver(attributeName_partiallinktext, linkcontains);
 					switchToFrameByWebelementWebdriver(attributeName_tagname, HC_BodyFrame);
+					Thread.sleep(5000);
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'AYForgottenpassword')]", linkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'AYForgottenpassword')]");
 					recentPopupSelectWebdriver("Register Event");
@@ -360,9 +359,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						}*/
 
 						//selenium.waitForCondition("selenium.isVisible(\"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
-					// selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
+						//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]\")", "120000");
 						//clickWebdriver(attributeName_xpath,"//table[@class='lvw']/tbody/tr[td[img[@alt='Message: Unread']]]/td/h1[@class='bld']/a[contains(text(),'"+emailsubjectcontains+"')]");
-						
+
 						//clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubjectcontains+"')]");
 						//waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");

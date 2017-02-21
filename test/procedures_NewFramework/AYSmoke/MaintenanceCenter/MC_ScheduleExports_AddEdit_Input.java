@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 import or.OR;
-
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions implements OR{
@@ -40,7 +37,7 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 			System.out.println("aaaaaaaaaaaaaaa");
 			if(exportdefinition.equals("TestExprt")){
 				String export = Runtimedataread(exportdefinition);
-				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + export + "')]");
+				clickWebdriver(attributeName_xpath, "//select/option[contains(text(),'" + export + "')]");
 			}else
 				clickWebdriver(attributeName_xpath, "//select/option[contains(text(), '" + exportdefinition + "')]");
 		}
@@ -124,8 +121,8 @@ public class MC_ScheduleExports_AddEdit_Input extends CommonSeleniumActions impl
 		}
 		if(!sftpport.equals("")){
 			Reporter.log("Step 15 - Enter SFTP Port as ["+sftpport+"]");
-			waitForElementPresentWebdriverWait(attributeName_name, "txtSFTPPort", sftpport);
-			sendKeys(attributeName_name, "txtSFTPPort", sftpport);
+			//waitForElementPresentWebdriverWait(attributeName_name, "txtSFTPPort", sftpport);
+			//sendKeys(attributeName_name, "txtSFTPPort", sftpport);
 		}
 	}catch(Exception e){
 		writeFailure(e.getLocalizedMessage());}

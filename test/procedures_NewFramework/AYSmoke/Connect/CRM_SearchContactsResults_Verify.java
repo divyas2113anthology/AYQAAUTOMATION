@@ -20,6 +20,7 @@ public class CRM_SearchContactsResults_Verify extends CommonSeleniumActions impl
 			if (!verifyloginpin.equals("")) {
 				String VerifyPIN = Runtimedataread(verifyloginpin);
 				Reporter.log("Step 1 - Verify PIN was displayed("+VerifyPIN+")correctly");
+				Thread.sleep(8000);
 				verifyTabelRowvalueswithcolumnNamesusingxpathWebdriver(attributeName_xpath, "//table[@class='simplegrid-data-content']", "Login", VerifyPIN);
 			}
 			if (!verifyfirstname.equals("")) {

@@ -29,7 +29,9 @@ public class MC_AddEditSectionRule_Verify extends CommonSeleniumActions implemen
 			}
 			if (!values.equals("")) {
 				Reporter.log("Step 3 - Verify the Presented values as ["+values+"]");
+				clickWebdriver(attributeName_xpath, "//a[text()='Add SectionRule']");
 				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
+				//clickWebdriver(attributeName_xpath, "//a[text()='"+values+"']");
 				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MC_SR_Values+values+"')]", values, values);
 				//verifySelectContainsOptionsWebdriver(attributeName_xpath, MC_SR_Values, values, values);
 			}

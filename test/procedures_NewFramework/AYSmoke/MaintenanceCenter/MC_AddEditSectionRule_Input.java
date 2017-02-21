@@ -1,14 +1,8 @@
 package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
-import java.util.List;
-
 import or.OR;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implements OR{
@@ -51,6 +45,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 				if (i== SplitPackage.length-1) {
 					waitForPageToLoadWebdriver();
+					Thread.sleep(5000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
 					
@@ -58,6 +53,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 					System.out.println(SplitPackage[i]);
 					//PackageSelection(SplitPackage[i], "1");
 					waitForPageToLoadWebdriver();
+					Thread.sleep(5000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
 					
@@ -66,7 +62,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			//ClosePackageSelection();
 		}
 		//switchToDefaultContentWebdriver();
-		waitForElementPresentWebdriverWait(attributeName_xpath, "//select[option[contains(text(),'Personal Data')]]", "Personal Data");
+		//waitForElementPresentWebdriverWait(attributeName_xpath, "//select[option[contains(text(),'Personal Data')]]", "Personal Data");
 		waitForPageToLoadWebdriver();
 		if (!field.equals("")) {
 			Reporter.log("Step 4 - Select the field as ["+field+"]");

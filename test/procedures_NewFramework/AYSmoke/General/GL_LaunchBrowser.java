@@ -274,3 +274,4 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 		}
 	}
 }
+

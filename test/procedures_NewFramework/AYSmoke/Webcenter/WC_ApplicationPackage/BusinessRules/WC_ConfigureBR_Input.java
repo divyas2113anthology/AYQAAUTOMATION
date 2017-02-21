@@ -28,7 +28,9 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			
 			if (!add.equals("")) {
 				Reporter.log("Click on the add button");
-				clickWebdriver(attributeName_xpath, BR_Save);
+				clickWebdriver(attributeName_xpath, BR_Add);
+
+				Thread.sleep(10000);
 				
 			}
 			if (!delete.equals("")) {

@@ -106,7 +106,12 @@ public class REC_ContactInformation_Input extends CommonSeleniumActions implemen
 				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, gobacksavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
 				waitForPageToLoadWebdriver();
+			}else if(gobacksavenext.contains("Save and Continue")){
+				waitForElementPresentWebdriver(attributeName_xpath, CI_SaveContinueBtn, gobacksavenext);
+				clickWebdriver(attributeName_xpath, CI_NextBtn);
+				waitForPageToLoadWebdriver();
 			}
+
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

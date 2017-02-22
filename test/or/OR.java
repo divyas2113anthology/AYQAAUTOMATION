@@ -237,7 +237,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-public static final String EL_searchclose = "//input[@value='";
+public static final String EL_searchclose = "//*[@alt='";//input[@value='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 
@@ -1347,6 +1347,7 @@ public static final String CI_BackBtnFL = "//input[@id='ay-ForgotPassword']";
 public static final String CI_PageName = "//td[@class='Color1']/font";
 public static final String CI_SectionMenu = "//table[@class='rightBorder']";
 public static final String MoreDetails = "//font[@class='HelpBoxesFont']/b";
+public static final String CI_SaveContinueBtn = " ";
 
 //#**********************************************************#
 //#	 Recommendation - Remind Recommender action 

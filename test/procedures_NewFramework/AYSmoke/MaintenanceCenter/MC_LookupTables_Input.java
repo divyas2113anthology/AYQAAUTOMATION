@@ -29,6 +29,7 @@ public class MC_LookupTables_Input extends CommonSeleniumActions implements OR{
 			}else if (button.equalsIgnoreCase("Modify Data")) {
 				clickWebdriver(attributeName_id,"btnModifyData");
 				waitForPageToLoadWebdriver();
+				Thread.sleep(8000);
 			}
 		}
 	}catch(Exception e){

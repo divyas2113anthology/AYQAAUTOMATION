@@ -78,7 +78,7 @@ public class MC_ApplicantLookup_Input extends CommonSeleniumActions implements O
 				Reporter.log("Step 11 - Click the submit Button");
 				clickWebdriver(attributeName_xpath, AL_SubmitBtn);
 				waitForPageToLoadWebdriver();
-				Thread.sleep(8000);
+				Thread.sleep(10000);
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());

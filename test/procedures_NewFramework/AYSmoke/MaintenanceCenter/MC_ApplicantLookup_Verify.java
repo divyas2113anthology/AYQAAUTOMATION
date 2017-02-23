@@ -30,6 +30,7 @@ public class MC_ApplicantLookup_Verify extends CommonSeleniumActions implements 
 			Reporter.log("Verify Test Data was retrieved for 'Applicant Lookup' Result Section");
 			if (!clientid.equals("")) {
 				Reporter.log("Step 1 - Verify the Client ID as  ["+clientid+"]");
+				waitForPageToLoadWebdriver();
 				verifyRowvalueswithExactcolumnNamesusingxpathWebdriver(attributeName_xpath, "//td[contains(text(),'Results found') or contains(text(),'Result found')]/table", "Client ID", clientid);
 			}
 			if (!name.equals("")) {

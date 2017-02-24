@@ -109,7 +109,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				if (!createaccount.equals("")) {
 					Reporter.log("Step 10 - Click on 'Create Account' button");
 					if (createaccount.equalsIgnoreCase("create account")) {
-						clickWebdriver(attributeName_xpath,CreateAccountProfilePage);
+						//clickWebdriver(attributeName_xpath,CreateAccountProfilePage);
 						Thread.sleep(10000);
 						clickWebdriver(attributeName_xpath,CreateAccount);
 						waitForPageToLoadWebdriver();

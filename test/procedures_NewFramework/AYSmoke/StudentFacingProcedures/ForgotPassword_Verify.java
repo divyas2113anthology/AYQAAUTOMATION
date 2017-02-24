@@ -41,8 +41,12 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 				verifyElementTextWebdriver(attributeName_xpath,"//strong[contains(text(),'"+fpmessage+"')]", fpmessage, "System Message:");
 			}
 			if (!successmessage.equals("")) {
+				waitForElementPresentWebdriver(attributeName_xpath,"//h3[@id='modalheader']","Wait For Success Message");
 				Reporter.log("Step 2 - Verify Success Message:("+successmessage+") was displayed correctly");
-				waitForElementPresentWebdriver(attributeName_xpath,"//font[@class='BasePageFont']", successmessage);
+				//After clicking forgot password link ,the popup loading time is inonsistent.
+				Thread.sleep(1000);
+				waitForElementVisibleWebdriver(attributeName_xpath,"//font[@class='BasePageFont']",successmessage);
+				waitForPageToLoadWebdriver();
 				verifyElementTextWebdriver(attributeName_xpath,"//font[@class='BasePageFont']", successmessage, "Forgot Password Reset Message");
 			}
 			if (!fppagename.equals("")) {

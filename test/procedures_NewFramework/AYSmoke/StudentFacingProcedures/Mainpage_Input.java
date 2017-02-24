@@ -27,20 +27,20 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 			if (!packagename.equals("")) {
 				Reporter.log("Click on ("+packagename+") Package");
 				writeConsole("I am in package level");
-//				waitForElementPresent(Applpackage+packagename+"']", packagename);
-				if(isDisplayedWebdriver(attributeName_xpath,"//div/h3[contains(text(),'"+packagename+"')]/../a")){
-					clickWebdriver(attributeName_xpath,"//h3[text()='"+packagename+"']/parent::div/a");
-					//clickWebdriver(attributeName_xpath,".//*[@id='appList']/li[1]/div/a");
-					//driver.findElement(By.xpath("//h3[text()='"+packagename+"']/parent::div/a[text()=' View Application']")).click();
-					//ul[@id='appList']//li//div/h3[contains(text(),'Application for QA Automation')]/../a
+				// Use for both classic and face lift application
+				try{
+					if(isDisplayedWebdriver(attributeName_xpath,"//a[contains(text(),'"+packagename+"')]")) {
+						clickWebdriver(attributeName_xpath,"//a[contains(text(),'"+packagename+"')]");
+					}
+				}catch(Exception e) {
+					if(isDisplayedWebdriver(attributeName_xpath,"//div/h3[contains(text(),'"+packagename+"')]/../a")) {
+						clickWebdriver(attributeName_xpath, "//h3[text()='" + packagename + "']/parent::div/a");
+					}
+					else{
+						clickWebdriver(attributeName_xpath, Applpackage+packagename+"']]/a[contains(text()[2],'Edit Application')]");
+					}
 				}
-				/*if(isDisplayedWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../../ul//h4[contains(text(),'Application Status: No')]")){
-				 clickWebdriver(attributeName_xpath,"//ul/li/div/h3[contains(text(),'"+packagename+"')]/../a");
-				}*/
-				else{
-				 clickWebdriver(attributeName_xpath, Applpackage+packagename+"')]");
-				}
-// waitForPageToLoadWebdriver();
+				waitForPageToLoadWebdriver();
 			}
 			if (!eventpackagename.equals("")) {
 				Reporter.log("Click on ("+eventpackagename+") Event Package");

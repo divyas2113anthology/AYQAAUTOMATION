@@ -76,6 +76,9 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 				waitForPageToLoadWebdriver();
 			}else{
 					clickWebdriver(attributeName_xpath,ForgotPINPassword);
+     				//After clicking forgot password link ,the popup loading time is inonsistent.
+			    	Thread.sleep(1000);
+					waitForElementPresentWebdriver(attributeName_xpath,"//p[@id='PMobInfo']","Fprgot Password Wait For Popup");
 					waitForPageToLoadWebdriver();
 			} 
 //				}else if (environment.equals("USPR")) {

@@ -31,7 +31,7 @@ public static final String Browser_Safari = "safari";
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
 //public static final String Login = "//input[@value='login']";
-public static final String Login = "//*[@id='ay-loginSubmit']";
+public static final String Login = "//*[@alt='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
@@ -45,15 +45,15 @@ public static final String Message = "//td[contains(.,'"; //Testing for Post Mes
 //#**********************************************************#
 //#Account Profile Page
 //#**********************************************************#
-public static final String	FirstName = "//*[@id='aycreateFN']";
-public static final String	LastName = "//*[@id='aycreateLN']";
-public static final String EmailAddress = "//*[@id='aycreateEMail']";
-public static final String ConfirmEmailAddress = "//*[@id='aycreateConfirmEMail']";
-public static final String BirthDate = "//*[@id='aycreateDOB']";
-public static final String ZipCode = "//*[@id='aycreatePC']";
-public static final String Password = "//*[@id='aycreatePassword']";
-public static final String ConfirmPassword = "//*[@id='aycreateConfirmPassword']";
-public static final String CreateAccountProfilePage = ".//*[@id='ay-createSubmit']";
+public static final String	FirstName = "//*[@id='AppFName']";
+public static final String	LastName = "//*[@id='AppLName']";
+public static final String EmailAddress = "//*[@id='AppEmail']";
+public static final String ConfirmEmailAddress = "//*[@id='AppConfirmationEmail']";
+public static final String BirthDate = "//*[@id='AppBirthdt']";
+public static final String ZipCode = "//*[@id='AppZip']";
+public static final String Password = "//*[@id='AppPassword']";
+public static final String ConfirmPassword = "//*[@id='AppConPassword']";
+public static final String CreateAccountProfilePage = "//*[@alt='create account']";
 
 //#**********************************************************#
 //#Account Profile Page Manual Add
@@ -115,7 +115,7 @@ public static final String countinuebtn = "//img[contains(@src,'continue_small')
 //#**********************************************************#
 //#Applicant Main Page
 //#**********************************************************#
-public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='Application for QA Automation']]/a[contains(text()[2],'Edit Application')]";
+public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='";
 public static final String eventpackage = "//a[text()='";
 public static final String enrollpackage = "//a[text()='";
 //#**********************************************************#
@@ -895,7 +895,7 @@ public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
 public static final String SAI_SysQuries = "SysQuery";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
-public static final String SAI_UserQuries = "//input[@id='QueryID']";
+public static final String SAI_UserQuries = "//*[@name='QueryID']";//input[@id='QueryID']";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']/option[contains(text(),'";
  public static final String SAI_EnrollAppID = "//input[@name='ApplyYourSelfID']";
  public static final String SAI_Action = "//select[@name='ActionID']";
@@ -961,7 +961,7 @@ public static final String MQ_QueryDescription = "//textarea[@name='txtDescripti
 //#**********************************************************#
 //# Account Profile Page - AP
 //#**********************************************************#
-public static final String AP_PageTitle = "//*[@id='ay-account']/h2";
+public static final String AP_PageTitle = "//font[text()='Account Profile']";
 //#**********************************************************#
 //# EULA Page - EL
 //#**********************************************************#

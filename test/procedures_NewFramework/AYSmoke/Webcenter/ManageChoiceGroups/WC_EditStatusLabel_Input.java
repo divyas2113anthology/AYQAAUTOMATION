@@ -31,12 +31,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String savecanceladdrow = testdata[7];
 			String addrow = testdata[8];
 
-
-			//switchToDefaultContentWebdriver();
-			//switchToFrameNameIdWebdriver("frmContent");
-			//switchToDefaultContentWebdriver();
 			switchToFrameNameIdWebdriver("frmContent");
-
 			if (!groupdescription.equals("")) {
 				Reporter.log("Enter Group Description");
 				sendKeys(attributeName_xpath, MCG_groupdescription, groupdescription);

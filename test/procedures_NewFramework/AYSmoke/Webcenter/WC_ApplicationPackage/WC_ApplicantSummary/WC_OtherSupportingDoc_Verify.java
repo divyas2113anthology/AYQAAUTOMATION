@@ -32,12 +32,10 @@ public class WC_OtherSupportingDoc_Verify extends CommonSeleniumActions implemen
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				waitForPageToLoadWebdriver();
 				String PageName[] = pagename.split(" ");
-				waitForElementPresentWebdriver(attributeName_xpath,"//font[contains(text(),'Support') and @color='white']",PageName[0]);
-				//waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0]);
-				driver.manage().window().maximize();
-				verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Support') and @color='white']", PageName[0], "Page Name for Package");
-
-				//verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0], "Page Name for Package");
+				//waitForElementPresentWebdriver(attributeName_xpath,"//font[contains(text(),'Support') and @color='white']",PageName[0]);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'Support') and @color='white']", PageName[0], "Page Name for Package");
+				waitForElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0]);
+				verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+PageName[0]+"')]", PageName[0], "Page Name for Package");
 			}
 			if (verifyui.equals("")) {
 				Reporter.log("Step 3 - Verify the UI information in Application page");

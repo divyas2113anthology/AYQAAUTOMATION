@@ -2131,7 +2131,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void recentPopupSelectWebdriver(String windowname) throws Exception {
 		//					 int windownull = 0;
 		//String currentwindow = driver.getWindowHandle();
-		writeConsole("Webdriver Main Window["+mainwindow+"]");
+		writeConsole("Webdriver Main Window["+windowname+"]");
 		//					writeConsole("Webdriver Current Window["+currentwindow+"]");					
 		//					 Set<String> popwindow = driver.getWindowHandles();
 		//					 Iterator<String> it = popwindow.iterator();

@@ -85,6 +85,8 @@
 
 
 
+
+
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -126,7 +128,6 @@
     <build>
         <sourceDirectory>test</sourceDirectory>
         <outputDirectory>C:\SeleniumScripts\AYQAAutomation\bin</outputDirectory>
-
         <plugins>
 
             <plugin>
@@ -175,7 +176,35 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/../lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/../lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
 

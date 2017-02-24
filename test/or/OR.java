@@ -115,7 +115,7 @@ public static final String countinuebtn = "//img[contains(@src,'continue_small')
 //#**********************************************************#
 //#Applicant Main Page
 //#**********************************************************#
-public static final String Applpackage = "//div[@class='appListSubHeader' and h3[text()='";
+public static final String Applpackage = "//a[contains(text(),'";
 public static final String eventpackage = "//a[text()='";
 public static final String enrollpackage = "//a[text()='";
 //#**********************************************************#

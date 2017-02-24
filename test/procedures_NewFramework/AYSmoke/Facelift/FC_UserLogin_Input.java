@@ -46,9 +46,15 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		}
 		else if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
-			String generatepin = Runtimedataread(pin);
-			Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");
-			sendKeys(attributeName_xpath,UL_PinField, generatepin);
+			try {
+				String generatepin = Runtimedataread(pin);
+				Reporter.log("Step 2 - Proceed to Enter PIN as ("+generatepin+")");
+				sendKeys(attributeName_xpath,UL_PinField, generatepin);
+			}catch(Exception e){
+				Reporter.log("Step 2 - Proceed to Enter PIN as ("+pin+")");
+				sendKeys(attributeName_xpath,UL_PinField, pin);
+			}
+
 						
 		}
 		if (password.equals("Auto123+")) {

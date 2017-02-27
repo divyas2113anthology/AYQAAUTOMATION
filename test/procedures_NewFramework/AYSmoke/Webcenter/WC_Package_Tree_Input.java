@@ -78,8 +78,12 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
                             }
 					}
 				}
-				if(isDisplayedWebdriver(attributeName_xpath,"//img[contains(@src,'minus')]")) {
-					ClosePackageSelection();
+				try {
+					if (isDisplayedWebdriver(attributeName_xpath, "//img[contains(@src,'minus')]")) {
+						ClosePackageSelection();
+					}
+				}catch(Exception e){
+					System.out.println("no Minus symbol");
 				}
 			}
 			switchToDefaultContentWebdriver();

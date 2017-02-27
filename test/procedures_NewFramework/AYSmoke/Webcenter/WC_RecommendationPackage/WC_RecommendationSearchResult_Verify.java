@@ -23,8 +23,9 @@ public class WC_RecommendationSearchResult_Verify extends CommonSeleniumActions 
 						
 			if(!pagename.equals("")){
 				Reporter.log("Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, SRV_PageName, pagename);
-				verifyElementPresentWebdriver(attributeName_xpath, SRV_PageName, pagename);
+				String Pagename[] = pagename.split(" ");
+				waitForElementPresentWebdriver(attributeName_xpath, SRV_PageName+Pagename[0]+"')]", pagename);
+				verifyElementPresentWebdriver(attributeName_xpath, SRV_PageName+Pagename[0]+"')]", pagename);
 			}
 						
 			} catch (Exception e) {

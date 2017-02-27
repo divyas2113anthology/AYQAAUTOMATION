@@ -21,9 +21,13 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 			String add_delete_folder = fpvdatarepo[0];
 			String link_click = fpvdatarepo[1];
 			String template_name = fpvdatarepo[2];
-			
 			Reporter.log("Verify Test Data was retrieved for ''Manage Template' page");
-			String template = Runtimedataread(template_name);
+			String template;
+			try{
+				 template = Runtimedataread(template_name);
+			}catch(Exception e){
+				template = template_name;
+			}
 			if (!add_delete_folder.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 				if(add_delete_folder.equals("add")) {

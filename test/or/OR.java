@@ -1960,7 +1960,7 @@ public static final String RD_Pagename = "//font[contains(text(),'Recommendation
 //# Webcenter Search For Recommendation Verify - SRV
 //#**********************************************************#
 
-public static final String SRV_PageName = "//div[@id='AYInstructions']/following-sibling::font";
+public static final String SRV_PageName = "//font[contains(text(),'";//Application')]";
 //#**********************************************************#
 //# Webcenter - Recommendation Update Status - RUS
 //#**********************************************************#

@@ -26,6 +26,7 @@ public class WC_ConfigureStatusLabel_Verify extends CommonSeleniumActions implem
 			
 			if(!pagename.equals("")){
 				Reporter.log("Verify its navigate to ("+pagename+") page");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
 				verifyElementPresentWebdriver(attributeName_xpath, SAV_PageName, pagename);
 			}

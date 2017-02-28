@@ -97,7 +97,7 @@ public class MC_UploadImages_Input extends CommonSeleniumActions implements OR {
 					waitForElementPresentWebdriver(attributeName_xpath, SAE_DeleteButton, buttons);
 					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
 					Thread.sleep(5000);
-					alertAccept();
+					//alertAccept();
 					waitForPageToLoadWebdriver();
 				}else if (buttons.equalsIgnoreCase("Cancel")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SAE_CancelButton, buttons);

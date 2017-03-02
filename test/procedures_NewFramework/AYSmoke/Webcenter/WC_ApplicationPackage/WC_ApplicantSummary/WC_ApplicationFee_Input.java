@@ -35,11 +35,16 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				sendKeys(attributeName_name, "pmtAmount", payment_amount);
 			}
 			if (!payment_status.equals("")) {
+				String Payment;
 				Reporter.log("Select the payment status as ["+payment_status+"]");
-				//String Payment = Runtimedataread(payment_status);
-				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , payment_status);
-				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus ,payment_status);
-				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus ,payment_status);
+				try {
+					Payment = Runtimedataread(payment_status);
+				}catch(Exception e){
+					Payment = payment_status;
+				}
+				waitForElementPresentWebdriverWait(attributeName_xpath, AF_PaymentStatus , Payment);
+				selectByVisibleTextWebdriver(attributeName_xpath, AF_PaymentStatus ,Payment);
+				//selectByValueWebdriver(attributeName_xpath, AF_PaymentStatus ,payment_status);
 			}
 			if (!verify_Status.equals("")) {
 				Reporter.log("Select the payment status as ["+verify_Status+"]");
@@ -57,7 +62,10 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 			}
 			if (!button_to_click.equals("")) {
 				Reporter.log("Click the button as ["+button_to_click+"]");
-				if (button_to_click.equalsIgnoreCase("save")) {
+				if(button_to_click.equalsIgnoreCase("Save")){
+					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
+					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+				}else if (button_to_click.equalsIgnoreCase("save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					Thread.sleep(5000);

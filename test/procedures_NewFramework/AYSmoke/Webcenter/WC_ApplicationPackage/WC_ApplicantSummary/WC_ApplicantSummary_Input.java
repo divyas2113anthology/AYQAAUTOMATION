@@ -34,7 +34,6 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
 			AppSummaryWindowName = driver.getWindowHandle();
-			
 			//driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
@@ -135,15 +134,20 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				//recentPopupSelect_without_window_nameWebdriver();
 				String[] splitsupport = supportingdocuments.split(";");
 				System.out.println("String1"+splitsupport[0]);
-				//System.out.println("String1"+splitsupport[1]);
+				waitForPageToLoadWebdriver();
 				for (int i = 0; i < splitsupport.length; i++) {
-					waitForElementPresentWebdriver(attributeName_partiallinktext, splitsupport[i], supportingdocuments);
-					clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
-					//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
-					Thread.sleep(10000);
-					recentPopupSelectWebdriver("Application Fee");
 					waitForPageToLoadWebdriver();
-
+					Thread.sleep(1000);
+					switchToDefaultContentWebdriver();
+					if (splitsupport[i].equals("Standardized Test Scores")) {
+						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						clickWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']");
+					} else {
+						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
+						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
+						recentPopupSelectWebdriver("Application Fee");
+					}
 				}
 				//recentPopupSelectWebdriver("Supporting Document");
 //				if (supportingdocuments.equalsIgnoreCase("Application Fee")) {

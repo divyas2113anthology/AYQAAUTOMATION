@@ -40,7 +40,6 @@ public class WC_ManageTestScore_Input extends CommonSeleniumActions implements O
 				
 			}
 			driver.switchTo().window(AppSummaryWindowName);
-			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

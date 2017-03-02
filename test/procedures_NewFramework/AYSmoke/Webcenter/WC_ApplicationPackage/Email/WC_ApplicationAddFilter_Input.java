@@ -1,6 +1,7 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email;
 
 
+import jdk.nashorn.internal.runtime.ECMAException;
 import or.OR;
 
 import org.testng.Reporter;
@@ -94,10 +95,16 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath, ET_Value);
 					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + status + "')]", status, verifyvalue);
 				}else {
+					String verifyValue ;
+					try{
+						verifyValue = Runtimedataread(verifyvalue);
+					}catch(Exception e){
+						verifyValue= verifyvalue ;
+					}
 					Reporter.log("Verify" + verifyvalue);
-					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyValue);
 					clickWebdriver(attributeName_xpath, ET_Value);
-					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + verifyvalue + "')]", verifyvalue, verifyvalue);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + verifyValue + "')]", verifyValue, verifyValue);
 				}
 			}
 			if (!savecancel.equals("")) {

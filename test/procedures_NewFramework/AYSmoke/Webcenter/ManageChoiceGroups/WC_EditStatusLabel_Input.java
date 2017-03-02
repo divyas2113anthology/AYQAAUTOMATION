@@ -124,8 +124,10 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                     } else {
                         System.out.println("==");
                         //driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
-                        waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
-                        clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']");
+                        waitForElementPresentWebdriver(attributeName_xpath, MCG_DeleteCheck + statusName + "']]/following-sibling::td[input[@name='chkDelete']]", statusName);
+                        clickWebdriver(attributeName_xpath, MCG_DeleteCheck + statusName + "']]/following-sibling::td[input[@name='chkDelete']]");
+                        //waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']", data[1]);
+                      //  clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkDelete']");
 
                     }
                 }

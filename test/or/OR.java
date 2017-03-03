@@ -36,6 +36,8 @@ public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or pa
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
 public static final String CreateAccount = "//a[contains(text(),'Create Account')]";
+public static final String CreateAccount_ManualAdd = "//img[contains(@src,'create_account')]";
+
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
 public static final String TechnicalSupport = "//font[text()='Technical Support']";

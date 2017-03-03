@@ -141,9 +141,11 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					switchToDefaultContentWebdriver();
 					if (splitsupport[i].equals("Standardized Test Scores")) {
 						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						Thread.sleep(5000);
 						clickWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']");
 					} else {
 						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						Thread.sleep(5000);
 						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
 						recentPopupSelectWebdriver("Application Fee");

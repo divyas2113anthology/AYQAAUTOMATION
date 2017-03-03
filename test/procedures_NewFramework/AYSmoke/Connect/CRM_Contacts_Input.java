@@ -19,6 +19,7 @@ public class CRM_Contacts_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
 				waitForElementPresentWebdriver(attributeName_linktext, link_to_click, link_to_click);
 				clickWebdriver(attributeName_linktext, link_to_click);
+				Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
 			}
 		} catch (Exception e) {

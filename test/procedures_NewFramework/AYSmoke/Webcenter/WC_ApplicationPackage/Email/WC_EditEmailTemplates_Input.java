@@ -85,6 +85,9 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				//String query=selenium.getValue(AMET_QueryTag);
 				String query = driver.findElement(By.xpath(AMET_QueryTag)).getText();
 				System.out.println(query);
+				if(mailmergetag.equals("Payment Status")){
+					query = "<ay:tag type=\"MM\" id=\"pmtStatus\" name=\"Payment Status\"/>";
+				}
 				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");
 
 			}

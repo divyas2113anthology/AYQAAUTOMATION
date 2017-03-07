@@ -23,8 +23,14 @@ public class WC_ApplicantDecision_Verify extends CommonSeleniumActions implement
 			
 			if(!message.equals("")){
 				Reporter.log("Verify the message is present");
-				waitForElementPresentWebdriver(attributeName_xpath, AS_ApplicantDecision+message+"')]", message);
-				verifyElementPresentWebdriver(attributeName_xpath, AS_ApplicantDecision+message+"')]", message);
+				String Message;
+				try{
+					Message = Runtimedataread(message);
+				}catch(Exception e){
+					Message = message;
+				}
+				waitForElementPresentWebdriver(attributeName_xpath, AS_ApplicantDecision+Message+"')]", Message);
+				verifyElementPresentWebdriver(attributeName_xpath, AS_ApplicantDecision+Message+"')]", Message);
 			}
 	
 			

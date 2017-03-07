@@ -210,7 +210,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					System.out.println("2nd popup closed");
 				}else if (buttons.equalsIgnoreCase("print")) {
 					clickWebdriver(attributeName_xpath, AS_PrintApplicationBtn);
-					//recentPopupSelectWebdriver("Application Printing");
+					recentPopupSelectWebdriver("Application Printing");
 				}else if (buttons.equalsIgnoreCase("Application Fee")) {
 					clickWebdriver(attributeName_xpath, AS_AppFee);
 					recentPopupSelectWebdriver("Application Printing");	

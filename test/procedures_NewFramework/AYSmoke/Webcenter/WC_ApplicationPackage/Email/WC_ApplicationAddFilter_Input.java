@@ -114,8 +114,8 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath,BR_Add);
 				}
 				else if(savecancel.equalsIgnoreCase("save")){
-					waitForElementPresentWebdriver(attributeName_xpath,BR_Save,savecancel);
-					clickWebdriver(attributeName_xpath, BR_Save);
+					waitForElementPresentWebdriver(attributeName_xpath,BR_Add,savecancel);
+					clickWebdriver(attributeName_xpath, BR_Add);
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
 					clickWebdriver(attributeName_xpath, BR_Cancel);

@@ -35,6 +35,8 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");
 				waitForElementPresentWebdriverWait(attributeName_id, CNT_SearchTopBtn, button);
 				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
+				waitForPageToLoadWebdriver();
+				Thread.sleep(8000);
 				
 			}
 			if (!editfirstname.equals("")) {

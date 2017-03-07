@@ -30,12 +30,14 @@ public static final String Browser_Safari = "safari";
 //#**********************************************************#	
 public static final String	PinField = "//input[@name='UserID']";
 public static final String	PasswordField = "//input[@name='Password']";
-//public static final String Login = "//input[@value='login']";
+//public static final SnAccountProfile_Verifytring Login = "//input[@value='login']";
 public static final String Login = "//*[@alt='login']";
 public static final String	ForgotPINPassword ="//a[text()='Forgot your PIN or password?']";
 public static final String ForgotUserNamePassword = "//a[contains(text(),'User Name')]";
 public static final String UserName = "//b[contains(text(),'";
-public static final String CreateAccount = "//img[contains(@src,'create_account')]";
+public static final String CreateAccount = "//a[contains(text(),'Create Account')]";
+public static final String CreateAccount_ManualAdd = "//img[contains(@src,'create_account')]";
+
 public static final String ContactUs = "//font[text()='Contact Us']";
 public static final String freqa = "//font[text()='Frequently Asked Questions']"; 
 public static final String TechnicalSupport = "//font[text()='Technical Support']";
@@ -45,15 +47,15 @@ public static final String Message = "//td[contains(.,'"; //Testing for Post Mes
 //#**********************************************************#
 //#Account Profile Page
 //#**********************************************************#
-public static final String	FirstName = "//*[@id='AppFName']";
-public static final String	LastName = "//*[@id='AppLName']";
-public static final String EmailAddress = "//*[@id='AppEmail']";
-public static final String ConfirmEmailAddress = "//*[@id='AppConfirmationEmail']";
-public static final String BirthDate = "//*[@id='AppBirthdt']";
-public static final String ZipCode = "//*[@id='AppZip']";
-public static final String Password = "//*[@id='AppPassword']";
-public static final String ConfirmPassword = "//*[@id='AppConPassword']";
-public static final String CreateAccountProfilePage = "//*[@alt='create account']";
+public static final String	FirstName = "//*[@id='aycreateFN']";
+public static final String	LastName = "//*[@id='aycreateLN']";
+public static final String EmailAddress = "//*[@id='aycreateEMail']";
+public static final String ConfirmEmailAddress = "//*[@id='aycreateConfirmEMail']";
+public static final String BirthDate = "//*[@id='aycreateDOB']";
+public static final String ZipCode = "//*[@id='aycreatePC']";
+public static final String Password = "//*[@id='aycreatePassword']";
+public static final String ConfirmPassword = "//*[@id='aycreateConfirmPassword']";
+public static final String CreateAccountProfilePage = "//input[@id='ay-createSubmit']";
 
 //#**********************************************************#
 //#Account Profile Page Manual Add
@@ -142,7 +144,7 @@ public static final String BR_AppliesToQuestion = "QuestionId";
 public static final String BR_EventType = "EventTypeId";
 //public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
 public static final String BR_TargetDocument = "SuppDocID";
-public static final String BR_TargetStatus = "//select[@name='DocStatusID']";
+public static final String BR_TargetStatus = "//select[@name='DocStatusID']";//TestStatusID']";
 //public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetTestScore = "TestScoreID";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";
@@ -157,8 +159,8 @@ public static final String BR_TargetValue = "//select[@name='TargetValue']";
 public static final String BR_TargetUrl = "//input[@name='TargetURL']";
 //public static final String BR_TargetEmail = "//select[@name='EmailId']";
 public static final String BR_TargetEmail = "EmailId";
-public static final String BR_Save = "//img[@name='imageAdd1']";
-public static final String BR_Add = "//img[@name='imageSave1']";
+public static final String BR_Save = "//img[@name='imageSave1']";
+public static final String BR_Add = "//img[@name='imageAdd1']";
 public static final String BR_Buttons = "//img[contains(@src,'";
 public static final String BR_Cancel = "//img[contains(@src,'cancel_small')]";
 public static final String BR_PlusFilter = "//img[contains(@src,'plusfilter')]";
@@ -963,7 +965,7 @@ public static final String MQ_QueryDescription = "//textarea[@name='txtDescripti
 //#**********************************************************#
 //# Account Profile Page - AP
 //#**********************************************************#
-public static final String AP_PageTitle = "//font[text()='Account Profile']";
+public static final String AP_PageTitle = "//*[text()='Account Profile']";
 //#**********************************************************#
 //# EULA Page - EL
 //#**********************************************************#
@@ -1304,6 +1306,7 @@ public static final String RF_Forgot_Msg = "//form[@name='frmSendPINs']//font";
 //#**********************************************************#
 public static final String HM_WLogin = "//input[@id='i0116']";
 public static final String HM_WPassword = "//input[@id='i0118']";
+public static final String HM_Next =  "//input[@value='";
 public static final String HM_WSignIn = "//input[@id='idSIButton9']";
 //public static final String HM_Inbox = "Inbox";
 public static final String HM_Inbox = "link=Inbox";   
@@ -1541,6 +1544,9 @@ public static final String AMET_QueryTag = "//textarea[@name='MailMerge']";
 public static final String AMET_CheckboxTemplate = "//td[a[text()='";
 public static final String AMET_FieldDefinition = "//a[@name='FieldDef']";
 public static final String AMET_Decision = "//select[@name= 'TempDecisionValue']";
+public static final String AMET_CustomTemplate= "//b[contains(text(),'Make this custom template activ')]";
+public static final String AMET_CustomTemplateCheckbox= "//input[@name='";
+
 //#**********************************************************#
 //#	 Bridge - Cofigured Clients Input  - Page
 //#**********************************************************#

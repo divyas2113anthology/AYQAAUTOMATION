@@ -18,17 +18,18 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			String[] EmailVerify= datacontainer;			
 			String url = EmailVerify[0];
 			String username = EmailVerify[1];
-			String password = EmailVerify[2];
-			String login= EmailVerify[3];
-			String emailsubject = EmailVerify[4];
-			String emailsubjectcontains = EmailVerify[5];
-			String personallabel = EmailVerify[6];
-			String passwordlabel = EmailVerify[7];
-			String firstnamelabel= EmailVerify[8];
-			String lastnamelabel = EmailVerify[9];
-			String urlcontainslink = EmailVerify[10];
-			String clicklinkcontains = EmailVerify[11];
-			String logout = EmailVerify[12];				
+			String next = EmailVerify[2];
+			String password = EmailVerify[3];
+			String login= EmailVerify[4];
+			String emailsubject = EmailVerify[5];
+			String emailsubjectcontains = EmailVerify[6];
+			String personallabel = EmailVerify[7];
+			String passwordlabel = EmailVerify[8];
+			String firstnamelabel= EmailVerify[9];
+			String lastnamelabel = EmailVerify[10];
+			String urlcontainslink = EmailVerify[11];
+			String clicklinkcontains = EmailVerify[12];
+			String logout = EmailVerify[13];
 			Reporter.log("Input and Verify  Test Data was retrieved for 'Hotmail Verification'  in Hobsons Account");	
 			if (!url.equals("")) {						
 				Reporter.log("Step 1 - Opening the Hotmail Window");
@@ -38,11 +39,20 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
 				sendKeys(attributeName_xpath, HM_WLogin, username);
-				if(!isDisplayedWebdriver(attributeName_xpath,HM_WPassword)) {
+				Thread.sleep(5000);
+				/*if(!isDisplayedWebdriver(attributeName_xpath,HM_WPassword)) {
 					driver.findElement(By.xpath("//input[@type='submit']")).click();
 					System.out.println("====Click Next Button");
-					waitForPageToLoadWebdriver();
-				}
+					waitForPageToLoadWebdriver();}*/
+
+			}
+			if (!next.equals("")) {
+				Reporter.log("Step 3 - Click the Next button");
+				// clickWebdriver(attributeName_xpath,"//input[@value='Next']");
+				//Thread.sleep(9000);
+			    clickWebdriver(attributeName_xpath,HM_Next+next+"']");
+				Thread.sleep(10000);
+
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
@@ -110,6 +120,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 
 //						}
 					}
+					Thread.sleep(5000);
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
 					waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]","");
 					clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]");

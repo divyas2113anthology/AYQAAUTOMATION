@@ -50,14 +50,15 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 			}
 			if (!link_click.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='TestStatusEmailTemplate']", link_click);
-				clickWebdriver(attributeName_xpath, "//a[text()='TestStatusEmailTemplate']");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+link_click+"']", link_click);
+				clickWebdriver(attributeName_xpath, "//a[text()='"+link_click+"']");
 				waitForPageToLoadWebdriver();
 			}
 			
 			
 			if (!template_name.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+
 				
 			}
 			

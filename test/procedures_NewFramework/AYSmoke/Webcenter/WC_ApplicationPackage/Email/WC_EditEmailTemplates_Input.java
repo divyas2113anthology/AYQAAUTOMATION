@@ -29,11 +29,12 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			String mailmergesection = fpvdatarepo[6];
 			String mailmergetag = fpvdatarepo[7];
 			String querytag = fpvdatarepo[8];
-			String savecancel = fpvdatarepo[9];
-			String decision = fpvdatarepo[10];
-			String filter = fpvdatarepo[11];
-			String conditionalmessage = fpvdatarepo[12];
-			String clickfiltername = fpvdatarepo[13];
+			String decision = fpvdatarepo[9];
+			String filter = fpvdatarepo[10];
+			String conditionalmessage = fpvdatarepo[11];
+			String clickfiltername = fpvdatarepo[12];
+			String customtemplateactive = fpvdatarepo[13];
+			String savecancel = fpvdatarepo[14];
 			Reporter.log("Verify Test Data was retrieved for 'Edit Email Template' page");
 			if (!decision.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -77,21 +78,20 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				waitForPageToLoadWebdriver();
 				selectByVisibleTextWebdriver(attributeName_xpath, AMET_MailMergeTag, mailmergetag);
 				waitForPageToLoadWebdriver();
-				
+
 			}
 			if (!querytag.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				//String query=selenium.getValue(AMET_QueryTag);
 				String query = driver.findElement(By.xpath(AMET_QueryTag)).getText();
 				System.out.println(query);
+				if(mailmergetag.equals("Payment Status")){
+					query = "<ay:tag type=\"MM\" id=\"pmtStatus\" name=\"Payment Status\"/>";
+				}
 				sendKeys(attributeName_xpath, AMET_Message,message+" "+query+"\n\n This is for testing purpose. \n\n Thanks, \n Tester");
-				
+
 			}
-			if (!savecancel.equals("")) {
-				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]",savecancel);
-				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]");
-			}
+
 			if (!filter.equals("")) {
 				Reporter.log("Click on Filter button");
 				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+filter+"')]");
@@ -101,6 +101,20 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				Reporter.log("Click on the Filter Name");
 				clickWebdriver(attributeName_xpath, CDT_FilterName+clickfiltername+"')]");
 				waitForPageToLoadWebdriver();
+			}
+			if (!customtemplateactive.equals("")) {
+				Reporter.log("Step 14 - Check the check box for CustomTemplateActive");
+
+				waitForElementPresentWebdriverWait(attributeName_xpath, AMET_CustomTemplateCheckbox+customtemplateactive+"']", customtemplateactive);
+				clickWebdriver(attributeName_xpath, AMET_CustomTemplateCheckbox+customtemplateactive+"']");
+				alertAccept();
+				Thread.sleep(1000);
+
+			}
+			if (!savecancel.equals("")) {
+				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]",savecancel);
+				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

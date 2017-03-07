@@ -1,14 +1,8 @@
 package procedures_NewFramework.AYSmoke.BridgeEvent;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 import or.OR;
-
-import org.openqa.selenium.Keys;
-import com.thoughtworks.selenium.webdriven.commands.Uncheck;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-
 import processor.CommonSeleniumActions;
 
 
@@ -26,6 +20,7 @@ public class BR_InviteToEvent_Inputs extends CommonSeleniumActions implements OR
 			String subject = applicantwelidatarepo[3];
 			String invite = applicantwelidatarepo[4];
 			Reporter.log("Input Test Data was retrieved for 'Invite To Event' page");
+			String parent= driver.getWindowHandle();
 			if (!filterlookup.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+filterlookup+") Link");
 				clickWebdriver(attributeName_xpath, IE_FilterLookup);
@@ -35,11 +30,12 @@ public class BR_InviteToEvent_Inputs extends CommonSeleniumActions implements OR
 				Reporter.log("Step 2 - Select the Filter as ("+selectfilter+") ");
 				waitForElementPresentWebdriver(attributeName_partiallinktext, selectfilter, "Select Filter Link");
 				clickWebdriver(attributeName_partiallinktext, selectfilter);
-				selectMainWindowWebdriver();
+				waitForPageToLoadWebdriver();
+				driver.switchTo().window(parent);
 			}
 			if (!selecttemplate.equals("")) {
 				Reporter.log("Step 3 - Select the Template as ("+selecttemplate+")");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_SelectTemplate, "regexp:"+selecttemplate);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_name,IE_SelectTemplate, selecttemplate);
 			}
 			if (!subject.equals("")) {
 				Reporter.log("Step 4 -Enter the Subject as ("+subject+")");

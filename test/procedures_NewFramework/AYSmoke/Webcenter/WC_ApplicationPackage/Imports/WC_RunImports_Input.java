@@ -30,11 +30,8 @@ public class WC_RunImports_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Perform the operation to click the Radio Button as ["+clickradioagainstname+"]");
 //				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']", clickradioagainstname);
 //				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]]/preceding-sibling::td/input[@type='radio']");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[text()='"+clickradioagainstname+"']/parent::tr/td/input", clickradioagainstname);
-				clickWebdriver(attributeName_xpath, "//td[text()='"+clickradioagainstname+"']/parent::tr/td/input");
-
-
-
+				waitForElementPresentWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]/parent::tr/td/input", clickradioagainstname);
+				clickWebdriver(attributeName_xpath, "//td[contains(text(),'"+clickradioagainstname+"')]/parent::tr/td/input");
 			}
 
 

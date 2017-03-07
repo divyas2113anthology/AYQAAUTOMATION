@@ -54,8 +54,9 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 				clickWebdriver(attributeName_xpath, AS_TestScoreSave);
 				clickWebdriver(attributeName_xpath, AS_CloseWindow);
 				//recentPopupCloseWebdriver();
-				switchToSecondPopupWindow();
+				//switchToSecondPopupWindow();
 				//waitForPageToLoadWebdriver();
+				driver.switchTo().window(AppSummaryWindowName);
 			}
 			//switchToDefaultContentWebdriver();
 			

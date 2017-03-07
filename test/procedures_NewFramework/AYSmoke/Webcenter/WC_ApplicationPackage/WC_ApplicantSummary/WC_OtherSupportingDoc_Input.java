@@ -29,16 +29,18 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
 			}
 			if(!status.equals("")){
-				try{
-					String Status = Runtimedataread(status);
-					Reporter.log("Verify("+status+")is present");
-					waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
-					selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
+				String Status;
+				try {
+					Status = Runtimedataread(status);
 				}catch(Exception e){
-					Reporter.log("Verify("+status+")is present");
-					waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status);
-					selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status);
+					Status = status;
 				}
+				Reporter.log("Verify("+status+")is present");
+				clickWebdriver(attributeName_xpath,AS_SupportingDocumentStatus);
+				waitForPageToLoadWebdriver();
+				waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
+				selectByValueWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
+			//	selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
 				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
 			}
 			if(!saveclosewindow.equals("")){

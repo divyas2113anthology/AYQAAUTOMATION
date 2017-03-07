@@ -1,20 +1,18 @@
 package procedures_NewFramework.AYSmoke.BridgeWebcenter;
 
+import jxl.read.biff.BiffException;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import jxl.read.biff.BiffException;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class BR_WCManualAdd extends CommonSeleniumActions implements OR {
 	
@@ -76,7 +74,7 @@ public class BR_WCManualAdd extends CommonSeleniumActions implements OR {
 				
 				if (!createaccount.equals("")) {
 					Reporter.log("Step 7 - Click on 'Create Account' button");
-					clickWebdriver(attributeName_xpath, CreateAccount);
+					clickWebdriver(attributeName_xpath, CreateAccount_ManualAdd);
 					waitForPageToLoadWebdriver();
 				}
 				

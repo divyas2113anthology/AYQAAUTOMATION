@@ -31,7 +31,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			Reporter.log("Proceed to retrieve Environment From Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
 			String envirurl = null;
 
-			if ((url.contains("app")) && (url.contains("facelift"))) {
+			if ((url.contains("app")) && (url.contains("facelift"))&& (!url.contains("aybusqa"))) {
 				if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 					envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";

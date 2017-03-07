@@ -77,7 +77,7 @@ public static final String PinNumber = "//*[contains(text(),'PIN:')]";
 //public static final String FC_PinNumber = "xpath=(//*[contains(text(),'PIN:')])[2]";
 public static final String FC_PinNumber = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'PIN:')]";
 public static final String FC_UserName = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'User Name:')]";
-
+public static final String FC_AutoQuestion = "//a[text()='Auto Question']";
 //#**********************************************************#
 //#ELUA Page
 //#**********************************************************#
@@ -541,6 +541,7 @@ public static final String AW_AppInstBtn = "//a[contains(text(),'Application Ins
 public static final String AW_SubAppBtn = "//div/div[2]/div[1]/input[@class='ay-Submit']";
 public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[contains(text(),'Family')]";
+public static final String AW_AutomationSectionLnk = "//font[contains(text(),'Automation Section')]";
 public static final String AW_BussRulesBtn = "//font[contains(text(),'Business Rules')]";
 public static final String AW_PaymentProBtn = "//font[text()='Payment Processing']";
 public static final String AW_PerInfoBtn = "//font[contains(text(),'Personal Information')]";
@@ -564,6 +565,7 @@ public static final String FS_Date = "css=#esignDate";
 public static final String AW_SubmitAppBtn = "css=#ay-recSubmit";
 public static final String AW_PrintPreviewBtn = "//a[contains(text(),'Preview Application in PDF Format')]";
 public static final String AW_PrintPreviewPdfBtn = "//*[contains(@href,'windowOpen()')]";
+public static final String AW_SystemMessage = "//div[@id='divErrors']";
 //#**********************************************************#
 //# Facelift Personal Data Input
 //#**********************************************************#

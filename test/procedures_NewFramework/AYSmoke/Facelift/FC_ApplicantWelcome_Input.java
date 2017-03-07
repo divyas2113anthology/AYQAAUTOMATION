@@ -38,6 +38,9 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				}else if (link_to_click.equalsIgnoreCase("Family")) {
 					clickWebdriver(attributeName_xpath,AW_FamilyBtn);
 //					waitForConditionisElementPresent(PSD_PageName1, "90000");
+				}else if (link_to_click.equalsIgnoreCase("Automation Section")) {
+					clickWebdriver(attributeName_xpath, AW_AutomationSectionLnk);
+					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Business Rules")) {
 					clickWebdriver(attributeName_xpath,AW_BussRulesBtn);
 					waitForPageToLoadWebdriver();

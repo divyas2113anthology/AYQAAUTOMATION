@@ -46,6 +46,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		String pdaptnumber = fpdatarepo[23];
 		String pdemailrecommended = fpdatarepo[24];
 		String pdsave = fpdatarepo[25];
+		String VerifyMessage = fpdatarepo[26];
 		Reporter.log("Retrieved Test Data in Personal Data input");
 		if (!pdsufix.equals("")) {
 			Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
@@ -203,6 +204,19 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_xpath,PD_Reset);
 			}
 		}
+
+		if(!VerifyMessage.equals("")){
+			if(isDisplayedWebdriver(attributeName_xpath,AW_SystemMessage)){
+				Reporter.log("Step 28 - Verified Mandatory Field Validation Successfully");
+			}
+			else{
+				writeFailure("step 28 - Could'nt verify the Mandatory Field  validation");
+			}
+
+
+
+		}
+
 	//endExecutionOrder(j);
 //	Reporter.log("##########End of Execution Order ["+j+"]##########");
 		

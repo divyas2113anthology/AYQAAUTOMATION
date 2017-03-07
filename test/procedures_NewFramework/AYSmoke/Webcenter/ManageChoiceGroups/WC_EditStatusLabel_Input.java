@@ -138,7 +138,6 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
                         clickWebdriver(attributeName_xpath, AID_save_button);
                         waitForPageToLoadWebdriver();
-                        Thread.sleep(5000);
                         //driver.switchTo().frame(0);
                     }
 

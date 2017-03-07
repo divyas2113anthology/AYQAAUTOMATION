@@ -144,7 +144,7 @@ public static final String BR_AppliesToQuestion = "QuestionId";
 public static final String BR_EventType = "EventTypeId";
 //public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
 public static final String BR_TargetDocument = "SuppDocID";
-public static final String BR_TargetStatus = "//select[@name='TestStatusID']";
+public static final String BR_TargetStatus = "//select[@name='DocStatusID']";//TestStatusID']";
 //public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetTestScore = "TestScoreID";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";

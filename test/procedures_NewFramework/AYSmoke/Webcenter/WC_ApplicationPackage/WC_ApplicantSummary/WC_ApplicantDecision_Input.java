@@ -21,6 +21,7 @@ public class WC_ApplicantDecision_Input extends CommonSeleniumActions implements
 			if (!printclosewindow.equals("")) {
 				Reporter.log("Click ("+printclosewindow+")button");
 				clickWebdriver(attributeName_xpath, AS_PrintCloseWindow+printclosewindow+"')]");
+				driver.switchTo().window(AppSummaryWindowName);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

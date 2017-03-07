@@ -76,7 +76,7 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 					Thread.sleep(8000);
 				}
-				if(value.equalsIgnoreCase("ManageQueries")){
+				else if(value.equalsIgnoreCase("ManageQueries")){
 					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					System.out.println("Select the value");
 					String managequery = Runtimedataread("ManageQueries");
@@ -84,14 +84,12 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']");
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
-				else
+				else{
 					//sendKeys(attributeName_xpath, MQ_Value, value);
-				    clickWebdriver(attributeName_xpath," //button [contains(@class,'multiselect ui-widget')]");
-				    mouseOverWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
-				    clickWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
-
-
-
+					clickWebdriver(attributeName_xpath," //button [contains(@class,'multiselect ui-widget')]");
+					mouseOverWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
+					clickWebdriver(attributeName_xpath,"//input[@title='"+value+"']");
+				}
 			}
 //			if (!fieldname.equals("")) {
 //				Reporter.log("Verify the value ["+fieldname+"]");

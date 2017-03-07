@@ -21,6 +21,8 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 			String successmessage = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
+			String VerifyQuestion = fpvdatarepo[3];
+
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
@@ -35,7 +37,11 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 				verifyElementContainsTextWebdriver(attributeName_xpath, RC_Question+verifyui+"')]", verifyui, verifyui);
 			}
 			
-	
+			if(!VerifyQuestion.equals("")){
+				Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") elemoent not present");
+				verifyElementNotPresent(FC_AutoQuestion,VerifyQuestion);
+
+			}
 			
 			
 		

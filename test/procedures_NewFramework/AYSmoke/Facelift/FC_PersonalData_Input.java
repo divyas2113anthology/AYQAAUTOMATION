@@ -43,6 +43,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			String pdemailrecommended = fpdatarepo[25];
 			String pisubmitappbtn = fpdatarepo[26];
 			String pdsave = fpdatarepo[27];
+			String pverifyErrormessage = fpdatarepo[28];
 			Reporter.log("Retrieved Test Data in Personal Data input");
 			/*if (!pdsufix.equals("")) {
 				Reporter.log("Step 1 - Select Suffix as ("+pdsufix+")");
@@ -238,7 +239,17 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 						clickWebdriver(attributeName_xpath, AW_SubAppBtn);
 					}
 				}
-			
+				if(!pverifyErrormessage.equals("")){
+
+					if(isDisplayedWebdriver(attributeName_xpath,AW_SystemMessage)){
+						Reporter.log("Step 28 - Verify System error message for mandatory fields successfully");
+					}
+					else{
+						writeFailure("Couldn't verify the System error message for mandatory fields");
+					}
+
+
+				}
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

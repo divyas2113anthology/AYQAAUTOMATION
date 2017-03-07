@@ -136,6 +136,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				System.out.println("String1"+splitsupport[0]);
 				waitForPageToLoadWebdriver();
 				for (int i = 0; i < splitsupport.length; i++) {
+
 					waitForPageToLoadWebdriver();
 					Thread.sleep(1000);
 					switchToDefaultContentWebdriver();

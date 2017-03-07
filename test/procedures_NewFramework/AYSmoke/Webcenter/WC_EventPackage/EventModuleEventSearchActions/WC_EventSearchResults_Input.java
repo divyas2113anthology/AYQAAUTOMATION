@@ -54,6 +54,7 @@ public class WC_EventSearchResults_Input extends CommonSeleniumActions implement
 				waitForElementPresentWebdriver(attributeName_partiallinktext, eventtitleclick, eventtitleclick);
 				clickWebdriver(attributeName_partiallinktext, eventtitleclick);
 				recentPopupSelectWebdriver("EventRecurrence");
+
 				}
 			}
 			if (!selectanaction.equals("")) {

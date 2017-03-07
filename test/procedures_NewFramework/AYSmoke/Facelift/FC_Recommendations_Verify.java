@@ -22,6 +22,7 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
 			String VerifyQuestion = fpvdatarepo[3];
+			String ClickQuestion = fpvdatarepo[4];
 
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
 			if (!successmessage.equals("")) {
@@ -42,8 +43,12 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 				verifyElementNotPresent(FC_AutoQuestion,VerifyQuestion);
 
 			}
-			
-			
+
+			if(!ClickQuestion.equals("")){
+				Reporter.log("Step 4 - Click the ("+ClickQuestion+") Question");
+				clickWebdriver(attributeName_xpath,FC_ClickQuestionLnk+ClickQuestion+"']");
+
+			}
 		
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

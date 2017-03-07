@@ -78,6 +78,7 @@ public static final String PinNumber = "//*[contains(text(),'PIN:')]";
 public static final String FC_PinNumber = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'PIN:')]";
 public static final String FC_UserName = "//form[@name='frmConfirmAppAcct']//*[contains(text(),'User Name:')]";
 public static final String FC_AutoQuestion = "//a[text()='Auto Question']";
+    public static final String FC_ClickQuestionLnk = "//a[text()='";
 //#**********************************************************#
 //#ELUA Page
 //#**********************************************************#

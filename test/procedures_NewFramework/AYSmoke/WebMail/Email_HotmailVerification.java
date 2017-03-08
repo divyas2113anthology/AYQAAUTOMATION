@@ -39,17 +39,16 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
 				sendKeys(attributeName_xpath, HM_WLogin, username);
-				Thread.sleep(5000);
+				waitForPageToLoadWebdriver();
 				/*if(!isDisplayedWebdriver(attributeName_xpath,HM_WPassword)) {
-					driver.findElement(By.xpath("//input[@type='submit']")).click();
+					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath,HM_Next+next+"']");
 					System.out.println("====Click Next Button");
 					waitForPageToLoadWebdriver();}*/
 
 			}
 			if (!next.equals("")) {
-				Reporter.log("Step 3 - Click the Next button");
-				// clickWebdriver(attributeName_xpath,"//input[@value='Next']");
-				//Thread.sleep(9000);
+				waitForPageToLoadWebdriver();
 			    clickWebdriver(attributeName_xpath,HM_Next+next+"']");
 				Thread.sleep(10000);
 

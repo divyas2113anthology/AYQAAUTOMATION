@@ -40,7 +40,7 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
 				selectByValueWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
-			//	selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
+				//selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
 				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
 			}
 			if(!saveclosewindow.equals("")){

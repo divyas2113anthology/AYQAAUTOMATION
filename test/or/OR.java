@@ -1567,7 +1567,7 @@ public static final String BR_SaveCancel = "//input[contains(@id,'";
 public static final String CNT_Username = "userName";
 public static final String CNT_Password = "clearTextPwd";
 public static final String CNT_LoginBtn = "loginBtn";
-public static final String CNT_WelPageTitle = "//span[text()='Welcome Message']";
+public static final String CNT_WelPageTitle = "//span[text()='Contacts Overview']";
 public static final String CNT_SearchFrstName = "firstname";
 public static final String CNT_SearchTopBtn = "searchTop";
 //#**********************************************************#

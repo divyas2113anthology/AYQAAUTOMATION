@@ -51,13 +51,15 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 			}
 			if(!saveclosewindow.equals("")){
 				Reporter.log("Click on the Button"+saveclosewindow);
-				clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow+saveclosewindow+"')]");
-				//recentPopupSelectWebdriver("TestScoreACT");
-				clickWebdriver(attributeName_xpath, AS_CloseWindow);
-				switchToSecondPopupWindow();
-				waitForPageToLoadWebdriver();
+				if(saveclosewindow.equalsIgnoreCase("Save")) {
+					clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow + saveclosewindow + "')]");
+					//recentPopupSelectWebdriver("TestScoreACT");
+					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+					switchToSecondPopupWindow();
+					waitForPageToLoadWebdriver();
+				}
 				//recentPopupCloseWebdriver();
-				if(saveclosewindow.equalsIgnoreCase("closeWindow")){
+				else if(saveclosewindow.equalsIgnoreCase("closeWindow")){
 					Reporter.log("Click on the button");
 					waitForPageToLoadWebdriver();
 					clickWebdriver(attributeName_xpath,CloseWindow);

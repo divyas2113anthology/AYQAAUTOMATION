@@ -22,8 +22,9 @@ public class WC_EnrollmentDTFee_Verify extends CommonSeleniumActions implements 
 			
 			if(!pagename.equals("")){
 				Reporter.log("Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, EDT_PageName, pagename);
-				verifyElementPresentWebdriver(attributeName_xpath, EDT_PageName, pagename);
+				String PageName[] = pagename.split(" ");
+				waitForElementPresentWebdriver(attributeName_xpath, EDT_PageName+PageName[0]+"')]", pagename);
+				verifyElementPresentWebdriver(attributeName_xpath, EDT_PageName+PageName[0]+"')]", pagename);
 			}
 			
 	

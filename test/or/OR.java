@@ -1950,10 +1950,12 @@ public static final String AY_ConfigureStatusConfirmationText = "//*[@id='divAyC
 //# Webcenter - Enrollment DT Fee - ER
 //#**********************************************************#
 public static final String EDT_Page = "//font[contains(text(),'Search Results')]";
-public static final String EDT_PaymentStatus = "//select[@id='pmtstatus']";
+public static final String EDT_PaymentStatus = "//select[@name='syspmtStatus']";
+public static final String EDT_PaymentStatus_1 ="//select[@id='pmtstatus']";
 public static final String EDT_VerifyPaymentStatus = "//select[@id='pmtstatus']//option[contains(text(),'";   //ManageQueries')]";
 public static final String EDT_ButtontoClick = "//img[contains(@src,'"; //close_window')]";
-public static final String EDT_PageName = "//td[@class='FormHeading']/font";
+    public static final String EDT_PageName ="//font[contains(text(),'";//'Enrollments-DT Module :: Perform an Action :: System Fields Batch Update')]";
+    //public static final String EDT_PageName = "//td[@class='FormHeading']/font";
 
 
 //#**********************************************************#

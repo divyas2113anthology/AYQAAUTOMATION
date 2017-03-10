@@ -26,7 +26,8 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			String paymentamountreceived = testdata[3];
 			String paymentreceiveddate = testdata[4];
 			String backcloseprintsave = testdata[5];
-						
+			String PDFPaymentStatus = testdata[6];
+
 			if(!verifypaymentstatus.equals("")){
 				Reporter.log("Verify("+verifypaymentstatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus);
@@ -34,12 +35,26 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			}
 			if (!paymentstatus.equals("")) {
 				Reporter.log("Select the payment status as ["+paymentstatus+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus , paymentstatus);
+				String Payment ;
+				try {
+					Payment = Runtimedataread(paymentstatus);
+				}catch (Exception e){
+					Payment = paymentstatus;
+				}
+
+					if(PDFPaymentStatus.equals("")){
+						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus , Payment);
+					}
+					else{
+						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus_1 , Payment);
+					}
+
+
 			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
-				//clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				switchToOldWindow();
+				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
+				//switchToOldWindow();
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

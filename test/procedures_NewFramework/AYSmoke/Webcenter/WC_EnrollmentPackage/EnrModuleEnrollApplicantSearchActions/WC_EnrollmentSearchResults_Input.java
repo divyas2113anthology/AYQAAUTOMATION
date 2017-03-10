@@ -19,6 +19,7 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 		String selectaction = testdata[3];
 		String apply = testdata[4];
 		String button = testdata[5];
+		String ApplicantFirstName;
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!applicantcheck.equals("") && !operationtoperform.equals("")) {
 			String ApplicantFirstNameCheck = "";
@@ -37,7 +38,12 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 			}
 		}
 		if (!applicantclick.equals("")) {
-			String ApplicantFirstName = Runtimedataread(applicantclick);
+			try {
+					ApplicantFirstName = Runtimedataread(applicantclick);
+			}catch(Exception e){
+					ApplicantFirstName = applicantclick;
+			}
+
 			Reporter.log("Step 2 - Click on Rule name ["+applicantclick+"]");
 			waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+ApplicantFirstName+"')]", applicantclick);
 			clickWebdriver(attributeName_xpath,ES_ApplicantClick+ApplicantFirstName+"')]" );

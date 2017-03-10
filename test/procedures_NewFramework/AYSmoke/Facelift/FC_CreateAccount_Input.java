@@ -40,7 +40,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 				String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
 				if (!firstgivenname.equals("")) {
 					Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");
-//					type(CA_FirstName, firstname);	
+//					type(CA_FirstName, firstname);
 					sendKeys(attributeName_cssselector, CA_FirstName, firstname);
 					if (!firstname_lable.equals("")) {
 						Reporter.log("Step 2 - Proceed to Write First Name as ("+firstname+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
@@ -53,6 +53,10 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					Reporter.log("Step 3 - Enter 'Last or Family Name' as ("+lastname+")");		
 //					type(CA_LastName, lastname);
 					sendKeys(attributeName_cssselector, CA_LastName, lastname);
+					if(lastorfamilyname.equalsIgnoreCase("ApplicationForRecLastName")){
+						Reporter.log("Step 2 - Proceed to Write First Name as ("+firstname+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
+						Runtimedatawrite(lastname, lastorfamilyname);
+					}
 				}	
 				String Email = emailaddress+Calendar.getInstance().getTimeInMillis()+"@connect.com";
 				if (!emailaddress.equals("")) {

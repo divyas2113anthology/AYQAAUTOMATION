@@ -1998,6 +1998,7 @@ public static final String RUS_CloseWindow = "//img[contains(@src,'";     //clos
 //# Webcenter - Recommendation - Recommendation Summary RS
 //#**********************************************************#
 public static final String RS_Status = "//a[contains(@onclick,'Status')]";
+    //a[contains(@onclick,'Status')]
 //#**********************************************************#
 //# Webcenter - Application - Applicant Summary AS
 //#**********************************************************#

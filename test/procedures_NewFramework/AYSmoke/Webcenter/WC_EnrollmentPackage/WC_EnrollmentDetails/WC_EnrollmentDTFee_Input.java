@@ -27,7 +27,8 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			String paymentreceiveddate = testdata[4];
 			String backcloseprintsave = testdata[5];
 			String PDFPaymentStatus = testdata[6];
-
+			Iterator<String> windows = driver.getWindowHandles().iterator();
+			String Parent = windows.next();
 			if(!verifypaymentstatus.equals("")){
 				Reporter.log("Verify("+verifypaymentstatus+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, EDT_VerifyPaymentStatus+verifypaymentstatus+"')]", verifypaymentstatus);
@@ -54,7 +55,9 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				//switchToOldWindow();
+				driver.switchTo().window(Parent);
+
+
 			}		
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

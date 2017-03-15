@@ -28,11 +28,22 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 			
 			if (!applicantcheck.equals("")) {
 				Reporter.log("Perform the operation to check the checkbox as ["+applicantcheck+"]");
+				try {
+					applicantcheck = Runtimedataread(applicantcheck);
+				}catch (Exception e){
+					applicantcheck = applicantcheck;
+				}
+
 				waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+applicantcheck+"')]]/preceding-sibling::td/input[@type='checkbox']", applicantcheck);
 				checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+applicantcheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
 			}	
 			if (!applicantclick.equals("")) {
 				Reporter.log("Click on Rule name ["+applicantclick+"]");
+				try {
+					applicantclick = Runtimedataread(applicantclick);
+				}catch (Exception e){
+					applicantclick = applicantclick;
+				}
 				waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
 				clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
 				recentPopupSelectWebdriver("Recommendation");

@@ -133,7 +133,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				//clickWebdriver(attributeName_linktext, supportingdocuments);
 				//recentPopupSelect_without_window_nameWebdriver();
 				String[] splitsupport = supportingdocuments.split(";");
-				System.out.println("String1"+splitsupport[0]);
+				System.out.println("String1 "+splitsupport[0]);
 				waitForPageToLoadWebdriver();
 				for (int i = 0; i < splitsupport.length; i++) {
 
@@ -145,7 +145,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 						Thread.sleep(5000);
 						clickWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']");
 					} else {
-						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
 						Thread.sleep(5000);
 						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");

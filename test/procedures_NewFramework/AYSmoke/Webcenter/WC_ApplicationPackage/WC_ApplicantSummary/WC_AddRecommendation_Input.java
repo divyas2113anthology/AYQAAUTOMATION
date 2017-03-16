@@ -108,12 +108,12 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				recentPopupCloseWebdriver();
 
 				//recentPopupCloseWebdriver();
-				clickWebdriver(attributeName_xpath,"//img[@src='../Images/common_images/admin_close_window_large.gif']");
+				//clickWebdriver(attributeName_xpath,"//img[@src='../Images/common_images/admin_close_window_large.gif']");
 				Thread.sleep(5000);
 
 			}
 			//switchToDefaultContentWebdriver();
-			switchToOldWindow();
+			//switchToOldWindow();
 
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

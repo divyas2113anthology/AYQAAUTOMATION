@@ -30,6 +30,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			String urlcontainslink = EmailVerify[11];
 			String clicklinkcontains = EmailVerify[12];
 			String logout = EmailVerify[13];
+			String SwitchToFaceliftWindow = EmailVerify[14];
+
 			Reporter.log("Input and Verify  Test Data was retrieved for 'Hotmail Verification'  in Hobsons Account");	
 			if (!url.equals("")) {						
 				Reporter.log("Step 1 - Opening the Hotmail Window");
@@ -102,7 +104,9 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				}*/
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, HM_InboxSide);
+				waitForElementPresentWebdriver(attributeName_xpath, HM_Focused, "Element - Focused ");
 				waitForPageToLoadWebdriver();
+
 				try {
 					for (int second = 0;; second++)
 					{
@@ -273,21 +277,27 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Thread.sleep(1000);
 				//waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
 				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
+
+
+
+
 				if (clicklinkcontains.contains("Remind")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//div[contains(.,'" + clicklinkcontains + "')]", clicklinkcontains);
 					//clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(.,'" + clicklinkcontains + "')]", clicklinkcontains, clicklinkcontains);
 					waitForPageToLoadWebdriver();
-				} else {
+
+				} else if(clicklinkcontains.contains("Click here to access")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]");
-				}  if(clicklinkcontains.contains("Unlock")){
+					waitForPageToLoadWebdriver();
+					//Thread.sleep(1000);
+				} else if(clicklinkcontains.contains("Unlock")){
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					waitForPageToLoadWebdriver();
 					recentPopupSelectWebdriver("Update Information");
-				}
-				else if(clicklinkcontains.contains("Click here to reset your password")){
+				} else if(clicklinkcontains.contains("Click here to reset your password")){
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					waitForPageToLoadWebdriver();
@@ -317,6 +327,11 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					//waitForElementPresentWebdriver(attributeName_xpath, "//span[contains(text(),'signed out')]", "Log Out Page");
 					driver.close();
 				}
+			}
+
+			if(!SwitchToFaceliftWindow.equals("")){
+
+				switchToSecondPopupWindow();
 			}
 
 			} catch (Exception e) {

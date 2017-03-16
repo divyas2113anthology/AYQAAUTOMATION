@@ -26,6 +26,8 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 			String status = testdata[3];
 			String verifystatus = testdata[4];
 			String closewindow = testdata[5];
+			String SwitchWebcenterWindow = testdata[6];
+
 			//recentPopupSelectWebdriver("Recommendation");
 			recentPopupSelect_without_window_nameWebdriver();
 			
@@ -57,6 +59,10 @@ public class WC_RecommendationDT_Input extends CommonSeleniumActions implements 
 				//recentPopupClose();
 				switchToOldWindow();
 				Thread.sleep(5000);
+			}
+			if (!SwitchWebcenterWindow.equals("")){
+				System.out.println("Switching to Web center window");
+				switchToSecondPopupWindow();
 			}
 			//driver.switchTo().window(AppSummaryWindowName);
 			

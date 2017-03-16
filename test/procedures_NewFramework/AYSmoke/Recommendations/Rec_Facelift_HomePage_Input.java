@@ -24,16 +24,23 @@ public class Rec_Facelift_HomePage_Input extends CommonSeleniumActions implement
 				clickWebdriver(attributeName_partiallinktext, tech_Profile_Logout);
 				waitForPageToLoadWebdriver();
 			}
-			if (!start_Rec.equals("")) {
-				Reporter.log("Step 2 - Click on the link ["+start_Rec+"]");
-				clickWebdriver(attributeName_xpath, RF_Start_Rec);
+			if(start_Rec.equals("next")) {
+				Reporter.log("Step 2 - Click on the button [" + start_Rec + "]");
+
+				waitForElementPresentWebdriver(attributeName_xpath, RF_BtnNext + start_Rec + "']", start_Rec);
+				clickWebdriver(attributeName_xpath, RF_BtnNext + start_Rec + "']");
 				waitForPageToLoadWebdriver();
-				try{
-					alertAccept();
-				}catch(Exception e){
-					System.out.println("No Alert");
 				}
-			}
+			else{
+					Reporter.log("Step 2 - Click on the link [" + start_Rec + "]");
+					clickWebdriver(attributeName_xpath, RF_Start_Rec);
+					waitForPageToLoadWebdriver();
+					try {
+						alertAccept();
+					} catch (Exception e) {
+						System.out.println("No Alert");
+					}
+				}
 		}catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

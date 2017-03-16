@@ -240,7 +240,6 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					doubleClickWebdriver(attributeName_xpath, HC_Login);
 					Thread.sleep(1000);
 					waitForPageToLoadWebdriver();
-					Thread.sleep(10000);
 					try{
 					if(!isDisplayedWebdriver(attributeName_xpath, HC_Inbox)){
 						doubleClickWebdriver(attributeName_xpath, HC_Login);
@@ -340,6 +339,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 								waitForPageToLoadWebdriver();
 							}
 							waitForPageToLoadWebdriver();
+							Thread.sleep(1000);
 							waitForElementPresentWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']","EMT");
 							if(isDisplayedWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']")){
 								break;

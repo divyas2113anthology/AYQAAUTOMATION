@@ -20,11 +20,15 @@ public class FC_ForgotPassword_Input extends CommonSeleniumActions implements OR
 			Reporter.log("Enter Data in PIN if it is not empty");
 			if (!pin.equals("")) {
 				Reporter.log("Step 1 - Enter PIN as ("+pin+")");
-				waitForElementPresentWebdriverWait(attributeName_xpath, FPI_Pin, pin);
-//				type(FPI_Pin,pin);
+				String Pin ;
+				try{
+					Pin = Runtimedataread(pin);
+				}catch(Exception e){
+					Pin = pin;
+				}
+				waitForElementPresentWebdriverWait(attributeName_xpath, FPI_Pin, Pin);
 				waitForPageToLoadWebdriver();
-				//String pinnumber = Runtimedataread(pin);
-				sendKeys(attributeName_xpath, FPI_Pin, pin);
+				sendKeys(attributeName_xpath, FPI_Pin, Pin);
 			}
 			if (!emailaddress.equals("")) {
 				Reporter.log("Step 2 - Enter Email Address as ("+emailaddress+")");

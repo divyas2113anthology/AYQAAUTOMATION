@@ -79,15 +79,42 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              
              if (!subsection.equalsIgnoreCase("")) {
  				 Reporter.log("Select subsection" + subsection );
- 				 clickWebdriver(attributeName_xpath, SR_subsection);
+ 				 /*clickWebdriver(attributeName_xpath, SR_subsection);
  				//sendKeys(attributeName_xpath, SR_subsection, subsection);
 
 				 mouseOverWebdriver(attributeName_xpath,"//a[text()='"+subsection+"']");
 				 clickWebdriver(attributeName_xpath,"//a[text()='"+subsection+"']");
 				 Thread.sleep(5000);
- 				// clickWebdriver(attributeName_linktext, subsection);
- 					
- 				
+ 				//clickWebdriver(attributeName_linktext, subsection);
+ 					*/
+				 waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']",subsection);
+				 clickWebdriver(attributeName_xpath, "//input[@name='SectionInput']");
+				 Reporter.log("Step 2 - Perform the operation to click the Package as ["+subsection+"]");
+       //		 waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
+				 String [] SplitPackage = subsection.split(";");
+				 System.out.println("Length : "+SplitPackage.length);
+				 System.out.println("Package1"+SplitPackage[0]);
+				 System.out.println("Package1"+SplitPackage[1]);
+				 for (int i = 0; i < SplitPackage.length; i++) {
+					 writeConsole("Tree Package"+i+":"+SplitPackage[i]);
+					 if (i== SplitPackage.length-1) {
+						 waitForPageToLoadWebdriver();
+						 Thread.sleep(5000);
+						 //waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+						 clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
+
+					 }else{
+						 System.out.println(SplitPackage[i]);
+						 //PackageSelection(SplitPackage[i], "1");
+						 waitForPageToLoadWebdriver();
+						 Thread.sleep(5000);
+						 //waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+						 clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
+
+					 }
+				 }
+				 //ClosePackageSelection();
+
              }	
              if (!field.equalsIgnoreCase("")) {
   				Reporter.log("Select field " + field );

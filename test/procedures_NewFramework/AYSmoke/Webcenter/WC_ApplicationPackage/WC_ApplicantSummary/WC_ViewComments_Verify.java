@@ -29,7 +29,10 @@ public class WC_ViewComments_Verify extends CommonSeleniumActions implements OR 
 				
 			}
 			if (!message.equals("")) {
-				
+
+				Reporter.log("Step 2 - Verify the success ("+pagename+") page");
+				verifyElementPresentWebdriver(attributeName_xpath, AA_ViewSuccessMessage+message+"')]", message);
+
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

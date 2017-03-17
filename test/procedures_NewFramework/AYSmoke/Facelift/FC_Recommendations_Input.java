@@ -73,7 +73,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			}
 			if (!rcstreetaddressline1.equals("")) {
 				Reporter.log("Step 7 - Enter Street Address (Lane 1) as ("+rcstreetaddressline1+")");
-				sendKeys(attributeName_cssselector,RI_StreedAddress1,rcstreetaddressline1);
+				sendKeys(attributeName_cssselector,RI_StreeNdAddress1,rcstreetaddressline1);
 			}
 			if (!rcstreetaddressline2.equals("")) {
 				Reporter.log("Step 8 - Enter Street Address (Lane 2) as ("+rcstreetaddressline2+")");

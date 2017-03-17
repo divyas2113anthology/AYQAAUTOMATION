@@ -806,14 +806,14 @@ public static final String EA_MediaAttach_Deletefile = "xpath=(//a[@alt='Delete 
 public static final String EA_PageTitle = "//div[@class='span9']//font";
 public static final String RC_RecProBtn = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_AddProBtn = "//a[contains(text(),'add a provider')]";
-public static final String RC_Question = "//p/strong[contains(text(),'";
+public static final String RC_Question = "//p[contains(text(),'";
 public static final String RC_Question1 = "//p[contains(text(),'";
 //#**********************************************************#
 //# Facelift Recommendation Input - RI
 //#**********************************************************#
 public static final String RI_FirstName = "css=#firstname";
 public static final String RI_LastName = "css=#lastname";
-public static final String RI_StreedAddress1 = "css=#address1";
+public static final String RI_StreeNdAddress1 = "css=#address1";
 public static final String RI_StreedAddress2 = "css=#address2";
 public static final String RI_City = "css=#city";
 public static final String RI_State = "css=#state";
@@ -1073,7 +1073,7 @@ public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
-public static final String AS_View = "//span[contains(text(),'";
+public static final String AS_View = "//font[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
 public static final String AS_ViewApplication = "//span[text()='view application']";
 public static final String AS_ViewRecommendation = "//span[text()='view Recommendation-']";
@@ -1081,6 +1081,7 @@ public static final String AS_ViewComments = "//font[contains(text(),'Comments')
 public static final String AS_ViewCommentCheck = "//td[a[contains(text(),'";
 public static final String AS_ViewCommentCheck1 = "')]]/preceding-sibling::td[input[@name='CommentID']]";
 public static final String AS_ViewAddComment = "//textarea[@name='Comment']";
+public static final String AA_ViewSuccessMessage= "//font[contains(text(),'";
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
@@ -1302,6 +1303,7 @@ public static final String RF_Forgot_Email = "//input[@id='recforgotEmail']";
 public static final String RF_Forgot_Lname = "//input[@id='recforgotAppLN']";
 public static final String RF_Forgot_Search = "//input[@id='rec-forgotSubmit']";
 public static final String RF_Forgot_Msg = "//form[@name='frmSendPINs']//font";
+public static final String RF_BtnNext =   "//img[@alt='";
 //#**********************************************************#
 //#	 WebMail Login Page - Hotmail
 //#**********************************************************#
@@ -1316,8 +1318,9 @@ public static final String HM_Inbox = "link=Inbox";
 //public static final String HM_InboxSide ="//span[contains(@class,'editableLabel readonly') and text()='Inbox']";
 //public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']"; //div[@role='treeitem']//span[text()='Inbox']
 public static final String HM_InboxSide = "//div[@role='treeitem']//span[text()='Inbox']";
+public static final String HM_Focused =  "//span[contains(text(),'Focused')]";
 
-//#**********************************************************#
+    //#**********************************************************#
 //#	 WebMail Login Page - Gmail
 //#**********************************************************#
 public static final String GM_WLogin = "//input[@id='Email']";

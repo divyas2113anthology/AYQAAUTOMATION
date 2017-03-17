@@ -1,16 +1,12 @@
 package procedures_NewFramework.AYSmoke.Webcenter;
 
-import java.util.ArrayList;
-
+import or.OR;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.MoveToOffsetAction;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 //import com.thoughtworks.selenium.webdriven.commands.waitForPageToLoadWebdriver;
-
-import or.OR;
-import processor.CommonSeleniumActions;
 
 public class WC_SearchforApplicants_Input extends CommonSeleniumActions implements OR {
 	
@@ -94,8 +90,8 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}			
 			if (!createddate.equals("")) {
 				Reporter.log("Step 5 - Select the creation date as ["+createddate+"]");
-				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_CreationDate, createddate);
-				clickWebdriver(attributeName_xpath, SAI_CreationDate);
+				waitForElementPresentWebdriverWait(attributeName_xpath, SAI_CreationDateRadio, createddate);
+				clickWebdriver(attributeName_xpath, SAI_CreationDateRadio);
 			}
 			if (!submittedate.equals("")) {
 				Reporter.log("Step 6 - Select the submission date as ["+submittedate+"]");

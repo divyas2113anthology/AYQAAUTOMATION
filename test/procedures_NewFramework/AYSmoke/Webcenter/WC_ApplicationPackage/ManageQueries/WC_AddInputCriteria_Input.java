@@ -84,6 +84,13 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_xpath, MQ1_MultiSelectPaymentStatus+managequery+"']");
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
+				else if(operator.equalsIgnoreCase("X Days Ago")){
+					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
+					System.out.println("Enter the value");
+
+					sendKeys(attributeName_xpath,"",value);
+				}
+
 				else{
 					//sendKeys(attributeName_xpath, MQ_Value, value);
 					clickWebdriver(attributeName_xpath," //button [contains(@class,'multiselect ui-widget')]");

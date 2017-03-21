@@ -85,10 +85,9 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}
 				else if(operator.equalsIgnoreCase("X Days Ago")){
-					clickWebdriver(attributeName_xpath, MQ_MultiSelectOpen);
 					System.out.println("Enter the value");
 
-					sendKeys(attributeName_xpath,"",value);
+					sendKeys(attributeName_xpath,"//input[@name='txtValue0']",value);
 				}
 
 				else{

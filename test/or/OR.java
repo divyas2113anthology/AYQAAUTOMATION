@@ -249,7 +249,7 @@ public static final String EL_hslink = "//a[contains(text(),'";
 public static final String AS_PreviewApp = "//font[contains(text(),'Preview Application')]";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
 public static final String AS_Continue = "//img[@alt='continue']";
-public static final String AS_VerifyApplicationFee = "//li[contains(text(),'TestingApplicationFee')]";
+public static final String AS_VerifyApplicationFee = "//li/b[contains(text(),'Application Fee')]";
 public static final String AS_VerifyTranscripts = "//ul//li[contains(text(),'TranscriptStatus')]";
 //#**********************************************************#
 //# Application Fee Payment Page - AF

@@ -1930,7 +1930,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void selectByValueWebdriver(String attributename,String attributevalue,String value){
 		writeConsole("Webdriver selectByValue["+attributename+", "+attributevalue+", "+value+"]");
 		Select select = new Select(attributeNameValue(attributename, attributevalue));
-		select.selectByValue(value);		
+		select.selectByValue(value);
 	}
 
 	public void selectByIndexWebdriver(String attributename,String attributevalue,int index){	
@@ -1959,7 +1959,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 			for (WebElement option : options) {
 				if(text.equals(option.getText().trim()))
 					writeConsole("Option Value : "+option);
-				option.click();  
+				option.click();
+				break;
 			}
 
 		} catch (Exception e) {

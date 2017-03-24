@@ -35,11 +35,12 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 				}catch(Exception e){
 					Status = status;
 				}
-				Reporter.log("Verify("+status+")is present");
+				Reporter.log("Verify("+Status+")is present");
 				clickWebdriver(attributeName_xpath,AS_SupportingDocumentStatus);
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
-				selectByValueWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
+				selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath,AS_SupportingDocumentStatus,Status);
+				//selectByValueWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
 				//selectByVisibleTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, Status);
 				//verifyElementContainsTextWebdriver(attributeName_xpath, AS_SupportingDocumentStatus, status, status);
 			}

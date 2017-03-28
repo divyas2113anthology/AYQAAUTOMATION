@@ -355,7 +355,7 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//*[text()='Recommendation Provider List']";
+public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation')]";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";

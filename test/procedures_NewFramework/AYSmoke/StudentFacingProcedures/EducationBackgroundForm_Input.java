@@ -104,6 +104,7 @@ public class EducationBackgroundForm_Input extends CommonSeleniumActions impleme
 				waitForPageToLoadWebdriver();
 			}else if (savebutton.equalsIgnoreCase("Reset")) {
 				clickWebdriver(attributeName_xpath,EB_Reset);
+				switchToOldWindow();
 			}
 		}
 		

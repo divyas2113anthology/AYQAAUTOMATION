@@ -32,7 +32,12 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 			String envirurl = null;
 
 			if ((url.contains("app")) && (url.contains("facelift"))&& (!url.contains("aybusqa"))) {
-				if (environment.equalsIgnoreCase("USQA")) {
+
+				if(url.contains("uk")){
+					environment = "UKQA";
+				}
+
+				 if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto&facelift=true";
 					envirurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=true";
 					//envirurl = "http://IAD1PW001:8089/?id=ayauto&facelift=true";
@@ -66,6 +71,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "http://iad1pw001app.emt.hobsons.local/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
 				}
 			}else if ((url.contains("app")) && (url.endsWith("id=ayauto"))) {
+
 				if (environment.equalsIgnoreCase("USQA")) {
 					//envirurl = "https://uatapp.applyyourself.com/?id=ayauto";
 					//System.out.println("aaa");

@@ -64,9 +64,15 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 				waitForPageToLoadWebdriver();
 				switchToDefaultContentWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, Section+applicantsection+"')]", applicantsection);
+				mouseOverWebdriver(attributeName_xpath,Section+applicantsection+"')]");
+				if(applicantsection.equals("Education Background")){
+					ScrollUpToElement(attributeName_xpath,Section+applicantsection+"')]/parent::a");
+
+				}
+				//contextClickWebdriver(attributeName_xpath, Section+applicantsection+"')]/parent::a");
 				clickWebdriver(attributeName_xpath, Section+applicantsection+"')]");
 				//click(Section+applicantsection+"')]");
-				waitForPageToLoadWebdriver();
+				//waitForPageToLoadWebdriver();
 			}
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");

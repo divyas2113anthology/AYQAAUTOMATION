@@ -77,6 +77,7 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 					Reporter.log("Data("+vhsname+") was displayed correctly in the [High School Name] Field");				
 				} else {
 					writeFailure("Data("+vhsname+") was not displayed correctly in the [High School Name] Field");
+
 				}
 			}
 			if (!eduhighschooltype.equals("")) {

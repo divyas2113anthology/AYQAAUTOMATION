@@ -1388,7 +1388,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 		return elementindex;
 	}*/
-
+	public void SwitchToCurrentWindow(){
+		String CurrentHandle = driver.getWindowHandle();
+		driver.switchTo().window(CurrentHandle);
+	}
 
 	public void deselectPopUp() {
 		//selenium.deselectPopUp();
@@ -1997,6 +2000,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		writeConsole("Webdriver check["+attributename+", "+attributevalue+"]");
 		WebElement check = attributeNameValue(attributename, attributevalue);
 		check.click();
+
 		if (!check.isSelected()) {
 			check.click();
 		}			
@@ -2048,6 +2052,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void selectMainWindowWebdriver(String parent){
 		writeConsole("Webdriver Main Window["+parent+"]");
 		driver.switchTo().window(parent);
+	}
+
+	public void ScrollUpToElement(String attributename,String attributevalue){
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,-100)", "");
 	}
 
 	// This Function is used to Wait till Window or Popup opens.

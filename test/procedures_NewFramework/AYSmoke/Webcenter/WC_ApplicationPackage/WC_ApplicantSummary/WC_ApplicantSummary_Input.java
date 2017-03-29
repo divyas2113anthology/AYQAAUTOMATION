@@ -31,6 +31,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String buttons = testdata[13];
 			String view = testdata[14];
 			String closewindow = testdata[15];
+			String UnsubmitApplicant = testdata[16];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
 			AppSummaryWindowName = driver.getWindowHandle();
@@ -235,6 +236,17 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
 				}
+			}
+
+			if(!UnsubmitApplicant.equals("")){
+				Reporter.log("Step 16 - Procedd to click the link  ["+UnsubmitApplicant+"] to un-submit the applicant");
+				waitForPageToLoadWebdriver();
+				switchToSecondPopupWindow();
+				waitForElementPresentWebdriver(attributeName_xpath, AS_UnSubmit,UnsubmitApplicant);
+				clickWebdriver(attributeName_xpath, AS_UnSubmit);
+				alertAccept();
+				switchToOldWindow();
+				//recentPopupClose();
 			}
 
 

@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.Calendar;
+
 public class WC_AddRecommendation_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Add Recommendation' page")
@@ -80,7 +82,8 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 			}
 			if(!emailaddress.equals("")){
 				Reporter.log("Enter the Email Address");
-				sendKeys(attributeName_xpath, AR_EmailAddress, emailaddress);
+				String Emailaddress = emailaddress + Calendar.getInstance().getTimeInMillis();
+				sendKeys(attributeName_xpath, AR_EmailAddress, Emailaddress);
 				
 			}
 			if(!title.equals("")){
@@ -105,15 +108,16 @@ public class WC_AddRecommendation_Input extends CommonSeleniumActions implements
 				Reporter.log("Click on Save");
 				waitForElementPresentWebdriver(attributeName_xpath, AR_Save , saveclose);   
 				clickWebdriver(attributeName_xpath, AR_Save);
+				Thread.sleep(10000);
 				recentPopupCloseWebdriver();
 
 				//recentPopupCloseWebdriver();
-				clickWebdriver(attributeName_xpath,"//img[@src='../Images/common_images/admin_close_window_large.gif']");
+				//clickWebdriver(attributeName_xpath,"//img[@src='../Images/common_images/admin_close_window_large.gif']");
 				Thread.sleep(5000);
 
 			}
-			//switchToDefaultContentWebdriver();
-			switchToOldWindow();
+			switchToDefaultContentWebdriver();
+			//switchToOldWindow();
 
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

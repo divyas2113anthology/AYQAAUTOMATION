@@ -1,13 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EnrollmentPackage.WC_EnrollmentDetails;
 
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
-
-import java.util.Iterator;
 
 public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements OR {
 	
@@ -53,9 +49,24 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 			}
 			if(!backcloseprintsave.equals("")){
 				Reporter.log("Click on the Button"+backcloseprintsave);
+				if(backcloseprintsave.equalsIgnoreCase("close_window")){
+					clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
+					//switchToOldWindow();
+				}
+
+			}
+			else if (backcloseprintsave.equalsIgnoreCase("savecloselogout")) {
 				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				//switchToOldWindow();
-			}		
+				Thread.sleep(5000);
+				System.out.println("Clicked Save Button");
+				driver.close();
+				switchToOldWindow();
+
+
+			}
+			else{
+				Reporter.log("Not Click");
+			}
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

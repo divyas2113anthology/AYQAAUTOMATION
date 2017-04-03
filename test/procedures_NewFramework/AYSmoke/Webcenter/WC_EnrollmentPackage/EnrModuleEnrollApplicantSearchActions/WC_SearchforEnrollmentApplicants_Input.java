@@ -41,7 +41,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				selectByValueWebdriver(attributeName_xpath, SAI_CreationDate, createddate);
 			}
 			if (!firstname.equals("")) {
-				if(firstname.equals("Rashi")){
+				if(firstname.equalsIgnoreCase("Rashi")){
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);

@@ -50,7 +50,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				Thread.sleep(3000);
 				switchToOldWindow();
 			}
-			if (!payment_amount_received.equals("")) {
+			if (!payment_amount_reWC_EnrollmentDTFee_Inputceived.equals("")) {
 				Reporter.log("Enter the first name as ["+payment_amount_received+"]");
 				sendKeys(attributeName_name, "pmtAmount", payment_amount_received);
 			}
@@ -63,6 +63,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					driver.switchTo().window(AppSummaryWindowName);
 				}else if (button_to_click.equalsIgnoreCase("save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);

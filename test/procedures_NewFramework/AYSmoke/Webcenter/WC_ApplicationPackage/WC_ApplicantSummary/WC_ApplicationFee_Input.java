@@ -50,7 +50,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				Thread.sleep(3000);
 				switchToOldWindow();
 			}
-			if (!payment_amount_reWC_EnrollmentDTFee_Inputceived.equals("")) {
+			if (!payment_amount_received.equals("")) {
 				Reporter.log("Enter the first name as ["+payment_amount_received+"]");
 				sendKeys(attributeName_name, "pmtAmount", payment_amount_received);
 			}

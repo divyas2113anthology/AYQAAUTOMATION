@@ -43,7 +43,7 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 					else{
 						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus_1 , Payment);
 					}
-				
+
 			}
 			if(!backcloseprintsave.equals("")) {
 				Reporter.log("Click on the Button" + backcloseprintsave);

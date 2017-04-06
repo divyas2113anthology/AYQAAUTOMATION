@@ -1,13 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EnrollmentPackage.WC_EnrollmentDetails;
 
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
-
-import java.util.Iterator;
 
 public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements OR {
 	
@@ -18,7 +14,6 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Enrollment DT Fee'Page");
-			
 			String[] testdata = datacontainer;
 			String paymenttype = testdata[0];
 			String verifypaymentstatus = testdata[1];
@@ -49,13 +44,32 @@ public class WC_EnrollmentDTFee_Input extends CommonSeleniumActions implements O
 						selectByVisibleTextWebdriver(attributeName_xpath, EDT_PaymentStatus_1 , Payment);
 					}
 
-
 			}
-			if(!backcloseprintsave.equals("")){
-				Reporter.log("Click on the Button"+backcloseprintsave);
-				clickWebdriver(attributeName_xpath, EDT_ButtontoClick+backcloseprintsave+"')]");
-				//switchToOldWindow();
-			}		
+			if(!backcloseprintsave.equals("")) {
+				Reporter.log("Click on the Button" + backcloseprintsave);
+				if (backcloseprintsave.equalsIgnoreCase("close_window")) {
+					clickWebdriver(attributeName_xpath, EDT_ButtontoClick + backcloseprintsave + "')]");
+				    switchToDefaultContentWebdriver();
+
+
+				} else if (backcloseprintsave.equalsIgnoreCase("save")) {
+					clickWebdriver(attributeName_xpath, EDT_ButtontoClick + backcloseprintsave + "')]");
+					Thread.sleep(5000);
+					System.out.println("Clicked Save Button");
+					//driver.close();
+					switchToOldWindow();
+
+
+			} else if (backcloseprintsave.equalsIgnoreCase("closewindow")) {
+				System.out.println("Close the window");
+				//driver.close();
+				switchToOldWindow();
+
+
+			}else {
+					Reporter.log("Not Click");
+				}
+			}
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());
 			}

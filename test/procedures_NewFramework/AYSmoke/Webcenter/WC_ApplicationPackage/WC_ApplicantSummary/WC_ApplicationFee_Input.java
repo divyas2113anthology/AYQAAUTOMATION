@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import org.openqa.selenium.remote.server.handler.SwitchToWindow;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR {
@@ -65,6 +63,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					driver.switchTo().window(AppSummaryWindowName);
 				}else if (button_to_click.equalsIgnoreCase("save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
@@ -72,8 +71,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					System.out.println("Clicked Save Button");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//recentPopupCloseWebdriver();
-					switchToSecondPopupWindow();
-					//switchToOldWindow();
+					switchToOldWindow();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();
@@ -95,7 +93,14 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 					waitForPageToLoadWebdriver();
 				}
-
+			    else if (button_to_click.equalsIgnoreCase("savecloselogout")) {
+				waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
+				clickWebdriver(attributeName_xpath, WCL_Savebutton);
+				Thread.sleep(5000);
+				System.out.println("Clicked Save Button");
+				driver.close();
+				switchToOldWindow();
+			}
 				else{
 					Reporter.log("Not Click");
 				}

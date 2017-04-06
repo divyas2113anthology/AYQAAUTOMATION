@@ -32,7 +32,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		if (!pin.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PIN from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			   
-			if (pin.equals("Pin Number")||pin.equals("FaceliftPinNumber") ||pin.contains("Pin")) {
+			if (pin.equals("Pin Number")||pin.equals("FaceliftPinNumber")) {
 				String generatepin = Runtimedataread(pin);
 				Reporter.log("Proceed to Enter PIN as ("+generatepin+")");
 				sendKeys(attributeName_xpath,PinField, generatepin);
@@ -48,15 +48,14 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		if (!password.equals("")) {
 			try {
 				Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
-				 password = Runtimedataread(password);
-				Reporter.log("Proceed to Enter PIN as (" + password + ")");
-
+				String generatepassword = Runtimedataread(password);
+				Reporter.log("Proceed to Enter PIN as (" + generatepassword + ")");
+				sendKeys(attributeName_xpath, PasswordField, generatepassword);
 			}catch(Exception e){
 				Reporter.log("Proceed to Enter PIN as ("+ password +")");
-				password = password;
-				//sendKeys(attributeName_xpath, PasswordField, password);
+				sendKeys(attributeName_xpath, PasswordField, password);
 			}
-			sendKeys(attributeName_xpath, PasswordField, password);
+			
 		}
 		if (!login.equals("")) {
 			Reporter.log("Step 3 - Click on 'Login' Button");

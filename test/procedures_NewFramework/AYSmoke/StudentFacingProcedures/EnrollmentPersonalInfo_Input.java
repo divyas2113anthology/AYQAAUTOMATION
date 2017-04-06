@@ -34,8 +34,6 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 				String livein = accprofileidatarepo[4];
 				String choice = accprofileidatarepo[5];
 				String submissionreset = accprofileidatarepo[6];
-				String USDate = accprofileidatarepo[7];
-
 				Reporter.log("Input Test Data was retrieved for 'Enrollment Personal Info' page");
 				if (!attend.equals("")) {
 					Reporter.log("Step 1 - Select the attened as ("+attend+")");
@@ -72,8 +70,8 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 					String [] Choice = choice.split("_");
 					if (choice.contains("Check")) {
 						switchToDefaultContentWebdriver();
-						waitForElementPresentWebdriverWait(attributeName_xpath, "//input[@value='"+Choice[0]+"']", Choice[0]);
-						clickWebdriver(attributeName_xpath, "//input[@value='"+Choice[0]+"']");
+						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']/../../input", Choice[0]);
+						clickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
 					}else if (choice.contains("UnCheck")) {
 						waitForElementPresentWebdriverWait(attributeName_xpath, "//label[text()='"+Choice[0]+"']/../../input", Choice[0]);
 						doubleClickWebdriver(attributeName_xpath, "//label[text()='"+Choice[0]+"']");
@@ -88,11 +86,6 @@ public class EnrollmentPersonalInfo_Input extends CommonSeleniumActions implemen
 					}else if (submissionreset.equalsIgnoreCase("Reset")) {
 						clickWebdriver(attributeName_xpath, EPI_ResetBtn);
 					}
-				}
-
-				if(!USDate.equals("")){
-					waitForElementPresentWebdriverWait(attributeName_xpath,US_Date,"US Date");
-					sendKeys(attributeName_xpath,US_Date,USDate);
 				}
 				
 		} catch (Exception e) {

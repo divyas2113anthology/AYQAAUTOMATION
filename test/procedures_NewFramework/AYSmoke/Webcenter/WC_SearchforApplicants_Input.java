@@ -60,7 +60,6 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 2 - Select the record options as ["+record_options+"]");
 				if (record_options.equalsIgnoreCase("Submitted")) {
 					clickWebdriver(attributeName_xpath, SAI_SubmitRadioBtn);
-
 				}
 				if (record_options.equalsIgnoreCase("Not Submitted")) {
 					clickWebdriver(attributeName_xpath, SAI_NotSubmitRadioBtn);

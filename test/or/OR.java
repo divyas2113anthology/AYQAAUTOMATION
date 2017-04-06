@@ -240,8 +240,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-    public static final String EL_Search = "//input[@value='";
-    public static final String EL_searchclose = "//*[@alt='";//input[@value='";
+public static final String EL_searchclose = "//*[@alt='";//input[@value='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 
@@ -249,8 +248,8 @@ public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 public static final String AS_PreviewApp = "//font[contains(text(),'Preview Application')]";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
-public static final String AS_Continue = "//input[@value='Continue']";
-public static final String AS_VerifyApplicationFee = "//li/b[contains(text(),'Application Fee')]";
+public static final String AS_Continue = "//img[@alt='continue']";
+public static final String AS_VerifyApplicationFee = "//li[contains(text(),'TestingApplicationFee')]";
 public static final String AS_VerifyTranscripts = "//ul//li[contains(text(),'TranscriptStatus')]";
 //#**********************************************************#
 //# Application Fee Payment Page - AF
@@ -356,7 +355,7 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation')]";
+public static final String RC_RecProviderlist = "//*[text()='Recommendation Provider List']";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
@@ -541,7 +540,6 @@ public static final String AW_StartAppBtn = "css=#StartApp";
 public static final String AW_AppInstBtn = "//a[contains(text(),'Application Instructions')]";
 //public static final String AW_SubAppBtn = "css=input.ay-Submit"; //div/div[2]/div[1]/input[@class='ay-Submit']
 public static final String AW_SubAppBtn = "//div/div[2]/div[1]/input[@class='ay-Submit']";
-public static final String AW_SubmitBtn = "//input[@value='Submit Application']";
 public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[contains(text(),'Family')]";
 public static final String AW_AutomationSectionLnk = "//font[contains(text(),'Automation Section')]";
@@ -1077,7 +1075,7 @@ public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//font[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
-public static final String AS_UnSubmit ="//td/a[contains(text(),'AM')]";
+    public static final String AS_UnSubmit ="//td/a[contains(text(),'AM')]";
 public static final String AS_ViewApplication = "//span[text()='view application']";
 public static final String AS_ViewRecommendation = "//span[text()='view Recommendation-']";
 public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";
@@ -1462,7 +1460,6 @@ public static final String EPI_SayNo = "//input[@id='q24476']";
 public static final String EPI_LiveIn = "//select[@id='s29464']";
 public static final String EPI_ProToSubBtn = "//a[text()='Proceed to Submission']";
 public static final String EPI_ResetBtn = "//img[@alt='Reset']";
-    public static final String US_Date = "//input[@id='q41084']";
 
 //Enrollment - Search or Students
 public static final String ES_ApplicantClick = "//a[contains(text(),'";    //LastName, TestDemo')]"'

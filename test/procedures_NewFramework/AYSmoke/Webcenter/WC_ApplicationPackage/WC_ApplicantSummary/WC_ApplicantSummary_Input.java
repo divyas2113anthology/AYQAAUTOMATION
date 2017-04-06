@@ -142,13 +142,17 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					Thread.sleep(1000);
 					switchToDefaultContentWebdriver();
 					if (splitsupport[i].equals("Standardized Test Scores")) {
-						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+						waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
 						Thread.sleep(5000);
 						clickWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']");
 					} else {
 
 
-						waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+
+						//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
+
+						waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
+
 						Thread.sleep(5000);
 						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
@@ -239,7 +243,6 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					//selectMainWindowWebdriver();
 				}
 			}
-
 			if(!UnsubmitApplicant.equals("")){
 				Reporter.log("Step 16 - Procedd to click the link  ["+UnsubmitApplicant+"] to un-submit the applicant");
 				waitForPageToLoadWebdriver();
@@ -250,6 +253,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				switchToOldWindow();
 				//recentPopupClose();
 			}
+
 
 
 

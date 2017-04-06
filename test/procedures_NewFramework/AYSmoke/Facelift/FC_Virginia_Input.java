@@ -50,16 +50,10 @@ public class FC_Virginia_Input extends CommonSeleniumActions implements OR {
 			if (!pisubmitappbtn.equals("")) {
 				Reporter.log("Step 3 - Click on ("+pisubmitappbtn+")Button");
 				if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
-					clickWebdriver(attributeName_xpath, AW_SubAppBtn);
+					clickWebdriver(attributeName_xpath,AW_SubAppBtn);
 					waitForPageToLoadWebdriver();
-				}
-				else if (pisubmitappbtn.equalsIgnoreCase("Applicant submission for enrollment")){
-					clickWebdriver(attributeName_xpath, AW_SubmitBtn);
-					waitForPageToLoadWebdriver();
-
 				}
 			}
-
 			
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

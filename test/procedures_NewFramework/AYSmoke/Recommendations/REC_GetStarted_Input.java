@@ -31,8 +31,9 @@ public class REC_GetStarted_Input extends CommonSeleniumActions implements OR {
 				waitForPageToLoadWebdriver();
 			}else {
 				Reporter.log("Step 2 - Proceed to Click on link as 'Click here to change your password' ");
-				clickWebdriver(attributeName_partiallinktext, "Click here to change your password");
-				waitForElementPresentWebdriver(attributeName_xpath, CP_Update, "Update Button");
+				clickWebdriver(attributeName_xpath,CP_LinkToForgotPassword);
+			//	clickWebdriver(attributeName_partiallinktext, "Click here to change your password");
+			//	waitForElementPresentWebdriver(attributeName_xpath, CP_LinkToForgotPassword, "Change your password link");
 			}
 		}
 		if (!next.equals("")) {

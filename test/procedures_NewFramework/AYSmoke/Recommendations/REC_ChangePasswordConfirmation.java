@@ -20,6 +20,8 @@ public class REC_ChangePasswordConfirmation extends CommonSeleniumActions implem
 			String cpmessage = fpvdatarepo[0];
 			String cppagename = fpvdatarepo[1];
 			String cpcontinue = fpvdatarepo[2];
+			String MailSentMsg = fpvdatarepo[3];
+
 			Reporter.log("Verify Test Data was retrieved for 'Change Password Confirmation' page");
 			if (!cpmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+cpmessage+") was displayed correctly");
@@ -38,6 +40,11 @@ public class REC_ChangePasswordConfirmation extends CommonSeleniumActions implem
 					Reporter.log("Step 3 - Click on continue button");
 					clickWebdriver(attributeName_xpath, CP_Continue);
 				}
+			}
+
+			if(!MailSentMsg.equals("")){
+				Reporter.log("Step 2 - Verify the message after sending Forgot password link  ("+MailSentMsg+") ");
+				verifyElementTextWebdriver(attributeName_xpath,CSC_FormHeading+MailSentMsg+"')]",MailSentMsg, "Forgot password screen");
 			}
 			
 		} catch (Exception e) {

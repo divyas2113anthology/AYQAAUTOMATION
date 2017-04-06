@@ -20,6 +20,8 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 		String confirmpassword = parameterValuesArray[2];
 		String conpasswordlabel = parameterValuesArray[3];
 		String update_goback = parameterValuesArray[4];
+		String EnterPersonalCode = parameterValuesArray[5];
+
 		Reporter.log("Input Test Data was retrieved for 'Change Password' page");
 		if (!currentpassword.equals("")) {
 			Reporter.log("Step 1 - Enter the Current Password as '"+currentpassword+"'");
@@ -55,21 +57,32 @@ public class REC_ChangePassword_Input extends CommonSeleniumActions implements O
 //			}
 		}
 		if (!update_goback.equals("")) {
-			Reporter.log("Step 4 - Click the Button as '"+update_goback+"' ");
+			Reporter.log("Step 4 - Click the Button as '" + update_goback + "' ");
 			if (update_goback.equalsIgnoreCase("Go Back")) {
 				clickWebdriver(attributeName_xpath, CP_Goback);
 				waitForPageToLoadWebdriver();
-			}else if (update_goback.equalsIgnoreCase("Update")) {
+			} else if (update_goback.equalsIgnoreCase("Update")) {
 				try {
 					clickWebdriver(attributeName_xpath, CP_Update);
-				}catch(Exception e){
-					clickWebdriver(attributeName_xpath,"//input[@id='updateAccount']");
+				} catch (Exception e) {
+					clickWebdriver(attributeName_xpath, "//input[@id='updateAccount']");
 				}
 			}
 		}
+
+		if (!EnterPersonalCode.equals("")) {
+			Reporter.log("Step 4 - Click the link as 'Forgot password' ");
+			sendKeys(attributeName_xpath, CP_EnterPersonalCode, EnterPersonalCode);
+			clickWebdriver(attributeName_xpath, CP_Search);
+			waitForPageToLoadWebdriver();
+
+			}
+
+
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());
 		}
+
 	}
 
 }

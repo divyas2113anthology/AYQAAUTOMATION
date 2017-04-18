@@ -85,7 +85,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                 }
 
                 if (!active.equals("")) {
-                    if (active.contains("Unactive")) {
+                    if (active.contains("uncheck")) {
                         String[] data = active.split(";");
                         try {
                             String statusName = Runtimedataread(data[0]);
@@ -150,6 +150,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 		switchToDefaultContentWebdriver();
 		} catch (IOException e) {
 			e.printStackTrace();
+
 		} catch (RowsExceededException e) {
 			e.printStackTrace();
 		} catch (BiffException e) {

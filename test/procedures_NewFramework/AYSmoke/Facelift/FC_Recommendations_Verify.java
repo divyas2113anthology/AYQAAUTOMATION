@@ -39,8 +39,14 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 			}
 			
 			if(!VerifyQuestion.equals("")){
-				Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") elemoent not present");
-				verifyElementNotPresent(FC_AutoQuestion,VerifyQuestion);
+				if(VerifyQuestion.equals("Auto Question")){
+					Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") element not present");
+					verifyElementNotPresent(FC_AutoQuestion,VerifyQuestion);
+				}
+				else {
+					Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") element present");
+					verifyElementPresent("//a[text()='"+VerifyQuestion+"']",VerifyQuestion);
+				}
 
 			}
 

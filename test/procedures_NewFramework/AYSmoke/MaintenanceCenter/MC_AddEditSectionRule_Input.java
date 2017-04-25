@@ -107,6 +107,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				waitForElementPresentWebdriver(attributeName_xpath, ESR_Save, button);
 				clickWebdriver(attributeName_xpath, ESR_Save);
 				waitForPageToLoadWebdriver();
+				Thread.sleep(5000);
 			}else if (button.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
 				waitForPageToLoadWebdriver();

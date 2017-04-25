@@ -102,6 +102,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 					Reporter.log("Step 8 - Enter 'Zip/Postal Code' as ("+zippostalcode+")");			
 //					type(CA_ZipCode, zippostalcode);
 					sendKeys(attributeName_cssselector, CA_ZipCode, zippostalcode);
+
 				}
 				
 				if (!password.equals("")) {

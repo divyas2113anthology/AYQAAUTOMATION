@@ -73,6 +73,10 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				}else if (link_to_click.equalsIgnoreCase("Application Instructions")) {
 					clickWebdriver(attributeName_xpath,AW_AppInstructionBtn);
 				}
+				else if (link_to_click.equalsIgnoreCase("dynamicsection"))
+				{
+					clickWebdriver(attributeName_xpath,AW_SectionClickByDynamicFont+link_to_click+"']");
+				}
 			}
 			if (!conformation.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on Conformation ("+conformation+")");

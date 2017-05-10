@@ -287,6 +287,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 						//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]\")", "120000");
 						waitForElementPresentWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'" + emailsubject + "')]",emailsubject);
 						clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]");
+						Thread.sleep(10000);
 						waitForPageToLoadWebdriver();
 						// selenium.click("//*[@class='bld']/a[text()='"+emailSub+"']");
 						waitForPageToLoadWebdriver();
@@ -325,6 +326,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 									if (isDisplayedWebdriver(attributeName_xpath, xpathForMailSubject)) {
 										//doubleClickWebdriver(attributeName_xpath, xpathForMailSubject);
 										clickWebdriver(attributeName_xpath, xpathForMailSubject);
+										Thread.sleep(5000);
 										//recentPopupSelectWebdriver("Open Email");
 										break;
 									} else {

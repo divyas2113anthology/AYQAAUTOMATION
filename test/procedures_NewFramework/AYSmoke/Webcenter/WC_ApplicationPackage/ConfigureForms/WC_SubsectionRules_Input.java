@@ -87,8 +87,8 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				 Thread.sleep(5000);
  				//clickWebdriver(attributeName_linktext, subsection);
  					*/
-				 waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SectionInput']",subsection);
-				 clickWebdriver(attributeName_xpath, "//input[@name='SectionInput']");
+				 waitForElementPresentWebdriver(attributeName_xpath, "//input[@name='SubSectionInput']",subsection);
+				 clickWebdriver(attributeName_xpath, "//input[@name='SubSectionInput']");
 				 Reporter.log("Step 2 - Perform the operation to click the Package as ["+subsection+"]");
        //		 waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='divTree']", "Package Page");
 				 String [] SplitPackage = subsection.split(";");

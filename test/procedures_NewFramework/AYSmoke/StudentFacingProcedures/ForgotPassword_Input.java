@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
@@ -28,6 +25,8 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 			if (!fppin.equals("")) {
 				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Enter PIN as ("+fppin+")");
+				Thread.sleep(10000);
+				recentPopupSelectWebdriver("Forgot Password");
 				sendKeys(attributeName_xpath, FRP_Pin,fppin);
 			}
 			if (!fpemaiaddress.equals("")) {

@@ -24,8 +24,8 @@ public class CRM_Welcome_Verify extends CommonSeleniumActions implements OR {
 				} else {
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]", "CRM");
 					clickWebdriver(attributeName_xpath, "//a[contains(@href,'CRM')]");
-					waitForElementPresentWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename);
-					verifyElementTextWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename, pagename);
+					//waitForElementPresentWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename);
+					//verifyElementTextWebdriver(attributeName_xpath, CNT_WelPageTitle, pagename, pagename);
 				}
 			}
 		} catch (Exception e) {

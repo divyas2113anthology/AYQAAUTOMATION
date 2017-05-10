@@ -321,30 +321,30 @@ public static final String FRP_Search = "//*[@id='ay-forgotSubmit']";
 //#**********************************************************#
 //# Personal Data Page - PD
 //#**********************************************************#
-public static final String PD_Suffix = "//select[@id='s24304']";
-public static final String PD_FirstGivenName = "//input[@id='q24297']";
-public static final String PD_Middlename = "//input[@id='q24298']";
-public static final String PD_Lastname = "//input[@id='q24299']";
-public static final String PD_Dateofbirth = "//input[@id='q24300']";
-public static final String PD_SSN = "//input[@id='q24301']";
-public static final String PD_ParentSSN = "//input[@id='q24302']"; 
-public static final String PD_Gender = "//select[@id='s24303']";
-public static final String PD_HomePhone = "//input[@id='q24305']";
-public static final String PD_CellPhone = "//input[@id='q24306']";
+public static final String PD_Suffix = "//select[@id='s35027']";
+public static final String PD_FirstGivenName = "//input[@id='q35020']";
+public static final String PD_Middlename = "//input[@id='q35021']";
+public static final String PD_Lastname = "//input[@id='q35022']";
+public static final String PD_Dateofbirth = "//input[@id='q35023']";
+public static final String PD_SSN = "//input[@id='q35024']";
+public static final String PD_ParentSSN = "//input[@id='q35025']";
+public static final String PD_Gender = "//select[@id='s35026']";
+public static final String PD_HomePhone = "//input[@id='q35028']";
+public static final String PD_CellPhone = "//input[@id='q35029']";
 public static final String PD_Fulltimestudent_Yes = "//input[@value='Y']";
 public static final String PD_Fulltimestudent_No = "//input[@value='N']";//
 public static final String PD_Extracurricularactivities = "//textarea[@id='q24308']"; 
-public static final String PD_Country = "//select[@id='s24309']";
-public static final String PD_Stateprovince = "//select[@id='s24310']";
+public static final String PD_Country = "//select[@id='s35032']";
+public static final String PD_Stateprovince = "//select[@id='s35033']";
 public static final String PD_GradeLevel = "//input[@id='rc24311_1']";
 public static final String PD_Essaywithoutattachment = "//textarea[@id='q24312']";
 public static final String PD_uploaddocument = "//img[@alt='Upload Attachment']";
 public static final String PD_Collegehousing = "//select[@id='s24314']";
 public static final String PD_SportsInterest = "//select[@id='s24315']";
 public static final String PD_Testscore = "//input[@id='q24316']";
-public static final String PD_AcademicInterest = "//select[@id='s24317']";
+public static final String PD_AcademicInterest = "//select[@id='s35040']";
 public static final String PD_SchoolCode = "//input[@id='q24318']";
-public static final String PD_Emailaddress = "//input[@id='q24319']";
+public static final String PD_Emailaddress = "//input[@id='q35042']";
 public static final String PD_PullQuestion = "//input[@id='q26168']";
 public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
@@ -539,7 +539,7 @@ public static final String DB_PageTitle = "css=#appListHeader";
 public static final String AW_StartAppBtn = "css=#StartApp";
 public static final String AW_AppInstBtn = "//a[contains(text(),'Application Instructions')]";
 //public static final String AW_SubAppBtn = "css=input.ay-Submit"; //div/div[2]/div[1]/input[@class='ay-Submit']
-public static final String AW_SubAppBtn = "//div/div[2]/div[1]/input[@class='ay-Submit']";
+public static final String AW_SubAppBtn = "//div[@class='span9']/div[1]/input";
 public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[contains(text(),'Family')]";
 public static final String AW_AutomationSectionLnk = "//font[contains(text(),'Automation Section')]";
@@ -554,6 +554,7 @@ public static final String AW_DownFormBtn = "//font[text()='Downloadable Forms']
 public static final String AW_CheckAppBtn = "//font[text()='Check Your Application']";
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
 public static final String AW_ConformationCheck = "css=#checkbox";
+public static final String AW_SectionClickByDynamicFont ="//font[text()='";
 public static final String AW_ContinueBtn = "css=#ay-recSubmit";
 public static final String AW_DomesticRadio = "//*[@id='AppFeeAmount1']";
 public static final String AW_InternationalRadio = "css=#AppFeeAmount2";

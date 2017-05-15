@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Imports;
 
+import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -36,7 +37,12 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 			if (!button.equals("")) {
 				Reporter.log("Step 3 - Click button as ["+button+"]");
 				if (button.equalsIgnoreCase("Add")) {
-					clickWebdriver(attributeName_xpath, MSR_AddBtn);
+					Thread.sleep(5000);
+					//driver.navigate().refresh();
+					//Thread.sleep(2000);
+					//waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, button);
+					driver.findElement(By.xpath("//form//table//tr[@class='FormHeading'][2]//a[contains(@href,'AddSubSectionRule')]")).click();
+					//clickWebdriver(attributeName_xpath, MSR_AddBtn);
 				}else if (button.equalsIgnoreCase("Delete")) {
 					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
 				}else if (button.equalsIgnoreCase("Copy")) {

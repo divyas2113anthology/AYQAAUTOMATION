@@ -1184,7 +1184,9 @@ public static final String ESR_Cancel = "//img[contains(@src,'cancel_small')]";
 //#**********************************************************#
 //# Webcenter Manage Section Rule Page - MSR
 //#**********************************************************#
-public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]";
+public static final String MSR_AddBtn = "html/body/form/table/tbody/tr[15]/td[2]/a[1]/img";   //td[a[img[@name='imageSave1']]]/following-sibling::td/a/img";
+  //  public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]" ;
+
 public static final String MSR_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
 public static final String MSR_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PS_HobsonsLogo = "//div[@id='masthead']";

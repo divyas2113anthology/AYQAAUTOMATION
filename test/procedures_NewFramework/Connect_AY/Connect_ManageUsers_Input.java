@@ -35,6 +35,7 @@ public class Connect_ManageUsers_Input  extends CommonSeleniumActions implements
 				{
 						Reporter.log("Step 2 - Click on ["+searchclear+"]");
 						clickWebdriver(attributeName_xpath, MML_Search);
+					Thread.sleep(10000);
 						waitForPageToLoadWebdriver();
 				}
 			}

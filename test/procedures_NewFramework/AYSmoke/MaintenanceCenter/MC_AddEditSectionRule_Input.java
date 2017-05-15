@@ -48,7 +48,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 					Thread.sleep(5000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
-					
+
 				}else{
 					System.out.println(SplitPackage[i]);
 					//PackageSelection(SplitPackage[i], "1");
@@ -56,7 +56,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 					Thread.sleep(5000);
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
-					
+
 				}
 			}
 			//ClosePackageSelection();
@@ -82,7 +82,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			//selectByValueWebdriver(attributeName_xpath,ESR_Field, field);
 			//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath, ESR_Field, field);
 			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
-			
+
 //			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);
 		}
 		if (!operator.equals("")) {
@@ -92,7 +92,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
 			//waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueText, value);
+			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueText, value));
 				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
 				sendKeys(attributeName_xpath, ESR_ValueText, value);
 			}else{

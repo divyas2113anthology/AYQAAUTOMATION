@@ -42,7 +42,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			String pdaptnumber = fpdatarepo[24];
 			String pdemailrecommended = fpdatarepo[25];
 			String pisubmitappbtn = fpdatarepo[26];
-			String pdsave = fpdatarepo[27];
+			String button_to_click = fpdatarepo[27];
 			String pverifyErrormessage = fpdatarepo[28];
 			Reporter.log("Retrieved Test Data in Personal Data input");
 			/*if (!pdsufix.equals("")) {
@@ -217,19 +217,19 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				sendKeys(attributeName_xpath,Emailrecommendedpd,pdemailrecommended);
 			}
 			
-			if (!pdsave.equals("")) {
-				Reporter.log("Step 27 - Click on ("+pdsave+")Button");
-				if(pdsave.equalsIgnoreCase("Save")){
-					waitForElementPresentWebdriverWait(attributeName_xpath, PSD_Save, pdsave);
+			if (!button_to_click.equals("")) {
+				Reporter.log("Step 27 - Click on ("+button_to_click+")Button");
+				if(button_to_click.equalsIgnoreCase("Save")){
+					waitForElementPresentWebdriverWait(attributeName_xpath, PSD_Save, button_to_click);
 //					actionsClickWebdriver(attributeName_xpath, PSD_Save);
 					//clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
 					clickWebdriver(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
 				
-				}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
+				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);
 					waitForPageToLoadWebdriver();
-				}else if (pdsave.equalsIgnoreCase("Reset")) {
+				}else if (button_to_click.equalsIgnoreCase("Reset")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Reset);
 				}
 			}

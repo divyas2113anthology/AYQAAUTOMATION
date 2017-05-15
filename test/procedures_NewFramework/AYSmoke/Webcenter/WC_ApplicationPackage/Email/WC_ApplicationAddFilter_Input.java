@@ -1,12 +1,9 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Email;
 
 
-import jdk.nashorn.internal.runtime.ECMAException;
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions implements OR {
@@ -24,9 +21,10 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			String field = testdata[2];
 			String operator = testdata[3];
 			String value = testdata[4];
-			String adddeleterow = testdata[5];
-			String verifyvalue = testdata[6];
-			String savecancel = testdata[7];
+			String sectionvalue = testdata[5];
+			String adddeleterow = testdata[6];
+			String verifyvalue = testdata[7];
+			String savecancel = testdata[8];
 			//recentPopupSelect_without_window_nameWebdriver();
 			if(!filtername.equals("")){
 				Reporter.log("Enter the Filter Nmae as("+filtername+")");
@@ -86,6 +84,11 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					checkWebdriver(attributeName_xpath, MCL_CheckValue + value + "']");
 					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				}*/
+			}
+			if (!sectionvalue.equals("")) {
+				Reporter.log("Select (" + sectionvalue + ")");
+				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
+				sendKeys(attributeName_xpath, ESR_ValueText, sectionvalue);
 			}
 			if(!verifyvalue.equals("")){
 				if(verifyvalue.equalsIgnoreCase("TestingEnrollmentStatus")) {

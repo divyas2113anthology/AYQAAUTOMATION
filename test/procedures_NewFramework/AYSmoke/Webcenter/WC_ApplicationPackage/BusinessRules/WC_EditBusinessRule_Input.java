@@ -41,6 +41,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			String verifygreystatus = fpvdatarepo[19];
 			String verifystatus = fpvdatarepo[20];
 			String filtername = fpvdatarepo[21];
+			String ClickLogoutButton = fpvdatarepo[22];
+
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!rulename.equals("")) {
 				Reporter.log("Step 1 - Type Rule Name as ("+rulename+")");
@@ -162,7 +164,12 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 					//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 					//verifyElementContainsTextWebdriver(attributeName_xpath, BR_StatusGrey+verifygreystatus+"')]", verifygreystatus, verifygreystatus);
 				}
-			
+			if(!ClickLogoutButton.equals(""))
+			{
+				Reporter.log(" Click the Name of the Link as ["+ClickLogoutButton+"]");
+				clickWebdriver(attributeName_xpath, WClogoutLink);
+
+			}
 			if (!verifystatus.equals("")) {
 				Reporter.log("Verify the status is present or not");
 				clickWebdriver(attributeName_xpath, BR_TargetStatus);

@@ -126,6 +126,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				        String AlertText = alert.getText();
 				        System.out.println(AlertText);
 				        alert.accept();
+
 				    } catch (Exception e) {
 				        System.out.println("no alert");
 				    }

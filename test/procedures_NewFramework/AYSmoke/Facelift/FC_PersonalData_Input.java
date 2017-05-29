@@ -244,6 +244,11 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					if(isDisplayedWebdriver(attributeName_xpath,AW_SystemMessage)){
 						Reporter.log("Step 28 - Verify System error message for mandatory fields successfully");
 					}
+					else if(pverifyErrormessage.equalsIgnoreCase("validation")){
+
+						isDisplayedWebdriver(attributeName_xpath,"//p/a[text()='Company']");
+						Reporter.log("Step 28 - Verify System Validation message for mandatory fields successfully");
+					}
 					else{
 						writeFailure("Couldn't verify the System error message for mandatory fields");
 					}

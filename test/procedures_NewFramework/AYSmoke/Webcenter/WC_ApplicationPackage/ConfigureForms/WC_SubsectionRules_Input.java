@@ -24,7 +24,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			String plusMinus=testData[8];
 			String button=testData[9];
 						
-			switchToFrameNameIdWebdriver("frmContent");
+			//switchToFrameNameIdWebdriver("frmContent");
 											
 			if(!button.equalsIgnoreCase(""))
 			{
@@ -95,6 +95,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				 System.out.println("Length : "+SplitPackage.length);
 				 System.out.println("Package1"+SplitPackage[0]);
 				 System.out.println("Package1"+SplitPackage[1]);
+				 System.out.println("Package1"+SplitPackage[2]);
 				 for (int i = 0; i < SplitPackage.length; i++) {
 					 writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					 if (i== SplitPackage.length-1) {

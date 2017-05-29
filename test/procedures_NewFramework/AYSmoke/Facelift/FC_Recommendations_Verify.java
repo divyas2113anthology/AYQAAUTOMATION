@@ -52,6 +52,10 @@ public class FC_Recommendations_Verify extends CommonSeleniumActions implements 
 					Reporter.log("Step 4 - Verify the RS-DSub-question not present");
 					verifyElementNotPresent("//a[text()='RS-DSub-question']","RS-DSub-question");
 				}
+				else if(VerifyQuestion.equals("RS-DSub-Required question not present")){
+					Reporter.log("Step 4 - Verify the RS-DSub-Required question not present");
+					verifyElementNotPresent("//a[text()='RS-DSub-Required question']","RS-DSub-Required question");
+				}
 					else {
 					Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") element present");
 					verifyElementPresent("//a[text()='"+VerifyQuestion+"']",VerifyQuestion);

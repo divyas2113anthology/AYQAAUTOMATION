@@ -45,8 +45,9 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 				if (i== SplitPackage.length-1) {
 					waitForPageToLoadWebdriver();
-					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
+					waitForPageToLoadWebdriver();
 
 				}else{
 					System.out.println(SplitPackage[i]);

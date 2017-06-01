@@ -45,7 +45,8 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 				if (i== SplitPackage.length-1) {
 					waitForPageToLoadWebdriver();
-					waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
+					Thread.sleep(5000);
+					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']");
 					waitForPageToLoadWebdriver();
 
@@ -55,6 +56,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+SplitPackage[i]+"']", SplitPackage[i]);
 					clickWebdriver(attributeName_xpath, "//span[text()='"+SplitPackage[i]+"']");
+					waitForPageToLoadWebdriver();
 
 				}
 			}

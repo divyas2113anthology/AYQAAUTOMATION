@@ -24,8 +24,18 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			String copy = fpvdatarepo[2];
 			String movetofolder = fpvdatarepo[3];
 			String rulename = fpvdatarepo[4];
+			String Checkbox = fpvdatarepo[5];
+			//String Linkname = fpvdatarepo[6];
+
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
-			
+
+			if(!Checkbox.equals(""))
+			{
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
+				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox);
+			}
+
+
 			if (!add.equals("")) {
 				Reporter.log("Click on the add button");
 				clickWebdriver(attributeName_xpath, BR_Save);
@@ -34,8 +44,12 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 				
 			}
 			if (!delete.equals("")) {
-				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				
+				Reporter.log("Proceed to click the delete button ");
+				clickWebdriver(attributeName_xpath, MSR_DeleteBtn);
+				String RuleDeleteAlertMsg = alertMessage();
+				Reporter.log("Delete Rule Alert Message : "+RuleDeleteAlertMsg);
+				alertAccept();
+				waitForPageToLoadWebdriver();
 			}
 			
 			

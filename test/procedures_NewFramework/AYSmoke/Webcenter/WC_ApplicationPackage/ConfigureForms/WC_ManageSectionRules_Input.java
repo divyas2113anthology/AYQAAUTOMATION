@@ -19,6 +19,19 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 			String Linkname = testdata[2];
 			String showhide = testdata[3];
 			switchToFrameNameIdWebdriver("frmContent");
+
+			if(!Checkbox.equals(""))
+			{
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
+				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox);
+			}
+			if(!Linkname.equals(""))
+			{
+
+			}
+			if(!showhide.equals("")) {
+			}
+
 			if(!Button_addprintdelete.equals(""))
 			{
 				/*waitForElementPresentWebdriver(attributeName_xpath, MCG_Package+Button_addprintdelete+"']", Button_addprintdelete);

@@ -45,10 +45,13 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 //				}
 //				else{
 				//clickWebdriver(attributeName_xpath, MQ_FieldName);
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
+				//waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
+
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName_New, fieldname);
 				//clickWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]");
 				//selectByVisibleTextWithSpaceWebdriver(attributename, attributevalue, text);
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName, fieldname);				
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName_New, fieldname);
 				waitForPageToLoadWebdriver();
 //				Select sel = new Select(driver.findElement(By.xpath("//select[@name='txtField0']")));
 //				sel.selectByVisibleText("--Payment Status");

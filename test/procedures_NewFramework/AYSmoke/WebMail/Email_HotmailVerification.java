@@ -64,6 +64,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step 4 - Click Log-In Button");
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, HM_WSignIn);
+				Thread.sleep(8000);
 				waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
 				waitForPageToLoadWebdriver();
 			}

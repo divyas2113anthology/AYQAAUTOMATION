@@ -1284,7 +1284,7 @@ public static final String TOU_Continue = "//img[@alt='Continue']";
 public static final String GS_NextBtn = "//img[@alt='next']";
 public static final String CP_Goback = "//img[@alt='Bo Back']";
 public static final String CP_Update = "//input[@alt='update']";
-public static final String CP_LinkToForgotPassword = "//font[contains(text(),'Forgot')]";
+public static final String CP_LinkToForgotPassword = "//a[contains(text(),'Forgot')]";
 public static final String CP_EnterPersonalCode ="//input[@id='PACID']";
 public static final String CP_Search = "//input[@alt='search']";
 public static final String CP_Continue = "//img[@alt='Continue']";
@@ -1719,8 +1719,9 @@ public static final String QA_PaymentStatus = "//select[@name='paymentstatus']";
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
 public static final String MQ_AppQueryName = "//select[@name='selQuery']";
-public static final String MQ_FieldName = "//select[@name='txtField0']";   
-public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
+public static final String MQ_FieldName = "//select[@name='txtField0']";
+ public static final String MQ_FieldName_New = "//button[contains(@class,'multiselect dropdown-toggle')]";
+    public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
 public static final String MQ_AppInProgress = "//input[@name='SubmittedApps' and @value='No']";
 //public static final String MQ_QuerySave = "//tr[@class='FormHeading']//td/input[@name='topsavebutton']";
 public static final String MQ_QuerySave = "//tr[@class='FormHeading']//img[contains(@name,'topsave')]";

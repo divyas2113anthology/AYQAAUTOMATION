@@ -20,21 +20,15 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Proceed to retrieve Verify Test Data 'Configure Business Rules' page");
 			String[]  fpvdatarepo = datacontainer;
 			String add = fpvdatarepo[0];
-			String delete = fpvdatarepo[1];
-			String copy = fpvdatarepo[2];
+			String Checkbox = fpvdatarepo[1];
+			String delete = fpvdatarepo[2];
 			String movetofolder = fpvdatarepo[3];
-			String rulename = fpvdatarepo[4];
-			String Checkbox = fpvdatarepo[5];
+			String copy = fpvdatarepo[4];
+			String rulename = fpvdatarepo[5];
+
 			//String Linkname = fpvdatarepo[6];
 
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
-
-			if(!Checkbox.equals(""))
-			{
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
-				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox);
-			}
-
 
 			if (!add.equals("")) {
 				Reporter.log("Click on the add button");
@@ -42,6 +36,11 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 
 				Thread.sleep(10000);
 				
+			}
+			if(!Checkbox.equals(""))
+			{
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox, Checkbox);
+				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox);
 			}
 			if (!delete.equals("")) {
 				Reporter.log("Proceed to click the delete button ");
@@ -51,8 +50,8 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 				alertAccept();
 				waitForPageToLoadWebdriver();
 			}
-			
-			
+
+
 			if (!copy.equals("")) {
 				//Reporter.log("Step 2 - Verify UI having the Message("+verifyui+")");
 					
@@ -66,6 +65,7 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 				clickWebdriver(attributeName_xpath, BR_RuleName+rulename+"')]");
 					
 			}
+
 			
 			
 		} catch (Exception e) {

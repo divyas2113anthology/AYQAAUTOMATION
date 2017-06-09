@@ -22,7 +22,7 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 
 			if(!Checkbox.equals(""))
 			{
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox, Checkbox);
 				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox);
 			}
 			if(!Linkname.equals(""))
@@ -50,11 +50,6 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 				}
 
 
-			}
-			if(!Checkbox.equals(""))
-			{
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox, Checkbox);
-				clickWebdriver(attributeName_xpath, SR_RuleName+"')]]"+SR_CheckBox);
 			}
 			if(!Linkname.equals(""))
 			{

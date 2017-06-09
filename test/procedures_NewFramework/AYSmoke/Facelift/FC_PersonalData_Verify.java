@@ -22,6 +22,7 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 			String pagename = fpvdatarepo[1];
 			String successmessage = fpvdatarepo[2];
 			String errormessage = fpvdatarepo[3];
+			String VerifyQuestion=fpvdatarepo[4];
 			Reporter.log("Verify Test Data was retrieved for 'Personal Data' page");
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 1 - Verify UI was displayed correctly");
@@ -47,6 +48,12 @@ public class FC_PersonalData_Verify extends CommonSeleniumActions implements OR 
 				for (int i = 0; i < errormessage1.length; i++) {
 					verifyElementContainsTextWebdriver(attributeName_xpath, PSD_ErrorMsg, errormessage1[i], "System Message:");
 				}
+			}
+			if(!VerifyQuestion.equals("")){
+
+					Reporter.log("Step 4 - Verify the ("+VerifyQuestion+") element present");
+					verifyElementPresent("//div[text()='"+VerifyQuestion+"']",VerifyQuestion);
+
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

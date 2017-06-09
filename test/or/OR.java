@@ -553,6 +553,7 @@ public static final String AW_RecommendationBtn = "//font[contains(text(),'Recom
 public static final String AW_DownFormBtn = "//font[text()='Downloadable Forms']";
 public static final String AW_CheckAppBtn = "//font[text()='Check Your Application']";
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
+public static final String AW_AppRegularSection = "//font[text()='RegularSection']";
 public static final String AW_ConformationCheck = "css=#checkbox";
 public static final String AW_SectionClickByDynamicFont ="//font[text()='";
 public static final String AW_ContinueBtn = "css=#ay-recSubmit";
@@ -2100,6 +2101,7 @@ public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="//td[a[contains(text(),'";
 public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
+public static final String SR_BRCheckBox="/preceding-sibling::td[input[@type='CheckBox']]";
 
 
 

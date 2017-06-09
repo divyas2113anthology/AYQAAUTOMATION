@@ -133,6 +133,8 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			if(!checkbox.equalsIgnoreCase(""))
 			{
 			    Reporter.log("Select Check Box next to Rule");
+
+				switchToFrameNameIdWebdriver("frmContent");
 			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox,checkbox);
 			    clickWebdriver(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox);
 			  			    

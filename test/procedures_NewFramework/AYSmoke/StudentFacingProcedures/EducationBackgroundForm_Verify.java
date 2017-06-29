@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import org.openqa.selenium.By;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class EducationBackgroundForm_Verify extends CommonSeleniumActions implements OR {	
@@ -57,7 +55,8 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			}
 			if (!eduhighschoolname.equals("")) {
 				Reporter.log("Step 4 - Verify data("+eduhighschoolname+") was displayed correctly in the 'High School Name' Field");
-//				String hsnamewaitID = getElementIDbyLabel("High School Name", EB_HighSchoolName_wait);
+				String hsnamewaitID = getElementIDbyLabel("High School Name", EB_HighSchoolName_wait);
+				waitForElementPresentWebdriver(attributeName_xpath, hsnamewaitID, eduhighschoolname);
 //				waitForConditionisElementPresent(hsnamewaitID, "60000");
 	//			selenium.waitForCondition("selenium.isElementPresent(\"//input[@id='q24552' and @value!='']\")", "60000");
 				//String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
@@ -65,18 +64,22 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 				//String vhsname = getValueWebdriver(attributeName_xpath,hsnameID);
 
 				// Save the form before verify .
-				clickWebdriver(attributeName_xpath,"//img[contains(@src,'save_small')]");
+				//clickWebdriver(attributeName_xpath,"//img[contains(@src,'save_small')]");
 				try{
 					alertAccept();
 				}catch(Exception e){
 					System.out.println("No Alert");
 				}
-				String hsnameID =driver.findElement(By.xpath("//input[@id='q24552']")).getAttribute("value");
-				String vhsname = hsnameID;
-				if (vhsname.equals(eduhighschoolname)) {
-					Reporter.log("Data("+vhsname+") was displayed correctly in the [High School Name] Field");				
+				/*String hsnameID =driver.findElement(By.xpath("//input[@id='q24552']")).getAttribute("value");
+				String vhsname = hsnameID;*/
+
+				String line1 = getValueWebdriver(attributeName_xpath, "//input[@id='q24552']");
+
+
+				if (line1.equals(eduhighschoolname)) {
+					Reporter.log("Data("+line1+") was displayed correctly in the [High School Name] Field");
 				} else {
-					writeFailure("Data("+vhsname+") was not displayed correctly in the [High School Name] Field");
+					writeFailure("Data("+line1+") was not displayed correctly in the [High School Name] Field");
 				}
 			}
 			if (!eduhighschooltype.equals("")) {

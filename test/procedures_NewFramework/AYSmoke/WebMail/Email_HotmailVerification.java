@@ -57,8 +57,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step 3 - Enter Password");
                // clickWebdriver(attributeName_xpath,"//input[@value='Next']");
 				waitForPageToLoadWebdriver();
-				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, HM_WPassword, password);
+				waitForPageToLoadWebdriver();
 			}
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");

@@ -47,12 +47,12 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 				//clickWebdriver(attributeName_xpath, MQ_FieldName);
 				//waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
 
-				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName_New, fieldname);
+				/*waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName_New, fieldname);
 				//clickWebdriver(attributeName_xpath, "//select[@name='txtField0']//option[contains(text(),'Payment Status')]");
 				//selectByVisibleTextWithSpaceWebdriver(attributename, attributevalue, text);
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName, fieldname);
 				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, MQ_FieldName_New, fieldname);
-				waitForPageToLoadWebdriver();
+				waitForPageToLoadWebdriver();*/
 //				Select sel = new Select(driver.findElement(By.xpath("//select[@name='txtField0']")));
 //				sel.selectByVisibleText("--Payment Status");
 				
@@ -60,6 +60,12 @@ public class WC_AddInputCriteria_Input extends CommonSeleniumActions implements 
 //				JavascriptExecutor executor = (JavascriptExecutor)driver;
 //				executor.executeScript("arguments[0].click();", element);	
 				//}
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
+				sendKeys(attributeName_xpath,"//input[@placeholder='Search']",fieldname);
+				clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+fieldname+"')]");
+
+
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");

@@ -355,7 +355,7 @@ public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
-public static final String RC_RecProviderlist = "//*[text()='Recommendation Provider List']";
+public static final String RC_RecProviderlist = "//*[text()='Recommendation Provider List-DT']";
 //public static final String RC_RecProviderlist = "//a[contains(text(),'Recommendation Provider List')]";
 public static final String RC_Resend = "//a[contains(text(),'resend')]";
 public static final String RC_RecProvidername ="";
@@ -1076,6 +1076,7 @@ public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//font[contains(text(),'";
+public static final String AS_ViewDetailes = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
     public static final String AS_UnSubmit ="//td/a[contains(text(),'AM')]";
 public static final String AS_ViewApplication = "//span[text()='view application']";
@@ -1281,7 +1282,7 @@ public static final String RL_LoginBtn = "//input[@value='Login' or @alt='Login'
 public static final String RL_SubmitBtn = "//input[@alt='submit' or @alt='Login']";
 public static final String TOU_CheckUncheck = "//input[@id='chkAcceptEULA']";
 public static final String TOU_Continue = "//img[@alt='Continue']";
-public static final String GS_NextBtn = "//img[@alt='next']";
+public static final String GS_NextBtn = "//a[contains(text(),'Continue RecommendationsDT')]";
 public static final String CP_Goback = "//img[@alt='Bo Back']";
 public static final String CP_Update = "//input[@alt='update']";
 public static final String CP_LinkToForgotPassword = "//a[contains(text(),'Forgot')]";

@@ -92,10 +92,15 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
-			//waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueText, value));
-				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
-				sendKeys(attributeName_xpath, ESR_ValueText, value);
+			waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
+			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
+			waitForPageToLoadWebdriver();
+			clickWebdriver(attributeName_xpath, "//button[contains(@class,'ui-multiselect')]");
+			//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
+			clickWebdriver(attributeName_xpath, "//div[contains(@class,'multiselect-menu') and contains(@style, 'display: block')]//span[text()='"+value+"']/preceding-sibling::input");
+			clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+			//sendKeys(attributeName_xpath, ESR_ValueText, value);
+
 			}else{
 				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
 				waitForPageToLoadWebdriver();

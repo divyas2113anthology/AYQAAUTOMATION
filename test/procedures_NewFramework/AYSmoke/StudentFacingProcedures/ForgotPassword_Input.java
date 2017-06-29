@@ -25,9 +25,12 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 			if (!fppin.equals("")) {
 				waitForPageToLoadWebdriver();
 				Reporter.log("Step 1 - Enter PIN as ("+fppin+")");
-				Thread.sleep(10000);
-				recentPopupSelectWebdriver("Forgot Password");
+				waitForElementPresentWebdriverWait(attributeName_xpath, FRP_Pin, fppin);
+				waitForPageToLoadWebdriver();
+				//recentPopupSelectWebdriver("Forgot Password");
 				sendKeys(attributeName_xpath, FRP_Pin,fppin);
+
+
 			}
 			if (!fpemaiaddress.equals("")) {
 				waitForPageToLoadWebdriver();
@@ -43,6 +46,7 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath,FRP_Search, "Submit Button Present");
 					clickWebdriver(attributeName_xpath,FRP_Search);
+					Thread.sleep(8000);
 					waitForPageToLoadWebdriver();
 				}else if(fpsearch.equalsIgnoreCase("back")) {
 					waitForPageToLoadWebdriver();

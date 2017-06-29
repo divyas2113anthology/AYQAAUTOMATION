@@ -105,6 +105,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 					waitForElementPresentWebdriverWait(attributeName_name, FD_SaveBtn, click);
 					clickWebdriver(attributeName_name, FD_SaveBtn);
 					waitForPageToLoadWebdriver();
+					Thread.sleep(10000);
 				} else if (click.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, AE_ExportCancelBtn);
 					waitForPageToLoadWebdriver();

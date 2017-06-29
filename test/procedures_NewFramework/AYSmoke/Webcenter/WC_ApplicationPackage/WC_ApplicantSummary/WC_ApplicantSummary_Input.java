@@ -157,6 +157,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
 						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
 						recentPopupSelectWebdriver("Application Fee");
+
 					}
 				}
 				//recentPopupSelectWebdriver("Supporting Document");
@@ -226,8 +227,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			
 			}
 			if(!view.equals("")){
-				waitForElementPresentWebdriver(attributeName_xpath, AS_View+view+"')]", "View");
-				clickWebdriver(attributeName_xpath, AS_View+view+"')]");
+				waitForElementPresentWebdriver(attributeName_xpath, AS_ViewDetailes+view+"')]", "View");
+				clickWebdriver(attributeName_xpath, AS_ViewDetailes+view+"')]");
 				recentPopupSelectWebdriver("View");
 			}
 			if (!closewindow.equals("")){

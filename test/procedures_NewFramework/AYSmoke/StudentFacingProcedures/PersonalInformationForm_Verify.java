@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import org.openqa.selenium.By;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class PersonalInformationForm_Verify extends CommonSeleniumActions	implements OR {
@@ -58,6 +56,7 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			if (!pivaddressline1.equals("")) {
 				Reporter.log("Step 4 - Verify data("+pivaddressline1+") was displayed correctly in the 'Address Line1' Field");
 				String addrwaitID = getElementIDbyLabel("Address Line1", PI_AddressLine1_wait);
+				System.out.println("Label Id is :"  + addrwaitID);
 				waitForElementPresentWebdriver(attributeName_xpath, addrwaitID, pivaddressline1);
 				// Save the form before verify .
 				clickWebdriver(attributeName_xpath,"//img[contains(@src,'save_small')]");

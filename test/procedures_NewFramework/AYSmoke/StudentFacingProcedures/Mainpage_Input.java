@@ -1,10 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import org.openqa.selenium.By;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Mainpage_Input extends CommonSeleniumActions implements OR {
@@ -73,7 +71,7 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 				
 				if (link_to_click.equalsIgnoreCase("Logout") || link_to_click.equalsIgnoreCase("Log Out")) {
 					Reporter.log("Step 1 - Proceed to Click on ("+link_to_click+") Link");
-					clickWebdriver(attributeName_xpath,Logoutmain);
+					clickWebdriver(attributeName_xpath,Logoutmain+link_to_click+"']");
 					waitForPageToLoadWebdriver();
 				}
 				else

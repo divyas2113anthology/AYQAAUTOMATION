@@ -30,6 +30,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			if(!name.equalsIgnoreCase(""))
 				
 			{
+				switchToFrameNameIdWebdriver("frmContent");
 				Reporter.log("Enter Subsection name");
 				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriverWait(attributeName_xpath, SR_name, name);
@@ -143,7 +144,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 
 			if(!button.equalsIgnoreCase(""))
 			{
-
+				switchToFrameNameIdWebdriver("frmContent");
 				waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')]", button);
 				if (button.equalsIgnoreCase("add")) {
 					Reporter.log("Verify ADD");

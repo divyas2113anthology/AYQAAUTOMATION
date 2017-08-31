@@ -36,6 +36,7 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 				waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
 				clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
 				recentPopupSelectWebdriver("Recommendation");
+				waitForPageToLoadWebdriver();
 			}
 			if (!selectaction.equals("")) {
 				Reporter.log("Select an action as ["+selectaction+"]");

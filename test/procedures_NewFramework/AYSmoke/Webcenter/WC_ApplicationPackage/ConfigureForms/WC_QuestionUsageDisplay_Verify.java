@@ -24,8 +24,8 @@ public class WC_QuestionUsageDisplay_Verify extends CommonSeleniumActions implem
 			recentPopupSelectWebdriver("Question");
 			if (!pagename.equals("")) {
 				Reporter.log("Step 1 - Verify its navigate to ("+pagename+") page");
-				waitForElementPresentWebdriver(attributeName_xpath, PA_PageName, pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName, pagename, pagename);
+				waitForElementPresentWebdriver(attributeName_xpath, PA_PageName_1 + pagename + "')]", pagename);
+				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName_1 + pagename + "')]", pagename, pagename);
 			}
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 2 - Verify the Usage page");

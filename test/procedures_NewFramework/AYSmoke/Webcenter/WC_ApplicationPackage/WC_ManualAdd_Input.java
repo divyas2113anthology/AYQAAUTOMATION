@@ -1,16 +1,14 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage;
 
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import or.OR;
-
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import processor.CommonSeleniumActions;
 
 public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 	
@@ -58,12 +56,14 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		
 		if (!Email.equals("")) {
 			Reporter.log("Step 3 - Enter 'Email Address' as ("+Email+")");
+			waitForPageToLoadWebdriver();
 			sendKeys(attributeName_xpath, Email_Manual, Email);
 			//type(Email_Manual, Email);
 		}
 		
 		if (!ConfirmEmail.equals("")) {			
-			Reporter.log("Step 4 - Enter 'Confirm Email Address' as ("+ConfirmEmail+")");	
+			Reporter.log("Step 4 - Enter 'Confirm Email Address' as ("+ConfirmEmail+")");
+			waitForPageToLoadWebdriver();
 			sendKeys(attributeName_xpath, ConfirmEmail_Manual, ConfirmEmail);
 			//type(ConfirmEmail_Manual, ConfirmEmail);
 		}	

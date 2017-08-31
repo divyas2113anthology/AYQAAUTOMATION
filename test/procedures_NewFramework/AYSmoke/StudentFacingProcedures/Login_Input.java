@@ -1,11 +1,8 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class Login_Input extends CommonSeleniumActions implements OR {
@@ -46,7 +43,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		}
 		
 		if (!password.equals("")) {
-			try {
+			/*try {
 				Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 				String generatepassword = Runtimedataread(password);
 				Reporter.log("Proceed to Enter PIN as (" + generatepassword + ")");
@@ -54,8 +51,18 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			}catch(Exception e){
 				Reporter.log("Proceed to Enter PIN as ("+ password +")");
 				sendKeys(attributeName_xpath, PasswordField, password);
+			}*/
+			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			if (password.equals("Password") || password.equals("ApplicationPassword")) {
+				String generatepassword = Runtimedataread(password);
+				Reporter.log("Proceed to Enter PIN as (" + generatepassword + ")");
+				sendKeys(attributeName_xpath, PasswordField, generatepassword);
+			} else {
+				Reporter.log("Proceed to Enter PIN as (" + password + ")");
+				sendKeys(attributeName_xpath, PasswordField, password);
+
+
 			}
-			
 		}
 		if (!login.equals("")) {
 			Reporter.log("Step 3 - Click on 'Login' Button");
@@ -77,8 +84,8 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 			}else{
 					clickWebdriver(attributeName_xpath,ForgotPINPassword);
      				//After clicking forgot password link ,the popup loading time is inonsistent.
-			    	Thread.sleep(1000);
-					waitForElementPresentWebdriver(attributeName_xpath,"//p[@id='PMobInfo']","Fprgot Password Wait For Popup");
+			    	Thread.sleep(10000);
+					waitForElementPresentWebdriver(attributeName_xpath,"//p[@id='PMobInfo']","Forgot Password Wait For Popup");
 					waitForPageToLoadWebdriver();
 			} 
 //				}else if (environment.equals("USPR")) {

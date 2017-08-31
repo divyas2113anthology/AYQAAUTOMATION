@@ -24,6 +24,7 @@ public class WC_AddEditEvent_Verify extends CommonSeleniumActions implements OR 
 			Reporter.log("Verify Test Data was retrieved for 'Add/Edit Event' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, AEV_SuccessMsg, successmessage);
 				verifyElementContainsTextWebdriver(attributeName_xpath, AEV_SuccessMsg, successmessage, "Success Message");
 			}

@@ -1,20 +1,17 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_EventPackage.InviteEvent;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
+import or.OR;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import processor.CommonSeleniumActions;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Set;
 
-import org.testng.Reporter;
-import org.testng.annotations.Test;
-
-import or.OR;
-import org.testng.util.Strings;
-import processor.CommonSeleniumActions;
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some Operation on 'Add/Edit Event' Page")
@@ -186,6 +183,7 @@ public class WC_AddEditEvent_Input  extends CommonSeleniumActions implements OR 
 				}else if (button.equalsIgnoreCase("publish to prod")) {
 					waitForElementPresentWebdriverWait(attributeName_xpath, AEE_PubToProd, button);
 					clickWebdriver(attributeName_xpath, AEE_PubToProd);
+					Thread.sleep(5000);
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Close Window")) {
 					waitForElementPresentWebdriver(attributeName_xpath, AEE_CloseWindow, button);

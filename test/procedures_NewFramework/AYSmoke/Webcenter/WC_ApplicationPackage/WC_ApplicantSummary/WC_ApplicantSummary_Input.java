@@ -34,7 +34,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String UnsubmitApplicant = testdata[16];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
-			AppSummaryWindowName = driver.getWindowHandle();
+			//AppSummaryWindowName = driver.getWindowHandle();
 			//driver.navigate().refresh();
 			//waitForPageToLoadWebdriver();
 			if (!subscribed.equals("")) {
@@ -155,8 +155,10 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 
 						Thread.sleep(5000);
 						clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
+						waitForPageToLoadWebdriver();
 						//clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']");
 						recentPopupSelectWebdriver("Application Fee");
+
 
 					}
 				}

@@ -17,7 +17,8 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		String field = testdata[3];
 		String operator = testdata[4];
 		String value = testdata[5];
-		String button = testdata[6];
+		String valueType = testdata[6];
+		String button = testdata[7];
 		Reporter.log("Check user clicked on application package in Maintenance center");
 		if (!name.equals("")) {
 			Reporter.log("Step 1 - Enter the Section Name as ["+name+"]");
@@ -93,7 +94,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
 			waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
+			//if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
 			waitForPageToLoadWebdriver();
 			clickWebdriver(attributeName_xpath, "//button[contains(@class,'ui-multiselect')]");
 			//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
@@ -101,14 +102,19 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 			//sendKeys(attributeName_xpath, ESR_ValueText, value);
 
-			}else{
+			}/*else{
 				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, MC_SR_Values+value+"')]");
-			}
+			}*/
+
+		if (!valueType.equals("")) {
+			Reporter.log("Step 7 - Enter the value  as ["+valueType+"]");
+			sendKeys(attributeName_xpath, ESR_ValueText, valueType);
+		}
 
 		if (!button.equals("")) {
-			Reporter.log("Step 7 - Click the name of the button as ["+button+"]");
+			Reporter.log("Step 8 - Click the name of the button as ["+button+"]");
 			if (button.equalsIgnoreCase("Save")) {
 				waitForElementPresentWebdriver(attributeName_xpath, ESR_Save, button);
 				clickWebdriver(attributeName_xpath, ESR_Save);

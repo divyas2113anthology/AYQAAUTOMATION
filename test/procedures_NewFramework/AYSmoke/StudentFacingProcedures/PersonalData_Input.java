@@ -1,15 +1,11 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
-import java.util.Calendar;
-
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import java.util.Calendar;
 
 public class PersonalData_Input extends CommonSeleniumActions implements OR {
 	
@@ -196,6 +192,9 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Save")){
 				clickWebdriver(attributeName_xpath,PD_Save);
+				waitForPageToLoadWebdriver();
+			}else if (pdsave.equalsIgnoreCase("BridgeSave")) {
+				clickWebdriver(attributeName_xpath,Bridge_PD_Save);
 				waitForPageToLoadWebdriver();
 			}else if (pdsave.equalsIgnoreCase("Save & Continue")) {
 				clickWebdriver(attributeName_xpath,PD_SaveContinue);

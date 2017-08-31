@@ -67,7 +67,8 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		if (!checkbutton.equals("")) {
 			Reporter.log("Step 5 - Click the Check Button");
 			int currentpopupcount = getWindowHandles();
-			clickWebdriver(attributeName_xpath, "//input[@value='Check']");			
+			clickWebdriver(attributeName_xpath, "//input[@value='Check']");
+			waitForPageToLoadWebdriver();
 			recentMultiplePopupSelectWebdriver("Online Application", currentpopupcount);
 			
 		}
@@ -174,6 +175,8 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 			if(pdsave.equalsIgnoreCase("Submit")){
 				clickWebdriver(attributeName_xpath, QA_SubmitBtn);
 				waitForPageToLoadWebdriver();
+				Thread.sleep(5000);
+
 			}else if (pdsave.equalsIgnoreCase("Reset")) {
 				clickWebdriver(attributeName_xpath, QA_ResetBtn);
 			}

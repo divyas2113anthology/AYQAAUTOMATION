@@ -216,6 +216,8 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				String Emailrecommendedpd = getElementIDbyLabel("EmailRecommended",PSD_EmailRecommended);
 				sendKeys(attributeName_xpath,Emailrecommendedpd,pdemailrecommended);
 			}
+
+
 			
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 27 - Click on ("+button_to_click+")Button");
@@ -234,8 +236,10 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 				}
 			}
 				if (!pisubmitappbtn.equals("")) {
+					System.out.println("BBBBBBBBBBBBBB");
 					Reporter.log("Step 26 - Click on ("+pisubmitappbtn+")Button");
 					if (pisubmitappbtn.equalsIgnoreCase("Submit Applicant")) {
+						System.out.println("AAAAAAAAAAAAAAAAAAA");
 						clickWebdriver(attributeName_xpath, AW_SubAppBtn);
 					}
 				}

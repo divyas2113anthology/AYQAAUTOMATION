@@ -6,6 +6,11 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MC_AddManageUser_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Add Manage User' page")
@@ -30,19 +35,22 @@ public class MC_AddManageUser_Input extends CommonSeleniumActions implements OR 
 			String privilegesname = testdata[13];
 						
 			Reporter.log("Input Test Data was retrieved for 'Add Manage User' Page");
+			Date date = new Date();
+			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+			String useridMC = userid+dateFormat.format(date)+ Calendar.getInstance().getTimeInMillis();
 			if (!userid.equals("")) {
-				Reporter.log("Enter the user id as ["+userid+"]");
-				sendKeys(attributeName_xpath, MS_userid, userid);
+				Reporter.log("Enter the user id as ["+useridMC+"]");
+				sendKeys(attributeName_xpath, MS_userid, useridMC);
 			}
-			
+			String firstnameMC = userid+dateFormat.format(date)+ Calendar.getInstance().getTimeInMillis();
 			if (!firstname.equals("")) {
-				Reporter.log("Enter the First Name as ["+firstname+"]");
-				sendKeys(attributeName_xpath, MS_firstname, firstname);
+				Reporter.log("Enter the First Name as ["+firstnameMC+"]");
+				sendKeys(attributeName_xpath, MS_firstname, firstnameMC);
 			}
-			
+			String lastnameMC = userid+dateFormat.format(date)+ Calendar.getInstance().getTimeInMillis();
 			if (!lastname.equals("")) {
-				Reporter.log("Enter the Last Name as ["+lastname+"]");
-				sendKeys(attributeName_xpath, MS_lastname, lastname);
+				Reporter.log("Enter the Last Name as ["+lastnameMC+"]");
+				sendKeys(attributeName_xpath, MS_lastname, lastnameMC);
 			}
 
 			if (!title.equals("")) {

@@ -1,11 +1,8 @@
 package procedures_NewFramework.Connect_AY;
 
 import or.OR;
-
-import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
 
 public class Connect_EditUserProfile_Input extends CommonSeleniumActions implements OR {
@@ -19,8 +16,10 @@ public class Connect_EditUserProfile_Input extends CommonSeleniumActions impleme
 			String firstname = testdata[0];
 			String lastname = testdata[1];
 			String emailid = testdata[2];
-			String savecancel = testdata[3];
-			String application = testdata[4];
+			String pass = testdata[3];
+			String confirmpass = testdata[4];
+			String savecancel = testdata[5];
+			String application = testdata[6];
 			
 			
 			Reporter.log("Input Test Data was retrieved for 'Edit User Profile' Page");
@@ -32,9 +31,25 @@ public class Connect_EditUserProfile_Input extends CommonSeleniumActions impleme
 				waitForPageToLoadWebdriver();
 				
 			}
+			if (!pass.equals("")) {
+
+				Reporter.log("Step 2 - Enter New password as ["+lastname+"]");
+				sendKeys(attributeName_xpath,CEUP_NewPass,pass);
+
+
+			}
+			if (!confirmpass.equals("")) {
+
+				Reporter.log("Step 3 - Enter the confirm password as ["+lastname+"]");
+				sendKeys(attributeName_xpath,CEUP_ConfirmPass,confirmpass);
+
+
+			}
+
+
 			if (!savecancel.equals("")) {
 				
-					Reporter.log("Step 2 - Click on Save or Cancel");
+					Reporter.log("Step 4 - Click on Save or Cancel");
 				
 				if (savecancel.equalsIgnoreCase("save")) {
 					clickWebdriver(attributeName_xpath, CEUP_Save);

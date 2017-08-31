@@ -272,6 +272,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 //							clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");
 
 							clickWebdriver(attributeName_xpath,"//span[text()='Folders ']");
+							waitForPageToLoadWebdriver();
 
 							clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
 							waitForPageToLoadWebdriver();
@@ -280,7 +281,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
 							waitForPageToLoadWebdriver();
 							try {
-								//if (selenium.isVisible("//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
+								//if (selenium.isVisible("//div[@cl
+								// ass='conductorContent']//span[contains(text(),'"+emailsubject+"')]")) break; } catch (Exception e) {}
 								if(isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//span[contains(text(),'"+emailsubject+"')]"))break; } catch (Exception e) {}
 								waitForPageToLoadWebdriver();
 						}
@@ -342,6 +344,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 								waitForPageToLoadWebdriver();
 							}
 							waitForPageToLoadWebdriver();
+							Thread.sleep(6000);
 							waitForElementPresentWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']","EMT");
 							if(isDisplayedWebdriver(attributeName_xpath,"//div[@id='ItemHeader.ToContainer']")){
 								break;
@@ -499,8 +502,8 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 					//waitForElementPresentWebdriver(attributeName_xpath, "//button[contains(@id,'MainLink_Help')]", "EMT QA Account");
 //					clickWebdriver(attributeName_xpath, "//a[@id='lo']");
 					//clickWebdriver(attributeName_xpath, "//button[@aria-label='EMT QA Account']");
-					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'EMT QA Account')]");
-					clickWebdriver(attributeName_xpath, "//span[@aria-label='Sign out']");
+					clickWebdriver(attributeName_xpath, "//button[contains(@aria-label,'sign out')]");
+					clickWebdriver(attributeName_xpath, "//span[text()='Sign out']");
 					//clickWebdriver(attributeName_xpath, "//div[@class='headerMenuDropShadow contextMenuPopup removeFocusOutline']//div[@role='menu']//span[@aria-label='Sign out']");
 					//waitForPageToLoadWebdriver();
 					waitForPageToLoadWebdriver();

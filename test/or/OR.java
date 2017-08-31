@@ -145,7 +145,7 @@ public static final String BR_AppliesToQuestion = "QuestionId";
 public static final String BR_EventType = "EventTypeId";
 //public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
 public static final String BR_TargetDocument = "SuppDocID";
-public static final String BR_TargetStatus = "//select[@name='DocStatusID']";//TestStatusID']";
+public static final String BR_TargetStatus = "//select[@name='TestStatusID']";//TestStatusID']";
 //public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetTestScore = "TestScoreID";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";
@@ -228,7 +228,7 @@ public static final String EB_DateofEntry = "//input[@id='q24561']";
 public static final String EB_DateofGraduation = "//input[@id='q24562']";
 public static final String EB_GPA = "//input[@id='q24563']";
 public static final String EB_Save = "//img[@alt='Save']";
-public static final String EB_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
+public static final String EB_SaveBottom = "//a[text()='Save']";//xpath=(//img[@alt='Save'])[2]";
 public static final String EB_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String EB_Reset = "//img[@alt='Reset']";
 public static final String EB_Lookup = "//input[contains(@value,'Look up')]";
@@ -349,7 +349,8 @@ public static final String PD_PullQuestion = "//input[@id='q26168']";
 public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
-public static final String PD_Save = "//table//tr[1]/td//a/img[@alt='Save']";
+public static final String PD_Save ="//a[text()='Save']"; //table//tr[1]/td//a/img[@alt='Save']";
+public static final String Bridge_PD_Save ="//img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
@@ -382,7 +383,7 @@ public static final String RC_submitletterrecommend_No = "//input[@name='online'
 //#public static final String RC_waiveright= "//input[@id='rbY1']";
 //#public static final String RC_submitletterrecommend = "//input[@id='rbY2']"; 
 public static final String RC_Notificationemail= "//textarea[@id='Textarea1']";
-public static final String RC_Save = "//img[@alt='save']";
+public static final String RC_Save ="//input[@value='Add Provider']";// "//img[@alt='save']";
 //#**********************************************************#
 //#Webcenter Login - WCL
 //#*********************************************************#
@@ -553,7 +554,7 @@ public static final String AW_RecommendationBtn = "//font[contains(text(),'Recom
 public static final String AW_DownFormBtn = "//font[text()='Downloadable Forms']";
 public static final String AW_CheckAppBtn = "//font[text()='Check Your Application']";
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
-public static final String AW_AppRegularSection = "//font[text()='RegularSection']";
+public static final String AW_AppRegularSection = "//font[normalize-space(text())='RegularSection']";
 public static final String AW_ConformationCheck = "css=#checkbox";
 public static final String AW_SectionClickByDynamicFont ="//font[text()='";
 public static final String AW_ContinueBtn = "css=#ay-recSubmit";
@@ -603,7 +604,7 @@ public static final String PSD_Emailaddress = "//input[@id='q24319']";
 public static final String PSD_Aptnumber = "//input[@id='q24395']";
 public static final String PSD_EmailRecommended = "//input[@id='q24433']";
 //public static final String PSD_Save = "//img[@alt='Save']";
-public static final String PSD_Save = "//table/tbody/tr[8]/td/a[1]/img[@alt='Save']";
+public static final String PSD_Save = "//table/tbody/tr[8]/td/a[text()='Save']";;
 public static final String PSD_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
 public static final String PSD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PSD_Reset = "//img[@alt='Reset']";
@@ -611,7 +612,8 @@ public static final String PSD_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Facelift Personal Data Verify
 //#**********************************************************#
-public static final String PSD_SuccessMsg = "//table//tr//td/b[text()='Your answers were saved successfully to the database.']";
+//public static final String PSD_SuccessMsg = "//table//tr//td/b[text()='Your answers were saved successfully to the database.']";
+public static final String PSD_SuccessMsg = "//span[text()='Your answers were saved successfully to the database.']";
 public static final String PSD_PageName = "//font[contains(text(),'";
 public static final String PSD_PageName1 = "//div[@class='span9']//font";
 public static final String PSD_ErrorMsg = "//div[@class='span9']/div[@id='divErrors']";
@@ -664,8 +666,8 @@ public static final String PII_State = "//select[@id='s24507']";
 public static final String PII_Zip = "//input[@id='q24508']";
 public static final String PII_Country = "//select[@id='q24509']";
 public static final String PII_AddressLookupBtn = "//input[@value='Address Lookup']";
-public static final String PII_SaveContinue = "//img[@alt='Save and Continue']";
-public static final String PII_Save = "//img[@alt='Save']";
+public static final String PII_SaveContinue = "//a[text()='Save & Continue']";//img[@alt='Save and Continue']";
+public static final String PII_Save = "//a[text()='Save']";//img[@alt='Save']";
 public static final String PII_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
 public static final String PII_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
@@ -738,7 +740,7 @@ public static final String HC_Inbox = "//div[@role='group' and @aria-label='EMT 
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account']";//span[text()='EMT QA Account']
 //public static final String HC_Home = "//span[text()='EMT QA Account']";
 //public static final String HC_Home = "//button[@aria-label='EMT QA Account - Available menu with submenu']"; 
-public static final String HC_Home = "//button[contains(@aria-label,'EMT QA Account')]";
+public static final String HC_Home = "//button[contains(@aria-label,'sign out')]";//button[contains(@aria-label,'EMT QA Account')]";
 //button[@aria-label='EMT QA Account - Available menu with submenu']
 public static final String HC_MailBody = "//iframe[@id='ifBdy']";
 //public static final String HC_MailBody_Content = "//iframe[@id='ifBdy']/html/body[ocsi='1']";
@@ -1039,6 +1041,7 @@ public static final String PA_IncludeRecomendation = "//input[@name='IncludeRecs
 //public static final String PA_PrintBtn = "//img[contains(@src,'admin_print_small')]";
 public static final String PA_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PA_PageName = "//font[contains(text(),'";  //successfully Updated
+public static final String PA_PageName_1 = "//font[contains(text(),'";//font[contains(text(),
 public static final String PA_UsageQuestion = "//form[@id='Form1']//b";
 //public static final String PA_PrintBtn = "//img[@alt='print']";
 public static final String PA_PrintBtn = "//span[@class='DynamicImage']";
@@ -1278,7 +1281,7 @@ public static final String SR_Page = "//font[contains(text(),'";
 public static final String RL_PerAccessCode = "//*[@id='rec-login']";
 public static final String RL_Password = "//input[@name='Password']";
 public static final String RL_ConfirmPass = "//input[@id='ConPassword']";
-public static final String RL_LoginBtn = "//input[@value='Login' or @alt='Login']";
+public static final String RL_LoginBtn = "//input[@value='Submit' or @type='submit']";
 public static final String RL_SubmitBtn = "//input[@alt='submit' or @alt='Login']";
 public static final String TOU_CheckUncheck = "//input[@id='chkAcceptEULA']";
 public static final String TOU_Continue = "//img[@alt='Continue']";
@@ -1843,6 +1846,9 @@ public static final String CEUPV_Lastname = "//input[contains(@id,'TextBox_LastN
 public static final String CEUP_Save = "//input[@value='Save']";
 public static final String CEUP_Cancel = "//input[@value='Cancel']";
 public static final String CEUP_Application = "//*[contains(text(),'Application')]";
+public static final String CEUP_NewPass = "//input[@id='ctl00_ContentPlaceHolder1_txtPassword']";
+public static final String CEUP_ConfirmPass = "//input[@id='ctl00_ContentPlaceHolder1_txtPasswordRepeat']";
+
 
 //#**********************************************************#
 //#	 Connect - Reset Password - RP 

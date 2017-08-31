@@ -48,12 +48,12 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
-				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
-				clickWebdriver(attributeName_xpath, ET_Value);
+				//waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
+				//clickWebdriver(attributeName_xpath, ET_Value);
 				//waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
 				//checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
-				checkWebdriver(attributeName_xpath, "//label[contains(@for,'28')]");
-				clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				//checkWebdriver(attributeName_xpath, "//span[text()='TestApplicationPayment1502434069449']");
+				//clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
 				Reporter.log("Select (" + value + ")");
 				try{
 					String status = Runtimedataread(value);

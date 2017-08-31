@@ -23,6 +23,7 @@ public class WC_AddEditEventRegistration_Input extends CommonSeleniumActions imp
 			String scode = dataprov[4];
 			String updateregister = dataprov[5];
 			Reporter.log("Input Test Data was retrieved for 'Add/Edit Event Registration' page");
+			waitForPageToLoadWebdriver();
 			waitForElementPresentWebdriver(attributeName_xpath, AER_RegisterOrNotAttened, "Register Button or Not Attened Button");
 			if (!firstname.equals("")) {
 				Reporter.log("Step 1 -Enter the First Name as ("+firstname+")");

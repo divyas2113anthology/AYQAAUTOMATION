@@ -1,12 +1,8 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.ManageQueries;
 
-import java.util.List;
-
-import org.openqa.selenium.WebElement;
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
 
 public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements OR {
@@ -37,8 +33,8 @@ public class WC_AddInputCriteria_Verify extends CommonSeleniumActions implements
 				//clickWebdriver(attributeName_xpath, MQ_ValueButton);
 				
 				waitForPageToLoadWebdriver();
-				waitForElementPresentWebdriverWait(attributeName_xpath, "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']", verifyvalues);
-				clickWebdriver(attributeName_xpath, "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']");
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//button[@class='multiselect dropdown-toggle btn btn-default' and @aria-expanded='false' and contains(@title,'None selected')]", verifyvalues);
+				clickWebdriver(attributeName_xpath, "//button[@class='multiselect dropdown-toggle btn btn-default' and @aria-expanded='false' and contains(@title,'None selected')]");
 				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_ValuesDropdown, verifyvalues);
 			
 				verifyDropDownContainsOptionsWebdriver(attributeName_xpath, MQ_ValuesDropdown, verifyvalues, verifyvalues);

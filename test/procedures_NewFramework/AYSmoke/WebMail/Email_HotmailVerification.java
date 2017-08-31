@@ -50,8 +50,10 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!next.equals("")) {
 				waitForPageToLoadWebdriver();
 			    clickWebdriver(attributeName_xpath,HM_Next+next+"']");
-			    Thread.sleep(1000);
+			    Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
+
+
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
@@ -134,7 +136,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			if (!emailsubjectcontains.equals("")) {
 				waitForPageToLoadWebdriver();
 				String emailsubjectcontainsread ;
-				if(emailsubjectcontains.equals("ApplicationForRecLastName")){
+				if(emailsubjectcontains.equals("AY Automation")){
 					emailsubjectcontainsread = emailsubjectcontains;
 				}else {
 					emailsubjectcontainsread = Runtimedataread(emailsubjectcontains);
@@ -271,7 +273,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			
 			if (!clicklinkcontains.equals("")) {
 				Reporter.log("Step  8 - Proceed to click on Message contains Link");
-				Thread.sleep(1000);
+				Thread.sleep(6000);
 				//waitForElementPresentWebdriver(attributeName_partiallinktext, clicklinkcontains, clicklinkcontains);
 				//clickWebdriver(attributeName_partiallinktext, clicklinkcontains);
 				if (clicklinkcontains.contains("Remind")) {
@@ -282,7 +284,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				} else {
 					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]");
-				}  if(clicklinkcontains.contains("Unlock")){
+				} if(clicklinkcontains.contains("Unlock")){
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");
 					waitForPageToLoadWebdriver();

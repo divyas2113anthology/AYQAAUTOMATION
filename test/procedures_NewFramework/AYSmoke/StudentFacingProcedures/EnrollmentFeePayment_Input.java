@@ -1,16 +1,14 @@
 package procedures_NewFramework.AYSmoke.StudentFacingProcedures;
 
-import java.io.IOException;
 import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
-
 import or.OR;
-
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import processor.CommonSeleniumActions;
+
+import java.io.IOException;
 
 
 public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements OR {
@@ -29,9 +27,11 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 				if (!paymentmethod.equals("")) {
 					Reporter.log("Step 1 - Select the Payment Method as ("+paymentmethod+")");
 					waitForPageToLoadWebdriver();
-					waitForElementPresentWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']", paymentmethod);
-					clickWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']");
-				}	
+					//waitForElementPresentWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']", paymentmethod);
+					//clickWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']");
+					waitForElementPresentWebdriver(attributeName_xpath, "//label[contains(text(),'"+paymentmethod+"')]", paymentmethod);
+					clickWebdriver(attributeName_xpath, "//label[contains(text(),'"+paymentmethod+"')]");
+				}
 				if (!returnpaycontinue.equals("")) {
 					Reporter.log("Step 2 - Click on '"+returnpaycontinue+"' button");
 					if (returnpaycontinue.equalsIgnoreCase("return to enrollment form")) {

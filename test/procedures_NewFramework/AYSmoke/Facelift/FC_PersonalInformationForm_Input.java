@@ -89,11 +89,12 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 					clickWebdriverWithCoordinates(attributeName_xpath, PII_AddressLookupBtn);
 					waitForPopupWebdriver();
 					waitForPageToLoadWebdriver();
+					Thread.sleep(5000);
 					//recentPopupSelectWebdriver("Address Lookup");
 					recentPopupSelect_without_window_nameWebdriver();
 
 				} else if(button_to_click.equalsIgnoreCase("Save")){
-					waitForElementPresentWebdriver(attributeName_xpath,PII_SaveBottom, button_to_click);
+					waitForElementPresentWebdriver(attributeName_xpath,PSD_Save, button_to_click);
 					//clickWebdriver(attributeName_xpath,PII_SaveBottom);
 					clickWebdriver(attributeName_xpath, PSD_Save);
 					//waitForPopupWebdriver();

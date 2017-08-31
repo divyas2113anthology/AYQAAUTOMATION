@@ -17,8 +17,9 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 		Reporter.log("Proceed to retrieve Input Test Data for 'Recommendation Login' page");
 		String pac = parameterValuesArray[0];
 		String password = parameterValuesArray[1];
-		String login = parameterValuesArray[2];
-		String forgotpacpassword = parameterValuesArray[3];
+		String confirmpass = parameterValuesArray[2];
+		String login = parameterValuesArray[3];
+		String forgotpacpassword = parameterValuesArray[4];
 		Reporter.log("Input Test Data was retrieved for 'Recommendation Login' page");
 		if (!pac.equals("")) {
 			Reporter.log("Step 1 - Proceed to Read PAC from Excel Sheet(C:/Selenium/InputTestdata.xls)");
@@ -52,6 +53,20 @@ public class REC_Login_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Proceed to Enter Password as ("+generatepassword+")");		
 			sendKeys(attributeName_xpath, RL_Password, generatepassword);
 		}
+			if (!confirmpass.equals("")) {
+				Reporter.log("Step 3 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+				String generatepassword;
+				if (password.equalsIgnoreCase("ApplicationPassword")) {
+					generatepassword = Runtimedataread(password);
+				}else if (password.equalsIgnoreCase("ApplicationChangePassword")) {
+					generatepassword = Runtimedataread(password);
+				} else {
+					generatepassword = password;
+				}
+				Reporter.log("Proceed to Enter Password as ("+generatepassword+")");
+				sendKeys(attributeName_xpath, RL_ConfirmPass, generatepassword);
+
+			}
 		if (!login.equals("")) {
 			Reporter.log("Step 3 - Click on 'Login' Button");
 			clickWebdriver(attributeName_xpath, RL_LoginBtn);

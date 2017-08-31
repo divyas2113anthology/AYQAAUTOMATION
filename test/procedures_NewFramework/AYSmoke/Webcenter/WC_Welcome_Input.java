@@ -23,7 +23,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			if (!weltopupdatelogout.equals("")) {
 				Reporter.log("Step 1 - Click the link as ["+weltopupdatelogout+"]");
 				//waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
-				clickWebdriver(attributeName_xpath, "//a[text()='logout']");
+				clickWebdriver(attributeName_xpath, "//a[text()='"+weltopupdatelogout+"']");
 				//driver.manage().deleteAllCookies();
 				//System.out.println("Cookies cleared");
 				//waitForPageToLoadWebdriver();

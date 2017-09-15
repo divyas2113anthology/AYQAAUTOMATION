@@ -2111,11 +2111,35 @@ public static final String SR_RuleName="//td[a[contains(text(),'";
 public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
 public static final String SR_BRCheckBox="/preceding-sibling::td[input[@type='CheckBox']]";
 
+//#********************************************************************#
+//# Webcenter - Application - Configure fee rules
 
+//#********************************************************************#
+
+public static final String FR_Add_button="//img[contains(@src,'admin_add_small')]";
+public static final String FR_RuleName1="//input[@name='txtName']";
+public static final String FR_Description="//textarea[@name='txtDescription']";
+public static final String FR_FeeAmount="//input[@name='txtFeeAmount']";
+public static final String FR_StartDate="//input[@name='dtStartDate']";
+public static final String FR_SelecrHour="//select[@name='selHourStart']";
+public static final String FR_SelecrMinutes="//select[@name='selMinutesStart']";
+public static final String FR_EndDate="//input[@name='dtEndDate']";
+public static final String FR_Mode="//select[@name='actionMode']";
+public static final String FR_field="//select[contains(@name,'txtField')]";
+public static final String FR_operator="//select[@name='txtOperator0']";
+public static final String FR_value="//input[@name='txtValue0']";
+public static final String FR_SaveBackCopyDelete = "//img[contains(@src,'";   //save_small')]";
+public static final String FR_Test_Applicant_ID ="//input[@name='txtAPPID']";
+public static final String FR_Submit ="//img[contains(@src,'";   //save_small')]";
+public static final String FR_DefaultWarningMessage ="//div[contains(text(),'"; //None of the fee rules are in Prod Mode')]
+public static final String FR_RuleName="//td[a[contains(text(),'";
+public static final String FR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
+public static final String FR_BRCheckBox="/preceding-sibling::td[input[@type='CheckBox']]";
+public static final String FR_FeeRuleFlag ="//input[@name='chkActivateFeeRule']";
+public static final String FR_Show ="//font[text()='show']";
+public static final String FR_TurnOnFeeRules ="//input[@id='chkActivateFeeRule']";
+public static final String FR_TurnOnRecommendationRules ="//input[@id='chkActivateRecRule']";
 
 }
-
-
-
 
 

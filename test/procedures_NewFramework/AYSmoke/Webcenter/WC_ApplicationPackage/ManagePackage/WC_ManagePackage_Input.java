@@ -32,6 +32,9 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			String button = testdata[11];
 			String applicationreview = testdata[12];
 			String applicationfilter = testdata[13];
+			String turnOnFeeRules = testdata[14];
+			String turnOnRecommendationRules = testdata[15];
+
 			
 			Reporter.log("Input Test Data was retrieved for 'Manage Package' Page");
 			
@@ -61,6 +64,18 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 				waitForElementPresentWebdriver(attributeName_xpath,CL_AddEdit+button+"')]", button);
 				clickWebdriver(attributeName_xpath,CL_AddEdit+button+"')]");
 				waitForPageToLoadWebdriver();
+			}
+			if (!turnOnFeeRules.equals("")) {
+				waitForElementPresentWebdriver(attributeName_xpath,FR_TurnOnFeeRules, turnOnFeeRules);
+				clickWebdriver(attributeName_xpath,FR_TurnOnFeeRules);
+				alertMessage();
+				alertAccept();
+			}
+			if (!turnOnRecommendationRules.equals("")) {
+				waitForElementPresentWebdriver(attributeName_xpath,FR_TurnOnRecommendationRules, turnOnRecommendationRules);
+				clickWebdriver(attributeName_xpath,FR_TurnOnRecommendationRules);
+				alertMessage();
+				alertAccept();
 			}
 		}catch(Exception e){
 			writeFailure(e.getLocalizedMessage());}

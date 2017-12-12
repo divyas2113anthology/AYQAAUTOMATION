@@ -27,7 +27,7 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				//driver.manage().deleteAllCookies();
 				//System.out.println("Cookies cleared");
 				//waitForPageToLoadWebdriver();
-				driver.manage().deleteAllCookies();
+				//driver.manage().deleteAllCookies();
 				System.out.println("Cookies cleared");
 				waitForPageToLoadWebdriver();
 			}

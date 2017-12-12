@@ -350,9 +350,11 @@ public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
 public static final String PD_Save ="//a[text()='Save']"; //table//tr[1]/td//a/img[@alt='Save']";
+public static final String ManualAdd_PD_Save ="//img[@alt='Save']";
 public static final String Bridge_PD_Save ="//img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PD_Reset = "//img[@alt='Reset']";
+
 //#**********************************************************#
 //# Recommendations Page - RC
 //#*********************************************************#
@@ -540,7 +542,7 @@ public static final String DB_PageTitle = "css=#appListHeader";
 public static final String AW_StartAppBtn = "css=#StartApp";
 public static final String AW_AppInstBtn = "//a[contains(text(),'Application Instructions')]";
 //public static final String AW_SubAppBtn = "css=input.ay-Submit"; //div/div[2]/div[1]/input[@class='ay-Submit']
-public static final String AW_SubAppBtn = "//div[@class='span9']/div[1]/input";
+public static final String AW_SubAppBtn = "//div[contains(@class,'span9')]/div[1]/input";
 public static final String AW_personalDataLnk = "//font[contains(text(),'Personal Data')]";
 public static final String AW_FamilyBtn = "//font[contains(text(),'Family')]";
 public static final String AW_AutomationSectionLnk = "//font[contains(text(),'Automation Section')]";
@@ -783,7 +785,7 @@ public static final String AW_PageTitle = "//div[@id='ay-landing-text']/b";
 
 
 //public static final String BU_SportsInterest = "//select[@name='q35038']";
-public static final String BU_SportsInterest = "q35038";
+public static final String BU_SportsInterest = "q27987";//"q35038";
 public static final String BU_Submit = "//img[contains(@src,'admin_submit_small')]";
 public static final String BU_PD_AD_SportsInterest = "//select[@id='s35038']";
 public static final String BU_PD_State = "//select[@id='s35033']";

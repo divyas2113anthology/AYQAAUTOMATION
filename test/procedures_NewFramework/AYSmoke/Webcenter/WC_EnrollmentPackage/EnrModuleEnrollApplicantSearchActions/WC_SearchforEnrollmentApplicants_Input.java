@@ -110,7 +110,11 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				Reporter.log("Step 13 - Select the user quries as ["+userqueries+"]");
 				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
-				sendKeys(attributeName_xpath, SAI_UserQuries, userqueries);
+				//sendKeys(attributeName_xpath, SAI_UserQuries, userqueries);
+				clickWebdriver(attributeName_xpath,SAI_UserQuries);
+				waitForPageToLoadWebdriver();
+				Thread.sleep(5000);
+				clickWebdriver(attributeName_xpath, MQ_Queryselect+userqueries+"')]");
 				
 				//selectByValueWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
 				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
@@ -127,6 +131,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 			if (!submit.equals("")) {
 				Reporter.log("Step 16 - Click the submit button");
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
+				Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
 			}
 

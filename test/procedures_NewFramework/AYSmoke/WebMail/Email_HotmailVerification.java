@@ -282,8 +282,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					verifyElementContainsTextWebdriver(attributeName_xpath, "//div[contains(.,'" + clicklinkcontains + "')]", clicklinkcontains, clicklinkcontains);
 					waitForPageToLoadWebdriver();
 				} else {
-					waitForElementPresentWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]", clicklinkcontains);
-					clickWebdriver(attributeName_xpath, "//b[contains(text(),'" + clicklinkcontains + "')]");
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'" + clicklinkcontains + "')]", clicklinkcontains);
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + clicklinkcontains + "')]");
 				} if(clicklinkcontains.contains("Unlock")){
 					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
 					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");

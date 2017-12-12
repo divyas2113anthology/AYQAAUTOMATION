@@ -120,6 +120,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 					clickWebdriver(attributeName_linktext, Splitviwefullapp[i]);
 					waitForPageToLoadWebdriver();
 				}
+				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Application Form3");
 //				int WindowCount = getWindowHandles();
 //				recentMultiplePopupSelectWebdriver("Application Form3", WindowCount);

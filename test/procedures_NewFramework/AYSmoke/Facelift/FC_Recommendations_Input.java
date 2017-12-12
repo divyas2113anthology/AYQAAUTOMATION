@@ -147,11 +147,11 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 //				clickWebdriverWithCoordinates(attributeName_xpath, "//input[@value='Add Provider']");
 				alertAccept();
 				waitForPageToLoadWebdriver();
-				try{
+				/*try{
 					alertAccept();
 				}catch(Exception e){
 					System.out.println("no laer");
-				}
+				}*/
 				
 			}
 			if (!submitapplication.equals("")) {

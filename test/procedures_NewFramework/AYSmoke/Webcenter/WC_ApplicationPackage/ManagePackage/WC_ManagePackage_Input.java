@@ -15,7 +15,7 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 	@Test(description="This Procedure is to perform some Operation in 'Manage Package' page")
 	public void WC_ManagePackage_Input(){
 		try{
-			
+
 			Reporter.log("Proceed to retrieve Input Test Data for 'Manage Package' Page");
 			String[] testdata = datacontainer;
 			String packagename = testdata[0];
@@ -33,6 +33,8 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			String applicationreview = testdata[12];
 			String applicationfilter = testdata[13];
 			String turnOnFeeRules = testdata[14];
+
+
 			String turnOnRecommendationRules = testdata[15];
 
 			

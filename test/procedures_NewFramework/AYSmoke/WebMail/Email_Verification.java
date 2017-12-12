@@ -310,9 +310,10 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 							if (second >= 60) writeFailure(" Timeout after 1 minute..");
 							//clickWebdriver(attributeName_cssselector,"css=a[title='Inbox']");  //div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']
 							waitForElementPresentWebdriver(attributeName_xpath, HC_Inbox, "Inbox");
+							Thread.sleep(8000);
 //							checkWebdriver(attributeName_xpath, HC_Inbox);
 							//clickWebdriver(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']");
-							clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
+							//clickWebdriver(attributeName_xpath, "//div[@role='group' and @aria-label='EMT QA Account']//span[text()='Inbox']");
 							//clickWebdriver(attributeName_xpath, "//div[@role='tree' and @aria-labelledby='MailFolderPane.FavoritesHeader']//span[text()='Inbox']");
 							writeConsole("I am here");
 							//waitForPageToLoadWebdriver();

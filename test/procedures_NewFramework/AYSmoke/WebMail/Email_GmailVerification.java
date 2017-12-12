@@ -1,14 +1,11 @@
 package procedures_NewFramework.AYSmoke.WebMail;
 
-import com.thoughtworks.selenium.webdriven.commands.OpenWindow;
-
-import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
-
+import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
-import or.OR;
 import processor.CommonSeleniumActions;
+
+import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environment;
 
 public class Email_GmailVerification extends CommonSeleniumActions implements OR {
 	
@@ -117,7 +114,7 @@ public class Email_GmailVerification extends CommonSeleniumActions implements OR
 				Reporter.log("Step 6 - Entered Username and Password");
 				//public static final String HM_InboxSide ="//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
 				//selenium.waitForCondition("selenium.isElementPresent(\"//span[contains(@class,'FolderLabel') and contains(text(),'Inbox')]\")", "120000");
-				selenium.waitForCondition("selenium.isElementPresent(\"//div[@class='aim ain']//a[contains(text(),'Inbox')]\")", "120000");
+				//selenium.waitForCondition("selenium.isElementPresent(\"//div[@class='aim ain']//a[contains(text(),'Inbox')]\")", "120000");
 				Reporter.log("Click on Inbox");
 				writeConsole("Click on Inbox");
 				//clickWebdriver(attributeName_partiallinktext, HM_Inbox);
@@ -138,7 +135,7 @@ public class Email_GmailVerification extends CommonSeleniumActions implements OR
 //								} catch (Exception e) {}
 //						}
 					}
-					selenium.waitForCondition("selenium.isVisible(\"/div[@class='xS']//b[text()[contains(.,"+emailsubject+"')]]\")", "120000");
+					//selenium.waitForCondition("selenium.isVisible(\"/div[@class='xS']//b[text()[contains(.,"+emailsubject+"')]]\")", "120000");
 					clickWebdriver(attributeName_xpath,"/div[@class='xS']//b[text()[contains(.,"+emailsubject+"')]]");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {

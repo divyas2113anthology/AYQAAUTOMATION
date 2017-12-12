@@ -69,7 +69,8 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		}	
 		
 		if (!Birth.equals("")) {
-			Reporter.log("Step 5 - Enter 'Birth date' as ("+Birth+")");	
+			Reporter.log("Step 5 - Enter 'Birth date' as ("+Birth+")");
+			waitForPageToLoadWebdriver();
 			sendKeys(attributeName_xpath, Birth_Manual, Birth);
 			//type(Birth_Manual, Birth);
 		}

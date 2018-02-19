@@ -20,7 +20,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 	@Test(description="This Procedure is to perform some Operation in 'Account Profile' page")
 	public void AccountProfile_Input() throws IOException, RowsExceededException, BiffException, WriteException{
 		try {		
-				writeDetails();//details
+				writeDetails();
 //				headerStatement("AccountProfile_Input");
 //				startExecutionOrder(j);
 //				writeParametersTable();

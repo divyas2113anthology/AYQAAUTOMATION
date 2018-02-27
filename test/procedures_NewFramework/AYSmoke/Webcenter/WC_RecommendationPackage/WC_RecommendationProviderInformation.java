@@ -52,10 +52,12 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			}
 			if (!closewindow.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+closewindow+"]");
+				String parentWindow = getParentWindow();
 				clickWebdriver(attributeName_xpath,RD_CloseWindow);
-				recentPopupCloseWebdriver();
-				selectMainWindowWebdriver();
-			}			
+				selectMainWindowWebdriver(parentWindow);
+				//recentPopupCloseWebdriver();
+				//selectMainWindowWebdriver();
+			}
 			
 			//switchToDefaultContentWebdriver();
 //			

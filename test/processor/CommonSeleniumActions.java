@@ -2044,6 +2044,20 @@ public class CommonSeleniumActions extends Processor implements OR {
 		writeConsole("Webdriver Main Window["+mainwindow+"]");
 		driver.switchTo().window(mainwindow);
 	}
+
+	public String getParentWindow(){
+		Iterator<String> popwindow = driver.getWindowHandles().iterator();
+		String parent = popwindow.next();
+		while (popwindow.hasNext()) {
+			String window = popwindow.next();
+			if (!parent.equals(window)) {
+				writeConsole("Webdriver Switch To Window["+window+"]");
+				writeConsole(parent);
+			}
+		}
+		return parent;
+	}
+
 	public void selectMainWindowWebdriver(String parent){
 		writeConsole("Webdriver Main Window["+parent+"]");
 		driver.switchTo().window(parent);

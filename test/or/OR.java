@@ -1318,6 +1318,8 @@ public static final String RF_Forgot_Lname = "//input[@id='recforgotAppLN']";
 public static final String RF_Forgot_Search = "//input[@id='rec-forgotSubmit']";
 public static final String RF_Forgot_Msg = "//form[@name='frmSendPINs']//font";
 public static final String RF_BtnNext =   "//img[@alt='";
+public static final String RF_RECPac = "//input[@id='Pin']";
+public static final String RF_RECLogin = "//input[@alt='Login']";
 //#**********************************************************#
 //#	 WebMail Login Page - Hotmail
 //#**********************************************************#

@@ -133,7 +133,8 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 //						Reporter.log("Proceed to Write Confirm Password as ("+confirmpassword+") in the Excel Sheet(C:/Selenium/InputTestdata.xls)");
 //						Runtimedatawrite(confirmpassword,confirmyes);			
 //					}
-				}	
+				}
+
 				if (!pin.equals("")) {
 					Reporter.log("Step 11  - Proceed to Get 'PIN' number");
 					waitForElementPresentWebdriver(attributeName_xpath, CA_LoginBtn, "Login");
@@ -152,7 +153,8 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 			//			System.out.println("4");
 						Runtimedatawrite(PinNumber,pin);
 			//			System.out.println("5");
-					}else if (pin.contains("User")) {
+					}
+					else if (pin.contains("User")) {
 						String Name = getTextWebdriver(attributeName_xpath,FC_UserName);
 						System.out.println("User Name : "+Name);
 						String[] UserNameSplit = Name.split("  ");	
@@ -161,6 +163,7 @@ public class FC_CreateAccount_Input extends CommonSeleniumActions implements OR 
 						Runtimedatawrite(UserName,pin);
 					}
 				}
+
 				String UserName = username+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
 				if (!username.equals("")) {
 					Reporter.log("Step 14  - Proceed to enter the user name as ("+UserName+") ");

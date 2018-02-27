@@ -22,11 +22,19 @@ public class Rec_Facelift_Pac_Pwd_Input extends CommonSeleniumActions implements
 		
 		if (!pac.equals("")) {
 			Reporter.log("Step 1 - Enter the PAC as ["+pac+"]");
-			String PAC = Runtimedataread(pac);	
-			sendKeys(attributeName_xpath, RF_PAC, PAC);
+			waitForPageToLoadWebdriver();
+			String PAC = Runtimedataread(pac);
+			try {
+				sendKeys(attributeName_xpath, RF_PAC, PAC);
+			}
+			catch (Throwable e){
+				sendKeys(attributeName_xpath,RF_RECPac,PAC);
+			}
 			//type(RF_PAC, pac);
 			waitForPageToLoadWebdriver();
 		}
+
+
 		if (!password.equals("")){
 			Reporter.log("Step 2 - Enter the Password as ["+password+"]");
 			sendKeys(attributeName_xpath, RF_Rec_Password, password);
@@ -34,7 +42,13 @@ public class Rec_Facelift_Pac_Pwd_Input extends CommonSeleniumActions implements
 		}
 		if (!submit.equals("")){
 			Reporter.log("Step 3 - Click on Submit");
-			clickWebdriver(attributeName_xpath, RF_Rec_Submit);
+			waitForPageToLoadWebdriver();
+			try {
+				clickWebdriver(attributeName_xpath, RF_Rec_Submit);
+			}
+			catch (Throwable e) {
+				clickWebdriver(attributeName_xpath,RF_RECLogin );
+			}
 			waitForPageToLoadWebdriver();
 		}
 		if (!forgetpwd.equals("")){

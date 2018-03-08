@@ -110,7 +110,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				Reporter.log("Step 13 - Select the user quries as ["+userqueries+"]");
 				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
-				//sendKeys(attributeName_xpath, SAI_UserQuries, userqueries);
+				sendKeys(attributeName_xpath, SAI_UserQuries, userqueries);
 				clickWebdriver(attributeName_xpath,SAI_UserQuries);
 				waitForPageToLoadWebdriver();
 				Thread.sleep(5000);

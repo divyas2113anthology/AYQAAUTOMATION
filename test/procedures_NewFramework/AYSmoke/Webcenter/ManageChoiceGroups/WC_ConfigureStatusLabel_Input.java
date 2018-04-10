@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.util.concurrent.TimeUnit;
+
 public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some input operation in 'Manage Choice Groups' page")
@@ -24,6 +26,9 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			String checkchoicegroup = testdata[3];
 			String configurestatuslabellink =testdata[4];
 			String adddeleteexportdynamiclist =testdata[5];
+
+			implicitWait();
+
 			try {
 				switchToFrameNameIdWebdriver("frmContent");
 			}catch(Exception e){

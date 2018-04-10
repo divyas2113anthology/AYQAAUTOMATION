@@ -48,6 +48,9 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 				String [] SplitPackage = treepackage.split(";");
 				System.out.println("Length : "+SplitPackage.length);
 				System.out.println("Package1"+SplitPackage[0]);
+				if(isElementPresentWebdriver(attributeName_xpath,"//a[text()='"+SplitPackage[0]+"']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]" )){
+					clickWebdriver(attributeName_xpath,"//a[text()='"+SplitPackage[0]+"']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]" );
+					}
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
@@ -58,13 +61,13 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 							waitForPageToLoadWebdriver();
 
 						}catch(Exception e){
-							clickWebdriver(attributeName_xpath,"//img[contains(@src,'plus')]");
+							//clickWebdriver(attributeName_xpath,"//img[contains(@src,'plus')]");
 							waitForPageToLoadWebdriver();
 							clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + SplitPackage[i] + "')]");
 							waitForPageToLoadWebdriver();
 						}
 					}else{
-						System.out.println(SplitPackage[i]);
+						/*System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
 							waitForPageToLoadWebdriver();
 							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
@@ -75,16 +78,16 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
                                 if(seconclickName.contains("Click to expand")){
                                     PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
                                 }
-                            }
+                            }*/
 					}
 				}
-				try {
+				/*try {
 					if (isDisplayedWebdriver(attributeName_xpath, "//img[contains(@src,'minus')]")) {
 						ClosePackageSelection();
 					}
 				}catch(Exception e){
 					System.out.println("no Minus symbol");
-				}
+				}*/
 			}
 			switchToDefaultContentWebdriver();
 		} catch (Exception e) {

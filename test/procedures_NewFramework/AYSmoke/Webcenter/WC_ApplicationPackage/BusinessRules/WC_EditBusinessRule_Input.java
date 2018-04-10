@@ -6,6 +6,8 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
+import java.util.concurrent.TimeUnit;
+
 public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements OR {
 	
 
@@ -42,6 +44,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			String verifystatus = fpvdatarepo[20];
 			String filtername = fpvdatarepo[21];
 			String ClickLogoutButton = fpvdatarepo[22];
+
+			implicitWait();
 
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!rulename.equals("")) {

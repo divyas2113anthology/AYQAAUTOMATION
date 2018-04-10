@@ -22,6 +22,14 @@ public class WC_EditBusinessRule_Verify extends CommonSeleniumActions implements
 			String message = fpvdatarepo[0];
 			String pagename = fpvdatarepo[1];
 			String verifyui = fpvdatarepo[2];
+			String label = fpvdatarepo[3];
+
+			try{
+				switchToFrameNameIdWebdriver("frmContent");
+			}catch(Exception e){
+				System.out.println("Already Switched to the Frame");
+			}
+
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -34,15 +42,18 @@ public class WC_EditBusinessRule_Verify extends CommonSeleniumActions implements
 				writeConsole("Hi");
 				verifyElementContainsTextWebdriver(attributeName_xpath, PA_PageName+PageName[0]+"')]", pagename, "Page Name for Business Rule");
 			}
-			
-			
+
 			if (!verifyui.equals("")) {
 				Reporter.log("Step 2 - Verify UI having the Message("+verifyui+")");
 				//waitForElementPresentVerifyContainsTextWebdriver(attributename, attributevalue, expectedtext, elementname);
 				verifyElementContainsTextWebdriver(attributeName_xpath, Message+verifyui+"')]", verifyui, verifyui);
-			
 			}
-			
+
+			if(!label.equals("")){
+				String Status = Runtimedataread(label);
+				verifyElementPresentWebdriver(attributeName_xpath, "//input[@value='"+Status+"']",label );
+			}
+
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

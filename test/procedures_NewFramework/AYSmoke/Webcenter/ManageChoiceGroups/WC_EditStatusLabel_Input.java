@@ -11,6 +11,7 @@ import processor.CommonSeleniumActions;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
 
@@ -30,7 +31,10 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String delete = testdata[6];
 			String savecanceladdrow = testdata[7];
 			String addrow = testdata[8];
-			try{
+
+            implicitWait();
+
+            try{
                 switchToFrameNameIdWebdriver("frmContent");
             }catch(Exception e){
                 System.out.println("Already Switched to the Frame");
@@ -45,7 +49,6 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                     Reporter.log("Create a new row");
                     waitForElementPresentWebdriver(attributeName_xpath, MCG_AddRow, "Plus");
                     clickWebdriver(attributeName_xpath, MCG_AddRow);
-
                 }
                 if (!statuscategory.equals("")) {
                     Reporter.log("Select (" + statuscategory + ")from Status Category");
@@ -135,6 +138,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                 if (!savecanceladdrow.equals("")) {
                     Reporter.log("Check the Name of the Button as [" + savecanceladdrow + "]");
                     if (savecanceladdrow.equalsIgnoreCase("save")) {
+                        waitForPageToLoadWebdriver();
                         waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
                         clickWebdriver(attributeName_xpath, AID_save_button);
                         waitForPageToLoadWebdriver();

@@ -45,7 +45,8 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			String filtername = fpvdatarepo[21];
 			String ClickLogoutButton = fpvdatarepo[22];
 
-			implicitWait();
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
 
 			Reporter.log("Verify Test Data was retrieved for 'Configure Business Rules' page");
 			if (!rulename.equals("")) {
@@ -115,8 +116,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				}
 				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, Status);
 				selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, Status);
-
-				//select(BR_TargetStatus, targetstatus);			
+				//select(BR_TargetStatus, targetstatus);
 			}
 			if (!targettestscore.equals("")) {
 				Reporter.log("Step 15 - Select Target test score as : ("+targettestscore+")");

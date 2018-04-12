@@ -63,7 +63,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
-					driver.switchTo().window(AppSummaryWindowName);
+					//driver.switchTo().window(AppSummaryWindowName);
 				}else if (button_to_click.equalsIgnoreCase("save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
@@ -81,7 +81,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					System.out.println("1st popup closed");
 					recentPopupSelect("Applicant Summary");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
-					deselectPopUp();	
+					deselectPopUp();
 					System.out.println("2nd popup closed");
 				}else if(button_to_click.equalsIgnoreCase("closeWindow")){
 					Reporter.log("Click on the button");

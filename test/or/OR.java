@@ -145,7 +145,7 @@ public static final String BR_AppliesToQuestion = "QuestionId";
 public static final String BR_EventType = "EventTypeId";
 //public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
 public static final String BR_TargetDocument = "SuppDocID";
-public static final String BR_TargetStatus = "//select[@name='TestStatusID']";//TestStatusID']";
+public static final String BR_TargetStatus = "//select[@name='TestStatusID' or @name='DocStatusID']";//TestStatusID']";
 //public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetTestScore = "TestScoreID";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";
@@ -1896,7 +1896,8 @@ public static final String AID_RecPlus = "//img[contains(@src,'plus')]";
 public static final String AID_RecAppInfoDisp = "//a[text()='Applicant Info Display']";
 public static final String REC_Display_lname = "//dl[@class='dl-horizontal']/dt[contains(text(),'Acad`~!@#$%^*+-/()_-+={}[]|\')]";
 public static final String REC_Display_dob = "//div[@id='rec-AppInfoBox']/dl/dt[contains(text(),'BirthDate')]";
-
+String labelValue = "//input[@value='";
+String verifyUI = "//font[contains(text(),'Edit')]";
 
 
 

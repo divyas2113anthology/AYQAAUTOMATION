@@ -191,7 +191,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsave.equals("")) {
 			Reporter.log("Step 27 - Click on ("+pdsave+")Button");
 			if(pdsave.equalsIgnoreCase("Save")){
-				clickWebdriver(attributeName_xpath,PD_Save);
+				clickWebdriver(attributeName_xpath,PD_BottomSaveButton);
 				waitForPageToLoadWebdriver();
 			}else if (pdsave.equalsIgnoreCase("BridgeSave")) {
 				clickWebdriver(attributeName_xpath,Bridge_PD_Save);

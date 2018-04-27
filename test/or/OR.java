@@ -354,6 +354,7 @@ public static final String ManualAdd_PD_Save ="//img[@alt='Save']";
 public static final String Bridge_PD_Save ="//img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PD_Reset = "//img[@alt='Reset']";
+String PD_BottomSaveButton = "//a[text()='Reset']/preceding-sibling::a[text()='Save']";
 
 //#**********************************************************#
 //# Recommendations Page - RC
@@ -861,7 +862,7 @@ public static final String SRI_PageTitle = "//td/font[text()='Virginia']";
 public static final String SRI_Fa1rfaxLnk = "//a/font[text()='Fa1rfax']";
 public static final String SRI_SportsLnk = "//a/font[text()='Sports']";
 //public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//td[@class='BasePageFont']";
-public static final String PD_ErrorMsg = "//td[@class='BasePageFont']";
+public static final String PD_ErrorMsg = "//div[@id='divErrors']/p";
 public static final String ALI_FirstLnk = "//div[@id='pnlPickList']/ul/li[1]";
 public static final String DF_FormName = "//font[@class='BasePageFont' ]/a[contains(text(),'";
 //#**********************************************************#

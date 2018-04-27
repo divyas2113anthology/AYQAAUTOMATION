@@ -43,6 +43,15 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 		}
 		
 		if (!password.equals("")) {
+			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
+			if (password.equals("Password") || password.equals("ApplicationPassword") || password.equals("Applicant Password") || password.equals("WebcenterPassword")) {
+				String generatepassword = Runtimedataread(password);
+				Reporter.log("Proceed to Enter password as (" + generatepassword + ")");
+				sendKeys(attributeName_xpath, PasswordField, generatepassword);
+			} else {
+				Reporter.log("Proceed to Enter password as (" + password + ")");
+				sendKeys(attributeName_xpath, PasswordField, password);
+			}
 			/*try {
 				Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 				String generatepassword = Runtimedataread(password);
@@ -52,17 +61,7 @@ public class Login_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Proceed to Enter PIN as ("+ password +")");
 				sendKeys(attributeName_xpath, PasswordField, password);
 			}*/
-			Reporter.log("Step 2 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
-			if (password.equals("Password") || password.equals("ApplicationPassword")) {
-				String generatepassword = Runtimedataread(password);
-				Reporter.log("Proceed to Enter PIN as (" + generatepassword + ")");
-				sendKeys(attributeName_xpath, PasswordField, generatepassword);
-			} else {
-				Reporter.log("Proceed to Enter PIN as (" + password + ")");
-				sendKeys(attributeName_xpath, PasswordField, password);
 
-
-			}
 		}
 		if (!login.equals("")) {
 			Reporter.log("Step 3 - Click on 'Login' Button");

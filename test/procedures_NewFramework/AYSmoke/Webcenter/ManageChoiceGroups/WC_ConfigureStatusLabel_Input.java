@@ -26,6 +26,9 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			String checkchoicegroup = testdata[3];
 			String configurestatuslabellink =testdata[4];
 			String adddeleteexportdynamiclist =testdata[5];
+			String specialchoicegroups = testdata[6];
+			String configuredynamicchoicegroups = testdata[7];
+			String labels = testdata[8];
 
 			implicitWait();
 

@@ -91,7 +91,7 @@ public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#**********************************************************#
 //#Applicant Welcome Page
 //#**********************************************************#
-public static final String Logoutmain ="//*[text()='";
+public static final String Logoutmain ="//li[text()='";
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
 public static final String Section ="//font[contains(text(),'";
@@ -240,7 +240,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-public static final String EL_searchclose = "//*[@alt='";//input[@value='";
+public static final String EL_searchclose = "//input[@value='";//input[@value='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 

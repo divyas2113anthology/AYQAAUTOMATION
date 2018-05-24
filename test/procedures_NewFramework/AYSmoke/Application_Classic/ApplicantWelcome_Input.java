@@ -24,7 +24,9 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			String print = applicantwelidatarepo[4];
 			String applicationhome = applicantwelidatarepo[5];
 			String resend = applicantwelidatarepo[6];
+
 			Reporter.log("Input Test Data was retrieved for 'Applicant Welcome' page");
+
 			if (!logout.equals("")) {
 				Reporter.log("Step 1 - Proceed to Click on ("+logout+") Link");
 				if(logout.equalsIgnoreCase("Dashboard")){
@@ -70,16 +72,11 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 			}
 			if (!helpfulhints.equals("")) {
 				Reporter.log("Step 4 - Proceed to Click on ("+helpfulhints+") in the 'Helpful Hints' Section");
-//				click(helphint+helpfulhints+"']");
-				//clickWebdriver(attributeName_linktext, helpfulhints);
 				clickWebdriver(attributeName_xpath,"//li[contains(@id,'helpfulHints')]/a");
 				Thread.sleep(5000);
 				clickWebdriver(attributeName_xpath,"//li/a[contains(text(),'"+helpfulhints+"')]");
 				Thread.sleep(5000);
-				//recentPopupSelectWebdriver(helpfulhints);
-				//switchToDefaultContentWebdriver();
-				//String temp = driver.getTitle();
-				driver.findElement(By.xpath("//div[@class='modal-header']/h3")).getText();
+				//driver.findElement(By.xpath("//div[@class='modal-header']/h3")).getText();
 			}
 			if (!print.equals("")) {
 				Reporter.log("Step 5 - Proceed to Click on ("+print+") Button");

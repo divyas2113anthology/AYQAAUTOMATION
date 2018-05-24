@@ -2151,39 +2151,17 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupSelectWebdriver(String windowname) throws Exception {
-		//					 int windownull = 0;
-		//String currentwindow = driver.getWindowHandle();
 		writeConsole("Webdriver Main Window[" + windowname + "]");
-		//					writeConsole("Webdriver Current Window["+currentwindow+"]");
-		//					 Set<String> popwindow = driver.getWindowHandles();
-		//					 Iterator<String> it = popwindow.iterator();
 		waitForPopupWebdriver();
-		/*Iterator<String> popwindow = driver.getWindowHandles().iterator();
-		//String windiwscoun[] = selenium.getAllWindowTitles();
-		//writeConsole("Webdriver Switch To Window["+windiwscoun+"]");
-		while (popwindow.hasNext()) {
-			String window = popwindow.next();
-			if (!mainwindow.equals(window)) {
-				writeConsole("Webdriver Switch To Window["+window+"]");
-				//waitForPageToLoadWebdriver();
-				driver.switchTo().window(window);
-			}
-		}*/
-
 		String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
 		String subWindowHandler = null;
-
 		Set<String> handles = driver.getWindowHandles(); // get all window handles
 		Iterator<String> iterator = handles.iterator();
 		while (iterator.hasNext()) {
 			subWindowHandler = iterator.next();
 		}
 		driver.switchTo().window(subWindowHandler); // switch to popup window
-
 		System.out.println("POP UP WINDOW");
-		// perform operations on popup
-
-		//driver.switchTo().window(parentWindowHandler);  // switch back to parent window
 	}
 
 	//This method will helps us to switch to a Old window
@@ -2232,12 +2210,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 	// This Function is used to Select Recently Opened Window or Popup.(Working properly)
 	public void recentOpenedPopupSelectWebdriver(String mainwindow) throws Exception {
-		//					 int windownull = 0;
-		//					String currentwindow = driver.getWindowHandle();
 		writeConsole("Webdriver Main Window[" + mainwindow + "]");
-		//					writeConsole("Webdriver Current Window["+currentwindow+"]");
-		//					 Set<String> popwindow = driver.getWindowHandles();
-		//					 Iterator<String> it = popwindow.iterator();
 		Iterator<String> popwindow = driver.getWindowHandles().iterator();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
@@ -2252,19 +2225,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 	// This Function is used to Select Recently Opened Window or Popup.
 	public void recentPopupCloseWebdriver() throws Exception {
 		Reporter.log("Proceed to Close All Opened Pop Ups");
-		//String mainwindow = driver.getWindowHandle();
-
-		//	driver.switchTo().window(mainwindow);
-
-		//writeConsole("Webdriver Main Window["+mainwindow+"]");
-		//					 Set<String> popwindow = driver.getWindowHandles();
-		//					 Iterator<String> it = popwindow.iterator();
 		Iterator<String> popwindow = driver.getWindowHandles().iterator();
 		String parent = popwindow.next();
 		while (popwindow.hasNext()) {
 			String window = popwindow.next();
-			//					 writeConsole("Webdriver Switch To Window["+window+"]");
-			//					 driver.switchTo().window(window);
 			if (!parent.equals(window)) {
 				writeConsole("Webdriver Switch To Window[" + window + "]");
 				driver.switchTo().window(window);

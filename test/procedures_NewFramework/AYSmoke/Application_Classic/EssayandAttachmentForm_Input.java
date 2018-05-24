@@ -41,22 +41,17 @@ public class EssayandAttachmentForm_Input extends CommonSeleniumActions	implemen
 				}else if (essaywithattachmentuploaddocument.equals("view document")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
-//					VerifyPDFOpen("ShowDocument", 1000);
-				recentPopupSelectWebdriver("view document");
-				waitForPageToLoadWebdriver();
-//					Runtime.getRuntime().exec("T:/WebProducts/QA/SeleniumScripts/AY/AutoIT/PdfClose/ViewDocPdf.exe");
-//					waitForUniqueNameWindow();
-//					SelectPrintWindow("ShowDocument");
-				
-				}else if (essaywithattachmentuploaddocument.equals("delete")) {
-//					clickchooseokgetconfirmationpagepload(EA_EssaywithAttachment_DeleteDocument);
-//					chooseOkOnNextConfirmation();
+					recentPopupSelectWebdriver("view document");
+					waitForPageToLoadWebdriver();
+				}
+				else if (essaywithattachmentuploaddocument.equalsIgnoreCase("close")) {
+					waitForPageToLoadWebdriver();
+					recentPopupCloseWebdriver();
+				}
+				else if (essaywithattachmentuploaddocument.equals("delete")) {
 					waitForElementPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, essaywithattachmentuploaddocument);
 					clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument);
 					alertAccept();
-					//waitForElementNotPresentWebdriver(attributeName_xpath, EA_EssaywithAttachment_DeleteDocument, essaywithattachmentuploaddocument);
-//					getConfirmation();
-//					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath,EA_EssaywithAttachment_UploadDocument, "Upload Document");
 				}
 			}

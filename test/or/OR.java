@@ -386,7 +386,7 @@ public static final String RC_submitletterrecommend_No = "//input[@name='online'
 //#public static final String RC_waiveright= "//input[@id='rbY1']";
 //#public static final String RC_submitletterrecommend = "//input[@id='rbY2']"; 
 public static final String RC_Notificationemail= "//textarea[@id='Textarea1']";
-public static final String RC_Save ="//input[@value='Add Provider']";// "//img[@alt='save']";
+public static final String RC_Save ="//input[@value='Add Provider' and @id='ay-recSubmit2']";// "//img[@alt='save']";
 //#**********************************************************#
 //#Webcenter Login - WCL
 //#*********************************************************#
@@ -573,6 +573,7 @@ public static final String AW_SubmitAppBtn = "css=#ay-recSubmit";
 public static final String AW_PrintPreviewBtn = "//a[contains(text(),'Preview Application in PDF Format')]";
 public static final String AW_PrintPreviewPdfBtn = "//*[contains(@href,'windowOpen()')]";
 public static final String AW_SystemMessage = "//div[@id='divErrors']";
+String proceedToSubmit = "ay-recSubmit";
 //#**********************************************************#
 //# Facelift Personal Data Input
 //#**********************************************************#
@@ -671,7 +672,7 @@ public static final String PII_Country = "//select[@id='q24509']";
 public static final String PII_AddressLookupBtn = "//input[@value='Address Lookup']";
 public static final String PII_SaveContinue = "//a[text()='Save & Continue']";//img[@alt='Save and Continue']";
 public static final String PII_Save = "//a[text()='Save']";//img[@alt='Save']";
-public static final String PII_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
+public static final String PII_SaveBottom = "//img[@alt='Save'][2]";
 public static final String PII_Reset = "//img[@alt='Reset']";
 //#**********************************************************#
 //# Facelift User Login Input - UI

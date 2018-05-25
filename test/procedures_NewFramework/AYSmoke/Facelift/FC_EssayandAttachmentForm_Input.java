@@ -87,8 +87,13 @@ public class FC_EssayandAttachmentForm_Input extends CommonSeleniumActions	imple
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
 				if(button_to_click.equalsIgnoreCase("Save")){
-					clickWebdriver(attributeName_xpath,PII_SaveBottom);
-					waitForPageToLoadWebdriver();
+					try {
+						clickWebdriver(attributeName_xpath, PII_Save);
+						waitForPageToLoadWebdriver();
+					}catch (Throwable e){
+						clickWebdriver(attributeName_xpath, PII_SaveBottom);
+						waitForPageToLoadWebdriver();
+					}
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriver(attributeName_xpath,PII_SaveContinue);
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {

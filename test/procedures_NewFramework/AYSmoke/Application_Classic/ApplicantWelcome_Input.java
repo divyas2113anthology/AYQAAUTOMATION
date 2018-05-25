@@ -12,9 +12,6 @@ public class ApplicantWelcome_Input extends CommonSeleniumActions implements OR 
 	public void ApplicantWelcome_Input() throws Exception{
 		try {
 			writeDetails();
-//			headerStatement("ApplicantWelcome_Input");
-//			startExecutionOrder(j);
-//			writeParametersTable();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Applicant Welcome' page");
 			String[]  applicantwelidatarepo = datacontainer;
 			String logout = applicantwelidatarepo[0];

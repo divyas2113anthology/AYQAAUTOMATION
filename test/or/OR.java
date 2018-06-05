@@ -1743,7 +1743,7 @@ public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-chec
 public static final String MQ_ValueButton = "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']";
 public static final String MQ_AddRow = "//img[contains(@src,'plus')]";
 public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
-public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
+public static final String MQ_MultiSelectOpen = "//select[@name='txtValue0']";//"//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
 //public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";

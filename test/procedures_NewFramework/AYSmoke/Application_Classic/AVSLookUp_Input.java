@@ -59,6 +59,7 @@ public class AVSLookUp_Input extends CommonSeleniumActions implements OR {
 					Thread.sleep(5000);
 					clickWebdriver(attributeName_xpath,EL_searchclose+avssearch+"']");
 					//clickWebdriver(attributeName_xpath,"//*[@alt='"+avssearch+"']");
+					waitForPageToLoadWebdriver();
 					Reporter.log(" Click on ("+avsname+") Link");
 					clickWebdriver(attributeName_xpath,EL_hslink+avsname+"')]");
 					String parentWindow = popwindow.next();

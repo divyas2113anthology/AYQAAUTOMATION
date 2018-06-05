@@ -12,6 +12,7 @@ import or.OR;
 import processor.CommonSeleniumActions;
 
 import java.io.BufferedInputStream;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -21,6 +22,8 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 	public void PDF_Verify() {
 		try {
 			writeDetails();
+			Iterator<String> windows = driver.getWindowHandles().iterator();
+			String parent = windows.next();
 			Reporter.log("Proceed to retrieve Verify Test Data to verify PDF is Open successfully");
 			String[] testdata = datacontainer;
 			String pdfname = testdata[0];
@@ -79,7 +82,7 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 						for(WebElement eachDiv : pdfContent){
 							exceptionmsg += eachDiv.getText();
 						}*/
-
+						waitForPageToLoadWebdriver();
 						List<WebElement> elementLocator = driver.findElements(By.xpath("//div[@id='viewerContainer']//div[@class='textLayer']//div"));
 						String exceptionmsg = ""; //= elementLocator.getText();
 
@@ -100,17 +103,18 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 							Reporter.log("Step 1 - Verify PDF Contains text");
 							//verifyTextContains(pdfcontainstext, exceptionMsg, "Page");
 							String [] splitpdftext = pdfcontainstext.split(";");
-							
+							waitForPageToLoadWebdriver();
 							for (int i = 0; i < splitpdftext.length; i++) {
 								//verifyTextContains(splitpdftext[i], exceptionMsg, "Contains PDF Text");Page:
 //								verifyTextContains(splitpdftext[i], exceptionMsg, "Page");
 //								writeConsole("Pdf Contains Text was verified successfully");
 								if (exceptionmsg.contains(splitpdftext[i])) {
 									writeConsole(splitpdftext[i]);
+									waitForPageToLoadWebdriver();
 //									writeConsole("PDF File :"+splitpdftext[i]);
 								}
 							}
-							
+							waitForPageToLoadWebdriver();
 						}
 						if (wait.equals("")) {
 							
@@ -127,12 +131,14 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //						}
 					writeConsole("close PDF File :");
 					closeWindowWebdriver();
-					deselectPopUp();
+					//deselectPopUp();
 					System.out.println("Select Applicant summary popup");
-					recentPopupSelect("Applicant Summary");
-					deselectPopUp();
+					//recentPopupSelect("Applicant Summary");
+					//deselectPopUp();
 					//recentPopupCloseWebdriver();
-					selectMainWindowWebdriver();
+					//selectMainWindowWebdriver();
+				selectMainWindowWebdriver(parent);
+
 				}
 			}else{
 				writeConsole("Inter Net "+browser);

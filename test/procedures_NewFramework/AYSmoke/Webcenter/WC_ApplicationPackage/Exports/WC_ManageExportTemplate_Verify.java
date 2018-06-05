@@ -28,8 +28,11 @@ public class WC_ManageExportTemplate_Verify extends CommonSeleniumActions implem
 			}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, PageName, pagename);
+				waitForPageToLoadWebdriver();
 				verifyElementContainsTextWebdriver(attributeName_xpath, PageName, pagename, "Page Name for Manage Import Template");
+
 			}
 			if (!verifyui.equals("")) {
 //				Reporter.log("Step 3 - Verify UI was displayed correctly");

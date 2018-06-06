@@ -21,6 +21,7 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 			String message = testdata[1];
 			String applicationfee = testdata[2];
 			String transcripts = testdata[3];
+			String printVoucher = testdata[4];
 			
 			Reporter.log("Verify Test Data was retrieved for 'Main' page");
 			if (!pagename.equals("")) {
@@ -29,8 +30,13 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 				verifyElementTextWebdriver(attributeName_xpath,MN_PageTitle, pagename, "Page Name");
 			}
 			if (!message.equals("")) {
+				verifyElementPresentWebdriver(attributeName_xpath, paymentVoucher, "Payment Voucher");
 				waitForPageToLoadWebdriver();
-				//verifyTextPresent(message);
+			}
+
+			if(printVoucher.equalsIgnoreCase("Print Voucher")){
+				verifyElementPresentWebdriver(attributeName_xpath, printVoucherButton, "Print Voucher");
+				waitForPageToLoadWebdriver();
 			}
 			if (!applicationfee.equals("")) {
 				Reporter.log("Verify the element with text ("+applicationfee+")");
@@ -46,8 +52,6 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
-		//endExecutionOrder(j);
-//		Reporter.log("##########End of Execution Order ["+j+"]##########");
 	}
 
 }

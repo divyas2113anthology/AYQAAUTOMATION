@@ -61,7 +61,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdlastname.equals("")) {
 			Reporter.log("Step 4 - Enter Last Name as ("+pdlastname+")");
-			String LNamepd = getElementIDbyLabel("Last Name",PD_Lastname);
+			String LNamepd = getElementIDbyLabel("Last name",PD_Lastname);
 			sendKeys(attributeName_xpath,LNamepd,pdlastname);
 		}
 		if (!pddateofbirth.equals("")) {

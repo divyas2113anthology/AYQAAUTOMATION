@@ -28,6 +28,7 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 				Reporter.log("Step - Click on Proceed To Submission button");
 				waitForElementPresentWebdriver(attributeName_id, proceedToSubmit, "Proceed To Submission button");
 				clickWebdriver(attributeName_id, proceedToSubmit);
+				waitForPageToLoadWebdriver();
 			}
 
 			if (!stapriviewappl.equals("")) {
@@ -48,7 +49,11 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 
 			if (!stacontinue.equals("")) {
 				Reporter.log("Step 3 - Click on ("+stacontinue+") Button ");
-				clickWebdriver(attributeName_xpath, AS_Continue);
+				try {
+					clickWebdriver(attributeName_xpath, AS_Continue);
+				}catch(Throwable e){
+					clickWebdriver(attributeName_xpath, applicantStatusContinue);
+				}
 				waitForPageToLoadWebdriver();
 			}
 		

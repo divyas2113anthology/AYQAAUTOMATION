@@ -249,8 +249,11 @@ public static final String EL_hslink = "//a[contains(text(),'";
 public static final String AS_PreviewApp = "//font[contains(text(),'Preview Application')]";
 public static final String AS_Submissioncomplete = "//input[@id='checkbox']";
 public static final String AS_Continue = "//img[@alt='continue']";
+String applicantStatusContinue = "//input[@value='Continue']";
 public static final String AS_VerifyApplicationFee = "//li[contains(text(),'TestingApplicationFee')]";
 public static final String AS_VerifyTranscripts = "//ul//li[contains(text(),'TranscriptStatus')]";
+String paymentVoucher = "//b[text()='Payment Voucher']";
+String printVoucherButton = "//a[normalize-space(text())='Print Voucher']";
 //#**********************************************************#
 //# Application Fee Payment Page - AF
 //#*********************************************************#
@@ -259,7 +262,7 @@ public static final String AF_International = "//input[@id='AppFeeAmount2']";
 public static final String AF_Check = "//input[@id='ptCheck1']";
 public static final String AF_FeeWaiver = "//input[@id='ptWaiver1']";
 public static final String AF_CreditCard = "//input[@id='ptCreditCard']";
-public static final String AF_PayContinue = "//img[@alt='pay and continue']";
+public static final String AF_PayContinue = "//input[@value='Pay and Continue']";
 public static final String AF_PaymentStatus = "//select[@name='pmtstatus']";
 //#**********************************************************#
 //# Signature Page - SP
@@ -267,6 +270,7 @@ public static final String AF_PaymentStatus = "//select[@name='pmtstatus']";
 public static final String SP_FullName = "//input[@id='eSignName']";
 public static final String SP_Date = "//input[@id='esignDate']";
 public static final String SP_Submit = "//img[@alt='submit application']";
+String SP_submitApp = "//input[@value='Submit Application']";
 //#**********************************************************#
 //# Essay and Attachment Page - EA
 //#**********************************************************#
@@ -862,8 +866,7 @@ public static final String AW_SportsLnk = "//span[@class='menuImage']//font[text
 public static final String SRI_PageTitle = "//td/font[text()='Virginia']";
 public static final String SRI_Fa1rfaxLnk = "//a/font[text()='Fa1rfax']";
 public static final String SRI_SportsLnk = "//a/font[text()='Sports']";
-//public static final String PD_ErrorMsg = "//div[@id='divAyMsg']//td[@class='BasePageFont']";
-public static final String PD_ErrorMsg = "//div[@id='divErrors']/p";
+public static final String PD_ErrorMsg = "//div[1][@class='dynamicText']/p";
 public static final String ALI_FirstLnk = "//div[@id='pnlPickList']/ul/li[1]";
 public static final String DF_FormName = "//font[@class='BasePageFont' ]/a[contains(text(),'";
 //#**********************************************************#
@@ -1743,7 +1746,7 @@ public static final String MQ_ValuesDropdown = "//ul[@class='ui-multiselect-chec
 public static final String MQ_ValueButton = "//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']";
 public static final String MQ_AddRow = "//img[contains(@src,'plus')]";
 public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
-public static final String MQ_MultiSelectOpen = "//select[@name='txtValue0']";//"//button[contains(@class,'ui-multiselect')]";
+public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
 //public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";

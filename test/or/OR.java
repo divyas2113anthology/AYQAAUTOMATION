@@ -1083,12 +1083,16 @@ public static final String AS_EnrolmentDeadLineDate = "//input[@name='EnrollDead
 public static final String AS_ApplicationFee = "//input[@name='chkAppFee']";
 public static final String AS_AppFee = "//a[contains(@href,'ApplicantionFee')]";
 public static final String AS_Transcripts = "//input[@name='chkTranscripts']";
+public static final String AS_StandardizedTestScores = "//input[@name='chkTestScores']";
+public static final String AS_RecommendationDTs = "//input[@name='chkRcmd']";
+public static final String AS_OtherSupportingDocuments = "//input[@name='chkOtherSuppDoc']";
 public static final String AS_SaveBtn = "//img[contains(@src,'admin_save_small')]";
 public static final String AS_PrintApplicationBtn = "//img[contains(@src,'print')]";
 public static final String AS_View = "//font[contains(text(),'";
 public static final String AS_ViewDetailes = "//span[contains(text(),'";
 public static final String AS_CloseWindow = "//img[contains(@src,'admin_close_window_large')]";
     public static final String AS_UnSubmit ="//td/a[contains(text(),'AM')]";
+   public static final String As_Clearcompletedate ="//td[@id='idCompDt']/a[contains(text(),'AM')]";
 public static final String AS_ViewApplication = "//span[text()='view application']";
 public static final String AS_ViewRecommendation = "//span[text()='view Recommendation-']";
 public static final String AS_ViewComments = "//font[contains(text(),'Comments')]";

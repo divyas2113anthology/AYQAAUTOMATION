@@ -2235,10 +2235,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 				closeWindowWebdriver();
 				driver.switchTo().window(parent);
 			}
-
-
 		}
-
 	}
 
 	//To close all the other windows except the main window.
@@ -2380,7 +2377,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return element;
 
 	}
-
 
 	public void waitForElementPresentWebdriver(String attributename, String attributevalue, String elementname) throws Exception {
 		for (int second = 0; ; second++) {

@@ -33,11 +33,11 @@ public class WC_PreviewEmailTemplate_Input extends CommonSeleniumActions impleme
 				Reporter.log("Verify("+comments+")is present");
 				waitForElementPresentWebdriver(attributeName_xpath, RR_Comments, comments);
 				verifyElementContainsTextWebdriver(attributeName_xpath, RR_Comments, comments, comments);
-			}			
+			}
 			if(!close.equals("")){
 				Reporter.log("Click on the Button"+close);
 				clickWebdriver(attributeName_xpath, RR_Close);
-				selectMainWindowWebdriver();
+				switchToDefaultContentWebdriver();
 			}
 			
 						

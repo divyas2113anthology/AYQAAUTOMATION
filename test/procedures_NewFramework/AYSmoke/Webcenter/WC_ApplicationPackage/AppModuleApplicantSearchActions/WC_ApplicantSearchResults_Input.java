@@ -21,8 +21,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			String radio_button_click = testdata[4];
 			String click = testdata[5];
 			Reporter.log("Input Test Data was retrieved for 'Application search results' Page");
-//			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
-//			waitForElementPresentWebdriver(attributeName_xpath, MCL_NewSearchbutton, "New Search Button");
+
 			if (!checkagainstname.equals("")) {
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checkagainstname+"]");
 				if (checkagainstname.contains("check")) {
@@ -39,12 +38,13 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					uncheckWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}else if (checkagainstname.equalsIgnoreCase("All")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]", checkagainstname);
-					clickWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]");
+					checkWebdriver(attributeName_xpath, "//img[contains(@src,'check_box')]");
 				}else if (checkagainstname.equalsIgnoreCase("emtqaaccount@hobsons.com")) {
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']", checkagainstname);
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}
-			}			
+			}
+
 			if (!clickname.equals("")) {
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clickname+"]");
 				writeConsole(clickname);
@@ -62,6 +62,16 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					}else if (clickname.equalsIgnoreCase("FaceliftAppFirstName")) {
 						String ReadClickName = Runtimedataread(clickname);
 //						sendKeyStroke(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]", Keys.SPACE);
+						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						waitForPageToLoadWebdriver();
+						recentPopupSelectWebdriver("Application Summary");
+					}
+					else if (clickname.equalsIgnoreCase("OfflineRec")) {
+						String ReadClickName = Runtimedataread(clickname);
+						if(ReadClickName.length() > 30){
+							ReadClickName = ReadClickName.substring(0,30 );
+							writeConsole(ReadClickName);
+						}
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						waitForPageToLoadWebdriver();
 						recentPopupSelectWebdriver("Application Summary");
@@ -98,12 +108,16 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				Reporter.log("Step 5 - Select the Radio button as ["+radio_button_click+"]");
 				if (radio_button_click.equalsIgnoreCase("Apply to Selected")) {
 					clickWebdriver(attributeName_xpath, ASR_ApplySelected);
+					waitForPageToLoadWebdriver();
 				}else if (radio_button_click.equalsIgnoreCase("Apply to All")) {
 					clickWebdriver(attributeName_xpath, ASR_ApplyAll);
+					waitForPageToLoadWebdriver();
 				}else if (radio_button_click.equalsIgnoreCase("Ascending")) {
 					clickWebdriver(attributeName_xpath, ASR_Ascending);
+					waitForPageToLoadWebdriver();
 				}else if (radio_button_click.equalsIgnoreCase("Descending")) {
 					clickWebdriver(attributeName_xpath, ASR_Descending);
+					waitForPageToLoadWebdriver();
 				}
 			}
 			if (!click.equals("")) {
@@ -130,7 +144,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				    } catch (Exception e) {
 				        System.out.println("no alert");
 				    }
-					//waitForPageToLoadWebdriver();
+					waitForPageToLoadWebdriver();
 					
 					//driver.switchTo().alert().accept();
 				}

@@ -33,11 +33,8 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 			String applicationreview = testdata[12];
 			String applicationfilter = testdata[13];
 			String turnOnFeeRules = testdata[14];
-
-
 			String turnOnRecommendationRules = testdata[15];
 
-			
 			Reporter.log("Input Test Data was retrieved for 'Manage Package' Page");
 			
 			if (!includeoffline.equals("")) {
@@ -45,14 +42,15 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 				waitForElementPresentWebdriver(attributeName_xpath, RecIncludeOffline, includeoffline);
 				verifyElementContainsTextWebdriver(attributeName_xpath, RecIncludeOffline,includeoffline,includeoffline);
 			}
+
 			if (!includeofflinecheck.equals("")) {
 				Reporter.log("Perform the operation to click the  Button as ["+includeofflinecheck+"]");
 				doubleClickWebdriver(attributeName_xpath, IncludeOfflineCheck);
 			}
+
 			if (!applicationreview.equals("")) {
 				Reporter.log("Perform the operation/verify Application Review");
 				waitForElementPresentWebdriverWait(attributeName_xpath, CL_Appreivew_Condition, applicationreview);
-				//verifyElementContainsTextWebdriver(attributeName_xpath, CSC_FormHeading+applicationreview+"')", applicationreview, applicationreview);
 				verifyElementContainsTextWebdriver(attributeName_xpath, CL_Appreivew_Condition, applicationreview, applicationreview);
 			}
 			if (!applicationfilter.equals("")) {
@@ -67,12 +65,14 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 				clickWebdriver(attributeName_xpath,CL_AddEdit+button+"')]");
 				waitForPageToLoadWebdriver();
 			}
+
 			if (!turnOnFeeRules.equals("")) {
 				waitForElementPresentWebdriver(attributeName_xpath,FR_TurnOnFeeRules, turnOnFeeRules);
 				clickWebdriver(attributeName_xpath,FR_TurnOnFeeRules);
 				alertMessage();
 				alertAccept();
 			}
+
 			if (!turnOnRecommendationRules.equals("")) {
 				waitForElementPresentWebdriver(attributeName_xpath,FR_TurnOnRecommendationRules, turnOnRecommendationRules);
 				clickWebdriver(attributeName_xpath,FR_TurnOnRecommendationRules);

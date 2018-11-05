@@ -32,6 +32,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String view = testdata[14];
 			String closewindow = testdata[15];
 			String UnsubmitApplicant = testdata[16];
+			String ClearCompleteDate =testdata[17];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
 			AppSummaryWindowName = driver.getWindowHandle();
@@ -178,17 +179,29 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			}
 			if (!completestatus.equals("")) {
 				Reporter.log("Step 12 - Check the Complete Status as ["+completestatus+"]");
-				String [] SplitStatus = completestatus.split("_");
+				String [] SplitStatus = completestatus.split(";");
 				if (SplitStatus[0].equalsIgnoreCase("Application Fee") && SplitStatus[1].equalsIgnoreCase("Check")) {
 					checkWebdriverCheckbox(attributeName_xpath, AS_ApplicationFee);
 				} else if (SplitStatus[0].equalsIgnoreCase("Application Fee") && SplitStatus[1].equalsIgnoreCase("UnCheck")) {
 					uncheckWebdriverCheckbox(attributeName_xpath, AS_ApplicationFee);
-				}else if (SplitStatus[0].equalsIgnoreCase(" Transcripts") && SplitStatus[1].equalsIgnoreCase("Check")) {
+				}else if (SplitStatus[0].equalsIgnoreCase("Transcripts") && SplitStatus[1].equalsIgnoreCase("Check")) {
 					checkWebdriverCheckbox(attributeName_xpath, AS_Transcripts);
-				} else if (SplitStatus[0].equalsIgnoreCase(" Transcripts") && SplitStatus[1].equalsIgnoreCase("UnCheck")) {
+				} else if (SplitStatus[0].equalsIgnoreCase("Transcripts") && SplitStatus[1].equalsIgnoreCase("UnCheck")) {
 					uncheckWebdriverCheckbox(attributeName_xpath, AS_Transcripts);
+				}else if (SplitStatus[0].equalsIgnoreCase("Recommendation-DTs") && SplitStatus[1].equalsIgnoreCase("Check")) {
+					checkWebdriverCheckbox(attributeName_xpath, AS_RecommendationDTs);
+				}else if (SplitStatus[0].equalsIgnoreCase("Recommendation-DTs") && SplitStatus[1].equalsIgnoreCase("UnCheck")) {
+					uncheckWebdriverCheckbox(attributeName_xpath, AS_RecommendationDTs);
+			    }else if (SplitStatus[0].equalsIgnoreCase("Standardized Test Scores") && SplitStatus[1].equalsIgnoreCase("Check")) {
+					checkWebdriverCheckbox(attributeName_xpath, AS_StandardizedTestScores);
+				}else if (SplitStatus[0].equalsIgnoreCase("Standardized Test Scores") && SplitStatus[1].equalsIgnoreCase("UnCheck")){
+					uncheckWebdriverCheckbox(attributeName_xpath, AS_StandardizedTestScores);
+				}else if (SplitStatus[0].equalsIgnoreCase("Other Supporting Documents") && SplitStatus[1].equalsIgnoreCase("Check")){
+					checkWebdriverCheckbox(attributeName_xpath, AS_OtherSupportingDocuments);
+				}else if (SplitStatus[0].equalsIgnoreCase("Other Supporting Documents") && SplitStatus[1].equalsIgnoreCase("UnCheck")){
+					uncheckWebdriverCheckbox(attributeName_xpath, AS_OtherSupportingDocuments);
+					}
 				}
-			}
 			if (!enrollment.equals("")) {
 				
 			}
@@ -257,7 +270,16 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				switchToOldWindow();
 				//recentPopupClose();
 			}
-
+			if(!ClearCompleteDate.equals("")){
+				Reporter.log("Step 17- Proceed to click the link  ["+ClearCompleteDate+"] to un-submit the applicant");
+				waitForPageToLoadWebdriver();
+				switchToSecondPopupWindow();
+				waitForElementPresentWebdriver(attributeName_xpath, As_Clearcompletedate,ClearCompleteDate);
+				clickWebdriver(attributeName_xpath, As_Clearcompletedate);
+				alertAccept();
+				switchToOldWindow();
+				//recentPopupClose();
+			}
 
 
 

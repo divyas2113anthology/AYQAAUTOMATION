@@ -52,6 +52,7 @@ public class WC_RemindRecommenderAction_Input extends CommonSeleniumActions impl
 			}	
 			if(!comment.equals("")){
 				Reporter.log("SProvide the comments as("+comment+")");
+				waitForElementPresentWebdriver(attributeName_xpath, RR_Comment, selectatemplate);
 				sendKeys(attributeName_xpath, RR_Comment, comment);
 
 			}
@@ -63,6 +64,7 @@ public class WC_RemindRecommenderAction_Input extends CommonSeleniumActions impl
 			}
 			if(!preview.equals("")){
 				Reporter.log("Click on ("+preview+") button");
+				String parentWindow = getParentWindow();
 				clickWebdriver(attributeName_xpath, RR_Preview);
 				
 			}

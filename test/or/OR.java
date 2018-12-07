@@ -289,7 +289,7 @@ public static final String EA_EssaywithAttachment_DeleteDocument = "xpath=(//a[@
 public static final String EA_AttachmentOnly_UploadDocument = "xpath=(//img[@alt='Upload Attachment'])[2]";
 public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//a[@alt='View Document'])[2]";
 //public static final String EA_AttachmentOnly_ViewDocument = "xpath=(//img[@alt='View Document'])[2]";
-public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//a[@alt='Delete Attachment'])[2]";
+public static final String EA_AttachmentOnly_DeleteDocument = "(xpath=//a[@alt='Delete Attachment'])[2]";
 //public static final String EA_AttachmentOnly_DeleteDocument = "xpath=(//img[@alt='Delete Attachment'])[2]";
 //public static final String EA_MediaAttachment_UploadFile = "xpath=(//img[@alt='Upload Attachment'])[3]";
 public static final String EA_MediaAttachment_UploadFile = "xpath=(//a[@alt='Upload Attachment'])[3]";
@@ -353,7 +353,7 @@ public static final String PD_PullQuestion = "//input[@id='q26168']";
 public static final String PD_PushQuestion = "//input[@id='q26169']";
 public static final String PD_Aptnumber = "//input[@id='q24395']";
 public static final String PD_EmailRecommended = "//input[@id='q24433']";
-public static final String PD_Save ="//a[text()='Save']"; //table//tr[1]/td//a/img[@alt='Save']";
+public static final String PD_Save ="//a[text()='Reset']/preceding-sibling::a[text()='Save']"; //table//tr[1]/td//a/img[@alt='Save']";//Rahul Mehta
 public static final String ManualAdd_PD_Save ="//img[@alt='Save']";
 public static final String Bridge_PD_Save ="//img[@alt='Save']";
 public static final String PD_SaveContinue = "//img[@alt='Save and Continue']";
@@ -866,7 +866,7 @@ public static final String AW_SportsLnk = "//span[@class='menuImage']//font[text
 public static final String SRI_PageTitle = "//td/font[text()='Virginia']";
 public static final String SRI_Fa1rfaxLnk = "//a/font[text()='Fa1rfax']";
 public static final String SRI_SportsLnk = "//a/font[text()='Sports']";
-public static final String PD_ErrorMsg = "//div[1][@class='dynamicText']/p";
+public static final String PD_ErrorMsg = "//div[@class='error']/p";//Rahul Mehta
 public static final String ALI_FirstLnk = "//div[@id='pnlPickList']/ul/li[1]";
 public static final String DF_FormName = "//font[@class='BasePageFont' ]/a[contains(text(),'";
 //#**********************************************************#
@@ -2154,6 +2154,44 @@ public static final String FR_Show ="//font[text()='show']";
 public static final String FR_TurnOnFeeRules ="//input[@id='chkActivateFeeRule']";
 public static final String FR_TurnOnRecommendationRules ="//input[@id='chkActivateRecRule']";
 
-}
+//#*************************************************************************#
+			//Webcenter - Configure PDF Rules
+//#*************************************************************************#
+public static final String ConfigurePDFRules_PageTitle="//*[@id='Table1']/tbody/tr[1]/td/font";
+public static final String ConfigurePDFRules_Top_Deletebutton="//img[contains(@src,'admin_delete_small_n')]";
+public static final String ConfigurePDFRules_Bottom_Deletebutton="(//img[contains(@src,'admin_delete_small_n')])[2]";
+public static final String ConfigurePDFRules_Top_Addbutton="//img[contains(@src,'admin_add_small_n')]";
+public static final String ConfigurePDFRules_Bottom_Addbutton="(//img[contains(@src,'admin_add_small_n')])[2]";
+public static final String ConfigurePDFRules_ShowInstuction="//font[text()='show']";
+public static final String ConfigurePDFRules_HideInstuction="//font[text()='Hide']";
+public static final String ConfigurePDFRules_Top_SaveButton="//img[contains(@src,'admin_save_small_n')]";
+public static final String ConfigurePDFRules_Bottom_SaveButton="(//img[contains(@src,'admin_save_small_n')])[2]";
+public static final String ConfigurePDFRules_NameLabel="//font[contains(text(), 'Name*')]";
+public static final String ConfigurePDFRules_DescriptionLabel="//font[text()='Description:']";
+public static final String ConfigurePDFRules_PDFFileLable="//font[contains(text(), 'PDF File*')]";
+public static final String ConfigurePDFRules_AppendthePDFselectedabovetothePackageLable="//font[contains(text(), 'Append the PDF selected above to the Package PDF')]";
+public static final String ConfigurePDFRules_FieldLabel="//td[text()='Field']";
+public static final String ConfigurePDFRules_OperatorLabel="//td[text()='Operator']";
+public static final String ConfigurePDFRules_ValueLabel="//td[text()='Value']";
+public static final String ConfigurePDFRules_SystemMessage_CloseIcon="//span[@class='ui-icon ui-icon-circle-close']";
+public static final String ConfigurePDFRules_DDL_CheckAll="//span[text()='Check all']";
+public static final String ConfigurePDFRules_DDL_unCheckAll="//span[text()='Uncheck all']";
+public static final String ConfigurePDFRules_NameInput="//input[@name='txtRuleName']";
+public static final String ConfigurePDFRules_DescriptionInput="//textarea[@name='taDescription']";
 
+//#*****************************************************************************#//
+	// Query Detail Page
+
+//#*****************************************************************************#//
+		
+public static final String DetailQuery_queryname_input="//input[@name='txtQueryName']";
+public static final String DetailQuery_Description_input="//textarea[@name='txtDescription']";
+public static final String DetailQuery_Folder="//select[@name='QueryFolder']";
+public static final String DetailQuery_Lock_input="//input[@name='Lock']";
+public static final String DetailQuery_run_button="//img[@name='topsaverunbutton']";	
+
+
+
+
+}
 

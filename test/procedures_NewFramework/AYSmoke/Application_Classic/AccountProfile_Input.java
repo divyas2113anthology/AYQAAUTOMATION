@@ -41,7 +41,7 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 				String AppPassword;
 				Reporter.log("Input Test Data was retrieved for 'Account Profile' page");
 				Date date = new Date();  
-				DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+				DateFormat dateFormat = new SimpleDateFormat("MMddyy");
 				String firstname = firstgivenname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();				
 				if (!firstgivenname.equals("")) {
 					Reporter.log("Step 1 - Enter 'First/Given Name' as ("+firstname+")");

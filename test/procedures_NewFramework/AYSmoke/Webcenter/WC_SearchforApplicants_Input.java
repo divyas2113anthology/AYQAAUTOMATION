@@ -42,6 +42,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			String pros_id = testdata[23];
 			String daterange_from = testdata[24];
 			String daterange_to = testdata[25];
+			String connectid = testdata[26];
 			
 			//ApplicationPage = driver.getWindowHandle();
 			ApplicationPage = driver.getWindowHandle();
@@ -243,6 +244,11 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_SearchProspectID, pros_id);
 				clickWebdriver(attributeName_xpath, SAI_SearchProspectID);
 				sendKeys(attributeName_xpath, SAI_SearchProspectID, pros_id);
+			}
+
+            if (!connectid.equals("")) {
+				Reporter.log("Step 26 - Enter the Connect ID as ["+connectid+"]");
+				sendKeys(attributeName_xpath, SAI_ConnectID, connectid);
 			}
 			if (!submit.equals("")) {
 				Reporter.log("Step 25 - Click the submit button");

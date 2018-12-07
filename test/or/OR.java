@@ -909,6 +909,7 @@ public static final String SAI_EmailAddress = "//input[@name='Email']";
 public static final String SAI_Zip = "//input[@name='ZipCode']";
 public static final String SAI_Pin = "//input[@name='Pin']";
 public static final String SAI_ApplicantID = "//input[@name='ApplyyourSelfID']";
+public static final String SAI_ConnectID = "//input[@name='ConnectID']";
 public static final String SAI_SysQuries = "SysQuery";
 //public static final String SAI_UserQuries = "//select[@name='QueryID']";//input[@id='QueryID']
 public static final String SAI_UserQuries = "//*[@name='QueryID']";//input[@id='QueryID']";

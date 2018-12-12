@@ -38,8 +38,14 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			}
 			if (!field.equals("")) {
 				Reporter.log("Select ("+field+")");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ET_FieldName, field);
+				waitForPageToLoadWebdriver();
+				//--start--Rahul Mehta
+				clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
+				sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);
+				clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+field+"')]");
+				//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ET_FieldName, field);
 				//selectByVisibleTextWebdriver(attributeName_xpath, ET_FieldName, field);
+				//--end--Rahul Mehta
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Select ("+operator+")");

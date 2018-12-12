@@ -46,12 +46,18 @@ public class CommonSeleniumActions extends Processor implements OR {
 		//selenium.open(url);
 		driver.get(url);
 	}
+	public void enterPress(String Xpath)   //Rahul Mehta
+	{	writeConsole("Entwr Key press");
+		WebElement webElement = driver.findElement(By.xpath(Xpath));
+		webElement.sendKeys(Keys.ENTER);
+	}
 
 	public void selectWindow(String windowName) {
 		writeConsole("selectWindow[" + windowName + "]");
 		//selenium.selectWindow(windowName);
 		driver.switchTo().window(windowName);
 	}
+
 
 	public void goBack() {
 		writeConsole("goBack");

@@ -2,6 +2,7 @@ package procedures_NewFramework.AYSmoke.WebMail;
 
 import or.OR;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
@@ -35,6 +36,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 				Reporter.log("Step 1 - Opening the Hotmail Window");
 				get("http://www.hotmail.com/");
 				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath,"//a[@class='linkButtonSigninHeader']");//Rahul Mehta
 			}
 			if (!username.equals("")) {
 				Reporter.log("Step 2 - Enter UserName");
@@ -52,22 +54,23 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			    clickWebdriver(attributeName_xpath,HM_Next+next+"']");
 			    Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
-
-
 			}
 			if (!password.equals("")) {
 				Reporter.log("Step 3 - Enter Password");
-               // clickWebdriver(attributeName_xpath,"//input[@value='Next']");
+                clickWebdriver(attributeName_xpath,"//input[@value='Next']"); //Rahul Mehta
 				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, HM_WPassword, password);
+				Thread.sleep(8000);
+				enterPress(HM_WPassword);	//Rahul Mehta
+				Thread.sleep(8000);
 				waitForPageToLoadWebdriver();
 			}
 			if (!login.equals("")) {
 				Reporter.log("Step 4 - Click Log-In Button");
-				waitForPageToLoadWebdriver();
-				clickWebdriver(attributeName_xpath, HM_WSignIn);
-				Thread.sleep(8000);
-				waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
+				//waitForPageToLoadWebdriver(); //Rahul Mehta
+				//clickWebdriver(attributeName_xpath, HM_WSignIn);
+				//Thread.sleep(8000);
+				//waitForElementPresentWebdriver(attributeName_xpath, HM_InboxSide, "Outlook Image");
 				waitForPageToLoadWebdriver();
 			}
 			if (!emailsubject.equals("")) {
@@ -110,11 +113,11 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']")) {
+						if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']")) {   //Rahul Mehta
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
-								if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]"))
+								if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]"))   //Rahul Mehta
 									writeConsole("2");
 									break;
 								}
@@ -123,8 +126,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 //						}
 					}
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
-					waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]","");
-					clickWebdriver(attributeName_xpath,"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]");
+					waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]",""); //Rahul Mehta
+					clickWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]"); //Rahul Mehta
 					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {
@@ -296,12 +299,12 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					waitForPageToLoadWebdriver();
 					recentPopupSelectWebdriver("Update Information");
 				}
-				else{
-				waitForElementPresentWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains);
-				clickWebdriver(attributeName_xpath, "//a/b[contains(text(),'"+clicklinkcontains+"')]");
-				waitForPageToLoadWebdriver();
-				recentPopupSelectWebdriver("Update Information");
-				//recentPopupSelect("Update Information");
+				else {
+					waitForElementPresentWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]", clicklinkcontains); //Rahul Mehta
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clicklinkcontains+"')]");//Rahul Mehta
+					waitForPageToLoadWebdriver();
+					recentPopupSelectWebdriver("Update Information");
+					//recentPopupSelect("Update Information");
 				}
 			}
 			if (!logout.equals("")) {

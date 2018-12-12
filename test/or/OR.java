@@ -1336,7 +1336,7 @@ public static final String RF_RECLogin = "//input[@alt='Login']";
 public static final String HM_WLogin = "//input[@id='i0116']";
 public static final String HM_WPassword = "//input[@id='i0118']";
 public static final String HM_Next =  "//input[@value='";
-public static final String HM_WSignIn = "//input[@id='idSIButton9']";
+public static final String HM_WSignIn = "//input[@type='submit']";  //rahul mehta
 //public static final String HM_Inbox = "Inbox";
 public static final String HM_Inbox = "link=Inbox";   
 //public static final String HM_Inbox = "//li[contains(@class,'leftnavitem')]//span[text()='Inbox']";
@@ -2101,7 +2101,7 @@ public static final String RD_CloseWindow = "//img[contains(@src,'close_window')
 public static final String ET_FilterName = "//input[@name='txtName']";
 public static final String ET_Description = "//textarea[@class='FormFields']";
 public static final String ET_FieldName = "//select[@name='txtField0']";
-public static final String ET_Operator = "//select[@name='txtOperator0']";
+public static final String ET_Operator = "//select[@name='G1-row1_txtOperator1']";
 public static final String ET_Value = "//button[contains(@class,'ui-multiselect')]";
 public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_small')]";
 

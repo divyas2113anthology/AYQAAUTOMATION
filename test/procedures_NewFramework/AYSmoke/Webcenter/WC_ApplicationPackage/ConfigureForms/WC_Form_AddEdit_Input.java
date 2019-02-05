@@ -43,6 +43,7 @@ public class WC_Form_AddEdit_Input extends CommonSeleniumActions implements OR {
 					if (isAttribtuePresent(attributeName_xpath, QAE_Required, "unchecked")) {
 						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
 						clickWebdriver(attributeName_xpath, QAE_Required);
+						Reporter.log("Step 4 - Check the check box for Required");
 					}
 				}
 

@@ -31,6 +31,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 				if(logoutmain.equalsIgnoreCase("Application System Home")){
 					waitForElementPresentWebdriver(attributeName_xpath,"//a[text()='"+logoutmain+"']","Wait for element to display");
 					clickWebdriver(attributeName_xpath,"//a[text()='"+logoutmain+"']");
+					sleep(5);
 
 				}else{
 					if(logoutmain.equalsIgnoreCase("Main Menu")){
@@ -50,7 +51,8 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 				System.out.println("Package1"+SplitPackage[0]);
 				if(isElementPresentWebdriver(attributeName_xpath,"//a[text()='"+SplitPackage[0]+"']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]" )){
 					clickWebdriver(attributeName_xpath,"//a[text()='"+SplitPackage[0]+"']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]" );
-					}
+					sleep(2);
+				}
 				for (int i = 0; i < SplitPackage.length; i++) {
 					writeConsole("Tree Package"+i+":"+SplitPackage[i]);
 					if (i== SplitPackage.length-1) {
@@ -58,16 +60,19 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 						try {
 							waitForPageToLoadWebdriver();
 							clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + SplitPackage[i] + "')]");
+							sleep(2);
 							waitForPageToLoadWebdriver();
 
 						}catch(Exception e){
 							//clickWebdriver(attributeName_xpath,"//img[contains(@src,'plus')]");
 							waitForPageToLoadWebdriver();
 							clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + SplitPackage[i] + "')]");
+							sleep(2);
 							waitForPageToLoadWebdriver();
 						}
 					}else{
-						/*System.out.println(SplitPackage[i]);
+						//--start--Rahul Mehta
+						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
 							waitForPageToLoadWebdriver();
 							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
@@ -77,8 +82,10 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
                                 String seconclickName = SeconclickName.getAttribute("onmouseover");
                                 if(seconclickName.contains("Click to expand")){
                                     PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+                                    sleep(2);
                                 }
-                            }*/
+                            }
+						//--End--Rahul Mehta
 					}
 				}
 				/*try {

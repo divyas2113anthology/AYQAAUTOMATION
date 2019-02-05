@@ -24,6 +24,7 @@ public class WC_SearchforEvents_Input extends CommonSeleniumActions implements O
 			String eventtype = testdata[7];
 			String searcheventdatequery = testdata[8];
 			String submit = testdata[9];
+			String userqueries = testdata[10];//Added by Rahul Mehta
 			Reporter.log("Input Test Data was retrieved for 'Search For Events' Page");
 			if (!internalname.equals("")) {
 				Reporter.log("Step 1 - Enter the Internal Name as ["+internalname+"]");
@@ -74,6 +75,17 @@ public class WC_SearchforEvents_Input extends CommonSeleniumActions implements O
 				Reporter.log("Step 9 - Click the submit button");
 				clickWebdriver(attributeName_xpath, SAI_SubmitBtnBottom);
 			}
+			//Added By Rahul Mehta --start
+			if (!userqueries.equals("")) {
+				Reporter.log("Step 10 - Select the user quries as ["+userqueries+"]");
+				if(isElementPresentWebdriver(attributeName_xpath, SAI_UserQuries))
+				{
+					clickWebdriver(attributeName_xpath, SAI_UserQuries);
+					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath, MQ_Queryselect+userqueries+"')]");
+				} 	
+				}
+			//Added by Rahul Mehta --end
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

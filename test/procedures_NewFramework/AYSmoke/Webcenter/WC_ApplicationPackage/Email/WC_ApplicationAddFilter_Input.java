@@ -37,8 +37,8 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 				
 			}
 			if (!field.equals("")) {
-				Reporter.log("Select ("+field+")");
 				waitForPageToLoadWebdriver();
+				Reporter.log("Select ("+field+")");
 				//--start--Rahul Mehta
 				clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
 				sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);

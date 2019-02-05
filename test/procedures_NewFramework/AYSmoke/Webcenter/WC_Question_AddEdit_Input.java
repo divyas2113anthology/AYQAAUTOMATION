@@ -72,15 +72,18 @@ public class WC_Question_AddEdit_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 4 - Check the check box for Required");
 				if(required.equalsIgnoreCase("Yes") || required.equalsIgnoreCase("Check")) {
 					String trueOrFlase = new String(String.valueOf(isAttribtuePresent(attributeName_xpath, QAE_Required, "checked")));
-					if (trueOrFlase.equalsIgnoreCase("flase")) {
+					if (trueOrFlase.equalsIgnoreCase("false")) {//Rahul Mehta
 						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
 						clickWebdriver(attributeName_xpath, QAE_Required);
+						sleep(2);
+
 					}
 				}
 				if(required.equalsIgnoreCase("No") || required.equalsIgnoreCase("Uncheck")){
 					if(isAttribtuePresent(attributeName_xpath, QAE_Required,"checked")){
 						waitForElementPresentWebdriverWait(attributeName_xpath, QAE_Required, required);
 						clickWebdriver(attributeName_xpath, QAE_Required);
+						sleep(2);
 					}
 				}
 			}

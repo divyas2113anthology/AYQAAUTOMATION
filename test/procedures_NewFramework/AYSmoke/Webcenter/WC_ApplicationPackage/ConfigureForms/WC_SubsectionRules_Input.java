@@ -55,6 +55,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				 waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='"+subsection+"']",subsection);
 				 mouseOverWebdriver(attributeName_xpath,"//a[text()='"+subsection+"']");
 				 clickWebdriver(attributeName_xpath,"//a[text()='"+subsection+"']");
+				 sleep(2);
 				 Thread.sleep(5000);
  				//clickWebdriver(attributeName_linktext, subsection);
 
@@ -90,9 +91,12 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              }	
              if (!field.equalsIgnoreCase("")) {
   				Reporter.log("Select field " + field );
-  				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, SR_field, field);
   				waitForPageToLoadWebdriver();
-  					
+				 //--start--Rahul Mehta
+				 clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
+				 sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);
+				 clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+field+"')]");
+				 //--end--Rahul Mehta
               }	
              
              if (!operator.equalsIgnoreCase(""))
@@ -144,7 +148,7 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 
 			if(!button.equalsIgnoreCase(""))
 			{
-				switchToFrameNameIdWebdriver("frmContent");
+				//switchToFrameNameIdWebdriver("frmContent");//Modified by Rahul mehta
 				waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')]", button);
 				if (button.equalsIgnoreCase("add_small")) {
 					Reporter.log("Verify ADD");

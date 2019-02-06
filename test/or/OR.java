@@ -1193,7 +1193,7 @@ public static final String ESR_Operator = "//select[@name='txtOperator0']";
 //public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
 public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
 
-public static final String ESR_ValueText = "//input[@name='txtValue0']";
+public static final String ESR_ValueText = "//input[@type='text' and @class='FormFields FormFieldsTall']";
 public static final String ESR_RadioYes = "//input[@value='Y']";
 public static final String ESR_RadioNo = "//input[@value='N']";
 public static final String ESR_Save = "//img[contains(@src,'admin_save_small')]";

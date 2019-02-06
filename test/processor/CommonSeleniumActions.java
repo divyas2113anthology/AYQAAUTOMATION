@@ -4072,7 +4072,26 @@ public class CommonSeleniumActions extends Processor implements OR {
 		}
 		return result;
 	}
+//Added by Rahul Mehta --start
+	public void sleep(int paramSleepSeconds) {
+		Reporter.log("");
+		Reporter.log("In the 'sleep' function");
 
+		int sleepMilliSeconds = paramSleepSeconds * 1000;
+		Reporter.log("sleepMilliSeconds - '" + sleepMilliSeconds + "'");
+
+		try {
+			Thread.sleep(sleepMilliSeconds);
+			Reporter.log("Finished sleeping");
+		} catch (InterruptedException e) {
+			String exceptionMessage = e.getMessage();
+			writeFailure("Exception in the 'sleep' function - '" + exceptionMessage + "'");
+		}
+
+		Reporter.log("End of the 'sleep' function");
+		Reporter.log("");
+	}
+//Added by Rahul Mehta	--End
 	public void implicitWait() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}

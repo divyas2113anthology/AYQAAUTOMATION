@@ -17,6 +17,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 			String[] testdata = datacontainer;
 			String logoutmain = testdata[0];
 			String treepackage = testdata[1];
+			String clickonlink = testdata[2]; //Added by Rahul Mehta on 8th Feb,2019
 			Reporter.log("Input Test Data was retrieved for 'Configure Data Dictionary' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 //			selenium.selectFrame("relative=up");
@@ -96,7 +97,13 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 					System.out.println("no Minus symbol");
 				}*/
 			}
+			if(!clickonlink.equals("")) //Added by Rahul Mehta on 8th Feb,2019
+			{
+				clickWebdriver(attributeName_xpath,"//a[text()='"+clickonlink+"']");
+				sleep(2);
+			}
 			switchToDefaultContentWebdriver();
+			sleep(5);//Modified By Rahul Mehta
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

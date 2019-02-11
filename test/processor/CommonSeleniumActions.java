@@ -2317,6 +2317,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void switchToFrameIndexWebdriver(int frameindex) throws Exception {
 		writeConsole("Webdriver Switch To Frame Index[" + frameindex + "]");
 		driver.switchTo().frame(frameindex);
+
 	}
 
 	public void switchToFrameNameIdWebdriver(String framenameid) throws Exception {
@@ -4076,7 +4077,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void sleep(int paramSleepSeconds) {
 		Reporter.log("");
 		Reporter.log("In the 'sleep' function");
-
+		writeConsole("SleepTime");
 		int sleepMilliSeconds = paramSleepSeconds * 1000;
 		Reporter.log("sleepMilliSeconds - '" + sleepMilliSeconds + "'");
 

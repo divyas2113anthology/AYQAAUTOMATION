@@ -57,6 +57,7 @@ public class WC_Section_AddEdit_Input extends CommonSeleniumActions implements O
 					waitForPageToLoadWebdriver();
 				}else if (savecanceleditdelete.equalsIgnoreCase("Edit")) {
 					clickWebdriver(attributeName_xpath, SAE_EditButton);
+					sleep(3);
 					waitForPageToLoadWebdriver();
 				}else if (savecanceleditdelete.equalsIgnoreCase("Cancel")) {
 					clickWebdriver(attributeName_xpath, SAE_CancelButton);

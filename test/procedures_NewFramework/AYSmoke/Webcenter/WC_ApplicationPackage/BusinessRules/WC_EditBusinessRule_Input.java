@@ -53,11 +53,13 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 1 - Type Rule Name as ("+rulename+")");
 				//type(rulename, value);
 				sendKeys(attributeName_xpath, BR_Name, rulename);
+				sleep(1);
 				
 			}
 			if (!ruledesc.equals("")) {
 				Reporter.log("Step 2 - Type Rule Description as ("+ruledesc+")");
-				sendKeys(attributeName_xpath, BR_Desc, ruledesc);			
+				sendKeys(attributeName_xpath, BR_Desc, ruledesc);
+				sleep(1);
 			}
 			
 			
@@ -68,43 +70,53 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			if (!usertype.equals("")) {
 				Reporter.log("Step 4 - Select User type as("+usertype+")");
 					selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_UserType, usertype);
+					sleep(1);
 			}
 			if (!action.equals("")) {
 				Reporter.log("Step 5 - Select action as : ("+action+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_Action, action);
+				sleep(1);
 			}
 			if (!appliestosection.equals("")) {
 				Reporter.log("Step 6 - Select applies to section as : ("+appliestosection+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_AppliesToSection, appliestosection);
+				sleep(1);
 			}
 			if (!appliestoquestion.equals("")) {
 				Reporter.log("Step 7 - Select applies to question as : ("+appliestoquestion+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_AppliesToQuestion, appliestoquestion);
+				sleep(1);
 			}
 			if (!eventtype.equals("")) {
 				Reporter.log("Step 8- Select Event type as : ("+eventtype+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_EventType, eventtype);
+				sleep(1);
 			}
 			if (!targetform.equals("")) {
 				Reporter.log("Step 9 - Select Target form as : ("+targetform+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetForm, targetform);
+				sleep(1);
 			}
 			if (!targetsection.equals("")) {
 				Reporter.log("Step 10 - Select Target selection as : ("+targetsection+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetSection, targetsection);
+				sleep(1);   //Added by Rahul Mehta
 			}
 			if (!targetquestion.equals("")) {
 				Reporter.log("Step 11 - Select Target question as : ("+targetquestion+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetQuestion, targetquestion);
+				sleep(2); //Added by Rahul Mehta
 			}
 			if (!targetvalue.equals("")) {
 				Reporter.log("Step 12 - Select Target value as : ("+targetvalue+")");
 				//select(BR_TargetValue, targetvalue);
 				sendKeys(attributeName_xpath,BR_TargetValue, targetvalue);
+				sleep(2); //Added by Rahul mehta
 			}
 			if (!targetdocument.equals("")) {
 				Reporter.log("Step 13 - Select Target document as : ("+targetdocument+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetDocument, targetdocument);
+				sleep(1);
 			}
 			if (!targetstatus.equals("")) {
 				Reporter.log("Step 14 - Select Target Status as : ("+targetstatus+")");
@@ -117,39 +129,47 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, Status);
 				selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, Status);
 				//select(BR_TargetStatus, targetstatus);
+				sleep(1);
 			}
 			if (!targettestscore.equals("")) {
 				Reporter.log("Step 15 - Select Target test score as : ("+targettestscore+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetTestScore, targettestscore);
+				sleep(1);
 			}
 			if (!targetgroup.equals("")) {
 				Reporter.log("Step 16 - Select Target group as : ("+targetgroup+")");
 				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetGroup, targetgroup);
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, BR_TargetGroup, targetgroup);
+				sleep(1);
 			}
 			if (!targeturl.equals("")) {
 				Reporter.log("Step 17 - Type target URL as : ("+targeturl+")");
 				//select(BR_TargetUrl, targeturl);
 				sendKeys(attributeName_xpath,BR_TargetUrl, targeturl);
+				sleep(1);
 			}
 			if (!targetemailtemplate.equals("")) {
 				Reporter.log("Step 18 - Select Target Email Template : ("+targetemailtemplate+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_TargetEmail, targetemailtemplate);
+				sleep(1);
 			}
 			if (!savecancel.equals("")) {
 				Reporter.log("Step - Clicking on : ("+savecancel+")");
 				if(savecancel.equalsIgnoreCase("save")){
 					waitForElementPresentWebdriver(attributeName_xpath,BR_Buttons+savecancel+"')]", savecancel);
 					clickWebdriver(attributeName_xpath,BR_Buttons+savecancel+"')]");
+					sleep(1);
 				}
 				else if(savecancel.equalsIgnoreCase("plusfilter")){
 					clickWebdriver(attributeName_xpath, BR_PlusFilter);
 					waitForPageToLoadWebdriver();
+					sleep(1);
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
 					waitForElementPresentWebdriver(attributeName_xpath, BR_Buttons+savecancel+"')]", "Cancel");
 					clickWebdriver(attributeName_xpath, BR_Buttons+savecancel+"')]");
 					waitForPageToLoadWebdriver();
+					sleep(1);
 				}
 					
 					
@@ -172,6 +192,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			{
 				Reporter.log(" Click the Name of the Link as ["+ClickLogoutButton+"]");
 				clickWebdriver(attributeName_xpath, WClogoutLink);
+				sleep(1);
 
 			}
 			if (!verifystatus.equals("")) {
@@ -179,7 +200,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				clickWebdriver(attributeName_xpath, BR_TargetStatus);
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
 				verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus,verifystatus,"verifystatus");
-
+				sleep(1);
 
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
 				//verifyDropDownContainsOptionsWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"'))]", verifystatus, verifystatus);
@@ -188,6 +209,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			if (!filtername.equals("")) {
 				Reporter.log("Click on the Filter Name");
 				clickWebdriver(attributeName_xpath, BR_FilterName+filtername+"')]");
+				sleep(1);
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

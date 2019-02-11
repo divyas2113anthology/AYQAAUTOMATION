@@ -17,7 +17,7 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		String message=testData[1];
 		String verifyUI=testData[2];
 		
-		switchToFrameNameIdWebdriver("frmContent");
+		//switchToFrameNameIdWebdriver("frmContent");  //Added by Rahul Mehta on 08 feb,2019
 		
 		if(!pageTitle.equalsIgnoreCase(""))
 		{

@@ -612,7 +612,7 @@ public static final String PSD_Emailaddress = "//input[@id='q24319']";
 public static final String PSD_Aptnumber = "//input[@id='q24395']";
 public static final String PSD_EmailRecommended = "//input[@id='q24433']";
 //public static final String PSD_Save = "//img[@alt='Save']";
-public static final String PSD_Save = "//table/tbody/tr[8]/td/a[text()='Save']";;
+public static final String PSD_Save = "//table/tbody/tr[8]/td/a[text()='Save']";
 public static final String PSD_SaveBottom = "xpath=(//img[@alt='Save'])[2]";
 public static final String PSD_SaveContinue = "//img[@alt='Save and Continue']";
 public static final String PSD_Reset = "//img[@alt='Reset']";

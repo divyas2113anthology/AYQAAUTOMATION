@@ -130,7 +130,7 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath, BR_Cancel);
 				}
 								
-			}
+			}sleep(10);  //Added by Rahul Mehta on 08 feb,2019
 				
 			} catch (Exception e) {
 				writeFailure(e.getLocalizedMessage());

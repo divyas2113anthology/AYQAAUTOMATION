@@ -83,7 +83,15 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 			//select(ESR_Field, "regexp:"+field);
 			//selectByValueWebdriver(attributeName_xpath,ESR_Field, field);
 			//selectByVisibleTextWithTrimSpaceWebdriver(attributeName_xpath, ESR_Field, field);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ESR_Field, field);
+			//--start--Rahul Mehta
+			clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
+			sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);
+			clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+field+"')]");
+
+
+
+			//--end--Rahul Mehta
 
 //			selectByVisibleTextWebdriver(attributeName_xpath, "//select[contains(@name,'txtField')][option]", field);
 		}
@@ -111,6 +119,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		if (!valueType.equals("")) {
 			Reporter.log("Step 7 - Enter the value  as ["+valueType+"]");
 			sendKeys(attributeName_xpath, ESR_ValueText, valueType);
+			sleep(1); //Added by Rahul Mehta
 		}
 
 		if (!button.equals("")) {
@@ -119,6 +128,7 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 				waitForElementPresentWebdriver(attributeName_xpath, ESR_Save, button);
 				clickWebdriver(attributeName_xpath, ESR_Save);
 				waitForPageToLoadWebdriver();
+				sleep(2); //Added by rahul mehta
 			}else if (button.equalsIgnoreCase("Cancel")) {
 				clickWebdriver(attributeName_xpath, ESR_Cancel);
 				waitForPageToLoadWebdriver();

@@ -39,6 +39,7 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 				if (Button_addprintdelete.equalsIgnoreCase("Add")) {
 					waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, Button_addprintdelete);
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
+					sleep(2); //Added by Rahul Mehta on 8th Feb,2019
 				}else if (Button_addprintdelete.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, MSR_BackBtn);
 				}else if (Button_addprintdelete.equalsIgnoreCase("Delete")) {

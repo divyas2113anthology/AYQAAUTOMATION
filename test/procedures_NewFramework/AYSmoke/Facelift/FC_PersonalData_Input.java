@@ -55,7 +55,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			}*/
 			if (!pdfirstname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
-				String Fnamepd = getElementIDbyLabel("First Given Name", PSD_FirstGivenName);				
+				String Fnamepd = getElementIDbyLabel("First Name", PSD_FirstGivenName);//Modified by Rahul Mehta
 				sendKeys(attributeName_xpath,Fnamepd,pdfirstname+Calendar.getInstance().getTimeInMillis());
 			}
 			if (!pdmiddlename.equals("")) {
@@ -80,7 +80,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!pdparentssn.equals("")) {
 				Reporter.log("Step 7 - Enter Parent SSN as ("+pdparentssn+")");
-				String Pssnpd = getElementIDbyLabel("Parent SSN",PSD_ParentSSN);				
+				String Pssnpd = getElementIDbyLabel("Parent Social Security num",PSD_ParentSSN);//Modified by rahul Mehta
 				sendKeys(attributeName_xpath,Pssnpd,pdparentssn);
 			}
 			if (!pdgender.equals("")) {
@@ -227,12 +227,14 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					//clickWebdriverWithCoordinates(attributeName_xpath, PSD_Save);
 					clickWebdriver(attributeName_xpath, PSD_Save);
 //					sendKeyStroke(attributeName_xpath, PSD_Save, Keys.SPACE);
+					sleep(2);//Modified By Rahul Mehta
 				
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {
 					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Reset);
+					waitForPageToLoadWebdriver();//Modified By Rahul Mehta
 				}
 			}
 				if (!pisubmitappbtn.equals("")) {
@@ -244,7 +246,7 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					}
 				}
 				if(!pverifyErrormessage.equals("")){
-
+					sleep(2);//Modified By Rahul Mehta
 					if(isDisplayedWebdriver(attributeName_xpath,AW_SystemMessage)){
 						Reporter.log("Step 28 - Verify System error message for mandatory fields successfully");
 					}

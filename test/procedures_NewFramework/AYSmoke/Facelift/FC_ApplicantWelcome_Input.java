@@ -78,7 +78,7 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 				}
 				else if (link_to_click.equalsIgnoreCase("dynamicsection"))
 				{
-					clickWebdriver(attributeName_xpath,AW_SectionClickByDynamicFont+link_to_click+"']");
+					clickWebdriver(attributeName_xpath,AW_SectionClickByDynamicFont+link_to_click+"')]");//Modified by Rahul mehta on 12th Feb 2019
 				}
 			}
 			if (!conformation.equals("")) {

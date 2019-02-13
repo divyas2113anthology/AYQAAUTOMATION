@@ -55,27 +55,7 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 //					switchToDefaultContentWebdriver();
 					alertAccept();
 					waitForPageToLoadWebdriver();
-
-					int counter = 0;
-					String result = "";
-					do {
-						sleep(1); // '1' second sleep
-						counter = counter + 1;
-						if (!isElementPresent(paramElementLocator)) {
-							// if the element is not present, we are checking if the 'wait time' (represented by the 'counter' variable
-							// had got past the 'paramWaitSeconds' seconds)
-							if (counter > 150) {
-								writeFailure("'waitForElementPresent' function - Fail - Element - '" + paramElementName + "'was found not to be present even after '" + counter + "' seconds");
-								result = "TimeElapsed";
-							}
-						}else {
-							Reporter.log("'waitForElementPresent' function - Pass - Element - '" + paramElementName + "'was found to be present after '" + counter + "' seconds");
-							result = "elementPresent";
-						}
-					} while (result.equals(""));
-
-
-					sleep(90); //Added by Rahul Mehta on 08 feb,2019
+					sleep(100); //Added by Rahul Mehta on 08 feb,2019
 				} else if (publishproddev.equalsIgnoreCase("Publish To Dev")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
 					waitForPageToLoadWebdriver();

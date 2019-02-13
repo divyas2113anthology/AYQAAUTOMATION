@@ -563,7 +563,7 @@ public static final String AW_CheckAppBtn = "//font[text()='Check Your Applicati
 public static final String AW_AppInstructionBtn = "//font[text()='Application Instructions']";
 public static final String AW_AppRegularSection = "//font[normalize-space(text())='RegularSection']";
 public static final String AW_ConformationCheck = "css=#checkbox";
-public static final String AW_SectionClickByDynamicFont ="//font[text()='";
+public static final String AW_SectionClickByDynamicFont ="//font[contains(text(),'";  //Modified by Rahul mehta on 12th Feb 2019
 public static final String AW_ContinueBtn = "css=#ay-recSubmit";
 public static final String AW_DomesticRadio = "//*[@id='AppFeeAmount1']";
 public static final String AW_InternationalRadio = "css=#AppFeeAmount2";

@@ -29,8 +29,13 @@ public class Mainpage_Verify extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath,MN_PageTitle, pagename);
 				verifyElementTextWebdriver(attributeName_xpath,MN_PageTitle, pagename, "Page Name");
 			}
-			if (!message.equals("")) {
-				verifyElementPresentWebdriver(attributeName_xpath, paymentVoucher, "Payment Voucher");
+			if (!message.equals("")) {//Modified by Rahul mehta on 13th feb 2019
+				if(message.equalsIgnoreCase("Your application has been successfully submitted.")) {
+
+					verifyElementPresentWebdriver(attributeName_xpath, "//b[contains(text(), '"+message+"' )]", "Success Message");
+				}else {
+					verifyElementPresentWebdriver(attributeName_xpath, paymentVoucher, "Payment Voucher");
+				} //Modified by Rahul mehta on 13th feb 2019
 				waitForPageToLoadWebdriver();
 			}
 

@@ -33,7 +33,7 @@ public class FinalStep_Input extends CommonSeleniumActions implements OR {
 			if (!button.equals("")) {
 				Reporter.log("Step 3 - Proceed to Click on ("+button+") Button");
 				if (button.equalsIgnoreCase("Continue")) {
-					clickWebdriver(attributeName_xpath, SP_submitApp);
+					clickWebdriver(attributeName_xpath, SP_Submit); //Modified by Rahul mehta on 13th feb 2019
 					waitForPageToLoadWebdriver();
 				}else if (button.equalsIgnoreCase("Submit")) {
 					clickWebdriver(attributeName_xpath, FS_SubmitApp);

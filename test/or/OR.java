@@ -262,7 +262,7 @@ public static final String AF_International = "//input[@id='AppFeeAmount2']";
 public static final String AF_Check = "//input[@id='ptCheck1']";
 public static final String AF_FeeWaiver = "//input[@id='ptWaiver1']";
 public static final String AF_CreditCard = "//input[@id='ptCreditCard']";
-public static final String AF_PayContinue = "//input[@value='Pay and Continue']";
+public static final String AF_PayContinue = "//img[@alt='pay and continue']"; //Modified by Rahul Mehta on 13th feb 2019
 public static final String AF_PaymentStatus = "//select[@name='pmtstatus']";
 //#**********************************************************#
 //# Signature Page - SP

@@ -51,7 +51,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 			}
 			if (!next.equals("")) {
 				waitForPageToLoadWebdriver();
-			    clickWebdriver(attributeName_xpath,HM_Next+next+"']");
+			    clickWebdriver(attributeName_xpath,HM_Next); //Modified by Rahul Mehta 
 			    Thread.sleep(5000);
 				waitForPageToLoadWebdriver();
 			}
@@ -113,11 +113,11 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					for (int second = 0;; second++)
 					{
 						if (second >= 300) writeFailure(" Timeout after 1 minute..");
-						if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']")) {   //Rahul Mehta
+						if (isDisplayedWebdriver(attributeName_xpath,"//span[contains(text(), '"+emailsubject+"')]")) {   //Rahul Mehta
 							waitForPageToLoadWebdriver();
 							//clickWebdriver(attributeName_xpath,"//ul[@class='mailList InboxTableBody ']/li");
 							//try { 
-								if (isDisplayedWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]"))   //Rahul Mehta
+								if (isDisplayedWebdriver(attributeName_xpath,"//span[contains(text(), '"+emailsubject+"')]"))   //Rahul Mehta
 									writeConsole("2");
 									break;
 								}
@@ -126,8 +126,8 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 //						}
 					}
 					//selenium.waitForCondition("selenium.isVisible(\"//div[@class='conductorContent']//div/span[contains(text(),'"+emailsubject+"')]\")", "120000");
-					waitForElementVisibleWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]",""); //Rahul Mehta
-					clickWebdriver(attributeName_xpath,"//div[@class='_3_BIVlADM1_CfDlOoMkRnO']//span[contains(text(), '"+emailsubject+"')]"); //Rahul Mehta
+					waitForElementVisibleWebdriver(attributeName_xpath,"//span[contains(text(), '"+emailsubject+"')]",""); //Rahul Mehta
+					clickWebdriver(attributeName_xpath,"//span[contains(text(), '"+emailsubject+"')]"); //Rahul Mehta
 					waitForPageToLoadWebdriver();
 					//waitForElementPresentWebdriver(attributeName_xpath, "//div[@id='mpf0_MsgContainer']", "Message Container");
 				} catch (Exception e) {

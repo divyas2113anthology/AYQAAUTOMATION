@@ -50,7 +50,8 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 		if (!LName.equals("")) {
 			Reporter.log("Step 2 - Enter 'Last Name' as ("+lastname+")");
 			sendKeys(attributeName_xpath, LName_Manual, lastname);
-			//type(LName_Manual, lastname);		
+			//type(LName_Manual, lastname);
+			sleep(1);
 		
 		} 
 		
@@ -59,6 +60,7 @@ public class WC_ManualAdd_Input extends CommonSeleniumActions implements OR {
 			waitForPageToLoadWebdriver();
 			sendKeys(attributeName_xpath, Email_Manual, Email);
 			//type(Email_Manual, Email);
+			sleep(1);
 		}
 		
 		if (!ConfirmEmail.equals("")) {			

@@ -1335,7 +1335,7 @@ public static final String RF_RECLogin = "//input[@alt='Login']";
 //#**********************************************************#
 public static final String HM_WLogin = "//input[@id='i0116']";
 public static final String HM_WPassword = "//input[@id='i0118']";
-public static final String HM_Next =  "//input[@value='";
+public static final String HM_Next =  "//input[@value='Next']";
 public static final String HM_WSignIn = "//input[@type='submit']";  //rahul mehta
 //public static final String HM_Inbox = "Inbox";
 public static final String HM_Inbox = "link=Inbox";   

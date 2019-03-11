@@ -126,9 +126,21 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				}catch(Exception e){
 					Status = targetstatus;
 				}
-				waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, Status);
-				selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, Status);
-				//select(BR_TargetStatus, targetstatus);
+				//Added by Rahul Mehta on 8 march,2019 -start
+				if(eventtype.equalsIgnoreCase("Add Test Score")) {
+					waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus1, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus1, Status);
+					//select(BR_TargetStatus, targetstatus);
+				}else if(eventtype.equalsIgnoreCase("Add Supporting Document"))
+				{
+					waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus2, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus2, Status);
+				}else
+				{
+					waitForElementPresentWebdriver(attributeName_xpath, BR_TargetStatus, Status);
+					selectByVisibleTextWebdriver(attributeName_xpath, BR_TargetStatus, Status);
+				}
+				//Added by Rahul Mehta on 8 march,2019 -end
 				sleep(1);
 			}
 			if (!targettestscore.equals("")) {
@@ -197,9 +209,26 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 			}
 			if (!verifystatus.equals("")) {
 				Reporter.log("Verify the status is present or not");
-				clickWebdriver(attributeName_xpath, BR_TargetStatus);
+
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);
-				verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus,verifystatus,"verifystatus");
+				//Added by Rahul Mehta on 8 march,2019 --start
+				if(eventtype.equalsIgnoreCase("Add Test Score")) {
+					clickWebdriver(attributeName_xpath, BR_TargetStatus1);
+					verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus1,verifystatus,"verifystatus");
+
+					//select(BR_TargetStatus, targetstatus);
+				}else if(eventtype.equalsIgnoreCase("Add Supporting Document"))
+				{	clickWebdriver(attributeName_xpath, BR_TargetStatus2);
+					verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus2,verifystatus,"verifystatus");
+
+				}else
+				{	clickWebdriver(attributeName_xpath, BR_TargetStatus);
+					verifySelectContainsOptionsWebdriver(attributeName_xpath, BR_TargetStatus,verifystatus,"verifystatus");
+
+				}
+				//Added by Rahul Mehta on 8 march,2019 -end
+
+
 				sleep(1);
 
 				//verifyElementNotPresentWebdriver(attributeName_xpath, BR_VerifyStatus+verifystatus+"')]", verifystatus);

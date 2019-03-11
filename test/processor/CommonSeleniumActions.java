@@ -2597,6 +2597,12 @@ public class CommonSeleniumActions extends Processor implements OR {
 		return isdisplayed;
 	}
 
+	public boolean isElementPresent(String attributename, String attributevalue) {
+		writeConsole("Element Visible[" + attributename + ", " + attributevalue + "]");
+		boolean isEnabled = attributeNameValue(attributename, attributevalue).isEnabled();
+		writeConsole("Actual isElementPresent [" + isEnabled + "]");
+		return isEnabled;
+	}
 	public boolean isEnabledWebdriver(String attributename, String attributevalue) {
 		writeConsole("Element Enabled[" + attributename + ", " + attributevalue + "]");
 		boolean isenabled = attributeNameValue(attributename, attributevalue).isEnabled();
@@ -4095,5 +4101,13 @@ public class CommonSeleniumActions extends Processor implements OR {
 //Added by Rahul Mehta	--End
 	public void implicitWait() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	}
+
+	public String getSelectedOption(String path)
+	{
+		Select select = new Select(driver.findElement(By.xpath(path)));
+		WebElement option = select.getFirstSelectedOption();
+		String defaultItem = option.getText();
+		return(defaultItem );
 	}
 }

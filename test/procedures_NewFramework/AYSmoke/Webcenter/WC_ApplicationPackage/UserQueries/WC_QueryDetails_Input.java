@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 public class WC_QueryDetails_Input extends CommonSeleniumActions implements OR {
-	
+
 	@Test(description="This Procedure is used to perform some operation in 'Manage Queries' page")
 	public void WC_QueryDetails_Input(){
 		try {
@@ -28,36 +28,36 @@ public class WC_QueryDetails_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Enter the Query Name");
 				waitForPageToLoadWebdriver();
 				sendKeys(attributeName_xpath, MQ_QueryName, queryname);
-				
-				
-			if(!description.equals("")){
-				waitForPageToLoadWebdriver();
-				Reporter.log("Enter the Description");
-				sendKeys(attributeName_xpath, MQ_QueryDescription, description);
-				
-			}			
-			if (!save.equals("")) {
-				Reporter.log("Click on Save");
-				if(save.equals("Save")){					
-				waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave1 , save);
-					Thread.sleep(8000);
-				clickWebdriver(attributeName_xpath, MQ_QuerySave1);
+
+
+				if(!description.equals("")){
+					waitForPageToLoadWebdriver();
+					Reporter.log("Enter the Description");
+					sendKeys(attributeName_xpath, MQ_QueryDescription, description);
+
 				}
-				else
-				{
-					waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave , save);
-					Thread.sleep(8000);
-					clickWebdriver(attributeName_xpath, MQ_QuerySave);
+				if (!save.equals("")) {
+					Reporter.log("Click on Save");
+					if(save.equals("Save")){
+						waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave1 , save);
+						Thread.sleep(8000);
+						clickWebdriver(attributeName_xpath, MQ_QuerySave1);
+					}
+					else
+					{
+						waitForElementPresentWebdriverWait(attributeName_xpath, MQ_QuerySave , save);
+						Thread.sleep(8000);
+						clickWebdriver(attributeName_xpath, MQ_QuerySave);
+					}
+
 				}
-				
 			}
-			}
-			
-			
+
+
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
-		
+
 	}
 
 }

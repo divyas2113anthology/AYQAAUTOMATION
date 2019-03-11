@@ -146,7 +146,12 @@ public static final String BR_EventType = "EventTypeId";
 //public static final String BR_TargetDocument = "//select[@name='SuppDocID']";
 public static final String BR_TargetDocument = "SuppDocID";
 public static final String BR_TargetStatus = "//select[@name='TestStatusID' or @name='DocStatusID']";//TestStatusID']";
-//public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
+    // Added by Rahul Mehta on 08 march,2019 --start
+    public static final String BR_TargetStatus1 = "//select[@name='TestStatusID']";
+    public static final String BR_TargetStatus2 = "//select[@name='DocStatusID']";
+    // Added by Rahul Mehta on 08 march,2019 --End
+
+    //public static final String BR_TargetTestScore = "//select[@name='TestScoreID']";
 public static final String BR_TargetTestScore = "TestScoreID";
 public static final String BR_TargetGroup = "//select[@name='GroupId']";
 public static final String BR_TargetTrack = "//select[@name='TargetTrackId']";

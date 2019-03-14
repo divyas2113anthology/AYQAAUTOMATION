@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions implements OR {
-	
+
 	@Test(description="This Procedure is used to perform some operation in 'Application search results' page")
 	public void WC_ApplicantSearchResults_Input(){
 		try {
@@ -31,7 +31,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");*///TESTAPPREVIEW
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']", CheckFrstLstName);
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']");
-					
+
 				}else if (checkagainstname.contains("uncheck")) {
 					String CheckFrstLstName = checkagainstname.replace(";", ",");
 					String[] SplitFirstLastName = CheckFrstLstName.split(",");
@@ -80,13 +80,13 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
 						recentPopupSelectWebdriver("Application Summary");
 					}else{
-					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
-					int WindowCount = getWindowHandles();
-					//recentMultiplePopupSelectWebdriver("Application Summary", WindowCount);
-					recentPopupSelectWebdriver("Application Summary");
+						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+clickname+"')]");
+						int WindowCount = getWindowHandles();
+						//recentMultiplePopupSelectWebdriver("Application Summary", WindowCount);
+						recentPopupSelectWebdriver("Application Summary");
 					}
 				}else{
-				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]");
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]");
 					waitForPageToLoadWebdriver();
 					recentPopupSelectWebdriver("Application Summary");
 
@@ -103,7 +103,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			if (!selectanaction.equals("")) {
 				Reporter.log("Step 4 - Select an action as ["+selectanaction+"]");
 				selectByVisibleTextWebdriver(attributeName_xpath, ASR_SelectanAction, selectanaction);
-			}			
+			}
 			if (!radio_button_click.equals("")) {
 				Reporter.log("Step 5 - Select the Radio button as ["+radio_button_click+"]");
 				if (radio_button_click.equalsIgnoreCase("Apply to Selected")) {
@@ -122,7 +122,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			}
 			if (!click.equals("")) {
 				Reporter.log("Step 6 - Click button as ["+click+"]");
-			
+
 				if (click.equalsIgnoreCase("New Search")) {
 					waitForElementPresentWebdriver(attributeName_xpath, ASR_NewSearchbtn,"NewSearch");
 					clickWebdriver(attributeName_xpath, ASR_NewSearchbtn);
@@ -136,24 +136,24 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 //					action.perform();
 					//Removed sleep time
 					try {
-				        Alert alert = driver.switchTo().alert();
-				        String AlertText = alert.getText();
-				        System.out.println(AlertText);
-				        alert.accept();
+						Alert alert = driver.switchTo().alert();
+						String AlertText = alert.getText();
+						System.out.println(AlertText);
+						alert.accept();
 
-				    } catch (Exception e) {
-				        System.out.println("no alert");
-				    }
+					} catch (Exception e) {
+						System.out.println("no alert");
+					}
 					waitForPageToLoadWebdriver();
-					
+
 					//driver.switchTo().alert().accept();
 				}
-				
-			}			
+
+			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
-		
+
 	}
 
 }

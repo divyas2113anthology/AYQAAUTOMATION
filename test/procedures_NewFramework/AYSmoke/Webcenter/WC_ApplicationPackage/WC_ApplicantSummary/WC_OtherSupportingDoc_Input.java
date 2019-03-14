@@ -31,7 +31,8 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			if(!status.equals("")){
 				String Status;
 				try {
-					Status = Runtimedataread(status);
+					//Status = Runtimedataread(status);  //Modified by Rahul Mehta on 13th March, 2019
+					Status = status;//Added by Rahul Mehta on 14th March 2019
 				}catch(Exception e){
 					Status = status;
 				}

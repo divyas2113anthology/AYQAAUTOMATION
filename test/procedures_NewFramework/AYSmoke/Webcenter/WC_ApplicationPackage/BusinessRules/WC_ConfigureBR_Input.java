@@ -25,6 +25,7 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			String movetofolder = fpvdatarepo[3];
 			String copy = fpvdatarepo[4];
 			String rulename = fpvdatarepo[5];
+			String description=fpvdatarepo[6];//Added by Rahul Mehta on 14th March 2019 to chech BR Description also
 
 			//String Linkname = fpvdatarepo[6];
 
@@ -62,8 +63,18 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			}
 			if (!rulename.equals("")) {
 				Reporter.log("Step - Clicking on the rule name : ("+rulename+")");
-				clickWebdriver(attributeName_xpath, BR_RuleName+rulename+"')]");
-					
+				//Added by Rahul Mehta on 14th March,2019 to check name with description --start
+				if(!description.equals(""))
+				{
+					clickWebdriver(attributeName_xpath,"//td[contains(text(), '"+description+"')]/preceding-sibling::td[1]/a[contains(text(),'"+rulename+"')]");
+					Reporter.log("Step - Clicking on the rule name : ("+description+")");
+
+				}
+				else {
+					clickWebdriver(attributeName_xpath, BR_RuleName + rulename + "')]");
+					//Added by Rahul Mehta on 14th March,2019 to check name with description --end
+
+				}
 			}
 
 			

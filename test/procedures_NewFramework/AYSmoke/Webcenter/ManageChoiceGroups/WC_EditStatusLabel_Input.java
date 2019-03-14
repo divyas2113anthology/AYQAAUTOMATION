@@ -72,7 +72,10 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                     try {
                         Reporter.log("Enter Label");
                         String Label = labelName + Calendar.getInstance().getTimeInMillis();
+                        sleep(2); //Added by Rahul Mehta on 14th March 2019
                         sendKeys(attributeName_xpath, MCG_label, Label);
+                        sleep(2);//Added by Rahul Mehta on 14th March 2019
+                        Reporter.log(Label);//Added by Rahul Mehta on 14th March 2019
                         Runtimedatawrite(Label, label);
                     } catch (Exception e) {
                         Reporter.log("Rename Label");
@@ -82,6 +85,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
 
                         driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
+                        sleep(2);//Added by Rahul Mehta on 14th March 2019
                         Runtimedatawrite(LabelEdit, label);
                         System.out.println("Write value in Excel sheet");
                     }
@@ -141,6 +145,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         waitForPageToLoadWebdriver();
                         waitForElementPresentWebdriver(attributeName_xpath, AID_save_button, "Save");
                         clickWebdriver(attributeName_xpath, AID_save_button);
+                        sleep(2);//Added by Rahul Mehta on 14th March 2019
                         waitForPageToLoadWebdriver();
                         //driver.switchTo().frame(0);
                     }

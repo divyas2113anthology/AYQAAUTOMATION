@@ -40,19 +40,22 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			if (!field.equals("")) {
 				Reporter.log("Select ("+field+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ET_FieldName, field);
+				sleep(2);//Added by Rahul Mehta on 14th March 2019
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Select ("+operator+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator, operator);
+				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator1, operator);
+				sleep(2);//Added by Rahul Mehta on 14th March 2019
 			}
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
 				String valuedata = Runtimedataread(value);
-				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, valuedata);
+				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
 				clickWebdriver(attributeName_xpath, ET_Value);
-				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+valuedata+"']", valuedata);
+				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
 				//clickWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
-				checkWebdriver(attributeName_xpath, MCL_CheckValue+valuedata+"']");
+				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				sleep(2);
 				
 			}
 			if(!savecancel.equals("")){

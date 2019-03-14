@@ -157,6 +157,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		Row = tableStart.getRow();
 		Col = tableStart.getColumn();
 		String Rundata = sheet.getCell(Col, Row + 1).getContents().trim();
+		Reporter.log(Rundata);//Added by Rahul Mehta on 14th March 2019
 		workbook.close();
 		return Rundata;
 

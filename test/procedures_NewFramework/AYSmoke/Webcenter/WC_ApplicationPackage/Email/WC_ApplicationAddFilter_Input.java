@@ -63,12 +63,24 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 				Reporter.log("Select (" + value + ")");
 				try{
 					String status = Runtimedataread(value);
-					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
-					clickWebdriver(attributeName_xpath, ET_Value);
-					waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + status + "']", status);
-					checkWebdriver(attributeName_xpath, MCL_CheckValue + status + "']");
-					clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+					//Added by Rahul Mehta on 14th March 2019 --start
+					if(isElementPresent(attributeName_xpath,ET_Value1))
+					{
+						waitForElementPresentWebdriver(attributeName_xpath, ET_Value1, status);
+						clickWebdriver(attributeName_xpath, ET_Value1);
+						waitForElementPresentWebdriver(attributeName_xpath, "//label[contains(text(),'"+status+"')]/input[@type='checkbox']", status);
+						checkWebdriver(attributeName_xpath, "//label[contains(text(),'"+status+"')]/input[@type='checkbox']");
+						clickWebdriver(attributeName_xpath, MQ_MulitSelectClose1);
 
+					}
+					else{
+						waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
+						clickWebdriver(attributeName_xpath, ET_Value);
+						waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue + status + "']", status);
+						checkWebdriver(attributeName_xpath, MCL_CheckValue + status + "']");
+						clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+					}
+					//Added by Rahul Mehta on 14th March 2019-end
 				}catch(Exception e){
 					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
 					clickWebdriver(attributeName_xpath, ET_Value);
@@ -103,6 +115,14 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, status);
 					clickWebdriver(attributeName_xpath, ET_Value);
 					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + status + "')]", status, verifyvalue);
+				}else if(isElementPresent(attributeName_xpath,ET_Value1))//Added by Rahul Mehta on 14th March 2019 --start
+				{
+					String status = Runtimedataread(verifyvalue);
+					Reporter.log("Verify" + verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value1, status);
+					//clickWebdriver(attributeName_xpath, ET_Value1);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + status + "')]", status, verifyvalue);
+				//Added by Rahul Mehta on 14th March 2019 --end
 				}else {
 					String verifyValue ;
 					try{
@@ -121,13 +141,16 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 				if(savecancel.equalsIgnoreCase("add")){
 					waitForElementPresentWebdriver(attributeName_xpath,BR_Add, savecancel);
 					clickWebdriver(attributeName_xpath,BR_Add);
+					sleep(2);//Added by Rahul Mehta on 14th March 2019
 				}
 				else if(savecancel.equalsIgnoreCase("save")){
 					waitForElementPresentWebdriver(attributeName_xpath,BR_Add,savecancel);
 					clickWebdriver(attributeName_xpath, BR_Add);
+					sleep(5);//Added by Rahul Mehta on 14th March 2019
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
-					clickWebdriver(attributeName_xpath, BR_Cancel);
+
+					sleep(2);//Added by Rahul Mehta on 14th March 2019
 				}
 								
 			}sleep(10);  //Added by Rahul Mehta on 08 feb,2019

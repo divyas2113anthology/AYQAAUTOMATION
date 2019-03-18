@@ -465,7 +465,7 @@ public static final String MCL_addprintdelete = "//img[contains(@src,'";    //ad
 public static final String MCL_VerifyValue = "//span[contains(text(),'";   //TestingRA')]";
 public static final String MCL_CheckValue = "//input[@title='";    //TestingRA']";
 
-//#**********************************************************#
+    //#**********************************************************#
 //*************************************************************************************
 //
 //App Name   : Apply Yourself
@@ -1210,6 +1210,7 @@ public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]
   //  public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]" ;
 
 public static final String MSR_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
+    public static final String MSR_DeleteBtn1="(//img[@name='imageSave1']/following::a)[1]";
 public static final String MSR_BackBtn = "//img[contains(@src,'admin_back_small')]";
 public static final String PS_HobsonsLogo = "//div[@id='masthead']";
 public static final String PS_HobsonsAuthMessage = "//div[@class='ay_section']";
@@ -1758,6 +1759,7 @@ public static final String MQ_AddRow = "//img[contains(@src,'plus')]";
 public static final String MQ_DeleteRow = "//img[contains(@src,'minus')]";
 public static final String MQ_MultiSelectOpen = "//button[contains(@class,'ui-multiselect')]";
 public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle-close')]";
+    public static final String MQ_MulitSelectClose1="(//i[contains(@class,'glyphicon glyphicon-remove-circle')])[2]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
 //public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
 public static final String MQ_QueryCheck = "//td[a[contains(text(),'";
@@ -2107,7 +2109,9 @@ public static final String ET_FilterName = "//input[@name='txtName']";
 public static final String ET_Description = "//textarea[@class='FormFields']";
 public static final String ET_FieldName = "//select[@name='txtField0']";
 public static final String ET_Operator = "//select[@name='G1-row1_txtOperator1']";
+public static final String ET_Operator1 = "//select[@name='txtOperator0']";
 public static final String ET_Value = "//button[contains(@class,'ui-multiselect')]";
+public static final String ET_Value1="(//button[contains(@class,'multiselect dropdown-toggle btn btn-default')])[2]";//Added by Rahul Mehta on 14th March,2019
 public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_small')]";
 
 //#********************************************************************#

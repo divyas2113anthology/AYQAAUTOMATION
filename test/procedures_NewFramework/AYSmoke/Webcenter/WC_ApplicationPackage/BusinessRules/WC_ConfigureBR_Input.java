@@ -40,14 +40,17 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			}
 			if(!Checkbox.equals(""))
 			{
+
 				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox, Checkbox);
 				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox);
+				sleep(1);
 			}
 			if (!delete.equals("")) {
 				Reporter.log("Proceed to click the delete button ");
-				clickWebdriver(attributeName_xpath, MSR_DeleteBtn);
+				clickWebdriver(attributeName_xpath, MSR_DeleteBtn1);
 				String RuleDeleteAlertMsg = alertMessage();
 				Reporter.log("Delete Rule Alert Message : "+RuleDeleteAlertMsg);
+				sleep(1);
 				alertAccept();
 				waitForPageToLoadWebdriver();
 			}

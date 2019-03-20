@@ -1639,6 +1639,8 @@ public static final String FD_MoveDown = "BtnMoveDownField";
 public static final String FD_RemoveAll = "BtnRemoveAll";
 public static final String FD_ShowCode = "BtnShowSample";
 public static final String FD_SaveBtn = "imgSubmitBtnBotm";
+public static final String ImportExport_FD_SaveBtn = "//td[@align='right' and @valign='middle']//preceding-sibling::input";//Added by Rahul Mehta on 19th feb, 2019
+
 public static final String FD_BackBtn = "imgBackBtnBotm";
 //#**********************************************************#
 //#	 Webcenter - Add Export for Export - Page

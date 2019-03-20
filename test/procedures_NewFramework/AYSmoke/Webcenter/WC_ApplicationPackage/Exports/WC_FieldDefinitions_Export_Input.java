@@ -124,7 +124,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 						}else{
 							PackageSelectionFieldDefinition(SplitPackage[i], "1");
 						}
-					}
+					}sleep(1);
 				}
 			//ClosePackageSelection();
 			switchToDefaultContentWebdriver();
@@ -173,8 +173,17 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 
 			if (!saveback.equals("")) {
 				Reporter.log("Click the button as ["+saveback+"]");
+				//Modified by Rahul Mehta on 20th March,2019
 				if (saveback.equalsIgnoreCase("Save")) {
-					clickWebdriver(attributeName_name, FD_SaveBtn);
+					sleep(2);
+					if(isElementPresent(attributeName_xpath,ImportExport_FD_SaveBtn))
+					{
+						javaScriptClick(attributeName_xpath,ImportExport_FD_SaveBtn);
+					}
+					else {
+						clickWebdriver(attributeName_name, FD_SaveBtn);
+					}
+					sleep(1);
 					waitForPageToLoadWebdriver();
 				}else if (saveback.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_name, FD_BackBtn);

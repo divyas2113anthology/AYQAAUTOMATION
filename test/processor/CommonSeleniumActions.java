@@ -1,5 +1,6 @@
 package processor;
 
+import com.thoughtworks.selenium.webdriven.commands.ShiftKeyDown;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -4103,12 +4104,19 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void implicitWait() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
-
+	//Added by Rahul Mehta on 19th March,2019
 	public String getSelectedOption(String path)
 	{
 		Select select = new Select(driver.findElement(By.xpath(path)));
 		WebElement option = select.getFirstSelectedOption();
 		String defaultItem = option.getText();
 		return(defaultItem );
+	}
+	//Added by Rahul Mehta on 20th March,2019
+	public void javaScriptClick(String attributename, String attributevalue)
+	{
+		WebElement element = attributeNameValue(attributename,attributevalue);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
 	}
 }

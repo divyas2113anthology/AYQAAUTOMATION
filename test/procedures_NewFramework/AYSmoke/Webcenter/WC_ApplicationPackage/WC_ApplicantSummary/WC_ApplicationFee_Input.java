@@ -71,7 +71,10 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					System.out.println("Clicked Save Button");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 					//recentPopupCloseWebdriver();
-					switchToOldWindow();
+					//switchToSecondPopupWindow();
+					driver.switchTo().window(AppSummaryWindowName);//Modified by Rahul mehta on 20th March 2019
+
+					//switchToOldWindow();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();

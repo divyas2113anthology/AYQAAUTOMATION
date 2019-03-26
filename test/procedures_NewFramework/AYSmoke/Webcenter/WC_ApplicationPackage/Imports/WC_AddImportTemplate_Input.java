@@ -103,6 +103,8 @@ public class WC_AddImportTemplate_Input extends CommonSeleniumActions implements
 				if (click.equalsIgnoreCase("Save")) {
 					waitForElementPresentWebdriver(attributeName_xpath, QAE_SaveButton, click);
 					clickWebdriver(attributeName_xpath, QAE_SaveButton);
+					sleep(3);
+					waitForPageToLoadWebdriver();//Modifieb by Rahul Mehta on 26th March,2019
 				} else if (click.equals("Cancel")) {
 					clickWebdriver(attributeName_xpath, QAE_CancelButton);
 				}else if (click.equalsIgnoreCase("Field Definitions")) {

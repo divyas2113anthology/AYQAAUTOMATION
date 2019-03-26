@@ -2202,8 +2202,10 @@ public static final String DetailQuery_Folder="//select[@name='QueryFolder']";
 public static final String DetailQuery_Lock_input="//input[@name='Lock']";
 public static final String DetailQuery_run_button="//img[@name='topsaverunbutton']";	
 
-
-
-
+//#***************************************************************************#//
+//Manage Test Score //Added by Rahul Mehta on 25th March, 2019
+//#***************************************************************************#//
+    public static final String ManageTestScore_Add="//img[contains(@src,'add')]";
+    public static final String ManageTestScore_Delete="//img[contains(@src,'delete')]";
 }
 

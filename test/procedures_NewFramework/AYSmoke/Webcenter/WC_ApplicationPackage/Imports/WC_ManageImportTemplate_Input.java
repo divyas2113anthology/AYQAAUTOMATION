@@ -18,13 +18,18 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 			String checktemplatenamecheckbox = testdata[0];
 			String clicktemplatename = testdata[1];
 			String button = testdata[2];
+			String template=testdata[3];//Added by Rahul Mehta on 26th March,2019
 			Reporter.log("Input Test Data was retrieved for 'Manage Import Template' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			//waitForElementPresentWebdriver(attributeName_xpath, MCL_NewSearchbutton, "New Search Button");
 			if (!checktemplatenamecheckbox.equals("")) {
+				sleep(3);//Added by Rahul Mehta on 26th March,2019
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checktemplatenamecheckbox+"]");
-				if (checktemplatenamecheckbox.equalsIgnoreCase("check")) {
-					checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+checktemplatenamecheckbox+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				if (checktemplatenamecheckbox.equalsIgnoreCase("check")) {//Modified by Rahul Mehta on 26th March,2019
+					if(!template.equals("")) {
+						clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'" +template+ "')]]/preceding-sibling::td/input[@type='checkbox']");
+						sleep(2);
+					}
 				}else if (checktemplatenamecheckbox.equalsIgnoreCase("uncheck")) {
 					uncheckWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+checktemplatenamecheckbox+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}
@@ -45,6 +50,9 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 				}else if (button.equalsIgnoreCase("Delete")) {
 					clickWebdriver(attributeName_xpath, SAE_DeleteButton);
+					sleep(2);
+					alertAccept();//Modified by Rahul Mehta on 26th March,2019
+					sleep(3);
 				}else if (button.equalsIgnoreCase("Copy")) {
 					clickWebdriver(attributeName_name, "imageCopy");
 				}else if (button.equalsIgnoreCase("Move To Folder")) {

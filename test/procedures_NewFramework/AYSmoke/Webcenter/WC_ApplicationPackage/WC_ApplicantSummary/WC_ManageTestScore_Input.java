@@ -29,17 +29,44 @@ public class WC_ManageTestScore_Input extends CommonSeleniumActions implements O
 			String testtypecheck = testdata[0];
 			String testtypename = testdata[1];
 			String adddeleteclosewindow = testdata[2];
-									
+
+
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score' Page");
 			//recentPopupSelect_without_window_nameWebdriver();
-			  
-			if(!adddeleteclosewindow.equals("")){
+			recentPopupSelectWebdriver("TestScore"); //Added by Rahul Mehta on 25th March,2019
+
+
+			if (!testtypecheck.equals(""))//Added by Rahul Mehta on 25th March,2019
+			{
+				if(isElementPresent(attributeName_xpath,"//a[contains(text(),'ACT')]")) {
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + testtypecheck + "')]/preceding-sibling::input[@type='checkbox']");
+				}
+				sleep(1);
+			}
+
+
+			if(!adddeleteclosewindow.equals("")){ //Modified by Rahul Mehta on 26th March,2019
 				Reporter.log("Click on the button");
 				waitForPageToLoadWebdriver();
-				clickWebdriver(attributeName_xpath,CloseWindow);
-				
+				if(adddeleteclosewindow.equalsIgnoreCase("Close Window"))
+				{
+					clickWebdriver(attributeName_xpath,CloseWindow);
+					sleep(5);
+					driver.switchTo().window(AppSummaryWindowName);
+				}
+				if(adddeleteclosewindow.equalsIgnoreCase("Add"))
+				{
+					clickWebdriver(attributeName_xpath,ManageTestScore_Add);
+				}
+				if(adddeleteclosewindow.equalsIgnoreCase("delete"))
+				{
+					clickWebdriver(attributeName_xpath,ManageTestScore_Delete);
+					alertAccept();
+				}
+				sleep(2);
+
 			}
-			driver.switchTo().window(AppSummaryWindowName);
+
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

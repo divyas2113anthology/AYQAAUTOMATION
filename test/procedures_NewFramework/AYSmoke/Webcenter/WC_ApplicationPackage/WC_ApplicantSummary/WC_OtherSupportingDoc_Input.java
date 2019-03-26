@@ -1,5 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -18,7 +19,8 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			String receiveddate = testdata[2];
 			String comments = testdata[3];
 			String saveclosewindow = testdata[4];
-			
+			String delete=testdata[5];//Added by Rahul Mehta on 25th March,2019
+
 			recentPopupSelect_without_window_nameWebdriver();	
 			
 			Reporter.log("Input Test Data was retrieved for 'Supporting Documents' Page");
@@ -31,8 +33,8 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 			if(!status.equals("")){
 				String Status;
 				try {
-					//Status = Runtimedataread(status);  //Modified by Rahul Mehta on 13th March, 2019
-					Status = status;//Added by Rahul Mehta on 14th March 2019
+					Status = Runtimedataread(status);  //Modified by Rahul Mehta on 13th March, 2019
+					//Added by Rahul Mehta on 14th March 2019
 				}catch(Exception e){
 					Status = status;
 				}
@@ -54,6 +56,15 @@ public class WC_OtherSupportingDoc_Input extends CommonSeleniumActions implement
 				//recentPopupCloseWebdriver();
 				driver.switchTo().window(AppSummaryWindowName);
 			}
+			if(!delete.equals(""))//Added by Rahul Mehta on 25th March,2019
+			{
+					clickWebdriver(attributeName_xpath, "//img[contains(@src,'delete')]");
+					sleep(1);
+					alertAccept();
+					sleep(2);
+				driver.switchTo().window(AppSummaryWindowName);
+			}
+
 			//switchToDefaultContentWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

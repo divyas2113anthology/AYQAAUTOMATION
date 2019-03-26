@@ -33,6 +33,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 			String closewindow = testdata[15];
 			String UnsubmitApplicant = testdata[16];
 			String ClearCompleteDate =testdata[17];
+			String ViewSummary=testdata[18];//Modifieb by Rahul Mehta on 25th March,2019
 			Reporter.log("Input Test Data was retrieved for 'Applicant Summary' Page");
 			
 			AppSummaryWindowName = driver.getWindowHandle();
@@ -279,6 +280,12 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 				alertAccept();
 				switchToOldWindow();
 				//recentPopupClose();
+			}
+			if(!ViewSummary.equals(""))//Added by Rahul Mehta on 25th ,2019
+			{
+				Reporter.log("Step 17- Click on View Summary ");
+				clickWebdriver(attributeName_xpath,"//tr[@id='TestScores']//b[text()='View Summary']");
+
 			}
 
 

@@ -1,1 +1,1 @@
-TestScore	TranscriptStatus
+TranscriptStatus	TestScore

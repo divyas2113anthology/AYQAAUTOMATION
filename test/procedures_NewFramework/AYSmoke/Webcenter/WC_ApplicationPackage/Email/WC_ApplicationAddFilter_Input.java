@@ -157,8 +157,9 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 					sleep(5);//Added by Rahul Mehta on 14th March 2019
 				}
 				else if(savecancel.equalsIgnoreCase("cancel")){
-
+					clickWebdriver(attributeName_xpath,"//img[contains(@src,'"+savecancel+"')]");//Added by Rahul Mehta on 9th April, 2019
 					sleep(2);//Added by Rahul Mehta on 14th March 2019
+					waitForPageToLoadWebdriver();
 				}
 								
 			}sleep(10);  //Added by Rahul Mehta on 08 feb,2019

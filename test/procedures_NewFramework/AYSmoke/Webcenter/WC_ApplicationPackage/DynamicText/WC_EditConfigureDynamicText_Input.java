@@ -28,7 +28,16 @@ public class WC_EditConfigureDynamicText_Input extends CommonSeleniumActions imp
 			
 			if (!adddeletefilter.equals("")) {
 				Reporter.log("Perform the operation to click["+adddeletefilter+"]");
-				clickWebdriver(attributeName_xpath, CDT_Filter+adddeletefilter+"')]");
+				if(adddeletefilter.equalsIgnoreCase("minusfilter"))//Added by Rahul Mehta on 9th April,2019
+				{
+					clickWebdriver(attributeName_xpath,"//a[text()='"+conditionalmessagecheck+"']/preceding-sibling::input");
+					sleep(2);
+					clickWebdriver(attributeName_xpath, CDT_Filter+adddeletefilter+"')]");
+					sleep(2);
+					waitForPageToLoadWebdriver();
+				}else {
+					clickWebdriver(attributeName_xpath, CDT_Filter + adddeletefilter + "')]");
+				}
 			}
 
 			if (!conditionalmessagename.equals("")) {

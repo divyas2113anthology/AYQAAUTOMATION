@@ -49,7 +49,13 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Select ("+operator+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator, operator);
+				if(isElementPresentWebdriver(attributeName_xpath,ET_Operator1)) //Modified by Rahul Mehta on 9th March,2019
+				{
+					selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator1, operator);
+
+				}else{
+					selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator, operator);
+				}
 			}
 			
 			if (!value.equals("")) {
@@ -70,7 +76,9 @@ public class WC_ApplicationAddFilter_Input extends CommonSeleniumActions impleme
 						clickWebdriver(attributeName_xpath, ET_Value1);
 						waitForElementPresentWebdriver(attributeName_xpath, "//label[contains(text(),'"+status+"')]/input[@type='checkbox']", status);
 						checkWebdriver(attributeName_xpath, "//label[contains(text(),'"+status+"')]/input[@type='checkbox']");
+						sleep(2);
 						clickWebdriver(attributeName_xpath, MQ_MulitSelectClose1);
+						sleep(2);
 
 					}
 					else{

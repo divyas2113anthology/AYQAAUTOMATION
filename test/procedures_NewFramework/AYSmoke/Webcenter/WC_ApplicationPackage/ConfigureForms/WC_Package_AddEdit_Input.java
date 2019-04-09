@@ -21,7 +21,7 @@ public class WC_Package_AddEdit_Input extends CommonSeleniumActions implements O
 				Reporter.log("Click on the Button"+publishprodevcancel);
 				clickWebdriver(attributeName_xpath, MCG_Package+publishprodevcancel+"')]");
 				alertAccept();
-				Thread.sleep(20000);
+				Thread.sleep(120000);//Modified by Rahul Mehta on 08th March,2019 
 
 			}	
 			

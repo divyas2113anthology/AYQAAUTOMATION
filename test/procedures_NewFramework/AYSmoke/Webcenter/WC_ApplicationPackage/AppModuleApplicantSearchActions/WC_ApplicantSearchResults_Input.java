@@ -46,6 +46,7 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 			}
 
 			if (!clickname.equals("")) {
+				sleep(2);
 				Reporter.log("Step 2 - Click the Name of the Record as ["+clickname+"]");
 				writeConsole(clickname);
 				String ClickFrstLstName = clickname.replace(";", ",");

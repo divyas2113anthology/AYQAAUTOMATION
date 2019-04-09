@@ -78,14 +78,20 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 							waitForPageToLoadWebdriver();
 							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
 							waitForPageToLoadWebdriver();
-							if(SplitPackage[i].equalsIgnoreCase("Application for QA Automation")){
+							WebElement SeconclickName = driver.findElement(By.xpath("//a[contains(text(),'"+SplitPackage[i]+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]"));
+							String seconclickName = SeconclickName.getAttribute("onmouseover");
+							if(seconclickName.contains("Click to expand")){
+							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
+							sleep(2);
+							} //Modified by Rahul Mehta on 8th March,2019 
+							/*if(SplitPackage[i].equalsIgnoreCase("Application for QA Automation")){
                                 WebElement SeconclickName = driver.findElement(By.xpath("//a[contains(text(),'"+SplitPackage[i]+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]"));
                                 String seconclickName = SeconclickName.getAttribute("onmouseover");
                                 if(seconclickName.contains("Click to expand")){
                                     PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
                                     sleep(2);
                                 }
-                            }
+                            }*/
 						//--End--Rahul Mehta
 					}
 				}

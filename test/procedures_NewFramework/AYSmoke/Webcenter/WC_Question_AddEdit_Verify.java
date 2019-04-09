@@ -24,6 +24,7 @@ public class WC_Question_AddEdit_Verify extends CommonSeleniumActions implements
 			switchToFrameNameIdWebdriver("frmContent");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
+				sleep(4);
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
 				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
 			}

@@ -11,13 +11,12 @@ import processor.CommonSeleniumActions;
 
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
-public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements OR {
+public class WC_EditSpecialChoiceGroup_Input extends CommonSeleniumActions implements OR {
 
 	@Test(description = "This Procedure is used to perform some operation in 'Manage Choice Groups' page")
 
-	public void WC_EditStatusLabel_Input() throws Exception {
+	public void WC_EditSpecialChoiceGroup_Input() throws Exception {
 		try {
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Manage Choice Groups");
@@ -26,12 +25,11 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 			String groupdescription = testdata[1];
 			String statuscategory = testdata[2];
 			String labelName = testdata[3];
-			String label = testdata[4];
+			String code = testdata[4];
 			String active = testdata[5];
 			String delete = testdata[6];
 			String savecanceladdrow = testdata[7];
 			String addrow = testdata[8];
-			String code = testdata[9];
 
             implicitWait();
 
@@ -64,41 +62,17 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
 
                 if (!labelName.equals("")) {
                     Reporter.log("Enter Label");
-                    String Label = labelName + Calendar.getInstance().getTimeInMillis();
-                    sendKeys(attributeName_xpath, MCG_label, Label);
+                    String Label = labelName;
+                    sendKeys(attributeName_xpath, "//input[@name='chkSelect']//following::input[@name='txtLabel']", Label);
                     Runtimedatawrite(Label, labelName);
                 }
-                /*
-                if (!labelName.equals("")) {
-                Reporter.log("Enter Label");
-                String Label = labelName + Calendar.getInstance().getTimeInMillis();
-                sendKeys(attributeName_xpath, "//input[@name='chkSelect']//following::input[@name='txtLabel']", Label);
-                Runtimedatawrite(Label, labelName);
-                }*/
 
+                if (!code.equals("")) {
 
-
-                if (!label.equals("")) {
-                    try {
-                        Reporter.log("Enter Label");
-                        String Label = labelName + Calendar.getInstance().getTimeInMillis();
-                        sleep(2); //Added by Rahul Mehta on 14th March 2019
-                        sendKeys(attributeName_xpath, MCG_label, Label);
-                        sleep(2);//Added by Rahul Mehta on 14th March 2019
-                        Reporter.log(Label);//Added by Rahul Mehta on 14th March 2019
-                        Runtimedatawrite(Label, label);
-                    } catch (Exception e) {
-                        Reporter.log("Rename Label");
-                        System.out.println("Enter in edit label");
-                        String LabelEdit = labelName + Calendar.getInstance().getTimeInMillis();
-                        String label1 = Runtimedataread(label);
-                        driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
-
-                        driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
-                        sleep(2);//Added by Rahul Mehta on 14th March 2019
-                        Runtimedatawrite(LabelEdit, label);
-                        System.out.println("Write value in Excel sheet");
-                    }
+                    Reporter.log("Enter Code value");
+                    String codeValue = code + Calendar.getInstance().getTimeInMillis();
+                    sendKeys(attributeName_xpath, "//input[@name='chkSelect']//following::input[@name='txtChoiceValue']", codeValue);
+                    Runtimedatawrite(codeValue, code);
                 }
 
                 if (!active.equals("")) {
@@ -172,14 +146,6 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         waitForPageToLoadWebdriver();
                     }
             }
-            /*if (!code.equals("")) {
-                if(isElementPresent(attributeName_xpath,"//input[@name='chkSelect']//following::input[@name='txtChoiceValue']")) {
-                    Reporter.log("Enter Code value");
-                    String codeValue = code + Calendar.getInstance().getTimeInMillis();
-                    sendKeys(attributeName_xpath, "//input[@name='chkSelect']//following::input[@name='txtChoiceValue']", codeValue);
-                    Runtimedatawrite(codeValue, code);
-                }
-            }*/
 
 		switchToDefaultContentWebdriver();
 		} catch (IOException e) {

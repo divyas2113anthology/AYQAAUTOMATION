@@ -25,9 +25,9 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 			String linktoclick = testdata[2];
 			String checkchoicegroup = testdata[3];
 			String configurestatuslabellink =testdata[4];
-			String adddeleteexportdynamiclist =testdata[5];
-			String specialchoicegroups = testdata[6];
-			String configuredynamicchoicegroups = testdata[7];
+			String specialchoicegroups = testdata[5]; //Modified by Rahul Mehta on 11th April, 2019
+			String configuredynamicchoicegroups = testdata[6];
+			String adddeleteexportdynamiclist =testdata[7];
 			String labels = testdata[8];
 
 			implicitWait();
@@ -46,6 +46,25 @@ public class WC_ConfigureStatusLabel_Input extends CommonSeleniumActions impleme
 				Reporter.log("Click on the Link"+linktoclick);
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
+			}
+			if(!specialchoicegroups.equals(""))//Added by rahul Mehta on 11th April, 2019
+			{
+				if(specialchoicegroups.equalsIgnoreCase("Decision"))
+				{
+					clickWebdriver(attributeName_xpath,"//b[contains(text(),'Special Choice Groups')]//following::tr//td//font//a[contains(text(),'Decision')]");
+				}
+				if(specialchoicegroups.equalsIgnoreCase("Decision Reason"))
+				{
+					clickWebdriver(attributeName_xpath,"//b[contains(text(),'Special Choice Groups')]//following::tr//td//font//a[contains(text(),'Decision Reason')]");
+				}
+				if(specialchoicegroups.equalsIgnoreCase("In Progress Status"))
+				{
+					clickWebdriver(attributeName_xpath,"//b[contains(text(),'Special Choice Groups')]//following::tr//td//font//a[contains(text(),'In Progress Status')]");
+				}
+				sleep(2);
+				waitForPageToLoadWebdriver();
+
+
 			}
 			switchToDefaultContentWebdriver();	
 			} catch (Exception e) {

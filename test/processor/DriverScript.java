@@ -101,7 +101,7 @@ public class DriverScript {
 		final String WEB_SERVICE_SUFFIX = "/Services/v4_0/ImportExport.svc"; //$NON-NLS-1$ 
 		final String WEB_SERVICE_NAMESPACE = "{http://www.inflectra.com/SpiraTest/Services/v4.0/}ImportExport"; //$NON-NLS-1$ 
 		//final String WEB_SERVICE_NAMESPACE_DATA_OBJECTS = "http://schemas.datacontract.org/2004/07/Inflectra.SpiraTest.Web.Services.v4_0.DataObjects"; //$NON-NLS-1$ 
-		String baseUrl = "https://hobsons.spiraservice.net";
+		String baseUrl = "https://admissions.spiraservice.net";
 		URL serviceUrl = new URL(baseUrl + WEB_SERVICE_SUFFIX); 
 		System.out.println("Connecting to Spira...");
 		ImportExport service = new ImportExport(serviceUrl, QName.valueOf(WEB_SERVICE_NAMESPACE)); 

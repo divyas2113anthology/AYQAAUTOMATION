@@ -418,6 +418,9 @@ public class ReportGenerator implements IReporter {
 	      catch (IOException e) {
 	        ; // ignore
 	      }
+		  catch (IndexOutOfBoundsException e) {
+			  ; // ignore
+		  }
 	    }
 	  }
 

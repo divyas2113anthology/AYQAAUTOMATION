@@ -46,6 +46,7 @@ public class ForgotPassword_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 					waitForElementPresentWebdriver(attributeName_xpath,FRP_Search, "Submit Button Present");
 					clickWebdriver(attributeName_xpath,FRP_Search);
+
 					Thread.sleep(8000);
 					waitForPageToLoadWebdriver();
 				}else if(fpsearch.equalsIgnoreCase("back")) {

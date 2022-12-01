@@ -85,7 +85,7 @@ public static final String FC_AutoQuestion = "//a[text()='Auto Question']";
 public static final String Iagree = "//*[@id='chkAcceptEULA']";
 public static final String PrivacyPolicy_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String PrivacyPolicy_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String PrivacyPolicy = "//*[@id='Radio3']";
+public static final String PrivacyPolicy = "//input[@id=\"AllowViewPreSubmit\"]";
 public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#**********************************************************#
 //#**********************************************************#
@@ -110,7 +110,7 @@ public static final String upaPassword = "//input[@id='AppPassword']";
 public static final String upaConfirmPassword = "//input[@id='AppConPassword']";
 public static final String upaappsubmission_Yes = "//input[@name='AppAllowViewPreSubmit' and @value='True']";
 public static final String upaappsubmission_No = "//input[@name='AppAllowViewPreSubmit' and @value='False']";
-public static final String upaupdatebtn1 = ".//*[@id='ay-createSubmit']";
+public static final String upaupdatebtn1 = "//input[@id='ay-createSubmit']";
 public static final String upaupdatebtn = "//input[@id='ay-createSubmit']";
 public static final String upaclosebtnClassic = "//img[@alt='close window']";
 public static final String upaclosebtn = "//button[@class='close']";
@@ -267,14 +267,14 @@ public static final String AF_International = "//input[@id='AppFeeAmount2']";
 public static final String AF_Check = "//input[@id='ptCheck1']";
 public static final String AF_FeeWaiver = "//input[@id='ptWaiver1']";
 public static final String AF_CreditCard = "//input[@id='ptCreditCard']";
-public static final String AF_PayContinue = "//img[@alt='pay and continue']"; //Modified by Rahul Mehta on 13th feb 2019
+public static final String AF_PayContinue = "//input[@name='PayButton']"; //Modified by Saran kumar Nov 2022
 public static final String AF_PaymentStatus = "//select[@name='pmtstatus']";
 //#**********************************************************#
 //# Signature Page - SP
 //#*********************************************************#
 public static final String SP_FullName = "//input[@id='eSignName']";
 public static final String SP_Date = "//input[@id='esignDate']";
-public static final String SP_Submit = "//img[@alt='submit application']";
+public static final String SP_Submit = "//input[@id='ay-recSubmit']";//Modified by Saran kumar Nov 2022
 String SP_submitApp = "//input[@value='Submit Application']";
 //#**********************************************************#
 //# Essay and Attachment Page - EA
@@ -326,7 +326,8 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //public static final String FRP_Pin = "//input[@id='UserID']";
 public static final String FRP_Pin = "//input[@id='UserName']"; //input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
-public static final String FRP_Search = "//input[@alt=\"search\"]";
+public static final String FRP_Search = "//input[@alt='search']";
+    public static final String Clas_FRP_Search = "//input[@id='ay-forgotSubmit']";
 //#**********************************************************#
 //# Personal Data Page - PD
 //#**********************************************************#
@@ -2130,7 +2131,9 @@ public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[contains(@id,'SectionInput')]";
 public static final String SR_field="//select[contains(@name,'txtField')]";
-public static final String SR_operator="//select[@name='txtOperator0']";
+
+public static final String SR_operator="//select[@name='G1-row1_txtOperator1']";
+    public static final String SR_operator1="//select[@name='txtOperator0']";// Add -saran kumar 30 nov 2022
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="//td[a[contains(text(),'";

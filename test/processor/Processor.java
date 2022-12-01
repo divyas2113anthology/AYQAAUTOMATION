@@ -243,11 +243,11 @@ public class Processor {
 
     @AfterSuite(alwaysRun = true)
     public void shutdownseleniumserver(ITestContext result) throws Exception {
-        System.out.println("comes to after suite");
+       // System.out.println("comes to after suite");
         Set<String> set = driver.getWindowHandles();
         Iterator<String> itr = set.iterator();
 
-        System.out.println("Closing " + set.size() + " window(s)");
+        //System.out.println("Closing " + set.size() + " window(s)");
         int closeCount = set.size();
         driver.close();
         while (itr.hasNext()) {
@@ -257,6 +257,7 @@ public class Processor {
         }
 
         driver.quit();// Close all opened 	browser by webdriver.
+
 
         String Status = null;
         String Resultoutput = result.getOutputDirectory();
@@ -323,4 +324,32 @@ public class Processor {
             System.out.println("Writing CSV Write Exeception :" + e.getMessage());
         }
     }
+    //--------------------BELOW CODE IS TO KILL THE TASK-----------------------------------------------
+    private static final String TASKLIST = "tasklist";
+    private static final String KILL = "taskkill /F /IM ";
+
+    public static boolean isProcessRunging(String serviceName) throws Exception {
+
+        Process p = Runtime.getRuntime().exec(TASKLIST);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(
+                p.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+
+            System.out.println(line);
+            if (line.contains(serviceName)) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public static void killProcess(String serviceName) throws Exception {
+
+        Runtime.getRuntime().exec(KILL + serviceName);
+
+    }
+
 }

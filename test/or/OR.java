@@ -326,7 +326,7 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //public static final String FRP_Pin = "//input[@id='UserID']";
 public static final String FRP_Pin = "//input[@id='UserName']"; //input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
-public static final String FRP_Search = "//*[@id='ay-forgotSubmit']";
+public static final String FRP_Search = "//input[@alt=\"search\"]";
 //#**********************************************************#
 //# Personal Data Page - PD
 //#**********************************************************#
@@ -1384,7 +1384,7 @@ public static final String CI_PostalCode = "//input[@id='q24573']";
 public static final String CI_Country = "//select[@id='s24574']";
 public static final String CI_NextBtn = "//img[@alt='next']";
 public static final String CI_SaveBtn = "//img[@alt='save']";
-public static final String CI_BackBtn = "//input[@value='Back']"; //img[@alt='back']";
+public static final String CI_BackBtn = "//*[@id=\"Table1\"]/tbody/tr[5]/td/a/img"; //img[@alt='back']";
 public static final String CI_BackBtnFL = "//input[@id='ay-ForgotPassword']";
 public static final String CI_PageName = "//td[@class='Color1']/font";
 public static final String CI_SectionMenu = "//table[@class='rightBorder']";

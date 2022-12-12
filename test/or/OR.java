@@ -995,6 +995,7 @@ public static final String EL_PageTitle = "//strong[text()='Terms Of Use']";
 public static final String MN_PageTitle = "//*[contains(text(),'Univeristy of AYAUTO')]";
 //public static final String MN_BaseTableFont = "//td[@class='BaseTableFont']";
 public static final String MN_BaseTableFont = "//a[@class='btn btn-primary appListButton']";
+    public static final String MN_PROFILECLICK = "//*[@id=\"Profile\"]/li";//a[@id='Profile']/descendant::li/i[1]";
 //#**********************************************************#
 //# Event Search All Page - ESA
 //#**********************************************************#

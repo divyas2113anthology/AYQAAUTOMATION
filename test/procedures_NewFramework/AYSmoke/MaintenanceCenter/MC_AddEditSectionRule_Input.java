@@ -5,7 +5,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
-public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implements OR{
+public class 	MC_AddEditSectionRule_Input extends CommonSeleniumActions implements OR{
 	@Test(description="This Procedure is to perform some Operation in 'Add/Edit Section Rule' page")
 	public void MC_AddEditSectionRule_Input(){
 	try{
@@ -97,7 +97,17 @@ public class MC_AddEditSectionRule_Input extends CommonSeleniumActions implement
 		}
 		if (!operator.equals("")) {
 			Reporter.log("Step 5  - Select the operator as ["+operator+"]");
-			selectByVisibleTextWebdriver(attributeName_xpath, ESR_Operator, operator);
+			//clickWebdriver(attributeName_xpath,"//select[@class='FormFields FormFieldsWide']");
+			//clickWebdriver(attributeName_xpath,"//*[@id=\"G1-row1\"]/td[3]/select/option[9]"+field+"')]");
+			//selectByVisibleTextWebdriver(attributeName_xpath, ESR_Operator, operator);
+			//selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,ESR_Operator1,operator);
+			if(isElementPresentWebdriver(attributeName_xpath,ET_Operator1)) //Modified by Saran kumar 9_Nov_2022
+			{
+				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator1, operator);
+
+			}else{
+				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator, operator);
+			}
 		}
 		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");

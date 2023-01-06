@@ -1197,6 +1197,8 @@ public static final String ESR_Description = "//textarea[@name='txtDescription']
 public static final String ESR_Section = "//select[@name='selSection']";
 public static final String ESR_Field = "//select[contains(@name,'txtField')]";
 public static final String ESR_Operator = "//select[@name='txtOperator0']";
+    public static final String ESR_Operator1 = "FormFields FormFieldsWide";
+
 //public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
 public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
 
@@ -2137,9 +2139,12 @@ public static final String SR_operator="//select[@name='G1-row1_txtOperator1']";
     public static final String SR_operator1="//select[@name='txtOperator0']";// Add -saran kumar 30 nov 2022
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
-public static final String SR_RuleName="//td[a[contains(text(),'";
-public static final String SR_CheckBox="/preceding-sibling::td[input[@name='Chk_RuleID']]";
+public static final String SR_RuleName="(//td/label/a[text()='";
+public static final String SR_CheckBox="']/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
 public static final String SR_BRCheckBox="/preceding-sibling::td[input[@type='CheckBox']]";
+
+    public static final String SR_BRCheckBox1="//td/input";
+
 
 //#********************************************************************#
 //# Webcenter - Application - Configure fee rules

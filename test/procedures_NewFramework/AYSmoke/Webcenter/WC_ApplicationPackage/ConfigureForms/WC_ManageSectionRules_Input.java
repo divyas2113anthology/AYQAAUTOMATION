@@ -18,12 +18,18 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 			String Checkbox = testdata[1];
 			String Linkname = testdata[2];
 			String showhide = testdata[3];
-			switchToFrameNameIdWebdriver("frmContent");
+			//switchToFrameNameIdWebdriver("frmContent");
 
-			if(!Checkbox.equals(""))
-			{
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox, Checkbox);
-				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_CheckBox);
+			if(!Checkbox.equals("")) {
+				switchToFrameNameIdWebdriver("frmContent");
+				sleep(100);
+				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName + Checkbox  + SR_CheckBox, Checkbox);
+
+				clickWebdriver(attributeName_xpath, SR_RuleName + Checkbox + SR_CheckBox);
+
+switchToDefaultContentWebdriver();
+
+
 			}
 			if(!Linkname.equals(""))
 			{
@@ -33,16 +39,21 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 			}
 
 			if(!Button_addprintdelete.equals(""))
-			{
+			{switchToFrameNameIdWebdriver("frmContent");
+
 				/*waitForElementPresentWebdriver(attributeName_xpath, MCG_Package+Button_addprintdelete+"']", Button_addprintdelete);
 				clickWebdriver(attributeName_xpath, MCG_Package+Button_addprintdelete+"']");*/
 				if (Button_addprintdelete.equalsIgnoreCase("Add")) {
 					waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, Button_addprintdelete);
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
+
 					sleep(2); //Added by Rahul Mehta on 8th Feb,2019
 				}else if (Button_addprintdelete.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, MSR_BackBtn);
+
+					switchToDefaultContentWebdriver();
 				}else if (Button_addprintdelete.equalsIgnoreCase("Delete")) {
+
 					clickWebdriver(attributeName_xpath, MSR_DeleteBtn);
 					String RuleDeleteAlertMsg = alertMessage();
 					Reporter.log("Delete Rule Alert Message : "+RuleDeleteAlertMsg);

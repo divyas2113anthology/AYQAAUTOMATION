@@ -2,6 +2,7 @@ package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.Business
 
 import or.OR;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -40,10 +41,14 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 			}
 			if(!Checkbox.equals(""))
 			{
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("window.scrollBy(0,250)", "");
 
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox, Checkbox);
-				clickWebdriver(attributeName_xpath, SR_RuleName+Checkbox+"')]]"+SR_BRCheckBox);
+				waitForElementPresentWebdriver(attributeName_xpath,SR_RuleName1+ Checkbox +SR_BRCheckBox, Checkbox);
+				clickWebdriver(attributeName_xpath,SR_RuleName1+ Checkbox +SR_BRCheckBox);
 				sleep(1);
+				
+
 			}
 			if (!delete.equals("")) {
 				Reporter.log("Proceed to click the delete button ");

@@ -2140,8 +2140,10 @@ public static final String SR_operator="//select[@name='G1-row1_txtOperator1']";
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="(//td/label/a[text()='";
+    public static final String SR_RuleName1="//td/label/a[text()='";
+
 public static final String SR_CheckBox="']/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
-public static final String SR_BRCheckBox="/preceding-sibling::td[input[@type='CheckBox']]";
+public static final String SR_BRCheckBox="']/ancestor::td/preceding-sibling::td/input";
 
     public static final String SR_BRCheckBox1="//td/input";
 

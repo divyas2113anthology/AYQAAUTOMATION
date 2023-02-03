@@ -99,11 +99,17 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				 //--end--Rahul Mehta
               }	
              
-             if (!operator.equalsIgnoreCase(""))
-             {
-  				Reporter.log("Select operator as" + operator );
-  				waitForElementPresentWebdriverWait(attributeName_xpath, SR_operator, operator);
-  				selectByVisibleTextWebdriver(attributeName_xpath, SR_operator, operator);
+             if (!operator.equalsIgnoreCase("")) {
+				 Reporter.log("Select operator as" + operator);
+				 waitForElementPresentWebdriverWait(attributeName_xpath, SR_operator, operator);
+				 if(isElementPresentWebdriver(attributeName_xpath,SR_operator)) //Modified by Saran kumar 30 Nov 2022
+				 {
+					 selectByVisibleTextWebdriver(attributeName_xpath, SR_operator, operator);
+
+				 }else{
+					 selectByVisibleTextWebdriver(attributeName_xpath, SR_operator1, operator);
+				 }
+
   				
   			  }
              

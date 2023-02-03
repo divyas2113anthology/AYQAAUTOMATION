@@ -300,10 +300,10 @@ public class DriverScript {
 			File[] listOfFiles = folder.listFiles(); 
 
 			System.out.println("Uploading attachments to Spira...");
-			for (int i = 0; i < listOfFiles.length; i++) 
+			for (int i = 0; i <listOfFiles.length; i++)
 			{
 
-				if (listOfFiles[i].isFile()) 
+				if (listOfFiles[i].isFile())
 				{
 					files = listOfFiles[i].getName();
 					postAttachment(screenDir,files,artifactId,soap);

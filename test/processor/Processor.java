@@ -26,10 +26,9 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.*;
 import java.net.URL;
-import java.text.DecimalFormat;
-import java.text.MessageFormat;
-import java.text.NumberFormat;
+import java.text.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -60,20 +59,29 @@ public class Processor {
     public static String[] statuscontainer;
     public static ArrayList<String> Summarydetails = new ArrayList<String>();
     public static String browser;
-
+    public static String globalFailureNotification = "";
 
     public enum testbrowser {
         internetexplorer, firefox, safari, googlechrome
 
     }
 
-    @BeforeSuite
+    public static String globalCurrentDateAndTime = "";
+
+    @BeforeSuite(alwaysRun = true)
     public void startseleniumserver(ITestContext context) throws Exception {
         Reporter.log("Proceed to Get Browser Name from Excel Sheet(C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls)");
+        System.out.println("Start of the 'startseleniumserver' function");
         browser = Runtimedataread("Browser").toLowerCase().trim();
         String outlocation = context.getOutputDirectory();
         String[] outfilename = outlocation.split("\\\\");
         String testName = outfilename[outfilename.length - 2];
+
+        //Added by Rahul Mehta 5th Jan,2023
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("ddMMHHmmss");
+        globalCurrentDateAndTime = dateFormat.format(date);
+        //Rahul Mehta
 
         switch (browser) {
             case "internetexplorer":
@@ -98,7 +106,7 @@ public class Processor {
                 options.addArguments("disable-popup-blocking");
                 options.addArguments("--disable-extensions");
                 //options.addArguments("--disable-features=VizDisplayCompositor");
-                driver = new ChromeDriver(options);
+              driver = new ChromeDriver(options);
                 break;
             case "safari":
                 driver = new SafariDriver();
@@ -141,12 +149,13 @@ public class Processor {
             default:
                 writeFailure("Invalid Browser Name(" + browser + ")");
         }
-        driver.get("http://www.google.com");
+       driver.get("http://www.google.com");
         driver.manage().window().maximize();
         String outlocadrive = outlocation.substring(0, outlocation.lastIndexOf("\\"));
         String outlocarepo = outlocation.substring(0, outlocadrive.lastIndexOf("\\"));
         String autoframework = outlocation.substring(0, outlocarepo.lastIndexOf("\\"));
         testData = readCSVFile(autoframework + "\\csv\\" + testName + ".csv");
+System.out.println("End of the 'startseleniumserver' function");
     }
 
 

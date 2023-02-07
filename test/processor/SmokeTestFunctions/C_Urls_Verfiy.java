@@ -14,7 +14,7 @@ import static processor.Processor.driver;
 public class C_Urls_Verfiy extends CommonSeleniumActions {
 
 
-    public void AY_urls_verify  ()throws Exception{
+    public void AY_urls_verify( String Import,String Export,String IClassService)throws Exception{
 
         try {
             //WebDriverManager.chromedriver().setup();
@@ -22,18 +22,18 @@ public class C_Urls_Verfiy extends CommonSeleniumActions {
             driver.manage().window().maximize();
             writeMessageInBold("About Verify Datatransfer import URL is accessible");
 
-            Reporter.log(" https://import.applyyourself.com/aydatatransferws.asmx ");
+            Reporter.log(Import);
 
-             get("https://import.applyyourself.com/aydatatransferws.asmx");
+             get(Import);
             writeMessageInBold("About Verify Datatransfer exports URL is accessible");
 
-            Reporter.log("https://export.applyyourself.com/aydatatransferws.asmx ");
-            get("https://export.applyyourself.com/aydatatransferws.asmx");
+            Reporter.log(Export);
+            get(Export);
 
             writeMessageInBold("About Verify Clients Info page is accessible.");
 
-            Reporter.log("https://ayws.applyyourself.com/IClassService.svc");
-             get("https://ayws.applyyourself.com/IClassService.svc");
+            Reporter.log(IClassService);
+             get(IClassService);
 
 
 

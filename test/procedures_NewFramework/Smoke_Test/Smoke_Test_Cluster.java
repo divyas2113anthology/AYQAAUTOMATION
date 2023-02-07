@@ -61,6 +61,10 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             String urlverify;
             String Ay_app_creation;
             String strVerifyBuildNumber;
+            String urlImport = null;
+            String urlExport=null;
+            String urlIClassService=null;
+            String ay_applictionurl=null;
 
 
             String concludingTextPrintedInResults;
@@ -152,6 +156,11 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                         strARAdminUrl="https://arqa.applyyourself.com/admin";
 
                         strAYWebCenterUrl="https://qawebcenter.applyyourself.com/";
+
+                        urlImport="https://import.applyyourself.com/aydatatransferws.asmx";
+                        urlExport="https://Export.applyyourself.com/aydatatransferws.asmx";
+                        urlIClassService="https://ayws.applyyourself.com/IClassService.svc";
+                        ay_applictionurl="https://qaapp.applyyourself.com/?id=ayauto";
 
                     }else if (strEnvironment.equals("iadqa")){
                         Reporter.log("Environment is 'iadqa'");
@@ -275,7 +284,8 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
 
                                 writeMessageInBold("About to verify URLS'");
-                                Urls_Verfiy.AY_urls_verify();
+
+                                Urls_Verfiy.AY_urls_verify(urlImport,urlExport,urlIClassService);
 
                             } catch(Exception e){
                                 strExceptionMessage = e.getLocalizedMessage();
@@ -329,7 +339,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
 
 
-                                CreateNew_account.AY_App_creation();
+                                CreateNew_account.AY_App_creation(ay_applictionurl);
 
                             } catch(Exception e){
                                 strExceptionMessage = e.getLocalizedMessage();

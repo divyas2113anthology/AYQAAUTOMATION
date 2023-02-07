@@ -12,11 +12,11 @@ import java.time.format.DateTimeFormatter;
 
 public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_OR {
 
-    public void AY_App_creation() throws Exception {
+    public void AY_App_creation(String Applicationlogin) throws Exception {
 
         try {
 
-            get("https://qaapp.applyyourself.com/?id=ayauto");
+            get(Applicationlogin);
 
             clickWebdriver(attributeName_xpath, Crtaccclick);
             writeMessageInBold("Creating Account");

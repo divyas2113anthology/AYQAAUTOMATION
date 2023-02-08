@@ -9,7 +9,12 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This Procedure is used to perform some operation in 'Welcome' page")
 	public void WC_Welcome_Input(){
+
+
 		try {
+			String elementLocator;
+			String elementName;
+			String expectedText;
 			writeDetails();
 			Reporter.log("Proceed to retrieve Input Test Data for 'Welcome' Page");
 			String[] testdata = datacontainer;
@@ -21,16 +26,34 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Welcome' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
-				Reporter.log("Step 1 - Click the link as ["+weltopupdatelogout+"]");
+				Reporter.log("Step 1 - Click the link as [" + weltopupdatelogout + "]");
 				//waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
-				clickWebdriver(attributeName_xpath, "//a[text()='"+weltopupdatelogout+"']");
+				//    elementLocator="//a[@href='javascript:logout()']";
+				// elementName="logout";
+
+
+				clickWebdriver(attributeName_xpath, "//a[text()='" + weltopupdatelogout + "']");
+//			}else {
+//
+//				clickWebdriver(attributeName_xpath, "//a[@href='javascript:logout()']");
+
+//				if(!weltopupdatelogout.equals("")) //Modified by Saran kumar 9_Nov_2022
+//				{
+//					clickWebdriver(attributeName_xpath, "//a[text()='"+weltopupdatelogout+"']");
+//
+//				}else{
+//					clickWebdriver(elementName,elementLocator);
+					System.out.println("Cookies cleared");
+					waitForPageToLoadWebdriver();
+				}
+
 				//driver.manage().deleteAllCookies();
 				//System.out.println("Cookies cleared");
 				//waitForPageToLoadWebdriver();
 				//driver.manage().deleteAllCookies();
 				System.out.println("Cookies cleared");
 				waitForPageToLoadWebdriver();
-			}
+			//}
 			if (!welpackage.equals("")) {
 				Reporter.log("Step 2 - Select the Name of the Package as ["+welpackage+"]");
 				String [] splitPackage = welpackage.split(";");
@@ -82,9 +105,10 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 						driver.switchTo().frame("frmTreeMenu");
 					    clickWebdriver(attributeName_xpath, WClogoutLink);
 					}
-					else
-					{
+					else {
 						clickWebdriver(attributeName_partiallinktext, link_to_click);
+
+
 					}
 				}else if(link_to_click.equalsIgnoreCase("online support top"))
 					{

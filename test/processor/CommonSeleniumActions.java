@@ -33,26 +33,25 @@ import java.util.concurrent.TimeUnit;
 
 
 public class CommonSeleniumActions extends Processor implements OR {
-	public static String mainwindow;
 	//Declared AppSummaryWindowName as Global Variable for Window Handling in Applicant Summary_Input procedure
 	public static String AppSummaryWindowName;
 	//Declared ApplicationPage as Global Variable for Window Handling in Search For Applicants procedure
 	public static String ApplicationPage;
 	//Declared RecommendationDTwindow as Global Variable for Window Handling in Recommendation DT Page
 	public static String RecommendationDTwindow;
+	public static String xpathElementLocatorIdentifier = "xpath";
 	public static int timeOutInSeconds = 60;
-
 	public void open(String url) {
 		writeConsole("Open [" + url + "]");
 		//selenium.open(url);
 		driver.get(url);
 	}
+
 	public void enterPress(String Xpath)   //Rahul Mehta
 	{	writeConsole("Entwr Key press");
 		WebElement webElement = driver.findElement(By.xpath(Xpath));
 		webElement.sendKeys(Keys.ENTER);
 	}
-
 	public void selectWindow(String windowName) {
 		writeConsole("selectWindow[" + windowName + "]");
 		//selenium.selectWindow(windowName);
@@ -65,8 +64,8 @@ public class CommonSeleniumActions extends Processor implements OR {
 		driver.navigate().back();
 	}
 
-	//	=================================22-06-2012
 
+	//	=================================22-06-2012
 
 	public Integer getXpathCount(String xpath) {
 		writeConsole("getXpathCount[" + xpath + "]");
@@ -74,6 +73,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 		writeConsole("Actaul getXpathCount[" + getxpathcount + "]");
 		return getxpathcount;
 	}
+
 	/*
 	public Integer getCssCount(String css){
 		css = css.replace("css=", "");
@@ -104,7 +104,6 @@ public class CommonSeleniumActions extends Processor implements OR {
 	// This Function has two parameter
 	// Testdata - which  gets the Test data Value from Application and used by another procedure
 	// Testdatalabel - which gets Test Data Label from QC(parameter) and used to label the Test Data in the Excel for easy to read.
-
 	public void Runtimedatawrite(String Testdata, String Testdatalabel) throws IOException, BiffException, RowsExceededException, WriteException {
 		Reporter.log("Proceed to Write Run time Data in Excel Sheet in the location 'C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls'");
 		String filename = "C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls";
@@ -143,7 +142,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 
 
+
 	// This function is used to Read Run Time Test Data From Excel Sheet(C:/Selenium/InputTestdata.xls)
+	public static String mainwindow;
 	// This function has one parameter
 	// datalabel - which gets the Test data Label from QC(parameter) and used to read Test Data from the Excel then used by required Procedures.
 
@@ -4119,4 +4120,132 @@ public class CommonSeleniumActions extends Processor implements OR {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 	}
+
+
+
+//Add by saran kumar 29 nov 2022
+	public void ifAppropriateFailTheProcedure(){
+
+		System.out.println("In the 'ifAppropriateFailTheProcedure' function");
+		Reporter.log("globalFailureNotification - '" + globalFailureNotification + "'");
+		System.out.println("globalFailureNotification - '" + globalFailureNotification + "'");
+		if (! globalFailureNotification.equals("")) {
+			writeMessageInBold("One or more faiure(s) present in the procedure");
+			Reporter.log("About to write the failure(s) in a table");
+			writeConsolidatedFailuresAsTable(globalFailureNotification);
+			// After writing the failures in a table, the 'globalFailureNotification' variable is set to "empty"
+			globalFailureNotification = "";
+			// Finally, the procedure is failed via. the 'Assert.fail' statement
+			Assert.fail("One or more failure(s) present in the procedure");
+		}
+	}
+	public void writeConsolidatedFailuresAsTable(String paramFailures) {
+		Reporter.log("In the 'writeFailuresInATable' function");
+
+		String failureMessagesTable = "<table border=\"3\" cellspacing=\"0\"<tr>";
+		failureMessagesTable = failureMessagesTable+"<th><b><font size='4' align=\"left\" color='Red'>No.</font></b></th>";
+		failureMessagesTable = failureMessagesTable+"<th><b><font size='4' align=\"left\" color='Red'>Failure Message</font></b></th>";
+		String []failureNotificationsArray = paramFailures.split("::::SEPARATOR::::");
+		int numberOfFailureNotifications = failureNotificationsArray.length - 1;
+		Reporter.log("numberOfFailureNotifications - '" + numberOfFailureNotifications +"'");
+		int failureNumber;
+		String failureMessage;
+		for (int i=0; i<=numberOfFailureNotifications; i++) {
+			failureNumber = i+1;
+			failureMessage = failureNotificationsArray[i];
+			failureMessagesTable = failureMessagesTable + "<tr>";
+			failureMessagesTable = failureMessagesTable+"<td><b><font size='4' align=\"left\" color='Red'> " + failureNumber + "</font></b></td>";
+			failureMessagesTable = failureMessagesTable+"<td><b><font size='4' align=\"left\" color='Red'> " + failureMessage + "</font></b></td>";
+			failureMessagesTable = failureMessagesTable + "</tr>";
+		}
+		failureMessagesTable = failureMessagesTable + "</table>";
+		Reporter.log("");
+		Reporter.log("");
+		Reporter.log(failureMessagesTable);
+	}
+
+	public void waitForPageToLoad() {
+		Reporter.log("");
+		Reporter.log("In the 'waitForPageToLoad' function");
+
+		// Nov. 23rd 2015 - Vaidy
+		// Changed to 'WebDriver' statements
+		/*
+		try
+		{
+			selenium.waitForPageToLoad(STANDARD_PAGE_LOAD_WAIT_TIME);
+		}
+		catch (Exception e)
+		{
+
+			// March 27th 2014 - Vaidy
+			// If the page takes more time to get loaded, we are making the action wait
+			// again for the page to load
+
+			Reporter.log("As the page took more time to get loaded, we are making the action wait again for the page to get loaded");
+			//String exceptionMessage = e.getLocalizedMessage();
+			//if (exceptionMessage.equals("Timed out waiting for action to finish")) {
+			try
+			{
+				selenium.waitForPageToLoad(STANDARD_PAGE_LOAD_WAIT_TIME);
+			} catch (Exception e1)
+			{
+				String exceptionMessage = e1.getLocalizedMessage();
+				writeFailure("'waitForPageToLoad' function - Exception Message - '" + exceptionMessage + "'");
+			}
+			//}else {
+			//writeFailure("'waitForPageToLoad' function - Exception Message - '" + exceptionMessage + "'");
+			//}
+		}
+		*/
+		try {
+			driver.manage().timeouts().pageLoadTimeout(STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER, TimeUnit.SECONDS);
+			Reporter.log("Finished waiting for the page to load");
+		} catch (Exception e) {
+
+			// March 27th 2014 - Vaidy
+			// If the page takes more time to get loaded, we are making the action wait
+			// again for the page to load
+
+			Reporter.log("As the page took more time to get loaded, we are making the action wait again for the page to get loaded");
+			//String exceptionMessage = e.getLocalizedMessage();
+			//if (exceptionMessage.equals("Timed out waiting for action to finish")) {
+			try {
+				driver.manage().timeouts().pageLoadTimeout(STANDARD_PAGE_LOAD_WAIT_TIME_WEBDRIVER, TimeUnit.SECONDS);
+				Reporter.log("Finished waiting for the page to load");
+			} catch (Exception e1) {
+				String exceptionMessage = e1.getLocalizedMessage();
+				writeFailure("'waitForPageToLoad' function - Exception Message - '" + exceptionMessage + "'");
+			}
+			//}else {
+			//writeFailure("'waitForPageToLoad' function - Exception Message - '" + exceptionMessage + "'");
+			//}
+		}
+
+		Reporter.log("End of the 'waitForPageToLoad' function");
+		Reporter.log("");
+
+
+	}
+
+
+	public void writeMessageInRedBold(String message){
+		Reporter.log("<b><font size='3' color='Red'><strong>" + message + "</strong></font></b>");
+	}
+
+
+	public void waitTimeImplicit(int Seconds) {
+		try {
+			writeConsole("Waiting for " + Seconds + "..!");
+			driver.manage().timeouts()
+					.implicitlyWait(Seconds, TimeUnit.SECONDS);
+		} catch (Exception e) {
+			writeConsole("Exception!..Waiting for " + Seconds + "..!"
+					+ e.toString());
+		}
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+	}
+
+
+
 }

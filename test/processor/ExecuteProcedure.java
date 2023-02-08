@@ -102,7 +102,7 @@ public class ExecuteProcedure implements IMethodInterceptor {
 //				procdurecounter++;
 			
 			if (methodfound.equals("NotFound")) {
-			   selenium.close();
+			  selenium.close();
 			   selenium.stop();
 			   Assert.fail("["+methodname[0]+"] Procedure was Not Scripted");
 			}

@@ -134,7 +134,7 @@ public interface Smoke_OR {
 
     public static final String cclogout  =  "(//font[@class='Menu'])[2]";
 
-    public static final String closewin  =  " //img[@alt='close window']";
+
 
 
 

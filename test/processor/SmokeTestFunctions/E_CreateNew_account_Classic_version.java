@@ -125,7 +125,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             clickWebdriver(attributeName_xpath, clksubbtn);
             waitForPageToLoad();
 
-            writeMessageInBold("Verify payment voucher is click ");
+            writeMessageInBold("Verify payment voucher is clickable ");
             clickWebdriver(attributeName_xpath, clkpayvou);
 
 

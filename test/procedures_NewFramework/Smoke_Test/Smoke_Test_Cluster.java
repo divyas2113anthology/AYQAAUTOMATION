@@ -1,14 +1,11 @@
 package procedures_NewFramework.Smoke_Test;
 
-import processor.SmokeTestFunctions.A_SmokeTestPreliminaryFunctions;
-import processor.SmokeTestFunctions.B_SmokeTestCommon;
+import processor.SmokeTestFunctions.*;
 import or.OR;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
-import processor.SmokeTestFunctions.C_Urls_Verfiy;
-import processor.SmokeTestFunctions.D_CreateNew_account;
 
 public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
@@ -19,10 +16,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
     protected C_Urls_Verfiy Urls_Verfiy;
     protected D_CreateNew_account CreateNew_account;
 
-
-
-
-
+    protected E_CreateNew_account_Classic_version CreateNew_account_Classic_version;
 
 
     String shouldScriptBeFailed = "";
@@ -50,7 +44,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             Integer intNumberOfRows = 0;
             String[][] strInputValuesArray = null;
             String strEnvironment;
-            String strClientId =null;
+            String strClientId = null;
             String ayAdminUsername;
             String runWithAY = "Yes";
             String ayAdminPassword;
@@ -62,9 +56,11 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             String Ay_app_creation;
             String strVerifyBuildNumber;
             String urlImport = null;
-            String urlExport=null;
-            String urlIClassService=null;
-            String ay_applictionurl=null;
+            String urlExport = null;
+            String urlIClassService = null;
+            String ay_applictionurl = null;
+            String AY_App_creation_Classic;
+            String ay_application_classicurl = null;
 
 
             String concludingTextPrintedInResults;
@@ -76,7 +72,8 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             smokeTestPreliminaryFunctions = new A_SmokeTestPreliminaryFunctions();
             smokeTestCommon = new B_SmokeTestCommon();
             Urls_Verfiy = new C_Urls_Verfiy();
-            CreateNew_account = new D_CreateNew_account ();
+            CreateNew_account = new D_CreateNew_account();
+            CreateNew_account_Classic_version = new E_CreateNew_account_Classic_version();
 
 
             strInputExcelFile = "C:/SeleniumScripts/AYQAAutomation/lib/Smoke_Test/_Smoke Test Parameters_Cluster.xls";
@@ -84,14 +81,14 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             strSheetName = "Sheet1";
 
             Reporter.log("About to read the number of rows of the 'input' excel");
-            intNumberOfRows = A_SmokeTestPreliminaryFunctions.getRowsOfExcel(strInputExcelFile,strSheetName) - 1; //-1 is for the header
+            intNumberOfRows = A_SmokeTestPreliminaryFunctions.getRowsOfExcel(strInputExcelFile, strSheetName) - 1; //-1 is for the header
             writeMessageInBold("Number of rows of input excel - '" + intNumberOfRows + "'");
 
             Reporter.log("About to read the entire contents of the 'input' excel");
-            strInputValuesArray = A_SmokeTestPreliminaryFunctions.readAllRowsOfExcel(strInputExcelFile,strSheetName);
+            strInputValuesArray = A_SmokeTestPreliminaryFunctions.readAllRowsOfExcel(strInputExcelFile, strSheetName);
 
             Reporter.log("About to loop through the rows of the 'input' excel");
-            for (int intInputExcelRowCounter=1;intInputExcelRowCounter<=intNumberOfRows;intInputExcelRowCounter++,intInputValuesArrayIndex++){
+            for (int intInputExcelRowCounter = 1; intInputExcelRowCounter <= intNumberOfRows; intInputExcelRowCounter++, intInputValuesArrayIndex++) {
                 // This is for giving some empty line spaces in the report
                 Reporter.log("");
                 Reporter.log("");
@@ -121,8 +118,8 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                 ayApplicationPackage = strInputValuesArray[intInputValuesArrayIndex][4];
                 Reporter.log("ayApplicationPackage - '" + ayApplicationPackage + "'");
 //
-             //   runWithAY = strInputValuesArray[intInputValuesArrayIndex][5];
-               // Reporter.log("Execute Smoke test with AY integration - '" + runWithAY + "'");
+                //   runWithAY = strInputValuesArray[intInputValuesArrayIndex][5];
+                // Reporter.log("Execute Smoke test with AY integration - '" + runWithAY + "'");
 
                 urlverify = strInputValuesArray[intInputValuesArrayIndex][5];
                 Reporter.log("verifying accessible of urls - '" + urlverify + "'");
@@ -133,82 +130,82 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                 strVerifyBuildNumber = strInputValuesArray[intInputValuesArrayIndex][7];
                 Reporter.log("Verify Build Number - '" + strVerifyBuildNumber + "'");
 
+                AY_App_creation_Classic = strInputValuesArray[intInputValuesArrayIndex][8];
+                Reporter.log("AY_App_creation_Classic - '" + AY_App_creation_Classic + "'");
+
 
                 //Ay_app_creation
 
-                String strRun="YES";
+                String strRun = "YES";
                 if (strRun.equalsIgnoreCase("Yes")) {
                     Reporter.log("About to operate on the row as 'Run' = 'Yes'");
 
-                    if (strEnvironment.equalsIgnoreCase("sjc") || strEnvironment.equalsIgnoreCase("US Prod")){
+                    if (strEnvironment.equalsIgnoreCase("sjc") || strEnvironment.equalsIgnoreCase("US Prod")) {
                         Reporter.log("Environment is 'sjc'");
-                        strARAdminUrl="https://ar.applyyourself.com/admin";
-                        strAYWebCenterUrl="https://webcenter.applyyourself.com";
+                        strARAdminUrl = "https://ar.applyyourself.com/admin";
+                        strAYWebCenterUrl = "https://webcenter.applyyourself.com";
                         sleep(100);
 
-                    }else if (strEnvironment.equalsIgnoreCase("lhr")){
+                    } else if (strEnvironment.equalsIgnoreCase("lhr")) {
                         Reporter.log("Environment is 'lhr'");
-                        strARAdminUrl="https://ar.askadmissions.co.uk/Admin";
-                        strAYWebCenterUrl="https://webcentre.askadmissions.co.uk/";
+                        strARAdminUrl = "https://ar.askadmissions.co.uk/Admin";
+                        strAYWebCenterUrl = "https://webcentre.askadmissions.co.uk/";
 
-                    }else if (strEnvironment.equalsIgnoreCase("sjcqa")){
+                    } else if (strEnvironment.equalsIgnoreCase("sjcqa")) {
                         Reporter.log("Environment is 'sjcqa'");
-                        strARAdminUrl="https://arqa.applyyourself.com/admin";
+                        strARAdminUrl = "https://arqa.applyyourself.com/admin";
 
-                        strAYWebCenterUrl="https://qawebcenter.applyyourself.com/";
+                        strAYWebCenterUrl = "https://qawebcenter.applyyourself.com/";
 
-                        urlImport="https://import.applyyourself.com/aydatatransferws.asmx";
-                        urlExport="https://Export.applyyourself.com/aydatatransferws.asmx";
-                        urlIClassService="https://ayws.applyyourself.com/IClassService.svc";
-                        ay_applictionurl="https://qaapp.applyyourself.com/?id=ayauto";
+                        urlImport = "https://qaimport.applyyourself.com/aydatatransferws.asmx";
+                        urlExport = "https://qaexport.applyyourself.com/aydatatransferws.asmx";
+                        urlIClassService = "https://qaayws.applyyourself.com/IClassService.svc";
+                        ay_applictionurl = "https://qaapp.applyyourself.com/?id=ayauto";
+                        ay_application_classicurl = "https://qaapp.applyyourself.com/?id=ayauto&facelift=false";
 
-                    }else if (strEnvironment.equals("iadqa")){
+                    } else if (strEnvironment.equals("iadqa")) {
                         Reporter.log("Environment is 'iadqa'");
-                    }else if (strEnvironment.equals("devqa")){
+                    } else if (strEnvironment.equals("devqa")) {
                         Reporter.log("Environment is 'devqa'");
-                    }else if (strEnvironment.equals("lhrqa")){
+                    } else if (strEnvironment.equals("lhrqa")) {
                         Reporter.log("Environment is 'lhrqa'");
-                        strARAdminUrl="https://arqa.askadmissionsqa.co.uk/admin";
-                        strAYWebCenterUrl="https://uatwebcenter.askadmissionsqa.co.uk/";
+                        strARAdminUrl = "https://arqa.askadmissionsqa.co.uk/admin";
+                        strAYWebCenterUrl = "https://uatwebcenter.askadmissionsqa.co.uk/";
 
 
-                    }else if (strEnvironment.equals("stable")){
+                    } else if (strEnvironment.equals("stable")) {
                         Reporter.log("Environment is 'stable'");
 
-                    }else {
+                    } else {
                         Reporter.log("Environment, which is '" + strEnvironment + "', did not match any of the 'environments' put in 'if' conditions");
-                        strARAdminUrl="https://ar.applyyourself.com/admin";
-                        strAYWebCenterUrl="https://webcenter.applyyourself.com";
+                        strARAdminUrl = "https://ar.applyyourself.com/admin";
+                        strAYWebCenterUrl = "https://webcenter.applyyourself.com";
 
 
                     }
 
 
-
-
-
                     Reporter.log("ARAdminUrl - " + strARAdminUrl);
 
                     Reporter.log("AYWebCenterUrl - " + strAYWebCenterUrl);
+                    Reporter.log("ay_application_classicurl - " + ay_application_classicurl);
 
 
-
-
-                    String ApplicationPck="Select a System;Application System;"+ayApplicationPackage;
-                    String Imports="Imports;Run Import";
-                    String file="C:/SeleniumScripts/ARQAAutomation/Input/SmokeTest/Data/ImportData.txt";
-                    String template="SmokeTestTemplate";
+                    String ApplicationPck = "Select a System;Application System;" + ayApplicationPackage;
+                    String Imports = "Imports;Run Import";
+                    String file = "C:/SeleniumScripts/ARQAAutomation/Input/SmokeTest/Data/ImportData.txt";
+                    String template = "SmokeTestTemplate";
                     String ApplicatFirstName = "";
                     ApplicatFirstName = "Aut" + globalCurrentDateAndTime;
                     Reporter.log("Contact First Name - '" + ApplicatFirstName + "'");
-                    String nameToClick=ApplicatFirstName+", SMOKE";
+                    String nameToClick = ApplicatFirstName + ", SMOKE";
 
                     try {
                         writeMessageInBold("About to navigate to 'Admin' and log in");
                         //smokeTestCommon.aRSchooLogin(arSchoolId,strARSchoolUrl, strSchoolUserName, strSchoolPassword);
-                      //  smokeTestCommon.aRAdminLogin(strAYESId,strARAdminUrl,arAdminUsername,arAdminPassword);
+                        //  smokeTestCommon.aRAdminLogin(strAYESId,strARAdminUrl,arAdminUsername,arAdminPassword);
 
-                    } catch(Exception e){
+                    } catch (Exception e) {
                         // After 'login', the application attempts to handle the 'Change Password'
                         // page.  There might be an exception in that page also [the exception
                         // need not come from the 'Login' page alone but if the exception comes
@@ -252,8 +249,6 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                     //accessing url
 
 
-
-
                     //end
 
                     // 'Five' blank lines after each function in an attempt to facilitate
@@ -267,14 +262,14 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                     if (shouldScriptBeContinuedFurtherOnInstance.equals("No")) {
                         //writeMessageInRedBold("Instance was not proceeded further as 'shouldScriptBeContinuedFurtherOnInstance' was set as 'No'");
                         shouldScriptBeContinuedFurtherOnInstance = ""; // is being re-initialized to 'blank'
-                    }else {
+                    } else {
                         Reporter.log("'shouldScriptBeContinuedFurtherOnInstance' is blank and hence continuing further");
 
                         //run with external system as AY
 
 
-                            //verify url accessible
-                        if (urlverify.equalsIgnoreCase("Yes")){
+                        //verify url accessible
+                        if (urlverify.equalsIgnoreCase("Yes")) {
                             try {
                                 // This is for giving some empty line spaces in the report
                                 Reporter.log("");
@@ -285,9 +280,9 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
                                 writeMessageInBold("About to verify URLS'");
 
-                                Urls_Verfiy.AY_urls_verify(urlImport,urlExport,urlIClassService);
+                                Urls_Verfiy.AY_urls_verify(urlImport, urlExport, urlIClassService);
 
-                            } catch(Exception e){
+                            } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();
                                 writeFailure(strExceptionMessage);
                             } finally {
@@ -313,7 +308,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                     shouldScriptBeFailed = "Yes";
                                 }
                             }
-                        }else {
+                        } else {
                             // This is for giving some empty line spaces in the report
                             Reporter.log("");
                             Reporter.log("");
@@ -326,8 +321,8 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                             Reporter.log("");
                         }
 
-                     //ay_app_creation
-                        if (Ay_app_creation.equalsIgnoreCase("Yes")){
+                        //ay_app_creation facelift
+                        if (Ay_app_creation.equalsIgnoreCase("Yes")) {
 
                             writeMessageInBold("About to create Account in application'");
                             try {
@@ -340,8 +335,9 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
 
                                 CreateNew_account.AY_App_creation(ay_applictionurl);
+                                CreateNew_account_Classic_version.AY_App_creation_Classic(ay_application_classicurl);
 
-                            } catch(Exception e){
+                            } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();
                                 writeFailure(strExceptionMessage);
                             } finally {
@@ -367,7 +363,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                     shouldScriptBeFailed = "Yes";
                                 }
                             }
-                        }else {
+                        } else {
                             // This is for giving some empty line spaces in the report
                             Reporter.log("");
                             Reporter.log("");
@@ -375,14 +371,14 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                             Reporter.log("");
                             Reporter.log("");
 
-                            writeMessageInBold("Skipped 'Import' as 'PerformImport' = '" + urlverify + "'");
+                            writeMessageInBold("Skipped 'Import' as 'PerformImport' = '" + Ay_app_creation + "'");
                         }
 
                         // Verify Build Number
                         // The 'Build Number' need not be verified in the 'Daily' run
-                        if (strVerifyBuildNumber.equalsIgnoreCase("No")){
+                        if (strVerifyBuildNumber.equalsIgnoreCase("No")) {
                             Reporter.log("'strVerifyBuildNumber' is 'No' and hence not verifying build number");
-                        }else {
+                        } else {
                             Reporter.log("'strVerifyBuildNumber' is not 'No' and hence about to verify build number");
                             try {
                                 // This is for giving some empty line spaces in the report
@@ -394,7 +390,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
                                 writeMessageInBold("About to verify the 'Build Number' of the application");
                                 smokeTestCommon.verifyBuildNumber(strVerifyBuildNumber);
-                            } catch(Exception e){
+                            } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();
                                 writeFailure(strExceptionMessage);
                             } finally {
@@ -421,14 +417,62 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 }
                             }
                         }
+//ay-app-creation classic version
+                        if (AY_App_creation_Classic.equalsIgnoreCase("Yes")) {
+
+                            writeMessageInBold("About to create Account in application'");
+                            try {
+                                // This is for giving some empty line spaces in the report
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
 
 
+                                CreateNew_account_Classic_version.AY_App_creation_Classic(ay_application_classicurl);
+
+                            } catch (Exception e) {
+                                strExceptionMessage = e.getLocalizedMessage();
+                                writeFailure(strExceptionMessage);
+                            } finally {
+                                // Every mismatch in the function would be recorded in the report via. the
+                                // 'writeFailure' function.  In the 'writeFailure' function, each of the
+                                // mismatches would be appended to the 'global variable',
+                                // 'globalFailureNotification'.  The consolidated list of failure(s),
+                                // which would be present in 'globalFailureNotification', would be written
+                                // as a table in 'Red' color.  After writing the failure(s), the
+                                // 'globalFailureNotification' variable would again be set to "empty" to
+                                // facilitate collection of failure(s) in other functions
+                                if (globalFailureNotification.equals("")) {
+                                    Reporter.log("'globalFailureNotification' is empty");
+                                } else {
+                                    Reporter.log("'globalFailureNotification' is not empty");
+                                    writeConsolidatedFailuresAsTable(globalFailureNotification);
+                                    // After writing the failures in a table, the 'globalFailureNotification' variable is set to "empty"
+                                    globalFailureNotification = "";
+                                    // We are also updating the value of the variable 'shouldScriptBeFailed'
+                                    // to 'Yes' to allow the script decide at the end whether or not to
+                                    // fail the procedure [Even a single error present in the entire
+                                    // script would cause the procedure to be failed]
+                                    shouldScriptBeFailed = "Yes";
+                                }
+                            }
+                        } else {
+                            // This is for giving some empty line spaces in the report
+                            Reporter.log("");
+                            Reporter.log("");
+                            Reporter.log("");
+                            Reporter.log("");
+                            Reporter.log("");
+
+                            writeMessageInBold("Skipped 'Import' as 'PerformImport' = '" + AY_App_creation_Classic + "'");
+                        }
 
 
-
-                        if (runWithAY.equalsIgnoreCase("No")){
+                        if (runWithAY.equalsIgnoreCase("No")) {
                             Reporter.log("'runWithAY' is 'No' and hence not running");
-                        }else {
+                        } else {
                             Reporter.log("'runWithAY' is not 'No' and hence about to run");
                             try {
                                 // This is for giving some empty line spaces in the report
@@ -441,12 +485,12 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 writeMessageInBold("About to verify with AY");
                                 //smokeTestCommon.aRAdminLogin(strAYESId,strARAdminUrl,arAdminUsername,arAdminPassword);
                                 //smokeTestCommon.logoutARAdmin();
-                                smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl,strClientId,ayAdminUsername,ayAdminPassword);
-                                smokeTestCommon.generateCsvFile(ApplicatFirstName,file);
+                                smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
+                                smokeTestCommon.generateCsvFile(ApplicatFirstName, file);
                                 smokeTestCommon.logoutAYWebCenter();
 
 
-                            } catch(Exception e){
+                            } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();
                                 writeFailure(strExceptionMessage);
                             } finally {
@@ -485,8 +529,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                             Reporter.log("");
 
 
-
-                        } catch(Exception e){
+                        } catch (Exception e) {
                             strExceptionMessage = e.getLocalizedMessage();
                             writeFailure(strExceptionMessage);
                         } finally {
@@ -515,7 +558,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                     }
 
                     //THIS CLASS END
-                }else {
+                } else {
                     // This is for giving some empty line spaces in the report
                     Reporter.log("");
                     Reporter.log("");
@@ -526,7 +569,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                     writeMessageInBold("Skipped row as 'Run' = '" + strRun + "'");
                 }
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             //Reporter.log("shouldScriptBeFailed in exception = '" + shouldScriptBeFailed + "'");
 
             String failureMessage = e.getLocalizedMessage();
@@ -551,11 +594,11 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
                 Reporter.log("One or more failures present in the 'Smoke Test' script as 'shouldScriptBeFailed' is 'Yes'");
                 Assert.fail("One or more failure(s) present in the 'Smoke Test' script");
-            }else {
+            } else {
                 Reporter.log("No failures present in the 'Smoke Test' script as 'shouldScriptBeFailed' is not 'Yes'");
             }
         }
     }
 
-            }
+}
 

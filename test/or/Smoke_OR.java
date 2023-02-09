@@ -30,7 +30,7 @@ public interface Smoke_OR {
     public static final String pldob ="//input[@id=\"q35023\"]";
     public static final String plnum ="//input[@id=\"q35024\"]";
     public static final String drpdwngdn ="//select[@name='q35026_']";
-    public static final String plnumber ="//*[@id=\"q35029\"]";
+    public static final String plnumber ="//input[@id=\"q35029\"]";
     public static final String plcntry ="//select[@id=\"s35032\"]";
     public static final String plstate ="//select[@id=\"s35033\"]";
     public static final String plgrd ="//input[@id=\"rc35034_1\"]";
@@ -85,15 +85,93 @@ public interface Smoke_OR {
     public static final String clstname =  "//input[@id='AppLName']";
     public static final String cemail =  "//input[@id='AppEmail']";
     public static final String ccemail =  "//input[@id='AppConfirmationEmail']";
-    public static final String cdob =  "//input[@id='AppBirthdt']]";
+    public static final String cdob =  "//input[@id='AppBirthdt']";
     public static final String czip =  "//input[@id='AppZip']";
     public static final String cpas =  "//input[@id='AppPassword']";
     public static final String ccpas =  "//input[@id='AppConPassword']";
     public static final String ccheckack =  "//input[@id='chkDataConsent']";
     public static final String ccrtaccbtn =  "//img[@alt='create account']";
 
+    public static final String CCgeneratepin =  "//p[@align='center']/b";
+
+
+
     public static final String cpinlogin =  "//img[@alt='login']";
-    public static final String ccontinuebtn =  "/img[@alt='Continue']";
+    public static final String ccontinuebtn =  "//img[@alt='Continue']";
+
+    public static final String CCverifyhome =  "//p[@align='center']/strong/font/u[contains(text(),'Univeristy of AYAUTO')]";
+
+
+    public static final String cclkApplicationQA =  " //a[contains(text(),'Application for QA Automation')]";
+
+    public static final String cclkpersonaldata =  "(//font[@class='subMenu'])[1]";
+
+    public static final String CCsave =  "//img[@alt='Save']";
+
+    public static final String ccsub =  "//img[@name='Image31']";
+
+    public static final String recorvbutton  =  "//input[@type='button']";
+
+
+    public static final String ccrecadd  =  "//img[@alt='add']";
+
+
+    public static final String cccontains  =  "//img[@alt='continue']";
+
+    public static final String cclkaddrec  =  " //a[contains(text(),'Add Recommendation-DT')]";
+
+    public static final String ccsave1  =  "//img[@alt='save']";
+
+    public static final String ccrecradiobtn  =  "//input[@id='rbY2']";
+
+    public static final String cccheckredyforconf  =  "//input[@id='checkbox']";
+
+    public static final String ccpaybtn  =  "//img[@name='PayButton']";
+
+    public static final String clksubbtn  =  "//img[@alt='submit application']";
+
+    public static final String clkpayvou  =  "//a[@href='javascript:openPaymentWindow();']/b";
+
+    public static final String cclogout  =  "(//font[@class='Menu'])[2]";
+
+    public static final String closewin  =  " //img[@alt='close window']";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

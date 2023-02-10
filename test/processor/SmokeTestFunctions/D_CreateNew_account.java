@@ -118,7 +118,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             clickWebdriver(attributeName_xpath, ClkAddrec);
             clickWebdriver(attributeName_xpath, Clkrecprv);
             clickWebdriver(attributeName_xpath, clkaddprv);
-            sendKeys(attributeName_xpath, recfstname, "Smoke1");
+            sendKeys(attributeName_xpath, recfstname, "flSmoke1");
             sendKeys(attributeName_xpath, reclstname, "Smoke");
             sendKeys(attributeName_xpath, recgmail, "AYsmokejan2023@proton.me");
             radioWebdriver(attributeName_xpath, recq);

@@ -92,6 +92,8 @@ public static final String Continue = "//*[@id='ay-externalSubmit']";
 //#Applicant Welcome Page
 //#**********************************************************#
 public static final String Logoutmain ="//li[text()='";
+    public static final String Logoutmain1 ="//li[text()='";
+
 public static final String Updatetech ="//img[@alt='";
 public static final String UpdateProfileBtn ="//img[@alt='Update your Profile']";
 public static final String Section ="//font[contains(text(),'";
@@ -401,6 +403,15 @@ public static final String RC_Save ="//input[@value='Add Provider' and @id='ay-r
 //#Webcenter Login - WCL
 //#*********************************************************#
 public static final String WCL_ClientID = "css=input[name='ClientID']";
+    String WCL_Logout = "css=a[href*='logout']";
+
+
+    String LogoutDropdownarrow = "//span[@class='fa fa-user-o']";
+    String LogoutDropdownLink = "//a[text()='Quit Impersonation']";
+    String LogoutARSchool="//a[text()='Log Out']";//Added by Rahul Mehta 4th Jan,2023
+    String ReviewPool_Id = "reviewPoolToggler";
+    String LoginLabel = "//legend[text()='Login']";
+    String SchoolLabel = "//label[text()='School']";
 public static final String WCL_UserID = "css=input[name='UserID']";
 public static final String WCL_Password = "css=input[name='Password']";
 //public static final String WCL_Go = "css=input[alt='Login']";login
@@ -2140,12 +2151,14 @@ public static final String SR_operator="//select[@name='G1-row1_txtOperator1']";
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
 public static final String SR_RuleName="(//td/label/a[text()='";
-    public static final String SR_RuleName1="//td/label/a[text()='";
+    public static final String SR_RuleName1="(//td/label/a[contains(text(),'";
 
 public static final String SR_CheckBox="']/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
-public static final String SR_BRCheckBox="']/ancestor::td/preceding-sibling::td/input";
+public static final String SR_BRCheckBox="')]/ancestor::td/preceding-sibling::td/input)[1]";
 
-    public static final String SR_BRCheckBox1="//td/input";
+    public static final String SR_BRCheckBox1="')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
+
+    public static final String SR_BRCheckBox_ver    ="//*[@id=\"Chk_RuleID279\"]";
 
 
 //#********************************************************************#

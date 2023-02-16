@@ -131,6 +131,23 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
             recentPopupCloseWebdriver();
 
+            writeMessageInBold("About to verfiy Tech Support link ");
+
+            clickWebdriver(attributeName_xpath,cctechsupt);
+
+            switchToSecondPopupWindow();
+
+            String element02 = ccverifytechsuptpage;
+            String elementname2 = "Hi";
+            verifyElementPresent(element02,elementname2);
+
+            recentPopupCloseWebdriver();
+
+
+
+
+
+
             clickWebdriver(attributeName_xpath, cclogout);
 
 

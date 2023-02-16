@@ -144,6 +144,20 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             writeMessageInBold("New Account create and Submitted");
 
 
+            sleep(10);
+
+            writeMessageInBold("About to verfiy Tech Support link ");
+
+            clickWebdriver(attributeName_xpath,clktechsupt);
+
+            switchToSecondPopupWindow();
+
+            String element02 = verifytechsuptpage;
+            String elementname2 = "Hi";
+            verifyElementPresent(element02,elementname2);
+
+            switchToOldWindow();
+
 
             clickWebdriver(attributeName_xpath, logout);
 

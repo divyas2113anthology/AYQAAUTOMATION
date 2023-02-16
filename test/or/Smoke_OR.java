@@ -75,6 +75,15 @@ public interface Smoke_OR {
 
     public static final String logout =  "//a[contains(@href,'logout')]";
 
+    public static final String clktechsupt  =  "//*[@id=\"Techsupport\"]/li";
+
+    public static final String verifytechsuptpage  =  "//*[@id=\"form1\"]/div[3]/div/div[1]/p";
+
+
+
+
+
+
 
 
 
@@ -133,6 +142,17 @@ public interface Smoke_OR {
     public static final String clkpayvou  =  "//a[@href='javascript:openPaymentWindow();']/b";
 
     public static final String cclogout  =  "(//font[@class='Menu'])[2]";
+
+    public static final String cctechsupt  =  "//img[@name='Image12']";
+
+    public static final String ccverifytechsuptpage  =  "//*[@id=\"form1\"]/div[3]/div/div[1]/p";
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
-Smoke1 sam
-Smoke2 kumar
-Smoke3 kavitha
-Smoke4 Gau 
-Smoke5 Mar
+Smoke1	sam
+Smoke2	kumar
+Smoke3	kavitha
+Smoke4	au 
+Smoke5	Mar

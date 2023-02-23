@@ -1,6 +1,8 @@
 package processor.SmokeTestFunctions;
 
 import or.Smoke_OR;
+import org.apache.tools.ant.taskdefs.Sleep;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.ClickElement;
 import org.openqa.selenium.remote.server.handler.SendKeys;
@@ -95,10 +97,98 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
 
             sendKeys(attributeName_xpath, esywhoutattch, "ertyuklbvcdrtyukjhgfdsertyuiolkjh");
 
-            clickWebdriver(attributeName_xpath,plsaveandcon);
+            clickWebdriver(attributeName_xpath, plsaveandcon);
 
             sleep(10);
 
+
+            writeMessageInBold("About verify uploading DOC ");
+            String Clkessay = fclkessay;
+            String elementname3 = "Essay and Attachment";
+            clickWebdriver(attributeName_xpath, Clkessay);
+            sendKeys(attributeName_xpath, Fwriteshortesy, "Smoketesting");
+            clickWebdriver(attributeName_xpath, fclkupld);
+            waitForPageToLoad();
+            Reporter.log("");
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fupldoc);
+            clickWebdriver(attributeName_xpath, fclkchosfile);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            sleep(10);
+
+
+            Reporter.log("About to click View button");
+            writeMessageInBold("");
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+
+            Reporter.log("About to click Delete button");
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fclkdel1);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+            //////////////////////////////////////////////////////////////////
+
+            //about to verify media upload
+
+            writeMessageInBold("About to verify media upload");
+            Reporter.log("About to click upload button");
+            clickWebdriver(attributeName_xpath, fclkupl);
+            waitForPageToLoad();
+            Reporter.log("");
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fimgpath);
+            clickWebdriver(attributeName_xpath, fclkmedia);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            sleep(10);
+
+
+            Reporter.log("About to click View button");
+
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+            Reporter.log("About to click Delete button");
+
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fdelatt);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+
+            /////////////////////////////////////////////////////////////////////
+
+
+            Reporter.log("");
+            clickWebdriver(attributeName_xpath, fclksave);
+            waitForPageToLoad();
+
+
+            waitForPageToLoad();
+
+            Reporter.log("Click RegularSection ");
             String element01 = clkRegularSection;
             String elementname1 = "RegularSection";
 
@@ -148,15 +238,27 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
 
             writeMessageInBold("About to verfiy Tech Support link ");
 
-            clickWebdriver(attributeName_xpath,clktechsupt);
+            clickWebdriver(attributeName_xpath, clktechsupt);
 
             switchToSecondPopupWindow();
 
             String element02 = verifytechsuptpage;
             String elementname2 = "Hi";
-            verifyElementPresent(element02,elementname2);
+            verifyElementPresent(element02, elementname2);
 
-            switchToOldWindow();
+
+            // Get the current window handle
+            String currentWindowHandle = driver.getWindowHandle();
+            // Close the current window
+            driver.close();
+
+            // Switch to the previous window
+            for (String windowHandle : driver.getWindowHandles()) {
+                if (!windowHandle.equals(currentWindowHandle)) {
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
 
 
             clickWebdriver(attributeName_xpath, logout);

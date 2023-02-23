@@ -11,6 +11,8 @@ import java.time.format.DateTimeFormatter;
 
 public class E_CreateNew_account_Classic_version extends CommonSeleniumActions implements Smoke_OR {
 
+    protected B_SmokeTestCommon smokeTestCommon;
+
     public void AY_App_creation_Classic(String ClassicApp_login) throws Exception {
         try {
             writeMessageInBold("About to create new account in classic version ");
@@ -23,7 +25,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             System.out.println(dtf.format(now));
             sendKeys(attributeName_xpath, cfstname, "AySmoke");
             sendKeys(attributeName_xpath, clstname, dtf.format(now));
-            sleep(5);
+            waitForPageToLoad();
             sendKeys(attributeName_xpath, cemail, "fghjk@gmail.com");
             sendKeys(attributeName_xpath, ccemail, "fghjk@gmail.com");
             sendKeys(attributeName_xpath, cdob, "11/07/1995");
@@ -40,7 +42,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             String generatepin = text.getText().substring(6, 18);
             System.out.println(generatepin);
             Reporter.log("Generating PIN " + generatepin);
-            sleep(10);
+            waitForPageToLoad();
 
             clickWebdriver(attributeName_xpath, cpinlogin);
             clickWebdriver(attributeName_xpath, checkpvt);
@@ -64,11 +66,11 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
 
             clickWebdriver(attributeName_xpath, plcntry);
-            sleep(10);
+            waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plcntry, "United States");
             clickWebdriver(attributeName_xpath, plstate);
-            sleep(10);
+            waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plstate, "Michigan");
 
@@ -77,7 +79,9 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             sendKeys(attributeName_xpath, esywhoutattch, "ertyuklbvcdrtyukjhgfdsertyuiolkjh");
 
             clickWebdriver(attributeName_xpath, CCsave);
-            sleep(10);
+            waitForPageToLoad();
+
+
             ////////////////////////////////////////////
 
             writeMessageInBold("About verify uploading DOC ");
@@ -97,7 +101,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
             recentOpenedPopupSelectWebdriver("Window");
             Reporter.log("");
-            sleep(10);
+            waitForPageToLoad();
 
 
             Reporter.log("");
@@ -137,7 +141,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
             recentOpenedPopupSelectWebdriver("Window");
             Reporter.log("");
-            sleep(10);
+            waitForPageToLoadWebdriver();
 
 
             Reporter.log("About to click View button");

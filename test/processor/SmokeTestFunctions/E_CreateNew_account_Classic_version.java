@@ -11,6 +11,8 @@ import java.time.format.DateTimeFormatter;
 
 public class E_CreateNew_account_Classic_version extends CommonSeleniumActions implements Smoke_OR {
 
+    protected B_SmokeTestCommon smokeTestCommon;
+
     public void AY_App_creation_Classic(String ClassicApp_login) throws Exception {
         try {
             writeMessageInBold("About to create new account in classic version ");
@@ -23,7 +25,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             System.out.println(dtf.format(now));
             sendKeys(attributeName_xpath, cfstname, "AySmoke");
             sendKeys(attributeName_xpath, clstname, dtf.format(now));
-            sleep(5);
+            waitForPageToLoad();
             sendKeys(attributeName_xpath, cemail, "fghjk@gmail.com");
             sendKeys(attributeName_xpath, ccemail, "fghjk@gmail.com");
             sendKeys(attributeName_xpath, cdob, "11/07/1995");
@@ -40,7 +42,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             String generatepin = text.getText().substring(6, 18);
             System.out.println(generatepin);
             Reporter.log("Generating PIN " + generatepin);
-            sleep(10);
+            waitForPageToLoad();
 
             clickWebdriver(attributeName_xpath, cpinlogin);
             clickWebdriver(attributeName_xpath, checkpvt);
@@ -64,11 +66,11 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
 
             clickWebdriver(attributeName_xpath, plcntry);
-            sleep(10);
+            waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plcntry, "United States");
             clickWebdriver(attributeName_xpath, plstate);
-            sleep(10);
+            waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plstate, "Michigan");
 
@@ -77,7 +79,99 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             sendKeys(attributeName_xpath, esywhoutattch, "ertyuklbvcdrtyukjhgfdsertyuiolkjh");
 
             clickWebdriver(attributeName_xpath, CCsave);
-            sleep(10);
+            waitForPageToLoad();
+
+
+            ////////////////////////////////////////////
+
+            writeMessageInBold("About verify uploading DOC ");
+            String Clkessay = fclkessay;
+            String elementname3 = "Essay and Attachment";
+            clickWebdriver(attributeName_xpath, ccclickessay_tab);
+
+            sendKeys(attributeName_xpath, Fwriteshortesy, "Smoketesting");
+            clickWebdriver(attributeName_xpath, fclkupld);
+            waitForPageToLoad();
+            Reporter.log("");
+
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fupldoc);
+            clickWebdriver(attributeName_xpath, fclkchosfile);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            waitForPageToLoad();
+
+
+            Reporter.log("");
+            writeMessageInBold("About to click View button");
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+
+            writeMessageInBold("About to click Delete button");
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fclkdel1);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+            //////////////////////////////////////////////////////////////////
+
+            //about to verify media upload
+
+            writeMessageInBold("About to verify media upload");
+
+            Reporter.log("About to click upload button");
+            clickWebdriver(attributeName_xpath, fclkupl);
+            waitForPageToLoad();
+            Reporter.log("");
+            Reporter.log("");
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fimgpath);
+            clickWebdriver(attributeName_xpath, fclkmedia);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            waitForPageToLoadWebdriver();
+
+
+            Reporter.log("About to click View button");
+
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+
+            Reporter.log("");
+            Reporter.log("About to click Delete button");
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fclkdel1);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+
+
+
+
+
+
+            ///////////////////////////////////////////////
+
 
             String element01 = clkRegularSection;
             String elementname1 = "RegularSection";
@@ -130,6 +224,30 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
 
             recentPopupCloseWebdriver();
+
+            writeMessageInBold("About to verfiy Tech Support link ");
+
+            clickWebdriver(attributeName_xpath, cctechsupt);
+
+            switchToSecondPopupWindow();
+
+            String element02 = ccverifytechsuptpage;
+            String elementname2 = "Hi";
+            verifyElementPresent(element02, elementname2);
+
+            // Get the current window handle
+            String currentWindowHandle = driver.getWindowHandle();
+
+           // Close the current window
+            driver.close();
+
+          // Switch to the previous window
+            for (String windowHandle : driver.getWindowHandles()) {
+                if (!windowHandle.equals(currentWindowHandle)) {
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
 
             clickWebdriver(attributeName_xpath, cclogout);
 

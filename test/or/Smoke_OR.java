@@ -75,6 +75,54 @@ public interface Smoke_OR {
 
     public static final String logout =  "//a[contains(@href,'logout')]";
 
+    public static final String clktechsupt  =  "//*[@id=\"Techsupport\"]/li";
+
+    public static final String verifytechsuptpage  =  "//*[@id=\"form1\"]/div[3]/div/div[1]/p";
+
+    public static final String fclkessay  =  " //font[normalize-space(text())='Essay and Attachment']";
+
+    public static final String fclkupld  =  "(//img[@alt='Upload Attachment'])[1]";
+    public static final String fupldoc  = "C:\\SeleniumScripts\\AYQAAutomation\\smoke file\\upload.txt";
+
+    public static final String fclkchosfile  =  "//input[@id='Image1']";
+
+    public static final String fclkview  =  "//*[@id=\"MainContent\"]/table/tbody/tr[2]/td/table/tbody/tr[3]/td/table/tbody/tr[6]/td/table/tbody/tr[5]/td[2]/font[2]/table/tbody/tr/td[1]/a";
+    public static final String fclksave  =   "(//a[@class='btn btn-small btn-inverse btnActionSmall'])[3]";
+
+    public static final String fuplpdf  = "C:\\SeleniumScripts\\AYQAAutomation\\smoke file\\smoke pdf.pdf";
+
+    public static final String fdelatt  = "(//a[@alt='Delete Attachment'])[1]";
+    public static final String fclkupl  =  "(//img[@alt='Upload Attachment'])[3]";
+
+    public static final String fimgpath  = "C:\\SeleniumScripts\\AYQAAutomation\\smoke file\\Smoke img.jpg";
+    public static final String fclkmedia  = "//input[@alt='Upload Media']";
+
+    public static final String fclkdel1  = "(//a[@alt='Delete Attachment'])[1]";
+    public static final String Fwriteshortesy  = "//*[@id=\"q24515\"]";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,6 +181,22 @@ public interface Smoke_OR {
     public static final String clkpayvou  =  "//a[@href='javascript:openPaymentWindow();']/b";
 
     public static final String cclogout  =  "(//font[@class='Menu'])[2]";
+
+    public static final String cctechsupt  =  "//img[@name='Image12']";
+
+    public static final String ccverifytechsuptpage  =  "//*[@id=\"form1\"]/div[3]/div/div[1]/p";
+
+    public static final String ccclickessay_tab  = "//font[normalize-space(text())='Essay and Attachment']";
+
+
+
+
+
+
+
+
+
+
 
 
 

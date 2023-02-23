@@ -335,7 +335,6 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
 
                                 CreateNew_account.AY_App_creation(ay_applictionurl);
-                                CreateNew_account_Classic_version.AY_App_creation_Classic(ay_application_classicurl);
 
                             } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();
@@ -482,12 +481,13 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
                                 Reporter.log("");
 
-                                writeMessageInBold("About to verify with AY");
+                                writeMessageInBold("About to verify with Web center");
                                 //smokeTestCommon.aRAdminLogin(strAYESId,strARAdminUrl,arAdminUsername,arAdminPassword);
                                 //smokeTestCommon.logoutARAdmin();
                                 smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
-                                smokeTestCommon.generateCsvFile(ApplicatFirstName, file);
                                 smokeTestCommon.logoutAYWebCenter();
+                               smokeTestCommon.generateCsvFile(ApplicatFirstName, file);
+
 
 
                             } catch (Exception e) {

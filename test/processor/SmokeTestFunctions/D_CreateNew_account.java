@@ -1,6 +1,8 @@
 package processor.SmokeTestFunctions;
 
 import or.Smoke_OR;
+import org.apache.tools.ant.taskdefs.Sleep;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.ClickElement;
 import org.openqa.selenium.remote.server.handler.SendKeys;
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_OR {
+    protected B_SmokeTestCommon smokeTestCommon;
 
     public void AY_App_creation(String Applicationlogin) throws Exception {
 
@@ -28,7 +31,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             writeMessageInBold("Entering required field");
             sendKeys(attributeName_xpath, FrstName, "AY_Smoke");
             sendKeys(attributeName_xpath, lstName, dtf.format(now));
-            sleep(5);
+            waitForPageToLoad();
             sendKeys(attributeName_xpath, email, "sdfghjkl@gmail.com");
             sendKeys(attributeName_xpath, cnfemail, "sdfghjkl@gmail.com");
             sendKeys(attributeName_xpath, dob, "11/07/1995");
@@ -40,7 +43,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             clickWebdriver(attributeName_xpath, Checkboxlogin);
 
             clickWebdriver(attributeName_xpath, Crtsub);
-            sleep(10);
+            waitForPageToLoad();
             getTextWebdriver(attributeName_xpath, ayconfr);
 
             WebElement text = driver.findElementByXPath(ayconfr);
@@ -49,17 +52,17 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             String generatepin = text.getText().substring(6, 18);
             System.out.println(generatepin);
             Reporter.log("Generating PIN " + generatepin);
-            sleep(10);
+            waitForPageToLoad();
             clickWebdriver(attributeName_xpath, aylogin);
-            sleep(10);
+            waitForPageToLoad();
             Reporter.log("Checking privacy policy Check Box");
             clickWebdriver(attributeName_xpath, checkpvt);
 
-            sleep(10);
+            waitForPageToLoad();
             clickWebdriver(attributeName_xpath, chepresub);
-            sleep(5);
+            waitForPageToLoad();
             clickWebdriver(attributeName_xpath, conandcrt);
-            sleep(10);
+            waitForPageToLoad();
             String element = verifyhomepage;
             String value = "My Application(s)";
             verifyElementPresent(element, value);
@@ -69,7 +72,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             String element1 = clkmyapp;
             String value1 = "Application for QA Automation";
             verifyElementPresent(element1, value1);
-            sleep(5);
+            waitForPageToLoad();
             clickWebdriver(attributeName_xpath, clkperdata);
 
             sendKeys(attributeName_xpath, plfstname, "AY");
@@ -77,17 +80,18 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             sendKeys(attributeName_xpath, pldob, "01/01/1990");
             sendKeys(attributeName_xpath, plnum, "245-52-5478");
 
-            sleep(10);
+            waitForPageToLoadWebdriver();
 
             selectByVisibleTextWebdriver(attributeName_xpath, drpdwngdn, "Male");
             sendKeys(attributeName_xpath, plnumber, "987-654-3210");
 
             clickWebdriver(attributeName_xpath, plcntry);
-            sleep(10);
+            waitForPageToLoadWebdriver();
+            waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plcntry, "United States");
             clickWebdriver(attributeName_xpath, plstate);
-            sleep(10);
+            waitForPageToLoadWebdriver();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plstate, "Michigan");
 
@@ -95,10 +99,102 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
 
             sendKeys(attributeName_xpath, esywhoutattch, "ertyuklbvcdrtyukjhgfdsertyuiolkjh");
 
-            clickWebdriver(attributeName_xpath,plsaveandcon);
+            clickWebdriver(attributeName_xpath, plsaveandcon);
 
-            sleep(10);
+            waitForPageToLoadWebdriver();
 
+
+            ////////////uploading fuc//////////////////////////////////////////////////////////////////
+
+
+
+            writeMessageInBold("About verify uploading DOC ");
+            String Clkessay = fclkessay;
+            String elementname3 = "Essay and Attachment";
+            clickWebdriver(attributeName_xpath, Clkessay);
+            sendKeys(attributeName_xpath, Fwriteshortesy, "Smoketesting");
+            clickWebdriver(attributeName_xpath, fclkupld);
+            waitForPageToLoad();
+            Reporter.log("");
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fupldoc);
+            clickWebdriver(attributeName_xpath, fclkchosfile);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            waitForPageToLoadWebdriver();
+
+
+            Reporter.log("About to click View button");
+            writeMessageInBold("");
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+
+            Reporter.log("About to click Delete button");
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fclkdel1);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+            //////////////////////////////////////////////////////////////////
+
+            //about to verify media upload
+
+            writeMessageInBold("About to verify media upload");
+            Reporter.log("About to click upload button");
+            clickWebdriver(attributeName_xpath, fclkupl);
+            waitForPageToLoad();
+            Reporter.log("");
+            recentPopupSelectWebdriver("File Upload");
+            waitForElementPresentWebdriver(attributeName_xpath, EA_UploadBrowser, "Upload Browser");
+            attributeNameValue(attributeName_xpath, EA_UploadBrowser).sendKeys(fimgpath);
+            clickWebdriver(attributeName_xpath, fclkmedia);
+
+            recentOpenedPopupSelectWebdriver("Window");
+            Reporter.log("");
+            waitForPageToLoadWebdriver();
+
+
+            Reporter.log("About to click View button");
+
+            waitForPageToLoadWebdriver();
+
+            clickWebdriver(attributeName_xpath, EA_EssaywithAttachment_ViewDocument);
+            recentPopupSelectWebdriver("view document");
+            waitForPageToLoadWebdriver();
+
+            waitForPageToLoadWebdriver();
+            Reporter.log("About to click Delete button");
+
+
+            recentPopupCloseWebdriver();
+
+            clickWebdriver(attributeName_xpath, fdelatt);
+
+            alertAccept();
+            waitForPageToLoadWebdriver();
+
+
+            /////////////////////////////////////////////////////////////////////
+
+
+            Reporter.log("");
+            clickWebdriver(attributeName_xpath, fclksave);
+            waitForPageToLoad();
+
+
+            waitForPageToLoad();
+
+            Reporter.log("Click RegularSection ");
             String element01 = clkRegularSection;
             String elementname1 = "RegularSection";
 
@@ -138,11 +234,37 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             String elementname01 = "AY Testing Purpose";
             verifyElementPresent(verifyelement, elementname01);
             clickWebdriver(attributeName_xpath, clkprintbtn);
-            sleep(20);
+            waitForPageToLoadWebdriver();
             clickWebdriver(attributeName_xpath, clkprnt);
 
             writeMessageInBold("New Account create and Submitted");
 
+waitForPageToLoadWebdriver();
+
+
+            writeMessageInBold("About to verfiy Tech Support link ");
+
+            clickWebdriver(attributeName_xpath, clktechsupt);
+
+            switchToSecondPopupWindow();
+
+            String element02 = verifytechsuptpage;
+            String elementname2 = "Hi";
+            verifyElementPresent(element02, elementname2);
+
+
+            // Get the current window handle
+            String currentWindowHandle = driver.getWindowHandle();
+            // Close the current window
+            driver.close();
+
+            // Switch to the previous window
+            for (String windowHandle : driver.getWindowHandles()) {
+                if (!windowHandle.equals(currentWindowHandle)) {
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
 
 
             clickWebdriver(attributeName_xpath, logout);

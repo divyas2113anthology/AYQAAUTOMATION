@@ -416,7 +416,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 }
                             }
                         }
-//ay-app-creation classic version
+                        //ay-app-creation classic version
                         if (AY_App_creation_Classic.equalsIgnoreCase("Yes")) {
 
                             writeMessageInBold("About to create Account in application'");
@@ -485,7 +485,14 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 //smokeTestCommon.aRAdminLogin(strAYESId,strARAdminUrl,arAdminUsername,arAdminPassword);
                                 //smokeTestCommon.logoutARAdmin();
                                 smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
+                                smokeTestCommon.Dynamic_section();
                                 smokeTestCommon.logoutAYWebCenter();
+                                smokeTestCommon.ayapplication_login(ay_applictionurl);
+                                smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
+                                smokeTestCommon.Dynamic_section_delete();
+                                smokeTestCommon.logoutAYWebCenter();
+
+
                                smokeTestCommon.generateCsvFile(ApplicatFirstName, file);
 
 

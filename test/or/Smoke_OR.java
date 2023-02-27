@@ -190,6 +190,68 @@ public interface Smoke_OR {
 
 
 
+    ///////////Web center xpath////////////////////
+
+    public static final String wcselectsystem  = "//div[@id='oMenu_mnuSelMod']";
+    public static final String wcapplicationsystem  = "//div[@id='oMenu_mnuAdm']";
+
+    public static final String wcapplicationqa  = "//div[@id='oMenu_oMenu4']" ;
+
+    public static final String wcapplicationadm  ="//div[@id='oMenu_mnuAppAdmin']" ;
+    public static final String   wcconfigureforms= "//div[@id='oMenu_oMenu3']";
+    public static final String wcckexpandbtn  = "//a[text()='Application for QA Automation']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]";
+    public static final String wcclkmanagesectionrules  = "//a[contains(text(),'Manage Section Rules')]";
+    public static final String wcclkaddbtn  ="(//a[@href='javascript:AddSectionRule();'])[1]" ;
+    public static final String wcenter_name  = "//input[@id='txtName']";
+
+    public static final String wcenter_dspname  = "//textarea[@id='txtDescription']";
+    public static final String wcsectioninput  = "//input[@id='SectionInput']";
+    public static final String wcselectatt  = "//*[@id=\"browser\"]/li[1]/span";
+    public static final String wcselect_expand  = "(//*[@id=\"browser\"]/descendant::div[@class='hitarea expandable-hitarea'])[1]";
+    public static final String wcclkfield  = "(//*[@id=\"browser\"]/descendant::li/following::span)[2]";
+
+    public static final String wcclkselect  = "//button[@type='button']";
+
+    public static final String  wcclk2= "//*[@id='G1-row1']/td[2]/descendant::a[9]";
+
+
+    public static final String wcclkoper = "//select[@name='G1-row1_txtOperator1']";
+
+    public static final String wcclkoperator = "//select[@name='G1-row1_txtOperator1']/descendant::option[9]";
+    public static final String  wcentervalue= "//input[@name='G1-row1_txtValue1']";
+    public static final String wcclksave = "(//a[@href='javascript:validate();'])[1]";
+    public static final String wcclkxpand1 = "(//img[@src='../Images/tree_icons/plus.gif'])[1]";
+    public static final String wcclkpermanentandHomeaddress = "//a[contains(text(),'3-Permanent and Home Address')]";
+    public static final String wccbuildedit = "//img[contains(@src,'edit_small')]";
+    public static final String wcclkprod = "//img[contains(@src,'publish_prod_large')]";
+
+    public static final String wcclkpackage_publish = "//a[contains(text(),'Application for QA Automation')]";
+    public static final String wcclkpublishprod = "(//img[contains(@src,'publish_prod_large')])[1]";
+    public static final String wcclk_ApplicationSystemHome = "//a[contains(text(),'Application System Home')]";
+    public static final String fclkHomeAddress  = "//font[normalize-space(text())='Home Address']";
+    public static final String wccheckbox  = "(//td/label/a[contains(text(),'smokeTest')]/ancestor::td/preceding-sibling::td/input)[1]";
+
+    public static final String wcclkdelete = "(//a[@href='javascript:DeleteSectionRule();'])[1]";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

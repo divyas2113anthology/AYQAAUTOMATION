@@ -4,7 +4,9 @@ import com.opencsv.CSVWriter;
 import or.OR;
 
 import or.Smoke_OR;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.CaptureScreenshot;
 import org.testng.Reporter;
 import processor.*;
 
@@ -253,7 +255,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
     }
 
     public void ayapplication_login(String Applicationlogin) throws Exception {
-
+//creating
         get(Applicationlogin);
 
         clickWebdriver(attributeName_xpath, Crtaccclick);
@@ -282,6 +284,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
         sleep(10);
 
         waitForPageToLoad();
+        //using get text method we are getting pin
         getTextWebdriver(attributeName_xpath, ayconfr);
 
         WebElement text = driver.findElementByXPath(ayconfr);
@@ -339,12 +342,18 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
 
         clickWebdriver(attributeName_xpath, plsaveandcon);
 
+
+    }
+
+    public void verify_Dynamic_section_application() throws Exception {
         waitForPageToLoadWebdriver();
+        //getting text and verfiy the section functionlity
         writeMessageInBold("About to verify Dynamic Section functionality ");
         getTextWebdriver(attributeName_xpath, fclkHomeAddress);
         verifyElementPresent(fclkHomeAddress, "Home Address");
 
     }
+
 
     public void Dynamic_section_delete() throws Exception {
 
@@ -359,26 +368,135 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
         clickWebdriver(attributeName_xpath, wcconfigureforms);
         waitForPageToLoadWebdriver();
         sleep(2);
+        //switch frame
         switchToFrameNameIdWebdriver("frmTreeMenu");
-//        isElementPresentWebdriver(attributeName_xpath, "//a[text()='Application for QA Automation']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]");
-//        clickWebdriver(attributeName_xpath, "//a[text()='Application for QA Automation']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]");
+//
         waitForElementPresentWebdriver(attributeName_xpath, wcclkmanagesectionrules, "Manage Section Rules");
         clickWebdriver(attributeName_xpath, wcclkmanagesectionrules);
+        //Switch to default frame
         switchToDefaultContentWebdriver();
-
+//switch frame
         switchToFrameNameIdWebdriver("frmContent");
-        clickWebdriver(attributeName_xpath, wccheckbox);
+///check all the checkbox with same name "Smoketest" using loop
+        List<WebElement> checkBoxList = driver.findElements(By.xpath(wccheckbox));
+        for (WebElement checkBox : checkBoxList) {
+            checkBox.click();
+        }
+
 
         clickWebdriver(attributeName_xpath, wcclkdelete);
         alertAccept();
         waitForPageToLoad();
-
+        //Switch to default frame
         switchToDefaultContentWebdriver();
         switchToFrameNameIdWebdriver("frmTreeMenu");
         clickWebdriver(attributeName_xpath, wcclk_ApplicationSystemHome);
 
 
     }
+
+    public void BR_Triggering() throws Exception {
+
+        writeMessageInBold("About add Business Rule");
+        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationqa);
+        clickWebdriver(attributeName_xpath, wcapplicationadm);
+        clickWebdriver(attributeName_xpath, wcclk_confrules);
+        clickWebdriver(attributeName_xpath, wcclk_BR);
+        clickWebdriver(attributeName_xpath, wcclk_BR_ADD);
+
+        sendKeys(attributeName_xpath, wcclk_BR_RULENAME, "SmokeTest");
+
+        sendKeys(attributeName_xpath, wcclk_BR_RULEDescription, "VerifyBR_Triggering");
+
+
+        clickWebdriver(attributeName_xpath, Wc_BR_USERTYPE);
+
+        clickWebdriver(attributeName_xpath, Wc_BR_UserDropdownselect);
+
+
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, Wc_BR_actionid);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, wc_BR_actiondropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, wc_BR_sectionid);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, Wc_BR_SectionidDropdown);
+        clickWebdriver(attributeName_xpath, WC_BR_Questionid);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_QUestionidDropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_EventTypeId);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_EventTypeIdDropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetFormId);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetFormIdDropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetQuestionId);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetQuestionIddropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetQuestionId01);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_TargetQuestionId01Dropdown);
+        waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, WC_BR_Save);
+
+
+    }
+
+    public void Verify_BR_Triggering_application() throws Exception {
+        writeMessageInBold("About verify BR ");
+        //getting error msg with display in application
+        WebElement text = driver.findElementByXPath(BR_erro_msg);
+        text.getText();
+        String Geterrormessage = text.getText().substring(0, 60);
+
+        System.out.println(Geterrormessage);
+
+        Reporter.log("");
+        Reporter.log("");
+        Reporter.log("");
+        writeMessageInBold(Geterrormessage);
+
+        waitForPageToLoad();
+
+
+    }
+
+    public void Wc_Delete_BR_Triggering() throws Exception {
+
+        writeMessageInBold("About to delete BR_Triggering  ");
+        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationqa);
+        clickWebdriver(attributeName_xpath, wcapplicationadm);
+        clickWebdriver(attributeName_xpath, wcclk_confrules);
+        clickWebdriver(attributeName_xpath, wcclk_BR);
+///check all the checkbox with same name "Smoketest" using loop
+        List<WebElement> checkBoxList = driver.findElements(By.xpath(WC_BR_checkbox));
+        for (WebElement checkBox : checkBoxList) {
+            checkBox.click();
+        }
+
+
+        clickWebdriver(attributeName_xpath, WC_BR_delete);
+
+        alertAccept();
+        waitForPageToLoad();
+
+    }
+
+    public void AY_Application_logout() throws Exception{
+waitForPageToLoad();
+        clickWebdriver(attributeName_xpath, logout);
+    }
+
+
 
 
 }

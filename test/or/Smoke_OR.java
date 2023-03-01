@@ -4,7 +4,7 @@ public interface Smoke_OR {
 
 
     //***AY_APPLICATION PAGE _Facelift
-    public static final String Crtaccclick = "//a[@id=\"CreateAccountLink\"]";
+    public static final String Crtaccclick = "//a[@id='CreateAccountLink']";
     public static final String FrstName = "//input[@id=\"aycreateFN\"]";
     public static final String lstName = "//*[@id=\"aycreateLN\"]";
     public static final String email = "//input[@id=\"aycreateEMail\"]";
@@ -103,29 +103,6 @@ public interface Smoke_OR {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Ay application classic version
 
     public static final String clkcrtacc =  "//img[@alt=\"create account\"]";
@@ -201,7 +178,7 @@ public interface Smoke_OR {
     public static final String   wcconfigureforms= "//div[@id='oMenu_oMenu3']";
     public static final String wcckexpandbtn  = "//a[text()='Application for QA Automation']/preceding-sibling::a[contains(@onmouseover,'Click to expand')]";
     public static final String wcclkmanagesectionrules  = "//a[contains(text(),'Manage Section Rules')]";
-    public static final String wcclkaddbtn  ="(//a[@href='javascript:AddSectionRule();'])[1]" ;
+        public static final String wcclkaddbtn  ="(//a[@href='javascript:AddSectionRule();'])[1]" ;
     public static final String wcenter_name  = "//input[@id='txtName']";
 
     public static final String wcenter_dspname  = "//textarea[@id='txtDescription']";
@@ -222,16 +199,77 @@ public interface Smoke_OR {
     public static final String wcclksave = "(//a[@href='javascript:validate();'])[1]";
     public static final String wcclkxpand1 = "(//img[@src='../Images/tree_icons/plus.gif'])[1]";
     public static final String wcclkpermanentandHomeaddress = "//a[contains(text(),'3-Permanent and Home Address')]";
-    public static final String wccbuildedit = "//img[contains(@src,'edit_small')]";
+        public static final String wccbuildedit = "//img[contains(@src,'edit_small')]";
     public static final String wcclkprod = "//img[contains(@src,'publish_prod_large')]";
 
     public static final String wcclkpackage_publish = "//a[contains(text(),'Application for QA Automation')]";
     public static final String wcclkpublishprod = "(//img[contains(@src,'publish_prod_large')])[1]";
     public static final String wcclk_ApplicationSystemHome = "//a[contains(text(),'Application System Home')]";
     public static final String fclkHomeAddress  = "//font[normalize-space(text())='Home Address']";
-    public static final String wccheckbox  = "(//td/label/a[contains(text(),'smokeTest')]/ancestor::td/preceding-sibling::td/input)[1]";
+    public static final String wccheckbox  = "//td/label/a[contains(text(),'smokeTest')]/ancestor::td/preceding-sibling::td/input";
 
     public static final String wcclkdelete = "(//a[@href='javascript:DeleteSectionRule();'])[1]";
+
+    public static final String wcclk_confrules = "//div[@id='oMenu_mnuAppAdminConfRules']";
+
+
+    public static final String wcclk_BR = "//div[@id='oMenu_oMenu13']";
+
+    public static final String wcclk_BR_ADD = "(//img[contains(@src,'../images/common_images/admin_add_small_n.gif')])[1]";
+
+    public static final String wcclk_BR_RULENAME = "//input[@id='RuleName']";
+
+    public static final String wcclk_BR_RULEDescription = " //textarea[@id='RuleDesc']";
+
+    public static final String  Wc_BR_USERTYPE = "//select[@name='UserTypeId']";
+    public static final String Wc_BR_UserDropdownselect = "//*[@id=\"contentCol\"]/form/table/tbody/tr[10]/td[2]/select/option[4]";
+    public static final String Wc_BR_actionid = "//select[@name='ActionId']";
+    public static final String wc_BR_actiondropdown ="//*[@id=\"contentCol\"]/form/table/tbody/tr[11]/td[2]/select/option[3]" ;
+    public static final String wc_BR_sectionid = "//select[@name='SectionId']";
+    public static final String Wc_BR_SectionidDropdown = "//*[@id=\"contentCol\"]/form/table/tbody/tr[12]/td[2]/select/option[2]";
+    public static final String WC_BR_Questionid = "//select[@name='QuestionId']";
+    public static final String WC_BR_QUestionidDropdown = "//*[@id=\"contentCol\"]/form/table/tbody/tr[13]/td[2]/select/option[11]";
+    public static final String WC_BR_EventTypeId ="//select[@id='EventTypeId']" ;
+
+
+    public static final String WC_BR_EventTypeIdDropdown ="//*[@id=\"EventTypeId\"]/option[13]" ;
+    public static final String WC_BR_TargetFormId = "//select[@name='TargetFormId']";
+    public static final String WC_BR_TargetFormIdDropdown = "//*[@id=\"divTargetForm\"]/td[2]/select/option[2]";
+    public static final String WC_BR_TargetQuestionId ="//select[@name='TargetQuestionId']" ;
+    public static final String WC_BR_TargetQuestionIddropdown  ="//*[@id=\"divTargetSection\"]/td[2]/select/option[2]" ;
+    public static final String WC_BR_TargetQuestionId01  = "//*[@id=\"divTargetQuestion\"]/td[2]/select";
+    public static final String WC_BR_TargetQuestionId01Dropdown = "//*[@id=\"divTargetQuestion\"]/td[2]/select/option[28]";
+
+
+    public static final String WC_BR_Save = "(//img[@src='../images/common_images/admin_save_small_n.gif'])[1]";
+    public static final String BR_erro_msg = "//*[@id=\"divErrors\"]/ul/li/div[2]";
+    public static final String WC_BR_checkbox = "//td/label/a[contains(text(),'SmokeTest')]/ancestor::td/preceding-sibling::td/input";
+    public static final String WC_BR_delete = "(//img[@src='../images/common_images/admin_delete_small_n.gif'])[1]";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

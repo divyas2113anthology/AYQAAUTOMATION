@@ -491,12 +491,10 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
 
     }
 
-    public void AY_Application_logout() throws Exception{
-waitForPageToLoad();
+    public void AY_Application_logout() throws Exception {
+        waitForPageToLoad();
         clickWebdriver(attributeName_xpath, logout);
     }
-
-
 
 
 }

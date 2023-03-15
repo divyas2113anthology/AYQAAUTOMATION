@@ -177,7 +177,12 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                     } else if (strEnvironment.equals("lhrqa")) {
                         Reporter.log("Environment is 'lhrqa'");
                         strARAdminUrl = "https://arqa.askadmissionsqa.co.uk/admin";
-                        strAYWebCenterUrl = "https://uatwebcenter.askadmissionsqa.co.uk/";
+                        strAYWebCenterUrl = "http://uatwebcenter.askadmissionsqa.co.uk";
+                        urlImport = "https://uatexport.askadmissionsqa.co.uk/aydatatransferws.asmx";
+                        urlExport = "https://uatimport.askadmissionsqa.co.uk/aydatatransferws.asmx";
+                        urlIClassService = "https://qaayws.applyyourself.com/IClassService.svc";
+                        ay_applictionurl = "https://uatapp.askadmissionsqa.co.uk/?id=ayauto&facelift=true";
+                        ay_application_classicurl = "https://uatapp.askadmissionsqa.co.uk/?id=ayauto";
 
 
                     } else if (strEnvironment.equals("stable")) {
@@ -340,8 +345,15 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
                                 Reporter.log("");
 
+                                String uk = data[0];
+                                waitForPageToLoad();
+                                if (!uk.equals("lhrqa")) {
 
-                                CreateNew_account.AY_App_creation(ay_applictionurl);
+                                    CreateNew_account.AY_App_creation_LHRQA(ay_applictionurl);
+                                } else {
+                                    CreateNew_account.AY_App_creationSJCQA(ay_applictionurl);
+                                }
+
 
                             } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();

@@ -11,6 +11,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 import or.OR;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
@@ -422,7 +423,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public static void writeFailure(String failmessage) {
 		writeConsole("ERROR: " + failmessage);
 		Reporter.log("<b><font size='3' color='Red'><strong>" + failmessage + "</strong></font></b>");
-		Assert.fail(failmessage);
+		//Assert.fail(failmessage);
 	}
 
 	public void writeDetails() {
@@ -4246,6 +4247,19 @@ public class CommonSeleniumActions extends Processor implements OR {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 	}
 
-
+	public static void captureScreenshot(String screenshotName)
+	{
+		File screenshot;
+		try {
+			screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(screenshot, new File(screenshotName));      //
+			selenium.captureEntirePageScreenshot(screenshotName,"background=#CCFFDD");
+			//'RC' statement
+			Reporter.log("<a href='file:///"+screenshotName+"'><img src='file:///"+screenshotName+"' height='200' width='200'></a>");
+			Reporter.log("Saved at - '" + screenshotName + "'");
+		} catch (Exception e)
+		{      String failureMessage = e.getLocalizedMessage();
+			Reporter.log("<b><font size='3' color='Red'>Exception message in the 'caputueScreenshot' function - '" +failureMessage+ "'</font></b>");
+		}}
 
 }

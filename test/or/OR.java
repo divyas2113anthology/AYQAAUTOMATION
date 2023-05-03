@@ -245,7 +245,7 @@ public static final String EL_AddressLine1 = "//input[@id='Prompt2Field']";
 public static final String EL_City = "//input[@id='Prompt3Field']";
 public static final String EL_State = "//input[@id='Prompt4Field']";
 public static final String EL_Country = "//input[@id='Prompt5Field']";
-public static final String EL_searchclose = "//input[@value='";//input[@value='";
+public static final String EL_searchclose = "//img[@alt='";//input[@value='";
 public static final String EL_hslink = "//a[contains(text(),'";
 //#**********************************************************#
 
@@ -959,8 +959,10 @@ public static final String SFR_PrintedTo = "//input[@name='PrintedTo']";
 public static final String SFR_ExportedFrom = "//input[@name='ExportedFrom']";
 public static final String SFR_ExportedTo = "//input[@name='ExportedTo']";
 
-
-
+//#**********************************************************#
+//# Webcenter Quick Add Payment - QAP
+//#**********************************************************#
+ public static final String QAP_Domestic = "//font[contains(text(),'Domestic')]/input[@type='radio']";
 //#**********************************************************#
 //# Webcenter Search For Applicant Verify - SAV
 //#**********************************************************#
@@ -971,6 +973,11 @@ public static final String SAV_FormLabel = "//table/tbody/tr/td[text()='";
 public static final String SAV_PageName = "//font";
 public static final String PageName = "//div[@id='AYInstructions']/following-sibling::font";
 public static final String APP_Status = "//table/tbody/tr/td[contains(text(),'";
+
+//# Webcenter Create Decision Letter
+    public static final String SAI_UseDecisionLetter_radiobutton = "//label[contains(text(),'Use Decision Letter')]/ancestor::font//preceding-sibling::input[@type='radio']";
+
+
 
 //#**********************************************************#
 //# Webcenter Manage Queries - MQ
@@ -1209,7 +1216,7 @@ public static final String ESR_Cancel = "//img[contains(@src,'cancel_small')]";
 //# Webcenter Manage Section Rule Page - MSR
 //#**********************************************************#
 public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]";   //td[a[img[@name='imageSave1']]]/following-sibling::td/a/img";
-  //  public static final String MSR_AddBtn = "//img[contains(@src,'admin_add_small')]" ;
+
 
 public static final String MSR_DeleteBtn = "//img[contains(@src,'admin_delete_small')]";
     public static final String MSR_DeleteBtn1="(//img[@name='imageSave1']/following::a)[1]";

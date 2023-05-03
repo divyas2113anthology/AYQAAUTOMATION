@@ -57,7 +57,7 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 				Reporter.log("Step 4 - Verify data("+eduhighschoolname+") was displayed correctly in the 'High School Name' Field");
 				String hsnamewaitID = getElementIDbyLabel("High School Name", EB_HighSchoolName_wait);
 				waitForElementPresentWebdriver(attributeName_xpath, hsnamewaitID, eduhighschoolname);
-//				waitForConditionisElementPresent(hsnamewaitID, "60000");
+							//				waitForConditionisElementPresent(hsnamewaitID, "60000");
 	//			selenium.waitForCondition("selenium.isElementPresent(\"//input[@id='q24552' and @value!='']\")", "60000");
 				//String hsnameID = getElementIDbyLabel("High School Name", EB_HighSchoolName);
 				//waitForElementPresentWebdriver(attributeName_xpath, hsnameID, eduhighschoolname);

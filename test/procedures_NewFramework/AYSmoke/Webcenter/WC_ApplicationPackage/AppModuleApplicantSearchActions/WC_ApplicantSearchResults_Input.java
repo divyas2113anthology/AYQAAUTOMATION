@@ -29,8 +29,10 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					String[] SplitFirstLastName = CheckFrstLstName.split(",");
 					/*waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']", CheckFrstLstName);
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");*///TESTAPPREVIEW
-					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']", CheckFrstLstName);
-					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']");
+					//waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']", CheckFrstLstName);
+					waitForElementPresentWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]", CheckFrstLstName);
+					//checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/input[@type='checkbox']");
+					checkWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
 
 				}else if (checkagainstname.contains("uncheck")) {
 					String CheckFrstLstName = checkagainstname.replace(";", ",");
@@ -97,7 +99,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 				Reporter.log("Step 3 - Click the name of the pdf as ["+clickpdf+"]");
 				String ClickPDF = clickpdf.replace(";", ",");
 				String[] SplitFirstLastName = ClickPDF.split(",");
-				clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
+				//clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
+				clickWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/following::a/img[@alt='Print Application'])[1]");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Application Summary");
 			}

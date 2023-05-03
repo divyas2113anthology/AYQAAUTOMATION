@@ -27,6 +27,7 @@ public class WC_HTMLEditor_Verify extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
 //				waitForText(message, "Not Present");
 //				verifyTextPresent(message);
+				waitForPageToLoadWebdriver();
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, message);
 				verifyElementContainsTextWebdriver(attributeName_xpath, QAE_Message, message, message);
 			}

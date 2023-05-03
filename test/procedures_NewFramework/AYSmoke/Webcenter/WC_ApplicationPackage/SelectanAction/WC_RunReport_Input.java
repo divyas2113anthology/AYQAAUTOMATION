@@ -27,8 +27,11 @@ public class WC_RunReport_Input extends CommonSeleniumActions implements OR {
 			
 			if (!selectreport.equals("")) {
 				Reporter.log("Click the exact name of the report ["+selectreport+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[text()='"+selectreport+"']/preceding-sibling::td/input[@type='radio']", selectreport);
-				clickWebdriver(attributeName_xpath, "//td[text()='"+selectreport+"']/preceding-sibling::td/input[@type='radio']");
+				//waitForElementPresentWebdriver(attributeName_xpath, "//td[text()='"+selectreport+"']/preceding-sibling::td/input[@type='radio']", selectreport);
+				waitForElementPresentWebdriver(attributeName_xpath, "//td/label[text()='" + selectreport + "']/ancestor::td/preceding-sibling::td/input[@type='radio']", selectreport);
+
+				//clickWebdriver(attributeName_xpath, "//td[text()='"+selectreport+"']/preceding-sibling::td/input[@type='radio']");
+				clickWebdriver(attributeName_xpath,  "//td/label[text()='" + selectreport + "']/ancestor::td/preceding-sibling::td/input[@type='radio']");
 			}
 			
 			if (!selectaformat.equals("")) {

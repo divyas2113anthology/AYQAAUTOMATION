@@ -57,7 +57,7 @@ public class WC_HTML_Edit_Input extends CommonSeleniumActions implements OR {
 					waitForPageToLoadWebdriver();
 
 					
-					sleep(100); //Added by Rahul Mehta on 08 feb,2019
+					//sleep(100); //Added by Rahul Mehta on 08 feb,2019 - need to remove for verifying published message succesfully intime.
 				} else if (publishproddev.equalsIgnoreCase("Publish To Dev")) {
 					clickWebdriver(attributeName_xpath, HTML_PublishToDev);
 					waitForPageToLoadWebdriver();

@@ -38,6 +38,7 @@ public class WC_ManageQueries_Input extends CommonSeleniumActions implements OR 
 			if (!adddeletemove.equals("")) {
 				Reporter.log("Step 3 - Click button as ["+adddeletemove+"]");
 				if (adddeletemove.equalsIgnoreCase("Add")) {
+					waitForElementPresentWebdriver(attributeName_xpath, MSR_AddBtn, adddeletemove);
 					clickWebdriver(attributeName_xpath, MSR_AddBtn);
 					waitForPageToLoadWebdriver();
 				}else if (adddeletemove.equalsIgnoreCase("Delete")) {

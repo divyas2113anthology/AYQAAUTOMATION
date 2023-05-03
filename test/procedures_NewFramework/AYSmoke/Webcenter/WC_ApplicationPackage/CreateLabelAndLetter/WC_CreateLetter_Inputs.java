@@ -46,8 +46,11 @@ public class WC_CreateLetter_Inputs extends CommonSeleniumActions implements OR 
 			}
 			if (!usedecisionletter.equals("")) {
 				Reporter.log("Step 4 - Select the Used Decision letter as ["+usedecisionletter+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'"+usedecisionletter+"')]/preceding-sibling::input[@type='radio']", usedecisionletter);
-				clickWebdriver(attributeName_xpath, "//font[contains(text(),'"+usedecisionletter+"')]/preceding-sibling::input[@type='radio']");
+				//waitForElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'"+usedecisionletter+"')]/preceding-sibling::input[@type='radio']", usedecisionletter);
+				waitForElementPresentWebdriver(attributeName_xpath, SAI_UseDecisionLetter_radiobutton, usedecisionletter); //modified xpath by Divya
+				//clickWebdriver(attributeName_xpath, "//font[contains(text(),'"+usedecisionletter+"')]/preceding-sibling::input[@type='radio']");
+				clickWebdriver(attributeName_xpath, SAI_UseDecisionLetter_radiobutton);
+
 			}
 			if (!selectadecisionletter.equals("")) {
 				Reporter.log("Step 5 - Enter the Action History text as ["+selectadecisionletter+"]");

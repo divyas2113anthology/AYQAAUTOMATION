@@ -125,8 +125,19 @@ public class AccountProfile_Input extends CommonSeleniumActions implements OR {
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}
+	finally {
+		// An 'Assert.fail' statement would cause the procedure to fail but it would also stop the procedure from executing
+		// further.  Instead of failing a procedure (with the 'Assert.fail' statement) for every mismatch, we are failing it once
+		// at its end.  Every mismatch would be recorded in the report via. the 'writeFailure' function.  Since, in the
+		// 'writeFailure' function, the 'global variable', 'globalFailureNotification' would be given a value, the condition,
+		// 'globalFailureNotification' is not equal to "empty"
+		// would denote that there was a mismatch.  In that case, the procedure would be failed via. the 'Assert.fail' statement
+		// After failing the procedure, the 'globalFailureNotification' variable would again be set to "empty"
+		ifAppropriateFailTheProcedure();
+	}
+}
 	}
 	
 
 
-}
+

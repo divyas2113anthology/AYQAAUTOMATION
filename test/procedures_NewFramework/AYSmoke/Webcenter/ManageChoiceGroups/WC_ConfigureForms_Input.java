@@ -27,7 +27,7 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 				switchToDefaultContentWebdriver();
 				switchToFrameNameIdWebdriver("frmTreeMenu");
 
-				clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linktoclick+"')]");
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linktoclick+"')]");
 
 			}
 			if (!menulink.equals("")) {

@@ -28,15 +28,18 @@ public class Mainpage_Input extends CommonSeleniumActions implements OR {
 			String link_to_click = mainidatarepo[3];
 			String link_to_click_profile =mainidatarepo[4];
 			Reporter.log("Input Test Data was retrieved for 'Applicant Main' page");
+
 			if (!packagename.equals("")) {
 				Reporter.log("Click on (" + packagename + ") Package");
 				writeConsole("I am in package level");
 				// Use for both classic and face lift application
 				try {
+
 					if (isDisplayedWebdriver(attributeName_xpath, "//a[contains(text(),'" + packagename + "')]")) {
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + packagename + "')]");
 					}
 				} catch (Exception e) {
+
 					if (isDisplayedWebdriver(attributeName_xpath, "//div/h3[contains(text(),'" + packagename + "')]/../a")) {
 						clickWebdriver(attributeName_xpath, "//h3[text()='" + packagename + "']/parent::div/a");
 					} else {

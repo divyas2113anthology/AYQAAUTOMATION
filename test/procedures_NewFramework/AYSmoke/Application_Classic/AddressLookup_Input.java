@@ -28,6 +28,7 @@ public class AddressLookup_Input extends CommonSeleniumActions implements OR {
 		String addrcountry = addressidatarepo[6];
 		String addrsubmit = addressidatarepo[7];
 		Reporter.log("Input Test Data was retrieved for 'Address Lookup' page");
+		sleep(100);
 		if (!addrcountry.equals("")) {
 			Reporter.log("Enter Country as ("+addrcountry+")");
 			selectByVisibleTextWebdriver(attributeName_xpath,AL_Country, addrcountry);

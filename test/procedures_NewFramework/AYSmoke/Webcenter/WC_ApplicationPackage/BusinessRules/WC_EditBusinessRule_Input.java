@@ -81,6 +81,7 @@ public class WC_EditBusinessRule_Input extends CommonSeleniumActions implements 
 				Reporter.log("Step 6 - Select applies to section as : ("+appliestosection+")");
 				selectByVisibleTextWithSpaceWebdriver(attributeName_name,BR_AppliesToSection, appliestosection);
 				sleep(1);
+
 			}
 			if (!appliestoquestion.equals("")) {
 				Reporter.log("Step 7 - Select applies to question as : ("+appliestoquestion+")");

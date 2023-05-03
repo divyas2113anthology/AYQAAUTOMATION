@@ -33,11 +33,14 @@ public class WC_ManageUsers_Input extends CommonSeleniumActions implements OR {
 				Reporter.log("Step 2 - Perform the operation to check the checkbox as ["+checkusername+"]");
 				if (checkusername.contains("check")) {
 					String[] SplitFirstLastName = checkusername.split(";");
-					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/font/input[@type='checkbox']", checkusername);
-					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/font/input[@type='checkbox']");
+					//td/label/a[text()='Haja']/ancestor::td/preceding-sibling::td/font/input[@type='checkbox']
+					waitForElementPresentWebdriver(attributeName_xpath, "//td/label/a[text()='"+SplitFirstLastName[0]+"']/ancestor::td/preceding-sibling::td/font/input[@type='checkbox']", checkusername);
+					//waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/font/input[@type='checkbox']", checkusername);
+
+					checkWebdriver(attributeName_xpath, "//td/label/a[text()='"+SplitFirstLastName[0]+"']/ancestor::td/preceding-sibling::td/font/input[@type='checkbox']");
 				}else if (checkusername.contains("uncheck")) {
 					String[] SplitFirstLastName = checkusername.split(";");
-					uncheckWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"')]]/preceding-sibling::td/font/input[@type='checkbox']");
+					uncheckWebdriver(attributeName_xpath, "//td/label/a[text()='"+SplitFirstLastName[0]+"']/ancestor::td/preceding-sibling::td/font/input[@type='checkbox']");
 				}else if (checkusername.equalsIgnoreCase("All")) {
 					waitForElementPresentWebdriver(attributeName_id, "checkAll", checkusername);
 					clickWebdriver(attributeName_id, "checkAll");

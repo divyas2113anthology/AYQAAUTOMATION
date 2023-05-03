@@ -4,12 +4,16 @@ import jxl.read.biff.BiffException;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 import or.OR;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 public class WC_EditSpecialChoiceGroup_Input extends CommonSeleniumActions implements OR {
@@ -131,6 +135,15 @@ public class WC_EditSpecialChoiceGroup_Input extends CommonSeleniumActions imple
                         clickWebdriver(attributeName_xpath, AID_save_button);
                         sleep(2);//Added by Rahul Mehta on 14th March 2019
                         waitForPageToLoadWebdriver();
+                        WebDriverWait wait = new WebDriverWait(driver, 10);
+                        if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
+                            // Switch to the alert and accept it
+                            Alert alert = driver.switchTo().alert();
+                            alert.accept();
+                        } else{
+
+                    }
+
                         //driver.switchTo().frame(0);
                     }
 

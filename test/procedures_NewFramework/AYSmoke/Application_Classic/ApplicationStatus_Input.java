@@ -1,6 +1,7 @@
 package procedures_NewFramework.AYSmoke.Application_Classic;
 
 import or.OR;
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
@@ -25,6 +26,7 @@ public class ApplicationStatus_Input extends CommonSeleniumActions implements	OR
 			waitForPageToLoadWebdriver();
 
 			if(!proceedToSubmission.equals("")){
+
 				Reporter.log("Step - Click on Proceed To Submission button");
 				waitForElementPresentWebdriver(attributeName_id, proceedToSubmit, "Proceed To Submission button");
 				clickWebdriver(attributeName_id, proceedToSubmit);

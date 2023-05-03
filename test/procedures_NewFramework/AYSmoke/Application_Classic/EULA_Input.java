@@ -36,6 +36,7 @@ public class EULA_Input extends CommonSeleniumActions implements OR {
 					uncheckWebdriver(attributeName_xpath,PrivacyPolicy);
 				}			
 			}
+
 			if (!continuecreate.equals("")) {
 				Reporter.log("Proceed to Click on ("+continuecreate+") button");
 				if (continuecreate.equalsIgnoreCase("continue & create new account")) {

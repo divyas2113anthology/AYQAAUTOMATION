@@ -16,15 +16,16 @@ public interface Smoke_OR {
     public static final String Checkboxlogin = "//input[@id=\"chkDataConsent\"]";
     public static final String Crtsub = "//input[@id=\"ay-createSubmit\"]";
     public static final String ayconfr = "//div[@id=\"ay-confirmation\"]/form/p[2]/b";
-    public static final String aylogin = "//input[@id=\"ay-create-login\"]";
-    public static final String checkpvt = "//*[@id=\"chkAcceptEULA\"]";
-    public static final String chepresub = "//*[@id='AllowViewPreSubmit']";
-    public static final String conandcrt = "//*[@id=\"ay-externalSubmit\"]";
+    public static final String aylogin = "//input[@id='ay-create-login']";
+    public static final String checkpvt = "//input[@id='chkAcceptEULA']";
+    public static final String chepresub = "//input[@id='AllowViewPreSubmit']";
+    public static final String conandcrt = "//input[@id='ay-externalSubmit']";
     public static final String verifyhomepage = "//h2[@id='appListHeader']";
     public static final String clkapp = "//*[@id=\"appList\"]/li[1]/div/a";
     public static final String clkmyapp = "//*[@id=\"header\"]/h1[2]/a";
-    public static final String clkperdata = "//*[@id=\"menu\"]/table/tbody/tr[2]/td/span/a/font";
+    public static final String clkperdata = "//font[normalize-space(text())='Personal Data']";
 
+    public static final String clkappliction = "(//a[@class='btn btn-primary appListButton packageBtn'])[1]";
     public static final String plfstname = "//input[@id=\"q35020\"]";
     public static final String pllstname = "//input[@id=\"q35022\"]";
     public static final String pldob = "//input[@id=\"q35023\"]";

@@ -138,7 +138,11 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!feereviewappfee.equals("")) {
 			Reporter.log("Step 17 - Proceed to Check ("+feereviewappfee+") Review Application Fee Radio");
-			clickWebdriver(attributeName_xpath, "//font[contains(text(),'"+feereviewappfee+"')]/input[@type='radio']");
+			//clickWebdriver(attributeName_xpath, "//font[contains(text(),'')]/input[@type='radio']");
+			clickWebdriver(attributeName_xpath, "(//font[contains(text(),'"+feereviewappfee+"')]/input[@type='radio'])[1]");
+
+
+
 //			if (feereviewappfee.equalsIgnoreCase("Domestic")) {
 //				clickWebdriver(attributeName_xpath, QA_Domestic);				
 //			}else if (feereviewappfee.equalsIgnoreCase("International")) {

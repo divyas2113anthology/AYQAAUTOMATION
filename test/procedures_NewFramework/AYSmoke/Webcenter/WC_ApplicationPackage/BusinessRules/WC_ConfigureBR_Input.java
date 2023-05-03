@@ -47,7 +47,7 @@ public class WC_ConfigureBR_Input extends CommonSeleniumActions implements OR {
 				waitForElementPresentWebdriver(attributeName_xpath,SR_RuleName1+ Checkbox +SR_BRCheckBox, Checkbox);
 				clickWebdriver(attributeName_xpath,SR_RuleName1+ Checkbox +SR_BRCheckBox);
 				sleep(1);
-				
+
 
 			}
 			if (!delete.equals("")) {

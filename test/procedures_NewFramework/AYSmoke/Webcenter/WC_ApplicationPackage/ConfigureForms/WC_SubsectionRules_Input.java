@@ -146,8 +146,8 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 			    Reporter.log("Select Check Box next to Rule");
 
 				switchToFrameNameIdWebdriver("frmContent");
-			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox,checkbox);
-			    clickWebdriver(attributeName_xpath,SR_RuleName+checkbox+"')]]"+SR_CheckBox);
+			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+checkbox+SR_CheckBox,checkbox);
+			    clickWebdriver(attributeName_xpath,SR_RuleName+checkbox+SR_CheckBox);
 			  			    
 			}
 						

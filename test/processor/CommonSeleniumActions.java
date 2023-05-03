@@ -423,6 +423,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public static void writeFailure(String failmessage) {
 		writeConsole("ERROR: " + failmessage);
 		Reporter.log("<b><font size='3' color='Red'><strong>" + failmessage + "</strong></font></b>");
+		captureScreenshot("");
 		//Assert.fail(failmessage);
 	}
 

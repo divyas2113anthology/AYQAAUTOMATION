@@ -57,8 +57,10 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             waitForPageToLoad();
             Reporter.log("Checking privacy policy Check Box");
             clickWebdriver(attributeName_xpath, checkpvt);
-
+sleep(20);
             ////UK CHANGES//////
+            sleep(10
+            );
             clickWebdriver(attributeName_xpath, chepresub);
             waitForPageToLoad();
 
@@ -77,6 +79,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             String value1 = "Application for QA Automation";
             verifyElementPresent(element1, value1);
             waitForPageToLoad();
+
             clickWebdriver(attributeName_xpath, clkperdata);
 
             sendKeys(attributeName_xpath, plfstname, "AY");

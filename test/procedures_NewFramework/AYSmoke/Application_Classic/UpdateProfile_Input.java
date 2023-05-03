@@ -1,10 +1,17 @@
 package procedures_NewFramework.AYSmoke.Application_Classic;
 
 import or.OR;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -80,21 +87,25 @@ public class UpdateProfile_Input extends CommonSeleniumActions implements OR {
 					checkWebdriver(attributeName_xpath, upaappsubmission_No);
 				}
 			}
+
+
 			if (!updateclose.equals("")) {
 				Reporter.log("Step 9 - Click on ("+updateclose+") Button");
 				driver.switchTo().defaultContent();
 				if (updateclose.equalsIgnoreCase("update")) {
-					waitForElementPresentWebdriverWait(attributeName_xpath,upaupdatebtn1, updateclose);
-					clickWebdriver(attributeName_xpath,upaupdatebtn1);
-					/*if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
-					{						
-						clickWebdriver(attributeName_xpath,upaupdatebtn);
-						waitForPageToLoadWebdriver();
-					}else
-					{
-						clickWebdriver(attributeName_xpath,upaupdatebtn1);
-						waitForPageToLoadWebdriver();
-					}*/
+
+				Thread.sleep(10000);
+				javaScriptClick(attributeName_xpath,upaupdatebtn1);
+
+//					if(booleanElementPresentWebdriver(attributeName_xpath,upaupdatebtn1, updateclose))
+//					{
+//						clickWebdriver(attributeName_xpath,upaupdatebtn1);
+//						waitForPageToLoadWebdriver();
+//					}else
+//					{
+//						clickWebdriver(attributeName_xpath,upaupdatebtn1);
+//						waitForPageToLoadWebdriver();
+//					}
 				}else if (updateclose.equalsIgnoreCase("close window")) {
 					if(booleanElementPresentWebdriver(attributeName_xpath,upaclosebtn, updateclose))
 						clickWebdriver(attributeName_xpath,upaclosebtnClassic);

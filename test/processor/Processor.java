@@ -4,6 +4,7 @@ import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -106,7 +107,11 @@ public class Processor {
                 options.addArguments("disable-popup-blocking");
                 options.addArguments("--disable-extensions");
                 //options.addArguments("--disable-features=VizDisplayCompositor");
-              driver = new ChromeDriver(options);
+                WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager
+                driver = new ChromeDriver(options);
+                System.out.println("driver - '" + driver + "'");
+
+
                 break;
             case "safari":
                 driver = new SafariDriver();

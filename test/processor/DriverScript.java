@@ -114,7 +114,7 @@ public class DriverScript {
 		//Authenticate and connect to project
 
 		//boolean success = soap.connectionAuthenticate(this.userName, this.password);
-		boolean success1 = soap.connectionAuthenticate("automation", "H0bsons1");
+		boolean success1 = soap.connectionAuthenticate("Automation", "Anthology@1");
 		System.out.println("Connected to Spira: "+success1);
 		//Integer projectID = 6;
 		boolean success2 = soap.connectionConnectToProject(projectIdInput.intValue());

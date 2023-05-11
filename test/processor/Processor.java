@@ -107,7 +107,7 @@ public class Processor {
                 options.addArguments("disable-popup-blocking");
                 options.addArguments("--disable-extensions");
                 //options.addArguments("--disable-features=VizDisplayCompositor");
-                WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager
+                WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager ON 11TH mAY 2023
                 driver = new ChromeDriver(options);
                 System.out.println("driver - '" + driver + "'");
 

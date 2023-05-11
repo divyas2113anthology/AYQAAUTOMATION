@@ -41,6 +41,8 @@ public class WC_ManagePackage_Input extends CommonSeleniumActions implements OR{
 				Reporter.log("Verify the Text as ["+includeoffline+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, RecIncludeOffline, includeoffline);
 				verifyElementContainsTextWebdriver(attributeName_xpath, RecIncludeOffline,includeoffline,includeoffline);
+
+
 			}
 
 			if (!includeofflinecheck.equals("")) {

@@ -20,12 +20,19 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 			String showhide = testdata[3];
 			//switchToFrameNameIdWebdriver("frmContent");
 
-			if(!Checkbox.equals("")) {
+			if (!Checkbox.equals("")) {
 				switchToFrameNameIdWebdriver("frmContent");
-				sleep(100);
-				waitForElementPresentWebdriver(attributeName_xpath, SR_RuleName + Checkbox  + SR_CheckBox, Checkbox);
+				sleep(50);
 
-				clickWebdriver(attributeName_xpath, SR_RuleName + Checkbox + SR_CheckBox);
+				//waitForElementPresentWebdriver(attributeName_xpath,SR_RuleName + Checkbox  + SR_CheckBox, Checkbox);
+
+				clickWebdriver(attributeName_xpath, "(//input[@name='Chk_RuleID'])[1]");
+
+				//clickWebdriver(attributeName_xpath, SR_RuleName + Checkbox + SR_CheckBox);
+
+
+
+
 
 switchToDefaultContentWebdriver();
 
@@ -51,7 +58,7 @@ switchToDefaultContentWebdriver();
 				}else if (Button_addprintdelete.equalsIgnoreCase("Back")) {
 					clickWebdriver(attributeName_xpath, MSR_BackBtn);
 
-					switchToDefaultContentWebdriver();
+						switchToDefaultContentWebdriver();
 				}else if (Button_addprintdelete.equalsIgnoreCase("Delete")) {
 
 					clickWebdriver(attributeName_xpath, MSR_DeleteBtn);

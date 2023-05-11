@@ -937,6 +937,9 @@ public static final String SAI_UserQuries = "//*[@name='QueryID']";//input[@id='
 
 public static final String SAI_SearchGroupSelect = "GroupID";
 public static final String SAI_SearchbyActionSelect = "ActionID";
+    public static final String SearchBY_user_queries_clk = "(//button[@type='button'])[1]"; // changed by saran kumar 2023
+    public static final String SearchBy_USer_queries_dropDown = "//a/label[contains(text(),'"; // changed by saran kumar 2023
+
 
 public static final String SAI_SubmitBtnBottom = "//input[contains(@src,'submit')]";
 public static final String SAI_SearchByIndividualsSubmit = "xpath=(//input[contains(@src,'admin_submit_small')])[3]";
@@ -1218,8 +1221,9 @@ public static final String ESR_Operator = "//select[@name='txtOperator0']";
     public static final String ESR_Operator1 = "FormFields FormFieldsWide";
 
 //public static final String ESR_ValueSelect = "//select[@name='txtValue0']";
-public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
-
+    // change done by saran kumar 20-03-2023
+//public static final String ESR_ValueSelect = "//select[contains(@name,'txtValue')]";
+    public static final String ESR_ValueSelect = "//*[@id='G1-row1']/descendant::td[4]/input[@name='G1-row1_txtValue1']";
 public static final String ESR_ValueText = "//input[@type='text' and @class='FormFields FormFieldsTall']";
 public static final String ESR_RadioYes = "//input[@value='Y']";
 public static final String ESR_RadioNo = "//input[@value='N']";
@@ -1856,10 +1860,11 @@ public static final String UI_UploadBtn = "//img[contains(@src,'upload')]";
 //#**********************************************************#
 //#	 Maintananace - Add/Edit Package 
 //#**********************************************************#
-public static final String IncludeOffline = "//td[contains(text(),'Include Offline Recommendation')]";
+public static final String IncludeOffline = "//td[contains(text(),'Include Offline Recommendation-DT')]";
 public static final String IncludeOfflineCheck = "//input[@name='chkPrintOfflineRcmd']";
-public static final String RecIncludeOffline = "//font[contains(text(),'Include Offline Recommendation')]";
+public static final String RecIncludeOffline = "//font/label[contains(text(),'Include')]"; // changed by saran kumar 28-april-2023
 
+    public static final String RecIncludeOffline1 = "//font/label[contains(text(),'Include')]";
 
 			//Created by  : Malik
 
@@ -2135,6 +2140,7 @@ public static final String ET_FieldName = "//select[@name='txtField0']";
 public static final String ET_Operator = "//select[@name='G1-row1_txtOperator1']";
 public static final String ET_Operator1 = "//select[@name='txtOperator0']";
 public static final String ET_Value = "//button[contains(@class,'ui-multiselect')]";
+
 public static final String ET_Value1="(//button[contains(@class,'multiselect dropdown-toggle btn btn-default')])[2]";//Added by Rahul Mehta on 14th March,2019
 public static final String ET_SaveCancel = "//img[contains(@src,'";   //save_small')]";
 

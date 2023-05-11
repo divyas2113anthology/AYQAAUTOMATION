@@ -68,8 +68,8 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 				Reporter.log("Verify"+savecancel);
 				if(verifyvalue.equalsIgnoreCase("TestingRAAccount")){
 					String data = Runtimedataread(verifyvalue);
-					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
-					clickWebdriver(attributeName_xpath, ET_Value);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value1, verifyvalue);
+					clickWebdriver(attributeName_xpath, ET_Value1);
 					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+data+"')]", data, verifyvalue);
 				}else {
 					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);

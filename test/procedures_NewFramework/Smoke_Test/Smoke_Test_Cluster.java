@@ -348,10 +348,11 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 String uk = data[0];
                                 waitForPageToLoad();
                                 if (!uk.equals("lhrqa")) {
-
                                     CreateNew_account.AY_App_creation_LHRQA(ay_applictionurl);
+
                                 } else {
                                     CreateNew_account.AY_App_creationSJCQA(ay_applictionurl);
+
                                 }
 
 
@@ -446,9 +447,17 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
                                 Reporter.log("");
                                 Reporter.log("");
+                                String uk = data[0];
+                                waitForPageToLoad();
+                                if (!uk.equals("lhrqa")) {
+
+                                    CreateNew_account_Classic_version.AY_App_creation_Classic_LHRQA(ay_application_classicurl);
+                                } else {
 
 
-                                CreateNew_account_Classic_version.AY_App_creation_Classic(ay_application_classicurl);
+                                    CreateNew_account_Classic_version.AY_App_creation_Classic_SJCQA(ay_application_classicurl);
+                                }
+
 
                             } catch (Exception e) {
                                 strExceptionMessage = e.getLocalizedMessage();

@@ -205,9 +205,12 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 				//clickWebdriver(attributeName_xpath, SAI_UserQuries);
 				if(isElementPresentWebdriver(attributeName_xpath, SAI_UserQuries)) {
 					//selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, "   "+userqueries);
-					clickWebdriver(attributeName_xpath, SAI_UserQuries);
+				//	clickWebdriver(attributeName_xpath, SAI_UserQuries);
+					clickWebdriver(attributeName_xpath,SearchBY_user_queries_clk);
 					waitForPageToLoadWebdriver();
-					clickWebdriver(attributeName_xpath, MQ_Queryselect+userqueries+"')]");
+					clickWebdriver(attributeName_xpath,SearchBy_USer_queries_dropDown+userqueries+"')]");
+
+					//clickWebdriver(attributeName_xpath, MQ_Queryselect+userqueries+"')]");
 				} /*else {
 					selectByVisibleTextWebdriver(attributeName_xpath, SAI_UserQuries, userqueries);
 				}*/

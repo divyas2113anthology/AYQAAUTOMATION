@@ -1125,7 +1125,7 @@ public static final String AA_ViewSuccessMessage= "//font[contains(text(),'";
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
-public static final String AS_AppReviewStatus = "//font[contains(text(),'";
+public static final String AS_AppReviewStatus = "//td/font[contains(text(),'";//add extra (td/) saran kumar may 2023
 public static final String AS_StatusSubmit = "//a[contains(@href,'Submit')]";
 public static final String AS_StatusBack = "//a[contains(@href,'SubmitSearch')]";
 //#**********************************************************#
@@ -1696,7 +1696,9 @@ public static final String Ad_CustomReport = "//table[@id='TABLE1' and contains(
 //#**********************************************************#
 
 public static final String CSC_FormHeading = "//font[contains(text(),'"; //+Application Module')]"
-public static final String CSC_ConfigField = "//select[@name='Question']";
+    public static final String configur_page_title = "//tr[@class='FormText']/descendant::div/following::font[contains(text(),'"; //+Application Module')]"
+
+    public static final String CSC_ConfigField = "//select[@name='Question']";
 public static final String CSC_Field = "//td[contains(@class,'FormFields') and text()="; //3]/following::select";
 public static final String CSC_Field1 = "]/following::select";
 public static final String CSC_Field2 = "]/following-sibling::td/input[@name='txtOrder']";
@@ -1764,7 +1766,11 @@ public static final String QA_PaymentStatus = "//select[@name='paymentstatus']";
 //#	 Webcenter - Manage Queries - Page
 //#**********************************************************#
 public static final String MQ_AppQueryName = "//select[@name='selQuery']";
-public static final String MQ_FieldName = "//select[@name='txtField0']";
+public static final String MQ_FieldName = "(//button[@type='button'])[1]";
+
+    public static final String MQ_SelectField = "//select[@name='G1-row1_txtField1']";
+    public static final String MQ_SelectOperator1 = "//select[@name='G1-row1_txtOperator1']";
+
  public static final String MQ_FieldName_New = "//button[contains(@class,'multiselect dropdown-toggle')]";
     public static final String MQ_AppSubmit = "//input[@name='SubmittedApps' and @value='Yes']";
 public static final String MQ_AppInProgress = "//input[@name='SubmittedApps' and @value='No']";
@@ -1783,8 +1789,8 @@ public static final String MQ_MulitSelectClose = "//span[contains(@class,'circle
     public static final String MQ_MulitSelectClose1="(//i[contains(@class,'glyphicon glyphicon-remove-circle')])[2]";
 public static final String MQ_MultiSelectOption = "//input[@value='Accepted']"; //Rugby']";
 //public static final String MQ_QueryCheck = "//td[a[contains(text(),'QueriesTest')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
-public static final String MQ_QueryCheck = "//td[a[contains(text(),'";
-public static final String MQ_QueryCheckbox = "')]]/preceding-sibling::td[input[@name='MyLinkschk']]";
+public static final String MQ_QueryCheck = "(//td/label/a[contains(text(),'";
+public static final String MQ_QueryCheckbox = "')]/following::input[@type='Checkbox'])[1]";
 public static final String MQ_Add = "//img[@name='imageField']";
 public static final String MQ_Delete = "//img[@name='imageField2']";
 public static final String MQ_DetailTree = "//a[contains(text(),'";    //Applicant Detail')]";
@@ -2008,7 +2014,7 @@ public static final String MCG_PackageTree = "//a[contains(@onclick,'setSelected
 //#**********************************************************#
 public static final String ER_linktoclick = "//a[contains(text(),'"; //Enrollment-DT Module Home')]";
 //public static final String AY_ConfigureStatusConfirmationText = "//div[@id='divAyConfirmation']/font[contains(text(),'";
-public static final String AY_ConfigureStatusConfirmationText = "//*[@id='divAyConfirmation']/font";
+public static final String AY_ConfigureStatusConfirmationText = "//*[@id='divAyConfirmation']";
 
 //#**********************************************************#
 //# Webcenter - Enrollment DT Fee - ER
@@ -2030,7 +2036,7 @@ public static final String ED_Buttons = "//span[contains(text(),'Enrollments-DT 
 //# Webcenter - Recommendation Details Page - RD
 //#**********************************************************#
 public static final String RD_RecStartDate = "//td[contains(text(),'";    //This Recommender  has not started the Recommendations')]";
-public static final String RD_Pagename = "//font[contains(text(),'Recommendations')]";
+public static final String RD_Pagename = "//form[@name='frmMain']/descendant::font[1]";
 //#**********************************************************#
 //# Webcenter Search For Recommendation Verify - SRV
 //#**********************************************************#
@@ -2146,7 +2152,7 @@ public static final String SR_PageName="//form[@name='frm";
 public static final String SR_ShowHide="//a[contains(@href,'AYInstructions')]/font[contains(text(),'";
 public static final String SR_Instructions="//div[@id='AYInstructions']";
 public static final String SR_LinkToClick = "//a[contains(@href,'javascript:EditRule()')]";
-public static final String SR_button="//img[contains(@src,'";
+public static final String SR_button="(//a/img[contains(@src,'";
 public static final String SR_name="//input[@name='txtName']";
 public static final String SR_description="//textarea[@name='txtDescription']";
 public static final String SR_subsection="//input[contains(@id,'SectionInput')]";
@@ -2156,10 +2162,10 @@ public static final String SR_operator="//select[@name='G1-row1_txtOperator1']";
     public static final String SR_operator1="//select[@name='txtOperator0']";// Add -saran kumar 30 nov 2022
 public static final String SR_value_No="//input[@value='N']";
 public static final String SR_value_Yes="//input[@value='Y']";
-public static final String SR_RuleName="(//td/label/a[text()='";
+public static final String SR_RuleName="(//td/label/a[contains(text(),'";
     public static final String SR_RuleName1="(//td/label/a[contains(text(),'";
 
-public static final String SR_CheckBox="']/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
+public static final String SR_CheckBox="')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";
 public static final String SR_BRCheckBox="')]/ancestor::td/preceding-sibling::td/input)[1]";
 
     public static final String SR_BRCheckBox1="')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]";

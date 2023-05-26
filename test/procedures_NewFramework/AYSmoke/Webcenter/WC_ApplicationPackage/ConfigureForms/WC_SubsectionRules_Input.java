@@ -28,11 +28,12 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 											
 
 			if(!name.equalsIgnoreCase(""))
-				
+				//switchToDefaultContentWebdriver();
 			{
-				//switchToFrameNameIdWebdriver("frmContent");
 				Reporter.log("Enter Subsection name");
 				waitForPageToLoadWebdriver();
+				switchToFrameNameIdWebdriver("frmContent");
+
 				waitForElementPresentWebdriverWait(attributeName_xpath, SR_name, name);
 				sendKeys(attributeName_xpath, SR_name, name);
 											
@@ -95,7 +96,16 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 				 //--start--Rahul Mehta
 				 clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]");
 				 sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);
+				 sleep(1);
 				 clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+field+"')]");
+				 waitForElementPresentWebdriverWait(attributeName_xpath, SR_operator, operator);
+				 if(isElementPresentWebdriver(attributeName_xpath,SR_operator)) //Modified by Saran kumar 30 Nov 2022
+				 {
+					 selectByVisibleTextWebdriver(attributeName_xpath, SR_operator, operator);
+
+				 }else{
+					 selectByVisibleTextWebdriver(attributeName_xpath, SR_operator1, operator);
+				 }
 				 //--end--Rahul Mehta
               }	
              
@@ -116,8 +126,10 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
              if (!value.equalsIgnoreCase(""))
              {
             	 Reporter.log("Select value as" + value );
+
             	 if(value.equalsIgnoreCase("Yes"))
             	  {
+					  switchToFrameNameIdWebdriver("frmContent");
             		 waitForElementPresentWebdriverWait(attributeName_xpath, SR_value_Yes,value);   
             		 clickWebdriver(attributeName_xpath, SR_value_Yes);
             		  
@@ -134,10 +146,12 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
             	}		
  
 			if(!linkText.equalsIgnoreCase(""))
+
 			{
 			    Reporter.log("Click on Rule Name");
-			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+linkText+"')]]",linkText);
-			    clickWebdriver(attributeName_xpath,SR_RuleName+linkText+"')]]");
+				switchToFrameNameIdWebdriver("frmContent");
+			    waitForElementPresentWebdriverWait(attributeName_xpath,SR_RuleName+linkText+"')])[1]",linkText);
+			    clickWebdriver(attributeName_xpath,SR_RuleName+linkText+"')])[1]");
 			    
 			}
 			
@@ -154,34 +168,41 @@ public class WC_SubsectionRules_Input extends CommonSeleniumActions implements O
 
 			if(!button.equalsIgnoreCase(""))
 			{
+
 				//switchToFrameNameIdWebdriver("frmContent");//Modified by Rahul mehta
-				waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')]", button);
-				if (button.equalsIgnoreCase("add_small")) {
+
+				if (button.equalsIgnoreCase("add")) {
+					switchToFrameNameIdWebdriver("frmContent");
 					Reporter.log("Verify ADD");
-					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
+
+					waitForElementPresentWebdriver(attributeName_xpath, SR_button+button+"')])[1]", button);
+					clickWebdriver(attributeName_xpath, SR_button+button+"')])[1]");
 
 
 				}else if (button.equalsIgnoreCase("delete")) {
 					Reporter.log("Verify DELETE");
-					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')]",button);
-					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
+					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')])[1]",button);
+					clickWebdriver(attributeName_xpath, SR_button+button+"')])[1]");
 					alertAccept();
 
 				}
 				else if (button.equalsIgnoreCase("print")) {
 					Reporter.log("Verify PRINT Button");
-					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
+					switchToFrameNameIdWebdriver("frmContent");
+					clickWebdriver(attributeName_xpath, SR_button+button+"')])[1]");
 				}
 				else if (button.equalsIgnoreCase("save")) {
 					Reporter.log("Verify SAVE Button");
-					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
+
+					clickWebdriver(attributeName_xpath, SR_button+button+"')])[1]");
 					sleep(2);  //Added by Rahul Mehta
 
 				}
 				else if (button.equalsIgnoreCase("cancel")) {
 					Reporter.log("Verify Cancel Button");
-					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')]",button);
-					clickWebdriver(attributeName_xpath, SR_button+button+"')]");
+					switchToFrameNameIdWebdriver("frmContent");// add for this 72215 testcase by saran kumar
+					waitForElementPresentWebdriverWait(attributeName_xpath, SR_button+button+"')])[1]",button);
+					clickWebdriver(attributeName_xpath, SR_button+button+"')])[1]");
 
 				}
 			}

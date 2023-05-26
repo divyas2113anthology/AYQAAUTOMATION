@@ -21,8 +21,8 @@ public class WC_QuickAdd_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Quick Add' page");
 			if (!message.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
-				waitForElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
-				verifyElementPresentWebdriver(attributeName_xpath, "//*[contains(text(),'"+message+"')]", "Display Manage Users Message");
+				waitForElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'"+message+"')]", "Display Manage Users Message");
+				verifyElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'"+message+"')]", "Display Manage Users Message");
 				
 			}
 			if (!pagename.equals("")) {

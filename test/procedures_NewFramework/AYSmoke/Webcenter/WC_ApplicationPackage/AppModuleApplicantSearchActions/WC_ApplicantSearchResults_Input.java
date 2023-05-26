@@ -94,13 +94,15 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					waitForPageToLoadWebdriver();
 					recentPopupSelectWebdriver("Application Summary");
 
+
+
 				}
 			}
 			if (!clickpdf.equals("")) {
 				Reporter.log("Step 3 - Click the name of the pdf as ["+clickpdf+"]");
 				String ClickPDF = clickpdf.replace(";", ",");
 				String[] SplitFirstLastName = ClickPDF.split(",");
-				clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/following-sibling::td/a/img[@alt='Print Application']");
+				clickWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/following::a/img[@alt='Print Application'])[1]");
 				waitForPageToLoadWebdriver();
 				recentPopupSelectWebdriver("Application Summary");
 			}
@@ -139,15 +141,15 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 //					action.sendKeys(Keys.RETURN);
 //					action.perform();
 					//Removed sleep time
-					try {
-						Alert alert = driver.switchTo().alert();
-						String AlertText = alert.getText();
-						System.out.println(AlertText);
-						alert.accept();
 
-					} catch (Exception e) {
-						System.out.println("no alert");
-					}
+
+          //removing this code due to no alert present in this functionlly by saran kumar 22 may 2023
+//					try {
+//						alertAccept();
+//
+//					} catch (Exception e) {
+//						System.out.println("no alert");
+//					}
 					waitForPageToLoadWebdriver();
 
 					//driver.switchTo().alert().accept();

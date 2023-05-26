@@ -55,12 +55,18 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 				waitForPageToLoadWebdriver();
 			//}
 			if (!welpackage.equals("")) {
+
 				Reporter.log("Step 2 - Select the Name of the Package as ["+welpackage+"]");
 				String [] splitPackage = welpackage.split(";");
 				for (int i = 0; i < splitPackage.length; i++) {
 					if (i == splitPackage.length-1) {
-						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "Page Name");
-						if (splitPackage[i].equals("Add a QuickAdd Application")) {
+						if(splitPackage[i].equalsIgnoreCase("RecommendationsDT Admin"))
+						{waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='oMenu_mnuRcmdAdmin']", "welpackage");
+
+							clickWebdriver(attributeName_xpath,"//div[@id='oMenu_mnuRcmdAdmin']");
+						}
+
+						else if (splitPackage[i].equals("Add a QuickAdd Application")) {
 							waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
 							clickWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
 							recentPopupSelectWebdriver("Quick Add");
@@ -71,9 +77,17 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 						waitForPageToLoadWebdriver();
 						}
 					}else {
-						waitForElementPresentWebdriverWait(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']", "welpackage");
-						waitForPageToLoadWebdriver();
-						mouseOverWebdriver(attributeName_xpath,"//*[text()='"+splitPackage[i]+"']");
+						if(splitPackage[i].equalsIgnoreCase("RecommendationsDT Admin"))
+						{waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='oMenu_mnuRcmdAdmin']", "welpackage");
+
+							mouseOverWebdriver(attributeName_xpath,"//div[@id='oMenu_mnuRcmdAdmin']");
+						}
+						else {
+							waitForElementPresentWebdriverWait(attributeName_xpath, "//*[text()='" + splitPackage[i] + "']", "welpackage");
+							waitForPageToLoadWebdriver();
+							mouseOverWebdriver(attributeName_xpath, "//*[text()='" + splitPackage[i] + "']");
+						}
+
 						/*Actions actions = new Actions(driver);
 						WebElement element = driver.findElement(By.xpath(".//div[contains(text(),'Select a System')]"));
 						actions.moveToElement(element).build().perform();

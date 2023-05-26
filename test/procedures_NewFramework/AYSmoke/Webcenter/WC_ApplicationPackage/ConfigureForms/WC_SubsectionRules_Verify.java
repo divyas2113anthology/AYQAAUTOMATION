@@ -16,19 +16,28 @@ public class WC_SubsectionRules_Verify extends CommonSeleniumActions implements 
 		String pageTitle=testData[0];
 		String message=testData[1];
 		String verifyUI=testData[2];
-		
+		switchToDefaultContentWebdriver();
 		//switchToFrameNameIdWebdriver("frmContent");  //Added by Rahul Mehta on 08 feb,2019
 		
 		if(!pageTitle.equalsIgnoreCase(""))
+
 		{
+			switchToFrameNameIdWebdriver("frmContent");
 		  Reporter.log("Verify page title"+ pageTitle);
-		   waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
-		   verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+pageTitle+"')]", pageTitle);
+
+
+		 waitForElementPresentWebdriverWait(attributeName_xpath, configur_page_title+pageTitle+"')]", pageTitle);
+
+			verifyElementPresentWebdriver(attributeName_xpath, configur_page_title+pageTitle+"')]",pageTitle);
+
+
+
 		}
 				
 		if(!message.equalsIgnoreCase(""))
 		{
 		    Reporter.log("Verify confirmation/Error message");
+			switchToFrameNameIdWebdriver("frmContent");
 		    waitForElementPresentWebdriverWait(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 		    verifyElementPresentWebdriver(attributeName_xpath, CSC_FormHeading+message+"')]", message);
 			

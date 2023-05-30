@@ -21,15 +21,15 @@ public class WC_ConfigureForms_Input extends CommonSeleniumActions implements OR
 			String menulink = testdata[2];
 			//switchToFrameNameIdWebdriver("frmTreeMenu");
 			
-			if(!linktoclick.equals("")){
-				Reporter.log("Click on the Link"+linktoclick);
+			if(!linktoclick.equals("")) {
+				Reporter.log("Click on the Link" + linktoclick);
 				//clickWebdriver(attributeName_xpath, ER_linktoclick+linktoclick+"')]");
 				switchToDefaultContentWebdriver();
 				switchToFrameNameIdWebdriver("frmTreeMenu");
 
-					clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+linktoclick+"')]");
-
+				clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + linktoclick + "')]");
 			}
+
 			if (!menulink.equals("")) {
 				Reporter.log("Perform the operation to click the Package as ["+menulink+"]");
 				String [] SplitPackage = menulink.split(";");

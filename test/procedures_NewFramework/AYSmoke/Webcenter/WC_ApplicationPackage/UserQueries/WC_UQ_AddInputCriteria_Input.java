@@ -43,12 +43,16 @@ public class WC_UQ_AddInputCriteria_Input extends CommonSeleniumActions implemen
 				Reporter.log("Step 2 - Select the field name as ["+field+"]");
 //				select(MQ_FieldName, "regexp:"+fieldname);
 				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, field);
-				selectByVisibleTextWebdriver(attributeName_xpath, MQ_FieldName, "    --"+field);
+				waitForElementPresentWebdriver(attributeName_xpath, MQ_FieldName, field);
+
+				actionsClickWebdriver(attributeName_xpath,MQ_FieldName); //change by saran kumar
+				//selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='G1-row1_txtField1']",field);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,MQ_SelectField,field);//change by saran kumar
 				waitForPageToLoadWebdriver();
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Step 3 - Select the Operator as ["+operator+"]");
-				selectByVisibleTextWebdriver(attributeName_xpath, MQ_Operator, operator);
+				selectByVisibleTextWebdriver(attributeName_xpath, MQ_SelectOperator1, operator);//change by saran kumar
 				waitForPageToLoadWebdriver();
 			}
 			if (!value.equals("")) {

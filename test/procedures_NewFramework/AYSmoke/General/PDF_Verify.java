@@ -130,14 +130,20 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //							writeFailure("PDF File["+pdfname+"] was not Opened Successfully");
 //						}
 					writeConsole("close PDF File :");
-					closeWindowWebdriver();
+
+					//closeWindowWebdriver(); // removed this code for this tc 31137 by saran kumar may 26
 					//deselectPopUp();
 					System.out.println("Select Applicant summary popup");
 					//recentPopupSelect("Applicant Summary");
 					//deselectPopUp();
 					//recentPopupCloseWebdriver();
 					//selectMainWindowWebdriver();
-				selectMainWindowWebdriver(parent);
+				//selectMainWindowWebdriver(parent);
+
+				recentPopupCloseWebdriver();
+
+
+
 
 				}
 			}else{

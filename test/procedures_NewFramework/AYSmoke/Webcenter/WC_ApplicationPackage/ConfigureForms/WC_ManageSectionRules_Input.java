@@ -34,7 +34,7 @@ public class WC_ManageSectionRules_Input extends CommonSeleniumActions implement
 
 
 
-switchToDefaultContentWebdriver();
+//switchToDefaultContentWebdriver();
 
 
 			}

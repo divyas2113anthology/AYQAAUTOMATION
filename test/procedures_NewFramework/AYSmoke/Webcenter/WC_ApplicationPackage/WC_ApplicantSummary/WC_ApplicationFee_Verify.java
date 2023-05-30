@@ -20,7 +20,9 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			String verifyui = fpvdatarepo[2];
 			Reporter.log("Verify Test Data was retrieved for 'Application Fee' page");
 			if (!pagename.equals("")) {
+
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
+				recentPopupSelectWebdriver(pagename);
 				waitForElementPresentWebdriver(attributeName_xpath,AS_AppReviewStatus+pagename+"')]", pagename);
 				verifyElementContainsTextWebdriver(attributeName_xpath, AS_AppReviewStatus+pagename+"')]", pagename, "Page Name for Application Fee");
 			}

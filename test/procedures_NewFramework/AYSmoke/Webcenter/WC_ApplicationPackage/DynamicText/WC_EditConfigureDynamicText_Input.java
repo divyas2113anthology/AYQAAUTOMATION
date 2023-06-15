@@ -30,7 +30,7 @@ public class WC_EditConfigureDynamicText_Input extends CommonSeleniumActions imp
 				Reporter.log("Perform the operation to click["+adddeletefilter+"]");
 				if(adddeletefilter.equalsIgnoreCase("minusfilter"))//Added by Rahul Mehta on 9th April,2019
 				{sleep(2);
-					clickWebdriver(attributeName_xpath,"//a[text()='"+conditionalmessagecheck+"']/preceding-sibling::input");
+					clickWebdriver(attributeName_xpath,"//a[text()='"+conditionalmessagecheck+"']/ancestor::label/following::input[@type='CheckBox']");//change xpath saran 30_may 23
 					sleep(2);
 					clickWebdriver(attributeName_xpath, CDT_Filter+adddeletefilter+"')]");
 					sleep(2);

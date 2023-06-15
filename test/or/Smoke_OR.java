@@ -41,7 +41,7 @@ public interface Smoke_OR {
     public static final String clkRegularSection = "//font[normalize-space(text())='RegularSection']";
 
     public static final String Regsefst = "//*[@id=\"q40229\"]";
-    public static final String Reglst = "//*[@id=\"q40232\"]";
+    public static final String Reglst = "//*[@id=\"q40231\"]";
     public static final String RegSave = "(//a[@class='btn btn-small btn-inverse btnActionSmall'])[2]";
     public static final String Regsub = "(//input[@class='ay-Submit'])[1]";
 
@@ -92,7 +92,7 @@ public interface Smoke_OR {
 
     public static final String fuplpdf = "C:\\SeleniumScripts\\AYQAAutomation\\smoke file\\smoke pdf.pdf";
 
-    public static final String fdelatt = "(//a[@alt='Delete Attachment'])[1]";
+    public static final String fdelatt = "//a[@alt='Delete Attachment']";
     public static final String fclkupl = "(//img[@alt='Upload Attachment'])[3]";
 
     public static final String fimgpath = "C:\\SeleniumScripts\\AYQAAutomation\\smoke file\\Smoke img.jpg";

@@ -20,6 +20,7 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 			String science = testdata[3];
 			String composite = testdata[4];
 			String savecancelclose = testdata[5];
+			String close = testdata[6];
 						
 			Reporter.log("Input Test Data was retrieved for 'Manage Test Score ACT' Page");
 			waitForPageToLoadWebdriver();
@@ -48,21 +49,34 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 				sendKeys(attributeName_xpath, AS_TestScoreComposite, composite);
 				Thread.sleep(5000);
 			}
+
 							
 			if(!savecancelclose.equals("")){
 				Reporter.log("Click on the button");
 				clickWebdriver(attributeName_xpath, AS_TestScoreSave);
-				clickWebdriver(attributeName_xpath, AS_CloseWindow);
+
+//				if(!close.equals("close")) { // Removed for this 70522 tc by saran kumar
+//					Reporter.log("Click on the button");
+//
+//					clickWebdriver(attributeName_xpath, AS_CloseWindow);
+//				} // Removed for this 70522 tc by saran kumar
+
 				//recentPopupCloseWebdriver();
 				//switchToSecondPopupWindow();
 				//waitForPageToLoadWebdriver();
-				driver.switchTo().window(AppSummaryWindowName);
+				//driver.switchTo().window(AppSummaryWindowName); // Removed for this 70522 tc by saran kumar
 			}
 			//switchToDefaultContentWebdriver();
+
+
 			
 		} catch (Exception e) {
+
 			writeFailure(e.getLocalizedMessage());
+
 		}
+
+
 		
 	}
 

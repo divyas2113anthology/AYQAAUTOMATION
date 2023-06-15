@@ -37,6 +37,7 @@ public class WC_ManageTemplates_Input extends CommonSeleniumActions implements O
 				else if(add_delete_folder.equals("delete")) 	{
 					//waitForElementPresentWebdriver(attributeName_xpath, AMET_CheckboxTemplate, "TestMail");
 					clickWebdriver(attributeName_xpath, AMET_CheckboxTemplate+template+"']]/preceding-sibling::td/input");
+					//clickWebdriver(attributeName_xpath,"(//a[text()='"+template+"']/ancestor::label/following::input[@type='CheckBox'])[1]");
 					clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+add_delete_folder+"')]");
 					try {
 				        Alert alert = driver.switchTo().alert();

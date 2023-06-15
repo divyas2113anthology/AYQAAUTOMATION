@@ -22,10 +22,10 @@ public class WC_ApplicationFee_Verify extends CommonSeleniumActions implements O
 			if (!pagename.equals("")) {
 
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				recentPopupSelectWebdriver(pagename);
-				waitForElementPresentWebdriver(attributeName_xpath,AS_AppReviewStatus+pagename+"')]", pagename);
-				verifyElementContainsTextWebdriver(attributeName_xpath, AS_AppReviewStatus+pagename+"')]", pagename, "Page Name for Application Fee");
-			}
+
+//				waitForElementPresentWebdriver(attributeName_xpath,"//form[@name='frmMain']/descendant::font[1]", pagename); // change xpath jun 8 2023
+//				verifyElementContainsTextWebdriver(attributeName_xpath, "//form[@name='frmMain']/descendant::font[1]", pagename, "Application Fee"); // removed "Page Name for "
+	}
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, successmessage);

@@ -50,8 +50,12 @@ public class WC_AddConfigureDownloadableForms_Input extends CommonSeleniumAction
 			}
 			if (!formfiletoupload.equals("")) {
 				Reporter.log("Step 5 - Enter the form file to upload as ["+formfiletoupload+"]");
+				waitForPageToLoad();
+
+				waitForPageToLoad();
 //				clickWebdriver(attributeName_name, CDF_FormFileToUpload);
-				sendKeysType(attributeName_name, CDF_FormFileToUpload, formfiletoupload);
+			//	sendKeysType(attributeName_name, CDF_FormFileToUpload, formfiletoupload);
+				sendKeys(attributeName_xpath,"//input[@id='File1']",formfiletoupload);
 //				Runtime.getRuntime().exec("C:/SeleniumScripts/AYQAAutomation/AutoIT/Firefox/Webcenter/ImportFileFF.exe");
 
 			}

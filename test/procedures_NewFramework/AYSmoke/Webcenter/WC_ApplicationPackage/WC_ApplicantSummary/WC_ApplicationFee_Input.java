@@ -63,10 +63,11 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				if(button_to_click.equalsIgnoreCase("Save")){
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
-					driver.switchTo().window(AppSummaryWindowName);
+					//driver.switchTo().window(AppSummaryWindowName); // Removed due to this 70522 tc
 				}else if (button_to_click.equalsIgnoreCase("save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					driver.switchTo().window(AppSummaryWindowName);
 					Thread.sleep(5000);
 					System.out.println("Clicked Save Button");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);

@@ -1132,7 +1132,8 @@ public static final String AA_ViewSuccessMessage= "//font[contains(text(),'";
 public static final String AS_ViewHistory = "//font[contains(text(),'History')]";
 public static final String AS_ViewGroups = "//font[contains(text(),'Groups')]";
 public static final String AS_ViewEvents = "//font[contains(text(),'Event')]";
-public static final String AS_AppReviewStatus = "//td/font[contains(text(),'";//add extra (td/) saran kumar may 2023
+public static final String
+        AS_AppReviewStatus = "(//form[@name='frmMain']/descendant::table/tbody/tr/td/font[contains(text(),'";//add extra (td/) saran kumar may 2023
 public static final String AS_StatusSubmit = "//a[contains(@href,'Submit')]";
 public static final String AS_StatusBack = "//a[contains(@href,'SubmitSearch')]";
 //#**********************************************************#
@@ -1179,7 +1180,7 @@ public static final String QAE_FieldLength = "//input[@name='txtResponseLength']
 public static final String QAE_FieldFormat = "//select[@name='txtFormat']";
 public static final String QAE_QuestionBefor = "//select[@name='selorderquestion']";
 public static final String QAE_PageName = "//div[@id='AYInstructions']/following-sibling::font";
-public static final String QAE_Message = "//font";//div[@id='divAyConfirmation']/font";
+public static final String QAE_Message ="(//font)[1]";//"//div[@id='divAyConfirmation']/font";
 public static final String QAE_PaymentType = "//select[@name='ChangePaymentType']";
 //#**********************************************************#
 //# Webcenter Section Add/Edit Page - SAE

@@ -26,13 +26,14 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Welcome' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
+				switchToDefaultContentWebdriver();// inculde due to this testcase [TC:72052]
 				Reporter.log("Step 1 - Click the link as [" + weltopupdatelogout + "]");
 				//waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
 				//    elementLocator="//a[@href='javascript:logout()']";
 				// elementName="logout";
 
 
-				clickWebdriver(attributeName_xpath, "//a[text()='" + weltopupdatelogout + "']");
+				clickWebdriver(attributeName_xpath, "//td/a[text()='" + weltopupdatelogout + "']");
 //			}else {
 //
 //				clickWebdriver(attributeName_xpath, "//a[@href='javascript:logout()']");

@@ -59,17 +59,21 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		}
 		if (password.equals("Auto123+")) {
 			Reporter.log("Step 2 - Proceed to Enter PIN as ("+password+")");		
-			sendKeys(attributeName_cssselector, UL_PswdField, password);
-			
+			sendKeys(attributeName_cssselector, "UL_PswdField", password);
+
+		} else if (password.equalsIgnoreCase("P@ssw0rd")) {
+			sendKeys(attributeName_xpath, "//input[@id='ay-password']", password);
+
 		}else if (!password.equals("")) {
 			Reporter.log("Step 3 - Proceed to Read Password from Excel Sheet(C:/Selenium/InputTestdata.xls)");
 			String generatepassword = Runtimedataread(password);
 			Reporter.log("Step 4 - Proceed to Enter PIN as ("+generatepassword+")");		
 			//type(UL_PswdField, generatepassword);
-			sendKeys(attributeName_cssselector, UL_PswdField, generatepassword);
+			sendKeys(attributeName_cssselector, "UL_PswdField", generatepassword);
 			
+
 		}
-		if (!login.equals("")) {
+			if (!login.equals("")) {
 			Reporter.log("Step 5 - Click on 'Login' Button");
 			if (login.equalsIgnoreCase("login")) {
 				//click(UL_Login);

@@ -31,7 +31,7 @@ public class WC_AddExportTemplate_Input extends CommonSeleniumActions implements
 			Reporter.log("Input Test Data was retrieved for 'Add Export Template' Page");
 			Date date = new Date();  
 			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String ExportName = exportname+dateFormat.format(date)+Calendar.getInstance().getTimeInMillis();	
+			String ExportName = exportname+ Calendar.getInstance().getTimeInMillis();
 			if (!exportname.equals("")) {
 				Reporter.log("Step 1 - Enter the Import as ["+ExportName+"]");
 				if(exportname.equals("TestExportCustomLabel")){

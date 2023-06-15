@@ -4,10 +4,14 @@ package procedures_NewFramework.AYSmoke.MaintenanceCenter;
 
 import or.OR;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 	@Test(description="This Procedure is to perform some Operation in 'Manage RA Accounts-Filter' page")
@@ -24,9 +28,19 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			String savecancel = testdata[6];
 			String validationmessage = testdata[7];
 			String verifyvalue = testdata[8];
+			String delete = testdata[9];
 			
 			
 			if(!name.equals("")){
+//				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMMdd_yymms");
+//
+//				LocalDateTime now = LocalDateTime.now();
+//				System.out.println(dtf.format(now));
+//				getTextWebdriver(attributeName_xpath,dtf.format(now));
+//				WebElement text = driver.findElementByXPath(dtf.format(now));
+//				String Name =text.getText();
+
+
 				Reporter.log("Enter the Filter Nmae as("+name+")");
 				waitForElementPresentWebdriver(attributeName_xpath, ET_FilterName, name);
 				sendKeys(attributeName_xpath, ET_FilterName, name);
@@ -39,22 +53,30 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			}
 			if (!field.equals("")) {
 				Reporter.log("Select ("+field+")");
-				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, ET_FieldName, field);
+				clickWebdriver(attributeName_xpath,"//button[contains(@title,'Please Select')]"); //Add by saran kumar jun 2023
+				sendKeys(attributeName_xpath,"//input[@placeholder='Search']",field);
+				clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+field+"')]");
+			//	selectByVisibleTextWithSpaceWebdriver(attributeName_xpath, "//select[@class='FormFields']", field);
 				sleep(2);//Added by Rahul Mehta on 14th March 2019
 			}
 			if (!operator.equals("")) {
 				Reporter.log("Select ("+operator+")");
-				selectByVisibleTextWebdriver(attributeName_xpath, ET_Operator1, operator);
+
+
+				selectByVisibleTextWebdriver(attributeName_xpath, "//select[@name='G1-row0_txtOperator0']", operator);
 				sleep(2);//Added by Rahul Mehta on 14th March 2019
+
+
 			}
 			if (!value.equals("")) {
 				Reporter.log("Select ("+value+")");
 				String valuedata = Runtimedataread(value);
-				waitForElementPresentWebdriver(attributeName_xpath, ET_Value, value);
-				clickWebdriver(attributeName_xpath, ET_Value);
-				waitForElementPresentWebdriver(attributeName_xpath, MCL_CheckValue+value+"']", value);
+				waitForElementPresentWebdriver(attributeName_xpath, "(//button[@class='multiselect dropdown-toggle btn btn-default'])[2]", value);
+				clickWebdriver(attributeName_xpath, "(//button[@class='multiselect dropdown-toggle btn btn-default'])[2]");
+				waitForElementPresentWebdriver(attributeName_xpath, "//label[contains(text(),'"+valuedata+"')]", valuedata);
 				//clickWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
-				checkWebdriver(attributeName_xpath, MCL_CheckValue+value+"']");
+				checkWebdriver(attributeName_xpath, "//label[contains(text(),'"+valuedata+"')]");
+				clickWebdriver(attributeName_xpath,"//label[contains(text(),'"+valuedata+"')]");
 				sleep(2);
 				
 			}
@@ -66,18 +88,25 @@ public class AY_AddRAFilter extends CommonSeleniumActions implements OR{
 			
 			if(!verifyvalue.equals("")){
 				Reporter.log("Verify"+savecancel);
+				String valuedata = Runtimedataread(value);
 				if(verifyvalue.equalsIgnoreCase("TestingRAAccount")){
 					String data = Runtimedataread(verifyvalue);
-					waitForElementPresentWebdriver(attributeName_xpath, ET_Value1, verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value1, valuedata);
 					clickWebdriver(attributeName_xpath, ET_Value1);
-					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+data+"')]", data, verifyvalue);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue+data+"')]", data, data);
 				}else {
-					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, verifyvalue);
+					waitForElementPresentWebdriver(attributeName_xpath, ET_Value, valuedata);
 					clickWebdriver(attributeName_xpath, ET_Value);
-					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + verifyvalue + "')]", verifyvalue, verifyvalue);
+					verifyElementContainsTextWebdriver(attributeName_xpath, MCL_VerifyValue + valuedata + "')]", verifyvalue, verifyvalue);
 				}
 
 
+			}
+
+			if(!delete.equals("")){
+				clickWebdriver(attributeName_xpath,"(//a[contains(text(),'"+delete+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
+				clickWebdriver(attributeName_xpath,"(//img[@alt='delete'])[1]");
+alertAccept();
 			}
 			
 		

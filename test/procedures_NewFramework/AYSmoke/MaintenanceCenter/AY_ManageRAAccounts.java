@@ -17,6 +17,7 @@ public class AY_ManageRAAccounts extends CommonSeleniumActions implements OR{
 			String clickname = testdata[0];
 			String checkboxagainstname = testdata[1];
 			String addprintdelete = testdata[2];
+			String delete =testdata[3];
 			Reporter.log("Check user click on Manage client link in Maintenance center");
 			
 			if (!clickname.equals("")) {
@@ -28,7 +29,14 @@ public class AY_ManageRAAccounts extends CommonSeleniumActions implements OR{
 				Reporter.log("Click on ["+addprintdelete+"]");
 				clickWebdriver(attributeName_xpath, MCL_addprintdelete+addprintdelete+"')]");
 				waitForPageToLoadWebdriver();
+
+
 				}
+			if(!delete.equals("")){
+				clickWebdriver(attributeName_xpath,"(//a[contains(text(),'"+delete+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
+				clickWebdriver(attributeName_xpath,"(//img[@alt='delete'])[1]");
+				alertAccept();
+			}
 //				
 			
 		

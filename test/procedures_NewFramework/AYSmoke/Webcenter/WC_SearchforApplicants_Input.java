@@ -141,6 +141,7 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 					String DataFirstName = Runtimedataread(firstname);
 					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, DataFirstName);
+					//sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 				}else if (firstname.equals("AppReview FirstName")) {
 					System.out.println("aaaa"+firstname);
 					String DataFirstName = Runtimedataread(firstname);
@@ -226,8 +227,11 @@ public class WC_SearchforApplicants_Input extends CommonSeleniumActions implemen
 			}
 			if (!selectagroup.equals("")) {
 				Reporter.log("Step 21 - Select a group as ["+selectagroup+"]");
-				waitForElementPresentWebdriverWait(attributeName_xpath, ASR_Group, selectagroup);
-				doubleClickWebdriver(attributeName_xpath, ASR_Group);
+				//waitForElementPresentWebdriverWait(attributeName_xpath, ASR_Group, selectagroup);
+				//3doubleClickWebdriver(attributeName_xpath, ASR_Group);
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//input[@id='SearchByGroups']", selectagroup);
+				doubleClickWebdriver(attributeName_xpath, "//input[@id='SearchByGroups']");
+
 			}			
 			if (!search_by_group.equals("")) {
 				Reporter.log("Step 21 - Click the Search by using Submit Button");

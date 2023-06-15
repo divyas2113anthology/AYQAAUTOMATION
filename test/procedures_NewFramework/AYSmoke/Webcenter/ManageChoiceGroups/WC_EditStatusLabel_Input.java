@@ -5,6 +5,7 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 import or.OR;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
@@ -67,6 +68,8 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                     String Label = labelName + Calendar.getInstance().getTimeInMillis();
                     sendKeys(attributeName_xpath, MCG_label, Label);
                     Runtimedatawrite(Label, labelName);
+
+
                 }
                 /*
                 if (!labelName.equals("")) {
@@ -84,6 +87,8 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         String Label = labelName + Calendar.getInstance().getTimeInMillis();
                         sleep(2); //Added by Rahul Mehta on 14th March 2019
                         sendKeys(attributeName_xpath, MCG_label, Label);
+
+
                         sleep(2);//Added by Rahul Mehta on 14th March 2019
                         Reporter.log(Label);//Added by Rahul Mehta on 14th March 2019
                         Runtimedatawrite(Label, label);
@@ -95,6 +100,7 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         driver.findElement(By.xpath("//input[@value='" + label1 + "']")).clear();
 
                         driver.findElement(By.xpath("//input[@value='" + label1 + "']")).sendKeys(LabelEdit);
+
                         sleep(2);//Added by Rahul Mehta on 14th March 2019
                         Runtimedatawrite(LabelEdit, label);
                         System.out.println("Write value in Excel sheet");
@@ -106,12 +112,17 @@ public class WC_EditStatusLabel_Input extends CommonSeleniumActions implements O
                         String[] data = active.split(";");
                         try {
                             String statusName = Runtimedataread(data[0]);
+                            System.out.println(statusName);
                             System.out.println("==");
                             String check = driver.findElement(By.xpath("//input[@value='" + statusName + "']/../..//input[@name='chkActive']")).getAttribute("value");
                             if (check.equalsIgnoreCase("true")) {
                                 //driver.findElement(By.xpath("//input[@value='"+statusName+"']/../..//input[@name='chkDelete']")).click();
                                 waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
                                 clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
+
+                                waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']", data[1]);
+                                clickWebdriver(attributeName_xpath, "//input[@value='" + statusName + "']/../..//input[@name='chkActive']");
+
                                 //input[@value='1482150971328']/../..//input[@name='chkActive']
                             }
                         } catch (Exception e) {

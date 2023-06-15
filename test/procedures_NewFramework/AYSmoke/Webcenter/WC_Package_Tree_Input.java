@@ -75,7 +75,7 @@ public class WC_Package_Tree_Input extends CommonSeleniumActions implements OR {
 						//--start--Rahul Mehta
 						System.out.println(SplitPackage[i]);
 						//PackageSelection(SplitPackage[i], "1");
-							waitForPageToLoadWebdriver();
+								waitForPageToLoadWebdriver();
 							PackageSelectionWebdriver(attributeName_xpath, SplitPackage[i], "1");
 							waitForPageToLoadWebdriver();
 							WebElement SeconclickName = driver.findElement(By.xpath("//a[contains(text(),'"+SplitPackage[i]+"')]/preceding-sibling::a[contains(@onclick,'rePaintTree')]"));

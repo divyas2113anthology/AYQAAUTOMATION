@@ -17,12 +17,18 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 		String verifyui=testdata[2];
 		
 				
-		switchToFrameNameIdWebdriver("frmContent");
+
 		if (!pagetitle.equals(""))
 		{
-			waitForElementPresentWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle);
-			verifyElementContainsTextWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle, pagetitle);
-			
+			if(pagetitle.equalsIgnoreCase("")){
+				waitForElementPresentWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle);
+				verifyElementContainsTextWebdriver(attributeName_xpath, SR_PageName+pagetitle+"Rules']//font", pagetitle, pagetitle);
+
+			}else if (pagetitle.equalsIgnoreCase("")) {
+			waitForElementPresentWebdriver(attributeName_xpath, "//font[contains(text(),'"+pagetitle+"')]", pagetitle);
+			verifyElementContainsTextWebdriver(attributeName_xpath, "//font[contains(text(),'"+pagetitle+"')]", pagetitle, pagetitle);
+
+		}
 		}
 		
 		
@@ -30,6 +36,7 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 		{
 			if(showhide.equalsIgnoreCase("show"))
 			{
+				switchToFrameNameIdWebdriver("frmContent");
 				waitForElementPresentWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]", showhide);
 				clickWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]");
 				
@@ -37,6 +44,7 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 			
 			else if(showhide.equalsIgnoreCase("hide"))
 			{
+
 				waitForElementPresentWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]", showhide);
 				clickWebdriver(attributeName_xpath, SR_ShowHide+showhide+"')]");
 				
@@ -51,7 +59,7 @@ public class WC_PageTitle_Verify extends CommonSeleniumActions implements OR{
 			verifyElementContainsTextWebdriver(attributeName_xpath, SR_Instructions, verifyui, verifyui);
 		}
 		
-		switchToDefaultContentWebdriver();
+		//switchToDefaultContentWebdriver();// removing this code for this  72145 tc
 		
 		
 				

@@ -35,7 +35,12 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					checkWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
 
 
-				}else if (checkagainstname.contains("uncheck")) {
+				} else if (checkagainstname.equalsIgnoreCase(checkagainstname)) { // Add by saran kumar june 2023
+					String CheckFrstLstName = checkagainstname.replace(";", ",");
+					String[] SplitFirstLastName = CheckFrstLstName.split(",");
+					waitForElementPresentWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]", CheckFrstLstName);
+					checkWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+SplitFirstLastName[0]+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
+				} else if (checkagainstname.contains("uncheck")) {
 					String CheckFrstLstName = checkagainstname.replace(";", ",");
 					String[] SplitFirstLastName = CheckFrstLstName.split(",");
 					uncheckWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+SplitFirstLastName[0]+"') and contains(text(),'"+SplitFirstLastName[1]+"')]]/preceding-sibling::td/input[@type='checkbox']");
@@ -46,6 +51,8 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 					waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']", checkagainstname);
 					checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+checkagainstname+"')]]/preceding-sibling::td/input[@type='checkbox']");
 				}
+
+
 			}
 
 			if (!clickname.equals("")) {

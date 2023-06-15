@@ -55,8 +55,11 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 			}*/
 			if (!pdfirstname.equals("")) {
 				Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
-				String Fnamepd = getElementIDbyLabel("First Name", PSD_FirstGivenName);//Modified by Rahul Mehta
-				sendKeys(attributeName_xpath,Fnamepd,pdfirstname+Calendar.getInstance().getTimeInMillis());
+			//	String Fnamepd = getElementIDbyLabel("First Name", PSD_FirstGivenName);//Modified by Rahul Mehta
+
+
+				sendKeys(attributeName_xpath,"//*[@id='q35020']",pdfirstname+Calendar.getInstance().getTimeInMillis()); // change xpath by saran jun 9 2023
+				selectByIndexWebdriver(attributeName_xpath,"//*[@id='s40207']",2);// add this line for this 69986 TC By saran kumar k jun 9 2023
 			}
 			if (!pdmiddlename.equals("")) {
 				Reporter.log("Step 3 - Enter Middle Name as ("+pdmiddlename+")");

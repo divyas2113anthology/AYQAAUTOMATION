@@ -1343,7 +1343,7 @@ public static final String RF_Password = "//input[@id='rec-password']";
 public static final String RF_Cnf_Password = "//input[@id='ConPassword']";
 public static final String RF_Submit = "//input[@id='rec-loginSubmit']";
 public static final String RF_Welcome = "//div[@id='home']/h2[contains(text(),'";
-public static final String RF_Start_Rec = "//a[contains(text(),'Recommendations')]";
+public static final String RF_Start_Rec = "//*[@id='home']/descendant::div/a";
 public static final String RF_PAC = "//input[@id='rec-login']";
 public static final String RF_Rec_Password = "//input[@name='Password']";
 public static final String RF_Rec_Submit = "//input[@id='rec-loginSubmit']";
@@ -1559,12 +1559,12 @@ public static final String EL_LinkToClick = "//a[contains(@href,'javascript:popu
 //#**********************************************************#
 public static final String AER_FirstName = "//input[@id='q33686']";
 public static final String AER_LastName = "//input[@id='q38494']";
-public static final String AER_Birthdate = "//input[@id='q33688']";
-public static final String AER_Email = "//input[@id='q33689']";
-public static final String AER_Scode = "//input[@id='q33690']";
+public static final String AER_Birthdate = "//input[@id='q44551']";
+public static final String AER_Email = "//input[@id='q44552']";
+public static final String AER_Scode = "//input[@id='q44553']";
 public static final String AER_NotAttened = "//img[contains(@src,'will_not_attend')]";
 public static final String AER_Register = "//img[contains(@src,'register_large')]";
-public static final String AER_UpdateMyInformation = "//img[contains(@src,'";
+public static final String AER_UpdateMyInformation = "//img[contains(@alt,'";
 public static final String AER_RegisterOrNotAttened = "//img[contains(@src,'register_large') or contains(@src,'register_large') or contains(@src,'update_my_information')]";
 //#**********************************************************#
 //#	 Webcenter - Add/Edit Group  - Page
@@ -1625,7 +1625,7 @@ public static final String CNT_Password = "clearTextPwd";
 public static final String CNT_LoginBtn = "loginBtn";
 public static final String CNT_WelPageTitle = "//span[text()='Contacts Overview']";
 public static final String CNT_SearchFrstName = "firstname";
-public static final String CNT_SearchTopBtn = "searchTop";
+public static final String CNT_SearchTopBtn = "searchBottom";
 //#**********************************************************#
 //#	 Regestrant Details - Page
 //#**********************************************************#

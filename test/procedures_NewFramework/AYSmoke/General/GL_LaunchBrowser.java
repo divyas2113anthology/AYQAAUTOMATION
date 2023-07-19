@@ -232,7 +232,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 
 			}else if (url.contains("Admin")) {
 				if (environment.equalsIgnoreCase("USQA")) {
-					envirurl = "https://aybus.hobsonsemt.net/admin/Admin/login.aspx";
+					envirurl = "https://aybus.conqa.askadmissionsqa.net/admin";
 					//envirurl = "http://IAD1PW001:8078";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "";
@@ -243,7 +243,7 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 				}
 			}else if (url.contains("sso")) {
 				if (environment.equalsIgnoreCase("USQA")) {
-					envirurl = "https://aybus.hobsonsemt.net/sso/Sso/Login";
+					envirurl = "https://aybus.conqa.askadmissionsqa.net/sso/sso"; // change url by saran kumar july 10
 					//envirurl = "https://smalhotra.askadmissions.net/sso/Sso/Login?ReturnUrl=%2fsso%2fsso";
 				}else if (environment.equalsIgnoreCase("UKQA")) {
 					envirurl = "";

@@ -7,6 +7,11 @@ import org.testng.annotations.Test;
 
 import processor.CommonSeleniumActions;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Connect_AddUser_Input extends CommonSeleniumActions implements OR {
 	
 	@Test(description="This procedure is used to fill all required details in ADD USER page")
@@ -25,11 +30,17 @@ public class Connect_AddUser_Input extends CommonSeleniumActions implements OR {
 			String savecancel = testdata[7];
 			
 			Reporter.log("Input Test Data was retrieved for 'Add User' Page");
+			Date date = new Date();
+			DateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+
+			String useridcreated = userid+dateFormat.format(date)+ Calendar.getInstance().getTimeInMillis();
 
 			if (!userid.equals("")) {
-				Reporter.log("Step 1 - Enter the User id as ["+userid+"]");
-				sendKeys(attributeName_xpath, MML_userid, userid);
+
+				Reporter.log("Step 1 - Enter the User id as ["+useridcreated+"]");
+				sendKeys(attributeName_xpath, MML_userid, useridcreated);
 				waitForPageToLoadWebdriver();
+				Runtimedatawrite(useridcreated,userid);
 			}
 			if (!firstname.equals("")) {
 				Reporter.log("Step 2 - Enter the First Name as ["+firstname+"]");

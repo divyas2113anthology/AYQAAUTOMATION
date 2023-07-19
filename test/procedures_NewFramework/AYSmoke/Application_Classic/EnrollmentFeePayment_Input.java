@@ -31,6 +31,7 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 					//clickWebdriver(attributeName_xpath, "//td[font/label[contains(text(),'"+paymentmethod+"')]]/preceding-sibling::td/font/input[@type='radio']");
 					waitForElementPresentWebdriver(attributeName_xpath, "//label[contains(text(),'"+paymentmethod+"')]", paymentmethod);
 					clickWebdriver(attributeName_xpath, "//label[contains(text(),'"+paymentmethod+"')]");
+					clickWebdriver(attributeName_xpath,"//*[@id='AppFeeAmount3']");
 				}
 				if (!returnpaycontinue.equals("")) {
 					Reporter.log("Step 2 - Click on '"+returnpaycontinue+"' button");
@@ -39,6 +40,7 @@ public class EnrollmentFeePayment_Input extends CommonSeleniumActions implements
 						waitForPageToLoadWebdriver();
 					}else if (returnpaycontinue.equalsIgnoreCase("pay & continue")) {
 						clickWebdriver(attributeName_xpath, EFP_PayAndContinue);
+						waitForPageToLoadWebdriver();
 						alertAccept();
 						waitForPageToLoadWebdriver();
 					}

@@ -112,6 +112,7 @@ public class WC_RegistrantDetails_Input  extends CommonSeleniumActions implement
 					waitForElementPresentWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]", button);
 					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation+button+"')]");
 					waitForPageToLoadWebdriver();
+
 				}
 			}
 			

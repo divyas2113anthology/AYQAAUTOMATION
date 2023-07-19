@@ -18,13 +18,23 @@ public class CRM_Logout_Input extends CommonSeleniumActions implements OR {
 		String logout = parameterValuesArray[0];
 		Reporter.log("Input Test Data was retrieved for 'Connect Login' page");
 		if (!logout.equals("")) {
-			Reporter.log("Step 1 - Click on 'Logout' Button");
-			mouseOverWebdriver(attributeName_xpath,"//div[text()='jyothsna reddy1']");
-			mouseOverWebdriver(attributeName_linktext,logout);
-			waitForElementPresentWebdriver(attributeName_linktext, logout, logout);
-			clickWebdriver(attributeName_linktext, logout);
-			waitForPageToLoadWebdriver();
+			if (logout.equalsIgnoreCase("logout") ) {
+				Reporter.log("Step 1 - Click on 'Logout' Button");
+				mouseOverWebdriver(attributeName_xpath,"//div[text()='jyothsna reddy1']"); //change xpath by saran kumar 10th july 2023
+				mouseOverWebdriver(attributeName_xpath,"//a[text()='Logout']");
+				waitForElementPresentWebdriver(attributeName_xpath,"//a[text()='Logout']", logout);
+				clickWebdriver(attributeName_xpath,"//a[text()='Logout']");
+				waitForPageToLoadWebdriver();
+			} else if (logout.equalsIgnoreCase("Logout_jyothsna reddy")) { // add new code and xpath by saran kumar 10 july 2023
+				mouseOverWebdriver(attributeName_xpath,"//div[text()='jyothsna reddy']");
+				mouseOverWebdriver(attributeName_xpath,"//a[text()='Logout']");
+				waitForElementPresentWebdriver(attributeName_xpath,"//a[text()='Logout']", logout);
+				clickWebdriver(attributeName_xpath,"//a[text()='Logout']");
+				waitForPageToLoadWebdriver();
+			}
+
 		}
+
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());
 		}

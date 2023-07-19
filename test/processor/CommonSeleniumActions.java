@@ -4248,6 +4248,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 	}
 
+	public static void scrollDown(WebDriver driver, int pixels) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, " + pixels + ");");
+	}
+
 	public static void captureScreenshot(String screenshotName)
 	{
 		File screenshot;

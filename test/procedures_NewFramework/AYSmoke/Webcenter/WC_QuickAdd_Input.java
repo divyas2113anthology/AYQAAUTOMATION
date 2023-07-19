@@ -123,8 +123,8 @@ public class WC_QuickAdd_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdemailaddress.equals("")) {
 			Reporter.log("Step 14 - Enter Email address as ("+pdemailaddress+")");
-			String Emailaddresspd = getElementIDbyLabel("Email address",PD_Emailaddress);
-			sendKeys(attributeName_xpath,Emailaddresspd,pdemailaddress);
+		//	String Emailaddresspd = getElementIDbyLabel("Email address",PD_Emailaddress);
+			sendKeys(attributeName_xpath,"//*[@id='q25424']",pdemailaddress); // change xpath saran kumar july 2023 10
 		}
 		if (!pullquestion.equals("")) {
 			Reporter.log("Step 15 - Enter Pull Question as ("+pullquestion+")");

@@ -111,14 +111,55 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     WebElement element1 = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
 
 
+                } else if (emailsubject.equalsIgnoreCase("TestingMailTemplate")) {
+                    waitForPageToLoad();
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'TestingMailTemplate')])[1]");
+                    sleep(5);
+                    scrollDown(driver, 450);
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+
+                } else if (emailsubject.equalsIgnoreCase("account has been"))  {
+                    waitForPageToLoad();
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(200, 850);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+
+
                 }
 
-            }
 
+            } else if (emailsubject.equalsIgnoreCase(emailsubject))  {
+                    waitForPageToLoad();
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+
+
+
+                }
             if (!verifycontents.equals("")) {
-                if (verifycontents.equalsIgnoreCase("It is important for all new users to attend training in order to learn how to use the system effectively"))
-                    ;
-                {
+                if (verifycontents.equalsIgnoreCase("It is important for all new users to attend training in order to learn how to use the system effectively")) {
                     WebElement element1 = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
                     Reporter.log("About to verify Contents");
                     String text1 = element1.getText();
@@ -129,11 +170,100 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     verifyTextContains(verifymsg, "important", verifymsg);
 
                 }
+                else if (verifycontents.equalsIgnoreCase("Dear")) {
+                    Reporter.log("Step 5 - Verify ");
+                    waitForPageToLoad();
+                    WebElement element1 = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("About to verify Contents");
+                    String text1 = element1.getText();
+                    String verifymsg = text1.substring(0, 4);
+                    System.out.println(verifymsg);
+
+                    //    verifyText(verifymsg, "It is important for all new users to attend training in order to learn how to use the system effectively", verifymsg);
+                    verifyTextContains(verifymsg, "Dear", verifymsg);
+
+                } else if (verifycontents.equalsIgnoreCase("click here")) {
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(100, 236);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+
+
+
+                } else if (verifycontents.equalsIgnoreCase("Click Here to Update")) {
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(220, 390);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+                } else if (verifycontents.equalsIgnoreCase("Decline")) {
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'read')]//span[contains(text(),'Event Invitation Email')])[1]");
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+
+
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(100, 236);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+                } else if (verifycontents.equalsIgnoreCase("click here to access your recommendations")) {
+
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(715, 1100);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+                    
+                }
+
+
             }
+
+
+
+
+
 
             if (!logout.equals("")) {
                 if (logout.equalsIgnoreCase("logout")) {
-
+clickWebdriver(attributeName_xpath,"//span[@class='m-auto']");
+clickWebdriver(attributeName_xpath,"//*[@id='dropdown-36']/div[2]/ul/li[8]/div/button");
                 }
 
             }

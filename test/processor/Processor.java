@@ -104,9 +104,10 @@ public class Processor {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("test-type");
                 options.addArguments("disable-popup-blocking");
-                options.addArguments("--disable-extensions");
+               options.addArguments("--disable-extensions");
                 //options.addArguments("--disable-features=VizDisplayCompositor");
               driver = new ChromeDriver(options);
+
                 break;
             case "safari":
                 driver = new SafariDriver();

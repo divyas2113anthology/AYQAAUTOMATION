@@ -30,7 +30,10 @@ public class REC_PreviewSubmit_Input extends CommonSeleniumActions implements OR
 				clickWebdriver(attributeName_xpath, CI_BackBtn);
 				waitForPageToLoadWebdriver();
 			}else if (gobacksubmit.equalsIgnoreCase("Submit")) {
-				clickWebdriver(attributeName_xpath, PAS_SubmitBtn);
+				clickWebdriver(attributeName_xpath,"//*[@id=\"rec-nav\"]/ul/li[6]/a");
+				waitForPageToLoadWebdriver();
+
+				clickWebdriver(attributeName_xpath, "(//a[contains(text(),'Submit')])[2]"); //xpth change by saran kumar jun 2023
 			}
 		}
 		} catch (Exception e) {			

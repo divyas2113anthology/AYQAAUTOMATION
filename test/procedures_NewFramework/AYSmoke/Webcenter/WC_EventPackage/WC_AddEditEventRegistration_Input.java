@@ -27,28 +27,28 @@ public class WC_AddEditEventRegistration_Input extends CommonSeleniumActions imp
 			waitForElementPresentWebdriver(attributeName_xpath, AER_RegisterOrNotAttened, "Register Button or Not Attened Button");
 			if (!firstname.equals("")) {
 				Reporter.log("Step 1 -Enter the First Name as ("+firstname+")");
-				String FirstName = getElementIDbyLabelContainsusingXpathWebdirver("First Name", AER_FirstName);
-				sendKeys(attributeName_xpath, FirstName, firstname);
+			//	String FirstName = getElementIDbyLabelContainsusingXpathWebdirver("First Name", AER_FirstName);
+				sendKeys(attributeName_xpath, "(//input[@type='text'])[1]", firstname);
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 2 -Enter the Last Name as ("+lastname+")");
-				String LastName = getElementIDbyLabelContainsusingXpathWebdirver("Last Name", AER_LastName);
-				sendKeys(attributeName_xpath,LastName , lastname);
+				//String LastName = getElementIDbyLabelContainsusingXpathWebdirver("Last Name", AER_LastName);
+				sendKeys(attributeName_xpath,"(//input[@type='text'])[2]" , lastname);
 			}
 			if (!birthdate.equals("")) {
 				Reporter.log("Step 3 -Enter the Birth Date as ("+birthdate+")");
-				String BirthDate = getElementIDbyLabelContainsusingXpathWebdirver("Birth Date", AER_Birthdate);
-				sendKeys(attributeName_xpath,BirthDate , birthdate);
+				//String BirthDate = getElementIDbyLabelContainsusingXpathWebdirver("Birth Date", AER_Birthdate);
+				sendKeys(attributeName_xpath,"(//input[@type='text'])[3]" , birthdate);
 			}
 			if (!email.equals("")) {
 				Reporter.log("Step 4 -Enter the Email as ("+email+")");
-				String Email = getElementIDbyLabelContainsusingXpathWebdirver("Email Address", AER_Email);
-				sendKeys(attributeName_xpath,Email , email);
+				//String Email = getElementIDbyLabelContainsusingXpathWebdirver("Email Address", AER_Email);
+				sendKeys(attributeName_xpath,"(//input[@type='text'])[4]" , email);
 			}
 			if (!scode.equals("")) {
 				Reporter.log("Step 5 -Enter the Scode as ("+scode+")");
-				String Scode = getElementIDbyLabelContainsusingXpathWebdirver("Scode", AER_Scode);
-				sendKeys(attributeName_xpath,Scode , scode);
+				//String Scode = getElementIDbyLabelContainsusingXpathWebdirver("Scode", AER_Scode);
+				sendKeys(attributeName_xpath,"(//input[@type='text'])[5]" , scode);
 			}
 			if (!updateregister.equals("")) {
 				Reporter.log("Step 6 - Proceed to Click on ("+updateregister+") Button");
@@ -56,10 +56,10 @@ public class WC_AddEditEventRegistration_Input extends CommonSeleniumActions imp
 					clickWebdriver(attributeName_xpath, AER_NotAttened);
 					waitForPageToLoadWebdriver();
 				}else if (updateregister.equalsIgnoreCase("Register")) {
-					clickWebdriver(attributeName_xpath, AER_Register);
+					clickWebdriver(attributeName_xpath, "//img[contains(@alt,'Register for this event')]");
 					waitForPageToLoadWebdriver();
 				}else if (updateregister.equalsIgnoreCase("update_my_information")) {
-					clickWebdriver(attributeName_xpath, AER_UpdateMyInformation+updateregister+"')]");
+					clickWebdriver(attributeName_xpath, "//img[@alt='Update my information']");
 					waitForPageToLoadWebdriver();
 				}
 			}

@@ -47,7 +47,7 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 					
 				}
-				else
+				else if (firstname.equalsIgnoreCase(""))
 				{
 				String FirstName = Runtimedataread(firstname);
 				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
@@ -55,7 +55,14 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 				waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
 				clickWebdriver(attributeName_xpath,SAI_FirstName);
 				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
+				
+				} else if (firstname.equalsIgnoreCase("MahiTest")) {
+					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
+					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
+
 				}
+
 			}
 			if (!lastname.equals("")) {
 				Reporter.log("Step 4 - Enter the Last Name as ["+lastname+"]");

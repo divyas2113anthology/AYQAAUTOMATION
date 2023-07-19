@@ -24,17 +24,19 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 			String description = fpvdatarepo[1];
 			String emailsender = fpvdatarepo[2];
 			String emailfromfield = fpvdatarepo[3];
-			String subject = fpvdatarepo[4];
-			String message = fpvdatarepo[5];
-			String mailmergesection = fpvdatarepo[6];
-			String mailmergetag = fpvdatarepo[7];
-			String querytag = fpvdatarepo[8];
-			String decision = fpvdatarepo[9];
-			String filter = fpvdatarepo[10];
-			String conditionalmessage = fpvdatarepo[11];
-			String clickfiltername = fpvdatarepo[12];
-			String customtemplateactive = fpvdatarepo[13];
-			String savecancel = fpvdatarepo[14];
+			String to_email= fpvdatarepo[4];
+			String subject = fpvdatarepo[5];
+			String message = fpvdatarepo[6];
+			String mailmergesection = fpvdatarepo[7];
+			String mailmergetag = fpvdatarepo[8];
+			String querytag = fpvdatarepo[9];
+			String decision = fpvdatarepo[10];
+			String filter = fpvdatarepo[11];
+			String conditionalmessage = fpvdatarepo[12];
+			String clickfiltername = fpvdatarepo[13];
+			String customtemplateactive = fpvdatarepo[14];
+			String savecancel = fpvdatarepo[15];
+
 			Reporter.log("Verify Test Data was retrieved for 'Edit Email Template' page");
 			if (!decision.equals("")) {
 				//Reporter.log("Step 1 - Verify Message("+message+") was displayed correctly");
@@ -53,9 +55,18 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				sendKeys(attributeName_xpath, AMET_EmailSender, emailsender);
 			}
+
 			if (!emailfromfield.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
 				sendKeys(attributeName_xpath, AMET_EmailFrom, emailfromfield);
+			}
+
+			if (!to_email.equals("")){
+				waitForElementPresentWebdriver(attributeName_xpath,"//input[@id='EmailToOther']",to_email);
+				clickWebdriverWithCoordinates(attributeName_xpath,"//input[@id='EmailToOther']");
+				sendKeys(attributeName_xpath,"//input[@id='TextEmailTo']",to_email);
+				clickWebdriver(attributeName_xpath,"//*[@id='DonotsendFlag']");
+
 			}
 			if (!subject.equals("")) {
 				//Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
@@ -116,6 +127,8 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 				waitForElementPresentWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]",savecancel);
 				clickWebdriver(attributeName_xpath, WC_AddDelMoveToFolder+savecancel+"')]");
 			}
+
+
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());
 		}

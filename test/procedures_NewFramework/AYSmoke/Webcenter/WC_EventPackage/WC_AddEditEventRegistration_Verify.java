@@ -26,6 +26,7 @@ public class WC_AddEditEventRegistration_Verify extends CommonSeleniumActions im
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				waitForPageToLoadWebdriver();
 				//verifyTextPresent(successmessage);
+				verifyTextContains(successmessage,successmessage,"//*[@id=\"tableInfo\"]/tbody/tr/td/font[1]");
 			}
 			if (!closewindow.equals("")) {
 				Reporter.log("Step 2 - Proceed to close the window");
@@ -34,7 +35,7 @@ public class WC_AddEditEventRegistration_Verify extends CommonSeleniumActions im
 				//recentPopupCloseWebdriver();
 				closeWindowWebdriver();
 			}
-			driver.switchTo().window(parent);
+		//	driver.switchTo().window(parent);// removed for this tc 23863 by saran kumar
 			//selectMainWindowWebdriver();
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

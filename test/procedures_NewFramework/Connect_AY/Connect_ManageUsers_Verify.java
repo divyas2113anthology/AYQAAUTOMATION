@@ -28,9 +28,10 @@ public class Connect_ManageUsers_Verify extends CommonSeleniumActions implements
 				Reporter.log("Step 1 - Verify the User name ["+username+"]");
 				//waitForElementPresentVerifyText(uname, username, uname);
 				waitForPageToLoadWebdriver();
-				waitForElementPresentWebdriver(attributeName_xpath,MML_UNameVerify , username);
-				String username_verify= driver.findElement(By.xpath("//table[@id='userSearchResultsTable']/tbody/tr[1]/td[2]")).getText();
-				verifyElementContainsTextWebdriver(attributeName_xpath,MML_UNameVerify , username, username_verify);
+				String VerifyuserName = Runtimedataread(username);
+				waitForElementPresentWebdriver(attributeName_xpath,"(//td[@class='hideOverflowText ng-star-inserted'])[1]" , VerifyuserName);
+				String username_verify= driver.findElement(By.xpath("(//td[@class='hideOverflowText ng-star-inserted'])[1]")).getText();
+				verifyElementContainsTextWebdriver(attributeName_xpath,"(//td[@class='hideOverflowText ng-star-inserted'])[1]" , username, VerifyuserName);
 				//waitForElementVisibleVerifyContainsTextWebdriver(attributeName_xpath,MML_UNameVerify , username, uname);
 				//verifyElementPresentWebdriver(attributeName_xpath, MML_UNameVerify, str1);
 				//waitForElementPresentWebdriver(attributeName_xpath, CEUP_Lastname, lastnamepresent);

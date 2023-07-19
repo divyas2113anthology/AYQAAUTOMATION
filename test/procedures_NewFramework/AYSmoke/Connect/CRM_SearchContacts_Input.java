@@ -18,25 +18,41 @@ public class CRM_SearchContacts_Input extends CommonSeleniumActions implements O
 			String editfirstname = testdata[2];
 			Reporter.log("Input Test Data was retrieved for 'Search for Contacts' page");
 			if (!firstname.equals("")) {
-				try {
-					String FirstName = Runtimedataread(firstname);
-					Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
+				if(firstname.equalsIgnoreCase("TESTSMOKE"))
+				{
+
+					String Firstgivenname =Runtimedataread(firstname);
 					Thread.sleep(8000);
-					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
-					sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
-				}catch(Exception e){
-					Reporter.log("Step 1 - Enter the First Name as ("+firstname+") ");
-					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, firstname);
-					sendKeys(attributeName_id, CNT_SearchFrstName, firstname);
+					waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, Firstgivenname);
+					sendKeys(attributeName_xpath, "//input[@id='firstname']", Firstgivenname);
+
+				} else if (!firstname.equalsIgnoreCase("")) {
+
+					try {
+						String FirstName = Runtimedataread(firstname);
+						Reporter.log("Step 1 - Enter the First Name as ("+FirstName+") ");
+						Thread.sleep(8000);
+						waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, FirstName);
+						sendKeys(attributeName_id, CNT_SearchFrstName, FirstName);
+					}catch(Exception e){
+						Reporter.log("Step 1 - Enter the First Name as ("+firstname+") ");
+						waitForElementPresentWebdriver(attributeName_id, CNT_SearchFrstName, firstname);
+						sendKeys(attributeName_id, CNT_SearchFrstName, firstname);
+					}
 				}
+
+
 
 			}
 			if (!button.equals("")) {
 				Reporter.log("Step 2 - Proceed to Click on ("+button+") Link");
 				waitForElementPresentWebdriverWait(attributeName_id, CNT_SearchTopBtn, button);
-				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
 				waitForPageToLoadWebdriver();
 				Thread.sleep(8000);
+				clickWebdriver(attributeName_id, CNT_SearchTopBtn);
+				sleep(5);
+				waitForPageToLoadWebdriver();
+
 				
 			}
 			if (!editfirstname.equals("")) {

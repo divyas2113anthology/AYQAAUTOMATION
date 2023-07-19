@@ -59,7 +59,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 		}
 		if (password.equals("Auto123+")) {
 			Reporter.log("Step 2 - Proceed to Enter PIN as ("+password+")");		
-			sendKeys(attributeName_cssselector, "UL_PswdField", password);
+			sendKeys(attributeName_xpath, "//input[@id='ay-password']", password);
 
 		} else if (password.equalsIgnoreCase("P@ssw0rd")) {
 			sendKeys(attributeName_xpath, "//input[@id='ay-password']", password);
@@ -69,7 +69,7 @@ public class FC_UserLogin_Input extends CommonSeleniumActions implements OR {
 			String generatepassword = Runtimedataread(password);
 			Reporter.log("Step 4 - Proceed to Enter PIN as ("+generatepassword+")");		
 			//type(UL_PswdField, generatepassword);
-			sendKeys(attributeName_cssselector, "UL_PswdField", generatepassword);
+			sendKeys(attributeName_xpath, "//input[@id='ay-password']", generatepassword);
 			
 
 		}

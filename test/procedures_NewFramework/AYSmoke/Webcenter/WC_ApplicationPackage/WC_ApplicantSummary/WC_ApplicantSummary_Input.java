@@ -300,8 +300,10 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
                 waitForElementPresentWebdriver(attributeName_xpath, AS_UnSubmit, UnsubmitApplicant);
                 clickWebdriver(attributeName_xpath, AS_UnSubmit);
                 alertAccept();
-                switchToOldWindow();
+//                switchToOldWindow();//removed for this tc 24010 by saran kumar
                 //recentPopupClose();
+                //clickWebdriver(attributeName_xpath,"//img[@alt='Close Window']");
+
             }
             if (!ClearCompleteDate.equals("")) {
                 Reporter.log("Step 17- Proceed to click the link  [" + ClearCompleteDate + "] to un-submit the applicant");

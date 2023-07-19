@@ -25,6 +25,7 @@ public class REC_Submitted_Verify extends CommonSeleniumActions implements OR {
 //				verifyElementContainsTextWebdriver(attributeName_xpath, "//td[@class='BasePageFont']", message, "System Message");
 				waitForPageToLoadWebdriver();
 				//verifyTextPresent(message);
+				verifyTextContains("Your recommendationsdt for Test Smoke","Your recommendationsdt for Test Smoke","//*[@id=\"finalRecSuccess\"]/text()[2]");
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

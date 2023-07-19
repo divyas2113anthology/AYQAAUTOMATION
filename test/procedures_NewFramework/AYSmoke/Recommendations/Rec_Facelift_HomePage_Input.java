@@ -26,7 +26,8 @@ public class Rec_Facelift_HomePage_Input extends CommonSeleniumActions implement
 			}
 			if (!start_Rec.equals("")) {
 				Reporter.log("Step 2 - Click on the link ["+start_Rec+"]");
-				clickWebdriver(attributeName_xpath, RF_Start_Rec);
+				clickWebdriver(attributeName_xpath, RF_Start_Rec);//
+
 				waitForPageToLoadWebdriver();
 				try{
 					alertAccept();

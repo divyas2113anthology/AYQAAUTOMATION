@@ -28,15 +28,16 @@ public class WC_RecommendationSearchResult_Input extends CommonSeleniumActions i
 			
 			if (!applicantcheck.equals("")) {
 				Reporter.log("Perform the operation to check the checkbox as ["+applicantcheck+"]");
-				waitForElementPresentWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+applicantcheck+"')]]/preceding-sibling::td/input[@type='checkbox']", applicantcheck);
-				checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'"+applicantcheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
+				waitForElementPresentWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+applicantcheck+"')]/ancestor-or-self::td[1]/preceding-sibling::td/input[@type='checkbox'])[1]", applicantcheck); //xpath change by saran kumar 2023 july
+				checkWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+applicantcheck+"')]/ancestor-or-self::td[1]/preceding-sibling::td/input[@type='checkbox'])[1]");
 			}	
 			if (!applicantclick.equals("")) {
 				Reporter.log("Click on Rule name ["+applicantclick+"]");
 				waitForElementPresentWebdriver(attributeName_xpath, ES_ApplicantClick+applicantclick+"')]", applicantclick);
 				clickWebdriver(attributeName_xpath,ES_ApplicantClick+applicantclick+"')]" );
-				recentPopupSelectWebdriver("Recommendation");
-				waitForPageToLoadWebdriver();
+				recentPopupSelectWebdriver("RecommendationsDT");
+				//switchToWindowByTitle("RecommendationsDT Provider Information");
+					waitForPageToLoadWebdriver();
 			}
 			if (!selectaction.equals("")) {
 				Reporter.log("Select an action as ["+selectaction+"]");

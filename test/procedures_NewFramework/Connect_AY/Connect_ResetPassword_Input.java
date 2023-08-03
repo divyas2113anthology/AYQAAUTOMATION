@@ -25,11 +25,11 @@ public class Connect_ResetPassword_Input extends CommonSeleniumActions implement
 			if (!password.equals("")) {
 				Reporter.log("Step 1 - Enter Password as ("+password+")");
 				
-				sendKeys(attributeName_xpath,RP_password,password);
+				sendKeys(attributeName_xpath,"//tbody/tr/td/input[@id='clearTextPwd']",password);
 			}
 			if (!confirmpassword.equals("")) {
 				Reporter.log("Step 2 - Enter Confirm Password ("+confirmpassword+")");
-				sendKeys(attributeName_xpath,RP_ResetPwd,confirmpassword);
+				sendKeys(attributeName_xpath,"//tbody/tr/td/input[@id='confirm']",confirmpassword);
 			}
 			if (!okcancel.equals("")) {
 				Reporter.log("Step 3 - Click on ("+okcancel+") Button");

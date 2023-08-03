@@ -27,12 +27,22 @@ public class Connect_HomePage_Input extends CommonSeleniumActions implements OR 
 
 			if (!navigationlink.equals("")) {
 				Reporter.log("Step 2 - Click the link as ["+navigationlink+"]");
-				clickWebdriver(attributeName_xpath, "//div[text()='jyothsna reddy1']");
-				Thread.sleep(5000);
-				mouseOverWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
-				Thread.sleep(5000);
-				clickWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
-				waitForPageToLoadWebdriver();
+				if (navigationlink.equalsIgnoreCase("jyothsna reddy1")) {
+					clickWebdriver(attributeName_xpath, "//div[text()='jyothsna reddy1']");
+					Thread.sleep(5000);
+					mouseOverWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
+					Thread.sleep(5000);
+					clickWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
+					waitForPageToLoadWebdriver();
+				} else if (navigationlink.equalsIgnoreCase("Update Profile")) {
+					clickWebdriver(attributeName_xpath, "//div[text()='Test reddy']");
+					Thread.sleep(5000);
+					mouseOverWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
+					Thread.sleep(5000);
+					clickWebdriver(attributeName_xpath, "//a[text()='Update Profile']");
+					waitForPageToLoadWebdriver();
+
+				}
 			}
 			
 		} catch (Exception e) {

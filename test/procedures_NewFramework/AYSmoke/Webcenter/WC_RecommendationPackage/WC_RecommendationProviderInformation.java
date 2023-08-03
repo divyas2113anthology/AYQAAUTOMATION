@@ -42,7 +42,9 @@ public class WC_RecommendationProviderInformation extends CommonSeleniumActions 
 			if (!verifystatus.equals("")) {
 				Reporter.log("Verify the Element is not present as ["+verifystatus+"]");
 				waitForElementPresentWebdriverWait(attributeName_xpath,RD_CloseWindow,closewindow);
-				verifyElementContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+verifystatus+"')]",verifystatus,verifystatus);
+				//verifyElementContainsTextWebdriver(attributeName_xpath, RD_RecStartDate+verifystatus+"')]",verifystatus,verifystatus);
+				verifyElementContainsTextWebdriver(attributeName_xpath,"//*[@id=\"Form1\"]/table/tbody/tr[4]/td/table/tbody/tr[1]/td/text()[2]","provider below is still working on his/her",verifystatus);
+
 			}
 			
 			if (!recommendationstartdate.equals("")) {

@@ -26,29 +26,24 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Input Test Data was retrieved for 'Welcome' Page");
 //			writeFailure("Given Test Data["+yesno+"] either Incorrect or has not be Scripted ");
 			if (!weltopupdatelogout.equals("")) {
-				switchToDefaultContentWebdriver();// inculde due to this testcase [TC:72052]
-				Reporter.log("Step 1 - Click the link as [" + weltopupdatelogout + "]");
-				//waitForElementPresentWebdriverWait(attributeName_partiallinktext, weltopupdatelogout, weltopupdatelogout);
-				//    elementLocator="//a[@href='javascript:logout()']";
-				// elementName="logout";
+				if (weltopupdatelogout.equalsIgnoreCase("")) {
+					switchToDefaultContentWebdriver();// inculde due to this testcase [TC:72052]
+					Reporter.log("Step 1 - Click the link as [" + weltopupdatelogout + "]");
 
+					clickWebdriver(attributeName_xpath, "//td/a[text()='" + weltopupdatelogout + "']");
 
-				clickWebdriver(attributeName_xpath, "//td/a[text()='" + weltopupdatelogout + "']");
-//			}else {
-//
-//				clickWebdriver(attributeName_xpath, "//a[@href='javascript:logout()']");
-
-//				if(!weltopupdatelogout.equals("")) //Modified by Saran kumar 9_Nov_2022
-//				{
-//					clickWebdriver(attributeName_xpath, "//a[text()='"+weltopupdatelogout+"']");
-//
-//				}else{
-//					clickWebdriver(elementName,elementLocator);
 					System.out.println("Cookies cleared");
 					waitForPageToLoadWebdriver();
-				}
 
-				//driver.manage().deleteAllCookies();
+				} else if (weltopupdatelogout.equalsIgnoreCase("Reclogout")) {
+					//closeWindowWebdriver();
+					switchToOldWindow();
+					clickWebdriver(attributeName_xpath, "//table/tbody/tr/td/a[text()='logout']");
+
+				}
+			}
+
+			//driver.manage().deleteAllCookies();
 				//System.out.println("Cookies cleared");
 				//waitForPageToLoadWebdriver();
 				//driver.manage().deleteAllCookies();

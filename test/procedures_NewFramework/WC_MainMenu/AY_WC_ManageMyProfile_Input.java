@@ -47,8 +47,8 @@ public class AY_WC_ManageMyProfile_Input extends CommonSeleniumActions implement
 			if (!crm.equals("")) {
 				Reporter.log("Step 7 - Click on CRM to redirect to Connect Page");
 			
-				waitForElementPresentWebdriverWait(attributeName_xpath, WMMP_CRM, crm);
-				clickWebdriver(attributeName_xpath, WMMP_CRM);
+				waitForElementPresentWebdriverWait(attributeName_xpath, "//a[@title='Go To CRM']", crm);
+				clickWebdriver(attributeName_xpath, "//a[@title='Go To CRM']");
 				waitForPageToLoadWebdriver();
 			}
 			

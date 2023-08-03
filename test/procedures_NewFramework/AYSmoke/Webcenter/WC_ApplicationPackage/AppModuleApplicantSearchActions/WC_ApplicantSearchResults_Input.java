@@ -78,14 +78,16 @@ public class WC_ApplicantSearchResults_Input extends CommonSeleniumActions imple
 						recentPopupSelectWebdriver("Application Summary");
 					}
 					else if (clickname.equalsIgnoreCase("OfflineRec")) {
-						String ReadClickName = Runtimedataread(clickname);
-						if(ReadClickName.length() > 30){
-							ReadClickName = ReadClickName.substring(0,30 );
-							writeConsole(ReadClickName);
-						}
-						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
-						waitForPageToLoadWebdriver();
+						//String ReadClickName = Runtimedataread(clickname); //removed this for code this tc 70980 saran kumar july 2023
+ 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'OfflineRec')]");
 						recentPopupSelectWebdriver("Application Summary");
+//						if(ReadClickName.length() > 30){
+//							ReadClickName = ReadClickName.substring(0,30 );
+//							writeConsole(ReadClickName);
+//						}
+						//clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");
+						//waitForPageToLoadWebdriver();
+						//recentPopupSelectWebdriver("Application Summary");
 					}else if (clickname.equalsIgnoreCase("OLIVE")) {
 						String ReadClickName = Runtimedataread(clickname);
 						clickWebdriver(attributeName_xpath, "//a[contains(text(),'"+ReadClickName+"')]");

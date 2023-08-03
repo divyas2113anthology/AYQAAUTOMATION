@@ -328,7 +328,7 @@ public static final String EA_UploadMedia = "//input[@alt='Upload Media']";
 //public static final String FRP_Pin = "//input[@id='UserID']";
 public static final String FRP_Pin = "//input[@id='UserName']"; //input[contains(@id,'User')]";
 public static final String FRP_EmailAddre = "//input[@id='Email']";
-public static final String FRP_Search = "//input[@alt='search']";
+public static final String FRP_Search = "//input[@value='search']";
     public static final String Clas_FRP_Search = "//input[@id='ay-forgotSubmit']";
 //#**********************************************************#
 //# Personal Data Page - PD

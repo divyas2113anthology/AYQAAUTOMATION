@@ -39,7 +39,7 @@ public class WC_ManageTestScore_Input extends CommonSeleniumActions implements O
 			if (!testtypecheck.equals(""))//Added by Rahul Mehta on 25th March,2019
 			{
 				if(isElementPresent(attributeName_xpath,"//a[contains(text(),'ACT')]")) {
-					clickWebdriver(attributeName_xpath, "//a[contains(text(),'" + testtypecheck + "')]/preceding-sibling::input[@type='checkbox']");
+					clickWebdriver(attributeName_xpath, "//a[contains(text(),'ACT')]/ancestor::td//preceding-sibling::input[@type='checkbox']");
 				}
 				sleep(1);
 			}

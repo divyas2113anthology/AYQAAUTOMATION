@@ -2199,6 +2199,21 @@ public class CommonSeleniumActions extends Processor implements OR {
 
 		}
 	}
+	// This Function is used to mainwindow
+	public void Switchtomainwindow() {
+
+		//Get all the window handles in a set
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();
+		//iterate through your windows
+		while (it.hasNext()) {
+			String parent = it.next();
+			String newwin = it.next();
+			driver.switchTo().window(parent);
+
+
+		}
+	}
 
 	// This Function is used to Select Recently Opened Window or Popup without Window Name.
 	public void recentPopupSelect_without_window_nameWebdriver() throws Exception {

@@ -27,11 +27,11 @@ public class WC_ManageImportTemplate_Input extends CommonSeleniumActions impleme
 				Reporter.log("Step 1 - Perform the operation to check the checkbox as ["+checktemplatenamecheckbox+"]");
 				if (checktemplatenamecheckbox.equalsIgnoreCase("check")) {//Modified by Rahul Mehta on 26th March,2019
 					if(!template.equals("")) {
-						clickWebdriver(attributeName_xpath, "//td[a[contains(text(),'" +template+ "')]]/preceding-sibling::td/input[@type='checkbox']");
+						clickWebdriver(attributeName_xpath, "(//td/label/a[contains(text(),'"+template+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
 						sleep(2);
 					}
 				}else if (checktemplatenamecheckbox.equalsIgnoreCase("uncheck")) {
-					uncheckWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+checktemplatenamecheckbox+"')]]/preceding-sibling::td/input[@type='checkbox']");
+					uncheckWebdriverCheckbox(attributeName_xpath, "(//td/label/a[contains(text(),'"+template+"')]/ancestor::td/preceding-sibling::td/input[@type='checkbox'])[1]");
 				}
 			}			
 			if (!clicktemplatename.equals("")) {

@@ -5,9 +5,12 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -101,14 +104,17 @@ public class Processor {
                 driver = new FirefoxDriver(capabilitiesff);
                 break;
             case "googlechrome":
-                System.setProperty("webdriver.chrome.driver", "C:\\SeleniumScripts\\AYQAAutomation\\lib\\chromedriver.exe");
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("test-type");
-                options.addArguments("disable-popup-blocking");
-               options.addArguments("--disable-extensions");
-                //options.addArguments("--disable-features=VizDisplayCompositor");
-                WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager ON 11TH mAY 2023
-                driver = new ChromeDriver(options);
+//               System.setProperty("webdriver.chrome.driver", "C:\\Users\\SaranKumarK\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+//                ChromeOptions options = new ChromeOptions();
+//              options.setBinary("C:\\Users\\SaranKumarK\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
+////                options.addArguments("test-type");
+//                options.addArguments("disable-popup-blocking");
+//                options.addArguments("--disable-extensions");
+//                //options.addArguments("--disable-features=VizDisplayCompositor");
+//           //     WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager ON 11TH mAY 2023
+               //  driver = new ChromeDriver(options);
+               ChromeDriverManager.getInstance(DriverManagerType.CHROME).driverVersion("116.0.5845.96").setup(); //Modified by saran kumar on 25 aug 2023
+                driver = new ChromeDriver(); //Modified by saran kumar on 25 aug 2023
                 System.out.println("driver - '" + driver + "'");
 
 
@@ -154,13 +160,13 @@ public class Processor {
             default:
                 writeFailure("Invalid Browser Name(" + browser + ")");
         }
-       driver.get("http://www.google.com");
+        driver.get("http://www.google.com");
         driver.manage().window().maximize();
         String outlocadrive = outlocation.substring(0, outlocation.lastIndexOf("\\"));
         String outlocarepo = outlocation.substring(0, outlocadrive.lastIndexOf("\\"));
         String autoframework = outlocation.substring(0, outlocarepo.lastIndexOf("\\"));
         testData = readCSVFile(autoframework + "\\csv\\" + testName + ".csv");
-System.out.println("End of the 'startseleniumserver' function");
+        System.out.println("End of the 'startseleniumserver' function");
     }
 
 
@@ -257,7 +263,7 @@ System.out.println("End of the 'startseleniumserver' function");
 
     @AfterSuite(alwaysRun = true)
     public void shutdownseleniumserver(ITestContext result) throws Exception {
-       // System.out.println("comes to after suite");
+        // System.out.println("comes to after suite");
         Set<String> set = driver.getWindowHandles();
         Iterator<String> itr = set.iterator();
 
@@ -338,6 +344,7 @@ System.out.println("End of the 'startseleniumserver' function");
             System.out.println("Writing CSV Write Exeception :" + e.getMessage());
         }
     }
+
     //--------------------BELOW CODE IS TO KILL THE TASK-----------------------------------------------
     private static final String TASKLIST = "tasklist";
     private static final String KILL = "taskkill /F /IM ";

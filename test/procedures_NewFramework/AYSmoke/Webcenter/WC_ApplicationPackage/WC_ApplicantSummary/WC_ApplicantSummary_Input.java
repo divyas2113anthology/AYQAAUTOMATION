@@ -318,7 +318,7 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
             if (!ViewSummary.equals(""))//Added by Rahul Mehta on 25th ,2019
             {
                 Reporter.log("Step 17- Click on View Summary ");
-                clickWebdriver(attributeName_xpath, "//tr[@id='TestScores']//b[text()='View Summary']");
+                clickWebdriver(attributeName_xpath, "//tr[@id='TestScores']/descendant::b[contains(text(),'View Summary')]"); //change by saran kumar 14 aug 2023
 
             }
 

@@ -21,6 +21,12 @@ public class Connect_ResetPwdPage_Input extends CommonSeleniumActions implements
 			String okcancel=testdata[2];
 			
 			Reporter.log("Input Test Data was retrieved for 'Reset Password' Page");
+			if (!username.equals("")) {
+				Reporter.log("Step 1 - Enter username address as ["+username+"]");
+				sendKeys(attributeName_xpath,  "//input[@id='USERNAME']", username);
+				waitForPageToLoadWebdriver();
+			}
+
 
 			if (!emailid.equals("")) {
 								

@@ -51,9 +51,11 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 			}
 
 							
-			if(!savecancelclose.equals("")){
-				Reporter.log("Click on the button");
-				clickWebdriver(attributeName_xpath, AS_TestScoreSave);
+			if(!savecancelclose.equals("")) {
+
+				if (savecancelclose.equalsIgnoreCase("save")) {
+					Reporter.log("Click on the button");
+					clickWebdriver(attributeName_xpath, AS_TestScoreSave);
 
 //				if(!close.equals("close")) { // Removed for this 70522 tc by saran kumar
 //					Reporter.log("Click on the button");
@@ -61,14 +63,19 @@ public class WC_ManageTestScoreACT_Input extends CommonSeleniumActions implement
 //					clickWebdriver(attributeName_xpath, AS_CloseWindow);
 //				} // Removed for this 70522 tc by saran kumar
 
-				//recentPopupCloseWebdriver();
-				//switchToSecondPopupWindow();
-				//waitForPageToLoadWebdriver();
-				//driver.switchTo().window(AppSummaryWindowName); // Removed for this 70522 tc by saran kumar
+					//recentPopupCloseWebdriver();
+					//switchToSecondPopupWindow();
+					//waitForPageToLoadWebdriver();
+					//driver.switchTo().window(AppSummaryWindowName); // Removed for this 70522 tc by saran kumar
+				} else if (savecancelclose.equalsIgnoreCase("Save+")) {
+					Reporter.log("Click on the button");
+					clickWebdriver(attributeName_xpath, AS_TestScoreSave);
+					driver.close();
+					switchToSecondPopupWindow();
+				}
+				//switchToDefaultContentWebdriver();
+
 			}
-			//switchToDefaultContentWebdriver();
-
-
 			
 		} catch (Exception e) {
 

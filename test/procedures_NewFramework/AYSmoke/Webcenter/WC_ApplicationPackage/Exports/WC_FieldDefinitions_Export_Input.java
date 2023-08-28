@@ -145,7 +145,7 @@ public class WC_FieldDefinitions_Export_Input extends CommonSeleniumActions impl
 				Reporter.log("Click the item action as ["+itemaction+"]");
 				if (itemaction.equalsIgnoreCase("Add Item")) {
 					waitForElementPresentWebdriver(attributeName_xpath, FD_AddItem, itemaction);
-					clickWebdriverWithCoordinates(attributeName_xpath, FD_AddItem);
+				//	clickWebdriverWithCoordinates(attributeName_xpath, FD_AddItem); // by saran kumar removed code selenium update
 				}else if (itemaction.equalsIgnoreCase("Insert Item")) {
 					clickWebdriver(attributeName_name, FD_InsertItem);
 				}else if (itemaction.equalsIgnoreCase("Remove Item")) {

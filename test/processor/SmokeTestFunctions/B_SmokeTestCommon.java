@@ -13,6 +13,7 @@ import processor.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -494,6 +495,34 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
     public void AY_Application_logout() throws Exception {
         waitForPageToLoad();
         clickWebdriver(attributeName_xpath, logout);
+    }
+
+    public void Search_for_submitted_application() throws Exception {
+
+        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationsystem);
+        clickWebdriver(attributeName_xpath, wcapplicationqa);
+        clickWebdriver(attributeName_xpath, "//*[@id='oMenu_oMenu5']");
+        clickWebdriver(attributeName_xpath, "(//select[@class='FormFields'])[2]");
+        clickWebdriver(attributeName_xpath, "//*[@id='contentCol']/descendant::table/following::tr/td/select[@name='Days']/option[4]");
+        clickWebdriver(attributeName_xpath, "(//*[@id='contentCol']/descendant::td/following::input[@alt='submit'])[2]");
+
+        clickWebdriver(attributeName_xpath, "(//*[@id=\"example\"]/descendant::td/label/a[contains(text(),'AY_Smoke')])[1]");
+
+        switchToSecondPopupWindow();
+        sendKeys(attributeName_xpath, "//*[@id='CompPubDate']", "01/01/2016");
+
+        clickWebdriver(attributeName_xpath, "//select[@name='Decision']");
+        clickWebdriver(attributeName_xpath, "//select[@name='Decision']/option[4]");
+        clickWebdriver(attributeName_xpath, "//select[@name='DecisionReason']");
+        clickWebdriver(attributeName_xpath, "//select[@name='DecisionReason']/option[2]");
+        waitForPageToLoad();
+        sendKeys(attributeName_xpath, "//input[@id='DecDate']", "01/01/2016");
+        sendKeys(attributeName_xpath, "//*[@id=\"DecPubDate\"]", "01/01/2020");
+        sendKeys(attributeName_xpath, "//*[@id=\"EnrollDeadlineDate\"]", "01/01/2030");
+        clickWebdriver(attributeName_xpath, "//tr[@class='FormText']/descendant::td/a/img[@alt='Save']");
+
+
     }
 
 

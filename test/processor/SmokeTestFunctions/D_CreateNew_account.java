@@ -34,7 +34,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             waitForPageToLoad();
             sendKeys(attributeName_xpath, email, "sdfghjkl@gmail.com");
             sendKeys(attributeName_xpath, cnfemail, "sdfghjkl@gmail.com");
-            sendKeys(attributeName_xpath, dob, "11/07/1995");
+            sendKeys(attributeName_xpath, dob, "07/02/1990");
             sendKeys(attributeName_xpath, ZIP, "11995");
             sendKeys(attributeName_xpath, pwd, "Auto123+");
             sendKeys(attributeName_xpath, ConPwd, "Auto123+");
@@ -57,10 +57,7 @@ public class D_CreateNew_account extends CommonSeleniumActions implements Smoke_
             waitForPageToLoad();
             Reporter.log("Checking privacy policy Check Box");
             clickWebdriver(attributeName_xpath, checkpvt);
-sleep(20);
-            ////UK CHANGES//////
-            sleep(10
-            );
+
             clickWebdriver(attributeName_xpath, chepresub);
             waitForPageToLoad();
 
@@ -84,13 +81,13 @@ sleep(20);
 
             sendKeys(attributeName_xpath, plfstname, "AY");
             sendKeys(attributeName_xpath, pllstname, "Smoke1");
-            sendKeys(attributeName_xpath, pldob, "01/01/1990");
+            sendKeys(attributeName_xpath, pldob, "07/02/1990");
             sendKeys(attributeName_xpath, plnum, "245-52-5478");
 
             waitForPageToLoadWebdriver();
 
             selectByVisibleTextWebdriver(attributeName_xpath, drpdwngdn, "Male");
-            sendKeys(attributeName_xpath, plnumber, "987-654-3210");
+            sendKeys(attributeName_xpath, plnumber, "123-123-1234");
 
             clickWebdriver(attributeName_xpath, plcntry);
             waitForPageToLoadWebdriver();
@@ -103,6 +100,9 @@ sleep(20);
             selectByVisibleTextWebdriver(attributeName_xpath, plstate, "Michigan");
 
             clickWebdriver(attributeName_xpath, plgrd);
+
+            clickWebdriver(attributeName_xpath,"//*[@id='s40207']/option[3]");
+            sendKeys(attributeName_xpath,"//input[@id='q38835']","Test");
 
             sendKeys(attributeName_xpath, esywhoutattch, "ertyuklbvcdrtyukjhgfdsertyuiolkjh");
 
@@ -145,7 +145,7 @@ sleep(20);
             Reporter.log("About to click Delete button");
 
             recentPopupCloseWebdriver();
-
+waitForPageToLoadWebdriver();
             clickWebdriver(attributeName_xpath, fclkdel1);
 
             alertAccept();
@@ -183,7 +183,7 @@ sleep(20);
 
 
             recentPopupCloseWebdriver();
-
+waitForPageToLoadWebdriver();
             clickWebdriver(attributeName_xpath, fdelatt);
 
             alertAccept();
@@ -210,6 +210,7 @@ sleep(20);
 
 
             sendKeys(attributeName_xpath, Regsefst, "Test01");
+            sendKeys(attributeName_xpath,"//input[@id='q40230']","auto");
             sendKeys(attributeName_xpath, Reglst, "Smoke");
             clickWebdriver(attributeName_xpath, RegSave);
             waitForPageToLoad();
@@ -465,7 +466,7 @@ sleep(20);
 
 
             recentPopupCloseWebdriver();
-
+waitForPageToLoadWebdriver();
             clickWebdriver(attributeName_xpath, fdelatt);
 
             alertAccept();

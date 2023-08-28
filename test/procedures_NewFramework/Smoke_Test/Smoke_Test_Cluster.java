@@ -63,6 +63,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
             String AY_App_creation_Classic;
             String ay_application_classicurl = null;
             String Dynamic_section;
+            String Search_for_submitted_application;
 
 
             String concludingTextPrintedInResults;
@@ -139,6 +140,9 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
                 BR_Triggering = strInputValuesArray[intInputValuesArrayIndex][9];
                 Reporter.log("ay_BR_Triggering - '" + BR_Triggering + "'");
+
+                Search_for_submitted_application =strInputValuesArray[intInputValuesArrayIndex][10];
+                Reporter.log("ay-search for submitted application - '" + Search_for_submitted_application + "'");
 
 
                 //Ay_app_creation
@@ -347,13 +351,12 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
 
                                 String uk = data[0];
                                 waitForPageToLoad();
-                                if (!uk.equals("lhrqa")) {
-                                    CreateNew_account.AY_App_creation_LHRQA(ay_applictionurl);
 
-                                } else {
+
+
                                     CreateNew_account.AY_App_creationSJCQA(ay_applictionurl);
 
-                                }
+
 
 
                             } catch (Exception e) {
@@ -449,10 +452,7 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 Reporter.log("");
                                 String uk = data[0];
                                 waitForPageToLoad();
-                                if (!uk.equals("lhrqa")) {
-
-                                    CreateNew_account_Classic_version.AY_App_creation_Classic_LHRQA(ay_application_classicurl);
-                                } else {
+                                if (!uk.equals("SJCQA")) {
 
 
                                     CreateNew_account_Classic_version.AY_App_creation_Classic_SJCQA(ay_application_classicurl);
@@ -575,6 +575,8 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                                 smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
                                 smokeTestCommon.Wc_Delete_BR_Triggering();
                                 smokeTestCommon.logoutAYWebCenter();
+                                smokeTestCommon.ayapplication_login(ay_applictionurl);
+
 
 
 
@@ -619,7 +621,59 @@ public class Smoke_Test_Cluster extends CommonSeleniumActions implements OR {
                             Reporter.log("");
                         }
 
-                        //Concluding function
+                        if (Search_for_submitted_application.equalsIgnoreCase("Yes")) {
+                            try {
+                                // This is for giving some empty line spaces in the report
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                smokeTestCommon.aYWebcenterLogin(strAYWebCenterUrl, strClientId, ayAdminUsername, ayAdminPassword);
+                                smokeTestCommon.Search_for_submitted_application();
+                            }
+
+                                 catch (Exception e) {
+                                    strExceptionMessage = e.getLocalizedMessage();
+                                    writeFailure(strExceptionMessage);
+                                } finally {
+                                    // Every mismatch in the function would be recorded in the report via. the
+                                    // 'writeFailure' function.  In the 'writeFailure' function, each of the
+                                    // mismatches would be appended to the 'global variable',
+                                    // 'globalFailureNotification'.  The consolidated list of failure(s),
+                                    // which would be present in 'globalFailureNotification', would be written
+                                    // as a table in 'Red' color.  After writing the failure(s), the
+                                    // 'globalFailureNotification' variable would again be set to "empty" to
+                                    // facilitate collection of failure(s) in other functions
+                                    if (globalFailureNotification.equals("")) {
+                                        Reporter.log("'globalFailureNotification' is empty");
+                                    } else {
+                                        Reporter.log("'globalFailureNotification' is not empty");
+                                        writeConsolidatedFailuresAsTable(globalFailureNotification);
+                                        // After writing the failures in a table, the 'globalFailureNotification' variable is set to "empty"
+                                        globalFailureNotification = "";
+                                        // We are also updating the value of the variable 'shouldScriptBeFailed'
+                                        // to 'Yes' to allow the script decide at the end whether or not to
+                                        // fail the procedure [Even a single error present in the entire
+                                        // script would cause the procedure to be failed]
+                                        shouldScriptBeFailed = "Yes";
+                                    }
+                                }
+                            } else {
+                                // This is for giving some empty line spaces in the report
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+                                Reporter.log("");
+
+                                writeMessageInBold("Skipped 'Verify' = '" + urlverify + "'");
+                                Reporter.log("");
+                                Reporter.log("");
+                            }
+
+
+                            //Concluding function
 
                         try {
                             // This is for giving some empty line spaces in the report

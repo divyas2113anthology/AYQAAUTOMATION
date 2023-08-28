@@ -64,7 +64,7 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					//driver.switchTo().window(AppSummaryWindowName); // Removed due to this 70522 tc
-				}else if (button_to_click.equalsIgnoreCase("save and close")) {
+				}else if (button_to_click.equalsIgnoreCase("Save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					driver.switchTo().window(AppSummaryWindowName);
@@ -106,7 +106,18 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				System.out.println("Clicked Save Button");
 				driver.close();
 				switchToOldWindow();
-			}
+			} else if (button_to_click.equalsIgnoreCase("Saveandswitchtodefault")) {
+					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
+					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					driver.close();
+					switchToOldWindow();
+				} else if (button_to_click.equalsIgnoreCase("Saveandswitchtosecondwindow")) {
+					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
+					clickWebdriver(attributeName_xpath, WCL_Savebutton);
+					driver.close();
+					switchToSecondPopupWindow();
+				}
+
 				else{
 					Reporter.log("Not Click");
 				}

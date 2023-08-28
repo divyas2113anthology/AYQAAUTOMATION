@@ -28,6 +28,7 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
             String emailsubject = EmailVerify[4];
             String verifycontents = EmailVerify[5];
             String logout = EmailVerify[6];
+            String deletemail = EmailVerify[7];
 //            String emailsubjectcontains = EmailVerify[6];
 //            String personallabel = EmailVerify[7];
 //            String passwordlabel = EmailVerify[8];
@@ -41,7 +42,7 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
             if (!url.equals("")) {
                 Reporter.log("Step 1 - Opening the Proton Window");
                 get("https://account.proton.me/login");
-                sleep(5);
+                sleep(10);
                 waitForPageToLoadWebdriver();
             }
             if (!username.equals("")) {
@@ -122,8 +123,9 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     sleep(1);
                     clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
 
-                } else if (emailsubject.equalsIgnoreCase("account has been"))  {
+                } else if (emailsubject.equalsIgnoreCase("account has been")) {
                     waitForPageToLoad();
+                    sleep(10);
                     clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
 
                     clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
@@ -143,6 +145,8 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                         System.out.println(matcher.group(1));
                         driver.get(matcher.group(1));
                     }
+
+
                 } else if (emailsubject.equalsIgnoreCase("Reminder")) {
                     waitForPageToLoad();
                     clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'Reco')])[1]");
@@ -202,6 +206,32 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     }
 
 
+                } else if (emailsubject.equalsIgnoreCase("Test Smoke")) {
+                    waitForPageToLoad();
+
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+                    Reporter.log("           ");
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    waitForPageToLoad();
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(500, 900);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "\"([^\"]*)\"";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
+
+
+
                 } else if (emailsubject.equalsIgnoreCase(emailsubject)) {
                     waitForPageToLoad();
 
@@ -215,9 +245,9 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     waitForPageToLoad();
                     Reporter.log("           ");
                     String text = element.getText();
-                    String recommendationurl = text.substring(400, 1100);
+                    String recommendationurl = text.substring(200, 1100);
                     System.out.println("url:" + recommendationurl);
-                    String strPattern = "\"([^\"]*)\"";
+                    String strPattern = "'([^']*)'";
                     Pattern pattern = Pattern.compile(strPattern);
                     Matcher matcher = pattern.matcher(recommendationurl);
                     while (matcher.find()) {
@@ -323,9 +353,9 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                         driver.get(matcher.group(1));
                     }
 
-                } else if (verifycontents.equalsIgnoreCase("")) {
+                } else if (verifycontents.equalsIgnoreCase(verifycontents)) {
 
-
+verifyTextContains(verifycontents,verifycontents,"(//div[contains(@class,'unread')]//span[contains(text(),'" + verifycontents + "')])[1]");
                 }
 
 
@@ -336,6 +366,14 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                 if (logout.equalsIgnoreCase("logout")) {
                     clickWebdriver(attributeName_xpath, "//span[@class='m-auto']");
                     clickWebdriver(attributeName_xpath, "//*[@id='dropdown-36']/div[2]/ul/li[8]/div/button");
+                }
+
+            }
+            if (!deletemail.equals("")) {
+                if (deletemail.equalsIgnoreCase("account has been")) {
+                    clickWebdriver(attributeName_xpath, "//input[@data-testid='item-checkbox']");
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='toolbar:movetotrash']");
+
                 }
 
             }

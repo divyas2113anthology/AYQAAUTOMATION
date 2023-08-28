@@ -40,6 +40,10 @@ public class REC_MiddleSchoolSupp_Input extends CommonSeleniumActions implements
 				waitForElementPresentWebdriver(attributeName_xpath, CI_NextBtn, backsavenext);
 				clickWebdriver(attributeName_xpath, CI_NextBtn);
 				waitForPageToLoadWebdriver();
+			}else if (backsavenext.equalsIgnoreCase("RecNext")) {
+				waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='btnSaveCnt']", backsavenext);
+				clickWebdriver(attributeName_xpath, "//a[@id='btnSaveCnt']");
+				waitForPageToLoadWebdriver();
 			}
 		}
 		} catch (Exception e) {			

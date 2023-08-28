@@ -9,7 +9,7 @@ import processor.CommonSeleniumActions;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class E_CreateNew_account_Classic_version extends CommonSeleniumActions implements Smoke_OR {
+public class    E_CreateNew_account_Classic_version extends CommonSeleniumActions implements Smoke_OR {
 
     protected B_SmokeTestCommon smokeTestCommon;
 
@@ -58,7 +58,7 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
 
             sendKeys(attributeName_xpath, plfstname, "AY");
             sendKeys(attributeName_xpath, pllstname, "Smoke1");
-            sendKeys(attributeName_xpath, pldob, "01/01/1990");
+            sendKeys(attributeName_xpath, pldob, "07/02/1990");
             sendKeys(attributeName_xpath, plnum, "245-52-5478");
 
             selectByVisibleTextWebdriver(attributeName_xpath, drpdwngdn, "Male");
@@ -73,6 +73,8 @@ public class E_CreateNew_account_Classic_version extends CommonSeleniumActions i
             waitForPageToLoad();
 
             selectByVisibleTextWebdriver(attributeName_xpath, plstate, "Michigan");
+            selectByVisibleTextWebdriver(attributeName_xpath, "//select[@id='s40207']", "English");
+
 
             clickWebdriver(attributeName_xpath, plgrd);
 

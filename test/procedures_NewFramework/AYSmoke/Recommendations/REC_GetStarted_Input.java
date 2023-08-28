@@ -18,6 +18,7 @@ public class REC_GetStarted_Input extends CommonSeleniumActions implements OR {
 		String readfulloverview = parameterValuesArray[0];
 		String changeyourpassword = parameterValuesArray[1];
 		String next = parameterValuesArray[2];
+		String StartRec =parameterValuesArray[3];
 		Reporter.log("Input Test Data was retrieved for 'Recommend an Applicant' page");
 		
 		if (!readfulloverview.equals("")) {
@@ -40,6 +41,12 @@ public class REC_GetStarted_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 3 - Proceed to Click on Next Button");
 			waitForElementPresentWebdriver(attributeName_xpath, GS_NextBtn,next);
 			clickWebdriver(attributeName_xpath, GS_NextBtn);		
+		}
+
+		if (!StartRec.equals("")){
+			Reporter.log("Step 4 - Proceed to Click on StartRecommendationsDT Button");
+			waitForElementPresentWebdriver(attributeName_xpath, "//a[@class='btn btn-primary pull-right']",StartRec);
+			 clickWebdriver(attributeName_xpath,"//a[@class='btn btn-primary pull-right']");
 		}
 		} catch (Exception e) {			
 			writeFailure(e.getLocalizedMessage());

@@ -90,7 +90,7 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
                     Reporter.log("           ");
                     String text = element.getText();
-                    String recommendationurl = text.substring(915, 1210);
+                    String recommendationurl = text.substring(115, 1210);
                     System.out.println("url:" + recommendationurl);
                     String strPattern = "\"([^\"]*)\"";
                     Pattern pattern = Pattern.compile(strPattern);
@@ -232,7 +232,12 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
 
 
 
-                } else if (emailsubject.equalsIgnoreCase(emailsubject)) {
+
+
+                }
+
+
+                else if  (emailsubject.equalsIgnoreCase("Event Invitation Email") || emailsubject.equalsIgnoreCase("Thanks for registering"))  {
                     waitForPageToLoad();
 
                     clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
@@ -245,7 +250,7 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     waitForPageToLoad();
                     Reporter.log("           ");
                     String text = element.getText();
-                    String recommendationurl = text.substring(200, 1100);
+                    String recommendationurl = text.substring(100,292);
                     System.out.println("url:" + recommendationurl);
                     String strPattern = "'([^']*)'";
                     Pattern pattern = Pattern.compile(strPattern);
@@ -257,7 +262,32 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                     }
 
 
+                }else if (emailsubject.equalsIgnoreCase(emailsubject)){
+                    waitForPageToLoad();
+
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'" + emailsubject + "')])[1]");
+
+                    clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
+                    sleep(1);
+                    clickWebdriver(attributeName_xpath, "//*[@role='dialog']/div[2]/ul/li[11]/button/span[text()='View HTML']");
+                    Reporter.log("           ");
+                    WebElement element = driver.findElementByXPath("//div[@data-testid='message-content:body']/pre");
+                    waitForPageToLoad();
+                    Reporter.log("           ");
+                    String text = element.getText();
+                    String recommendationurl = text.substring(200,1100);
+                    System.out.println("url:" + recommendationurl);
+                    String strPattern = "'([^']*)'";
+                    Pattern pattern = Pattern.compile(strPattern);
+                    Matcher matcher = pattern.matcher(recommendationurl);
+                    while (matcher.find()) {
+                        System.out.println(matcher);
+                        System.out.println(matcher.group(1));
+                        driver.get(matcher.group(1));
+                    }
                 }
+
+
 
 
             }
@@ -317,7 +347,7 @@ public class Email_ProtonMailVerification extends CommonSeleniumActions implemen
                         driver.get(matcher.group(1));
                     }
                 } else if (verifycontents.equalsIgnoreCase("Decline")) {
-                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'read')]//span[contains(text(),'Event Invitation Email')])[1]");
+                    clickWebdriver(attributeName_xpath, "(//div[contains(@class,'unread')]//span[contains(text(),'Event Invitation Email')])[1]");
 
                     clickWebdriver(attributeName_xpath, "//button[@data-testid='message-header-expanded:more-dropdown']");
                     sleep(1);

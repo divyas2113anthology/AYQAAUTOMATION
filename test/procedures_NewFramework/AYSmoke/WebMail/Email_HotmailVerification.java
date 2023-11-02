@@ -268,7 +268,7 @@ public class Email_HotmailVerification extends CommonSeleniumActions implements 
 					urlmodify= OpenURL;
 					System.out.println("Get Url 7: "+urlmodify);
 					//click of URL
-					selenium.openWindow(urlmodify, "Recommendation Page");
+//					selenium.openWindow(urlmodify, "Recommendation Page");
 					//				clickWebdriver(attributeName_xpath, "//a[contains(@href,'"+urlcontainslink+"')]");
 					recentPopupSelectWebdriver("Create/Reset Password");
 				}

@@ -86,7 +86,7 @@ public class FC_PersonalInformationForm_Input extends CommonSeleniumActions impl
 			if (!button_to_click.equals("")) {
 				Reporter.log("Step 10 - Click on ("+button_to_click+")Button");
 				if (button_to_click.equalsIgnoreCase("Address Lookup")) {
-					clickWebdriverWithCoordinates(attributeName_xpath, PII_AddressLookupBtn);
+					clickWebdriver(attributeName_xpath, PII_AddressLookupBtn);
 					waitForPopupWebdriver();
 					waitForPageToLoadWebdriver();
 					Thread.sleep(5000);

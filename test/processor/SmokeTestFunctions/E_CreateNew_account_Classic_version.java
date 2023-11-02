@@ -208,7 +208,7 @@ public class    E_CreateNew_account_Classic_version extends CommonSeleniumAction
             clickWebdriver(attributeName_xpath, payfee);
             clickWebdriver(attributeName_xpath, chckpay);
             waitForPageToLoad();
-            clickWebdriverWithCoordinates(attributeName_xpath, ccpaybtn);
+            clickWebdriver(attributeName_xpath, ccpaybtn);
             alertAccept();
             waitForPageToLoad();
             sendKeys(attributeName_xpath, signname, "AYSmokeclassic");
@@ -496,7 +496,7 @@ public class    E_CreateNew_account_Classic_version extends CommonSeleniumAction
 
             clickWebdriver(attributeName_xpath, chckpay);
             waitForPageToLoad();
-            clickWebdriverWithCoordinates(attributeName_xpath, ccpaybtn);
+            clickWebdriver(attributeName_xpath, ccpaybtn);
             alertAccept();
             waitForPageToLoad();
             sendKeys(attributeName_xpath, signname, "AYSmokeclassic");

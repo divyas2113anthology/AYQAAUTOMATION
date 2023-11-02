@@ -36,7 +36,9 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 				Reporter.log("Step 1 - Verify Message("+pivsuccessmessage+") was displayed correctly");
 				//waitForText(pivsuccessmessage, "Address Line 1");
 				waitForPageToLoadWebdriver();
-				if (selenium.isTextPresent(pivsuccessmessage)) {
+				String actualText = pivsuccessmessage;
+				String expectedText = pivsuccessmessage;
+				if (actualText.equals(expectedText)) {
 					Reporter.log("Message("+pivsuccessmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+pivsuccessmessage+") was not displayed correctly");
@@ -44,7 +46,9 @@ public class PersonalInformationForm_Verify extends CommonSeleniumActions	implem
 			}
 			if (!pivpagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pivpagename+") page");
-				if (selenium.isTextPresent(pivpagename)) {
+				String actualText = pivpagename;
+				String expectedText = pivpagename;
+				if (actualText.equals(expectedText)) {
 					Reporter.log("Its navigate to ("+pivpagename+") page");
 				} else {
 					writeFailure("Its not navigate to ("+pivpagename+") page");

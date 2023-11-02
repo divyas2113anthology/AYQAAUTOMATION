@@ -53,7 +53,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
 		//	String Fnamepd = getElementIDbyLabel("First Name",PD_FirstGivenName);
 			String pdfirstname1 = pdfirstname+Calendar.getInstance().getTimeInMillis();
-			sendKeys(attributeName_xpath,"//input[@id='q25402']",pdfirstname1);// change xpath by saran kumar 12 juky 2023
+			sendKeys(attributeName_xpath,"//input[@id='q35020']",pdfirstname1);// change xpath by saran kumar 12 juky 2023
 			Runtimedatawrite(pdfirstname1, pdfirstname);
 		}
 		if (!pdmiddlename.equals("")) {
@@ -64,17 +64,17 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdlastname.equals("")) {
 			Reporter.log("Step 4 - Enter Last Name as ("+pdlastname+")");
 		//	String LNamepd = getElementIDbyLabel("Last name",PD_Lastname);
-			sendKeys(attributeName_xpath,"//input[@id='q25404']",pdlastname);
+			sendKeys(attributeName_xpath,"//input[@id='q35022']",pdlastname);
 		}
 		if (!pddateofbirth.equals("")) {
 			Reporter.log("Step 5 - Enter Date of birth as ("+pddateofbirth+")");
 			//String Dateofbirthpd = getElementIDbyLabel("Date of birth",PD_Dateofbirth);
-			sendKeys(attributeName_xpath,"//input[@id='q25405']",pddateofbirth);
+			sendKeys(attributeName_xpath,"//input[@id='q35023']",pddateofbirth);
 		}
 		if (!pdssn.equals("")) {
 			Reporter.log("Step 6 - Enter SSN as ("+pdssn+")");
 		//	String SSNpd = getElementIDbyLabel("SSN",PD_SSN);
-			sendKeys(attributeName_xpath,"//input[@id='q25406']",pdssn);
+			sendKeys(attributeName_xpath,"//input[@id='q35024']",pdssn);
 		}
 		if (!pdparentssn.equals("")) {
 			Reporter.log("Step 7 - Enter Parent SSN as ("+pdparentssn+")");
@@ -82,9 +82,19 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 			sendKeys(attributeName_xpath,Pssnpd,pdparentssn);
 		}
 		if (!pdgender.equals("")) {
-			Reporter.log("Step 8 - Select Gender as ("+pdgender+")");
-			//String Genderpd = getElementIDbyLabel("Gender",PD_Gender);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s43165']",pdgender);
+			if (pdgender.equalsIgnoreCase("Mmale")) { // add by saran kumar sep 5 2023
+
+				Reporter.log("Step 8 - Select Gender as ("+pdgender+")");
+				//String Genderpd = getElementIDbyLabel("Gender",PD_Gender);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s35026']",pdgender);
+
+			} else if (pdgender.equalsIgnoreCase("")) {
+
+				Reporter.log("Step 8 - Select Gender as ("+pdgender+")");
+				//String Genderpd = getElementIDbyLabel("Gender",PD_Gender);
+				selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s43165']",pdgender);
+			}
+
 		}
 		if (!pdhomephone.equals("")) {
 			Reporter.log("Step 9 - Enter Home phone as ("+pdhomephone+")");
@@ -95,9 +105,9 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 10 - Enter Cell Phone as ("+pdcellphone+")");
 			//	String Cellphonepd = getElementIDbyLabel("Cell Phone",PD_CellPhone);
 			if (pdcellphone.equalsIgnoreCase("Null")) {
-				attributeNameValue(attributeName_xpath, "//input[@id='q25411']").clear();
+				attributeNameValue(attributeName_xpath, "//input[@id='q35029']").clear();
 			} else {
-				sendKeys(attributeName_xpath, "//input[@id='q25411']", pdcellphone);
+				sendKeys(attributeName_xpath, "//input[@id='q35029']", pdcellphone);
 			}
 			}
 		if (!pdfulltimestudent.equals("")) {
@@ -126,8 +136,8 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		}
 		if (!pdstate.equals("")) {
 			Reporter.log("Step 14 - Select State / province as ("+pdstate+")");
-			//	String Statepd = getElementIDbyLabel("State / province",PD_Stateprovince);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s25415']",pdstate);
+			String Statepd = getElementIDbyLabel("State / province",PD_Stateprovince);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Statepd,pdstate);
 		}
 		if (!pdgradelevel.equals("")) {
 			Reporter.log("Step 15 - Check Grade Level as ("+pdgradelevel+")");
@@ -157,7 +167,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdsportsintrest.equals("")) {
 			Reporter.log("Step 19 - Select Sports Interest as ("+pdsportsintrest+")");
 			String Sportsintrestpd = getElementIDbyLabel("Sports Interest", PD_SportsInterest);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s25420']",pdsportsintrest);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Sportsintrestpd,pdsportsintrest);
 		}
 		if (!pdtestscore.equals("")) {
 			Reporter.log("Step 20 - Enter Test score as ("+pdtestscore+")");
@@ -167,7 +177,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdacademicintrest.equals("")) {
 			Reporter.log("Step 21 - Enter Academic Interest as ("+pdacademicintrest+")");
 			String Academicinterestpd = getElementIDbyLabel("Academic Interest",PD_AcademicInterest);
-			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,"//select[@id='s25422']",pdacademicintrest);
+			selectByVisibleTextWithSpaceWebdriver(attributeName_xpath,Academicinterestpd,pdacademicintrest);
 		}
 		if (!pdschoolcode.equals("")) {
 			Reporter.log("Step 23 - Enter School code as ("+pdschoolcode+")");
@@ -177,7 +187,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdemailaddress.equals("")) {
 			Reporter.log("Step 24 - Enter Email address as ("+pdemailaddress+")");
 			String Emailaddresspd = getElementIDbyLabel("Email address",PD_Emailaddress);
-			sendKeys(attributeName_xpath,"//input[@id='q25424']",pdemailaddress);
+			sendKeys(attributeName_xpath,"//input[@id='q35042']",pdemailaddress);
 		}
 		if (!pdaptnumber.equals("")) {
 			Reporter.log("Step 25 - Enter Apt number as ("+pdaptnumber+")");

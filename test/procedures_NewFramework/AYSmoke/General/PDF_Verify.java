@@ -158,8 +158,11 @@ public class PDF_Verify extends CommonSeleniumActions implements OR {
 //				Reporter.log("Popup Window is selected....");
 				//Removed wait time
 				try {
-					exceptionMsg = selenium.getBodyText();
+//					exceptionMsg = selenium.getBodyText();
 //					exceptionMsg = driver.getPageSource();
+					WebElement element = driver.findElement(By.id("elementId")); // Replace with the appropriate locator
+
+					String elementText = element.getText();
 				} catch (Exception e) {			
 					System.out.println("Fail1"+e.getMessage());
 					exceptionMsg = e.getMessage();

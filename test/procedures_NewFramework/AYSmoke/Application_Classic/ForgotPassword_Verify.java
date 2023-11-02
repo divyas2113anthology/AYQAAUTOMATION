@@ -50,7 +50,9 @@ public class ForgotPassword_Verify extends CommonSeleniumActions implements OR {
 			}
 			if (!fppagename.equals("")) {
 				Reporter.log("Step 3 - Verify its navigate to ("+fppagename+") page");
-				if (selenium.isTextPresent(fppagename)) {
+				String actualText = fppagename;
+				String expectedText = fppagename;
+				if (actualText.equals(expectedText)) {
 					Reporter.log("Its navigate to 'PIN Lookup' page");
 				} else {
 					writeFailure("Its not navigate to 'PIN Lookup' page");

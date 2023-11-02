@@ -63,7 +63,7 @@ public class WC_EditEmailTemplates_Input extends CommonSeleniumActions implement
 
 			if (!to_email.equals("")){
 				waitForElementPresentWebdriver(attributeName_xpath,"//input[@id='EmailToOther']",to_email);
-				clickWebdriverWithCoordinates(attributeName_xpath,"//input[@id='EmailToOther']");
+				clickWebdriver(attributeName_xpath,"//input[@id='EmailToOther']");
 				sendKeys(attributeName_xpath,"//input[@id='TextEmailTo']",to_email);
 				clickWebdriver(attributeName_xpath,"//*[@id='DonotsendFlag']");
 

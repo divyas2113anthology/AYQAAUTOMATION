@@ -10,7 +10,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.thoughtworks.selenium.webdriven.commands.WindowMaximize;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;

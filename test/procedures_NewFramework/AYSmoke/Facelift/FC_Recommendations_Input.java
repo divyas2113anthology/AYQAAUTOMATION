@@ -143,7 +143,7 @@ public class FC_Recommendations_Input extends CommonSeleniumActions implements O
 			if (!rcaddproviderbtn.equals("")) {
 				Reporter.log("Step 22 - Click on ("+rcaddproviderbtn+") Button");
 //				click(RI_AddProvBtn);
-				clickWebdriverWithCoordinates(attributeName_xpath, RI_AddProvBtnBottom);
+				clickWebdriver(attributeName_xpath, RI_AddProvBtnBottom);
 //				clickWebdriverWithCoordinates(attributeName_xpath, "//input[@value='Add Provider']");
 				alertAccept();
 				waitForPageToLoadWebdriver();

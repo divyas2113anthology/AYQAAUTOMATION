@@ -4,7 +4,7 @@ import static procedures_NewFramework.AYSmoke.General.GL_LaunchBrowser.environme
 import or.OR;
 
 import org.openqa.selenium.Keys;
-import com.thoughtworks.selenium.webdriven.commands.Uncheck;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 

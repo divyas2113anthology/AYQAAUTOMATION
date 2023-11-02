@@ -2,8 +2,8 @@ package procedures_NewFramework.AYSmoke.WebMail;
 
 import or.OR;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.HasInputDevices;
-import org.openqa.selenium.interactions.Keyboard;
+//import org.openqa.selenium.interactions.HasInputDevices;
+//import org.openqa.selenium.interactions.Keyboard;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
@@ -206,7 +206,7 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!openemailclose.equals("")) {
 					Reporter.log("Step 17 - Closing All Opened Pop Ups");
-					recentPopupClose();
+					closeAllPopups();
 				}
 				if (!logout.equals("")) {
 					Reporter.log("Step 18 - Click on Log Off Link");
@@ -249,9 +249,9 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 
 					}
 					//assign key board object
-				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard();
-				       //enter a key
-				       keyboard.pressKey(Keys.ENTER);
+//				       Keyboard keyboard=((HasInputDevices) driver).getKeyboard(); //by saran kumar removed code selenium update
+//				       //enter a key //by saran kumar removed code selenium update
+//				       keyboard.pressKey(Keys.ENTER); //by saran kumar removed code selenium update
 					//waitForElementPresentWebdriverWait(attributeName_xpath,"//div[@id='MailFolderPane.FavoritesFolders']//span[@title='Inbox']", "Inbox");	
 					//clickWebdriver(attributeName_xpath, HC_Login);
 					//checkWebdriver(attributeName_xpath, HC_Login);
@@ -493,11 +493,11 @@ public class Email_Verification extends CommonSeleniumActions implements OR {
 				}
 				if (!openemailclose.equals("")) {
 					Reporter.log("Step 17 - Closing All Opened Pop Ups");
-					recentPopupClose();
+					closeAllPopups();
 				}
 				if (!logout.equals("")) {
 					Reporter.log("Step 18 - Click on Log Off Link");
-					waitForElementVisibleWebdriverWait(attributeName_xpath, HC_Home, logout);
+				//	waitForElementVisibleWebdriverWait(attributeName_xpath, HC_Home, logout);//by saran kumar removed code selenium update
 //					waitForElementPresentWebdriver(attributeName_xpath, "//a[@id='lo']", logout);  //button[@aria-label='EMT QA Account - Away menu with submenu']
 					waitForElementPresentWebdriver(attributeName_xpath, HC_Home, "EMT QA Account");
 					//waitForElementPresentWebdriver(attributeName_xpath, "//button[contains(@id,'MainLink_Help')]", "EMT QA Account");

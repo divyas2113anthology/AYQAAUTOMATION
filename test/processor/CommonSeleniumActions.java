@@ -15,10 +15,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.internal.Locatable;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.internal.*;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.WebDriverWait.*;
+
+//import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.*;
+//import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -29,6 +32,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -182,46 +186,50 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 
 	// This Function is used to Select Recently Opened Window or Popup.
-	public void recentPopupSelect(String windowname) throws Exception {
-		Reporter.log("Proceed to select the (" + windowname + ") popup");
-		String[] windowsOpen = selenium.getAllWindowNames();
-		writeConsole("getAllWindowNames[" + windowsOpen + "]");
-		int wintotal = windowsOpen.length - 1;
-		//			System.out.println("Window lenght -->"+wintotal);
-		//			for (int i = 0; i <= wintotal; i++) {
-		//			System.out.println("Window for Loop -->"+windowsOpen[i]);
-		//			}
-		//			System.out.println("Window-->"+windowsOpen[wintotal]);
-		if (wintotal > 0) {
-			Reporter.log("Waiting for popup...");
-			writeConsole("waitForPopUp[" + windowsOpen[wintotal] + ", " + STANDARD_PAGE_LOAD_WAIT_TIME + "]");
-			selenium.waitForPopUp(windowsOpen[wintotal], STANDARD_PAGE_LOAD_WAIT_TIME);
-			Reporter.log("Popup Window is selected....");
-			writeConsole("selectWindow[name=" + windowsOpen[wintotal] + "]");
-			selenium.selectWindow("name=" + windowsOpen[wintotal]);
-		} else {
-			writeFailure("(" + windowname + ") popup was Not Opened");
-		}
-	}
+//	public void recentPopupSelect(String windowname) throws Exception {
+//		Reporter.log("Proceed to select the (" + windowname + ") popup");
+//		String[] windowsOpen = selenium.getAllWindowNames();
+//		writeConsole("getAllWindowNames[" + windowsOpen + "]");
+//		int wintotal = windowsOpen.length - 1;
+//		//			System.out.println("Window lenght -->"+wintotal);
+//		//			for (int i = 0; i <= wintotal; i++) {
+//		//			System.out.println("Window for Loop -->"+windowsOpen[i]);
+//		//			}
+//		//			System.out.println("Window-->"+windowsOpen[wintotal]);
+//		if (wintotal > 0) {
+//			Reporter.log("Waiting for popup...");
+//			writeConsole("waitForPopUp[" + windowsOpen[wintotal] + ", " + STANDARD_PAGE_LOAD_WAIT_TIME + "]");
+//			selenium.waitForPopUp(windowsOpen[wintotal], STANDARD_PAGE_LOAD_WAIT_TIME);
+//			Reporter.log("Popup Window is selected....");
+//			writeConsole("selectWindow[name=" + windowsOpen[wintotal] + "]");
+//			selenium.selectWindow("name=" + windowsOpen[wintotal]);
+//		} else {
+//			writeFailure("(" + windowname + ") popup was Not Opened");
+//		}
+//	}
+
 
 	// This Function is used to Select Recently Opened Window or Popup.
-	public void recentPopupClose() throws Exception {
-		Reporter.log("Proceed to Close All Opened Pop Ups");
-		String[] windowsOpen = selenium.getAllWindowNames();
-		int wintotal = windowsOpen.length - 1;
-		//			System.out.println("Window lenght -->"+wintotal);
-		//			for (int i = 0; i <= wintotal; i++) {
-		//			System.out.println("Window for Loop -->"+windowsOpen[i]);
-		//			}
-		//			System.out.println("Window-->"+windowsOpen[wintotal]);
-		if (wintotal > 0) {
-			for (int i = wintotal; i > 0; i--) {
-				selectWindow("name=" + windowsOpen[i]);
-				closeWindowWebdriver();
-				selectMainWindowWebdriver();
-			}
-		}
-	}
+//	public void recentPopupClose() throws Exception {
+//		Reporter.log("Proceed to Close All Opened Pop Ups");
+//		String[] windowsOpen = selenium.getAllWindowNames();
+//		int wintotal = windowsOpen.length - 1;
+//		//			System.out.println("Window lenght -->"+wintotal);
+//		//			for (int i = 0; i <= wintotal; i++) {
+//		//			System.out.println("Window for Loop -->"+windowsOpen[i]);
+//		//			}
+//		//			System.out.println("Window-->"+windowsOpen[wintotal]);
+//		if (wintotal > 0) {
+//			for (int i = wintotal; i > 0; i--) {
+//				selectWindow("name=" + windowsOpen[i]);
+//				closeWindowWebdriver();
+//				selectMainWindowWebdriver();
+//			}
+//		}
+//	}
+
+
+
 
 	//	 This Method is used to get the ID of the Element by using its label where ID is Generated during Run-time(Dynamic ID)
 	//	and also get respective element from Property File and replace the element ID(Static ID) in Property file with Dynamic ID.
@@ -423,7 +431,7 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public static void writeFailure(String failmessage) {
 		writeConsole("ERROR: " + failmessage);
 		Reporter.log("<b><font size='3' color='Red'><strong>" + failmessage + "</strong></font></b>");
-		captureScreenshot("");
+//		captureScreenshot("");
 		//Assert.fail(failmessage);
 	}
 
@@ -1866,13 +1874,13 @@ public class CommonSeleniumActions extends Processor implements OR {
 		attributeNameValue(attributename, attributevalue).click();
 	}
 
-	public void clickWebdriverWithCoordinates(String attributename, String attributevalue) {
-		writeConsole("Webdriver click[" + attributename + ", " + attributevalue + "]");
-		Locatable hoverItem = (Locatable) attributeNameValue(attributename, attributevalue);
-		int y = hoverItem.getCoordinates().onPage().getX();
-		((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + y + ");");
-		attributeNameValue(attributename, attributevalue).click();
-	}
+//	public void clickWebdriverWithCoordinates(String attributename, String attributevalue) {
+//		writeConsole("Webdriver click[" + attributename + ", " + attributevalue + "]");
+//		Locatable hoverItem = (Locatable) attributeNameValue(attributename, attributevalue);
+//		int y = hoverItem.getCoordinates().onPage().getX();
+//		((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + y + ");");
+//		attributeNameValue(attributename, attributevalue).click();
+//	}
 
 	public void mouseOverWebdriver(String attributename, String attributevalue) {
 		writeConsole("Webdriver mouseOver[" + attributename + ", " + attributevalue + "]");
@@ -2523,8 +2531,11 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void waitForElementPresentWebdriverWait(String byattributename, String byattributevalue, String elementname) {
 		try {
 			writeConsole("Webdriver Wait for presenceOfElementLocated[" + byattributename + ", " + byattributevalue + "]");
-			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds); //change code due to selenium verion change 4.0.0
+//			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.presenceOfElementLocated(byattributeNameValue(byattributename, byattributevalue)));
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			writeFailure("Element [" + elementname + " ] was Not Present");
 		}
@@ -2534,7 +2545,9 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void waitForElementNotPresentVisibleWebdriverWait(String byattributename, String byattributevalue, String elementname) {
 		try {
 			writeConsole("Webdriver Wait for invisibilityOfElementLocated[" + byattributename + ", " + byattributevalue + "]");
-			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds); //removed due selenium dep version change
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(byattributeNameValue(byattributename, byattributevalue)));
 		} catch (Exception e) {
 			writeFailure("Element [" + elementname + " ] was Visible");
@@ -2545,7 +2558,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void waitForElementVisibleWebdriverWait(String byattributename, String byattributevalue, String elementname) {
 		try {
 			writeConsole("Webdriver Wait for visibilityOfElementLocated[" + byattributename + ", " + byattributevalue + "]");
-			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+
+
+	WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds); //removed due to dpncy versn change
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(byattributeNameValue(byattributename, byattributevalue)));
 		} catch (Exception e) {
 			writeFailure("Element [" + elementname + " ] was Not Visible");
@@ -3878,7 +3894,10 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String[] secnodespl = secNamespl[1].split("\\)");
 		String secnode = secnodespl[0];
 		writeConsole("Node Value for Section " + secnode);
-		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle(" + secnode + ")')]/@onmouseover");
+		WebElement element = driver.findElement(By.xpath("//a[contains(@onclick,'toggle(" + secnode + ")')]"));
+		String nodePlus = element.getAttribute("onmouseover");
+
+//		String nodePlus = selenium.getAttribute("//a[contains(@onclick,'toggle(" + secnode + ")')]/@onmouseover");
 		writeConsole("Plus OuterHTML Value " + nodePlus);
 		if (nodePlus.contains("Click to expand")) {
 			clickWebdriver(attributeName_xpath, "//a[contains(@onclick,'toggle(" + secnode + ")')]");
@@ -4268,19 +4287,53 @@ public class CommonSeleniumActions extends Processor implements OR {
 		js.executeScript("window.scrollBy(0, " + pixels + ");");
 	}
 
-	public static void captureScreenshot(String screenshotName)
-	{
-		File screenshot;
-		try {
-			screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(screenshot, new File(screenshotName));      //
-			selenium.captureEntirePageScreenshot(screenshotName,"background=#CCFFDD");
-			//'RC' statement
-			Reporter.log("<a href='file:///"+screenshotName+"'><img src='file:///"+screenshotName+"' height='200' width='200'></a>");
-			Reporter.log("Saved at - '" + screenshotName + "'");
-		} catch (Exception e)
-		{      String failureMessage = e.getLocalizedMessage();
-			Reporter.log("<b><font size='3' color='Red'>Exception message in the 'caputueScreenshot' function - '" +failureMessage+ "'</font></b>");
-		}}
+//	public static void captureScreenshot(String screenshotName)
+//	{
+//		File screenshot;
+//		try {
+//			screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//			FileUtils.copyFile(screenshot, new File(screenshotName));      //
+//			selenium.captureEntirePageScreenshot(screenshotName,"background=#CCFFDD");
+//			//'RC' statement
+//			Reporter.log("<a href='file:///"+screenshotName+"'><img src='file:///"+screenshotName+"' height='200' width='200'></a>");
+//			Reporter.log("Saved at - '" + screenshotName + "'");
+//		} catch (Exception e)
+//		{      String failureMessage = e.getLocalizedMessage();
+//			Reporter.log("<b><font size='3' color='Red'>Exception message in the 'caputueScreenshot' function - '" +failureMessage+ "'</font></b>");
+//		}}
+
+	public static void recentPopupSelect(String windowName) {
+		String mainWindowHandle = driver.getWindowHandle();
+		for (String windowHandle : driver.getWindowHandles()) {
+			if (!windowHandle.equals(mainWindowHandle)) {
+				driver.switchTo().window(windowHandle);
+				break; // Select the first non-main window found
+			}else {
+				System.out.println(("(" + windowName + ") popup was Not Opened"));
+			}
+		}
+
+
+
+	}
+
+
+	public void closeAllPopups() { // this create alternative for above code due to depency change
+		String mainWindowHandle = driver.getWindowHandle();
+
+		// Get a list of all window handles
+		Set<String> windowHandles = driver.getWindowHandles();
+
+		// Iterate through the window handles
+		for (String windowHandle : windowHandles) {
+			if (!windowHandle.equals(mainWindowHandle)) {
+				// Switch to the pop-up window
+				driver.switchTo().window(windowHandle);
+
+				// Close the pop-up window
+				driver.close();
+			}
+		}
+	}
 
 }

@@ -63,7 +63,8 @@ public class FC_ApplicantWelcome_Input extends CommonSeleniumActions implements 
 //					sendKeys(attributeName_xpath, AW_RecommendationBtn, " ");
 //					clickWebdriver(attributeName_xpath, AW_RecommendationBtn);
 					waitForPageToLoadWebdriver();
-					clickWebdriverWithCoordinates(attributeName_xpath, AW_RecommendationBtn);
+//					clickWebdriverWithCoordinates(attributeName_xpath, AW_RecommendationBtn);
+					clickWebdriver(attributeName_xpath, AW_RecommendationBtn);
 					waitForPageToLoadWebdriver();
 				}else if (link_to_click.equalsIgnoreCase("Downloadable Forms")) {
 					clickWebdriver(attributeName_xpath,AW_DownFormBtn);

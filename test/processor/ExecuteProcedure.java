@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
-import static processor.Processor.selenium;
+import static processor.Processor.*;
 
 public class ExecuteProcedure implements IMethodInterceptor {
 	public static List<IMethodInstance>  methodReposit;
@@ -102,8 +102,9 @@ public class ExecuteProcedure implements IMethodInterceptor {
 //				procdurecounter++;
 			
 			if (methodfound.equals("NotFound")) {
-			  selenium.close();
-			   selenium.stop();
+
+				driver.close();
+			  driver.quit();
 			   Assert.fail("["+methodname[0]+"] Procedure was Not Scripted");
 			}
 			

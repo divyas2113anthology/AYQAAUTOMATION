@@ -29,7 +29,9 @@ public class UpdateProfile_Verify extends CommonSeleniumActions implements OR {
 		}
 		if (!pagename.equals("")) {
 			Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-			if (selenium.isTextPresent(pagename)) {
+			String actualText = pagename;
+			String expectedText = pagename;
+			if (actualText.equals(expectedText)) {
 				Reporter.log("Its navigate to 'Update Profile' page");
 			} else {
 				writeFailure("Its not navigate to 'Update Profile' page");

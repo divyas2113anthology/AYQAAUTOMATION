@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_ApplicationPackage.WC_ApplicantSummary;
 
-import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 import or.OR;
 import org.testng.Reporter;
 import org.testng.annotations.Test;

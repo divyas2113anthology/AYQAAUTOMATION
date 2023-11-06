@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.Webcenter.WC_RecommendationPackage;
 
-import com.thoughtworks.selenium.webdriven.commands.IsChecked;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Test;

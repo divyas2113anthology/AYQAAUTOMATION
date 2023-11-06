@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
-import org.openqa.selenium.interactions.SendKeysAction;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.server.handler.SendKeys;

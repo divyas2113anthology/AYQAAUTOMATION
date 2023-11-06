@@ -233,10 +233,10 @@ public class FC_PersonalData_Input extends CommonSeleniumActions implements OR {
 					sleep(2);//Modified By Rahul Mehta
 				
 				}else if (button_to_click.equalsIgnoreCase("Save & Continue")) {
-					clickWebdriverWithCoordinates(attributeName_xpath, PSD_SaveContinue);
+					clickWebdriver(attributeName_xpath, PSD_SaveContinue);
 					waitForPageToLoadWebdriver();
 				}else if (button_to_click.equalsIgnoreCase("Reset")) {
-					clickWebdriverWithCoordinates(attributeName_xpath, PSD_Reset);
+					clickWebdriver(attributeName_xpath, PSD_Reset);
 					waitForPageToLoadWebdriver();//Modified By Rahul Mehta
 				}
 			}

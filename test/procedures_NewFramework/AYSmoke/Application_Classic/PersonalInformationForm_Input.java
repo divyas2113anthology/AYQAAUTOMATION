@@ -87,7 +87,7 @@ public class PersonalInformationForm_Input extends CommonSeleniumActions impleme
 				//	recentPopupSelect("Address Lookup");
 					recentPopupSelectWebdriver("Address Lookup");
 				} else if(pisavebutton.equalsIgnoreCase("Save")){
-					clickWebdriverWithCoordinates(attributeName_xpath, PI_Save);
+					clickWebdriver(attributeName_xpath, PI_Save);
 					waitForPageToLoadWebdriver();
 				}else if (pisavebutton.equalsIgnoreCase("Save & Continue")) {
 					clickWebdriver(attributeName_xpath,PI_SaveContinue);

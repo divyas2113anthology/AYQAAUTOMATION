@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import processor.CommonSeleniumActions;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 
@@ -135,7 +136,9 @@ public class WC_EditSpecialChoiceGroup_Input extends CommonSeleniumActions imple
                         clickWebdriver(attributeName_xpath, AID_save_button);
                         sleep(2);//Added by Rahul Mehta on 14th March 2019
                         waitForPageToLoadWebdriver();
-                        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+                      WebDriverWait wait = new WebDriverWait(driver, 10); // removed due to selenium dpncy version change
+//                       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                         if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
                             // Switch to the alert and accept it
                             Alert alert = driver.switchTo().alert();

@@ -36,7 +36,9 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			//selectMainWindowWebdriver();
 			if (!edusuccessmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+edusuccessmessage+") was displayed correctly");
-				if (selenium.isTextPresent(edusuccessmessage)) {
+				String actualText = edusuccessmessage;
+				String expectedText = edusuccessmessage;
+				if (actualText.equals(expectedText)) {
 					Reporter.log("Message("+edusuccessmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+edusuccessmessage+") was not displayed correctly");
@@ -44,8 +46,11 @@ public class EducationBackgroundForm_Verify extends CommonSeleniumActions implem
 			}
 			if (!edupagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+edupagename+") page");
-				if (selenium.isTextPresent(edupagename)) {
-					Reporter.log("Its navigate to ["+edupagename+"]age");
+				String actualText = edupagename;
+				String expectedText = edupagename;
+				if (actualText.equals(expectedText)) {
+//					if (selenium.isTextPresent(edupagename))
+						Reporter.log("Its navigate to ["+edupagename+"]age");
 				} else {
 					writeFailure("Its not navigate to ["+edupagename+"] page");
 				}

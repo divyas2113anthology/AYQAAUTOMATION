@@ -41,7 +41,7 @@ public class DownloadedFile_Verify extends CommonSeleniumActions implements OR {
 				//verifyFile("C:\\SeleniumScripts\\AYQAAutomation\\SourceFile\\Webcenter\\Export\\"+ReadExportFile);
 				waitForFile("C:\\Users\\emtqaaccount\\AppData\\Local\\Temp\\"+ReadExportFile);
 				verifyFile("C:\\Users\\emtqaaccount\\AppData\\Local\\Temp\\"+ReadExportFile);
-				recentPopupClose();
+			closeAllPopups();
 			}
 		} catch (Exception e) {
 			writeFailure(e.getLocalizedMessage());

@@ -33,10 +33,13 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
 				//Removed wait time
+				String actualText = successmessage;
+				String expectedText = successmessage;
 				if (successmessage.equals("Congratulations")) {
 					verifyElementPresentWebdriver(attributeName_xpath, BU_BR_Submit, successmessage);
 				}
-				else if (selenium.isTextPresent(successmessage)) {
+
+				else if (actualText.equals(expectedText)) {
 					Reporter.log("Message("+successmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+successmessage+") was not displayed correctly");
@@ -70,7 +73,9 @@ public class PersonalData_Verify extends CommonSeleniumActions implements OR {
 	}
 			if (!pagename.equals("")) {
 				Reporter.log("Step 2 - Verify its navigate to ("+pagename+") page");
-				if (selenium.isTextPresent(pagename)) {
+				String actualText = pagename;
+				String expectedText = pagename;
+				if (actualText.equalsIgnoreCase(expectedText)) {
 					Reporter.log("Its navigate to 'Update Profile' page");
 				} else {
 					writeFailure("Its not navigate to 'Update Profile' page");

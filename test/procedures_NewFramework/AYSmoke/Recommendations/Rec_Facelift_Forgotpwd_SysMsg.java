@@ -1,6 +1,6 @@
 package procedures_NewFramework.AYSmoke.Recommendations;
 
-import com.thoughtworks.selenium.webdriven.commands.Close;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 import or.OR;
 
 import org.openqa.selenium.By;

@@ -111,16 +111,31 @@ public class 	MC_AddEditSectionRule_Input extends CommonSeleniumActions implemen
 		}
 		if (!value.equals("")) { //MC_SR_SelectMenu
 			Reporter.log("Step 6 - Select the value as ["+value+"]");
-			waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
-			//if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
-			waitForPageToLoadWebdriver();
-			clickWebdriver(attributeName_xpath, "//button[contains(@class,'ui-multiselect')]");
-			//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
-			clickWebdriver(attributeName_xpath, "//div[contains(@class,'multiselect-menu') and contains(@style, 'display: block')]//span[text()='"+value+"']/preceding-sibling::input");
-			clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
-			//sendKeys(attributeName_xpath, ESR_ValueText, value);
+			if (value.equalsIgnoreCase("")){
+				waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
+				//if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath, "//button[contains(@class,'ui-multiselect')]");
+				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value);
+				clickWebdriver(attributeName_xpath, "//div[contains(@class,'multiselect-menu') and contains(@style, 'display: block')]//span[text()='"+value+"']/preceding-sibling::input");
+				clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+				//sendKeys(attributeName_xpath, ESR_ValueText, value);
+			} else if (value.equalsIgnoreCase("123-123-1234")) {
+				Reporter.log("Step 6 - Select the value as [" + value + "]");
+				waitForElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, field);
+				//if(booleanElementPresentWebdriver(attributeName_xpath, ESR_ValueSelect, value));
+				waitForPageToLoadWebdriver();
+				clickWebdriver(attributeName_xpath, ESR_ValueSelect);
+				//selectByValueWebdriver(attributeName_xpath, ESR_ValueSelect, value)
+				// ;
+				sendKeys(attributeName_xpath,ESR_ValueSelect,value);
+				//clickWebdriver(attributeName_xpath, "//div[contains(@class,'multiselect-menu') and contains(@style, 'display: block')]//span[text()='" + value + "']/preceding-sibling::input");
+				//clickWebdriver(attributeName_xpath, MQ_MulitSelectClose);
+			}
+		}
 
-			}/*else{
+
+		/*else{
 				clickWebdriver(attributeName_xpath, MC_SR_SelectMenu);
 				waitForPageToLoadWebdriver();
 				clickWebdriver(attributeName_xpath, MC_SR_Values+value+"')]");

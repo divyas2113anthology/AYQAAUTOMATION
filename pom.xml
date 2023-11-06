@@ -34,17 +34,16 @@
             <systemPath>${basedir}/lib/SpiraApi.jar</systemPath>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.github.bonigarcia</groupId>-->
-<!--            <artifactId>webdrivermanager</artifactId>-->
-<!--            <version>3.1.0</version>-->
-<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-ie-driver</artifactId>
-            <version>3.0.1</version>
+
+
+
+                <dependency>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                    <version>2.14.1</version> <!-- Use the latest version -->
         </dependency>
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -57,19 +56,42 @@
             <artifactId>commons-io</artifactId>
             <version>2.4</version>
         </dependency>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-ie-driver</artifactId>
+                    <version>3.141.59</version>
+                </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-ie-driver</artifactId>-->
+<!--            <version>4.12.1</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.0.1</version>
+            <version>3.141.59</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-chrome-driver</artifactId>-->
+<!--            <version>4.12.1</version>-->
+<!--        </dependency>-->
 
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>3.0.1</version>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>4.12.1</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -77,17 +99,6 @@
             <version>3.0.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-java</artifactId>-->
-<!--            <version>4.11.0</version>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>net.sourceforge.jexcelapi</groupId>
@@ -123,10 +134,11 @@
             <version>1.8</version>
         </dependency>
 
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.3.2</version>
+            <version>5.5.3</version>
         </dependency>
 
 <dependency>

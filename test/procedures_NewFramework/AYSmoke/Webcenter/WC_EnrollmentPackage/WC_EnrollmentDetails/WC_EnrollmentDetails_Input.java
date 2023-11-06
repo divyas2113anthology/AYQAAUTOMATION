@@ -68,12 +68,12 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
                 if (buttons.equalsIgnoreCase("Enrollments-DT fee")) {
                     Reporter.log("Click the button as [" + buttons + "]");
                     waitForElementPresentWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']", buttons);
-                    clickWebdriverWithCoordinates(attributeName_xpath, "//span[text()='Enrollments-DT fee']");
+                    clickWebdriver(attributeName_xpath, "//span[text()='Enrollments-DT fee']");
                     recentPopupSelectWebdriver("Enrollment-DT Fee Status");
                 } else {
                     Reporter.log("Click the button as [" + buttons + "]");
                    waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
-                    clickWebdriverWithCoordinates(attributeName_xpath, SR_button + buttons + "')]");
+                    clickWebdriver(attributeName_xpath, SR_button + buttons + "')]");
 
                      try {
                         alertAccept();
@@ -89,7 +89,7 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
                 if (closeproceed.equalsIgnoreCase("proceed to submission")) {
 //					clickWebdriver(attributeName_xpath, EPI_ProToSubBtn);
                     waitForElementPresentWebdriver(attributeName_xpath, EPI_ProToSubBtn, "Proceed Submission");
-                    clickWebdriverWithCoordinates(attributeName_xpath, EPI_ProToSubBtn);
+                    clickWebdriver(attributeName_xpath, EPI_ProToSubBtn);
                     waitForElementPresentWebdriver(attributeName_xpath, QAE_Message, "Success message");
 //					waitForPageToLoadWebdriver();
                 } else if (closeproceed.equalsIgnoreCase("Close Window")) {

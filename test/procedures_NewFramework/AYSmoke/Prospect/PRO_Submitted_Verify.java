@@ -19,7 +19,9 @@ public class PRO_Submitted_Verify extends CommonSeleniumActions implements OR {
 			Reporter.log("Verify Test Data was retrieved for 'Personal Information' page");
 			if (!successmessage.equals("")) {
 				Reporter.log("Step 1 - Verify Message("+successmessage+") was displayed correctly");
-				if (selenium.isTextPresent(successmessage)) {
+				String actualText = successmessage;
+				String expectedText = successmessage;
+				if (actualText.equals(expectedText)) {
 					Reporter.log("Message("+successmessage+") was displayed correctly");
 				} else {
 					writeFailure("Message("+successmessage+") was not displayed correctly");

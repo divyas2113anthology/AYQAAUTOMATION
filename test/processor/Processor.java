@@ -1,6 +1,6 @@
 package processor;
 
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSeleniumServlet.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -42,7 +42,7 @@ import static processor.CommonSeleniumActions.*;
 public class Processor {
     public static SeleniumServer jettyProxy;
     public static RemoteWebDriver driver;
-    public static WebDriverBackedSelenium selenium;
+//    public static WebDriverBackedSelenium selenium;
     protected boolean jettyProxyWasStartedByATest = false;
     protected final static String SELENIUM_SERVER_HOST = "localhost";
     protected final static int SELENIUM_SERVER_PORT = 4444;
@@ -101,20 +101,21 @@ public class Processor {
                 DesiredCapabilities capabilitiesff = DesiredCapabilities.firefox();
                 capabilitiesff.setCapability("marionette", true);
                 capabilitiesff.setCapability("javascriptEnabled", true);
-                driver = new FirefoxDriver(capabilitiesff);
+//                driver = new FirefoxDriver(capabilitiesff);
                 break;
             case "googlechrome":
 //               System.setProperty("webdriver.chrome.driver", "C:\\Users\\SaranKumarK\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-//                ChromeOptions options = new ChromeOptions();
+  //           ChromeOptions options = new ChromeOptions();
 //              options.setBinary("C:\\Users\\SaranKumarK\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
 ////                options.addArguments("test-type");
 //                options.addArguments("disable-popup-blocking");
 //                options.addArguments("--disable-extensions");
 //                //options.addArguments("--disable-features=VizDisplayCompositor");
-//           //     WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager ON 11TH mAY 2023
-               //  driver = new ChromeDriver(options);
-               ChromeDriverManager.getInstance(DriverManagerType.CHROME).driverVersion("116.0.5845.96").setup(); //Modified by saran kumar on 25 aug 2023
-                driver = new ChromeDriver(); //Modified by saran kumar on 25 aug 2023
+   WebDriverManager.chromedriver().setup(); //Modified by Rahul Mehta for use of Webdriver Manager ON 11TH mAY 2023
+               driver = new ChromeDriver();
+//               ChromeDriverManager.getInstance(DriverManagerType.CHROME).driverVersion("116.0.5845.96").setup(); //Modified by saran kumar on 25 aug 2023
+//                driver = new ChromeDriver(); //Modified by saran kumar on 25 aug 2023
+
                 System.out.println("driver - '" + driver + "'");
 
 

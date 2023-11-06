@@ -156,7 +156,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
 
     public void Dynamic_section() throws Exception {
 
-        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcselectsystem);
         clickWebdriver(attributeName_xpath, wcapplicationsystem);
         clickWebdriver(attributeName_xpath, wcapplicationqa);
         clickWebdriver(attributeName_xpath, wcapplicationadm);
@@ -360,7 +360,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
 
         writeMessageInBold("About to delete the Dynamic Section");
 
-        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcselectsystem);
         clickWebdriver(attributeName_xpath, wcapplicationsystem);
         clickWebdriver(attributeName_xpath, wcapplicationqa);
         clickWebdriver(attributeName_xpath, wcapplicationadm);
@@ -399,7 +399,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
     public void BR_Triggering() throws Exception {
 
         writeMessageInBold("About add Business Rule");
-        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcselectsystem);
         clickWebdriver(attributeName_xpath, wcapplicationsystem);
         clickWebdriver(attributeName_xpath, wcapplicationqa);
         clickWebdriver(attributeName_xpath, wcapplicationadm);
@@ -472,7 +472,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
     public void Wc_Delete_BR_Triggering() throws Exception {
 
         writeMessageInBold("About to delete BR_Triggering  ");
-        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcselectsystem);
         clickWebdriver(attributeName_xpath, wcapplicationsystem);
         clickWebdriver(attributeName_xpath, wcapplicationqa);
         clickWebdriver(attributeName_xpath, wcapplicationadm);
@@ -499,7 +499,7 @@ public class B_SmokeTestCommon extends CommonSeleniumActions implements OR, Smok
 
     public void Search_for_submitted_application() throws Exception {
 
-        clickWebdriverWithCoordinates(attributeName_xpath, wcselectsystem);
+        clickWebdriver(attributeName_xpath, wcselectsystem);
         clickWebdriver(attributeName_xpath, wcapplicationsystem);
         clickWebdriver(attributeName_xpath, wcapplicationqa);
         clickWebdriver(attributeName_xpath, "//*[@id='oMenu_oMenu5']");

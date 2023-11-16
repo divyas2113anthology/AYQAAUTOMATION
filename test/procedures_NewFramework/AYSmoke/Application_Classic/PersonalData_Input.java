@@ -53,7 +53,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 			Reporter.log("Step 2 - Enter First Name as ("+pdfirstname+")");
 		//	String Fnamepd = getElementIDbyLabel("First Name",PD_FirstGivenName);
 			String pdfirstname1 = pdfirstname+Calendar.getInstance().getTimeInMillis();
-			sendKeys(attributeName_xpath,"//input[@id='q35020']",pdfirstname1);// change xpath by saran kumar 12 juky 2023
+			sendKeys(attributeName_xpath,"//input[@id='q25402']",pdfirstname1);// change xpath by saran kumar 12 juky 2023
 			Runtimedatawrite(pdfirstname1, pdfirstname);
 		}
 		if (!pdmiddlename.equals("")) {
@@ -74,7 +74,7 @@ public class PersonalData_Input extends CommonSeleniumActions implements OR {
 		if (!pdssn.equals("")) {
 			Reporter.log("Step 6 - Enter SSN as ("+pdssn+")");
 		//	String SSNpd = getElementIDbyLabel("SSN",PD_SSN);
-			sendKeys(attributeName_xpath,"//input[@id='q35024']",pdssn);
+				sendKeys(attributeName_xpath,"//input[@id='q25406']",pdssn);
 		}
 		if (!pdparentssn.equals("")) {
 			Reporter.log("Step 7 - Enter Parent SSN as ("+pdparentssn+")");

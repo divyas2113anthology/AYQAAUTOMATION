@@ -72,8 +72,8 @@ public class WC_EnrollmentDetails_Input extends CommonSeleniumActions implements
                     recentPopupSelectWebdriver("Enrollment-DT Fee Status");
                 } else {
                     Reporter.log("Click the button as [" + buttons + "]");
-                   waitForElementPresentWebdriver(attributeName_xpath, SR_button + buttons + "')]", buttons);
-                    clickWebdriver(attributeName_xpath, SR_button + buttons + "')]");
+                   waitForElementPresentWebdriver(attributeName_xpath, "//a/img[contains(@alt,'proceed to submission')]", buttons);
+                    clickWebdriver(attributeName_xpath, "//a/img[contains(@alt,'proceed to submission')]");
 
                      try {
                         alertAccept();

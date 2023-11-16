@@ -271,11 +271,11 @@ public class Processor {
         //System.out.println("Closing " + set.size() + " window(s)");
         int closeCount = set.size();
         driver.close();
-        while (itr.hasNext()) {
-            String childWindow = itr.next();
-            driver.switchTo().window(childWindow);
-            driver.close();
-        }
+//        while (itr.hasNext()) { // code has been removed due affecting report generation modifiyed by saran kumar nov 15 2023
+//            String childWindow = itr.next();
+//            driver.switchTo().window(childWindow);
+//            driver.close();
+//        }
 
         driver.quit();// Close all opened 	browser by webdriver.
 

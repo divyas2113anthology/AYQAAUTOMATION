@@ -41,8 +41,8 @@ public class ApplicationFeePayment_Input extends CommonSeleniumActions	implement
 			}
 			if (!feepaycontinue.equals("")) {
 				Reporter.log("Step 3 - Click on ("+feepaycontinue+") Button");
-				waitForElementPresentWebdriver(attributeName_xpath, "//input[@value='Pay and Continue']", "Pay & Continue Button");
-				clickWebdriver(attributeName_xpath, "//input[@value='Pay and Continue']");
+				waitForElementPresentWebdriver(attributeName_xpath, "//a/img[contains(@alt,'pay and continue')]", "pay and continue");//xpath change saran kumar nov10
+				clickWebdriver(attributeName_xpath, "//a/img[contains(@alt,'pay and continue')]");
 				alertAccept();
 //				if (feepaycontinue.equalsIgnoreCase("pay & continue")) {
 //					clickchooseokgetconfirmationpagepload(AF_PayContinue);

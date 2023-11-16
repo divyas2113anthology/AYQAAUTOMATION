@@ -47,19 +47,18 @@ public class WC_SearchforEnrollmentApplicants_Input extends CommonSeleniumAction
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
 					
 				}
-				else if (firstname.equalsIgnoreCase(""))
-				{
-				String FirstName = Runtimedataread(firstname);
-				Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
-				System.out.println("aaaaaa");
-				waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
-				clickWebdriver(attributeName_xpath,SAI_FirstName);
-				sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
-				
-				} else if (firstname.equalsIgnoreCase("MahiTest")) {
+				 else if (firstname.equalsIgnoreCase("MahiTest")) {
 					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, firstname);
 					clickWebdriver(attributeName_xpath,SAI_FirstName);
 					sendKeys(attributeName_xpath, SAI_FirstName, firstname);
+
+				}else if (firstname.equalsIgnoreCase(firstname)) {
+					String FirstName = Runtimedataread(firstname);
+					Reporter.log("Step 3 - Enter the First Name as ["+FirstName+"]");
+					System.out.println("aaaaaa");
+					waitForElementPresentWebdriver(attributeName_xpath, SAI_FirstName, FirstName);
+					clickWebdriver(attributeName_xpath,SAI_FirstName);
+					sendKeys(attributeName_xpath, SAI_FirstName, FirstName);
 
 				}
 

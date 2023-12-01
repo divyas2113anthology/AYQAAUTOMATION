@@ -147,33 +147,56 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
 
 
                     if (splitsupport[i].equals("Standardized Test Scores")) {
+                        System.out.println("Switching to Application System :: Applicant Summary");
+                        switchToDefaultContentWebdriver();
+                        switchToWindowByTitle("Application System :: Applicant Summary");
                         waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='FormText']/a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
                         Thread.sleep(5000);
                         clickWebdriver(attributeName_xpath, "//td[@class='FormText']/a[text()='" + splitsupport[i] + "']");
                     } else if (splitsupport[i].equals("Transcripts")) {
 
-                       // switchToDefaultContentWebdriver();
+                        // switchToDefaultContentWebdriver();
 
-                      // driver.switchTo().window("Application Summary");
+                        // driver.switchTo().window("Application Summary");
                         //recentPopupSelectWebdriver("Application Summary");
                         waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='FormText']/a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
 
                         clickWebdriver(attributeName_xpath, "//td[@class='FormText']/a[text()='" + splitsupport[i] + "']");
 
+                    } else if (splitsupport[i].equals("Application Fee")||(splitsupport[i].equals("Other Supporting Documents"))){
+                        sleep(5);
+                        clickWebdriver(attributeName_xpath,"//td/a[contains(text(),'"+splitsupport[i]+"')]");
+                        Thread.sleep(5000);
+                        waitForPageToLoadWebdriver();
                     } else {
                         //switchToDefaultContentWebdriver();
                         //switchToSecondPopupWindow();
 //Application Fee')]
+                        if (splitsupport[i].equals("Add New TestScore")||(splitsupport[i].equals("Add New Transcript"))){
+                            sleep(5);
+                            clickWebdriver(attributeName_xpath,"//td/a[contains(text(),'"+splitsupport[i]+"')]");
+                            Thread.sleep(5000);
+                            waitForPageToLoadWebdriver();
+                        } else if (splitsupport[i].equals("Add New Supporting Document"))  {
+                            sleep(5);
+                            clickWebdriver(attributeName_xpath,"//td/a[contains(text(),'"+splitsupport[i]+"')]");
+                            Thread.sleep(5000);
+                            waitForPageToLoadWebdriver();
+                        }  else {
+                            clickWebdriver(attributeName_xpath, ES_ApplicantClick + splitsupport[i] + "')]");
+                            Thread.sleep(5000);
+                            waitForPageToLoadWebdriver();
+                        }
 
                         //waitForElementPresentWebdriver(attributeName_xpath, "//a[text()='" + splitsupport[i] + "']", splitsupport[i]);
 
-                        sleep(5);
+//                        sleep(5);
                         //    javaScriptClick(attributeName_xpath, "//form[@name='formMain']/descendant::tr/td/a[contains(text(),'" + splitsupport[i] + "')]");
-                        clickWebdriver(attributeName_xpath, ES_ApplicantClick + splitsupport[i] + "')]");
+//                        clickWebdriver(attributeName_xpath, ES_ApplicantClick + splitsupport[i] + "')]");
                         //waitForElementPresentWebdriver(attributeName_xpath, "//td[@class='FormText']/a[contains(text(),'" + splitsupport[i] + "')]", splitsupport[i]);
-                        Thread.sleep(5000);
+//                        Thread.sleep(5000);
                         //		clickWebdriver(attributeName_partiallinktext, splitsupport[i]);
-                        waitForPageToLoadWebdriver();
+//                        waitForPageToLoadWebdriver();
                         //clickWebdriver(attributeName_xpath,"//a[text()='Recommendation-DT']")
 
 //switchToDefaultContentWebdriver(); //add for this 73594
@@ -271,6 +294,10 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
                 } else if (buttons.equalsIgnoreCase("Application Fee")) {
                     clickWebdriver(attributeName_xpath, AS_AppFee);
                     recentPopupSelectWebdriver("Application Printing");
+                } else if (buttons.equalsIgnoreCase("save+")) {
+                    clickWebdriver(attributeName_xpath, AS_SaveBtn);
+                    waitForElementPresentWebdriver(attributeName_xpath, AS_CloseWindow, "Close Window");
+                    recentPopupCloseWebdriver();
                 }
 
             }
@@ -296,7 +323,8 @@ public class WC_ApplicantSummary_Input extends CommonSeleniumActions implements 
             if (!UnsubmitApplicant.equals("")) {
                 Reporter.log("Step 16 - Procedd to click the link  [" + UnsubmitApplicant + "] to un-submit the applicant");
                 waitForPageToLoadWebdriver();
-                switchToSecondPopupWindow();
+                driver.switchTo().window(AppSummaryWindowName);
+//                switchToSecondPopupWindow();
                 waitForElementPresentWebdriver(attributeName_xpath, AS_UnSubmit, UnsubmitApplicant);
                 clickWebdriver(attributeName_xpath, AS_UnSubmit);
                 alertAccept();

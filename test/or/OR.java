@@ -1517,7 +1517,7 @@ public static final String EPI_ProToSubBtn = "//a[text()='Proceed to Submission'
 public static final String EPI_ResetBtn = "//img[@alt='Reset']";
 
 //Enrollment - Search or Students
-public static final String ES_ApplicantClick = "//a[contains(text(),'";    //LastName, TestDemo')]"'
+public static final String ES_ApplicantClick = "//td/label/a[contains(text(),'";    //LastName, TestDemo')]"'
 
 //#**********************************************************#
 //#	 Enrollment - Enrollment Fee Payment - Page

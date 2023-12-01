@@ -158,8 +158,18 @@ public class CommonSeleniumActions extends Processor implements OR {
 		String filename = "C:/SeleniumScripts/AYQAAutomation/lib/InputTestdata.xls";
 		Workbook workbook = Workbook.getWorkbook(new File(filename));
 		//Sheet sheet = workbook.getSheet("RunTimeData");
+
 		Sheet sheet = workbook.getSheet("InputTestdata");
+		if (sheet == null) {
+			Reporter.log("Sheet 'InputTestdata' not found");
+			return null; // Or handle the case as needed
+		}
 		Cell tableStart = sheet.findCell(datalabel);
+		if (tableStart == null) {
+			Reporter.log("Cell with label not found");
+			workbook.close();
+			return null; // Or handle the case as needed
+		}
 		int Row, Col;
 		Row = tableStart.getRow();
 		Col = tableStart.getColumn();
@@ -2196,14 +2206,18 @@ public class CommonSeleniumActions extends Processor implements OR {
 	public void switchToSecondPopupWindow() {
 
 		//Get all the window handles in a set
+		String mainWindowHandle = driver.getWindowHandle();
 		Set<String> handles = driver.getWindowHandles();
 		Iterator<String> it = handles.iterator();
 		//iterate through your windows
 		while (it.hasNext()) {
-			String parent = it.next();
-			String newwin = it.next();
-			driver.switchTo().window(newwin);
-			//perform actions on new window
+			String popupHandle = it.next();
+			if (!popupHandle.equals(mainWindowHandle)) {
+//				Switch to the popup window
+				driver.switchTo().window(popupHandle);
+				break;
+			}
+
 
 		}
 	}
@@ -4091,19 +4105,21 @@ public class CommonSeleniumActions extends Processor implements OR {
 	}
 
 	//By Gokul
-	public void switchToWindowByTitle(String title) {
-		String currentWindow = driver.getWindowHandle();
-		driver.switchTo().window(currentWindow).getTitle();
-		Set<String> availableWindows = driver.getWindowHandles();
-		if (!availableWindows.isEmpty()) {
-			for (String windowId : availableWindows) {
-				//String switchedWindowTitle = driver.switchTo().window(windowId);
-				driver.switchTo().window(windowId);
+	public void switchToWindowByTitle(String windowTitle) {
+		String mainWindowHandle = driver.getWindowHandle();
+		Set<String> allWindowHandles = driver.getWindowHandles();
+
+		for (String handle : allWindowHandles) {
+			driver.switchTo().window(handle);
+			String title = driver.getTitle();
+			if (title.equals(windowTitle)) {
+				// Window with the desired title found, break the loop
+				return;
 			}
-			driver.close();
-			//driver.switchTo().window(currentWindow);
 		}
 
+		// If the window with the given title is not found, switch back to the main window
+		driver.switchTo().window(mainWindowHandle);
 	}
 
 	protected boolean isAttribtuePresent(String attributename, String attributevalue, String attributeName) {

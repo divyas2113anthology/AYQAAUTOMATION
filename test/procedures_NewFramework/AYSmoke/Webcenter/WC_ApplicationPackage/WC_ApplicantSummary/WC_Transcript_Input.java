@@ -66,8 +66,9 @@ public class WC_Transcript_Input extends CommonSeleniumActions implements OR {
 					driver.switchTo().window(AppSummaryWindowName);
 				}else {
 					Reporter.log("Click on the Button" + saveclosewindow);
-					clickWebdriver(attributeName_xpath, AS_SupportingDocCloseWindow + saveclosewindow + "')]");
+					clickWebdriver(attributeName_xpath,"//img[contains(@src,'save')]");
 					waitForPageToLoadWebdriver();
+					clickWebdriver(attributeName_xpath,CloseWindow); //add for 70493 tc saran 27nov 2023
 					driver.switchTo().window(AppSummaryWindowName);
 					//recentPopupCloseWebdriver();
 				}

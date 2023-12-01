@@ -67,17 +67,14 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 				}else if (button_to_click.equalsIgnoreCase("Save and close")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
-					driver.switchTo().window(AppSummaryWindowName);
+//					driver.switchTo().window(AppSummaryWindowName); // removed for 70732 tc saran nov27 2023
 					Thread.sleep(5000);
 					System.out.println("Clicked Save Button");
 					clickWebdriver(attributeName_xpath, AS_CloseWindow);
-					//recentPopupCloseWebdriver();
-					//switchToSecondPopupWindow();
+					recentPopupCloseWebdriver(); //add this code for this 70732 tc saran nov27 2023
 
+//					driver.switchTo().window(AppSummaryWindowName);//Modified by Rahul mehta on 20th March 2019
 
-					driver.switchTo().window(AppSummaryWindowName);//Modified by Rahul mehta on 20th March 2019
-
-					//switchToOldWindow();
 				}else if (button_to_click.equalsIgnoreCase("cancel")) {
 					clickWebdriver(attributeName_xpath, WCL_Cancelbutton);	
 					waitForPageToLoadWebdriver();
@@ -110,7 +107,8 @@ public class WC_ApplicationFee_Input extends CommonSeleniumActions implements OR
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);
 					driver.close();
-					switchToOldWindow();
+//					switchToOldWindow(); // removed due to 70492 tc saran 27 nov 2023
+					driver.switchTo().window(AppSummaryWindowName);
 				} else if (button_to_click.equalsIgnoreCase("Saveandswitchtosecondwindow")) {
 					waitForElementPresentWebdriver(attributeName_xpath, WCL_Savebutton, button_to_click);
 					clickWebdriver(attributeName_xpath, WCL_Savebutton);

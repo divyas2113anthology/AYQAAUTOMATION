@@ -40,7 +40,11 @@ public class WC_Welcome_Input extends CommonSeleniumActions implements OR {
 					switchToOldWindow();
 					clickWebdriver(attributeName_xpath, "//table/tbody/tr/td/a[text()='logout']");
 
-				}
+				}else if(weltopupdatelogout.equalsIgnoreCase("logout"));
+				clickWebdriver(attributeName_xpath, "//td/a[text()='" + weltopupdatelogout + "']");
+
+				System.out.println("Cookies cleared");
+				waitForPageToLoadWebdriver();
 			}
 
 			//driver.manage().deleteAllCookies();

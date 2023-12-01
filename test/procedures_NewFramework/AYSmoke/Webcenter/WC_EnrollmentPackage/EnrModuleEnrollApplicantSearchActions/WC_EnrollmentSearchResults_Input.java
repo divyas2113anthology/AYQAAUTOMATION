@@ -32,10 +32,10 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
                 System.out.println("AAAAAAAAAAAAA");
                 Reporter.log("Step 1 - Check the checkbox against [" + ApplicantFirstNameCheck + "]");
                 if (operationtoperform.equalsIgnoreCase("Check")) {
-                    checkWebdriver(attributeName_xpath, "//td[a[contains(text(),'" + ApplicantFirstNameCheck + "')]]/preceding-sibling::td/input[@type='checkbox']");
+                    checkWebdriver(attributeName_xpath, "//td/label/a[contains(text(),'" + ApplicantFirstNameCheck + "')]/ancestor::td/preceding-sibling::td/input");
                     //checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'"+ApplicantFirstNameCheck+"')]]/preceding-sibling::td/input[@type='checkbox']");
                 } else if (operationtoperform.equalsIgnoreCase("UnCheck")) {
-                    checkWebdriverCheckbox(attributeName_xpath, "//td[a[contains(text(),'" + ApplicantFirstNameCheck + "')]]/preceding-sibling::td/input[@type='checkbox']");
+                    checkWebdriverCheckbox(attributeName_xpath, "//td/label/a[contains(text(),'\" + ApplicantFirstNameCheck + \"')]/ancestor::td/preceding-sibling::td/input");
                 } else if (applicantcheck.equalsIgnoreCase("")) { //add by saran july 2023
                     checkWebdriverCheckbox(attributeName_xpath, "//td/label/a[contains(text(),'" + applicantcheck + "')]/ancestor::td/preceding-sibling::td/input");
 
@@ -84,7 +84,7 @@ public class WC_EnrollmentSearchResults_Input extends CommonSeleniumActions impl
 
             if (!Checkname.equalsIgnoreCase("")) {
                 waitForPageToLoad();
-                clickWebdriver(attributeName_xpath,"//td/label/a[contains(text(),'" + Checkname + "')]/ancestor::td/preceding-sibling::td/input");
+                    clickWebdriver(attributeName_xpath,"//td/label/a[contains(text(),'" + Checkname + "')]/ancestor::td/preceding-sibling::td/input");
                 sleep(3);
 
             }

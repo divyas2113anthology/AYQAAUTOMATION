@@ -57,6 +57,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://iad1pw084app.emt.hobsons.local/?id=ayauto&facelift=true";
 				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
 					envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto&facelift=true";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+					envirurl="https://demoapp.applyyourself.com/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
+
 				}
 			}else if ((url.contains("app")) && (url.contains("aybusqa&facelift"))) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -91,6 +94,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://iad1pw084app.emt.hobsons.local/?id=ayauto";
 				}else if (environment.equalsIgnoreCase("IAD1PW085")) {
 					envirurl = "http://iad1pw085app.emt.hobsons.local/?id=ayauto";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+                      envirurl = "https://demoapp.applyyourself.com/AYApplicantLogin/fl_ApplicantLogin.asp?id=ayauto";
 				}
 			}else if (url.contains("webcenter")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -118,6 +123,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "http://iad1pw085:8088/";
 				}else if (environment.equalsIgnoreCase("IAD1DW001")){
 					envirurl = "http://iad1dw001:8088/";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+					envirurl ="https://demowebcenter.applyyourself.com/";
+
 				}
 			}else if (url.contains("manage")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -133,6 +141,8 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "http://previewmanage.applyyourself.com";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "http://manage.hobsons.co.uk";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+					envirurl ="http://demomanage.applyyourself.com/AYAdminLogin/AdminLogin.asp?exit=1";
 				}
 			}else if (url.contains("rec")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -173,6 +183,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					//envirurl = "https://previewinq.applyyourself.com/?id=ayauto&pid=3788";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "https://inq.hobsons.co.uk/?id=ayauto&pid=447";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+					envirurl = "https://demoinq.applyyourself.com//?id=ayauto&pid=24";
+
 				}
 			}else if (url.contains("register")) {
 				if (environment.equalsIgnoreCase("USQA")) {
@@ -200,6 +213,9 @@ public class GL_LaunchBrowser extends CommonSeleniumActions implements OR {
 					envirurl = "";
 				}else if (environment.equalsIgnoreCase("UKPR")) {
 					envirurl = "http://bridgebuilderuk/Map/BridgeList.aspx";
+				} else if (environment.equalsIgnoreCase("Demo")) {
+					envirurl = "http://aydemo-bridgebuilder.emt.hobsons.local/Map/BridgeList.aspx";
+
 				}
 			}else if (url.contains("ApplicantConnectLogin") && url.endsWith("aybusqa")||url.endsWith("icu")) {
 				if (environment.equalsIgnoreCase("USQA")) {
